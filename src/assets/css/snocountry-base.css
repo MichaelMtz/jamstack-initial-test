@@ -234,8 +234,6 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 
 
 .topnav ul.navigation > li .menu-dropdown ul a:hover { 
-    border: 1px solid #fe523e;
-    border-radius: 5px;
     padding: 0px 3px;
 }
 .topnav ul.navigation > li .menu-dropdown ul a:hover { 
@@ -1023,7 +1021,44 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 		.intro .play { background-size: 90px 90px; }
 		}
 
+		.nav-breadcrumbs {
+			margin-bottom: 25px;
+			padding: .5rem 1rem;
+			border-bottom: 1px solid rgba(0,0,0,.125);
+			border-radius: 3px;
+			display: flex;
+			flex-flow: row wrap;
+			background-color: #fff;
+			color: #004B8B;
+		}
+		.breadcrumb-link	{
+			font-family: 'Muli', sans-serif;
+			font-size: 20px;
+			padding: 5px 3px;
+    	color: #004B8B;
+		}	
+		.breadcrumb-link.xc-link {
+			margin-left: auto;
+		}
+		.breadcrumb-link.active {
+			text-decoration: underline;
+		}
 
+		.breadcrumb-link:hover {
+			padding: 5px 1px 5px 5px;
+    	color: #FE523E !important;
+		}
+		.breadcrumb-link:visited {
+			color:#004B8B;
+		}
 
+		.breadcrumb-region {
+			font-family: 'Muli', sans-serif;
+			font-size: 20px;
+			padding: 5px 3px;
+    	color: white !important;
+			text-transform: uppercase;
+		}
+		
 
 

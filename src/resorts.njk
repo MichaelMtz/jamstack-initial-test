@@ -10,6 +10,13 @@ permalink: /snow-report/{{ resorts.stateName }}/index.html
 
 <div class="conditions">
     <div id="container-snow-reports" class="container-snow-reports">
-      Conditions go here
+      <nav class="nav-breadcrumbs"> 
+        
+        {% for iterBreadCrumb in resorts.breadCrumbList %}
+          <a class="breadcrumb-link" href="{{ iterBreadCrumb.link }}">{{ iterBreadCrumb.abbrName }}</a>
+        {% endfor %}
+          <a class="breadcrumb-link xc-link" href="snow-report/{{ resorts.stateName }}-cross-country"> {{ resorts.stateNameProper }} XC</a>
+      </nav>
+      Conditions will go here
     </div>
 </div>
