@@ -3,21 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!--
-        <link rel="canonical" href="https://www.snocountry.com/snow-reports/us/{{ stateLongNameLowerCase }}">
-        <base href="https://www.snocountry.com/snow-reports/us/{{ stateLongNameLowerCase }}" />
-        -->
+        <link rel="canonical" href="https://www.snocountry.com/snow-reports/{{ resorts.stateNameProperLowerCase }}">
+        <base href="https://snocountry.netlify.app/" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Mountains Snow, Snow for , Snow in {{ stateLongName }}, {{ stateLongName }} Ski Report, {{ stateLongName }} Snow, Snow {{ stateLongName }}, Ski Report {{ stateLongName }}, {{ stateLongName }} snow report, Snow Report {{ stateLongName }}, where is the snow in {{ stateLongNameLowerCase }}" />
+        <meta name="keywords" content="Mountains Snow, Snow for {{ resorts.stateNameProper }}, Snow in {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} snow report, Snow Report {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} Ski Report, {{ resorts.stateNameProper }} Snow, Snow {{ resorts.stateNameProper }}, Ski Report {{ resorts.stateNameProper }},  where is the snow in {{ resorts.stateNameProperLowerCase }}" />
         <meta name="rights" content="Copyright © 2019. All Rights Reserved." />
         <meta name="author" content="Snow Reports" />
         <meta name="robots" content="index,follow" />
-        <meta name="description" content="The latest {{ stateLongName }} snow report on conditions, trails, lifts and weather for each ski resort in {{ stateLongName }}." />
-        <title>{{ stateLongName }} Snow Report and Weather Conditions | SnoCountry</title>
+        <meta name="description" content="The latest {{ resorts.stateNameProper }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.stateNameProper }}." />
+        <title>{{ resorts.stateNameProper }} Snow Report and Weather Conditions | SnoCountry</title>
 
-        <meta property="og:title" content="{{ stateLongName }} Snow Report and Weather Conditions | SnoCountry" />
-        <meta property="og:description " content="The latest {{ stateLongName }} snow report on conditions, trails, lifts and weather for each ski resort in {{ stateLongName }}" />
-        <meta property="og:url" content="https://www.snocountry.com/snow-reports/us/{{ stateLongNameLowerCase }}" />
+        <meta property="og:title" content="{{ resorts.stateNameProper }} Snow Report and Weather Conditions | SnoCountry" />
+        <meta property="og:description " content="The latest {{ resorts.stateNameProper }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.stateNameProper }}" />
+        <meta property="og:url" content="https://www.snocountry.com/snow-reports/us/{{ resorts.stateNameProperLowerCase }}" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SnoCountry" />
         <meta property="og:image" content="https://www.snocountry.com/images/snocountry_logo_v2.png" />
@@ -27,13 +25,11 @@
         </script>
         
 
-        <link rel="stylesheet" href="assets/css/fonts.css">
-        <link rel="stylesheet" href="assets/css/snocountry-base.css">
-        <link rel="stylesheet" href="assets/css/state-page.css">
-
-        <link rel="stylesheet" href="assets/css/state-page-card.css">
-
-        <link rel="stylesheet" href="assets/css/padding-margin.css">
+        <link rel="stylesheet" href="../../assets/css/fonts.css">
+        <link rel="stylesheet" href="../../assets/css/snocountry-base.css">
+        <link rel="stylesheet" href="../../assets/css/state-page.css">
+        <link rel="stylesheet" href="../../assets/css/state-page-card.css">
+        <link rel="stylesheet" href="../../assets/css/padding-margin.css">
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
@@ -46,7 +42,7 @@
 
             <div class="logo">
 
-                <a href="/"><img src="assets/images/snocountry_logo_v2.png" /></a>
+                <a href="/"><img src="../../assets/images/snocountry_logo_v2.png" /></a>
 
                 <ul class="zone-switch"><div id="version-page" class="version-page">Skunkworks v2.0</div>
 
@@ -111,10 +107,10 @@
 
                                     <ul>
 
-                                        <li><a href="snow-report.php?state=AK">Alaska</a></li>
-                                        <li><a href="snow-report.php?state=ID">Idaho</a></li>
-                                        <li><a href="snow-report.php?state=OR">Oregon</a></li>
-                                        <li><a href="snow-report.php?state=WA">Washington</a></li>
+                                        <li><a href="snow-report/alaska">Alaska</a></li>
+                                        <li><a href="snow-report/idaho">Idaho</a></li>
+                                        <li><a href="snow-report/oregon">Oregon</a></li>
+                                        <li><a href="snow-report/washington">Washington</a></li>
 
                                     </ul>
 
@@ -132,14 +128,14 @@
 
                                     <ul>
 
-                                        <li><a href="snow-report.php?state=IA">Iowa</a></li>
-                                        <li><a href="snow-report.php?state=IL">Illinois</a></li>
-                                        <li><a href="snow-report.php?state=IN">Indiana</a></li>
-                                        <li><a href="snow-report.php?state=MN">Minnesota</a></li>
-                                        <li><a href="snow-report.php?state=MO">Missouri</a></li>
-                                        <li><a href="snow-report.php?state=MI">Michigan</a></li>
-                                        <li><a href="snow-report.php?state=OH">Ohio</a></li>
-                                        <li><a href="snow-report.php?state=WI">Wisconsin</a></li>
+                                        <li><a href="snow-report/IA">Iowa</a></li>
+                                        <li><a href="snow-report/IL">Illinois</a></li>
+                                        <li><a href="snow-report/IN">Indiana</a></li>
+                                        <li><a href="snow-report/MN">Minnesota</a></li>
+                                        <li><a href="snow-report/MO">Missouri</a></li>
+                                        <li><a href="snow-report/MI">Michigan</a></li>
+                                        <li><a href="snow-report/OH">Ohio</a></li>
+                                        <li><a href="snow-report/WI">Wisconsin</a></li>
 
                                     </ul>
 
@@ -157,15 +153,15 @@
 
                                     <ul>
 
-                                        <li><a href="snow-report.php?state=CT">Connecticut</a></li>
-                                        <li><a href="snow-report.php?state=MA">Massachusetts</a></li>
-                                        <li><a href="snow-report.php?state=ME">Maine</a></li>
-                                        <li><a href="snow-report.php?state=NH">New Hampshire</a></li>
-                                        <li><a href="snow-report.php?state=NJ">New Jersey</a></li>
-                                        <li><a href="snow-report.php?state=NY">New York</a></li>
-                                        <li><a href="snow-report.php?state=PA">Pennsylvania</a></li>
-                                        <li><a href="snow-report.php?state=RI">Rhode Island</a></li>
-                                        <li><a href="snow-report.php?state=VT">Vermont</a></li>
+                                        <li><a href="snow-report/CT">Connecticut</a></li>
+                                        <li><a href="snow-report/MA">Massachusetts</a></li>
+                                        <li><a href="snow-report/ME">Maine</a></li>
+                                        <li><a href="snow-report/NH">New Hampshire</a></li>
+                                        <li><a href="snow-report/NJ">New Jersey</a></li>
+                                        <li><a href="snow-report/NY">New York</a></li>
+                                        <li><a href="snow-report/PA">Pennsylvania</a></li>
+                                        <li><a href="snow-report/RI">Rhode Island</a></li>
+                                        <li><a href="snow-report/VT">Vermont</a></li>
 
                                     </ul>
 
@@ -181,11 +177,11 @@
 
                                     <ul>
 
-                                        <li><a href="snow-report.php?state=AZ">Arizona</a></li>
+                                        <li><a href="snow-report/AZ">Arizona</a></li>
 
-                                        <li><a href="snow-report.php?state=CA">California</a></li>
+                                        <li><a href="snow-report/CA">California</a></li>
 
-                                        <li><a href="snow-report.php?state=NV">Nevada</a></li>
+                                        <li><a href="snow-report/NV">Nevada</a></li>
 
                                     </ul>
 
@@ -203,15 +199,15 @@
 
                                     <ul>
 
-                                        <li><a href="snow-report.php?state=CO">Colorado</a></li>
+                                        <li><a href="snow-report/CO">Colorado</a></li>
 
-                                        <li><a href="snow-report.php?state=MT">Montana</a></li>
+                                        <li><a href="snow-report/MT">Montana</a></li>
 
-                                        <li><a href="snow-report.php?state=NM">New Mexico</a></li>
+                                        <li><a href="snow-report/NM">New Mexico</a></li>
 
-                                        <li><a href="snow-report.php?state=UT">Utah</a></li>
+                                        <li><a href="snow-report/UT">Utah</a></li>
 
-                                        <li><a href="snow-report.php?state=WY">Wyoming</a></li>
+                                        <li><a href="snow-report/WY">Wyoming</a></li>
 
                                     </ul>
 
@@ -227,17 +223,17 @@
 
                                     <ul>
 
-                                        <li><a href="snow-report.php?state=AL">Alabama</a></li>
+                                        <li><a href="snow-report/AL">Alabama</a></li>
 
-                                        <li><a href="snow-report.php?state=MD">Maryland</a></li>
+                                        <li><a href="snow-report/MD">Maryland</a></li>
 
-                                        <li><a href="snow-report.php?state=NC">North Carolina</a></li>
+                                        <li><a href="snow-report/NC">North Carolina</a></li>
 
-                                        <li><a href="snow-report.php?state=TN">Tennessee</a></li>
+                                        <li><a href="snow-report/TN">Tennessee</a></li>
 
-                                        <li><a href="snow-report.php?state=VI">Virginia</a></li>
+                                        <li><a href="snow-report/VI">Virginia</a></li>
 
-                                        <li><a href="snow-report.php?state=WV">West Virginia</a></li>
+                                        <li><a href="snow-report/WV">West Virginia</a></li>
 
                                     </ul>
 
@@ -474,8 +470,8 @@
 
 {{ content | safe }}
 
-	<script type="text/javascript" src="assets/js/jquery-1.8.3.min.js"></script>
-    <script src="assets/js/snocountry-base.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script>
 
     <script type="text/javascript">
     var snoStartLoadTime = new Date().getTime(); 

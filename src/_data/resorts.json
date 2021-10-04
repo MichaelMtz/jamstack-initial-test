@@ -1,0 +1,5 @@
+[
+  { "stateName": "alabama", "list": ["cloudmont"] }
+  ,{"stateName": "alaska" , "list":["alyeska-resort", "eaglecrest-ski-area"]}
+  ,{"stateName": "new-mexico", "list":["angel-fire-resort","ski-santa-fe"] }
+]
