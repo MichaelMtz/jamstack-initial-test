@@ -36,12 +36,12 @@
  ,{"entryType" : "state", "stateName": "west-virginia", "breadcrumbs": ["SOUTH EAST:", "AL","MD","NC","TN","VA","WV"]}
  ,{"entryType" : "state", "stateName": "wisconsin", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
  ,{"entryType" : "state", "stateName": "wyoming", "breadcrumbs": ["ROCKIES:", "CO","MT","NM","UT","WY"]}
- ,{"entryType" : "region", "stateName": "north-west", "breadcrumbs": ["xxx"]}
- ,{"entryType" : "region", "stateName": "south-west", "breadcrumbs": ["xxx"]}
- ,{"entryType" : "region", "stateName": "rockies", "breadcrumbs": ["xxx"]}
- ,{"entryType" : "region", "stateName": "mid-west", "breadcrumbs": ["xxx"]}
- ,{"entryType" : "region", "stateName": "north-east", "breadcrumbs": ["xxx"]}
- ,{"entryType" : "region", "stateName": "south-east", "breadcrumbs": ["xxx"]}
+ ,{"entryType" : "region", "stateName": "north-west", "breadcrumbs": [ "AK", "ID","OR","WA"]}
+ ,{"entryType" : "region", "stateName": "south-west", "breadcrumbs": [ "AZ","CA","NV"]}
+ ,{"entryType" : "region", "stateName": "rockies", "breadcrumbs": ["CO","MT","NM","UT","WY"]}
+ ,{"entryType" : "region", "stateName": "mid-west", "breadcrumbs": ["IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "region", "stateName": "north-east", "breadcrumbs": [ "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "region", "stateName": "south-east", "breadcrumbs": ["AL","MD","NC","TN","VA","WV"]}
  ,{"entryType" : "resort", "stateName": "alabama/cloudmont/ "}
  ,{"entryType" : "resort", "stateName": "alaska/alyeska-resort" }                                         
  ,{"entryType" : "resort", "stateName": "alaska/eaglecrest-ski-area" }                                    
@@ -503,103 +503,103 @@
  ,{"entryType" : "region", "stateName": "ontario", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
  ,{"entryType" : "region", "stateName": "quebec", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
  ,{"entryType" : "region", "stateName": "saskatchewan", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
- ,{ "entrytype":"resort", "stateName": "alberta/banff-sunshine" }                                
- ,{ "entrytype":"resort", "stateName": "alberta/canyon-ski-resort" }                             
- ,{ "entrytype":"resort", "stateName": "alberta/castle-mountain-resort" }                        
- ,{ "entrytype":"resort", "stateName": "alberta/lake-louise-ski-resort" }                        
- ,{ "entrytype":"resort", "stateName": "alberta/marmot-basin" }                                  
- ,{ "entrytype":"resort", "stateName": "alberta/mt-norquay-ski-resort" }                         
- ,{ "entrytype":"resort", "stateName": "alberta/nakiska-ski-area" }                              
- ,{ "entrytype":"resort", "stateName": "alberta/winsports-canada-olympic-park" }                 
- ,{ "entrytype":"resort", "stateName": "british-columbia/apex-mountain-resort" }                 
- ,{ "entrytype":"resort", "stateName": "british-columbia/baldy-mountain-resort" }                
- ,{ "entrytype":"resort", "stateName": "british-columbia/big-white-ski-resort" }                 
- ,{ "entrytype":"resort", "stateName": "british-columbia/cypress-mountain-resort" }              
- ,{ "entrytype":"resort", "stateName": "british-columbia/fairmont-hot-springs" }                 
- ,{ "entrytype":"resort", "stateName": "british-columbia/fernie-alpine-resort" }                 
- ,{ "entrytype":"resort", "stateName": "british-columbia/grouse-mountain" }                      
- ,{ "entrytype":"resort", "stateName": "british-columbia/hudson-bay-mountain" }                  
- ,{ "entrytype":"resort", "stateName": "british-columbia/kicking-horse-resort" }                 
- ,{ "entrytype":"resort", "stateName": "british-columbia/kimberley-alpine-resort" }              
- ,{ "entrytype":"resort", "stateName": "british-columbia/last-frontier-heliskiing-bell-2-lodge" }
- ,{ "entrytype":"resort", "stateName": "british-columbia/last-frontier-heliskiing-ripley-creek" }
- ,{ "entrytype":"resort", "stateName": "british-columbia/manning-park-resort" }                  
- ,{ "entrytype":"resort", "stateName": "british-columbia/mount-seymour-resort" }                 
- ,{ "entrytype":"resort", "stateName": "british-columbia/mount-washington-alpine-resort" }       
- ,{ "entrytype":"resort", "stateName": "british-columbia/panorama-mountain-resort" }             
- ,{ "entrytype":"resort", "stateName": "british-columbia/powder-king-mountain-resort" }          
- ,{ "entrytype":"resort", "stateName": "british-columbia/red-mountain-resort" }                  
- ,{ "entrytype":"resort", "stateName": "british-columbia/revelstoke-mountain-resort" }           
- ,{ "entrytype":"resort", "stateName": "british-columbia/sasquatch-mountain-resort" }            
- ,{ "entrytype":"resort", "stateName": "british-columbia/silverstar-mountain-resort" }           
- ,{ "entrytype":"resort", "stateName": "british-columbia/sun-peaks-resort" }                     
- ,{ "entrytype":"resort", "stateName": "british-columbia/whistler-blackcomb" }                   
- ,{ "entrytype":"resort", "stateName": "british-columbia/whistler-olympic-park" }                
- ,{ "entrytype":"resort", "stateName": "british-columbia/whitewater-ski-resort" }                
- ,{ "entrytype":"resort", "stateName": "manitoba/asessippi-ski-area-resort" }                    
- ,{ "entrytype":"resort", "stateName": "manitoba/falcon-ridge-ski-slopes" }                      
- ,{ "entrytype":"resort", "stateName": "new-brunswick/crabbe-mountain" }                         
- ,{ "entrytype":"resort", "stateName": "new-brunswick/Mont-farlagne" }                           
- ,{ "entrytype":"resort", "stateName": "nova-scotia/martock" }                                   
- ,{ "entrytype":"resort", "stateName": "ontario/batawa-ski-hill" }                               
- ,{ "entrytype":"resort", "stateName": "ontario/blue-mountain-resort" }                          
- ,{ "entrytype":"resort", "stateName": "ontario/boler-mountain" }                                
- ,{ "entrytype":"resort", "stateName": "ontario/brimacombe" }                                    
- ,{ "entrytype":"resort", "stateName": "ontario/calabogie-peaks-resort" }                        
- ,{ "entrytype":"resort", "stateName": "ontario/chicopee-ski-summer-resort" }                    
- ,{ "entrytype":"resort", "stateName": "ontario/dagmar-ski-resort-nordic-center" }               
- ,{ "entrytype":"resort", "stateName": "ontario/dagmar-ski-resort" }                             
- ,{ "entrytype":"resort", "stateName": "ontario/earl-bales-ski-snowboard-centre" }               
- ,{ "entrytype":"resort", "stateName": "ontario/glen-eden-ski-area" }                            
- ,{ "entrytype":"resort", "stateName": "ontario/hardwood-ski-and-bike" }                         
- ,{ "entrytype":"resort", "stateName": "ontario/hidden-valley-highlands-ski-area" }              
- ,{ "entrytype":"resort", "stateName": "ontario/highlands-nordic" }                              
- ,{ "entrytype":"resort", "stateName": "ontario/hockley-valley" }                                
- ,{ "entrytype":"resort", "stateName": "ontario/horseshoe-resort-nordic" }                       
- ,{ "entrytype":"resort", "stateName": "ontario/horseshoe-resort" }                              
- ,{ "entrytype":"resort", "stateName": "ontario/lakeridge-ski-resort" }                          
- ,{ "entrytype":"resort", "stateName": "ontario/loch-lomond" }                                   
- ,{ "entrytype":"resort", "stateName": "ontario/mansfield-outdoor-centre" }                      
- ,{ "entrytype":"resort", "stateName": "ontario/mansfield-ski-club" }                            
- ,{ "entrytype":"resort", "stateName": "ontario/mount-pakenham" }                                
- ,{ "entrytype":"resort", "stateName": "ontario/mount-st-louis-moonstone" }                      
- ,{ "entrytype":"resort", "stateName": "ontario/mountain-view-nordic" }                          
- ,{ "entrytype":"resort", "stateName": "ontario/scenic-caves-nordic-center" }                    
- ,{ "entrytype":"resort", "stateName": "ontario/searchmont-resort" }                             
- ,{ "entrytype":"resort", "stateName": "ontario/sir-sams-ski-snowboard" }                        
- ,{ "entrytype":"resort", "stateName": "ontario/snow-valley-ski-resort" }                        
- ,{ "entrytype":"resort", "stateName": "quebec/bromont" }                                        
- ,{ "entrytype":"resort", "stateName": "quebec/camp-fortune" }                                   
- ,{ "entrytype":"resort", "stateName": "quebec/camp-mercier" }                                   
- ,{ "entrytype":"resort", "stateName": "quebec/gatineau-park" }                                  
- ,{ "entrytype":"resort", "stateName": "quebec/le-massif-de-charlevoix" }                        
- ,{ "entrytype":"resort", "stateName": "quebec/mont-belu" }                                      
- ,{ "entrytype":"resort", "stateName": "quebec/mont-blanc" }                                     
- ,{ "entrytype":"resort", "stateName": "quebec/mont-cascades" }                                  
- ,{ "entrytype":"resort", "stateName": "quebec/mont-habitant" }                                  
- ,{ "entrytype":"resort", "stateName": "quebec/mont-orford" }                                    
- ,{ "entrytype":"resort", "stateName": "quebec/mont-rigaud" }                                    
- ,{ "entrytype":"resort", "stateName": "quebec/mont-sainte-anne" }                               
- ,{ "entrytype":"resort", "stateName": "quebec/mont-ste-marie" }                                 
- ,{ "entrytype":"resort", "stateName": "quebec/mont-sutton" }                                    
- ,{ "entrytype":"resort", "stateName": "quebec/owls-head" }                                      
- ,{ "entrytype":"resort", "stateName": "quebec/parc-national-du-mont-orford" }                   
- ,{ "entrytype":"resort", "stateName": "quebec/ski-de-fond-mont-tremblant" }                     
- ,{ "entrytype":"resort", "stateName": "quebec/ski-la-reserve" }                                 
- ,{ "entrytype":"resort", "stateName": "quebec/sommet-edelweiss" }                               
- ,{ "entrytype":"resort", "stateName": "quebec/sommet-gabriel" }                                 
- ,{ "entrytype":"resort", "stateName": "quebec/sommet-morin-heights" }                           
- ,{ "entrytype":"resort", "stateName": "quebec/sommet-olympia" }                                 
- ,{ "entrytype":"resort", "stateName": "quebec/sommet-saint-sauveur" }                           
- ,{ "entrytype":"resort", "stateName": "quebec/station-du-mont-gleason" }                        
- ,{ "entrytype":"resort", "stateName": "quebec/station-duchesnay" }                              
- ,{ "entrytype":"resort", "stateName": "quebec/station-mont-sainte-anne" }                       
- ,{ "entrytype":"resort", "stateName": "quebec/stoneham" }                                       
- ,{ "entrytype":"resort", "stateName": "quebec/tremblant" }                                      
- ,{ "entrytype":"resort", "stateName": "quebec/val-d-irene" }                                    
- ,{ "entrytype":"resort", "stateName": "quebec/versant-avila" }                                  
- ,{ "entrytype":"resort", "stateName": "quebec/vorlage" }                                        
- ,{ "entrytype":"resort", "stateName": "saskatchewan/duck-mountain-ski-area" }       
+ ,{"entryType":"resort", "stateName": "alberta/banff-sunshine" }                                
+ ,{"entryType":"resort", "stateName": "alberta/canyon-ski-resort" }                             
+ ,{"entryType":"resort", "stateName": "alberta/castle-mountain-resort" }                        
+ ,{"entryType":"resort", "stateName": "alberta/lake-louise-ski-resort" }                        
+ ,{"entryType":"resort", "stateName": "alberta/marmot-basin" }                                  
+ ,{"entryType":"resort", "stateName": "alberta/mt-norquay-ski-resort" }                         
+ ,{"entryType":"resort", "stateName": "alberta/nakiska-ski-area" }                              
+ ,{"entryType":"resort", "stateName": "alberta/winsports-canada-olympic-park" }                 
+ ,{"entryType":"resort", "stateName": "british-columbia/apex-mountain-resort" }                 
+ ,{"entryType":"resort", "stateName": "british-columbia/baldy-mountain-resort" }                
+ ,{"entryType":"resort", "stateName": "british-columbia/big-white-ski-resort" }                 
+ ,{"entryType":"resort", "stateName": "british-columbia/cypress-mountain-resort" }              
+ ,{"entryType":"resort", "stateName": "british-columbia/fairmont-hot-springs" }                 
+ ,{"entryType":"resort", "stateName": "british-columbia/fernie-alpine-resort" }                 
+ ,{"entryType":"resort", "stateName": "british-columbia/grouse-mountain" }                      
+ ,{"entryType":"resort", "stateName": "british-columbia/hudson-bay-mountain" }                  
+ ,{"entryType":"resort", "stateName": "british-columbia/kicking-horse-resort" }                 
+ ,{"entryType":"resort", "stateName": "british-columbia/kimberley-alpine-resort" }              
+ ,{"entryType":"resort", "stateName": "british-columbia/last-frontier-heliskiing-bell-2-lodge" }
+ ,{"entryType":"resort", "stateName": "british-columbia/last-frontier-heliskiing-ripley-creek" }
+ ,{"entryType":"resort", "stateName": "british-columbia/manning-park-resort" }                  
+ ,{"entryType":"resort", "stateName": "british-columbia/mount-seymour-resort" }                 
+ ,{"entryType":"resort", "stateName": "british-columbia/mount-washington-alpine-resort" }       
+ ,{"entryType":"resort", "stateName": "british-columbia/panorama-mountain-resort" }             
+ ,{"entryType":"resort", "stateName": "british-columbia/powder-king-mountain-resort" }          
+ ,{"entryType":"resort", "stateName": "british-columbia/red-mountain-resort" }                  
+ ,{"entryType":"resort", "stateName": "british-columbia/revelstoke-mountain-resort" }           
+ ,{"entryType":"resort", "stateName": "british-columbia/sasquatch-mountain-resort" }            
+ ,{"entryType":"resort", "stateName": "british-columbia/silverstar-mountain-resort" }           
+ ,{"entryType":"resort", "stateName": "british-columbia/sun-peaks-resort" }                     
+ ,{"entryType":"resort", "stateName": "british-columbia/whistler-blackcomb" }                   
+ ,{"entryType":"resort", "stateName": "british-columbia/whistler-olympic-park" }                
+ ,{"entryType":"resort", "stateName": "british-columbia/whitewater-ski-resort" }                
+ ,{"entryType":"resort", "stateName": "manitoba/asessippi-ski-area-resort" }                    
+ ,{"entryType":"resort", "stateName": "manitoba/falcon-ridge-ski-slopes" }                      
+ ,{"entryType":"resort", "stateName": "new-brunswick/crabbe-mountain" }                         
+ ,{"entryType":"resort", "stateName": "new-brunswick/Mont-farlagne" }                           
+ ,{"entryType":"resort", "stateName": "nova-scotia/martock" }                                   
+ ,{"entryType":"resort", "stateName": "ontario/batawa-ski-hill" }                               
+ ,{"entryType":"resort", "stateName": "ontario/blue-mountain-resort" }                          
+ ,{"entryType":"resort", "stateName": "ontario/boler-mountain" }                                
+ ,{"entryType":"resort", "stateName": "ontario/brimacombe" }                                    
+ ,{"entryType":"resort", "stateName": "ontario/calabogie-peaks-resort" }                        
+ ,{"entryType":"resort", "stateName": "ontario/chicopee-ski-summer-resort" }                    
+ ,{"entryType":"resort", "stateName": "ontario/dagmar-ski-resort-nordic-center" }               
+ ,{"entryType":"resort", "stateName": "ontario/dagmar-ski-resort" }                             
+ ,{"entryType":"resort", "stateName": "ontario/earl-bales-ski-snowboard-centre" }               
+ ,{"entryType":"resort", "stateName": "ontario/glen-eden-ski-area" }                            
+ ,{"entryType":"resort", "stateName": "ontario/hardwood-ski-and-bike" }                         
+ ,{"entryType":"resort", "stateName": "ontario/hidden-valley-highlands-ski-area" }              
+ ,{"entryType":"resort", "stateName": "ontario/highlands-nordic" }                              
+ ,{"entryType":"resort", "stateName": "ontario/hockley-valley" }                                
+ ,{"entryType":"resort", "stateName": "ontario/horseshoe-resort-nordic" }                       
+ ,{"entryType":"resort", "stateName": "ontario/horseshoe-resort" }                              
+ ,{"entryType":"resort", "stateName": "ontario/lakeridge-ski-resort" }                          
+ ,{"entryType":"resort", "stateName": "ontario/loch-lomond" }                                   
+ ,{"entryType":"resort", "stateName": "ontario/mansfield-outdoor-centre" }                      
+ ,{"entryType":"resort", "stateName": "ontario/mansfield-ski-club" }                            
+ ,{"entryType":"resort", "stateName": "ontario/mount-pakenham" }                                
+ ,{"entryType":"resort", "stateName": "ontario/mount-st-louis-moonstone" }                      
+ ,{"entryType":"resort", "stateName": "ontario/mountain-view-nordic" }                          
+ ,{"entryType":"resort", "stateName": "ontario/scenic-caves-nordic-center" }                    
+ ,{"entryType":"resort", "stateName": "ontario/searchmont-resort" }                             
+ ,{"entryType":"resort", "stateName": "ontario/sir-sams-ski-snowboard" }                        
+ ,{"entryType":"resort", "stateName": "ontario/snow-valley-ski-resort" }                        
+ ,{"entryType":"resort", "stateName": "quebec/bromont" }                                        
+ ,{"entryType":"resort", "stateName": "quebec/camp-fortune" }                                   
+ ,{"entryType":"resort", "stateName": "quebec/camp-mercier" }                                   
+ ,{"entryType":"resort", "stateName": "quebec/gatineau-park" }                                  
+ ,{"entryType":"resort", "stateName": "quebec/le-massif-de-charlevoix" }                        
+ ,{"entryType":"resort", "stateName": "quebec/mont-belu" }                                      
+ ,{"entryType":"resort", "stateName": "quebec/mont-blanc" }                                     
+ ,{"entryType":"resort", "stateName": "quebec/mont-cascades" }                                  
+ ,{"entryType":"resort", "stateName": "quebec/mont-habitant" }                                  
+ ,{"entryType":"resort", "stateName": "quebec/mont-orford" }                                    
+ ,{"entryType":"resort", "stateName": "quebec/mont-rigaud" }                                    
+ ,{"entryType":"resort", "stateName": "quebec/mont-sainte-anne" }                               
+ ,{"entryType":"resort", "stateName": "quebec/mont-ste-marie" }                                 
+ ,{"entryType":"resort", "stateName": "quebec/mont-sutton" }                                    
+ ,{"entryType":"resort", "stateName": "quebec/owls-head" }                                      
+ ,{"entryType":"resort", "stateName": "quebec/parc-national-du-mont-orford" }                   
+ ,{"entryType":"resort", "stateName": "quebec/ski-de-fond-mont-tremblant" }                     
+ ,{"entryType":"resort", "stateName": "quebec/ski-la-reserve" }                                 
+ ,{"entryType":"resort", "stateName": "quebec/sommet-edelweiss" }                               
+ ,{"entryType":"resort", "stateName": "quebec/sommet-gabriel" }                                 
+ ,{"entryType":"resort", "stateName": "quebec/sommet-morin-heights" }                           
+ ,{"entryType":"resort", "stateName": "quebec/sommet-olympia" }                                 
+ ,{"entryType":"resort", "stateName": "quebec/sommet-saint-sauveur" }                           
+ ,{"entryType":"resort", "stateName": "quebec/station-du-mont-gleason" }                        
+ ,{"entryType":"resort", "stateName": "quebec/station-duchesnay" }                              
+ ,{"entryType":"resort", "stateName": "quebec/station-mont-sainte-anne" }                       
+ ,{"entryType":"resort", "stateName": "quebec/stoneham" }                                       
+ ,{"entryType":"resort", "stateName": "quebec/tremblant" }                                      
+ ,{"entryType":"resort", "stateName": "quebec/val-d-irene" }                                    
+ ,{"entryType":"resort", "stateName": "quebec/versant-avila" }                                  
+ ,{"entryType":"resort", "stateName": "quebec/vorlage" }                                        
+ ,{"entryType":"resort", "stateName": "saskatchewan/duck-mountain-ski-area" }       
 
  ,{"entryType" : "region", "stateName": "argentina", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
  ,{"entryType" : "region", "stateName": "australia", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
@@ -622,371 +622,371 @@
  ,{"entryType" : "region", "stateName": "sweden", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
  ,{"entryType" : "region", "stateName": "switzerland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
 
-,{ "entrytype":"resort", "stateName": "/andorra/grandvalira" }                           
-,{ "entrytype":"resort", "stateName": "/andorra/soldeu-el tarter" }                      
-,{ "entrytype":"resort", "stateName": "/andorra/vallnord-pal-arinsal" }                  
-,{ "entrytype":"resort", "stateName": "/argentina/catedral-alta-patagonia" }             
-,{ "entrytype":"resort", "stateName": "/argentina/caviahue" }                            
-,{ "entrytype":"resort", "stateName": "/argentina/cerro-bayo" }                          
-,{ "entrytype":"resort", "stateName": "/argentina/chapelco" }                            
-,{ "entrytype":"resort", "stateName": "/argentina/las-lenas" }                           
-,{ "entrytype":"resort", "stateName": "/australia/charlotte-pass" }                      
-,{ "entrytype":"resort", "stateName": "/australia/falls-creek-resort" }                  
-,{ "entrytype":"resort", "stateName": "/australia/hotham-alpine-resort" }                
-,{ "entrytype":"resort", "stateName": "/australia/mt-baw-baw-alpine-resort" }            
-,{ "entrytype":"resort", "stateName": "/australia/mt-buller" }                           
-,{ "entrytype":"resort", "stateName": "/australia/perisher-ski-resort" }                 
-,{ "entrytype":"resort", "stateName": "/australia/selwyn-snow-resort" }                  
-,{ "entrytype":"resort", "stateName": "/australia/thredbo-alpine-village" }              
-,{ "entrytype":"resort", "stateName": "/austria/alpbachtal" }                            
-,{ "entrytype":"resort", "stateName": "/austria/altenmarkt-zauchensee" }                 
-,{ "entrytype":"resort", "stateName": "/austria/axamer-lizum" }                          
-,{ "entrytype":"resort", "stateName": "/austria/bad-gastein" }                           
-,{ "entrytype":"resort", "stateName": "/austria/bad-hofgastein-schlossalm" }             
-,{ "entrytype":"resort", "stateName": "/austria/bad-kleinkirchheim" }                    
-,{ "entrytype":"resort", "stateName": "/austria/berwang-bichlbach" }                     
-,{ "entrytype":"resort", "stateName": "/austria/brandnertal" }                           
-,{ "entrytype":"resort", "stateName": "/austria/dachstein-gletscher" }                   
-,{ "entrytype":"resort", "stateName": "/austria/damuls" }                                
-,{ "entrytype":"resort", "stateName": "/austria/fieberbrunn" }                           
-,{ "entrytype":"resort", "stateName": "/austria/filzmoos-neuberg" }                      
-,{ "entrytype":"resort", "stateName": "/austria/flachau-wagrain-alpendorf" }             
-,{ "entrytype":"resort", "stateName": "/austria/gerlitzen" }                             
-,{ "entrytype":"resort", "stateName": "/austria/gerlos-zillertal-arena" }                
-,{ "entrytype":"resort", "stateName": "/austria/gurgl" }                                 
-,{ "entrytype":"resort", "stateName": "/austria/heiligenblut" }                          
-,{ "entrytype":"resort", "stateName": "/austria/hintertux-gletscher" }                   
-,{ "entrytype":"resort", "stateName": "/austria/innsbruck" }                             
-,{ "entrytype":"resort", "stateName": "/austria/ischgl-silvretta-arena" }                
-,{ "entrytype":"resort", "stateName": "/austria/kahtai" }                                
-,{ "entrytype":"resort", "stateName": "/austria/kappl" }                                 
-,{ "entrytype":"resort", "stateName": "/austria/katschberg" }                            
-,{ "entrytype":"resort", "stateName": "/austria/kaunertal" }                             
-,{ "entrytype":"resort", "stateName": "/austria/kirchdorf" }                             
-,{ "entrytype":"resort", "stateName": "/austria/kitzbuehel-alpen-westendorf" }           
-,{ "entrytype":"resort", "stateName": "/austria/kitzsteinhorn" }                         
-,{ "entrytype":"resort", "stateName": "/austria/lech-zuers" }                            
-,{ "entrytype":"resort", "stateName": "/austria/loferer-alm" }                           
-,{ "entrytype":"resort", "stateName": "/austria/molltal-glacier" }                       
-,{ "entrytype":"resort", "stateName": "/austria/nassfeld-hermagor" }                     
-,{ "entrytype":"resort", "stateName": "/austria/nauders" }                               
-,{ "entrytype":"resort", "stateName": "/austria/neustift-stubaital" }                    
-,{ "entrytype":"resort", "stateName": "/austria/obertauern" }                            
-,{ "entrytype":"resort", "stateName": "/austria/pitztaler-gletscher" }                   
-,{ "entrytype":"resort", "stateName": "/austria/praebichl" }                             
-,{ "entrytype":"resort", "stateName": "/austria/ramsau-am-dachstein" }                   
-,{ "entrytype":"resort", "stateName": "/austria/raurisertal-hochalmbahnen" }             
-,{ "entrytype":"resort", "stateName": "/austria/saalbach-hinterglemm-leogang" }          
-,{ "entrytype":"resort", "stateName": "/austria/schladming-dachstein-fageralm" }         
-,{ "entrytype":"resort", "stateName": "/austria/schladming-dachstein-galsterbergalm" }   
-,{ "entrytype":"resort", "stateName": "/austria/schladming-dachstein-hauser-kaibling" }  
-,{ "entrytype":"resort", "stateName": "/austria/schladming-dachstein-hochwurzen" }       
-,{ "entrytype":"resort", "stateName": "/austria/schladming-dachstein-reiteralm" }        
-,{ "entrytype":"resort", "stateName": "/austria/schruns" }                               
-,{ "entrytype":"resort", "stateName": "/austria/seefeld-tirol" }                         
-,{ "entrytype":"resort", "stateName": "/austria/serfaus-fiss-ladis" }                    
-,{ "entrytype":"resort", "stateName": "/austria/ski-zillertal-3000" }                    
-,{ "entrytype":"resort", "stateName": "/austria/skiwelt-wilder-kaiser-brixental" }       
-,{ "entrytype":"resort", "stateName": "/austria/soelden" }                               
-,{ "entrytype":"resort", "stateName": "/austria/st-anton-am-rrlberg" }                   
-,{ "entrytype":"resort", "stateName": "/austria/St-johann-in-tirol" }                    
-,{ "entrytype":"resort", "stateName": "/austria/steinplatte" }                           
-,{ "entrytype":"resort", "stateName": "/austria/stubaital-stubaier-gletscher" }          
-,{ "entrytype":"resort", "stateName": "/austria/turracher-hohe" }                        
-,{ "entrytype":"resort", "stateName": "/austria/vent" }                                  
-,{ "entrytype":"resort", "stateName": "/austria/warth-schrocken" }                       
-,{ "entrytype":"resort", "stateName": "/austria/zell-am-see-kaprun" }                    
-,{ "entrytype":"resort", "stateName": "/austria/zell-am-see-schmittenhahe" }             
-,{ "entrytype":"resort", "stateName": "/chile/el-colorado-farellones" }                  
-,{ "entrytype":"resort", "stateName": "/chile/la-parva" }                                
-,{ "entrytype":"resort", "stateName": "/chile/nevados-de-chillan" }                      
-,{ "entrytype":"resort", "stateName": "/chile/ski-portillo" }                            
-,{ "entrytype":"resort", "stateName": "/chile/valle-nevado" }                            
-,{ "entrytype":"resort", "stateName": "/czech-republic/spindleruv-mlyn-svaty-petr" }     
-,{ "entrytype":"resort", "stateName": "/czech-republic/spindleruv-mlyn" }                
-,{ "entrytype":"resort", "stateName": "/finland/iso-syote" }                             
-,{ "entrytype":"resort", "stateName": "/finland/levi" }                                  
-,{ "entrytype":"resort", "stateName": "/finland/pallas-ski-resort" }                     
-,{ "entrytype":"resort", "stateName": "/finland/pyha" }                                  
-,{ "entrytype":"resort", "stateName": "/finland/ruka" }                                  
-,{ "entrytype":"resort", "stateName": "/finland/saariselka" }                            
-,{ "entrytype":"resort", "stateName": "/finland/yllas" }                                 
-,{ "entrytype":"resort", "stateName": "/france/alpe-d-huez" }                            
-,{ "entrytype":"resort", "stateName": "/france/argentiare" }                             
-,{ "entrytype":"resort", "stateName": "/france/auron" }                                  
-,{ "entrytype":"resort", "stateName": "/france/autrans" }                                
-,{ "entrytype":"resort", "stateName": "/france/avoriaz" }                                
-,{ "entrytype":"resort", "stateName": "/france/bareges-tourmalet" }                      
-,{ "entrytype":"resort", "stateName": "/france/brides-les-bains" }                       
-,{ "entrytype":"resort", "stateName": "/france/cauterets" }                              
-,{ "entrytype":"resort", "stateName": "/france/chamonix-mont-blanc" }                    
-,{ "entrytype":"resort", "stateName": "/france/champagny-en-vanoise" }                   
-,{ "entrytype":"resort", "stateName": "/france/chamrousse" }                             
-,{ "entrytype":"resort", "stateName": "/france/chatel" }                                 
-,{ "entrytype":"resort", "stateName": "/france/courchevel" }                             
-,{ "entrytype":"resort", "stateName": "/france/crest-voland-cohennoz" }                  
-,{ "entrytype":"resort", "stateName": "/france/font-romeu-pyrenees-2000" }               
-,{ "entrytype":"resort", "stateName": "/france/gourette" }                               
-,{ "entrytype":"resort", "stateName": "/france/isola-2000" }                             
-,{ "entrytype":"resort", "stateName": "/france/la-clusaz" }                              
-,{ "entrytype":"resort", "stateName": "/france/la-grave-la-meije" }                      
-,{ "entrytype":"resort", "stateName": "/france/la-mongie" }                              
-,{ "entrytype":"resort", "stateName": "/france/la-plagne" }                              
-,{ "entrytype":"resort", "stateName": "/france/la-tania" }                               
-,{ "entrytype":"resort", "stateName": "/france/le-corbier" }                             
-,{ "entrytype":"resort", "stateName": "/france/le-grand-bornand" }                       
-,{ "entrytype":"resort", "stateName": "/france/le-lioran" }                              
-,{ "entrytype":"resort", "stateName": "/france/le-mont-dore" }                           
-,{ "entrytype":"resort", "stateName": "/france/les-2-alpes" }                            
-,{ "entrytype":"resort", "stateName": "/france/les-7-laux" }                             
-,{ "entrytype":"resort", "stateName": "/france/les-arcs" }                               
-,{ "entrytype":"resort", "stateName": "/france/les-contamines-montjoie" }                
-,{ "entrytype":"resort", "stateName": "/france/les-gets" }                               
-,{ "entrytype":"resort", "stateName": "/france/les-menuires" }                           
-,{ "entrytype":"resort", "stateName": "/france/les-orres" }                              
-,{ "entrytype":"resort", "stateName": "/france/luz-ardiden" }                            
-,{ "entrytype":"resort", "stateName": "/france/megeve" }                                 
-,{ "entrytype":"resort", "stateName": "/france/meribel" }                                
-,{ "entrytype":"resort", "stateName": "/france/montchavin-les-coches" }                  
-,{ "entrytype":"resort", "stateName": "/france/montgenevre" }                            
-,{ "entrytype":"resort", "stateName": "/france/morzine" }                                
-,{ "entrytype":"resort", "stateName": "/france/notre-dame-de-bellecombe" }               
-,{ "entrytype":"resort", "stateName": "/france/peisey-nancroix-vallandry" }              
-,{ "entrytype":"resort", "stateName": "/france/pra-loup" }                               
-,{ "entrytype":"resort", "stateName": "/france/risoul" }                                 
-,{ "entrytype":"resort", "stateName": "/france/saint-gervais-mont-blanc" }               
-,{ "entrytype":"resort", "stateName": "/france/saint-lary-soulan" }                      
-,{ "entrytype":"resort", "stateName": "/france/saint-martin-de-belleville" }             
-,{ "entrytype":"resort", "stateName": "/france/sainte-foy-tarentaise" }                  
-,{ "entrytype":"resort", "stateName": "/france/samoens" }                                
-,{ "entrytype":"resort", "stateName": "/france/serre-chevalier" }                        
-,{ "entrytype":"resort", "stateName": "/france/tignes" }                                 
-,{ "entrytype":"resort", "stateName": "/france/val-d-isere" }                            
-,{ "entrytype":"resort", "stateName": "/france/val-thorens" }                            
-,{ "entrytype":"resort", "stateName": "/france/valberg" }                                
-,{ "entrytype":"resort", "stateName": "/france/valfrejus" }                              
-,{ "entrytype":"resort", "stateName": "/france/valloire" }                               
-,{ "entrytype":"resort", "stateName": "/france/valmeinier" }                             
-,{ "entrytype":"resort", "stateName": "/france/valmorel" }                               
-,{ "entrytype":"resort", "stateName": "/france/vars" }                                   
-,{ "entrytype":"resort", "stateName": "/france/vaujany" }                                
-,{ "entrytype":"resort", "stateName": "/germany/balderschwang" }                         
-,{ "entrytype":"resort", "stateName": "/germany/berchtesgadener-land" }                  
-,{ "entrytype":"resort", "stateName": "/germany/brocken" }                               
-,{ "entrytype":"resort", "stateName": "/germany/garmisch-partenkirchen" }                
-,{ "entrytype":"resort", "stateName": "/germany/hinterzarten-breitnau" }                 
-,{ "entrytype":"resort", "stateName": "/germany/lenggries" }                             
-,{ "entrytype":"resort", "stateName": "/germany/mittenwald" }                            
-,{ "entrytype":"resort", "stateName": "/germany/oberammergau" }                          
-,{ "entrytype":"resort", "stateName": "/germany/oberhof" }                               
-,{ "entrytype":"resort", "stateName": "/germany/obermaiselstein-grasgehren" }            
-,{ "entrytype":"resort", "stateName": "/germany/oberstdorf" }                            
-,{ "entrytype":"resort", "stateName": "/germany/rettenberg" }                            
-,{ "entrytype":"resort", "stateName": "/germany/ruhpolding" }                            
-,{ "entrytype":"resort", "stateName": "/germany/scheffau" }                              
-,{ "entrytype":"resort", "stateName": "/germany/skiliftkarussell-winterberg" }           
-,{ "entrytype":"resort", "stateName": "/germany/spitzingsee" }                           
-,{ "entrytype":"resort", "stateName": "/germany/todtnauberg" }                           
-,{ "entrytype":"resort", "stateName": "/germany/wintersportzentrum-feldberg" }           
-,{ "entrytype":"resort", "stateName": "/italy/3-three-peaks-dolomites" }                 
-,{ "entrytype":"resort", "stateName": "/italy/agordino" }                                
-,{ "entrytype":"resort", "stateName": "/italy/alba" }                                    
-,{ "entrytype":"resort", "stateName": "/italy/alta-badia" }                              
-,{ "entrytype":"resort", "stateName": "/italy/altopiano-di-asiago" }                     
-,{ "entrytype":"resort", "stateName": "/italy/andalo-fai-della-paganella" }              
-,{ "entrytype":"resort", "stateName": "/italy/antagnod-monterosa-ski" }                  
-,{ "entrytype":"resort", "stateName": "/italy/arabba" }                                  
-,{ "entrytype":"resort", "stateName": "/italy/artesina-mondola-ski" }                    
-,{ "entrytype":"resort", "stateName": "/italy/auronzo-di-cadore" }                       
-,{ "entrytype":"resort", "stateName": "/italy/bardonecchia" }                            
-,{ "entrytype":"resort", "stateName": "/italy/bormio" }                                  
-,{ "entrytype":"resort", "stateName": "/italy/cadore" }                                  
-,{ "entrytype":"resort", "stateName": "/italy/campitello-canazei" }                      
-,{ "entrytype":"resort", "stateName": "/italy/campitello-mazzin-col-rodella" }           
-,{ "entrytype":"resort", "stateName": "/italy/campo-felice-rocca-di-cambio" }            
-,{ "entrytype":"resort", "stateName": "/italy/canazei" }                                 
-,{ "entrytype":"resort", "stateName": "/italy/carezza-karersee" }                        
-,{ "entrytype":"resort", "stateName": "/italy/champoluc-monterosa-ski" }                 
-,{ "entrytype":"resort", "stateName": "/italy/civetta" }                                 
-,{ "entrytype":"resort", "stateName": "/italy/claviere-via-lattea" }                     
-,{ "entrytype":"resort", "stateName": "/italy/cortina-d-ampezzo" }                       
-,{ "entrytype":"resort", "stateName": "/italy/courmayeur" }                              
-,{ "entrytype":"resort", "stateName": "/italy/folgaria-forte-cherle" }                   
-,{ "entrytype":"resort", "stateName": "/italy/folgaria-passo-coe" }                      
-,{ "entrytype":"resort", "stateName": "/italy/folgarida-marilleva" }                     
-,{ "entrytype":"resort", "stateName": "/italy/gressoney-saint-jean-monterosa-ski" }      
-,{ "entrytype":"resort", "stateName": "/italy/kronplatz" }                               
-,{ "entrytype":"resort", "stateName": "/italy/la-thuile" }                               
-,{ "entrytype":"resort", "stateName": "/italy/lagorai-tesino" }                          
-,{ "entrytype":"resort", "stateName": "/italy/limone-piemonte" }                         
-,{ "entrytype":"resort", "stateName": "/italy/livigno" }                                 
-,{ "entrytype":"resort", "stateName": "/italy/macugnaga" }                               
-,{ "entrytype":"resort", "stateName": "/italy/madesimo" }                                
-,{ "entrytype":"resort", "stateName": "/italy/madonna-di-campiglio" }                    
-,{ "entrytype":"resort", "stateName": "/italy/merano-2000-meran-2000" }                  
-,{ "entrytype":"resort", "stateName": "/italy/moena-alpe-lusia" }                        
-,{ "entrytype":"resort", "stateName": "/italy/obereggen" }                               
-,{ "entrytype":"resort", "stateName": "/italy/passo-di-costalunga-carezza" }             
-,{ "entrytype":"resort", "stateName": "/italy/passo-stelvio" }                           
-,{ "entrytype":"resort", "stateName": "/italy/passo-tonale-adamello-ski" }               
-,{ "entrytype":"resort", "stateName": "/italy/pinzolo" }                                 
-,{ "entrytype":"resort", "stateName": "/italy/pragelato" }                               
-,{ "entrytype":"resort", "stateName": "/italy/san-martino-di-castrozza-fondo" }          
-,{ "entrytype":"resort", "stateName": "/italy/san-martino-di-castrozza" }                
-,{ "entrytype":"resort", "stateName": "/italy/san-vito-di-cadore" }                      
-,{ "entrytype":"resort", "stateName": "/italy/sappada" }                                 
-,{ "entrytype":"resort", "stateName": "/italy/sauze-d-oulx" }                            
-,{ "entrytype":"resort", "stateName": "/italy/sestriere" }                               
-,{ "entrytype":"resort", "stateName": "/italy/solda-sulden" }                            
-,{ "entrytype":"resort", "stateName": "/italy/tre-valli" }                               
-,{ "entrytype":"resort", "stateName": "/italy/val-di-fassa" }                            
-,{ "entrytype":"resort", "stateName": "/italy/val-di-fiemme" }                           
-,{ "entrytype":"resort", "stateName": "/italy/val-di-sole" }                             
-,{ "entrytype":"resort", "stateName": "/italy/val-di-zoldo" }                            
-,{ "entrytype":"resort", "stateName": "/italy/val-gardena-groeden" }                     
-,{ "entrytype":"resort", "stateName": "/italy/val-senales-schnalstal" }                  
-,{ "entrytype":"resort", "stateName": "/italy/valcomelico" }                             
-,{ "entrytype":"resort", "stateName": "/italy/valgrisenche" }                            
-,{ "entrytype":"resort", "stateName": "/italy/valle-isarco" }                            
-,{ "entrytype":"resort", "stateName": "/liechtenstein/malbun-steg" }                     
-,{ "entrytype":"resort", "stateName": "/new-zealand/broken-river" }                      
-,{ "entrytype":"resort", "stateName": "/new-zealand/cardrona-alpine-resort" }            
-,{ "entrytype":"resort", "stateName": "/new-zealand/coronet-peak" }                      
-,{ "entrytype":"resort", "stateName": "/new-zealand/craigieburn-valley-ski-area" }       
-,{ "entrytype":"resort", "stateName": "/new-zealand/fox-peak" }                          
-,{ "entrytype":"resort", "stateName": "/new-zealand/hanmer-springs-ski-area" }           
-,{ "entrytype":"resort", "stateName": "/new-zealand/manganui" }                          
-,{ "entrytype":"resort", "stateName": "/new-zealand/mount-cheeseman-ski-area" }          
-,{ "entrytype":"resort", "stateName": "/new-zealand/mount-dobson-ski-area" }             
-,{ "entrytype":"resort", "stateName": "/new-zealand/mount-lyford-ski-area" }             
-,{ "entrytype":"resort", "stateName": "/new-zealand/mt-hutt-ski-area" }                  
-,{ "entrytype":"resort", "stateName": "/new-zealand/mt-olympus" }                        
-,{ "entrytype":"resort", "stateName": "/new-zealand/ohau-snow-fields" }                  
-,{ "entrytype":"resort", "stateName": "/new-zealand/porters-alpine-resort" }             
-,{ "entrytype":"resort", "stateName": "/new-zealand/rainbow-ski-area" }                  
-,{ "entrytype":"resort", "stateName": "/new-zealand/roundhill-ski-area" }                
-,{ "entrytype":"resort", "stateName": "/new-zealand/snow-farm" }                         
-,{ "entrytype":"resort", "stateName": "/new-zealand/temple-basin" }                      
-,{ "entrytype":"resort", "stateName": "/new-zealand/the-remarkables" }                   
-,{ "entrytype":"resort", "stateName": "/new-zealand/treble-cone" }                       
-,{ "entrytype":"resort", "stateName": "/new-zealand/tukino-ski-field" }                  
-,{ "entrytype":"resort", "stateName": "/new-zealand/turoa-ski-resort" }                  
-,{ "entrytype":"resort", "stateName": "/new-zealand/whakapapa-ski-area" }                
-,{ "entrytype":"resort", "stateName": "/norway/bjorli" }                                 
-,{ "entrytype":"resort", "stateName": "/norway/dombas" }                                 
-,{ "entrytype":"resort", "stateName": "/norway/filefjell" }                              
-,{ "entrytype":"resort", "stateName": "/norway/gala-ski-arena" }                         
-,{ "entrytype":"resort", "stateName": "/norway/gaustablikk-rjukan" }                     
-,{ "entrytype":"resort", "stateName": "/norway/gautefall-skisenter" }                    
-,{ "entrytype":"resort", "stateName": "/norway/geilo" }                                  
-,{ "entrytype":"resort", "stateName": "/norway/gol-m-golsfjellet" }                      
-,{ "entrytype":"resort", "stateName": "/norway/hemsedal" }                               
-,{ "entrytype":"resort", "stateName": "/norway/kongsberg" }                              
-,{ "entrytype":"resort", "stateName": "/norway/lifjell-telemark" }                       
-,{ "entrytype":"resort", "stateName": "/norway/narvik" }                                 
-,{ "entrytype":"resort", "stateName": "/norway/nesbyen" }                                
-,{ "entrytype":"resort", "stateName": "/norway/nordseter" }                              
-,{ "entrytype":"resort", "stateName": "/norway/norefjell" }                              
-,{ "entrytype":"resort", "stateName": "/norway/oppdal" }                                 
-,{ "entrytype":"resort", "stateName": "/norway/oslomarka-tryvann" }                      
-,{ "entrytype":"resort", "stateName": "/norway/rauland-vinje" }                          
-,{ "entrytype":"resort", "stateName": "/norway/ringebufjellet-skisenter" }               
-,{ "entrytype":"resort", "stateName": "/norway/sirdal" }                                 
-,{ "entrytype":"resort", "stateName": "/norway/skeikampen" }                             
-,{ "entrytype":"resort", "stateName": "/norway/stryn-vinterski" }                        
-,{ "entrytype":"resort", "stateName": "/norway/tryvann-vinterpark" }                     
-,{ "entrytype":"resort", "stateName": "/norway/valdres-alpinsenter" }                    
-,{ "entrytype":"resort", "stateName": "/norway/vaset" }                                  
-,{ "entrytype":"resort", "stateName": "/norway/voss-fjellandsby-myrkdalen" }             
-,{ "entrytype":"resort", "stateName": "/norway/voss-resort-fjellheisar" }                
-,{ "entrytype":"resort", "stateName": "/norway/vradal" }                                 
-,{ "entrytype":"resort", "stateName": "/poland/zakopane-gubalowka" }                     
-,{ "entrytype":"resort", "stateName": "/poland/zakopane" }                               
-,{ "entrytype":"resort", "stateName": "/scotland/cairngorm-mountain" }                   
-,{ "entrytype":"resort", "stateName": "/scotland/glenshee-ski-centre" }                  
-,{ "entrytype":"resort", "stateName": "/scotland/nevis-range" }                          
-,{ "entrytype":"resort", "stateName": "/scotland/the-lecht-2090" }                       
-,{ "entrytype":"resort", "stateName": "/slovakia/park-snow-donovaly" }                   
-,{ "entrytype":"resort", "stateName": "/spain/alto-campoo" }                             
-,{ "entrytype":"resort", "stateName": "/spain/astun" }                                   
-,{ "entrytype":"resort", "stateName": "/spain/baqueira-beret" }                          
-,{ "entrytype":"resort", "stateName": "/spain/boi-taull-resort" }                        
-,{ "entrytype":"resort", "stateName": "/spain/candanchu" }                               
-,{ "entrytype":"resort", "stateName": "/spain/cerler" }                                  
-,{ "entrytype":"resort", "stateName": "/spain/espot-esqui-pallars" }                     
-,{ "entrytype":"resort", "stateName": "/spain/formigal" }                                
-,{ "entrytype":"resort", "stateName": "/spain/javalambre" }                              
-,{ "entrytype":"resort", "stateName": "/spain/la-pinilla" }                              
-,{ "entrytype":"resort", "stateName": "/spain/leitariegos" }                             
-,{ "entrytype":"resort", "stateName": "/spain/manzaneda" }                               
-,{ "entrytype":"resort", "stateName": "/spain/panticosa-los-lagos" }                     
-,{ "entrytype":"resort", "stateName": "/spain/port-del-comte" }                          
-,{ "entrytype":"resort", "stateName": "/spain/puerto-de-navacerrada" }                   
-,{ "entrytype":"resort", "stateName": "/spain/rasos-de-paguera" }                        
-,{ "entrytype":"resort", "stateName": "/spain/san-isidro" }                              
-,{ "entrytype":"resort", "stateName": "/spain/sierra-de-bejar-la-covatilla" }            
-,{ "entrytype":"resort", "stateName": "/spain/sierra-nevada" }                           
-,{ "entrytype":"resort", "stateName": "/spain/valdelinares" }                            
-,{ "entrytype":"resort", "stateName": "/spain/valdesqui" }                               
-,{ "entrytype":"resort", "stateName": "/spain/valdezcaray" }                             
-,{ "entrytype":"resort", "stateName": "/spain/valgrande-pajares" }                       
-,{ "entrytype":"resort", "stateName": "/sweden/are" }                                    
-,{ "entrytype":"resort", "stateName": "/sweden/bjarkliden" }                             
-,{ "entrytype":"resort", "stateName": "/sweden/brana" }                                  
-,{ "entrytype":"resort", "stateName": "/sweden/funsdalen" }                              
-,{ "entrytype":"resort", "stateName": "/sweden/klappen-ski-resort" }                     
-,{ "entrytype":"resort", "stateName": "/sweden/lofsdalen" }                              
-,{ "entrytype":"resort", "stateName": "/sweden/riksgransen" }                            
-,{ "entrytype":"resort", "stateName": "/sweden/salen" }                                  
-,{ "entrytype":"resort", "stateName": "/sweden/vemdalen" }                               
-,{ "entrytype":"resort", "stateName": "/switzerland/adelboden-lenk" }                    
-,{ "entrytype":"resort", "stateName": "/switzerland/aletschgebiet" }                     
-,{ "entrytype":"resort", "stateName": "/switzerland/alpes-fribourgeoises" }              
-,{ "entrytype":"resort", "stateName": "/switzerland/andermatt" }                         
-,{ "entrytype":"resort", "stateName": "/switzerland/anzre" }                             
-,{ "entrytype":"resort", "stateName": "/switzerland/arosa" }                             
-,{ "entrytype":"resort", "stateName": "/switzerland/braunwald" }                         
-,{ "entrytype":"resort", "stateName": "/switzerland/chandolin-anniviers" }               
-,{ "entrytype":"resort", "stateName": "/switzerland/chateaux-d-oex" }                    
-,{ "entrytype":"resort", "stateName": "/switzerland/crans-montana" }                     
-,{ "entrytype":"resort", "stateName": "/switzerland/davos" }                             
-,{ "entrytype":"resort", "stateName": "/switzerland/disentis-sedrun" }                   
-,{ "entrytype":"resort", "stateName": "/switzerland/engelberg-titlis-jochpass" }         
-,{ "entrytype":"resort", "stateName": "/switzerland/evolene" }                           
-,{ "entrytype":"resort", "stateName": "/switzerland/flumserberg" }                       
-,{ "entrytype":"resort", "stateName": "/switzerland/grachen" }                           
-,{ "entrytype":"resort", "stateName": "/switzerland/grimentz-anniviers" }                
-,{ "entrytype":"resort", "stateName": "/switzerland/grindelwald" }                       
-,{ "entrytype":"resort", "stateName": "/switzerland/gstaad" }                            
-,{ "entrytype":"resort", "stateName": "/switzerland/kandersteg-oeschinen-sunnbel" }      
-,{ "entrytype":"resort", "stateName": "/switzerland/kandersteg" }                        
-,{ "entrytype":"resort", "stateName": "/switzerland/klosters-gotschune-parsenn-madrisa" }
-,{ "entrytype":"resort", "stateName": "/switzerland/la-tzoumaz" }                        
-,{ "entrytype":"resort", "stateName": "/switzerland/laax" }                              
-,{ "entrytype":"resort", "stateName": "/switzerland/lenk-simmental" }                    
-,{ "entrytype":"resort", "stateName": "/switzerland/les-diablerets" }                    
-,{ "entrytype":"resort", "stateName": "/switzerland/leukerbad" }                         
-,{ "entrytype":"resort", "stateName": "/switzerland/leysin" }                            
-,{ "entrytype":"resort", "stateName": "/switzerland/meiringen-hasliberg" }               
-,{ "entrytype":"resort", "stateName": "/switzerland/morgins" }                           
-,{ "entrytype":"resort", "stateName": "/switzerland/murren-schilthorn" }                 
-,{ "entrytype":"resort", "stateName": "/switzerland/nendaz" }                            
-,{ "entrytype":"resort", "stateName": "/switzerland/pontresina" }                        
-,{ "entrytype":"resort", "stateName": "/switzerland/portes-du-soleil" }                  
-,{ "entrytype":"resort", "stateName": "/switzerland/saas-fee" }                          
-,{ "entrytype":"resort", "stateName": "/switzerland/samnaun" }                           
-,{ "entrytype":"resort", "stateName": "/switzerland/savognin" }                          
-,{ "entrytype":"resort", "stateName": "/switzerland/scuol" }                             
-,{ "entrytype":"resort", "stateName": "/switzerland/sedrun" }                            
-,{ "entrytype":"resort", "stateName": "/switzerland/silvaplana" }                        
-,{ "entrytype":"resort", "stateName": "/switzerland/st-moritz" }                         
-,{ "entrytype":"resort", "stateName": "/switzerland/thyon" }                             
-,{ "entrytype":"resort", "stateName": "/switzerland/tschiertschen" }                     
-,{ "entrytype":"resort", "stateName": "/switzerland/verbier-val-de-bagnes" }             
-,{ "entrytype":"resort", "stateName": "/switzerland/veysonnaz" }                         
-,{ "entrytype":"resort", "stateName": "/switzerland/villars" }                           
-,{ "entrytype":"resort", "stateName": "/switzerland/wengen" }                            
-,{ "entrytype":"resort", "stateName": "/switzerland/zermatt" }                           
-,{ "entrytype":"resort", "stateName": "/switzerland/zinal" }    
+,{"entryType":"resort", "stateName": "/andorra/grandvalira" }                           
+,{"entryType":"resort", "stateName": "/andorra/soldeu-el tarter" }                      
+,{"entryType":"resort", "stateName": "/andorra/vallnord-pal-arinsal" }                  
+,{"entryType":"resort", "stateName": "/argentina/catedral-alta-patagonia" }             
+,{"entryType":"resort", "stateName": "/argentina/caviahue" }                            
+,{"entryType":"resort", "stateName": "/argentina/cerro-bayo" }                          
+,{"entryType":"resort", "stateName": "/argentina/chapelco" }                            
+,{"entryType":"resort", "stateName": "/argentina/las-lenas" }                           
+,{"entryType":"resort", "stateName": "/australia/charlotte-pass" }                      
+,{"entryType":"resort", "stateName": "/australia/falls-creek-resort" }                  
+,{"entryType":"resort", "stateName": "/australia/hotham-alpine-resort" }                
+,{"entryType":"resort", "stateName": "/australia/mt-baw-baw-alpine-resort" }            
+,{"entryType":"resort", "stateName": "/australia/mt-buller" }                           
+,{"entryType":"resort", "stateName": "/australia/perisher-ski-resort" }                 
+,{"entryType":"resort", "stateName": "/australia/selwyn-snow-resort" }                  
+,{"entryType":"resort", "stateName": "/australia/thredbo-alpine-village" }              
+,{"entryType":"resort", "stateName": "/austria/alpbachtal" }                            
+,{"entryType":"resort", "stateName": "/austria/altenmarkt-zauchensee" }                 
+,{"entryType":"resort", "stateName": "/austria/axamer-lizum" }                          
+,{"entryType":"resort", "stateName": "/austria/bad-gastein" }                           
+,{"entryType":"resort", "stateName": "/austria/bad-hofgastein-schlossalm" }             
+,{"entryType":"resort", "stateName": "/austria/bad-kleinkirchheim" }                    
+,{"entryType":"resort", "stateName": "/austria/berwang-bichlbach" }                     
+,{"entryType":"resort", "stateName": "/austria/brandnertal" }                           
+,{"entryType":"resort", "stateName": "/austria/dachstein-gletscher" }                   
+,{"entryType":"resort", "stateName": "/austria/damuls" }                                
+,{"entryType":"resort", "stateName": "/austria/fieberbrunn" }                           
+,{"entryType":"resort", "stateName": "/austria/filzmoos-neuberg" }                      
+,{"entryType":"resort", "stateName": "/austria/flachau-wagrain-alpendorf" }             
+,{"entryType":"resort", "stateName": "/austria/gerlitzen" }                             
+,{"entryType":"resort", "stateName": "/austria/gerlos-zillertal-arena" }                
+,{"entryType":"resort", "stateName": "/austria/gurgl" }                                 
+,{"entryType":"resort", "stateName": "/austria/heiligenblut" }                          
+,{"entryType":"resort", "stateName": "/austria/hintertux-gletscher" }                   
+,{"entryType":"resort", "stateName": "/austria/innsbruck" }                             
+,{"entryType":"resort", "stateName": "/austria/ischgl-silvretta-arena" }                
+,{"entryType":"resort", "stateName": "/austria/kahtai" }                                
+,{"entryType":"resort", "stateName": "/austria/kappl" }                                 
+,{"entryType":"resort", "stateName": "/austria/katschberg" }                            
+,{"entryType":"resort", "stateName": "/austria/kaunertal" }                             
+,{"entryType":"resort", "stateName": "/austria/kirchdorf" }                             
+,{"entryType":"resort", "stateName": "/austria/kitzbuehel-alpen-westendorf" }           
+,{"entryType":"resort", "stateName": "/austria/kitzsteinhorn" }                         
+,{"entryType":"resort", "stateName": "/austria/lech-zuers" }                            
+,{"entryType":"resort", "stateName": "/austria/loferer-alm" }                           
+,{"entryType":"resort", "stateName": "/austria/molltal-glacier" }                       
+,{"entryType":"resort", "stateName": "/austria/nassfeld-hermagor" }                     
+,{"entryType":"resort", "stateName": "/austria/nauders" }                               
+,{"entryType":"resort", "stateName": "/austria/neustift-stubaital" }                    
+,{"entryType":"resort", "stateName": "/austria/obertauern" }                            
+,{"entryType":"resort", "stateName": "/austria/pitztaler-gletscher" }                   
+,{"entryType":"resort", "stateName": "/austria/praebichl" }                             
+,{"entryType":"resort", "stateName": "/austria/ramsau-am-dachstein" }                   
+,{"entryType":"resort", "stateName": "/austria/raurisertal-hochalmbahnen" }             
+,{"entryType":"resort", "stateName": "/austria/saalbach-hinterglemm-leogang" }          
+,{"entryType":"resort", "stateName": "/austria/schladming-dachstein-fageralm" }         
+,{"entryType":"resort", "stateName": "/austria/schladming-dachstein-galsterbergalm" }   
+,{"entryType":"resort", "stateName": "/austria/schladming-dachstein-hauser-kaibling" }  
+,{"entryType":"resort", "stateName": "/austria/schladming-dachstein-hochwurzen" }       
+,{"entryType":"resort", "stateName": "/austria/schladming-dachstein-reiteralm" }        
+,{"entryType":"resort", "stateName": "/austria/schruns" }                               
+,{"entryType":"resort", "stateName": "/austria/seefeld-tirol" }                         
+,{"entryType":"resort", "stateName": "/austria/serfaus-fiss-ladis" }                    
+,{"entryType":"resort", "stateName": "/austria/ski-zillertal-3000" }                    
+,{"entryType":"resort", "stateName": "/austria/skiwelt-wilder-kaiser-brixental" }       
+,{"entryType":"resort", "stateName": "/austria/soelden" }                               
+,{"entryType":"resort", "stateName": "/austria/st-anton-am-rrlberg" }                   
+,{"entryType":"resort", "stateName": "/austria/St-johann-in-tirol" }                    
+,{"entryType":"resort", "stateName": "/austria/steinplatte" }                           
+,{"entryType":"resort", "stateName": "/austria/stubaital-stubaier-gletscher" }          
+,{"entryType":"resort", "stateName": "/austria/turracher-hohe" }                        
+,{"entryType":"resort", "stateName": "/austria/vent" }                                  
+,{"entryType":"resort", "stateName": "/austria/warth-schrocken" }                       
+,{"entryType":"resort", "stateName": "/austria/zell-am-see-kaprun" }                    
+,{"entryType":"resort", "stateName": "/austria/zell-am-see-schmittenhahe" }             
+,{"entryType":"resort", "stateName": "/chile/el-colorado-farellones" }                  
+,{"entryType":"resort", "stateName": "/chile/la-parva" }                                
+,{"entryType":"resort", "stateName": "/chile/nevados-de-chillan" }                      
+,{"entryType":"resort", "stateName": "/chile/ski-portillo" }                            
+,{"entryType":"resort", "stateName": "/chile/valle-nevado" }                            
+,{"entryType":"resort", "stateName": "/czech-republic/spindleruv-mlyn-svaty-petr" }     
+,{"entryType":"resort", "stateName": "/czech-republic/spindleruv-mlyn" }                
+,{"entryType":"resort", "stateName": "/finland/iso-syote" }                             
+,{"entryType":"resort", "stateName": "/finland/levi" }                                  
+,{"entryType":"resort", "stateName": "/finland/pallas-ski-resort" }                     
+,{"entryType":"resort", "stateName": "/finland/pyha" }                                  
+,{"entryType":"resort", "stateName": "/finland/ruka" }                                  
+,{"entryType":"resort", "stateName": "/finland/saariselka" }                            
+,{"entryType":"resort", "stateName": "/finland/yllas" }                                 
+,{"entryType":"resort", "stateName": "/france/alpe-d-huez" }                            
+,{"entryType":"resort", "stateName": "/france/argentiare" }                             
+,{"entryType":"resort", "stateName": "/france/auron" }                                  
+,{"entryType":"resort", "stateName": "/france/autrans" }                                
+,{"entryType":"resort", "stateName": "/france/avoriaz" }                                
+,{"entryType":"resort", "stateName": "/france/bareges-tourmalet" }                      
+,{"entryType":"resort", "stateName": "/france/brides-les-bains" }                       
+,{"entryType":"resort", "stateName": "/france/cauterets" }                              
+,{"entryType":"resort", "stateName": "/france/chamonix-mont-blanc" }                    
+,{"entryType":"resort", "stateName": "/france/champagny-en-vanoise" }                   
+,{"entryType":"resort", "stateName": "/france/chamrousse" }                             
+,{"entryType":"resort", "stateName": "/france/chatel" }                                 
+,{"entryType":"resort", "stateName": "/france/courchevel" }                             
+,{"entryType":"resort", "stateName": "/france/crest-voland-cohennoz" }                  
+,{"entryType":"resort", "stateName": "/france/font-romeu-pyrenees-2000" }               
+,{"entryType":"resort", "stateName": "/france/gourette" }                               
+,{"entryType":"resort", "stateName": "/france/isola-2000" }                             
+,{"entryType":"resort", "stateName": "/france/la-clusaz" }                              
+,{"entryType":"resort", "stateName": "/france/la-grave-la-meije" }                      
+,{"entryType":"resort", "stateName": "/france/la-mongie" }                              
+,{"entryType":"resort", "stateName": "/france/la-plagne" }                              
+,{"entryType":"resort", "stateName": "/france/la-tania" }                               
+,{"entryType":"resort", "stateName": "/france/le-corbier" }                             
+,{"entryType":"resort", "stateName": "/france/le-grand-bornand" }                       
+,{"entryType":"resort", "stateName": "/france/le-lioran" }                              
+,{"entryType":"resort", "stateName": "/france/le-mont-dore" }                           
+,{"entryType":"resort", "stateName": "/france/les-2-alpes" }                            
+,{"entryType":"resort", "stateName": "/france/les-7-laux" }                             
+,{"entryType":"resort", "stateName": "/france/les-arcs" }                               
+,{"entryType":"resort", "stateName": "/france/les-contamines-montjoie" }                
+,{"entryType":"resort", "stateName": "/france/les-gets" }                               
+,{"entryType":"resort", "stateName": "/france/les-menuires" }                           
+,{"entryType":"resort", "stateName": "/france/les-orres" }                              
+,{"entryType":"resort", "stateName": "/france/luz-ardiden" }                            
+,{"entryType":"resort", "stateName": "/france/megeve" }                                 
+,{"entryType":"resort", "stateName": "/france/meribel" }                                
+,{"entryType":"resort", "stateName": "/france/montchavin-les-coches" }                  
+,{"entryType":"resort", "stateName": "/france/montgenevre" }                            
+,{"entryType":"resort", "stateName": "/france/morzine" }                                
+,{"entryType":"resort", "stateName": "/france/notre-dame-de-bellecombe" }               
+,{"entryType":"resort", "stateName": "/france/peisey-nancroix-vallandry" }              
+,{"entryType":"resort", "stateName": "/france/pra-loup" }                               
+,{"entryType":"resort", "stateName": "/france/risoul" }                                 
+,{"entryType":"resort", "stateName": "/france/saint-gervais-mont-blanc" }               
+,{"entryType":"resort", "stateName": "/france/saint-lary-soulan" }                      
+,{"entryType":"resort", "stateName": "/france/saint-martin-de-belleville" }             
+,{"entryType":"resort", "stateName": "/france/sainte-foy-tarentaise" }                  
+,{"entryType":"resort", "stateName": "/france/samoens" }                                
+,{"entryType":"resort", "stateName": "/france/serre-chevalier" }                        
+,{"entryType":"resort", "stateName": "/france/tignes" }                                 
+,{"entryType":"resort", "stateName": "/france/val-d-isere" }                            
+,{"entryType":"resort", "stateName": "/france/val-thorens" }                            
+,{"entryType":"resort", "stateName": "/france/valberg" }                                
+,{"entryType":"resort", "stateName": "/france/valfrejus" }                              
+,{"entryType":"resort", "stateName": "/france/valloire" }                               
+,{"entryType":"resort", "stateName": "/france/valmeinier" }                             
+,{"entryType":"resort", "stateName": "/france/valmorel" }                               
+,{"entryType":"resort", "stateName": "/france/vars" }                                   
+,{"entryType":"resort", "stateName": "/france/vaujany" }                                
+,{"entryType":"resort", "stateName": "/germany/balderschwang" }                         
+,{"entryType":"resort", "stateName": "/germany/berchtesgadener-land" }                  
+,{"entryType":"resort", "stateName": "/germany/brocken" }                               
+,{"entryType":"resort", "stateName": "/germany/garmisch-partenkirchen" }                
+,{"entryType":"resort", "stateName": "/germany/hinterzarten-breitnau" }                 
+,{"entryType":"resort", "stateName": "/germany/lenggries" }                             
+,{"entryType":"resort", "stateName": "/germany/mittenwald" }                            
+,{"entryType":"resort", "stateName": "/germany/oberammergau" }                          
+,{"entryType":"resort", "stateName": "/germany/oberhof" }                               
+,{"entryType":"resort", "stateName": "/germany/obermaiselstein-grasgehren" }            
+,{"entryType":"resort", "stateName": "/germany/oberstdorf" }                            
+,{"entryType":"resort", "stateName": "/germany/rettenberg" }                            
+,{"entryType":"resort", "stateName": "/germany/ruhpolding" }                            
+,{"entryType":"resort", "stateName": "/germany/scheffau" }                              
+,{"entryType":"resort", "stateName": "/germany/skiliftkarussell-winterberg" }           
+,{"entryType":"resort", "stateName": "/germany/spitzingsee" }                           
+,{"entryType":"resort", "stateName": "/germany/todtnauberg" }                           
+,{"entryType":"resort", "stateName": "/germany/wintersportzentrum-feldberg" }           
+,{"entryType":"resort", "stateName": "/italy/3-three-peaks-dolomites" }                 
+,{"entryType":"resort", "stateName": "/italy/agordino" }                                
+,{"entryType":"resort", "stateName": "/italy/alba" }                                    
+,{"entryType":"resort", "stateName": "/italy/alta-badia" }                              
+,{"entryType":"resort", "stateName": "/italy/altopiano-di-asiago" }                     
+,{"entryType":"resort", "stateName": "/italy/andalo-fai-della-paganella" }              
+,{"entryType":"resort", "stateName": "/italy/antagnod-monterosa-ski" }                  
+,{"entryType":"resort", "stateName": "/italy/arabba" }                                  
+,{"entryType":"resort", "stateName": "/italy/artesina-mondola-ski" }                    
+,{"entryType":"resort", "stateName": "/italy/auronzo-di-cadore" }                       
+,{"entryType":"resort", "stateName": "/italy/bardonecchia" }                            
+,{"entryType":"resort", "stateName": "/italy/bormio" }                                  
+,{"entryType":"resort", "stateName": "/italy/cadore" }                                  
+,{"entryType":"resort", "stateName": "/italy/campitello-canazei" }                      
+,{"entryType":"resort", "stateName": "/italy/campitello-mazzin-col-rodella" }           
+,{"entryType":"resort", "stateName": "/italy/campo-felice-rocca-di-cambio" }            
+,{"entryType":"resort", "stateName": "/italy/canazei" }                                 
+,{"entryType":"resort", "stateName": "/italy/carezza-karersee" }                        
+,{"entryType":"resort", "stateName": "/italy/champoluc-monterosa-ski" }                 
+,{"entryType":"resort", "stateName": "/italy/civetta" }                                 
+,{"entryType":"resort", "stateName": "/italy/claviere-via-lattea" }                     
+,{"entryType":"resort", "stateName": "/italy/cortina-d-ampezzo" }                       
+,{"entryType":"resort", "stateName": "/italy/courmayeur" }                              
+,{"entryType":"resort", "stateName": "/italy/folgaria-forte-cherle" }                   
+,{"entryType":"resort", "stateName": "/italy/folgaria-passo-coe" }                      
+,{"entryType":"resort", "stateName": "/italy/folgarida-marilleva" }                     
+,{"entryType":"resort", "stateName": "/italy/gressoney-saint-jean-monterosa-ski" }      
+,{"entryType":"resort", "stateName": "/italy/kronplatz" }                               
+,{"entryType":"resort", "stateName": "/italy/la-thuile" }                               
+,{"entryType":"resort", "stateName": "/italy/lagorai-tesino" }                          
+,{"entryType":"resort", "stateName": "/italy/limone-piemonte" }                         
+,{"entryType":"resort", "stateName": "/italy/livigno" }                                 
+,{"entryType":"resort", "stateName": "/italy/macugnaga" }                               
+,{"entryType":"resort", "stateName": "/italy/madesimo" }                                
+,{"entryType":"resort", "stateName": "/italy/madonna-di-campiglio" }                    
+,{"entryType":"resort", "stateName": "/italy/merano-2000-meran-2000" }                  
+,{"entryType":"resort", "stateName": "/italy/moena-alpe-lusia" }                        
+,{"entryType":"resort", "stateName": "/italy/obereggen" }                               
+,{"entryType":"resort", "stateName": "/italy/passo-di-costalunga-carezza" }             
+,{"entryType":"resort", "stateName": "/italy/passo-stelvio" }                           
+,{"entryType":"resort", "stateName": "/italy/passo-tonale-adamello-ski" }               
+,{"entryType":"resort", "stateName": "/italy/pinzolo" }                                 
+,{"entryType":"resort", "stateName": "/italy/pragelato" }                               
+,{"entryType":"resort", "stateName": "/italy/san-martino-di-castrozza-fondo" }          
+,{"entryType":"resort", "stateName": "/italy/san-martino-di-castrozza" }                
+,{"entryType":"resort", "stateName": "/italy/san-vito-di-cadore" }                      
+,{"entryType":"resort", "stateName": "/italy/sappada" }                                 
+,{"entryType":"resort", "stateName": "/italy/sauze-d-oulx" }                            
+,{"entryType":"resort", "stateName": "/italy/sestriere" }                               
+,{"entryType":"resort", "stateName": "/italy/solda-sulden" }                            
+,{"entryType":"resort", "stateName": "/italy/tre-valli" }                               
+,{"entryType":"resort", "stateName": "/italy/val-di-fassa" }                            
+,{"entryType":"resort", "stateName": "/italy/val-di-fiemme" }                           
+,{"entryType":"resort", "stateName": "/italy/val-di-sole" }                             
+,{"entryType":"resort", "stateName": "/italy/val-di-zoldo" }                            
+,{"entryType":"resort", "stateName": "/italy/val-gardena-groeden" }                     
+,{"entryType":"resort", "stateName": "/italy/val-senales-schnalstal" }                  
+,{"entryType":"resort", "stateName": "/italy/valcomelico" }                             
+,{"entryType":"resort", "stateName": "/italy/valgrisenche" }                            
+,{"entryType":"resort", "stateName": "/italy/valle-isarco" }                            
+,{"entryType":"resort", "stateName": "/liechtenstein/malbun-steg" }                     
+,{"entryType":"resort", "stateName": "/new-zealand/broken-river" }                      
+,{"entryType":"resort", "stateName": "/new-zealand/cardrona-alpine-resort" }            
+,{"entryType":"resort", "stateName": "/new-zealand/coronet-peak" }                      
+,{"entryType":"resort", "stateName": "/new-zealand/craigieburn-valley-ski-area" }       
+,{"entryType":"resort", "stateName": "/new-zealand/fox-peak" }                          
+,{"entryType":"resort", "stateName": "/new-zealand/hanmer-springs-ski-area" }           
+,{"entryType":"resort", "stateName": "/new-zealand/manganui" }                          
+,{"entryType":"resort", "stateName": "/new-zealand/mount-cheeseman-ski-area" }          
+,{"entryType":"resort", "stateName": "/new-zealand/mount-dobson-ski-area" }             
+,{"entryType":"resort", "stateName": "/new-zealand/mount-lyford-ski-area" }             
+,{"entryType":"resort", "stateName": "/new-zealand/mt-hutt-ski-area" }                  
+,{"entryType":"resort", "stateName": "/new-zealand/mt-olympus" }                        
+,{"entryType":"resort", "stateName": "/new-zealand/ohau-snow-fields" }                  
+,{"entryType":"resort", "stateName": "/new-zealand/porters-alpine-resort" }             
+,{"entryType":"resort", "stateName": "/new-zealand/rainbow-ski-area" }                  
+,{"entryType":"resort", "stateName": "/new-zealand/roundhill-ski-area" }                
+,{"entryType":"resort", "stateName": "/new-zealand/snow-farm" }                         
+,{"entryType":"resort", "stateName": "/new-zealand/temple-basin" }                      
+,{"entryType":"resort", "stateName": "/new-zealand/the-remarkables" }                   
+,{"entryType":"resort", "stateName": "/new-zealand/treble-cone" }                       
+,{"entryType":"resort", "stateName": "/new-zealand/tukino-ski-field" }                  
+,{"entryType":"resort", "stateName": "/new-zealand/turoa-ski-resort" }                  
+,{"entryType":"resort", "stateName": "/new-zealand/whakapapa-ski-area" }                
+,{"entryType":"resort", "stateName": "/norway/bjorli" }                                 
+,{"entryType":"resort", "stateName": "/norway/dombas" }                                 
+,{"entryType":"resort", "stateName": "/norway/filefjell" }                              
+,{"entryType":"resort", "stateName": "/norway/gala-ski-arena" }                         
+,{"entryType":"resort", "stateName": "/norway/gaustablikk-rjukan" }                     
+,{"entryType":"resort", "stateName": "/norway/gautefall-skisenter" }                    
+,{"entryType":"resort", "stateName": "/norway/geilo" }                                  
+,{"entryType":"resort", "stateName": "/norway/gol-m-golsfjellet" }                      
+,{"entryType":"resort", "stateName": "/norway/hemsedal" }                               
+,{"entryType":"resort", "stateName": "/norway/kongsberg" }                              
+,{"entryType":"resort", "stateName": "/norway/lifjell-telemark" }                       
+,{"entryType":"resort", "stateName": "/norway/narvik" }                                 
+,{"entryType":"resort", "stateName": "/norway/nesbyen" }                                
+,{"entryType":"resort", "stateName": "/norway/nordseter" }                              
+,{"entryType":"resort", "stateName": "/norway/norefjell" }                              
+,{"entryType":"resort", "stateName": "/norway/oppdal" }                                 
+,{"entryType":"resort", "stateName": "/norway/oslomarka-tryvann" }                      
+,{"entryType":"resort", "stateName": "/norway/rauland-vinje" }                          
+,{"entryType":"resort", "stateName": "/norway/ringebufjellet-skisenter" }               
+,{"entryType":"resort", "stateName": "/norway/sirdal" }                                 
+,{"entryType":"resort", "stateName": "/norway/skeikampen" }                             
+,{"entryType":"resort", "stateName": "/norway/stryn-vinterski" }                        
+,{"entryType":"resort", "stateName": "/norway/tryvann-vinterpark" }                     
+,{"entryType":"resort", "stateName": "/norway/valdres-alpinsenter" }                    
+,{"entryType":"resort", "stateName": "/norway/vaset" }                                  
+,{"entryType":"resort", "stateName": "/norway/voss-fjellandsby-myrkdalen" }             
+,{"entryType":"resort", "stateName": "/norway/voss-resort-fjellheisar" }                
+,{"entryType":"resort", "stateName": "/norway/vradal" }                                 
+,{"entryType":"resort", "stateName": "/poland/zakopane-gubalowka" }                     
+,{"entryType":"resort", "stateName": "/poland/zakopane" }                               
+,{"entryType":"resort", "stateName": "/scotland/cairngorm-mountain" }                   
+,{"entryType":"resort", "stateName": "/scotland/glenshee-ski-centre" }                  
+,{"entryType":"resort", "stateName": "/scotland/nevis-range" }                          
+,{"entryType":"resort", "stateName": "/scotland/the-lecht-2090" }                       
+,{"entryType":"resort", "stateName": "/slovakia/park-snow-donovaly" }                   
+,{"entryType":"resort", "stateName": "/spain/alto-campoo" }                             
+,{"entryType":"resort", "stateName": "/spain/astun" }                                   
+,{"entryType":"resort", "stateName": "/spain/baqueira-beret" }                          
+,{"entryType":"resort", "stateName": "/spain/boi-taull-resort" }                        
+,{"entryType":"resort", "stateName": "/spain/candanchu" }                               
+,{"entryType":"resort", "stateName": "/spain/cerler" }                                  
+,{"entryType":"resort", "stateName": "/spain/espot-esqui-pallars" }                     
+,{"entryType":"resort", "stateName": "/spain/formigal" }                                
+,{"entryType":"resort", "stateName": "/spain/javalambre" }                              
+,{"entryType":"resort", "stateName": "/spain/la-pinilla" }                              
+,{"entryType":"resort", "stateName": "/spain/leitariegos" }                             
+,{"entryType":"resort", "stateName": "/spain/manzaneda" }                               
+,{"entryType":"resort", "stateName": "/spain/panticosa-los-lagos" }                     
+,{"entryType":"resort", "stateName": "/spain/port-del-comte" }                          
+,{"entryType":"resort", "stateName": "/spain/puerto-de-navacerrada" }                   
+,{"entryType":"resort", "stateName": "/spain/rasos-de-paguera" }                        
+,{"entryType":"resort", "stateName": "/spain/san-isidro" }                              
+,{"entryType":"resort", "stateName": "/spain/sierra-de-bejar-la-covatilla" }            
+,{"entryType":"resort", "stateName": "/spain/sierra-nevada" }                           
+,{"entryType":"resort", "stateName": "/spain/valdelinares" }                            
+,{"entryType":"resort", "stateName": "/spain/valdesqui" }                               
+,{"entryType":"resort", "stateName": "/spain/valdezcaray" }                             
+,{"entryType":"resort", "stateName": "/spain/valgrande-pajares" }                       
+,{"entryType":"resort", "stateName": "/sweden/are" }                                    
+,{"entryType":"resort", "stateName": "/sweden/bjarkliden" }                             
+,{"entryType":"resort", "stateName": "/sweden/brana" }                                  
+,{"entryType":"resort", "stateName": "/sweden/funsdalen" }                              
+,{"entryType":"resort", "stateName": "/sweden/klappen-ski-resort" }                     
+,{"entryType":"resort", "stateName": "/sweden/lofsdalen" }                              
+,{"entryType":"resort", "stateName": "/sweden/riksgransen" }                            
+,{"entryType":"resort", "stateName": "/sweden/salen" }                                  
+,{"entryType":"resort", "stateName": "/sweden/vemdalen" }                               
+,{"entryType":"resort", "stateName": "/switzerland/adelboden-lenk" }                    
+,{"entryType":"resort", "stateName": "/switzerland/aletschgebiet" }                     
+,{"entryType":"resort", "stateName": "/switzerland/alpes-fribourgeoises" }              
+,{"entryType":"resort", "stateName": "/switzerland/andermatt" }                         
+,{"entryType":"resort", "stateName": "/switzerland/anzre" }                             
+,{"entryType":"resort", "stateName": "/switzerland/arosa" }                             
+,{"entryType":"resort", "stateName": "/switzerland/braunwald" }                         
+,{"entryType":"resort", "stateName": "/switzerland/chandolin-anniviers" }               
+,{"entryType":"resort", "stateName": "/switzerland/chateaux-d-oex" }                    
+,{"entryType":"resort", "stateName": "/switzerland/crans-montana" }                     
+,{"entryType":"resort", "stateName": "/switzerland/davos" }                             
+,{"entryType":"resort", "stateName": "/switzerland/disentis-sedrun" }                   
+,{"entryType":"resort", "stateName": "/switzerland/engelberg-titlis-jochpass" }         
+,{"entryType":"resort", "stateName": "/switzerland/evolene" }                           
+,{"entryType":"resort", "stateName": "/switzerland/flumserberg" }                       
+,{"entryType":"resort", "stateName": "/switzerland/grachen" }                           
+,{"entryType":"resort", "stateName": "/switzerland/grimentz-anniviers" }                
+,{"entryType":"resort", "stateName": "/switzerland/grindelwald" }                       
+,{"entryType":"resort", "stateName": "/switzerland/gstaad" }                            
+,{"entryType":"resort", "stateName": "/switzerland/kandersteg-oeschinen-sunnbel" }      
+,{"entryType":"resort", "stateName": "/switzerland/kandersteg" }                        
+,{"entryType":"resort", "stateName": "/switzerland/klosters-gotschune-parsenn-madrisa" }
+,{"entryType":"resort", "stateName": "/switzerland/la-tzoumaz" }                        
+,{"entryType":"resort", "stateName": "/switzerland/laax" }                              
+,{"entryType":"resort", "stateName": "/switzerland/lenk-simmental" }                    
+,{"entryType":"resort", "stateName": "/switzerland/les-diablerets" }                    
+,{"entryType":"resort", "stateName": "/switzerland/leukerbad" }                         
+,{"entryType":"resort", "stateName": "/switzerland/leysin" }                            
+,{"entryType":"resort", "stateName": "/switzerland/meiringen-hasliberg" }               
+,{"entryType":"resort", "stateName": "/switzerland/morgins" }                           
+,{"entryType":"resort", "stateName": "/switzerland/murren-schilthorn" }                 
+,{"entryType":"resort", "stateName": "/switzerland/nendaz" }                            
+,{"entryType":"resort", "stateName": "/switzerland/pontresina" }                        
+,{"entryType":"resort", "stateName": "/switzerland/portes-du-soleil" }                  
+,{"entryType":"resort", "stateName": "/switzerland/saas-fee" }                          
+,{"entryType":"resort", "stateName": "/switzerland/samnaun" }                           
+,{"entryType":"resort", "stateName": "/switzerland/savognin" }                          
+,{"entryType":"resort", "stateName": "/switzerland/scuol" }                             
+,{"entryType":"resort", "stateName": "/switzerland/sedrun" }                            
+,{"entryType":"resort", "stateName": "/switzerland/silvaplana" }                        
+,{"entryType":"resort", "stateName": "/switzerland/st-moritz" }                         
+,{"entryType":"resort", "stateName": "/switzerland/thyon" }                             
+,{"entryType":"resort", "stateName": "/switzerland/tschiertschen" }                     
+,{"entryType":"resort", "stateName": "/switzerland/verbier-val-de-bagnes" }             
+,{"entryType":"resort", "stateName": "/switzerland/veysonnaz" }                         
+,{"entryType":"resort", "stateName": "/switzerland/villars" }                           
+,{"entryType":"resort", "stateName": "/switzerland/wengen" }                            
+,{"entryType":"resort", "stateName": "/switzerland/zermatt" }                           
+,{"entryType":"resort", "stateName": "/switzerland/zinal" }    
 
 ]

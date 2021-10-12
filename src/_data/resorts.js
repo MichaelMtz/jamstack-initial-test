@@ -37,13 +37,12 @@ function formatBreadCrumbs(breadcrumbs) {
 module.exports = async function() {
   let iterStateNameProper, iterName;
   resorts.forEach(iter => {
-    if (iter.entryType  === 'state') {
+    if (iter.entryType !== 'resort') {
       iter["stateNameProperLowerCase"] = iter.stateName.replace('-', ' ');
       iter["stateNameProper"] = upperCaseWords(iter.stateName);
       iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
       // console.log('Iter:',{iter});
       // console.log('BC:',iter["breadCrumbList"])
-
     } 
   })
   return resorts;

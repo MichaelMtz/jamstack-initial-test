@@ -1028,6 +1028,7 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 			border-radius: 3px;
 			display: flex;
 			flex-flow: row wrap;
+			gap: 5px;
 			background-color: #fff;
 			color: #004B8B;
 		}
