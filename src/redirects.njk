@@ -5,7 +5,9 @@ permalink: _redirects
 {%- for resort in resorts %}
   {%- if resort.entryType == "state" %}
 /snow-report/us/{{ resort.stateName }}/ /snow-report/{{resort.stateName}}/ 301
-  {%- elif resort.entryType == "region" %}
+  {%- elseif resort.entryType == "region" %}
 /snow-reports/us/{{ resort.stateNameProperLowerCase | replace(" ","") }}/ /snow-report/{{resort.stateName}}/ 301
   {%- endif %}
 {%- endfor %}
+
+/resort-page/co/arapahoebasin  /snow-report/colorado/arapahoe-basin

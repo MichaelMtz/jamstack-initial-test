@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="canonical" href="https://www.snocountry.com/snow-reports/{{ resorts.stateNameProperLowerCase }}">
-        <base href="https://snocountry.netlify.app/" />
-        <base href="http://localhost:8080/" />
+        <link rel="canonical" href="https://www.snocountry.com/snow-report/{{ resorts.stateName }}">
+        <base href="https://snocountry.netlify.app/" /> 
+        <!-- <base href="http://localhost:8080/" /> -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="Mountains Snow, Snow for {{ resorts.stateNameProper }}, Snow in {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} snow report, Snow Report {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} Ski Report, {{ resorts.stateNameProper }} Snow, Snow {{ resorts.stateNameProper }}, Ski Report {{ resorts.stateNameProper }},  where is the snow in {{ resorts.stateNameProperLowerCase }}" />
         <meta name="rights" content="Copyright © 2019. All Rights Reserved." />
@@ -16,7 +16,7 @@
 
         <meta property="og:title" content="{{ resorts.stateNameProper }} Snow Report and Weather Conditions | SnoCountry" />
         <meta property="og:description " content="The latest {{ resorts.stateNameProper }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.stateNameProper }}" />
-        <meta property="og:url" content="https://www.snocountry.com/snow-reports/us/{{ resorts.stateNameProperLowerCase }}" />
+        <meta property="og:url" content="https://www.snocountry.com/snow-report/{{ resorts.stateName }}" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SnoCountry" />
         <meta property="og:image" content="https://www.snocountry.com/images/snocountry_logo_v2.png" />
@@ -34,7 +34,7 @@
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body>
+    <body data-snowreport="{{ resorts.snowreport }}">
         
         <div class="">
         <div class="section header">
@@ -331,6 +331,7 @@
 
 	<script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
     <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script>
+    <script src="../../assets/js/snowreport.js" type="text/javascript"></script>
 
     <script type="text/javascript">
     var snoStartLoadTime = new Date().getTime(); 

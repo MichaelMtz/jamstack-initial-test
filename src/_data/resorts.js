@@ -10,7 +10,7 @@ const abbrToLongName = {
 }
 
 function upperCaseWords(input) {
-  input = input.replace('-', ' ');
+  input = input.replace(/-/g, ' ');
   let iterName = input.split(" ");
   let output = iterName.map((word) => {
     return word[0].toUpperCase() + word.substring(1);
@@ -35,15 +35,32 @@ function formatBreadCrumbs(breadcrumbs) {
 }
 
 module.exports = async function() {
-  let iterStateNameProper, iterName;
+  console.log("*** resorts.js");
+  let iterStateNameProper, iterName, masterBreadCrumb = {};
   resorts.forEach(iter => {
     if (iter.entryType !== 'resort') {
       iter["stateNameProperLowerCase"] = iter.stateName.replace('-', ' ');
       iter["stateNameProper"] = upperCaseWords(iter.stateName);
       iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
+      iter["snowreport"] = iter.stateName;
+      //Save breadcrumb for resort usage later, 
+      //note this requires "state" and "region" entryTypes to be declared before associated "resort" types
+      //masterBreadCrumb[iter.stateName] = iter.breadcrumbs;
+      masterBreadCrumb[iter.stateName] = iter["breadCrumbList"];
+
       // console.log('Iter:',{iter});
       // console.log('BC:',iter["breadCrumbList"])
-    } 
+    } else { //resort
+      iterName = iter.stateName.split('/');
+      if (masterBreadCrumb[iterName[0]]) {
+        //iter["breadCrumbList"] = formatBreadCrumbs(masterBreadCrumb[iterName[0]]);
+        iter["breadCrumbList"] = masterBreadCrumb[iterName[0]];
+        iter["stateNameProper"] = upperCaseWords(iterName[1]);
+        iter["snowreport"] = iterName[1];
+
+      }
+      
+    }
   })
   return resorts;
 };
