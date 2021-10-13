@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded',(event)=> {
     _log('In fetch got data: ');
     console.log('data:',data)
     document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
+
+    //process progressbars
+    (function() {
+        let progressBarList = document.querySelectorAll('.progress-bar');
+        if (progressBarList) {
+            progressBarList.forEach(iterBar => {
+                console.log(`pb:`,iterBar.dataset.percentage); 
+                iterBar.style.width = iterBar.dataset.percentage;
+            });
+        }
+    })();
   });
 });
 
