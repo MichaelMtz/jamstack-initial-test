@@ -6,7 +6,7 @@ _log('Initialized.');
 document.addEventListener('DOMContentLoaded',(event)=> {
   let target = document.body.dataset.snowreport;
   _log(`Target: ${target}`);
-  const url = `https://feeds.snocountry.net/proof-of-concept/headless.php?target=${target}`;
+  const url = `.netlify/functions/snowreport-api?target=${target}`;
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
@@ -28,21 +28,24 @@ document.addEventListener('DOMContentLoaded',(event)=> {
 });
 
 
+// let target = document.body.dataset.snowreport;
+// _log(`Target: ${target}`);
+// const url = `https://feeds.snocountry.net/proof-of-concept/headless.php?target=${target}`;
+// fetch(url).then(response => {
+//   return response.json();
+// }).then(data => {
+//   _log('In fetch got data: ');
+//   console.log('data:',data)
+//   document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
 
-
-
-
-// const axios = require('axios');
-
-// module.exports = async function() {
-//   try {
-//     console.log('*** snowreport.js');
-//     let data = { test: "me"};
-//     return data;
-//     //const response = await axios.get('/user?ID=12345');
-//     //return response.data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
+//   //process progressbars
+//   (function() {
+//       let progressBarList = document.querySelectorAll('.progress-bar');
+//       if (progressBarList) {
+//           progressBarList.forEach(iterBar => {
+//               console.log(`pb:`,iterBar.dataset.percentage); 
+//               iterBar.style.width = iterBar.dataset.percentage;
+//           });
+//       }
+//   })();
+// });
