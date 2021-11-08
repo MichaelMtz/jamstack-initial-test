@@ -6,8 +6,8 @@ _log('Initialized.');
 document.addEventListener('DOMContentLoaded',(event)=> {
   let target = document.body.dataset.snowreport;
   let src = document.body.dataset.source;
-  _log(`Target: ${target}`);
   const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}`;
+  _log(`Netlify Fn url: ${url}`);  
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
