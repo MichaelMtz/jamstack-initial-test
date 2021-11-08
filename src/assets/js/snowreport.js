@@ -5,8 +5,9 @@ _log('Initialized.');
 
 document.addEventListener('DOMContentLoaded',(event)=> {
   let target = document.body.dataset.snowreport;
+  let src = document.body.dataset.source;
   _log(`Target: ${target}`);
-  const url = `.netlify/functions/snowreport-api?target=${target}`;
+  const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}`;
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded',(event)=> {
     })();
   });
 });
-
 
 // let target = document.body.dataset.snowreport;
 // _log(`Target: ${target}`);
