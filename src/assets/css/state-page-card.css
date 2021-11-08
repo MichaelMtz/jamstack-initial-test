@@ -1,228 +1,345 @@
 body {
-    background-image: linear-gradient(90deg, #0097BE, #0071AC);
+  background-image: -webkit-gradient(linear, left top, right top, from(#0097BE), to(#0071AC));
+  background-image: linear-gradient(90deg, #0097BE, #0071AC);
 }
+
 .resorts-container {
   margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   border-radius: 10px;
-  font-family: 'Muli', sans-serif; }
-  
-  .resorts-container .resorts-container__header {
-      font-family: 'Muli', sans-serif;
-      color:#fff;
-      text-align: center;
-  }
-  .resorts-container .resort {
-    max-width: 100%;
-    width: 95%;
-    height: 200px;
-    height: 150px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    overflow: hidden; 
-    font-family: 'Muli', sans-serif;
-    }
-    
-    .resorts-container .resort a, .resorts-container .resort a.resort__link {
-      color: #fff;
-      text-decoration: none;
-      cursor: pointer; }
-    .resorts-container .resort a:hover, .resorts-container .resort a.resort__link:hover {
-      color: #0AC2FF; }
-    .resorts-container .resort__header {
-      max-width: 307px;
-      width: 307px;
-      min-width: 307px;
-      height: 100%;
-      padding: 5px 30px 5px;
-      background-color: #2A265F;
-      background-color: #004B8B;
-      color: #fff;
-      display: flex;
-      flex-flow: column wrap; }
-     .resorts-container .resort__header:hover  h2{
-          color:#0AC2FF;
-      }
-      .resorts-container .resort__header h2 {
-        margin: 10px 0 0; 
-        font-family: 'Muli', sans-serif;
-        font-size: 24px;
-        line-height: unset;
-        color:#FFF;
-        }
-      .resorts-container .resort__header-weather {
-        width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-evenly; }
-        .resorts-container .resort__header-weather-condition {
-          display: flex;
-          flex-flow: column; }
-          .resorts-container .resort__header-weather-condition img {
-            width: 80px;
-            width: 66px;
-            margin-right: 20px; 
-            margin-bottom: 0px;
-            }
-        .resorts-container .resort__header-weather-temp {
-          position: relative;
-          top: -10px;
-          left: -10px;
-          font-size: 40px; }
-          .resorts-container .resort__header-weather-temp sup {
-            font-size: 22px; }
-      .resorts-container .resort__header a.link, .resorts-container .resort__header span.link {
-        align-self: flex-end;
-        cursor: pointer;
-        color: #fff;
-        opacity: 0.6;
-        font-size: 12px; }
-      .resorts-container .resort__header a.link:hover {
-        color: #0AC2FF; }
-    .resorts-container .resort__header.long-name h2 {
-      margin-top: 5px;
-      font-size: 20px; }
-    .resorts-container .resort__info {
-      width: 100%;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between; }
-      .resorts-container .resort__info-snow-condition, .resorts-container .resort__info-snowfall, .resorts-container .resort__info-terrain {
-        margin: 5px;
-        padding: 5px 0px 5px;
-        flex: 1 1 30%;
-        border-radius: 2px; }
-        .resorts-container .resort__info-snow-condition .section-header, .resorts-container .resort__info-snowfall .section-header, .resorts-container .resort__info-terrain .section-header {
-          text-align: center;
-          text-transform: uppercase;
-          opacity: 0.8; }
-        .resorts-container .resort__info-snow-condition .section-item, .resorts-container .resort__info-snowfall .section-item, .resorts-container .resort__info-terrain .section-item {
-          margin: 5px;
-          display: flex;
+  font-family: "Mulish", sans-serif;
+}
+
+.resorts-container .resorts-container__header {
+  font-family: "Mulish", sans-serif;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
+
+.resorts-container .resort {
+  max-width: 100%;
+  width: 95%;
+  height: 200px;
+  height: 150px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  font-family: "Mulish", sans-serif;
+}
+
+.resorts-container .resort a, .resorts-container .resort a.resort__link {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.resorts-container .resort a:hover, .resorts-container .resort a.resort__link:hover {
+  color: #0AC2FF;
+}
+
+.resorts-container .resort__header:hover h2 {
+  color: #0AC2FF;
+}
+
+.resorts-container .resort__header {
+  max-width: 307px;
+  width: 307px;
+  min-width: 307px;
+  height: 100%;
+  padding: 5px 30px 5px;
+  background-color: #2A265F;
+  background-color: #004B8B;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  font-family: "Mulish", sans-serif;
+}
+
+.resorts-container .resort__header h2 {
+  margin: 10px 0 0;
+  font-family: "Mulish", sans-serif;
+  display: block;
+  font-size: 24px;
+  line-height: unset;
+  color: #FFF;
+  font-weight: 400;
+}
+
+.resorts-container .resort__header-weather {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.resorts-container .resort__header-weather-condition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.resorts-container .resort__header-weather-condition img {
+  width: 80px;
+  width: 66px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+
+.resorts-container .resort__header-weather-temp {
+  position: relative;
+  top: -10px;
+  left: -10px;
+  font-size: 40px;
+}
+
+.resorts-container .resort__header-weather-temp sup {
+  font-size: 22px;
+}
+
+.resorts-container .resort__header a.link, .resorts-container .resort__header span.link {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.resorts-container .resort__header a.link:hover {
+  color: #0AC2FF;
+}
+
+.resorts-container .resort__header.long-name h2 {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.resorts-container .resort__info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.resorts-container .resort__info-snow-condition, .resorts-container .resort__info-snowfall, .resorts-container .resort__info-terrain {
+  margin: 5px;
+  padding: 5px 0px 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+  border-radius: 2px;
+}
+
+.resorts-container .resort__info-snow-condition .section-header, .resorts-container .resort__info-snowfall .section-header, .resorts-container .resort__info-terrain .section-header {
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.resorts-container .resort__info-snow-condition .section-item, .resorts-container .resort__info-snowfall .section-item, .resorts-container .resort__info-terrain .section-item {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
           flex-direction: column;
-          opacity: 0.7;
-          text-align: center; }
-          .resorts-container .resort__info-snow-condition .section-item .primary, .resorts-container .resort__info-snowfall .section-item .primary, .resorts-container .resort__info-terrain .section-item .primary {
-            padding-top: 6px;
-            opacity: 1 !important;
-            font-size: 28px;
-            font-weight: 600;
-            color: #39f;
-            color: #004B8B; }
-          .resorts-container .resort__info-snow-condition .section-item .base-depth, .resorts-container .resort__info-snowfall .section-item .base-depth, .resorts-container .resort__info-terrain .section-item .base-depth {
-            font-size: 34px;
-            color: #F5803E;
-            color: #F07B62; }
-          .resorts-container .resort__info-snow-condition .section-item .base-copy, .resorts-container .resort__info-snowfall .section-item .base-copy, .resorts-container .resort__info-terrain .section-item .base-copy {
-            font-size: 16px; }
-          .resorts-container .resort__info-snow-condition .section-item .snowfall, .resorts-container .resort__info-snow-condition .section-item .snowfall-pred, .resorts-container .resort__info-snowfall .section-item .snowfall, .resorts-container .resort__info-snowfall .section-item .snowfall-pred, .resorts-container .resort__info-terrain .section-item .snowfall, .resorts-container .resort__info-terrain .section-item .snowfall-pred {
-            text-align: center;
-            margin-left: 20px; }
-          .resorts-container .resort__info-snow-condition .section-item .snowfall, .resorts-container .resort__info-snowfall .section-item .snowfall, .resorts-container .resort__info-terrain .section-item .snowfall {
-            margin-bottom: 10px; }
-            .resorts-container .resort__info-snow-condition .section-item .snowfall .snowfall__amount, .resorts-container .resort__info-snowfall .section-item .snowfall .snowfall__amount, .resorts-container .resort__info-terrain .section-item .snowfall .snowfall__amount {
-              font-size: 44px; }
-            .resorts-container .resort__info-snow-condition .section-item .snowfall .snowfall_timeframe, .resorts-container .resort__info-snowfall .section-item .snowfall .snowfall_timeframe, .resorts-container .resort__info-terrain .section-item .snowfall .snowfall_timeframe {
-              font-size: 18px; }
-          .resorts-container .resort__info-snow-condition .section-item .snowfall-pred, .resorts-container .resort__info-snowfall .section-item .snowfall-pred, .resorts-container .resort__info-terrain .section-item .snowfall-pred {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            font-size: 22px; }
-            .resorts-container .resort__info-snow-condition .section-item .snowfall-pred__item, .resorts-container .resort__info-snowfall .section-item .snowfall-pred__item, .resorts-container .resort__info-terrain .section-item .snowfall-pred__item {
-              padding-left: 3px; }
-        .resorts-container .resort__info-snow-condition .section-item.section-conditions, .resorts-container .resort__info-snowfall .section-item.section-conditions, .resorts-container .resort__info-terrain .section-item.section-conditions {
-          opacity: 1; }
-      .resorts-container .resort__info-terrain {
-        margin: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; }
-        .resorts-container .resort__info-terrain .terrain-item {
-          margin: 5px;
-          display: flex;
-          flex-direction: column; }
-          .resorts-container .resort__info-terrain .terrain-item__copy {
-            margin-bottom: .25rem;
-            text-transform: uppercase !important;
-            opacity: 0.6; }
-            .resorts-container .resort__info-terrain .terrain-item__copy small {
-              display: flex;
-              justify-content: space-between; }
-          .resorts-container .resort__info-terrain .terrain-item .progress {
-            height: 4px;
-            line-height: 0;
-            overflow: hidden;
-            font-size: .65625rem;
-            background-color: #ebedef;
-            border-radius: .25rem;
-            display: flex; }
-          .resorts-container .resort__info-terrain .terrain-item .progress-bar {
-            background-color: #39f;
-            display: flex;
-            flex-direction: column; }
-  .resorts-container .resort:hover {
-    transition: all 0.2s ease-out;
-    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-    margin-top: 18px;
-    margin-bottom: 22px;
-    background-color: #F9F9F9; }
+  opacity: 0.7;
+  text-align: center;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .primary, .resorts-container .resort__info-snowfall .section-item .primary, .resorts-container .resort__info-terrain .section-item .primary {
+  padding-top: 6px;
+  opacity: 1 !important;
+  font-size: 28px;
+  font-weight: unset;
+  color: #39f;
+  color: #004B8B;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .base-depth, .resorts-container .resort__info-snowfall .section-item .base-depth, .resorts-container .resort__info-terrain .section-item .base-depth {
+  font-size: 34px;
+  color: #F5803E;
+  color: #F07B62;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .base-copy, .resorts-container .resort__info-snowfall .section-item .base-copy, .resorts-container .resort__info-terrain .section-item .base-copy {
+  font-size: 16px;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .snowfall, .resorts-container .resort__info-snow-condition .section-item .snowfall-pred, .resorts-container .resort__info-snowfall .section-item .snowfall, .resorts-container .resort__info-snowfall .section-item .snowfall-pred, .resorts-container .resort__info-terrain .section-item .snowfall, .resorts-container .resort__info-terrain .section-item .snowfall-pred {
+  text-align: center;
+  margin-left: 20px;
+  font-size: 1rem;
+  /* font-size:clamp(0.85rem, -0.875rem + 1.833vw, 1.5rem); */
+}
+
+.resorts-container .resort__info-snow-condition .section-item .snowfall, .resorts-container .resort__info-snowfall .section-item .snowfall, .resorts-container .resort__info-terrain .section-item .snowfall {
+  margin-bottom: 10px;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .snowfall .snowfall__amount, .resorts-container .resort__info-snowfall .section-item .snowfall .snowfall__amount, .resorts-container .resort__info-terrain .section-item .snowfall .snowfall__amount {
+  font-size: 44px;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .snowfall .snowfall_timeframe, .resorts-container .resort__info-snowfall .section-item .snowfall .snowfall_timeframe, .resorts-container .resort__info-terrain .section-item .snowfall .snowfall_timeframe {
+  font-size: 18px;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .snowfall-pred, .resorts-container .resort__info-snowfall .section-item .snowfall-pred, .resorts-container .resort__info-terrain .section-item .snowfall-pred {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1rem;
+}
+
+.resorts-container .resort__info-snow-condition .section-item .snowfall-pred__item, .resorts-container .resort__info-snowfall .section-item .snowfall-pred__item, .resorts-container .resort__info-terrain .section-item .snowfall-pred__item {
+  padding-left: 3px;
+}
+
+.resorts-container .resort__info-snow-condition .section-item.section-conditions, .resorts-container .resort__info-snowfall .section-item.section-conditions, .resorts-container .resort__info-terrain .section-item.section-conditions {
+  opacity: 1;
+}
+
+.resorts-container .resort__info-terrain {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.resorts-container .resort__info-terrain .terrain-item {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resorts-container .resort__info-terrain .terrain-item__copy {
+  margin-bottom: .25rem;
+  text-transform: uppercase !important;
+  opacity: 0.6;
+}
+
+.resorts-container .resort__info-terrain .terrain-item__copy small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.resorts-container .resort__info-terrain .terrain-item .progress {
+  height: 4px;
+  line-height: 0;
+  overflow: hidden;
+  font-size: .65625rem;
+  background-color: #ebedef;
+  border-radius: .25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.resorts-container .resort__info-terrain .terrain-item .progress-bar {
+  background-color: #39f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resorts-container .resort:hover {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+          box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  margin-top: 18px;
+  margin-bottom: 22px;
+  background-color: #F9F9F9;
+}
 
 .bg-open {
   background-color: #3ac47d !important;
   background-color: #005E60 !important;
-  background-color: #78B1AD !important; }
+  background-color: #78B1AD !important;
+}
 
 .bg-trails {
   background-color: #39f !important;
   background-color: #507BC1 !important;
-  background-color: #004B8B !important; }
+  background-color: #004B8B !important;
+}
 
 .bg-lifts {
   background-color: #d92550 !important;
-  background-color: #842942 !important; }
+  background-color: #842942 !important;
+}
 
 .bg-groomed {
   background-color: #f5803e !important;
-  background-color: #414756 !important; }
-  
-.resorts-container .resort__info-snowfall .section-item .snowfall-pred {
-    font-size:clamp(0.85rem, -0.875rem + 1.833vw, 1.5rem);
-} 
-
-.section.header {
- background-color:black;
+  background-color: #414756 !important;
 }
-.topnav ul.navigation > li.menu-usa h2 {
-color: #0AC2FF;
-}
-.topnav ul.navigation > li.menu-canada h2 {
-color: #00ADEE;
-}
-.topnav ul.navigation > li.menu-europe h2 {
-color: #1C75BB;
-}
-.topnav ul.navigation > li.menu-southern-hemisphere h2 {
-color: #283588;
-}
-.topnav ul.navigation > li.menu-deals h2 {
-color: #652C90;
-}
-.topnav ul.navigation > li.menu-news h2 {
-color: #902C8A;
-}
-.topnav ul.navigation > li.menu-gear h2 {
-color: #2AB573;
-}
-#version-page {
-color:#FFF;
-}
-#banner-ad {
-   margin: 0 auto;
-}
-
+/*# sourceMappingURL=state-page-card.css.map */

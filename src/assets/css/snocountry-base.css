@@ -1033,7 +1033,7 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 			color: #004B8B;
 		}
 		.breadcrumb-link	{
-			font-family: 'Muli', sans-serif;
+			font-family: 'Mulish', sans-serif;
 			font-size: 20px;
 			padding: 5px 3px;
     	color: #004B8B;
@@ -1054,7 +1054,7 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 		}
 
 		.breadcrumb-region {
-			font-family: 'Muli', sans-serif;
+			font-family: 'Mulish', sans-serif;
 			font-size: 20px;
 			padding: 5px 3px;
     	color: white !important;

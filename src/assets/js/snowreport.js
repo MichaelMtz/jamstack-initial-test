@@ -7,45 +7,20 @@ document.addEventListener('DOMContentLoaded',(event)=> {
   let target = document.body.dataset.snowreport;
   let src = document.body.dataset.source;
   const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}`;
-  _log(`Netlify Fn url: ${url}`);  
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
-    _log('In fetch got data: ');
-    console.log('data:',data)
-    document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
 
+    document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
     //process progressbars
     (function() {
         let progressBarList = document.querySelectorAll('.progress-bar');
         if (progressBarList) {
             progressBarList.forEach(iterBar => {
-                console.log(`pb:`,iterBar.dataset.percentage); 
                 iterBar.style.width = iterBar.dataset.percentage;
+                //console.log(`pb:`,iterBar.dataset.percentage); 
             });
         }
     })();
   });
 });
-
-// let target = document.body.dataset.snowreport;
-// _log(`Target: ${target}`);
-// const url = `https://feeds.snocountry.net/proof-of-concept/headless.php?target=${target}`;
-// fetch(url).then(response => {
-//   return response.json();
-// }).then(data => {
-//   _log('In fetch got data: ');
-//   console.log('data:',data)
-//   document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
-
-//   //process progressbars
-//   (function() {
-//       let progressBarList = document.querySelectorAll('.progress-bar');
-//       if (progressBarList) {
-//           progressBarList.forEach(iterBar => {
-//               console.log(`pb:`,iterBar.dataset.percentage); 
-//               iterBar.style.width = iterBar.dataset.percentage;
-//           });
-//       }
-//   })();
-// });
