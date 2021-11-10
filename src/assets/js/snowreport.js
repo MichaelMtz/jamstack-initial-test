@@ -6,7 +6,10 @@ _log('Initialized.');
 document.addEventListener('DOMContentLoaded',(event)=> {
   let target = document.body.dataset.snowreport;
   let src = document.body.dataset.source;
-  const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}`;
+  // const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}` : `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-list.php?target=${target}`;
+  // fetch(url,{"headers": {"sec-fetch-mode": "cors","Access-Control-Allow-Origin":"*"}, "mode":"cors"}).then(response => {
+
+  const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}` ;
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
