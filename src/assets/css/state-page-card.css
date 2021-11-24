@@ -23,6 +23,25 @@ body {
   font-weight: 400;
 }
 
+.resorts-container .filter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.resorts-container .filter-container button {
+  border-radius: 14px;
+  color: #004B8B;
+}
+
+.resorts-container .filter-container button:hover {
+  background-color: #004B8B;
+  color: white;
+}
+
 .resorts-container .resort {
   max-width: 100%;
   width: 95%;
@@ -111,10 +130,12 @@ body {
 }
 
 .resorts-container .resort__header-weather-condition img {
-  width: 80px;
   width: 66px;
-  margin-right: 20px;
   margin-bottom: 0px;
+}
+
+.resorts-container .resort__header-weather-condition .weather-copy {
+  text-align: center;
 }
 
 .resorts-container .resort__header-weather-temp {

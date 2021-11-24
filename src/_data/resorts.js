@@ -48,16 +48,14 @@ module.exports = async function() {
       //masterBreadCrumb[iter.stateName] = iter.breadcrumbs;
       masterBreadCrumb[iter.stateName] = iter["breadCrumbList"];
 
-      // console.log('Iter:',{iter});
-      // console.log('BC:',iter["breadCrumbList"])
     } else { //resort
       iterName = iter.stateName.split('/');
+      iter["stateNameProperLowerCase"] = iterName[1].replace('-', ' ');
+      iter["stateNameProper"] = upperCaseWords(iterName[1]);
+      iter["snowreport"] = iter.resort_id;
       if (masterBreadCrumb[iterName[0]]) {
         //iter["breadCrumbList"] = formatBreadCrumbs(masterBreadCrumb[iterName[0]]);
         iter["breadCrumbList"] = masterBreadCrumb[iterName[0]];
-        iter["stateNameProper"] = upperCaseWords(iterName[1]);
-        iter["snowreport"] = iterName[1];
-
       }
       
     }

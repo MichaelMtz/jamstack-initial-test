@@ -7,9 +7,21 @@
 }
 .conditions {
     margin:125px 25px 0px;
-    box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 1px 0 rgb(20 20 31 / 15%);
+    // box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 1px 0 rgb(20 20 31 / 15%);
 }
 div.conditions {
     margin-top: unset;
     padding-top:135px;
+}
+#container-snow-reports.filter-open .resort.pto{
+    display:none;
+}
+#container-snow-reports.filter-pto .resort.open{
+    display:none;
+}
+#container-snow-reports.sort-open .resort.open{
+    order:1;
+}
+#container-snow-reports.sort-open .resort.pto{
+    order:2;
 }
