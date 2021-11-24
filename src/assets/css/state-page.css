@@ -16,12 +16,33 @@ div.conditions {
 #container-snow-reports.filter-open .resort.pto{
     display:none;
 }
+#container-snow-reports.filter-open #filter-open{
+    border: 1px solid white;
+    background-color: #004b8b;
+    color: #fff;
+}
 #container-snow-reports.filter-pto .resort.open{
     display:none;
+}
+#container-snow-reports.filter-pto #filter-pto{
+    border: 1px solid white;
+    background-color: #004b8b;
+    color: #fff;
 }
 #container-snow-reports.sort-open .resort.open{
     order:1;
 }
 #container-snow-reports.sort-open .resort.pto{
     order:2;
+}
+#container-snow-reports.sort-open #sort-open{
+    border: 1px solid white;
+    background-color: #004b8b;
+    color: #fff;
+}
+
+#container-snow-reports.sort-default #sort-default{
+    border: 1px solid white;
+    background-color: #004b8b;
+    color: #fff;
 }
