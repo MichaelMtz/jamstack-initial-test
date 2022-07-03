@@ -2,11 +2,14 @@ const axios = require("axios");
 
 exports.handler = async function(event, context, callback) {
   const {target,src} = event.queryStringParameters;
-  let endpoint = (src !== 'resort') ? 'list' : 'resort';     
-  const url = `https://feeds.snocountry.net/proof-of-concept/headless-snow-report-${endpoint}.php?target=${target}`;
+  const endpoint = (src !== 'resort') ? 'list' : 'resort';     
+  const prod = `https://feeds.snocountry.net/proof-of-concept/headless-snow-report-${endpoint}.php?target=${target}`;
+  const dev = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-${endpoint}.php?target=${target}`;
+  const url = (window.location.hostname === 'localhost') ? dev: prod; 
+  
   const response = await axios.get(url);
   callback(null, {
     statusCode: 200,
     body: JSON.stringify(response.data)
   });
-} 
+};

@@ -89,24 +89,25 @@ const waitForElement = selector=>{
 
 
 const initializeFilters = () => {
-  let el;
-
-  ['filter-open', 'filter-pto', 'sort-open', 'sort-default'].forEach(iterSelector => {
-
-    waitForElement(`.filter-container #${iterSelector}`).then(elBtn => {
+  
+  waitForElement(`.filter-container #filter-all`).then(() => {
+    
+    document.querySelectorAll('.filter-container button[id^="filter-"]').forEach(elBtn => {
       elBtn.addEventListener('click',() => {
         let elSnowReportsContainer = document.querySelector('#container-snow-reports');
         if (elSnowReportsContainer) {
           elSnowReportsContainer.className = "";
-          elSnowReportsContainer.classList.add(iterSelector);
+          elSnowReportsContainer.classList.add(elBtn.dataset.id);          
         }
-      });
-      _log(`initialized filter ${iterSelector}`);
+      });    
     });
     
-  });
+
+  }).catch( () => { console.log('Error waiting for EL:');});
+  
+
 };
-document.addEventListener('DOMContentLoaded',(event)=> {
+document.addEventListener('DOMContentLoaded',()=> {
   let target = document.body.dataset.snowreport;
   let src = document.body.dataset.source;
   let endpoint = (src !== 'resort') ? 'list' : 'resort';  
@@ -122,16 +123,16 @@ document.addEventListener('DOMContentLoaded',(event)=> {
     document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
     //process progressbars
     (function() {
-        let progressBarList = document.querySelectorAll('.progress-bar');
-        if (progressBarList) {
-            progressBarList.forEach(iterBar => {
-                iterBar.style.width = iterBar.dataset.percentage;
-                //console.log(`pb:`,iterBar.dataset.percentage); 
-            });
-        }
+      let progressBarList = document.querySelectorAll('.progress-bar');
+      if (progressBarList) {
+        progressBarList.forEach(iterBar => {
+          iterBar.style.width = iterBar.dataset.percentage;
+          //console.log(`pb:`,iterBar.dataset.percentage); 
+        });
+      }
     })();
     initializeFilters();
-  });
+  }).catch( () => { console.log('Error waiting for EL:');});
 
   
 

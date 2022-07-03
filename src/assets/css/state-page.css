@@ -1,48 +1,74 @@
-
 #servertime, #version-page {
-    color: #fff;
-}
-#version-page {
-    text-align: center;
-}
-.conditions {
-    margin:125px 25px 0px;
-    // box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 1px 0 rgb(20 20 31 / 15%);
-}
-div.conditions {
-    margin-top: unset;
-    padding-top:135px;
-}
-#container-snow-reports.filter-open .resort.pto{
-    display:none;
-}
-#container-snow-reports.filter-open #filter-open{
-    border: 1px solid white;
-    background-color: #004b8b;
-    color: #fff;
-}
-#container-snow-reports.filter-pto .resort.open{
-    display:none;
-}
-#container-snow-reports.filter-pto #filter-pto{
-    border: 1px solid white;
-    background-color: #004b8b;
-    color: #fff;
-}
-#container-snow-reports.sort-open .resort.open{
-    order:1;
-}
-#container-snow-reports.sort-open .resort.pto{
-    order:2;
-}
-#container-snow-reports.sort-open #sort-open{
-    border: 1px solid white;
-    background-color: #004b8b;
-    color: #fff;
+  color: #fff;
 }
 
-#container-snow-reports.sort-default #sort-default{
-    border: 1px solid white;
-    background-color: #004b8b;
-    color: #fff;
+#version-page {
+  text-align: center;
 }
+
+.conditions {
+  margin: 125px 25px 0px;
+}
+
+div.conditions {
+  margin-top: unset;
+  padding-top: 135px;
+}
+
+#container-snow-reports.filter-open .resort.pto {
+  display: none;
+}
+
+#container-snow-reports.filter-open #filter-open {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+#container-snow-reports.filter-pto .resort.open {
+  display: none;
+}
+
+#container-snow-reports.filter-pto #filter-pto {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+#container-snow-reports.sort-open .resort.open {
+  order: 1;
+}
+
+#container-snow-reports.sort-open .resort.pto {
+  order: 2;
+}
+
+#container-snow-reports.sort-open #sort-open {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+#container-snow-reports.sort-default #sort-default {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+#container-snow-reports.hiking div.resort.summer:not(.hiking) {
+  display: none;
+}
+
+#container-snow-reports.mtn-bike div.resort.summer:not(.mtn-bike) {
+  display: none;
+}
+
+#container-snow-reports.golf div.resort.summer:not(.golf) {
+  display: none;
+}
+
+#container-snow-reports.lift div.resort.summer:not(.lift) {
+  display: none;
+}
+
+/*# sourceMappingURL=state-page.css.map */
