@@ -1,0 +1,334 @@
+	#banner_carousel li{
+	    background-repeat:no-repeat;
+	    background-position:center;
+	    background-size:cover;
+	}
+	#banner_carousel_container{
+	    margin:0 auto;
+	    width:100%;
+	    height:100%;
+	}
+	.fade_animate{
+	    transition-property: all;
+	    transition-duration: 800ms;
+	    transition-timing-function: ease-in;
+	    -webkit-transition-property: all;
+	    -webkit-transition-duration: 800ms;
+	    -webkit-transition-timing-function: ease-in;
+	}
+	#bullets ul{
+	    list-style:disc;
+	}
+	#bullets li{
+	    float:left;
+	    margin:0 3px 0 3px;
+	    cursor:pointer;
+	}
+	.bulletsActive{
+	    opacity:1 !important;
+	}
+	.hidden{display:none;}
+	
+
+    .slider-container { padding-top: 0; }
+    .banner_carousel_container { padding-top: 100px; }
+    .banner_carousel_container .carousel { z-index: 1; }
+    #banner_carousel, .banner_carousel_container, #banner_carousel li { height: 100% !important; }
+    ul.feature-boxes { top: 162px; }
+    @media only screen and (max-width: 767px) {
+      .banner_carousel_container { display: none; }		
+    }
+    @media only screen and (max-width: 479px) {
+      ul.feature-boxes { top: auto !important; }
+    }
+
+th.width30 {
+    width: 30%;
+}
+ul.forecast-list li.weather-post:hover {
+    cursor:pointer;
+    background-color: #EBF9FF;  /*#f6f6f3; */
+}
+
+.weather-post .weather-post-link {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    padding: 5px; 0;
+}
+.weather-left {
+    float: left;
+    height: 100%;
+}
+.weather-right {
+    font-size:1.15rem;
+}
+
+a.light-button{
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.87);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 3px 8px;
+    transition: border-color 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s;
+    min-width: 148px;
+}
+
+a.light-button:hover {
+    color: white;
+    border-color: #0079c1s;
+    background-color: #0079c1;
+    
+}
+
+
+a.dark-button{
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 3px 8px;
+    transition: border-color 0.2s ease-in-out 0s;
+    
+    transition: color 0.2s ease-in-out 0s;
+}
+
+a.smaller {
+    padding: 1px 3px 2px 3px;
+}
+
+a.dark-button:hover {
+    color: white;
+    border-color: #0079c1;
+    background-color: #0079c1;
+    
+}
+
+
+
+a.no-button{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 3px 8px;
+    transition: border-color 0.2s ease-in-out 0s;
+    
+    transition: color 0.2s ease-in-out 0s;
+}
+
+a.no-button:hover {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    color: white;
+    border-color: #fe523e;
+    background-color: #fe523e;
+    
+}
+
+
+
+
+a.resort-link {
+    color:#0079c1;
+    text-decoration: none;
+}
+a.resort-link:hover {
+    color:red;
+}
+
+a.resort-link-snowfall {
+    color:white;
+    text-decoration: overline;
+}
+a.resort-link-snowfall:hover {
+    color:red;
+}
+
+
+.snowfall-content  {
+    display: grid;
+}
+
+/*  Grid definition  */
+
+.grid-container {
+    /*background: rgba(255,255,255,0.33);     */
+    background: rgba(49, 135, 197, 0.22) none repeat scroll 0 0;
+    border-radius: 5px;
+    display:grid;
+    grid-template-columns:2fr 1.3fr  1fr;
+    grid-row-gap: 10px;
+}
+.grid-container div {
+    color: white;
+    font-size: 1.3rem;  
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.22);
+    padding: 0px 0px 5px 5px;   
+}
+.grid-container div.grid-header{
+    border-bottom: 1px solid #e0e0e0; 
+    padding: 5px 0px 5px 2px;   
+}
+.grid-container div.mysnow {
+    justify-self: center;
+    width: 100%;
+}
+
+
+
+.grid-container-events {
+    /*background: rgba(255,255,255,0.33);     */
+    background: rgba(49, 135, 197, 0.52) none repeat scroll 0 0;
+    border-radius: 5px;
+    display:grid;
+    grid-template-columns:1fr 3fr  ;
+    grid-row-gap: 10px;
+}
+.grid-container-events div {
+    color: white;
+    font-size: 1.3rem;  
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.22);
+    padding: 0px 0px 5px 5px;   
+}
+.grid-container-events div.grid-header{
+    border-bottom: 1px solid #e0e0e0; 
+    padding: 5px 0px 5px 2px;   
+}
+.grid-container-events div.mysnow {
+    justify-self: center;
+    width: 100%;
+}
+
+
+
+
+.snowfall-content {  
+    /* background: rgba(0,0,0,0.33);  */
+    position: absolute; 
+    border-radius: 2px; 
+    top: 10px; 
+    right: 55px; 
+    color: #fff; 
+    text-shadow: 0 0 3px #000;  
+    text-shadow: 0 0 3px rgba(0,0,0,0.85);  
+    z-index: 0; 
+    max-width: 33%; 
+    padding:32px 32px 32px 0px; 
+}
+
+.snowfall-content {  
+    max-width: 50%; 
+    padding:5px 5px 5px 0px; 
+}
+
+.snowfall-content h2 {font-family: "Brandon Grotesque", Arial, sans-serif; color: #fff; text-shadow: 0 0 3px #000;  text-shadow: 0 0 3px rgba(0,0,0,0.85);  font-size: 46px; line-height:49px; text-transform: uppercase; letter-spacing: 3px; }
+.snowfall-content.inner-caption {  z-index: 1;  }
+.snowfall-content.inner-caption i { display: none; }
+.snowfall-content.inner-caption h2 { font-size: 32px; line-height: 32px; }
+.snowfall-content p {  font-size: 18px; line-height:24px; margin-bottom: 5px;  text-transform: uppercase; letter-spacing: 2px;  }
+.snowfall-content p a {background:none; border:1px #fff solid; color:#fff; margin:10px 0 0 0;}
+.snowfall-content.mobile-caption { display: none; }
+
+tr:hover {
+    background-color: #EBF9FF;  /*#f6f6f3; */
+}
+div.ad-container {
+    display: inline-block;
+    font-size: 14px;
+}
+div.ad-container-relative{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 3px 8px;
+    transition: border-color 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s;
+    
+}
+div.ad-container-relative:hover{
+    background-color: #EBF9FF;
+}
+
+
+
+
+
+
+img.ad-large {
+    width: 728px;
+    height: 90px;
+    position: absolute;
+    bottom: 5px;
+}
+img.ad-large-relative {
+    width: 728px;
+    height: 90px;
+    padding: 5px;
+    margin-bottom: 0px;
+}
+
+img.ad-medium {
+    width: 486px;
+    height: 60px;
+    position: absolute;
+    bottom: 5px;
+    right:20%;
+}
+img.ad-sqaure-small {
+    width: 180px;
+    height: 150px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.version-page {
+    border-bottom: 1px solid #0072A3;
+    background-color: white;
+    width: 120px;
+    text-align: center;
+}
+
+.topnav ul.navigation > li h2.topmenu {
+    font-weight: 300;
+}
+h2.topmenu {
+    font-weight: 300;
+    
+}
+.open-resorts {
+    text-align: center;
+}
+.open-resorts p.surface-terrain {
+    font-family: 'Brandon Grotesque', Arial, Sans-serif;
+    font-size: 14px;    
+    text-transform: unset; 
+}
+.open-resorts .resort-name {
+    padding-left: 25px !important;
+    text-align: left;
+}
+
+.summer-activities {
+    display:flex; 
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.summer-activities img {
+    width: 24px;
+}

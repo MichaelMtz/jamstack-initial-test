@@ -234,14 +234,14 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 
 
 .topnav ul.navigation > li .menu-dropdown ul a:hover { 
-    padding: 0px 3px;
+    padding: 0px 0px;
 }
 .topnav ul.navigation > li .menu-dropdown ul a:hover { 
-    color: #FE523E !important;
+    color: #0079c1 !important;
 }
 
 .topnav ul.navigation > li.dropped a:hover {
-    color:#FE523E;
+    color:#0079c1;
 }
 
 
@@ -375,6 +375,7 @@ a:focus {outline:0;}
 }
 a.large-button { font-weight: 300; padding: 10px 23px; }
 a.redbtn, input.redbtn { background: #fe523e; border:0; color:#fff; }
+a.redbtn {background: #77C0FC;}
 a.redbtn:hover, input.redbtn:hover { background: #0079c1; }
 a.orange { background: #fe523e; border:0; color:#fff!important;; }
 a.orange:hover { background: #ff7566; }
@@ -1061,5 +1062,29 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 			text-transform: uppercase;
 		}
 		
+#servertime, #version-page {
+	color: #fff;
+}
 
+#version-page {
+	text-align: center;
+}
 
+table th,table td{padding:8px;line-height:18px;text-align:left;vertical-align:top;border-top:1px solid #eee; border-color: #ddd; }
+table td {font-size: 1.15rem;    
+}
+table td.align-right {
+		text-align: right;
+}
+table thead:first-child tr th,
+table thead:first-child tr td{border-top:0; text-transform: uppercase;}
+table tbody+tbody{border-top:2px solid #ddd;}
+table.noborder, table.noborder th, table.noborder td { border: none; }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid #ddd !important;
+	border-bottom: 2px solid #ddd; 
+	margin-bottom: 20px; 
+		width: 100%;
+}
