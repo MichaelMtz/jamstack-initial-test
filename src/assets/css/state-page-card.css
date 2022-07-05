@@ -87,6 +87,11 @@ body {
     flex: 0 1 88px;
   }
 }
+.resorts-container .filter-container button.active {
+  border: 1px solid white;
+  background-color: #004B8B;
+  color: white;
+}
 .resorts-container .filter-container button:hover {
   background-color: #004B8B;
   color: white;

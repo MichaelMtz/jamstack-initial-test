@@ -89,15 +89,20 @@ const waitForElement = selector=>{
 
 
 const initializeFilters = () => {
-  
-  waitForElement(`.filter-container #filter-all`).then(() => {
-    
-    document.querySelectorAll('.filter-container button[id^="filter-"]').forEach(elBtn => {
-      elBtn.addEventListener('click',() => {
+  var elCurrentActive;
+  waitForElement(`.filter-container #filter-all`).then(elFilterAll => {
+    elCurrentActive = elFilterAll;
+    document.querySelectorAll('.filter-container button[id^="filter-"]').forEach(iterElBtn => {
+      iterElBtn.addEventListener('click',() => {
+        _log('Filter btn clicked');
+        // Clear existing active button, reset to new one
+        elCurrentActive.className = "";
+        iterElBtn.classList.add('active');
+        elCurrentActive = iterElBtn;
         let elSnowReportsContainer = document.querySelector('#container-snow-reports');
         if (elSnowReportsContainer) {
           elSnowReportsContainer.className = "";
-          elSnowReportsContainer.classList.add(elBtn.dataset.id);          
+          elSnowReportsContainer.classList.add(iterElBtn.dataset.id);          
         }
       });    
     });

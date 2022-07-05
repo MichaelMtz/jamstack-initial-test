@@ -47,20 +47,89 @@ div.conditions {
   color: #fff;
 }
 
+@keyframes faderesorts {
+  to {
+    opacity: 0;
+    height: 0;
+    min-height: unset;
+    margin: unset;
+  }
+}
+@keyframes hideresorts {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes showresorts {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#container-snow-reports div.resorts.summer {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.all div.resort.summer {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
 #container-snow-reports.hiking div.resort.summer:not(.hiking) {
-  display: none;
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.hiking div.resort.summer.hiking {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 #container-snow-reports.mtn-bike div.resort.summer:not(.mtn-bike) {
-  display: none;
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.mtn-bike div.resort.summer.mtn-bike {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 #container-snow-reports.golf div.resort.summer:not(.golf) {
-  display: none;
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.golf div.resort.summer.golf {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 #container-snow-reports.lift div.resort.summer:not(.lift) {
-  display: none;
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.lift div.resort.summer.lift {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 /*# sourceMappingURL=state-page.css.map */

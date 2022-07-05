@@ -40,23 +40,81 @@ div.conditions {
     color: #fff;
 }
 
-#container-snow-reports.hiking {
-  div.resort.summer:not(.hiking) {
-    display: none;
+
+@keyframes faderesorts {
+  to {
+    opacity:0;
+    height: 0;
+    min-height: unset;
+    margin:unset;
   }
 }
+@keyframes hideresorts {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.5; }
+    100% { opacity: 0; display:none;}
+}
+@keyframes showresorts {
+  from {
+    opacity:0;
+    height: 0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@mixin resort-fade-out {
+  animation-name:faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+@mixin resort-fade-in {
+  animation-name:showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports {
+  div.resorts.summer {
+    @include resort-fade-in();
+  }
+}
+#container-snow-reports.all {
+  div.resort.summer {
+    @include resort-fade-in();
+  }
+}
+
+#container-snow-reports.hiking {
+  div.resort.summer:not(.hiking) {
+    @include resort-fade-out();
+  }
+  div.resort.summer.hiking {
+    @include resort-fade-in();
+  }
+}
+
 #container-snow-reports.mtn-bike {
   div.resort.summer:not(.mtn-bike) {
-    display: none;
+    @include resort-fade-out();
+  }
+  div.resort.summer.mtn-bike {
+    @include resort-fade-in();
   }
 }
 #container-snow-reports.golf {
   div.resort.summer:not(.golf) {
-    display: none;
+    @include resort-fade-out();
+  }
+  div.resort.summer.golf {
+    @include resort-fade-in();
   }
 }
 #container-snow-reports.lift {
   div.resort.summer:not(.lift) {
-    display: none;
+    @include resort-fade-out();
+  }
+  div.resort.summer.lift {
+    @include resort-fade-in();
   }
 }
