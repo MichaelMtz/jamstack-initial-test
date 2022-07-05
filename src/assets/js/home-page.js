@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded',()=> {
     });
     window.onload = function() {
       $('.pano-loader').hide();
-      var now = new Date().getTime();
-      var page_load_time = now - performance.timing.navigationStart;
-      page_load_time = page_load_time / 1000;
-      page_load_time.toFixed(2);
-      $("#browsertime").html( page_load_time);
+      // var now = new Date().getTime();
+      // var page_load_time = now - performance.timing.navigationStart;
+      // page_load_time = page_load_time / 1000;
+      // page_load_time.toFixed(2);
+      // $("#browsertime").html( page_load_time);
     };
   };
   initBannerScroller();

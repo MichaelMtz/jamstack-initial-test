@@ -332,7 +332,6 @@
     <script src="../../assets/js/snowreport.js" type="text/javascript"></script>
 
     <script type="text/javascript">
-    var snoStartLoadTime = new Date().getTime(); 
     document.addEventListener('DOMContentLoaded',(event)=> {
         var pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
         console.log(`>>> load: ${pageLoadTime}`);
