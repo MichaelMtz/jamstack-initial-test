@@ -1,0 +1,585 @@
+@charset "UTF-8";
+/*  Brandon Grotesque  */
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-Medium.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-MediumItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-RegularItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url("../font/BrandonGrotesque-ThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+/*  Proxima Nova  */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-Extrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-BoldIt.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-RegularItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../font/proximanova/ProximaNova-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+/*  Intrawest Icons */
+@font-face {
+  font-family: 'Intrawest Icons';
+  src: url("assets/font/Intrawest-icons.woff") format("woff"), url("../font/intrawest-icons/Intrawest-icons.ttf") format("truetype"), url("../font/intrawest-icons/Intrawest-icons.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+/*  Intrawest Icons */
+@font-face {
+  font-family: 'Intrawest Icons';
+  src: url("../font/Intrawest-icons.woff") format("woff"), url("../font/intrawest-icons/Intrawest-icons.ttf") format("truetype"), url("../font/intrawest-icons/Intrawest-icons.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Font Awesome';
+  src: url("../font/fontawesome-webfont.woff") format("woff"), url("../font/font-awesome/fontawesome-webfont.ttf") format("truetype"), url("../font/font-awesome/fontawesome-webfont.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+/* line 82, ../sass/base/_icons.scss */
+.icon.ico-facebook::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 86, ../sass/base/_icons.scss */
+.icon.ico-twitter::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 90, ../sass/base/_icons.scss */
+.icon.ico-pintrest::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 94, ../sass/base/_icons.scss */
+.icon.ico-gplus::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 98, ../sass/base/_icons.scss */
+.icon.ico-email::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 102, ../sass/base/_icons.scss */
+.icon.ico-night_skiing::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 106, ../sass/base/_icons.scss */
+.icon.ico-snow_making::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 110, ../sass/base/_icons.scss */
+.icon.ico-night_snow_making::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 114, ../sass/base/_icons.scss */
+.icon.ico-grooming::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 118, ../sass/base/_icons.scss */
+.icon.ico-race::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 122, ../sass/base/_icons.scss */
+.icon.ico-hiking::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 126, ../sass/base/_icons.scss */
+.icon.ico-mt_biking::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 130, ../sass/base/_icons.scss */
+.icon.ico-downhill::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 134, ../sass/base/_icons.scss */
+.icon.ico-cross_country::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 138, ../sass/base/_icons.scss */
+.icon.ico-two_way::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 142, ../sass/base/_icons.scss */
+.icon.ico-multi_use::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 146, ../sass/base/_icons.scss */
+.icon.ico-pass::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 150, ../sass/base/_icons.scss */
+.icon.ico-easier::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 154, ../sass/base/_icons.scss */
+.icon.ico-more_difficult::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 158, ../sass/base/_icons.scss */
+.icon.ico-most_difficult::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 162, ../sass/base/_icons.scss */
+.icon.ico-expert::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 166, ../sass/base/_icons.scss */
+.icon.ico-glades::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 170, ../sass/base/_icons.scss */
+.icon.ico-terrain_park::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 174, ../sass/base/_icons.scss */
+.icon.ico-mb_terrain::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 178, ../sass/base/_icons.scss */
+.icon.ico-parent_child::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 182, ../sass/base/_icons.scss */
+.icon.ico-group::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 186, ../sass/base/_icons.scss */
+.icon.ico-circle_check::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 190, ../sass/base/_icons.scss */
+.icon.ico-bolt::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 194, ../sass/base/_icons.scss */
+.icon.ico-bicycle::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 198, ../sass/base/_icons.scss */
+.icon.ico-wine::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 202, ../sass/base/_icons.scss */
+.icon.ico-moon::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 206, ../sass/base/_icons.scss */
+.icon.ico-bag::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 210, ../sass/base/_icons.scss */
+.icon.ico-tree::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 214, ../sass/base/_icons.scss */
+.icon.ico-bookmark::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 218, ../sass/base/_icons.scss */
+.icon.ico-envelope::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 222, ../sass/base/_icons.scss */
+.icon.ico-asterisk::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 226, ../sass/base/_icons.scss */
+.icon.ico-sun::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 230, ../sass/base/_icons.scss */
+.icon.ico-circle::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 234, ../sass/base/_icons.scss */
+.icon.ico-star::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 238, ../sass/base/_icons.scss */
+.icon.ico-house::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 242, ../sass/base/_icons.scss */
+.icon.ico-map_pin::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 246, ../sass/base/_icons.scss */
+.icon.ico-music::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 250, ../sass/base/_icons.scss */
+.icon.ico-medal::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 254, ../sass/base/_icons.scss */
+.icon.ico-compass::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 258, ../sass/base/_icons.scss */
+.icon.ico-faces::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 262, ../sass/base/_icons.scss */
+.icon.ico-heart::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 266, ../sass/base/_icons.scss */
+.icon.ico-mountain::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 270, ../sass/base/_icons.scss */
+.icon.ico-houses::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 274, ../sass/base/_icons.scss */
+.icon.ico-map::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 278, ../sass/base/_icons.scss */
+.icon.ico-clock::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 282, ../sass/base/_icons.scss */
+.icon.ico-calendar::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 286, ../sass/base/_icons.scss */
+.icon.ico-snowflake::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 290, ../sass/base/_icons.scss */
+.icon.ico-thunder_cloud::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 294, ../sass/base/_icons.scss */
+.icon.ico-rain_cloud::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 298, ../sass/base/_icons.scss */
+.icon.ico-rain_snow_cloud::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 302, ../sass/base/_icons.scss */
+.icon.ico-snow_cloud::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 306, ../sass/base/_icons.scss */
+.icon.ico-thunder_cloud_sun::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 310, ../sass/base/_icons.scss */
+.icon.ico-cloud_sun::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 314, ../sass/base/_icons.scss */
+.icon.ico-rain_cloud_sun::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 318, ../sass/base/_icons.scss */
+.icon.ico-cloud::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 322, ../sass/base/_icons.scss */
+.icon.ico-haze::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 326, ../sass/base/_icons.scss */
+.icon.ico-snow_cloud_sun::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 330, ../sass/base/_icons.scss */
+.icon.ico-note_pad::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 334, ../sass/base/_icons.scss */
+.icon.ico-right_arrow::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 338, ../sass/base/_icons.scss */
+.icon.ico-up_arrow::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 342, ../sass/base/_icons.scss */
+.icon.ico-left_arrow::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 346, ../sass/base/_icons.scss */
+.icon.ico-down_arrow::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 350, ../sass/base/_icons.scss */
+.icon.ico-left_arrow_large::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 354, ../sass/base/_icons.scss */
+.icon.ico-right_arrow_large::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 358, ../sass/base/_icons.scss */
+.icon.ico-magnify::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 362, ../sass/base/_icons.scss */
+.icon.ico-shopping_cart::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 366, ../sass/base/_icons.scss */
+.icon.ico-close::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 370, ../sass/base/_icons.scss */
+.icon.ico-golf::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 374, ../sass/base/_icons.scss */
+.icon.ico-circle_play::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 378, ../sass/base/_icons.scss */
+.icon.ico-grooming_bottom::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 382, ../sass/base/_icons.scss */
+.icon.ico-grooming_top::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 386, ../sass/base/_icons.scss */
+.icon.ico-moguls::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 390, ../sass/base/_icons.scss */
+.icon.ico-moguls_bottom::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+/* line 394, ../sass/base/_icons.scss */
+.icon.ico-moguls_top::before {
+  content: "";
+  font-family: "Intrawest Icons";
+}
+#sppb-addon-1572796988271 .headerad {
+  display: block !important;
+}
+#top-bar .sppb-row {
+  justify-content: center;
+}
+#column-wrap-id-1571156782616, #column-wrap-id-1571156782614 {
+  display:none;
+}
+#column-wrap-id-1579008803238 {
+      -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+.section.header {
+  position:unset;
+}
+.conditions {
+  margin-top:25px;
+}
+.nav-breadcrumbs {
+  margin-left: 200px;
+  margin-right:20px;
+  background-color: #0084BD;
+}
+.nav-breadcrumbs a {
+  color:#FFF;
+}
+.nav-breadcrumbs a.breadcrumb-link:visited {
+  color:#fff;
+}
+.snow-report-container {
+  font-size:16px;
+}
+

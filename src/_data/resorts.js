@@ -7,7 +7,7 @@ const abbrToLongName = {
   , "PA":"pennsylvania", "RI":"rhode-island", "SD":"south-dakota", "TN":"tennessee", "UT":"utah", "VT":"vermont", "VA":"virginia", "WA":"washington"
   , "WV":"west-virginia", "WI":"wisconsin", "WY":"wyoming"
   , "MID WEST:" : "mid-west", "NORTH EAST:" : "north-east", "NORTH WEST:" : "north-west", "ROCKIES:": "rockies", "SOUTH WEST:": "south-west","SOUTH EAST:": "south-east" 
-}
+};
 
 function upperCaseWords(input) {
   input = input.replace(/-/g, ' ');
@@ -43,6 +43,9 @@ module.exports = async function() {
       iter["stateNameProper"] = upperCaseWords(iter.stateName);
       iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
       iter["snowreport"] = iter.stateName;
+
+      iter["styles"] = ['state-page.css','state-page-card.css' ];
+      
       //Save breadcrumb for resort usage later, 
       //note this requires "state" and "region" entryTypes to be declared before associated "resort" types
       //masterBreadCrumb[iter.stateName] = iter.breadcrumbs;
@@ -53,12 +56,16 @@ module.exports = async function() {
       iter["stateNameProperLowerCase"] = iterName[1].replace('-', ' ');
       iter["stateNameProper"] = upperCaseWords(iterName[1]);
       iter["snowreport"] = iter.resort_id;
+      iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
+
+      //Third party scripts
+      iter["scripts"] = ['https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js'];
       if (masterBreadCrumb[iterName[0]]) {
         //iter["breadCrumbList"] = formatBreadCrumbs(masterBreadCrumb[iterName[0]]);
         iter["breadCrumbList"] = masterBreadCrumb[iterName[0]];
       }
       
     }
-  })
+  });
   return resorts;
 };

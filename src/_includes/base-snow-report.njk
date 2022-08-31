@@ -6,7 +6,7 @@
         <link rel="canonical" href="https://www.snocountry.com/snow-report/{{ resorts.stateName }}">
         <!-- <base href="https://snocountry.netlify.app/" /> -->
         <!-- <base href="http://localhost:8080/" />  -->
-        <base href="https://snocountry.netlify.app/" />   
+        <base href="http://localhost:8080/" />  
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="{{ resorts.stateNameProper }} Mountains Snow, Snow for {{ resorts.stateNameProper }}, Snow in {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} snow report, Snow Report {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} Ski Report, {{ resorts.stateNameProper }} Snow, Snow {{ resorts.stateNameProper }}, Ski Report {{ resorts.stateNameProper }},  where is the snow in {{ resorts.stateNameProperLowerCase }}" />
         <meta name="rights" content="Copyright © 2019. All Rights Reserved." />
@@ -29,10 +29,11 @@
         
         <link rel="stylesheet" href="/assets/font/mulish-font.css">
         <link rel="stylesheet" href="/assets/css/snocountry-base.css">
-        <link rel="stylesheet" href="/assets/css/state-page.css">
-        <link rel="stylesheet" href="/assets/css/state-page-card.css">
-        <link rel="stylesheet" href="/assets/css/padding-margin.css">
-
+        {% if resorts.styles %}
+          {% for cssFileName in resorts.styles %}
+            <link rel="stylesheet" href="/assets/css/{{cssFileName}}">
+          {% endfor %}
+         {% endif %}
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body data-source="{{ resorts.entryType }}" data-snowreport="{{ resorts.snowreport }}">
@@ -330,7 +331,11 @@
 	<script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
     <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script>
     <script src="../../assets/js/snowreport.js" type="text/javascript"></script>
-
+    {% if resorts.scripts %}
+      {% for scriptFileName in resorts.scripts %}
+        <script src="{{scriptFileName}}" type="text/javascript"></script>
+      {% endfor %}
+     {% endif %}
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded',(event)=> {
         var pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
