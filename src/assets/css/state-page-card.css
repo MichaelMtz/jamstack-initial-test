@@ -12,7 +12,7 @@ body {
 .open {
   margin: 0 auto;
   display: inline-block;
-  transform: rotate(45deg);
+  
   height: var(--check-height);
   width: var(--check-width);
   border-bottom: var(--check-borderWidth) solid var(--check-borderColor);
