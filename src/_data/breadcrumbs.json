@@ -1,0 +1,78 @@
+[
+  {"entryType" : "state", "stateName": "alabama", "breadcrumbs": ["SOUTH EAST:", "AL","MD","NC","TN","VA","WV"]}
+ ,{"entryType" : "state", "stateName": "alaska" , "breadcrumbs":["NORTH WEST:", "AK", "ID","OR","WA"]}
+ ,{"entryType" : "state", "stateName": "arizona", "breadcrumbs": ["SOUTH WEST:", "AZ","CA","NV"]}
+ ,{"entryType" : "state", "stateName": "california", "breadcrumbs": ["SOUTH WEST:", "AZ","CA","NV"]}
+ ,{"entryType" : "state", "stateName": "colorado", "breadcrumbs": ["ROCKIES:", "CO","MT","NM","UT","WY"]}
+ ,{"entryType" : "state", "stateName": "connecticut", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "idaho", "breadcrumbs": ["NORTH WEST:", "AK", "ID","OR","WA"]}
+ ,{"entryType" : "state", "stateName": "illinois", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "indiana", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "iowa", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "maine", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "maryland", "breadcrumbs": ["SOUTH EAST:", "AL","MD","NC","TN","VA","WV"]}
+ ,{"entryType" : "state", "stateName": "massachusetts", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "michigan", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "minnesota", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "missouri", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "montana", "breadcrumbs": ["ROCKIES:", "CO","MT","NM","UT","WY"]}
+ ,{"entryType" : "state", "stateName": "nevada", "breadcrumbs": ["SOUTH WEST:", "AZ","CA","NV"]}
+ ,{"entryType" : "state", "stateName": "new-hampshire", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "new-jersey", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "new-mexico", "breadcrumbs":["ROCKIES:", "CO","MT","NM","UT","WY"] }
+ ,{"entryType" : "state", "stateName": "new-york", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "north-carolina", "breadcrumbs": ["SOUTH EAST:", "AL","MD","NC","TN","VA","WV"]}
+ ,{"entryType" : "state", "stateName": "north-dakota", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "ohio", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "oregon", "breadcrumbs": ["NORTH WEST:", "AK", "ID","OR","WA"]}
+ ,{"entryType" : "state", "stateName": "pennsylvania", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "rhode-island", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "south-dakota", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "tennessee", "breadcrumbs": ["SOUTH EAST:", "AL","MD","NC","TN","VA","WV"]}
+ ,{"entryType" : "state", "stateName": "utah", "breadcrumbs": ["ROCKIES:", "CO","MT","NM","UT","WY"]}
+ ,{"entryType" : "state", "stateName": "vermont", "breadcrumbs": ["NORTH EAST:", "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "state", "stateName": "virginia", "breadcrumbs": ["SOUTH EAST:", "AL","MD","NC","TN","VA","WV"]}
+ ,{"entryType" : "state", "stateName": "washington", "breadcrumbs": ["NORTH WEST:", "AK", "ID","OR","WA"]}
+ ,{"entryType" : "state", "stateName": "west-virginia", "breadcrumbs": ["SOUTH EAST:", "AL","MD","NC","TN","VA","WV"]}
+ ,{"entryType" : "state", "stateName": "wisconsin", "breadcrumbs": ["MID WEST:", "IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "state", "stateName": "wyoming", "breadcrumbs": ["ROCKIES:", "CO","MT","NM","UT","WY"]}
+ ,{"entryType" : "region", "stateName": "north-west", "breadcrumbs": [ "AK", "ID","OR","WA"]}
+ ,{"entryType" : "region", "stateName": "south-west", "breadcrumbs": [ "AZ","CA","NV"]}
+ ,{"entryType" : "region", "stateName": "rockies", "breadcrumbs": ["CO","MT","NM","UT","WY"]}
+ ,{"entryType" : "region", "stateName": "mid-west", "breadcrumbs": ["IA","IL","IN","MI","MN","MO","OH","SD","WI"]}
+ ,{"entryType" : "region", "stateName": "north-east", "breadcrumbs": [ "CT","MA","ME","NH","NJ","NY","PA","RI","VT"]}
+ ,{"entryType" : "region", "stateName": "south-east", "breadcrumbs": ["AL","MD","NC","TN","VA","WV"]}
+ 
+ ,{"entryType" : "region", "stateName": "alberta", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+ ,{"entryType" : "region", "stateName": "british-columbia", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+ ,{"entryType" : "region", "stateName": "manitoba", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+ ,{"entryType" : "region", "stateName": "new-brunswick", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+ ,{"entryType" : "region", "stateName": "nova-scotia", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+ ,{"entryType" : "region", "stateName": "ontario", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+ ,{"entryType" : "region", "stateName": "quebec", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+ ,{"entryType" : "region", "stateName": "saskatchewan", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
+
+
+ ,{"entryType" : "region", "stateName": "argentina", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
+ ,{"entryType" : "region", "stateName": "australia", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
+ ,{"entryType" : "region", "stateName": "chile", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
+ ,{"entryType" : "region", "stateName": "new-zealand", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
+
+ ,{"entryType" : "region", "stateName": "andorra", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "austria", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "czech-republic", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "finland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "france", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "germany", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "italy", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "liechtenstein", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "norway", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "poland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "scotland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "slovakia", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "spain", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "sweden", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+ ,{"entryType" : "region", "stateName": "switzerland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
+  
+
+]

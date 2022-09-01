@@ -1,0 +1,23 @@
+---
+layout: list-state-region.njk
+pagination: 
+  data: lists
+  size: 1
+  alias: resorts
+permalink: /snow-report/{{ resorts.stateName }}/index.html
+---
+
+
+<div class="conditions">
+      <nav class="nav-breadcrumbs"> 
+        {% for iterBreadCrumb in resorts.breadCrumbList %}
+          <a class="breadcrumb-link" href="{{ iterBreadCrumb.link }}">{{ iterBreadCrumb.abbrName }}</a>
+        {% endfor %}
+        {% if resorts.entryType != 'resort' %}
+          <a class="breadcrumb-link xc-link" href="snow-report/{{ resorts.stateName }}-cross-country"> {{ resorts.stateNameProper }} XC</a>
+        {% endif %}
+      </nav>
+    <div id="container-snow-reports" class="container-snow-reports sort-default">
+        
+    </div>
+</div>

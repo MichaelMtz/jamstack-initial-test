@@ -1,0 +1,583 @@
+<div class='snow-report-container'>
+    <div class='left-col'>
+        <nav class='nav-sidebar-left'>
+          <a href='[memberWebSiteLink]' target='_resort'>
+            <img src='[logo]' class='resort-logo' width='140px' alt='[resortName]' title='[resortName]'>
+          </a>	  	
+          <div class='flex-box-vert'>
+               <a class='nav-item-link first' href='#covid__message'>Covid Info</a>
+                <a class='nav-item-link' href='#conditions__details'>Snow Report</a>
+                <a class='nav-item-link' href='#conditions-archive'>Conditions Archive</a>
+                <!-- <a class='nav-item-link' href='#mountain-status'>Mountain Status</a>
+                <a class='nav-item-link' href='#mountain-cams'>Mountain Cams</a> -->
+                <a class='nav-item-link' href='#resort-maps'>Resort Maps</a>
+                <div class='container-state-links'>
+                    [state-links]
+                </div>
+          </div>        
+        </nav> 
+    </div>
+    <div class='right-col resort'>
+        <article aria-label='Resort Report'>
+            <section aria-label='Resort Covid Message'>   
+                <div class='resort__header covid'>
+                  <a class='mobile' href='[memberWebSiteLink]'>
+                    <img src='[logo]' class='resort-logo' width='100px' alt='[resortName]' title='[resortName]'>
+                  </a>	
+                  <h1>[resortName]</h1>    
+                  [blurb]                
+                </div>            
+                <div class='resort__container covid'>
+                    <h1 id='covid__message'>Covid Info
+                        <span class='last-updated'>
+                            Last Update at [covidUpdatedOn]  
+                        </span>
+                    </h1>
+                    <div class='resort__container__message'> 
+                        <div class='grid-covid-list'>
+                            <div class='grid-covid__col-header'>Indoor Mask Required</div>
+                            <div class='grid-covid__col-header'>Social Distancing</div>
+                            <div class='grid-covid__col-header'>Sanitization <br> Stations</div>
+                            <div class='grid-covid__col-header'>Pass <br>Protection</div>
+                            <div class='grid-covid__col-header'>Reservations may be Required or <br>Recommended</div>
+                            <div class='grid-covid__col-header'>Pre-Purchase of Day Lift Tickets Required or Recommended</div>
+                            <div class='grid-covid__col-data'>[boolMaskRequired]</div>
+                            <div class='grid-covid__col-data'><img class='img-covid' src='https://www.snocountry.com/covid/assets/images/005-social.png'></div>
+                            <div class='grid-covid__col-data'><img class='img-covid' src='https://www.snocountry.com/covid/assets/images/003-hand-wash.png'></div>
+                            <!--<div class='grid-covid__col-data'>
+                                <img  class='img-covid img-covid-sm' src='https://www.snocountry.com/covid/assets/images/007-pass.png'><br/>
+                                <a href='https://www.lutsen.com/winter/season-passes/covid-19-pass-assurance-policy/' class='link-covid-details simpleblue desktop' target='_covid'>covid-19-pass-assurance-policy page</a>
+                            </div>
+                            <div class='grid-covid__col-data'>
+                            <img class='img-covid-sm' src='https://www.snocountry.com/covid/assets/images/reservations.png'><br/>
+                            <a href='https://welchvillage.com/covid19-.cfm' class='link-covid-details simpleblue' target='_covid'>Covid page</a>
+                            </div> -->
+                            <div class='grid-covid__col-data'>[boolPassProtection]</div>
+                            <div class='grid-covid__col-data'>[boolReservationsRequired]</div>
+                            <div class='grid-covid__col-data'>[boolPrePurchase]</div>
+                        </div>
+                        <p class=''>Get Covid info direct from the source: <a class='link-covid-details simpleblue desktop' href='[txtResortCovidPage]' alt='Covid page'>[resortName] Covid Page</a></p>	 
+                        [covidMessage]
+                    </div>
+                </div> <!-- resort__container covid -->                               
+            </section>
+
+            [projectedOpenDate]
+            
+            <section aria-label='Resort Message'>               
+                <div class='resort__container comments'>
+                    <h1 id='comments__messsage'>[simpleName] Info </h1>
+                    <div class='resort__container__message'>
+                        [resortHours]
+                        [Comments]
+                        [Events]
+                        [Deals]
+                                                
+                    </div>
+                </div> <!-- resort__container covid -->                               
+            </section>
+
+            <section aria-label='Resort Conditions'>
+                <div class='resort__container conditions'>
+                    <h1 id='conditions__details'>[simpleName] snow report
+                        <span class='last-updated'>
+                            Last Update at [ReportDateTime]
+                        </span>
+                    </h1>
+                    <div class='conditions__wrapper'>
+                        <div class='current_weather'>
+                            <h5>[simpleName] Weather:</h5>
+                            <div class='current_weather__container'>
+                                <div class='weather_icon'>
+                                    <span class='conditions icon [weather-icon]'>
+                                        <span class='conditions-label'>[weatherToday_Condition]</span>
+                                    </span>
+                                </div>
+                                <div class='weather_temp'>
+                                    <span class='temperature'>[weatherToday_Temperature_High]
+                                        <span class='degree-unit'>°F</span> 
+                                    </span>                                    
+                                </div>
+                            </div>
+                            <h5>Snow Conditions:</h5>
+                            <span class='copy'>[primarySurfaceCondition] [secondarySurfaceCondition]</span>
+                            
+                            
+                        </div>
+                        <div class='snowfall_open_terrain'>
+                            <h5>Recent Snowfall:</h5>
+                            <div class='recent_snowfall'>
+                                [snowfall]
+                            </div>
+                            <div class='open_terrain'>
+                                <div>
+                                    <h5>Season Total <br/>Snowfall:</h5>
+                                     <div class='item'>
+                                        <span class='value'>[seasonTotal]<span class='degree-unit'>in</span> </span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Base:</h5>
+                                     <div class='item'>
+                                        <span class='value'>[avgBaseDepthMin] - [avgBaseDepthMax]<span class='degree-unit'>in</span> </span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Open Terrain:</h5>
+                                     <div class='item'>
+                                        <span class='value'>[openDownHillPercent]<span class='degree-unit'>%</span> </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='open_terrain'>
+                                <div>
+                                    <h5>Open Trails:</h5>
+                                     <div class='item'>
+                                        <span class='value'>[openDownHillTrails] <sup>of [maxOpenDownHillTrails]</sup></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Open Lifts:</h5>
+                                     <div class='item'>
+                                        <span class='value'>[openDownHillLifts] <sup>of [maxOpenDownHillLifts]</sup></span>
+                                        
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Acres:</h5>
+                                     <div class='item'>
+                                        <span class='value'>[openDownHillAcres] </span>
+
+                                    </div>
+                                </div>
+                                
+                            </div><!-- open_terrain -->
+                        </div>
+                    </div>
+                    <div class='conditions__forecast'>
+                        <h5>[simpleName] Forecast:</h5>
+                        <div class='weather-forecast'>
+                        
+                            <div class='weather-forecast__item'>
+                                <div class='weather-forecast__day'>
+                                    <div class='day_name'>
+                                        [weatherTomorrow_day]
+                                    </div>
+                                </div>
+                                <div class='weather_icon'>
+                                    <span class='conditions icon [weather-icon-weatherTomorrow]'>
+                                        <span class='conditions-label'>[weatherTomorrow_Condition]</span>
+                                    </span>
+                                </div>    
+                                <div class='weather-forecast__temps'>
+                                    <div class='temps__high'>
+                                        <div class='label'>High:</div>
+                                        <div class='value'>[weatherTomorrow_Temperature_High]°F</div>
+                                    </div>
+                                    <div class='temps__low'>
+                                        <div class='label'>Low:</div>
+                                        <div class='value'>[weatherTomorrow_Temperature_Low]°F</div>
+                                    </div>                                    
+                                </div>                            
+                            </div>
+                            
+                            <div class='weather-forecast__item'>
+                                <div class='weather-forecast__day'>
+                                    <div class='day_name'>
+                                        [weatherDayAfterTomorrow_day]
+                                    </div>
+                                </div>
+                                <div class='weather_icon'>
+                                    <span class='conditions icon [weather-icon-weatherDayAfterTomorrow]'>
+                                        <span class='conditions-label'>[weatherDayAfterTomorrow_Condition]</span>
+                                    </span>
+                                </div>    
+                                <div class='weather-forecast__temps'>
+                                    <div class='temps__high'>
+                                        <div class='label'>High:</div>
+                                        <div class='value'>[weatherDayAfterTomorrow_Temperature_High]°F</div>
+                                    </div>
+                                    <div class='temps__low'>
+                                        <div class='label'>Low:</div>
+                                        <div class='value'>[weatherDayAfterTomorrow_Temperature_Low]°F</div>
+                                    </div>                                    
+                                </div>                            
+                            </div>
+                            <div class='weather-forecast__item'>
+                                <div class='weather-forecast__day'>
+                                    <div class='day_name'>
+                                        [weatherDay4_day]
+                                    </div>
+                                </div>
+                                <div class='weather_icon'>
+                                    <span class='conditions icon [weather-icon-weatherDay4]'>
+                                        <span class='conditions-label'>[weatherDay4_Condition]</span>
+                                    </span>
+                                </div>    
+                                <div class='weather-forecast__temps'>
+                                    <div class='temps__high'>
+                                        <div class='label'>High:</div>
+                                        <div class='value'>[weatherDay4_Temperature_High]°F</div>
+                                    </div>
+                                    <div class='temps__low'>
+                                        <div class='label'>Low:</div>
+                                        <div class='value'>[weatherDay4_Temperature_Low]°F</div>
+                                    </div>                                    
+                                </div>                            
+                            </div>
+                            <div class='weather-forecast__item'>
+                                <div class='weather-forecast__day'>
+                                    <div class='day_name'>
+                                        [weatherDay5_day]
+                                    </div>
+                                </div>
+                                <div class='weather_icon'>
+                                    <span class='conditions icon [weather-icon-weatherDay5]'>
+                                        <span class='conditions-label'>[weatherDay5_Condition]</span>
+                                    </span>
+                                </div>    
+                                <div class='weather-forecast__temps'>
+                                    <div class='temps__high'>
+                                        <div class='label'>High:</div>
+                                        <div class='value'>[weatherDay5_Temperature_High]°F</div>
+                                    </div>
+                                    <div class='temps__low'>
+                                        <div class='label'>Low:</div>
+                                        <div class='value'>[weatherDay5_Temperature_Low]°F</div>
+                                    </div>                                    
+                                </div>                            
+                            </div>
+                        </div><!-- weather-forecast -->
+    
+                    </div>    
+                </div>                
+            </section>
+            <section aria-label='Resort Archive Conditions'>
+                <div id='conditions-archive' class='resort__container archive'>
+              <h1>Snow Conditions Archive:</h1>
+                <div class='xcontain'>
+
+        <div class='tabs'>
+
+          <input type='radio' id='tab1' name='tab-control' checked>
+          <input type='radio' id='tab2' name='tab-control'>
+          <ul>
+            <li title='Base Depth Archive'><label for='tab1' role='button'><span>Base Depth Archive</span></label></li>
+            <li title='Trails Archive' ><label for='tab2' role='button'><span>Open Trails Archive</span></label></li>
+          </ul>
+
+          <div class='slider'><div class='indicator'></div></div>
+          <div class='content'>
+            <section>
+              <div class='chart-flex'>
+                <div class='contain placeholder three33'>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-0'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-1'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-2'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-3'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-4'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-5'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-6'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-7'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='baseDepthChart-8'></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class='chart-flex'>
+                <div class='contain placeholder three33'>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-0'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-1'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-2'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-3'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-4'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-5'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-6'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-7'></canvas>
+                    </div>
+                  </div>
+                  <div class='placeholder-item'>
+                    <div class='chartHolder'>
+                      <canvas id='trailsChart-8'></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+
+
+          </div>
+
+
+        </div>
+        </div>
+                </div>            
+            </section>
+            <section aria-label='Resort Maps'>               
+                <div class='resort__container resort_maps'>
+                    <h1 id='resort-maps'>[simpleName] Trail Map </h1>
+                    <div class='resort_maps__container'>
+
+                        <a class='resort-map-thumbnail' target='_blank' href='[lgTrailMapURL]'>
+                            <img src='http://www.snocountry.com/trail_maps/large_trail_maps/[resort_id].jpg' alt='Trail Map' />
+                        </a>                        
+                    </div>
+                </div> <!-- resort__container covid -->                               
+            </section>
+            <section aria-label='Deals'>
+                <div class='resort__container'>
+                   {loadposition header-1}
+                </div>
+            </section>           
+        </article>
+    </div>
+</div><!-- snow-report-container -->
+<script>
+document.addEventListener('DOMContentLoaded',(event)=> {
+    console.log('--- Resort Page Scripts --');
+    let navItems = document.querySelectorAll('.nav-item-link');
+    let iterLinkDest;
+    navItems.forEach(elNavItem => {
+      elNavItem.addEventListener('click', (e)=> {
+       e.preventDefault();
+       iterLinkDest = e.target.getAttribute('href'); 
+       document.querySelector(iterLinkDest).scrollIntoView({behavior:'smooth'})		    
+      });//addEventListener
+    });
+    
+    function createCharts() {
+        console.log('---createCharts');
+        let ind = 0;
+        let chartDataSets = [ {trailChartData} ];
+        let titles = {trailTitles};
+        let chartColors = {trailChartColors};
+        chartDataSets.forEach(jsonstr => {
+          var jsonstr = chartDataSets[ind];
+          var chartSeasonData = JSON.parse(jsonstr);
+          var iterChartColor = chartColors[ind];
+          var chartConfig = {
+            type: 'line',
+            data: {
+              datasets: [{
+                borderColor: iterChartColor.borderColor,
+                borderWidth: 2,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                data: chartSeasonData,
+                fill: 'start',
+                backgroundColor: iterChartColor.backgroundColor
+              }]
+            },
+            options: {
+              pointDot: false,
+              responsive: true,
+              title : {
+                display:true,
+                text:titles[ind]
+              },
+              legend: {
+                display: false
+              },
+              tooltips: {
+                enabled: false
+              },
+              scales: {
+                xAxes: [{
+                  type: 'time',
+                  time: {
+                    unit: 'month',
+                  },
+                  ticks: {
+                    fontColor: '#226494'
+                  },
+                  gridLines: {
+                    display: false
+                  }
+                  ,display: true
+                }],
+                yAxes: [{
+                  display: true,
+                  gridLines: {
+                    color: '#B2DBE8',
+                    zeroLineColor: '#B2DBE8',
+                    drawBorder: false
+                  },
+                  ticks: {
+                    fontColor: '#226494',
+                    min: 0,
+                    max: {trailMax},
+                    beginAtZero: true
+                  }
+                  ,scaleLabel : {
+                    display:true
+                    ,labelString: 'inches'
+                    ,fontColor: '#226494'
+                  }
+      
+                }]
+              }
+            }
+          };  
+        var ctx = document.getElementById('trailsChart-'+ind);
+        var myChart = new Chart(ctx, chartConfig);
+        console.log('**** After chart creation ****');
+          ind++;
+         });  
+
+         
+        ind = 0;
+        chartDataSets = [ {baseChartData} ];
+        titles = {titles};
+        chartColors = {chartColors};
+        chartDataSets.forEach(jsonstr => {
+          var jsonstr = chartDataSets[ind];
+          var chartSeasonData = JSON.parse(jsonstr);
+          var iterChartColor = chartColors[ind];
+          var chartConfig = {
+            type: 'line',
+            data: {
+              datasets: [{
+                borderColor: iterChartColor.borderColor,
+                borderWidth: 2,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                data: chartSeasonData,
+                fill: 'start',
+                backgroundColor: iterChartColor.backgroundColor
+              }]
+            },
+            options: {
+              pointDot: false,
+              responsive: true,
+              title : {
+                display:true,
+                text:titles[ind]
+              },
+              legend: {
+                display: false
+              },
+              tooltips: {
+                enabled: false
+              },
+              scales: {
+                xAxes: [{
+                  type: 'time',
+                  time: {
+                    unit: 'month',
+                  },
+                  ticks: {
+                    fontColor: '#226494'
+                  },
+                  gridLines: {
+                    display: false
+                  }
+                  ,display: true
+                }],
+                yAxes: [{
+                  display: true,
+                  gridLines: {
+                    color: '#B2DBE8',
+                    zeroLineColor: '#B2DBE8',
+                    drawBorder: false
+                  },
+                  ticks: {
+                    fontColor: '#226494',
+                    min: 0,
+                    max: {baseMax},
+                    beginAtZero: true
+                  }
+                  ,scaleLabel : {
+                    display:true
+                    ,labelString: 'inches'
+                    ,fontColor: '#226494'
+                  }
+      
+                }]
+              }
+            }
+          };  
+        var ctx = document.getElementById('baseDepthChart-'+ind);
+        var myChart = new Chart(ctx, chartConfig);
+        console.log('**** After chart creation ****');
+          ind++;
+         });  // loop thru charDataSets        
+         
+    }
+
+    createCharts();   
+
+    let elTemp = document.querySelector('#sp-topad .banneritem');
+    if (elTemp) {
+      document.querySelector('.snow-report-container .nav-sidebar-left').classList.add('adj-ad');
+    }
+});
+</script>

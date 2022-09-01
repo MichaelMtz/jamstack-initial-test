@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   
   //const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}` ;
   const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}` : `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-${endpoint}.php?target=${target}&src=${src}`;
-  _log(`snowreport-api resort: ${url}`);
+  _log(`snowreport-api: ${url}`);
   fetch(url).then(response => {
     return response.json();
   }).then(data => {

@@ -1,5 +1,5 @@
-const resorts = require("./resorts.json");
-const breadcrumbs = require("./breadcrumbs.json");
+const lists = require("./lists.json");
+
 
 const abbrToLongName = {
   "AL":"alabama", "AK":"alaska", "AZ":"arizona", "CA":"california", "CO":"colorado", "CT":"connecticut", "ID":"idaho", "IL":"illinois", "IN":"indiana"
@@ -36,15 +36,23 @@ function formatBreadCrumbs(breadcrumbs) {
 }
 
 module.exports = async function() {
-  console.log("*** resorts.js");
+  console.log("*** lists.js");
   let iterStateNameProper, iterName, masterBreadCrumb = {};
-  //console.log("---breadcrumbs:",breadcrumbs);
-  breadcrumbs.forEach(iterBreadCrumb => {
-    masterBreadCrumb[iterBreadCrumb.stateName] = formatBreadCrumbs(iterBreadCrumb.breadcrumbs); 
-  });
-  //console.log("--masterBreadCrumb:",masterBreadCrumb);
-  resorts.forEach(iter => {
-    if (iter.entryType === 'resort')  { //resort
+  lists.forEach(iter => {
+    if (iter.entryType !== 'resort') {
+      iter["stateNameProperLowerCase"] = iter.stateName.replace('-', ' ');
+      iter["stateNameProper"] = upperCaseWords(iter.stateName);
+      iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
+      iter["snowreport"] = iter.stateName;
+
+      iter["styles"] = ['state-page.css','state-page-card.css' ];
+      
+      //Save breadcrumb for resort usage later, 
+      //note this requires "state" and "region" entryTypes to be declared before associated "resort" types
+      //masterBreadCrumb[iter.stateName] = iter.breadcrumbs;
+      masterBreadCrumb[iter.stateName] = iter["breadCrumbList"];
+
+    } else { //resort
       iterName = iter.stateName.split('/');
       iter["stateNameProperLowerCase"] = iterName[1].replace('-', ' ');
       iter["stateNameProper"] = upperCaseWords(iterName[1]);
@@ -60,5 +68,5 @@ module.exports = async function() {
       
     }
   });
-  return resorts;
+  return lists;
 };
