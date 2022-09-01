@@ -45,7 +45,7 @@ module.exports = async function() {
       iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
       iter["snowreport"] = iter.stateName;
 
-      iter["styles"] = ['state-page.css','state-page-card.css' ];
+      iter["styles"] = ['state-page.css','state-page-card-x.css' ];
       
       //Save breadcrumb for resort usage later, 
       //note this requires "state" and "region" entryTypes to be declared before associated "resort" types
