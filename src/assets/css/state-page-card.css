@@ -1,43 +1,5 @@
-:root {
-  --check-borderWidth: 4px;
-  --check-height: 18px;
-  --check-width: 9px;
-  --check-borderColor: #2AB573;
-}
-
 body {
   background-image: linear-gradient(90deg, #0097BE, #0071AC);
-}
-
-.open {
-  margin: 0 auto;
-  display: inline-block;
-  
-  height: var(--check-height);
-  width: var(--check-width);
-  border-bottom: var(--check-borderWidth) solid var(--check-borderColor);
-  border-right: var(--check-borderWidth) solid var(--check-borderColor);
-}
-
-.close {
-  position: relative;
-  margin: 0 auto;
-}
-
-.close:before, .close:after {
-  position: absolute;
-  content: " ";
-  height: 16px;
-  width: 3px;
-  background-color: #000;
-}
-
-.close:before {
-  transform: rotate(45deg);
-}
-
-.close:after {
-  transform: rotate(-45deg);
 }
 
 .resorts-container {
@@ -54,72 +16,16 @@ body {
   font-weight: 400;
 }
 .resorts-container .filter-container {
-  max-width: 1200px;
-  margin-bottom: 50px;
-  align-self: center;
   display: flex;
   justify-content: space-evenly;
-  gap: 30px;
-}
-@media screen and (max-width: 664px) {
-  .resorts-container .filter-container {
-    gap: 10px;
-  }
-}
-@media screen and (max-width: 584px) {
-  .resorts-container .filter-container {
-    margin-bottom: 25px;
-    flex-flow: row wrap;
-    gap: 30px;
-  }
-}
-@media screen and (max-width: 490px) {
-  .resorts-container .filter-container {
-    gap: 10px;
-  }
 }
 .resorts-container .filter-container button {
   border-radius: 14px;
   color: #004B8B;
 }
-@media screen and (max-width: 550px) {
-  .resorts-container .filter-container button {
-    flex: 0 1 88px;
-  }
-}
-.resorts-container .filter-container button.active {
-  border: 1px solid white;
-  background-color: #004B8B;
-  color: white;
-}
 .resorts-container .filter-container button:hover {
   background-color: #004B8B;
   color: white;
-}
-.resorts-container .resort.summer {
-  max-width: 1214px;
-  margin: 20px auto;
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort.summer {
-    min-height: 150px;
-    height: 262px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .resorts-container .resort.summer {
-    height: 262px;
-  }
-}
-@media screen and (max-width: 427px) {
-  .resorts-container .resort.summer {
-    height: 210px;
-  }
-}
-@media screen and (max-width: 390px) {
-  .resorts-container .resort.summer {
-    height: 225px;
-  }
 }
 .resorts-container .resort {
   max-width: 100%;
@@ -138,13 +44,6 @@ body {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort a, .resorts-container .resort a.resort__link {
-    height: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-  }
 }
 .resorts-container .resort a:hover, .resorts-container .resort a.resort__link:hover {
   color: #0AC2FF;
@@ -165,14 +64,6 @@ body {
   flex-flow: column wrap;
   font-family: "Mulish", sans-serif;
 }
-@media screen and (max-width: 1235px) {
-  .resorts-container .resort__header {
-    max-width: 255px;
-    width: 100%;
-    min-width: unset;
-    padding: 5px 10px;
-  }
-}
 .resorts-container .resort__header h2 {
   margin: 10px 0 0;
   font-family: "Mulish", sans-serif;
@@ -182,42 +73,12 @@ body {
   color: #FFF;
   font-weight: 400;
 }
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__header h2 {
-    margin-left: 11px;
-  }
-}
-@media screen and (max-width: 427px) {
-  .resorts-container .resort__header h2 {
-    margin-top: 0px;
-    font-size: 22px;
-  }
-}
 .resorts-container .resort__header-weather {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-evenly;
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__header-weather {
-    height: 100%;
-    margin-top: 28px;
-    align-items: unset;
-  }
-}
-@media screen and (max-width: 750px) {
-  .resorts-container .resort__header-weather {
-    margin-top: 28px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .resorts-container .resort__header-weather {
-    margin-top: unset;
-    flex-flow: column nowrap;
-    align-items: center;
-  }
 }
 .resorts-container .resort__header-weather-condition {
   display: flex;
@@ -230,29 +91,14 @@ body {
 .resorts-container .resort__header-weather-condition .weather-copy {
   text-align: center;
 }
-.resorts-container .resort__header-weather-detail {
-  position: relative;
-  margin-top: 15px;
-}
-@media screen and (max-width: 550px) {
-  .resorts-container .resort__header-weather-detail {
-    margin-top: unset;
-  }
-}
-.resorts-container .resort__header-weather-detail-temp {
+.resorts-container .resort__header-weather-temp {
   position: relative;
   top: -10px;
   left: -10px;
   font-size: 40px;
 }
-.resorts-container .resort__header-weather-detail-temp sup {
+.resorts-container .resort__header-weather-temp sup {
   font-size: 22px;
-}
-@media screen and (max-width: 550px) {
-  .resorts-container .resort__header-weather-detail-temp {
-    top: unset;
-    left: unset;
-  }
 }
 .resorts-container .resort__header a.link, .resorts-container .resort__header span.link {
   align-self: flex-end;
@@ -267,21 +113,6 @@ body {
 .resorts-container .resort__header.long-name h2 {
   margin-top: 5px;
   font-size: 20px;
-}
-@media screen and (max-width: 427px) {
-  .resorts-container .resort__header.long-name h2 {
-    margin-top: 0px;
-    font-size: 18px;
-  }
-}
-.resorts-container .resort__info.summer {
-  justify-content: flex-start;
-  flex-flow: row nowrap;
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__info.summer {
-    flex-flow: column nowrap;
-  }
 }
 .resorts-container .resort__info {
   width: 100%;
@@ -415,178 +246,6 @@ body {
   background-color: #39f;
   display: flex;
   flex-direction: column;
-}
-@media screen and (max-width: 1235px) {
-  .resorts-container .resort__info-summer {
-    flex: 0 0 290px;
-  }
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__info-summer {
-    max-height: 110px;
-  }
-}
-@media screen and (max-width: 393px) {
-  .resorts-container .resort__info-summer .section-header {
-    font-size: 11px;
-  }
-}
-.resorts-container .resort__info-summer .section-summer {
-  margin: 12px;
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 20px;
-  justify-content: center;
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__info-summer .section-summer {
-    justify-content: space-evenly;
-  }
-}
-@media screen and (max-width: 750px) {
-  .resorts-container .resort__info-summer .section-summer {
-    flex-flow: row wrap;
-  }
-}
-.resorts-container .resort__info-summer .section-summer-item {
-  flex: 0 1 80px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-content: space-between;
-}
-@media screen and (max-width: 1295px) {
-  .resorts-container .resort__info-summer .section-summer-item {
-    flex: 0 0 55px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .resorts-container .resort__info-summer .section-summer-item {
-    flex: 0 1 100px;
-  }
-}
-@media screen and (max-width: 625px) {
-  .resorts-container .resort__info-summer .section-summer-item {
-    flex: 0 0 80px;
-  }
-}
-@media screen and (max-width: 552px) {
-  .resorts-container .resort__info-summer .section-summer-item {
-    flex: 0 0 50px;
-  }
-}
-@media screen and (max-width: 427px) {
-  .resorts-container .resort__info-summer .section-summer-item {
-    flex: 0 0 40px;
-  }
-}
-@media screen and (max-width: 390px) {
-  .resorts-container .resort__info-summer .section-summer-item {
-    flex: 0 0 35px;
-  }
-}
-@media screen and (max-width: 363px) {
-  .resorts-container .resort__info-summer .section-summer-item {
-    flex: 0 0 30px;
-  }
-}
-.resorts-container .resort__info-summer .section-summer-item img {
-  width: 60px;
-  margin-bottom: 10px;
-}
-@media screen and (max-width: 750px) {
-  .resorts-container .resort__info-summer .section-summer-item img {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-.resorts-container .resort__info-summer .section-summer-item img.golf.close {
-  margin-left: 6px;
-}
-.resorts-container .resort__info-extended-weather {
-  max-width: 530px;
-  border-left: 1px solid #ccc;
-  padding-left: 10px !important;
-  flex: 0 1 64%;
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__info-extended-weather {
-    width: 100%;
-    min-width: 100%;
-    margin-top: 10px !important;
-    margin-left: unset !important;
-    border-top: 1px solid #ccc;
-    border-left: unset;
-    padding-top: 9px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .resorts-container .resort__info-extended-weather {
-    display: none;
-  }
-}
-.resorts-container .resort__info-extended-weather .section-header {
-  margin-bottom: 10px;
-}
-.resorts-container .resort__info-extended-weather .section-summer-weather {
-  display: flex;
-  flex-flow: row nowrap;
-  overflow: hidden;
-  justify-content: space-between;
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather {
-    justify-content: space-evenly;
-  }
-}
-.resorts-container .resort__info-extended-weather .section-summer-weather-item {
-  flex: 0 1 80px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-}
-@media screen and (max-width: 1435px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item {
-    flex: 0 0 90px;
-  }
-}
-@media screen and (max-width: 1325px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item {
-    flex: 0 0 100px;
-  }
-}
-.resorts-container .resort__info-extended-weather .section-summer-weather-item img.weather-icon {
-  width: 44px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-@media screen and (max-width: 1435px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item:last-child {
-    display: none;
-  }
-}
-@media screen and (max-width: 1278px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item:nth-last-child(2) {
-    display: none;
-  }
-}
-@media screen and (max-width: 1175px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item:last-child {
-    display: flex;
-  }
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item:nth-last-child(2) {
-    display: flex;
-  }
-}
-@media screen and (max-width: 1125px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item:last-child {
-    display: none;
-  }
-}
-@media screen and (max-width: 1020px) {
-  .resorts-container .resort__info-extended-weather .section-summer-weather-item:nth-last-child(2) {
-    display: none;
-  }
 }
 .resorts-container .resort:hover {
   transition: all 0.2s ease-out;
