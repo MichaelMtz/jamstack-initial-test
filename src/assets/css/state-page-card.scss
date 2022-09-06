@@ -5,9 +5,14 @@ $snowReportFont : "Mulish", sans-serif;
     @content;
   }
 }
-
+:root {
+  --check-borderWidth: 4px;
+  --check-height: 18px;
+  --check-width: 9px;
+  --check-borderColor: #2AB573;
+}
 body {
-    background-image: linear-gradient(90deg, #0097BE, #0071AC);
+  background-image: linear-gradient(90deg, #0097BE, #0071AC);
 }
 
 .resorts-container {
@@ -24,17 +29,59 @@ body {
         font-weight: 400;
     }
     .filter-container {
-        display:flex;
-        justify-content: space-evenly;
-
-        button {
-            border-radius: 14px;
-            color: #004B8B;
-        }
-        button:hover {
-           background-color: #004B8B; 
-           color:white;
-        }
+      max-width: 1200px;
+      margin-bottom: 50px;
+      align-self: center;
+      display:flex;
+      justify-content: space-evenly;
+      gap: 30px;
+      @include bpmax(664px) {
+        gap:10px;
+      }
+      @include bpmax(584px) {
+        margin-bottom:25px;
+        flex-flow:row wrap;
+        gap:30px;
+      }
+      @include bpmax(490px) {
+        gap:10px
+      }
+      button {
+          border-radius: 14px;
+          color: #004B8B;
+          @include bpmax(550px) {
+            flex: 0 1 88px;
+          }
+      }
+      button.active {
+        border: 1px solid white;
+        background-color: #004B8B; 
+        color:white;
+      }
+      button:hover {
+        background-color: #004B8B; 
+        color:white;
+      }
+    }
+    .resort.summer {
+      max-width:1214px;
+      margin: 20px auto;
+      @include bpmax(1175px) {
+        min-height: 150px;
+        height: 262px;
+      }
+      // @include bpmax(850px) {
+      //   height: 150px;
+      // }
+      @include bpmax(750px) {
+        height: 262px;
+      }
+      @include bpmax(427px) {
+        height:210px;
+      }
+      @include bpmax(390px) {
+        height:225px;
+      }
     }
     .resort {
         max-width: 100%;
@@ -52,6 +99,11 @@ body {
             color:#fff;
             text-decoration: none;
             cursor: pointer;
+            @include bpmax(1175px) {
+              height: 100%;
+              display: flex;
+              flex-flow: column nowrap;
+            }
         }
         a:hover,a.resort__link:hover {
             color:#0AC2FF;
@@ -73,6 +125,12 @@ body {
             display: flex;
             flex-flow: column wrap;
             font-family: $snowReportFont;
+            @include bpmax(1235px) {
+              max-width: 255px;
+              width: 100%;
+              min-width: unset;
+              padding: 5px 10px;
+            }
             h2 {
                 margin: 10px 0 0;
                 font-family: $snowReportFont;
@@ -81,10 +139,14 @@ body {
                 line-height: unset;
                 color:#FFF;
                 font-weight: 400;
+                @include bpmax(1175px) {
+                  margin-left:11px;
+                }
+                @include bpmax(427px) {
+                  margin-top: 0px;
+                  font-size:22px;
+                }
             }  
-             
-
-
             
             &-weather {
                 width: 100%;
@@ -92,27 +154,57 @@ body {
                 flex-flow: row wrap;
                 align-items: center;
                 justify-content: space-evenly;
-                
+                @include bpmax(1175px) {
+                  height: 100%;
+                  margin-top: 28px;
+                  align-items: unset;                                 
+                }
+                // @include bpmax(850px) {
+                //   margin-top:unset;
+                // }
+                @include bpmax(750px) {
+                  margin-top:28px;
+                }
+                @include bpmax(550px) {
+                  margin-top:unset;
+                  flex-flow: column nowrap;
+                  align-items: center;
+                }
                 &-condition {
-                    display:flex; 
-                    flex-flow: column;
-                    img {
-                        width: 66px;
-                        margin-bottom: 0px;;
-                    }
-                    .weather-copy {
-                        text-align: center;
-                    }                   
+                  display:flex; 
+                  flex-flow: column;
+                  img {
+                    width: 66px;
+                    margin-bottom: 0px;
+                  }
+                  .weather-copy {
+                    text-align: center;
+                  }                   
                 }
-                &-temp {
-                    position: relative;
-                    top: -10px;
-                    left: -10px;
-                    font-size:40px;
-                    sup {
-                        font-size:22px;
-                    }
+                &-detail {
+                  position:relative;
+                  margin-top: 15px;
+                  @include bpmax(550px) {
+                    margin-top:unset;
+                  }
+                  &-temp {
+                      position: relative;
+                      top: -10px;
+                      left: -10px;
+                      font-size:40px;
+                      sup {
+                          font-size:22px;
+                      }
+                      @include bpmax(550px) {
+                        top:unset;
+                        left:unset;
+                      }
+                  }  
+                  &-date{
+                    
+                  }
                 }
+
             }
             a.link,span.link {
                 align-self: flex-end;
@@ -126,10 +218,21 @@ body {
             }
         }
         &__header.long-name {
-            h2 {
-                margin-top: 5px;
-                font-size: 20px;
+          h2 {
+            margin-top: 5px;
+            font-size: 20px;
+            @include bpmax(427px) {
+              margin-top:0px;
+              font-size:18px
             }
+          }
+        }
+        &__info.summer {
+          justify-content: flex-start;
+          flex-flow: row nowrap;
+          @include bpmax(1175px) {
+            flex-flow: column nowrap;
+          }
         }
         &__info {
             width: 100%;
@@ -240,46 +343,224 @@ body {
 
             
             &-terrain {
+              margin: 5px;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              
+
+              .terrain-item {
                 margin: 5px;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
-                
-
-                .terrain-item {
-                    margin: 5px;
+                &__copy {
+                    margin-bottom: .25rem;
+                    text-transform: uppercase !important;
+                    opacity: 0.6;
+                    small {
+                    display: flex;
+                    justify-content: space-between;
+                        
+                    }
+                    
+                }
+                .progress {
+                    height: 4px;
+                    line-height: 0;
+                    overflow: hidden;
+                    font-size: .65625rem;
+                    background-color: #ebedef;
+                    border-radius: .25rem;
+                    display: flex;
+                }
+                .progress-bar {
+                    background-color:#39f;
                     display: flex;
                     flex-direction: column;
-                    &__copy {
-                        margin-bottom: .25rem;
-                        text-transform: uppercase !important;
-                        opacity: 0.6;
-                        small {
-                        display: flex;
-                        justify-content: space-between;
-                            
-                        }
-                        
-                    }
-                    .progress {
-                        height: 4px;
-                        line-height: 0;
-                        overflow: hidden;
-                        font-size: .65625rem;
-                        background-color: #ebedef;
-                        border-radius: .25rem;
-                        display: flex;
-                    }
-                    .progress-bar {
-                        
-                        background-color:#39f;
-                        display: flex;
-                        flex-direction: column;
-                        
-                    }
                 }
+              }
             }
-        }
+            &-summer {
+              @include bpmax(1235px) {
+                flex: 0 0 290px;
+              }
+              @include bpmax(1175px) {
+                max-height: 110px;
+              }
+              .section-header {
+                @include bpmax(393px) {
+                  font-size:11px;
+                }
+              }
+              .section-summer {
+                margin: 12px;
+                display:flex;
+                flex-flow: row nowrap;
+                gap:20px;
+                justify-content: center;
+                @include bpmax(1175px) {
+                  justify-content: space-evenly
+                }
+                // @include bpmax(850px) {
+                //   flex-flow: row wrap;
+                // }
+                @include bpmax(750px) {
+                  flex-flow: row wrap;
+                }
+                &-item {
+                  flex:0 1 80px; 
+                  display: flex;
+                  flex-flow: column nowrap;
+                  align-content: space-between;
+                  
+                  @include bpmax(1295px) {
+                    flex: 0 0 55px;
+                  }
+                  @include bpmax(750px) {
+                    flex: 0 1 100px;
+                  }
+                  @include bpmax(625px) {
+                    flex: 0 0 80px;
+                  }
+                  @include bpmax(552px) {
+                    flex: 0 0 50px;
+                  }
+                  @include bpmax(427px) {
+                    flex: 0 0 40px;
+                  }
+                  @include bpmax(390px) {
+                    flex: 0 0 35px;
+                  }
+                  @include bpmax(363px) {
+                    flex: 0 0 30px;
+                  }
+                  .open {
+                    margin: 0 auto;
+                    display: inline-block;
+                    transform: rotate(45deg);
+                    height: var(--check-height);
+                    width: var(--check-width);
+                    border-bottom: var(--check-borderWidth) solid var(--check-borderColor);
+                    border-right: var(--check-borderWidth) solid var(--check-borderColor);
+                  }
+                  .close {
+                    position: relative;
+                    margin: 0 auto;
+                  }
+                  .close:before, .close:after {
+                    position: absolute;
+                    content: ' ';
+                    height: 16px;
+                    width: 3px;
+                    background-color: #000;
+                  }
+                  .close:before {
+                    transform: rotate(45deg);
+                  }
+                  .close:after {
+                    transform: rotate(-45deg);
+                  }
+                  img {
+                    width:60px;
+                    margin-bottom: 10px;
+                    @include bpmax(750px) {
+                      margin-left:auto;
+                      margin-right:auto;
+                    }
+                  }
+                  img.golf.close {
+                    margin-left:6px;
+                  }
+                }
+              }
+            }
+            &-extended-weather {
+              max-width: 530px;
+              border-left: 1px solid #ccc;
+              padding-left: 10px !important;
+              flex: 0 1 64%;
+              @include bpmax(1175px) {
+                width: 100%;
+                min-width: 100%;
+                margin-top:10px !important;
+                margin-left: unset !important;                
+                border-top: 1px solid #ccc;
+                border-left: unset;
+                padding-top: 9px
+              }
+              // @include bpmax(850px) {
+              //   display:none;
+              // }
+              @include bpmax(750px) {
+                display:none;
+              }
+              .section-header {
+                margin-bottom: 10px;
+              }
+              .section-summer-weather {
+                display:flex;
+                flex-flow: row nowrap;
+                overflow:hidden;
+                justify-content: space-between;
+                @include bpmax(1175px) {
+                  justify-content: space-evenly;
+                }
+                &-item {
+                  flex: 0 1 80px;
+                  display:flex;
+                  flex-flow: column nowrap;
+                  align-items: center;
+                  justify-content: space-evenly;
+                  
+                  @include bpmax(1435px) {
+                    flex: 0 0 90px;                  
+                  }
+                  @include bpmax(1325px) {
+                    flex: 0 0 100px;                  
+                  }
+                  .weather-date {
+                    
+                  }
+                  img.weather-icon {
+                    width:44px;
+                    margin-top:10px;
+                    margin-bottom:5px;
+                  }
+                  .weather-temp {
+                    
+                  }
+                }
+                @include bpmax(1435px) {
+                  &-item:last-child {
+                   display: none;
+                  }
+                }
+                @include bpmax(1278px) {
+                  &-item:nth-last-child(2) {
+                    display: none;
+                  }
+                }
+                @include bpmax(1175px){
+                  &-item:last-child {
+                    display: flex;
+                  }
+                  &-item:nth-last-child(2) {
+                    display: flex;
+                  }
+                }
+                @include bpmax(1125px) {
+                  &-item:last-child {
+                    display: none;
+                  }
+                }
+                @include bpmax(1020px) {
+                  &-item:nth-last-child(2) {
+                    display:none;
+                  }
+                }
+              }
+            }
+          }
     }
     .resort:hover {
         transition: all 0.2s ease-out;
