@@ -99,7 +99,7 @@ sub { bottom: -0.25em; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
 	h2 { font-size: 34px; line-height: 40px; margin-bottom: 10px; }
-	h3 { font-family: 'Fanwood Text', serif; font-size: 28px; font-weight:400!important; line-height: 34px; margin-bottom: 8px; }
+	h3 { font-size: 28px; font-weight:400; line-height: 34px; margin-bottom: 8px; }
 	h4 { font-size: 22px; line-height: 24px; margin-bottom: 8px; }
 	h5 { font-size: 19px; line-height: 22px; margin-bottom: 8px; }
 	h6 { font-size: 17px; line-height: 20px;  }

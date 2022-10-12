@@ -123,7 +123,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.snow-report-container .resort__container h1 {
+.snow-report-container .resort__container h2 {
   width: 100%;
   margin-bottom: unset;
   border-bottom: 1px solid #314d5a;
@@ -137,7 +137,7 @@
   text-transform: uppercase;
 }
 @media screen and (max-width: 818px) {
-  .snow-report-container .resort__container h1 {
+  .snow-report-container .resort__container h2 {
     font-size: 2rem;
     padding: 15px 0px 0px;
     font-weight: 600;
@@ -146,12 +146,12 @@
   }
 }
 @media screen and (max-width: 420px) {
-  .snow-report-container .resort__container h1 {
+  .snow-report-container .resort__container h2 {
     letter-spacing: 2.5px;
     font-size: 30px;
   }
 }
-.snow-report-container .resort__container h1 .last-updated {
+.snow-report-container .resort__container h2 .last-updated {
   margin: 3px 0 0 2px;
   display: block;
   font-size: 1rem;
@@ -162,20 +162,21 @@
   text-transform: initial;
   letter-spacing: 1px;
 }
-.snow-report-container .resort__container h1#comments__tba {
+.snow-report-container .resort__container h2#comments__tba {
   letter-spacing: 3px;
 }
-.snow-report-container .resort__container h1#comments__tba span {
+.snow-report-container .resort__container h2#comments__tba span {
   padding-left: 10px;
   font-weight: 300;
   color: #02A8F3;
 }
-.snow-report-container .resort__container h5 {
+.snow-report-container .resort__container h3 {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1.6px;
+  font-style: normal;
 }
 .snow-report-container .resort__container__message {
   padding: 10px;
@@ -412,13 +413,6 @@
   width: 100%;
   display: inline-block;
   min-width: 100%;
-}
-.snow-report-container .resort .conditions h5 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
 }
 .snow-report-container .resort .conditions__forecast {
   border-top: 1px solid #5c5e60;

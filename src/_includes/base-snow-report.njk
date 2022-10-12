@@ -6,8 +6,8 @@
         <link rel="canonical" href="https://www.snocountry.com/snow-report/{{ resorts.stateName }}">
         <!-- <base href="https://snocountry.netlify.app/" /> -->
         <!-- <base href="http://localhost:8080/" />  -->
-        <base href="https://snocountry.netlify.app/" />
-        
+        <base href="http://localhost:8080/" /> 
+
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="{{ resorts.stateNameProper }} Mountains Snow, Snow for {{ resorts.stateNameProper }}, Snow in {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} snow report, Snow Report {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} Ski Report, {{ resorts.stateNameProper }} Snow, Snow {{ resorts.stateNameProper }}, Ski Report {{ resorts.stateNameProper }},  where is the snow in {{ resorts.stateNameProperLowerCase }}" />
@@ -28,7 +28,7 @@
         </script>
         <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://www.snocountry.com/","logo":"https://www.snocountry.com/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g"]}
         </script>
-        
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{{ resorts.listOfResorts }}],"itemListOrder":"https://schema.org/ItemListUnordered","name":"List of {{ resorts.stateNameProper }} Ski Areas"}</script>
         <link rel="stylesheet" href="/assets/font/mulish-font.css">
         <link rel="stylesheet" href="/assets/css/snocountry-base.css">
         {% if resorts.styles %}
