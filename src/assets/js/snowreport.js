@@ -189,8 +189,8 @@ const createCharts = () => {
   const resort_id = document.body.dataset.snowreport;
   const localURL = `http://localhost/sno/snoFeeds/archiveChartSaved.php?resort_id=${resort_id}`;
 
-  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-archive-api?target=${resort_id}` : localURL;
- 
+  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-archive-api?resort_id=${resort_id}` : localURL;
+  _log(`snowreport-archive-api url: ${url}`);
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
