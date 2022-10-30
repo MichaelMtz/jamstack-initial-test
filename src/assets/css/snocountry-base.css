@@ -1091,3 +1091,6 @@ table {
 html, body {
 	scroll-behavior: smooth;
 }
+.sno-hide {
+	display:none !important;
+}

@@ -88,29 +88,6 @@ const waitForElement = selector=>{
 };
 
 
-const initializeFilters = () => {
-  var elCurrentActive;
-  waitForElement(`.filter-container #filter-all`).then(elFilterAll => {
-    elCurrentActive = elFilterAll;
-    document.querySelectorAll('.filter-container button[id^="filter-"]').forEach(iterElBtn => {
-      iterElBtn.addEventListener('click',() => {
-        _log('Filter btn clicked');
-        // Clear existing active button, reset to new one
-        elCurrentActive.className = "";
-        iterElBtn.classList.add('active');
-        elCurrentActive = iterElBtn;
-        const elSnowReportsContainer = document.querySelector('#container-snow-reports');
-        if (elSnowReportsContainer) {
-          elSnowReportsContainer.className = "";
-          elSnowReportsContainer.classList.add(iterElBtn.dataset.id);          
-        }
-      });    
-    });
-    
-
-  }).catch( () => { console.log('Error waiting for EL:');});
-};
-
 const fixPageNavLinks = () => {
   waitForElement('.container-state-links').then((elStateLinks) => {
     _log('fixPageNavLinks::init');
@@ -124,10 +101,115 @@ const fixPageNavLinks = () => {
   });
 
 };
-document.addEventListener('DOMContentLoaded',()=> {
-  let target = document.body.dataset.snowreport;
-  let src = document.body.dataset.source;
-  let endpoint = (src !== 'resort') ? 'list' : 'resort';  
+
+const createSectionChart = (section,chart) => {
+  // let chartDataSets = [ {trailChartData} ];
+  // let titles = {trailTitles};
+  // let chartColors = {trailChartColors};
+  _log(`createSectionChart: ${section}`);
+  
+  const chartDataSets = chart.data;
+  const titles = chart.titles;
+  const chartColors = chart.chartColors;  
+  console.log(`createSectionChart:len:${chartDataSets.length}`,chartDataSets);
+  for(let ind=0; ind<chartDataSets.length; ind++) {
+    const chartSeasonData = chartDataSets[ind];
+    const iterChartColor = chartColors[ind];
+    const chartConfig = {
+      type: 'line',
+      data: {
+        datasets: [{
+          borderColor: iterChartColor.borderColor,
+          borderWidth: 2,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          data: chartSeasonData,
+          fill: 'start',
+          backgroundColor: iterChartColor.backgroundColor
+        }]
+      },
+      options: {
+        pointDot: false,
+        responsive: true,
+        title : {
+          display:true,
+          text:titles[ind]
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: false
+        },
+        scales: {
+          xAxes: [{
+            type: 'time',
+            time: {
+              unit: 'month',
+            },
+            ticks: {
+              fontColor: '#226494'
+            },
+            gridLines: {
+              display: false
+            }
+            ,display: true
+          }],
+          yAxes: [{
+            display: true,
+            gridLines: {
+              color: '#B2DBE8',
+              zeroLineColor: '#B2DBE8',
+              drawBorder: false
+            },
+            ticks: {
+              fontColor: '#226494',
+              min: 0,
+              max: chart.seasonMax,
+              beginAtZero: true
+            }
+            ,scaleLabel : {
+              display:true
+              ,labelString: 'inches'
+              ,fontColor: '#226494'
+            }
+
+          }]
+        }
+      }
+    };
+    const ctx = document.getElementById(`${section}-${ind}`);
+    new Chart(ctx, chartConfig);
+    console.log('**** After chart creation ****');
+  }
+
+};
+
+const createCharts = () => {
+  const resort_id = document.body.dataset.snowreport;
+  const localURL = `http://localhost/sno/snoFeeds/archiveChartSaved.php?resort_id=${resort_id}`;
+
+  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-archive-api?target=${resort_id}` : localURL;
+ 
+  fetch(url).then(response => {
+    return response.json();
+  }).then(data => {
+  
+    console.log('--archiveData:',data);
+    waitForElement('#trailsChart-9').then(() => {
+      
+      createSectionChart('baseDepthChart',data.BaseDepth);
+      createSectionChart('trailsChart',data.Trails);
+      
+      
+    }).catch( (e) => { console.error('Error waiting for archive:',e);});
+    //initializeFilters();
+  }).catch( (e) => { console.error('Error waiting for createCharts fetch:',e);});
+};
+const getSnowReport = () => {
+  const target = document.body.dataset.snowreport;
+  const src = document.body.dataset.source;
+  const endpoint = (src !== 'resort') ? 'list' : 'resort';  
   // fetch(url,{"headers": {"sec-fetch-mode": "cors","Access-Control-Allow-Origin":"*"}, "mode":"cors"}).then(response => {
   
   //const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}` ;
@@ -135,22 +217,13 @@ document.addEventListener('DOMContentLoaded',()=> {
   // _log(`snowreport-api resort: ${url}`);
   fetch(url).then(response => {
     return response.json();
-  }).then(data => {
-
+  }).then(data => { 
     document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
-    //process progressbars
-    (function() {
-      let progressBarList = document.querySelectorAll('.progress-bar');
-      if (progressBarList) {
-        progressBarList.forEach(iterBar => {
-          iterBar.style.width = iterBar.dataset.percentage;
-          //console.log(`pb:`,iterBar.dataset.percentage); 
-        });
-      }
-    })();
-    initializeFilters();
   }).catch( () => { console.log('Error waiting for EL:');});
+};
 
+document.addEventListener('DOMContentLoaded',()=> {
+  getSnowReport();
   fixPageNavLinks();
-
+  createCharts();
 });
