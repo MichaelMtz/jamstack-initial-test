@@ -7,7 +7,7 @@ pagination:
 permalink: /snow-report/{{ resorts.stateName }}/index.html
 ---
 
-<div class="conditions">
+<div id="resort-top" class="conditions">
       <nav class="nav-breadcrumbs"> 
         {% for iterBreadCrumb in resorts.breadCrumbList %}
           <a class="breadcrumb-link" href="{{ iterBreadCrumb.link }}">{{ iterBreadCrumb.abbrName }}</a>

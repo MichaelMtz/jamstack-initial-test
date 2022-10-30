@@ -99,7 +99,7 @@ const initializeFilters = () => {
         elCurrentActive.className = "";
         iterElBtn.classList.add('active');
         elCurrentActive = iterElBtn;
-        let elSnowReportsContainer = document.querySelector('#container-snow-reports');
+        const elSnowReportsContainer = document.querySelector('#container-snow-reports');
         if (elSnowReportsContainer) {
           elSnowReportsContainer.className = "";
           elSnowReportsContainer.classList.add(iterElBtn.dataset.id);          
@@ -109,7 +109,19 @@ const initializeFilters = () => {
     
 
   }).catch( () => { console.log('Error waiting for EL:');});
-  
+};
+
+const fixPageNavLinks = () => {
+  waitForElement('.container-state-links').then((elStateLinks) => {
+    _log('fixPageNavLinks::init');
+    const navItems = elStateLinks.parentElement.querySelectorAll('.nav-item-link');
+    navItems.forEach(elNavItem => {
+      _log(`fixPageNavLinks: iter href: ${elNavItem.href}`);
+      elNavItem.href = window.location.href.split('#')[0] + elNavItem.dataset.section;
+    });
+  }).catch(() => { 
+    _log('Error waiting for EL:');
+  });
 
 };
 document.addEventListener('DOMContentLoaded',()=> {
@@ -120,7 +132,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   
   //const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}` ;
   const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}` : `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-${endpoint}.php?target=${target}&src=${src}`;
-  _log(`snowreport-api resort: ${url}`);
+  // _log(`snowreport-api resort: ${url}`);
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
@@ -139,6 +151,6 @@ document.addEventListener('DOMContentLoaded',()=> {
     initializeFilters();
   }).catch( () => { console.log('Error waiting for EL:');});
 
-  
+  fixPageNavLinks();
 
 });

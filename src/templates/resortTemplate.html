@@ -404,15 +404,7 @@
 <script>
 document.addEventListener('DOMContentLoaded',(event)=> {
     console.log('--- Resort Page Scripts --');
-    let navItems = document.querySelectorAll('.nav-item-link');
-    let iterLinkDest;
-    navItems.forEach(elNavItem => {
-      elNavItem.addEventListener('click', (e)=> {
-       e.preventDefault();
-       iterLinkDest = e.target.getAttribute('href'); 
-       document.querySelector(iterLinkDest).scrollIntoView({behavior:'smooth'})		    
-      });//addEventListener
-    });
+
     
     function createCharts() {
         console.log('---createCharts');
