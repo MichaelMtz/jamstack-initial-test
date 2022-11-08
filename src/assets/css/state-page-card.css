@@ -51,9 +51,10 @@ body {
   border-radius: 14px;
   color: #004B8B;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 585px) {
   .resorts-container .filter-container button {
     flex: 0 1 88px;
+    font-size: 10px;
   }
 }
 .resorts-container .filter-container button.active {
@@ -102,6 +103,11 @@ body {
   display: flex;
   overflow: hidden;
   font-family: "Mulish", sans-serif;
+}
+@media screen and (max-width: 428px) {
+  .resorts-container .resort {
+    width: 100%;
+  }
 }
 .resorts-container .resort a, .resorts-container .resort a.resort__link {
   color: #fff;
@@ -156,10 +162,14 @@ body {
     margin-left: 11px;
   }
 }
-@media screen and (max-width: 427px) {
+@media screen and (max-width: 550px) {
   .resorts-container .resort__header h2 {
-    margin-top: 0px;
-    font-size: 22px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .resorts-container .resort__header h2 {
+    font-size: 18px;
   }
 }
 .resorts-container .resort__header-weather {
@@ -177,15 +187,9 @@ body {
     align-items: unset;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 465px) {
   .resorts-container .resort__header-weather {
-    margin-top: 28px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .resorts-container .resort__header-weather {
-    margin-top: unset;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
   }
 }
@@ -193,12 +197,27 @@ body {
   display: flex;
   flex-flow: column;
 }
+@media screen and (max-width: 465px) {
+  .resorts-container .resort__header-weather-condition {
+    align-items: flex-start;
+  }
+}
 .resorts-container .resort__header-weather-condition img {
   width: 66px;
   margin-bottom: 0px;
 }
+@media screen and (max-width: 465px) {
+  .resorts-container .resort__header-weather-condition img {
+    width: 38px;
+  }
+}
 .resorts-container .resort__header-weather-condition .weather-copy {
   text-align: center;
+}
+@media screen and (max-width: 465px) {
+  .resorts-container .resort__header-weather-condition .weather-copy {
+    font-size: 10px;
+  }
 }
 .resorts-container .resort__header-weather-detail {
   position: relative;
@@ -268,6 +287,11 @@ body {
   text-transform: uppercase;
   opacity: 0.8;
 }
+@media screen and (max-width: 787px) {
+  .resorts-container .resort__info .section-container .section-header {
+    font-size: 12px;
+  }
+}
 .resorts-container .resort__info .section-container .section-item {
   margin: 5px;
   display: flex;
@@ -290,6 +314,11 @@ body {
     width: auto;
   }
 }
+@media screen and (max-width: 767px) {
+  .resorts-container .resort__info .section-container .section-item .primary {
+    font-size: 18px;
+  }
+}
 .resorts-container .resort__info .section-container .section-item .base-depth {
   font-size: 34px;
   color: #F5803E;
@@ -300,8 +329,18 @@ body {
     font-size: 24px;
   }
 }
+@media screen and (max-width: 767px) {
+  .resorts-container .resort__info .section-container .section-item .base-depth {
+    font-size: 18px;
+  }
+}
 .resorts-container .resort__info .section-container .section-item .base-copy {
   font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  .resorts-container .resort__info .section-container .section-item .base-copy {
+    font-size: 12px;
+  }
 }
 .resorts-container .resort__info .section-container .section-item .snowfall, .resorts-container .resort__info .section-container .section-item .snowfall-pred {
   text-align: center;
@@ -315,6 +354,22 @@ body {
 .resorts-container .resort__info .section-container .section-item .snowfall .snowfall__amount {
   font-size: 44px;
 }
+@media screen and (max-width: 855px) {
+  .resorts-container .resort__info .section-container .section-item .snowfall .snowfall__amount {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort__info .section-container .section-item .snowfall .snowfall__amount {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort__info .section-container .section-item .snowfall .snowfall__timeframe {
+    font-size: 12px;
+    align-self: center;
+  }
+}
 .resorts-container .resort__info .section-container .section-item .snowfall .snowfall_timeframe {
   font-size: 18px;
 }
@@ -327,8 +382,23 @@ body {
 .resorts-container .resort__info .section-container .section-item .snowfall-pred__item {
   padding-left: 3px;
 }
+@media screen and (max-width: 767px) {
+  .resorts-container .resort__info .section-container .section-item .snowfall-pred {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort__info .section-container .section-item .snowfall-pred {
+    display: none;
+  }
+}
 .resorts-container .resort__info .section-container .section-item.section-conditions {
   opacity: 1;
+}
+@media screen and (max-width: 767px) {
+  .resorts-container .resort__info .section-container .section-item.section-conditions {
+    margin: 0px;
+  }
 }
 .resorts-container .resort__info-snow-condition, .resorts-container .resort__info-snowfall, .resorts-container .resort__info-terrain {
   flex: 1 1 30%;
@@ -349,6 +419,11 @@ body {
 @media screen and (max-width: 966px) {
   .resorts-container .resort__info-projected-open-date.section-container .section-open-date {
     font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 816px) {
+  .resorts-container .resort__info-projected-open-date.section-container .section-open-date {
+    font-size: 2rem;
   }
 }
 .resorts-container .resort__info-covid.section-container {
@@ -374,6 +449,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort__info-terrain .section-header {
+    display: none;
+  }
 }
 .resorts-container .resort__info-terrain .terrain-item {
   margin: 5px;
@@ -601,19 +681,242 @@ body {
     display: none;
   }
 }
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.open {
+    height: 211px;
+  }
+  .resorts-container .resort.open .resort__header-weather {
+    margin-top: 26px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 465px) {
+  .resorts-container .resort.open .resort__header-weather {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 465px) {
+  .resorts-container .resort.open .resort__header-weather .resort__header-weather-detail-temp {
+    font-size: 28px;
+  }
+  .resorts-container .resort.open .resort__header-weather .resort__header-weather-detail-temp sup {
+    top: -12px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 465px) {
+  .resorts-container .resort.open .resort__header-weather .resort__header-weather-detail-date {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.open .resort__info {
+    flex-flow: row wrap;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 631px) {
+  .resorts-container .resort.open .resort__info .section-container .section-header {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 509px) {
+  .resorts-container .resort.open .resort__info .section-container .section-header {
+    display: none;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.open .resort__info .section-container .section-item {
+    justify-content: center;
+  }
+  .resorts-container .resort.open .resort__info .section-container .section-item .snowfall {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-left: unset;
+  }
+  .resorts-container .resort.open .resort__info .section-container .section-item .snowfall__amount {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 428px) {
+  .resorts-container .resort.open .resort__info .section-container .section-item .snowfall__amount {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 428px) {
+  .resorts-container .resort.open .resort__info .section-container .section-item .snowfall__timeframe {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.open .resort__info .resort__info-snow-condition.section-container {
+    flex: 0 1 45%;
+  }
+  .resorts-container .resort.open .resort__info .resort__info-snow-condition.section-container .section-item.section-conditions .primary, .resorts-container .resort.open .resort__info .resort__info-snow-condition.section-container .section-item.section-conditions .base-depth {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 480px) {
+  .resorts-container .resort.open .resort__info .resort__info-snow-condition.section-container .section-item.section-conditions .primary, .resorts-container .resort.open .resort__info .resort__info-snow-condition.section-container .section-item.section-conditions .base-depth {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.open .resort__info .resort__info-snow-condition.section-container .section-item.section-conditions .base-copy {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.open .resort__info .resort__info-snowfall.section-container {
+    flex: 1 1 77px;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 480px) {
+  .resorts-container .resort.open .resort__info .resort__info-snowfall.section-container {
+    flex: 1 1 40%;
+  }
+}
+@media screen and (max-width: 710px) and (max-width: 428px) {
+  .resorts-container .resort.open .resort__info .resort__info-snowfall.section-container {
+    flex: 1 1 32%;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.open .resort__info .resort__info-terrain.section-container {
+    flex: 1 1 268px;
+    margin-top: -7px;
+    border-top: 1px solid #ccc;
+    max-width: 94%;
+  }
+}
+@media screen and (max-width: 465px) {
+  .resorts-container .resort.pto .resort__header-weather {
+    margin-top: 10px;
+    flex-flow: row wrap;
+  }
+}
+@media screen and (max-width: 414px) {
+  .resorts-container .resort.pto .resort__header-weather-condition img {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .resorts-container .resort.pto .resort__header-weather-condition .copy {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 465px) {
+  .resorts-container .resort.pto .resort__header-weather .resort__header-weather-detail-temp {
+    font-size: 28px;
+  }
+  .resorts-container .resort.pto .resort__header-weather .resort__header-weather-detail-temp sup {
+    top: -12px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .resorts-container .resort.pto .resort__header-weather .resort__header-weather-detail-temp {
+    font-size: 20px;
+  }
+  .resorts-container .resort.pto .resort__header-weather .resort__header-weather-detail-temp sup {
+    font-size: 12x;
+  }
+}
+@media screen and (max-width: 465px) {
+  .resorts-container .resort.pto .resort__header-weather .resort__header-weather-detail-date {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .resorts-container .resort.pto .resort__header-weather .resort__header-weather-detail-date {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.pto .resort__info {
+    flex-flow: column nowrap;
+  }
+}
+.resorts-container .resort.pto .resort__info-projected-open-date.section-container {
+  flex: 0 1 30%;
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.pto .resort__info-projected-open-date.section-container {
+    margin-bottom: unset;
+  }
+}
+@media screen and (max-width: 455px) {
+  .resorts-container .resort.pto .resort__info-projected-open-date.section-container .section-header {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .resorts-container .resort.pto .resort__info-projected-open-date.section-container .section-header {
+    font-size: 8px;
+  }
+}
+.resorts-container .resort.pto .resort__info-projected-open-date.section-container .section-open-date {
+  height: 63%;
+  padding-top: 6px;
+  display: grid;
+  place-items: center;
+  opacity: 1 !important;
+  font-size: 2.7rem;
+  font-weight: unset;
+  color: #004B8B;
+}
+@media screen and (max-width: 966px) {
+  .resorts-container .resort.pto .resort__info-projected-open-date.section-container .section-open-date {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 816px) {
+  .resorts-container .resort.pto .resort__info-projected-open-date.section-container .section-open-date {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.pto .resort__info-projected-open-date.section-container .section-open-date {
+    margin: 0px 0px;
+    font-size: 1.4rem;
+  }
+}
 .resorts-container .resort.pto .resort__info-extended-weather-pto {
   max-width: 530px;
   border-left: 1px solid #ccc;
   padding-left: 10px !important;
   flex: 0 1 64%;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 710px) {
   .resorts-container .resort.pto .resort__info-extended-weather-pto {
-    display: none;
+    margin-top: 0px;
+    border-top: 1px solid #ccc;
+    border-left: unset;
+  }
+}
+@media screen and (max-width: 505px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto {
+    margin: 5px 5px;
+    padding-left: unset !important;
   }
 }
 .resorts-container .resort.pto .resort__info-extended-weather-pto .section-header {
   margin-bottom: 10px;
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-header {
+    margin-bottom: 3px;
+  }
+}
+@media screen and (max-width: 455px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-header {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-header {
+    font-size: 8px;
+  }
 }
 .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather {
   display: flex;
@@ -643,10 +946,41 @@ body {
     flex: 0 0 100px;
   }
 }
+@media screen and (max-width: 505px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item {
+    flex: 0 0 75px;
+  }
+}
+@media screen and (max-width: 428px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item {
+    flex: 0 0 50%;
+  }
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item .weather-date {
+    font-size: 11px;
+  }
+}
 .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item img.weather-icon {
   width: 44px;
   margin-top: 10px;
   margin-bottom: 5px;
+}
+@media screen and (max-width: 710px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item img.weather-icon {
+    width: 22px;
+    margin: 5px 0px 3px;
+  }
+}
+@media screen and (max-width: 428px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item .weather-date {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item .weather-date {
+    font-size: 8px;
+  }
 }
 @media screen and (max-width: 1196px) {
   .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item:first-child {
@@ -655,6 +989,11 @@ body {
 }
 @media screen and (max-width: 1015px) {
   .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 842px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item:nth-last-child(2) {
     display: none;
   }
 }

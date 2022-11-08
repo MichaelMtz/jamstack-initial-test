@@ -5,6 +5,11 @@ $snowReportFont : "Mulish", sans-serif;
     @content;
   }
 }
+@mixin bpmaxw($mw) {
+  @media screen and (max-width: $mw) {
+    @content;
+  }
+}
 :root {
   --check-borderWidth: 4px;
   --check-height: 18px;
@@ -47,11 +52,13 @@ body {
         gap:10px
       }
       button {
-          border-radius: 14px;
-          color: #004B8B;
-          @include bpmax(550px) {
-            flex: 0 1 88px;
-          }
+        border-radius: 14px;
+        color: #004B8B;
+        @include bpmax(585px) {
+          flex: 0 1 88px;
+          font-size:10px;
+        }
+        
       }
       button.active {
         border: 1px solid white;
@@ -95,6 +102,9 @@ body {
         display: flex;
         overflow: hidden;
         font-family: $snowReportFont;
+        @include bpmaxw(428px) {
+          width:100%;
+        }
         a,a.resort__link {
             color:#fff;
             text-decoration: none;
@@ -142,9 +152,11 @@ body {
                 @include bpmax(1175px) {
                   margin-left:11px;
                 }
-                @include bpmax(427px) {
-                  margin-top: 0px;
-                  font-size:22px;
+                @include bpmaxw(550px) {
+                  font-size: 20px;
+                }
+                @include bpmaxw(480px) {
+                  font-size:18px;
                 }
             }  
             
@@ -160,26 +172,29 @@ body {
                   margin-top: 10px;
                   align-items: unset;                                 
                 }
-                // @include bpmax(850px) {
-                //   margin-top:unset;
-                // }
-                @include bpmax(750px) {
-                  margin-top:28px;
-                }
-                @include bpmax(550px) {
-                  margin-top:unset;
-                  flex-flow: column nowrap;
+                @include bpmaxw(465px) {
+                  flex-flow: column wrap;
                   align-items: center;
                 }
+
                 &-condition {
                   display:flex; 
                   flex-flow: column;
+                  @include bpmaxw(465px) {
+                    align-items: flex-start;
+                  }
                   img {
                     width: 66px;
                     margin-bottom: 0px;
+                    @include bpmaxw(465px) {
+                      width:38px;
+                    }
                   }
                   .weather-copy {
                     text-align: center;
+                    @include bpmaxw(465px) {
+                      font-size: 10px;
+                    }
                   }                   
                 }
                 &-detail {
@@ -200,6 +215,7 @@ body {
                         top:unset;
                         left:unset;
                       }
+                      
                   }  
                   &-date{
                     
@@ -240,7 +256,7 @@ body {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
-            
+
             .section-container {
                 margin:5px;
                 padding: 5px 0px 5px;
@@ -248,7 +264,11 @@ body {
                 .section-header {
                     text-align: center;
                     text-transform: uppercase;
-                    opacity: 0.8;                    
+                    opacity: 0.8;   
+                    @include bpmax(787px) {
+                      font-size:12px;
+                    }       
+       
                 }
                 .section-item {
                     margin: 5px;                
@@ -256,7 +276,7 @@ body {
                     flex-direction: column;
                     opacity: 0.7;
                     text-align: center;
-                    
+
                     .primary {
                         padding-top:6px;
                         opacity: 1 !important;
@@ -269,6 +289,9 @@ body {
                           text-align: center;
                           width: auto;
                         }
+                        @include bpmax(767px) {
+                          font-size:18px;
+                        }
                     }
                     .base-depth {
                         font-size: 34px;
@@ -277,9 +300,15 @@ body {
                         @include bpmax(1075px) {
                           font-size: 24px;
                         }
+                        @include bpmax(767px) {
+                          font-size:18px;
+                        }
                     }
                     .base-copy {
-                        font-size: 16px;
+                      font-size: 16px;
+                      @include bpmax(767px) {
+                        font-size:12px;
+                      }
                     }
                     .snowfall, .snowfall-pred {
                         text-align: center;
@@ -289,11 +318,24 @@ body {
                     }
                     .snowfall {
                         margin-bottom: 10px;
+
                         .snowfall__amount {
-                            font-size:44px;
+                          font-size:44px;
+                          @include bpmax(855px) {
+                            font-size:32px;
+                          }
+                          @include bpmaxw(710px) {
+                            font-size:16px;
+                          }
+                        }
+                        .snowfall__timeframe {
+                          @include bpmaxw(710px) {
+                            font-size: 12px;
+                            align-self: center;
+                          }
                         }
                         .snowfall_timeframe {
-                            font-size: 18px;
+                          font-size: 18px;
                         }
                     }
                     .snowfall-pred {     
@@ -304,18 +346,29 @@ body {
                         &__item {
                             padding-left:3px
                         }
+                        @include bpmax(767px) {
+                          font-size:10px;
+                        }
+                        @include bpmaxw(710px) {
+                          display: none;
+                        }
                     }                  
                 }
                 .section-item.section-conditions {
                     opacity: 1;
+                    @include bpmax(767px) {
+                      margin: 0px;
+                    }
                 }
                 
             }
+
             &-snow-condition,&-snowfall, &-terrain {
                 flex: 1 1 30%;
             }
             &-projected-open-date.section-container {
                 flex: 0 1 30%;
+
                 .section-open-date {
                     height: 63%;
                     padding-top: 6px;
@@ -328,6 +381,10 @@ body {
                     @include bpmax(966px) {
                       font-size:2.5rem;
                     }
+                    @include bpmax(816px) {
+                      font-size:2rem;
+                    }
+
                 }
             }
             &-covid.section-container {
@@ -360,7 +417,11 @@ body {
               flex-direction: column;
               justify-content: flex-start;
               
-
+              .section-header {
+                @include bpmaxw(710px) {
+                  display:none;
+                }   
+              }
               .terrain-item {
                 margin: 5px;
                 display: flex;
@@ -574,22 +635,215 @@ body {
             }
           }
     }
+    @include bpmaxw(710px) {
+      .resort.open {
+        height:211px;
+        .resort__header {
+          &-weather {
+            margin-top:26px;
+            @include bpmaxw(465px) {
+              margin-top:10px;
+            }
+            .resort__header-weather-detail {
+              &-temp {
+                @include bpmaxw(465px) {
+                  font-size:28px;
+                  sup {
+                    top: -12px;
+                    font-size: 16px;
+                  }
+                }
+              }
+              &-date {
+                @include bpmaxw(465px) {
+                  font-size:11px;
+                }
+              }
+            }  
+          }
+        }
+        .resort__info {
+          flex-flow: row wrap;
+          .section-container {
+            .section-header {
+              @include bpmaxw(631px) {
+                font-size: 9px;
+              }
+              @include bpmaxw(509px) {
+                display: none;
+              }
+            }
+            .section-item {
+              justify-content: center;
+              .snowfall {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                margin-left: unset;
+                
+                &__amount {
+                  font-size:16px;
+                  @include bpmaxw(428px) {
+                    font-size:22px;
+                  }
+                }
+                &__timeframe {
+                  @include bpmaxw(428px) {
+                    font-size:10px;
+                  }
+                }
+              }
+            }
+          }
+          .resort__info-snow-condition.section-container {
+            flex: 0 1 45%;
+
+            .section-item.section-conditions {
+              .primary, .base-depth { 
+                font-size: 14px;
+                @include bpmaxw(480px) {
+                  font-size: 12px;
+                }
+              }
+              .base-copy {
+                font-size:10px;
+              }
+            }
+          }
+          .resort__info-snowfall.section-container {
+            flex: 1 1 77px;
+            @include bpmaxw(480px) {
+              flex: 1 1 40%;
+            }
+            @include bpmaxw(428px) {
+              flex: 1 1 32%;
+            }
+          }
+          .resort__info-terrain.section-container {
+            flex: 1 1 268px;
+            margin-top: -7px;
+            border-top: 1px solid #ccc;
+            max-width: 94%;
+
+          }
+
+        }
+      }
+    }
     .resort.pto {
+      .resort__header {
+        &-weather {
+          
+          @include bpmaxw(465px) {
+            margin-top:10px;
+            flex-flow: row wrap;
+          }
+          
+          &-condition {
+            img {
+              @include bpmaxw(414px) {
+                width:30px;
+              }
+            }
+            .copy {
+              @include bpmaxw(414px) {
+                font-size: 8px;
+              }
+            }
+          }
+          .resort__header-weather-detail {
+            &-temp {
+              @include bpmaxw(465px) {
+                font-size:28px;
+                sup {
+                  top: -12px;
+                  font-size: 16px;
+                }
+              }
+              @include bpmaxw(414px) {
+                font-size:20px;
+                sup {
+                  font-size:12x;
+                }
+              }
+            }
+            &-date {
+              @include bpmaxw(465px) {
+                font-size:11px;
+              }
+              @include bpmaxw(414px) {
+                margin-top: 5px;
+                font-size: 10px;
+              }
+            }
+          }  
+        }
+      }
       .resort__info {
+        @include bpmax(710px) {
+          flex-flow: column nowrap;
+        }
+
+        &-projected-open-date.section-container {
+            flex: 0 1 30%;
+            @include bpmax(710px) {
+              margin-bottom: unset;
+            }
+            .section-header {
+              @include bpmaxw(455px) {
+                font-size:10px;
+              }
+              @include bpmaxw(400px) {
+                font-size:8px;
+              }
+            }
+            .section-open-date {
+                height: 63%;
+                padding-top: 6px;
+                display:grid;
+                place-items: center;
+                opacity: 1 !important;
+                font-size: 2.7rem;
+                font-weight: unset;
+                color: #004B8B;
+                @include bpmax(966px) {
+                  font-size:2.5rem;
+                }
+                @include bpmax(816px) {
+                  font-size:2rem;
+                }
+                @include bpmax(710px) {
+                  margin: 0px 0px;
+                  font-size: 1.4rem;
+                }
+            }
+        }
         &-extended-weather-pto {
           max-width: 530px;
           border-left: 1px solid #ccc;
           padding-left: 10px !important;
           flex: 0 1 64%;
 
-          // @include bpmax(850px) {
-          //   display:none;
-          // }
-          @include bpmax(750px) {
-            display:none;
+          @include bpmax(710px) {
+            margin-top: 0px;
+            border-top: 1px solid #ccc;
+            border-left: unset;
+          }
+          @include bpmaxw(505px) {
+            margin: 5px 5px;
+            padding-left: unset !important;
           }
           .section-header {
             margin-bottom: 10px;
+            @include bpmax(710px) {
+              margin-bottom:3px;
+            }
+            @include bpmaxw(455px) {
+              font-size:10px;
+            }
+            @include bpmaxw(400px) {
+              font-size:8px;
+            }
           }
           .section-summer-weather {
             display:flex;
@@ -599,6 +853,7 @@ body {
             @include bpmax(1175px) {
               justify-content: space-evenly;
             }
+            
             &-item {
               flex: 0 1 90px;
               display:flex;
@@ -612,16 +867,33 @@ body {
               @include bpmax(1325px) {
                 flex: 0 0 100px;                  
               }
+              @include bpmax(505px) {
+                flex: 0 0 75px;                  
+              }
+              @include bpmaxw(428px) {
+                flex: 0 0 50%;
+              }
               .weather-date {
-                
+                @include bpmax(710px) {
+                  font-size:11px;
+                }
               }
               img.weather-icon {
                 width:44px;
                 margin-top:10px;
                 margin-bottom:5px;
+                @include bpmax(710px) {
+                  width:22px;
+                  margin: 5px 0px 3px;
+                }
               }
-              .weather-temp {
-                
+              .weather-date {
+                @include bpmaxw(428px) {
+                  font-size: 9px;
+                }
+                @include bpmaxw(400px) {
+                  font-size: 8px;
+                }
               }
             }
             @include bpmax(1196px) {
@@ -633,6 +905,11 @@ body {
 
               &-item:last-child {
                display: none;
+              }
+            }
+            @include bpmax(842px) {
+              &-item:nth-last-child(2) {
+                display:none;
               }
             }
             // @include bpmax(1175px){
@@ -649,9 +926,9 @@ body {
             //   }
             // }
             // @include bpmax(1020px) {
-            //   &-item:nth-last-child(2) {
-            //     display:none;
-            //   }
+              // &-item:nth-last-child(2) {
+              //   display:none;
+              // }
             // }
           }
         }

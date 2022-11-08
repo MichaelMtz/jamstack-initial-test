@@ -166,7 +166,7 @@ sub { bottom: -0.25em; }
 /*LAYOUT*/
 .container { height: 100%; }
 .section { width: 100%; }
-.wrap { width: 1120px; margin: 0 auto; }
+.wrap { width: auto; margin: 0 auto; }
 .header .wrap { width: auto; margin: 0 55px; }
 .logo ul.zone-switch, .topnav ul.navigation, ul.feature-boxes, .sticky-bar .socials ul, .menu-dropdown ul,  #events-feed ul, ul.news-list, .quick-cams .qcam-list, .qchart-list, ul.qconditions, .sdown-menu ul, .article-crumbs ul, .side-float ul, .mobile-nav, ul.conditions-box, .webcams-side ul { margin: 0; padding: 0; list-style: none; -webkit-padding-start: 0px; }
 .logo ul.zone-switch, ul.feature-boxes, .our-location .map-to-panorama .were-here, .tease-bottom h2 span, .booking-pop, .menu-dropdown,  ul.navigation > li, .deals, .deals-desc, img, .fnews-thumb, .newsletter-signup, .qcam-list li , .qbanner, .newsnow-alert, .side-nav, .explore-nav, .pw-box, h5.side-heading, .pw-thumb, a.mobile-close, .forecast-pop, .responsiveTabs_accordion, fieldset, .webcams-side ul li, .side-float, .contentImage, .quick-report, ul#booktype, .weblog.your-comments li, .side-conditions, form .error, .mobile-menu-report, .inner-caption, .twc-list ul li ,.pano-packages, .more-about    { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;  }
@@ -444,9 +444,7 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 @media only screen and (max-width: 1120px) { 
 	
 	 .wrap, .footer .wrap, .sticky-bar .wrap { width: 100%; } 
-	 .header .wrap { margin: 0 20px; 
-    	 
-	 }
+	 .header .wrap { margin: 0 20px;  	 }
 	.footer .wrap { padding-left: 20px; padding-right: 20px; }
 	.arrow-cta { display: none; }
 	/*NAV*/
