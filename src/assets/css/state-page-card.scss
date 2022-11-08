@@ -157,7 +157,7 @@ body {
                 justify-content: space-evenly;
                 @include bpmax(1175px) {
                   height: 100%;
-                  margin-top: 28px;
+                  margin-top: 10px;
                   align-items: unset;                                 
                 }
                 // @include bpmax(850px) {
@@ -264,11 +264,19 @@ body {
                         font-weight: unset;
                         color:#39f;
                         color:#004B8B;
+                        @include bpmax(1075px) {
+                          font-size: 20px;
+                          text-align: center;
+                          width: auto;
+                        }
                     }
                     .base-depth {
                         font-size: 34px;
                         color:#F5803E;
                         color:#F07B62;
+                        @include bpmax(1075px) {
+                          font-size: 24px;
+                        }
                     }
                     .base-copy {
                         font-size: 16px;
@@ -317,6 +325,9 @@ body {
                     font-size: 2.7rem;
                     font-weight: unset;
                     color: #004B8B;
+                    @include bpmax(966px) {
+                      font-size:2.5rem;
+                    }
                 }
             }
             &-covid.section-container {
@@ -562,6 +573,89 @@ body {
               }
             }
           }
+    }
+    .resort.pto {
+      .resort__info {
+        &-extended-weather-pto {
+          max-width: 530px;
+          border-left: 1px solid #ccc;
+          padding-left: 10px !important;
+          flex: 0 1 64%;
+
+          // @include bpmax(850px) {
+          //   display:none;
+          // }
+          @include bpmax(750px) {
+            display:none;
+          }
+          .section-header {
+            margin-bottom: 10px;
+          }
+          .section-summer-weather {
+            display:flex;
+            flex-flow: row nowrap;
+            overflow:hidden;
+            justify-content: space-between;
+            @include bpmax(1175px) {
+              justify-content: space-evenly;
+            }
+            &-item {
+              flex: 0 1 90px;
+              display:flex;
+              flex-flow: column nowrap;
+              align-items: center;
+              justify-content: space-evenly;
+              
+              @include bpmax(1435px) {
+                flex: 0 0 90px;                  
+              }
+              @include bpmax(1325px) {
+                flex: 0 0 100px;                  
+              }
+              .weather-date {
+                
+              }
+              img.weather-icon {
+                width:44px;
+                margin-top:10px;
+                margin-bottom:5px;
+              }
+              .weather-temp {
+                
+              }
+            }
+            @include bpmax(1196px) {
+              &-item:first-child {
+               display: none;
+              }
+            }
+            @include bpmax(1015px) {
+
+              &-item:last-child {
+               display: none;
+              }
+            }
+            // @include bpmax(1175px){
+            //   &-item:last-child {
+            //     display: flex;
+            //   }
+            //   &-item:nth-last-child(2) {
+            //     display: flex;
+            //   }
+            // }
+            // @include bpmax(1125px) {
+            //   &-item:last-child {
+            //     display: none;
+            //   }
+            // }
+            // @include bpmax(1020px) {
+            //   &-item:nth-last-child(2) {
+            //     display:none;
+            //   }
+            // }
+          }
+        }
+      }
     }
     .resort:hover {
         transition: all 0.2s ease-out;

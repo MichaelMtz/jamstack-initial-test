@@ -173,7 +173,7 @@ body {
 @media screen and (max-width: 1175px) {
   .resorts-container .resort__header-weather {
     height: 100%;
-    margin-top: 28px;
+    margin-top: 10px;
     align-items: unset;
   }
 }
@@ -283,10 +283,22 @@ body {
   color: #39f;
   color: #004B8B;
 }
+@media screen and (max-width: 1075px) {
+  .resorts-container .resort__info .section-container .section-item .primary {
+    font-size: 20px;
+    text-align: center;
+    width: auto;
+  }
+}
 .resorts-container .resort__info .section-container .section-item .base-depth {
   font-size: 34px;
   color: #F5803E;
   color: #F07B62;
+}
+@media screen and (max-width: 1075px) {
+  .resorts-container .resort__info .section-container .section-item .base-depth {
+    font-size: 24px;
+  }
 }
 .resorts-container .resort__info .section-container .section-item .base-copy {
   font-size: 16px;
@@ -333,6 +345,11 @@ body {
   font-size: 2.7rem;
   font-weight: unset;
   color: #004B8B;
+}
+@media screen and (max-width: 966px) {
+  .resorts-container .resort__info-projected-open-date.section-container .section-open-date {
+    font-size: 2.5rem;
+  }
 }
 .resorts-container .resort__info-covid.section-container {
   flex: 1 1 65%;
@@ -581,6 +598,63 @@ body {
 }
 @media screen and (max-width: 1020px) {
   .resorts-container .resort__info-extended-weather .section-summer-weather-item:nth-last-child(2) {
+    display: none;
+  }
+}
+.resorts-container .resort.pto .resort__info-extended-weather-pto {
+  max-width: 530px;
+  border-left: 1px solid #ccc;
+  padding-left: 10px !important;
+  flex: 0 1 64%;
+}
+@media screen and (max-width: 750px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto {
+    display: none;
+  }
+}
+.resorts-container .resort.pto .resort__info-extended-weather-pto .section-header {
+  margin-bottom: 10px;
+}
+.resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1175px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather {
+    justify-content: space-evenly;
+  }
+}
+.resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item {
+  flex: 0 1 90px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 1435px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item {
+    flex: 0 0 90px;
+  }
+}
+@media screen and (max-width: 1325px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item {
+    flex: 0 0 100px;
+  }
+}
+.resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item img.weather-icon {
+  width: 44px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 1196px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 1015px) {
+  .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item:last-child {
     display: none;
   }
 }

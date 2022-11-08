@@ -90,28 +90,23 @@ const waitForElement = selector=>{
 
 const fixPageNavLinks = () => {
   waitForElement('.container-state-links').then((elStateLinks) => {
-    _log('fixPageNavLinks::init');
     const navItems = elStateLinks.parentElement.querySelectorAll('.nav-item-link');
     navItems.forEach(elNavItem => {
-      _log(`fixPageNavLinks: iter href: ${elNavItem.href}`);
       elNavItem.href = window.location.href.split('#')[0] + elNavItem.dataset.section;
     });
-  }).catch(() => { 
-    _log('Error waiting for EL:');
+  }).catch((e) => { 
+    console.error('Error waiting for local page links:',e);
   });
 
 };
 
 const createSectionChart = (section,chart) => {
-  // let chartDataSets = [ {trailChartData} ];
-  // let titles = {trailTitles};
-  // let chartColors = {trailChartColors};
   _log(`createSectionChart: ${section}`);
   
   const chartDataSets = chart.data;
   const titles = chart.titles;
   const chartColors = chart.chartColors;  
-  console.log(`createSectionChart:len:${chartDataSets.length}`,chartDataSets);
+  //console.log(`createSectionChart:len:${chartDataSets.length}`,chartDataSets);
   for(let ind=0; ind<chartDataSets.length; ind++) {
     const chartSeasonData = chartDataSets[ind];
     const iterChartColor = chartColors[ind];
@@ -173,16 +168,13 @@ const createSectionChart = (section,chart) => {
               ,labelString: 'inches'
               ,fontColor: '#226494'
             }
-
           }]
         }
       }
     };
     const ctx = document.getElementById(`${section}-${ind}`);
     new Chart(ctx, chartConfig);
-    console.log('**** After chart creation ****');
   }
-
 };
 
 const createCharts = () => {
@@ -190,18 +182,14 @@ const createCharts = () => {
   const localURL = `http://localhost/sno/snoFeeds/archiveChartSaved.php?resort_id=${resort_id}`;
 
   const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-archive-api?resort_id=${resort_id}` : localURL;
-  _log(`snowreport-archive-api url: ${url}`);
   fetch(url).then(response => {
     return response.json();
   }).then(data => {
   
     console.log('--archiveData:',data);
     waitForElement('#trailsChart-9').then(() => {
-      
       createSectionChart('baseDepthChart',data.BaseDepth);
       createSectionChart('trailsChart',data.Trails);
-      
-      
     }).catch( (e) => { console.error('Error waiting for archive:',e);});
     //initializeFilters();
   }).catch( (e) => { console.error('Error waiting for createCharts fetch:',e);});
@@ -210,9 +198,6 @@ const getSnowReport = () => {
   const target = document.body.dataset.snowreport;
   const src = document.body.dataset.source;
   const endpoint = (src !== 'resort') ? 'list' : 'resort';  
-  // fetch(url,{"headers": {"sec-fetch-mode": "cors","Access-Control-Allow-Origin":"*"}, "mode":"cors"}).then(response => {
-  
-  //const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}` ;
   const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}` : `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-${endpoint}.php?target=${target}&src=${src}`;
   // _log(`snowreport-api resort: ${url}`);
   fetch(url).then(response => {
