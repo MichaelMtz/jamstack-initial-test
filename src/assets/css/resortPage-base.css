@@ -569,9 +569,14 @@
   margin-top:25px;
 }
 .nav-breadcrumbs {
-  margin-left: 200px;
+  margin-left: 160px;
   margin-right:20px;
   background-color: #0084BD;
+}
+@media screen and (max-width:818px) {
+  .nav-breadcrumbs {
+    margin-left:10px;
+  }
 }
 .nav-breadcrumbs a {
   color:#FFF;

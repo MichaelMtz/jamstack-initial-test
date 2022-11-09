@@ -102,7 +102,7 @@ const fixPageNavLinks = () => {
 window.snoCharts = new Array();
 const createSectionChart = (section,chart,yAxisUnit) => {
   _log(`createSectionChart: ${section}`);
-  const sectionCharts = new Array();
+  // const sectionCharts = new Array();
   const chartDataSets = chart.data;
   const titles = chart.titles;
   const chartColors = chart.chartColors;  
@@ -177,10 +177,11 @@ const createSectionChart = (section,chart,yAxisUnit) => {
       }
     };
     const ctx = document.getElementById(`${section}-${ind}`);
-    const iterChart = new Chart(ctx, chartConfig);
-    sectionCharts.push(iterChart);
+    new Chart(ctx, chartConfig);
+    // const iterChart = new Chart(ctx, chartConfig);
+    // sectionCharts.push(iterChart);
   }
-  window.snoCharts.push(sectionCharts);
+  // window.snoCharts.push(sectionCharts);
 };
 
 const createCharts = () => {
