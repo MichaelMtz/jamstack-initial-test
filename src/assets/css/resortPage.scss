@@ -1,3 +1,8 @@
+@mixin bpmaxw($mw) {
+  @media screen and (max-width: $mw) {
+    @content;
+  }
+}
 .snow-report-container {
     display:grid;
     grid-template-columns: 150px 1fr;     
@@ -91,7 +96,8 @@
                 font-size:57px;
                 text-transform: uppercase;
                 letter-spacing: 7.1px;
-                font-weight: 500;
+                font-weight: 800;
+                color: #5c5e60;
 
                  @media screen and (max-width:818px) {
                      font-size:2.5rem;
@@ -126,9 +132,9 @@
                 margin-bottom: unset;
                 border-bottom: 1px solid #314d5a;
                 padding-top: 48px;
-                padding-bottom: 22px;
+                padding-bottom: 0px;
                 display: block;
-                font-size:48px;
+                font-size:36px;
                 color: #5c5e60;
                 font-weight: 800;
                 letter-spacing: 7.1px;
@@ -218,16 +224,28 @@
             &__wrapper {
                 display: flex;
                 flex-wrap: wrap;
-                @media screen and (max-width:818px){
-                    flex-direction: column;
+                @include bpmaxw(1210px) {
+                  height: auto;
+                  flex-flow: column wrap;
+                  position: relative;
                 }
                 .current_weather {
                     flex: 0 1 460px;
                     display:block;
-                    @media screen and (max-width:818px){
-                        flex: 0 1 auto;
+                    @include bpmaxw(1210px) {
+                      display: flex;
+                      height: auto;
+                      flex: unset;
                     }
-                    
+                    @include bpmaxw(1210px) {
+                        .simple-weather-wrapper {
+                            flex: 1 0 47%;
+                        }
+                        .simple-conditions-wrapper {
+                            border-left: 1px solid #5c5e60;
+                            padding-left: 20px;
+                        }
+                    }
                     &__container {
                         display:flex;
                         flex-wrap: wrap;
@@ -237,6 +255,16 @@
                         }
                         .weather_icon {
                             margin-right: 5px;
+                            .conditions.icon:before {
+                                @include bpmaxw(1210px) {
+                                  font-size: 6rem;
+                                }
+                                span.conditions-label {
+                                    @include bpmaxw(1210px) {
+                                      
+                                    }
+                                }
+                            }
                         }
                         .weather_temp:before {
                             content:'';
@@ -254,6 +282,9 @@
                             font-size: 96px;
                             font-weight: 100;
                             color: #0187BC;
+                            @include bpmaxw(1210px) {
+                              font-size: 4.3125rem;
+                            }
                             .degree-unit {
                                 display: inline-block;
                                 position: relative;
@@ -261,6 +292,9 @@
                                 right: 15px;
                                 font-size: 35px;
                                 font-weight: 300;
+                                @include bpmaxw(1210px) {
+                                  font-size: 1.6rem;
+                                }
                             }
                         }
                     }                    
@@ -272,6 +306,9 @@
                         font-size: 52px;
                         display: block;
                         font-weight: 100;
+                        @include bpmaxw(1210px) {
+                          font-size: 3.0125rem;
+                        }
                         @media screen and (max-width:818px){
                             font-size: 2rem;
                             color: #0187BC
@@ -284,16 +321,12 @@
                     border-left: 1px solid #5c5e60;
                     padding-left: 30px;
                     display: block;
-                    @media screen and (max-width:1165px) {
-                        padding-left: 10px;
+                    @include bpmaxw(1210px) {
+                      border-top: 1px solid #5c5e60;
+                      border-left: unset;
+                      height: 503px;
+                      padding-left: unset;
                     }
-                    @media screen and (max-width:1145px) {
-                        padding-left: 0px;
-                        border-left: unset;
-                    }
-                    @media screen and (max-width:1134px) {
-                        border-top: 1px solid #5c5e60;
-                    }                    
                     @media screen and (max-width:818px) {
                         max-height: 500px;
                     }
@@ -380,6 +413,9 @@
                                     margin-left: -13px;
                                     font-weight: 500;
                                     font-size: 23px;
+                                    @media screen and (max-width:818px) {
+                                        margin-left: -5px;
+                                    }
                                 }
                             }
                             .label {
@@ -461,7 +497,7 @@
         }
         #conditions-archive {
             @media screen and (max-width:420px) {
-                display: none;
+                // display: none;
             }
         }
     }
@@ -520,7 +556,7 @@
         top:0px;
         left:7px;
         font-family: "Intrawest Icons";
-        font-size: 5rem;
+        font-size: 8.5rem;
         
     }
 
@@ -619,6 +655,7 @@
         text-transform: uppercase;
         text-align: center;
         font-weight: 400;
+
     }
 }
 #sp-main-body .container {

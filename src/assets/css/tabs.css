@@ -12,6 +12,12 @@
   border-radius: 5px;
   min-width: 240px;
 }
+
+@media (max-width: 600px) {
+  .tabs {
+    padding:10px 10px;
+  }
+} 
 .tabs input[name="tab-control"] {
   display: none;
 }
@@ -243,9 +249,7 @@
     padding: 5px;
     border-radius: 5px;
   }
-  .tabs ul li label span {
-    display: none;
-  }
+
   .tabs .slider {
     display: none;
   }
@@ -338,11 +342,8 @@ max-width: 1200px;
         }
     }
     .tabs {
-     position: unset;
-     transform: unset;
-     @media screen and (max-width:915px) {
-         padding:13px 0px;
-     }
+      position: unset;
+      transform: unset;
     }
     .content {
      width: 97%;
@@ -378,10 +379,15 @@ max-width: 1200px;
         }       
         .chartjs-render-monitor {
           animation:chartjs-render-animation 1ms;
-          width: 500px !important;
-          height: 250px !important;
+          width: 500px ;
+          height: 250px ;
         }
 
+    }
+    @media screen and (max-width:840px) {
+      .chartjs-render-monitor {
+        animation:chartjs-render-animation 1ms;
+      }
     }
 
     .chartHolder {

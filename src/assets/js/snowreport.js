@@ -99,10 +99,10 @@ const fixPageNavLinks = () => {
   });
 
 };
-
-const createSectionChart = (section,chart) => {
+window.snoCharts = new Array();
+const createSectionChart = (section,chart,yAxisUnit) => {
   _log(`createSectionChart: ${section}`);
-  
+  const sectionCharts = new Array();
   const chartDataSets = chart.data;
   const titles = chart.titles;
   const chartColors = chart.chartColors;  
@@ -140,9 +140,13 @@ const createSectionChart = (section,chart) => {
           xAxes: [{
             type: 'time',
             time: {
+              displayFormats : {
+                month: 'MMM',
+              },
               unit: 'month',
             },
             ticks: {
+              autoSkip: true,
               fontColor: '#226494'
             },
             gridLines: {
@@ -165,7 +169,7 @@ const createSectionChart = (section,chart) => {
             }
             ,scaleLabel : {
               display:true
-              ,labelString: 'inches'
+              ,labelString: yAxisUnit
               ,fontColor: '#226494'
             }
           }]
@@ -173,8 +177,10 @@ const createSectionChart = (section,chart) => {
       }
     };
     const ctx = document.getElementById(`${section}-${ind}`);
-    new Chart(ctx, chartConfig);
+    const iterChart = new Chart(ctx, chartConfig);
+    sectionCharts.push(iterChart);
   }
+  window.snoCharts.push(sectionCharts);
 };
 
 const createCharts = () => {
@@ -188,8 +194,8 @@ const createCharts = () => {
   
     console.log('--archiveData:',data);
     waitForElement('#trailsChart-9').then(() => {
-      createSectionChart('baseDepthChart',data.BaseDepth);
-      createSectionChart('trailsChart',data.Trails);
+      createSectionChart('baseDepthChart',data.BaseDepth, 'inches');
+      createSectionChart('trailsChart',data.Trails, '# Open Trails');
     }).catch( (e) => { console.error('Error waiting for archive:',e);});
     //initializeFilters();
   }).catch( (e) => { console.error('Error waiting for createCharts fetch:',e);});

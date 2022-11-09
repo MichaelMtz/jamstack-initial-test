@@ -425,7 +425,7 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
       zoom: 1; }
 
     /* You can also use a <br class="clear" /> to clear columns */
-    .clear {
+    .clearx {
       clear: both;
       display: block;
       overflow: hidden;

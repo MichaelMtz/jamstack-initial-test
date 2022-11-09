@@ -92,7 +92,8 @@
   font-size: 57px;
   text-transform: uppercase;
   letter-spacing: 7.1px;
-  font-weight: 500;
+  font-weight: 800;
+  color: #5c5e60;
 }
 @media screen and (max-width: 818px) {
   .snow-report-container .resort .resort__header h1 {
@@ -128,9 +129,9 @@
   margin-bottom: unset;
   border-bottom: 1px solid #314d5a;
   padding-top: 48px;
-  padding-bottom: 22px;
+  padding-bottom: 0px;
   display: block;
-  font-size: 48px;
+  font-size: 36px;
   color: #5c5e60;
   font-weight: 800;
   letter-spacing: 7.1px;
@@ -221,18 +222,31 @@
   display: flex;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 818px) {
+@media screen and (max-width: 1210px) {
   .snow-report-container .resort .conditions__wrapper {
-    flex-direction: column;
+    height: auto;
+    flex-flow: column wrap;
+    position: relative;
   }
 }
 .snow-report-container .resort .conditions__wrapper .current_weather {
   flex: 0 1 460px;
   display: block;
 }
-@media screen and (max-width: 818px) {
+@media screen and (max-width: 1210px) {
   .snow-report-container .resort .conditions__wrapper .current_weather {
-    flex: 0 1 auto;
+    display: flex;
+    height: auto;
+    flex: unset;
+  }
+}
+@media screen and (max-width: 1210px) {
+  .snow-report-container .resort .conditions__wrapper .current_weather .simple-weather-wrapper {
+    flex: 1 0 47%;
+  }
+  .snow-report-container .resort .conditions__wrapper .current_weather .simple-conditions-wrapper {
+    border-left: 1px solid #5c5e60;
+    padding-left: 20px;
   }
 }
 .snow-report-container .resort .conditions__wrapper .current_weather__container {
@@ -245,6 +259,11 @@
 }
 .snow-report-container .resort .conditions__wrapper .current_weather__container .weather_icon {
   margin-right: 5px;
+}
+@media screen and (max-width: 1210px) {
+  .snow-report-container .resort .conditions__wrapper .current_weather__container .weather_icon .conditions.icon:before {
+    font-size: 6rem;
+  }
 }
 .snow-report-container .resort .conditions__wrapper .current_weather__container .weather_temp:before {
   content: "";
@@ -263,6 +282,11 @@
   font-weight: 100;
   color: #0187BC;
 }
+@media screen and (max-width: 1210px) {
+  .snow-report-container .resort .conditions__wrapper .current_weather__container .temperature {
+    font-size: 4.3125rem;
+  }
+}
 .snow-report-container .resort .conditions__wrapper .current_weather__container .temperature .degree-unit {
   display: inline-block;
   position: relative;
@@ -270,6 +294,11 @@
   right: 15px;
   font-size: 35px;
   font-weight: 300;
+}
+@media screen and (max-width: 1210px) {
+  .snow-report-container .resort .conditions__wrapper .current_weather__container .temperature .degree-unit {
+    font-size: 1.6rem;
+  }
 }
 .snow-report-container .resort .conditions__wrapper .current_weather .copy {
   margin-top: 25px;
@@ -279,6 +308,11 @@
   font-size: 52px;
   display: block;
   font-weight: 100;
+}
+@media screen and (max-width: 1210px) {
+  .snow-report-container .resort .conditions__wrapper .current_weather .copy {
+    font-size: 3.0125rem;
+  }
 }
 @media screen and (max-width: 818px) {
   .snow-report-container .resort .conditions__wrapper .current_weather .copy {
@@ -292,20 +326,12 @@
   padding-left: 30px;
   display: block;
 }
-@media screen and (max-width: 1165px) {
-  .snow-report-container .resort .conditions__wrapper .snowfall_open_terrain {
-    padding-left: 10px;
-  }
-}
-@media screen and (max-width: 1145px) {
-  .snow-report-container .resort .conditions__wrapper .snowfall_open_terrain {
-    padding-left: 0px;
-    border-left: unset;
-  }
-}
-@media screen and (max-width: 1134px) {
+@media screen and (max-width: 1210px) {
   .snow-report-container .resort .conditions__wrapper .snowfall_open_terrain {
     border-top: 1px solid #5c5e60;
+    border-left: unset;
+    height: 503px;
+    padding-left: unset;
   }
 }
 @media screen and (max-width: 818px) {
@@ -408,6 +434,11 @@
   font-weight: 500;
   font-size: 23px;
 }
+@media screen and (max-width: 818px) {
+  .snow-report-container .resort .conditions__wrapper .snowfall_open_terrain .open_terrain .item .value sup {
+    margin-left: -5px;
+  }
+}
 .snow-report-container .resort .conditions__wrapper .snowfall_open_terrain .open_terrain .item .label {
   text-align: center;
   width: 100%;
@@ -473,11 +504,6 @@
 .snow-report-container .resort .resort_maps__container img {
   width: 100%;
 }
-@media screen and (max-width: 420px) {
-  .snow-report-container .resort #conditions-archive {
-    display: none;
-  }
-}
 .snow-report-container .link-covid-details {
   text-decoration: none;
   color: #00ADEE;
@@ -533,7 +559,7 @@
   top: 0px;
   left: 7px;
   font-family: "Intrawest Icons";
-  font-size: 5rem;
+  font-size: 8.5rem;
 }
 .snow-report-container .conditions.icon.chancesnow:before {
   content: "\e91f";
