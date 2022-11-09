@@ -132,4 +132,32 @@ div.conditions {
   -webkit-animation-fill-mode: forwards;
 }
 
+#container-snow-reports.filter-open div.resort:not(.open) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open div.resort.open {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.filter-pto div.resort:not(.pto) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-pto div.resort.pto {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.filter-all div.resort {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
 /*# sourceMappingURL=state-page.css.map */

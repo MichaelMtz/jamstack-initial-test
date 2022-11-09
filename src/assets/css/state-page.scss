@@ -118,3 +118,26 @@ div.conditions {
     @include resort-fade-in();
   }
 }
+
+#container-snow-reports.filter-open {
+  div.resort:not(.open) {
+    @include resort-fade-out();
+  }
+  div.resort.open {
+    @include resort-fade-in();
+  }
+}
+
+#container-snow-reports.filter-pto {
+  div.resort:not(.pto) {
+    @include resort-fade-out();
+  }
+  div.resort.pto {
+    @include resort-fade-in();
+  }
+}
+#container-snow-reports.filter-all {
+  div.resort {
+    @include resort-fade-in();
+  }
+}
