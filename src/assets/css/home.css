@@ -323,7 +323,9 @@ h2.topmenu {
     padding-left: 25px !important;
     text-align: left;
 }
-
+#top-snowfall {
+    margin-bottom: 25px;
+}
 .summer-activities {
     display:flex; 
     flex-flow: row nowrap;

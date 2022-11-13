@@ -1,8 +1,93 @@
-var t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e};
-var _log = function (text, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`);};
+const t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e;};
+const _log = function (text, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`);};
+
+const observeSelector = (selector, callback, options = {
+  timeout: null,
+  once: false,
+  onTimeout: null,
+  document: window.document
+}) => {
+  let processed = new Map();
+
+  if (options.timeout || options.onTimeout) {
+    console.log('------------------------------------------------------------------------------------------------------------------------------');
+    console.log('WARNING: observeSelector options timeout and onTimeout are not yet implemented.');
+    console.log('------------------------------------------------------------------------------------------------------------------------------');
+  }
+
+  let obs, isDone = false;
+  const done = () => {
+    if (!obs) console.warn('observeSelector failed to run done()');
+    if (obs) obs.disconnect();
+    processed = undefined;
+    obs = undefined;
+    return isDone = true;
+  };
+
+  const processElement = el => {
+    if (processed && !processed.has(el)) {
+      processed.set(el, true);
+      callback(el);
+      if (options.once) {
+        done();
+        return true;
+      }
+    }
+  };
+
+  const lookForSelector = (el = document) => {
+    if (el.matches && el.matches(selector)) {
+      if (processElement(el)) return true;
+    }
+    if (el.querySelectorAll) {
+      const elements = el.querySelectorAll(selector);
+      if (elements.length) {
+        for (let i = 0; i < elements.length; i++) {
+          const el = elements[i];
+          if (processElement(el)) return true;
+        }
+      }
+    }
+  };
+  lookForSelector();
+
+  //We might finish before the mutation observer is necessary:
+  if (!isDone) {
+    obs = new MutationObserver(mutationsList => {
+      mutationsList.forEach(record => {
+        if (record && record.addedNodes && record.addedNodes.length) {
+          for (let i = 0; i < record.addedNodes.length; i++) {
+            //Need to check from the parent element since sibling selectors can be thrown off if elements show up in non-sequential order
+            const el = record.addedNodes[i].parentElement;
+            // if (!el) console.warn('observeSelector element has no parent', record.addedNodes[i], record);
+            //Note: This appears to also run when elements are removed from the DOM. If the element doesn't have a parent then we don't need to check it.
+            if (el && lookForSelector(el)) return true;
+          }
+        }
+      });
+    });
+    obs.observe(options.document || document, {
+      attributes: false,
+      childList: true,
+      subtree: true
+    });
+  }
+
+  return () => {
+    done();
+  };
+}; //_observeSelector
+
+
+const waitForElement = selector=>{
+  return new Promise(resolve=>{
+    observeSelector(selector, resolve, { once: true });
+  });
+};
+
 
 document.addEventListener('DOMContentLoaded',()=> {
-  
+
   const thrive_carousel_fade = new FadeAnimation();
   const thrive_carousel_loader = new BackgroundLoader();
   
@@ -39,14 +124,72 @@ document.addEventListener('DOMContentLoaded',()=> {
     };
   };
   initBannerScroller();
-  var pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
+
+  const  createHighlightResortsSection = (elHomepageHighlightResorts,data, key, sel) => {
+    if (data.length > 0) {
+      const html = data.map(iterResort => `      
+        <div class="resort-name"><a class="light-button" href="snow-report${iterResort.snoLink}"> ${iterResort.resortName}, ${iterResort.state}</a></div>
+        <div><p class='surface-terrain'>${iterResort[key]}</p></div>
+        <div><i class="wi ${iterResort.weather}"></i> </div>
+        `).join('');
+      elHomepageHighlightResorts.insertAdjacentHTML('beforeend',html);
+    } else {
+      elHomepageHighlightResorts.closest(sel).classList.add('sno-hide');
+    }
+    
+  };
+  
+  const getOpenResorts = () => {
+    const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-open-resorts.php`;
+    const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/home-open-resorts-api` : localURL;
+    
+    _log(`home-open-resorts-api resort: ${url}`);
+    fetch(url).then(response => {      
+      return response.json();
+    }).then(data => {
+      // _log('--getOpenResorts: data');    
+      // console.log(data);
+      waitForElement('#open-resorts-list').then((elHomepageHighlightResorts) => {
+        createHighlightResortsSection(elHomepageHighlightResorts,data,'baseDepth', '#open-resorts');
+      }).catch( (e) => { console.error('Error waiting for getOpenResorts data:',e);});
+      
+    }).catch( (e) => { console.error('Error waiting for getOpenResorts fetch:',e);});
+
+  };
+  
+  const getTopSnowfall = () => {
+    const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-top-snowfall.php`;
+    const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/home-top-snowfall-api` : localURL;
+    
+    fetch(url).then(response => {      
+      return response.json();
+    }).then(data => {
+      _log('--getTopsSnowfall: data');    
+      console.log(data);
+      const fetchOpenResorts = (data.length > 5) ? false : true;
+      if (data.length > 0) {
+        waitForElement('#top-snowfall-list').then((elHomepageHighlightResorts) => {
+          createHighlightResortsSection(elHomepageHighlightResorts,data, 'snowfall','#top-snowfall');
+        }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
+      } 
+      if (fetchOpenResorts) {
+        getOpenResorts();
+      } 
+    }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
+  
+  };
+  
+  getTopSnowfall();
+  
+  const pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
   console.log(`>>> load: ${pageLoadTime}`);
   document.querySelector("#browsertime").innerText = pageLoadTime;
   
-  document.querySelector('li.updates-box').dispatchEvent(new Event('mouseover'));
-  _log('Home page initialized.');
+  //document.querySelector('li.updates-box').dispatchEvent(new Event('mouseover'));
+  
 
   
   
+  _log('Home page initialized.');
   
 });
