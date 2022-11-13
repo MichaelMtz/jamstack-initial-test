@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       const html = data.map(iterResort => `      
         <div class="resort-name"><a class="light-button" href="snow-report${iterResort.snoLink}"> ${iterResort.resortName}, ${iterResort.state}</a></div>
         <div><p class='surface-terrain'>${iterResort[key]}</p></div>
-        <div><i class="wi ${iterResort.weather}"></i> </div>
+        <div><i class="wi ${iterResort.weatherIcon}" title="${iterResort.weatherTitle}"></i> </div>
         `).join('');
       elHomepageHighlightResorts.insertAdjacentHTML('beforeend',html);
     } else {
