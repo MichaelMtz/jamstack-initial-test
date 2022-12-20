@@ -29,13 +29,13 @@ layout: home-page.njk
                                 <h2>Top Snowfall</h2>
                                 
                                 <div id="top-snowfall-list" class="grid-container open-resorts ">
-                                    <div class="grid-header">Resort</div>
+                                    <div class="grid-header resort-name">Resort</div>
                                     <div class="grid-header">Overnight </div>
                                     <div class="grid-header">Weather</div>
                                 </div>
                             </div>
                             
-                            <div id="open-resorts" class="sno-hidden">
+                            <div id="open-resorts" class="sno-hide">
                                 <h2>Open Resorts</h2>
     
                                 <div id="open-resorts-list" class="grid-container open-resorts">
@@ -145,7 +145,7 @@ layout: home-page.njk
 
         <ul class="feature-boxes  animated fadeInRight summer-flyout">
 
-            <li class="favorites-box">
+            <li class="favorites-box sno-hide">
 
                 <a class="tab" href="#"><span class='box-icon'></span>Your <i style='float:right' class="wi wi-direction-right"></i><br /><span class='small'>favorites</span></a>
 
@@ -483,344 +483,39 @@ layout: home-page.njk
 
                 <span class="small">Report</span> </a>  
 
-                <div class="fly-box  animated fadeInRight" id="offers-flybox">
+                <div class="fly-box  animated fadeInRight" id="eastern-container">
 
-                                              <div class="left-report">
+                    <div class="snow-reports">
 
-                        <div class="qbanner" style="background: none; height: auto; margin-bottom: 5px;">
+                        <div  class="qbanner" style="background: none; height: auto; margin-bottom: 5px;">
 
-                            <div class="table-snowconditions currentConditions">
-
+                            <div id="eastern" class="table-snowconditions currentConditions">
                                 <h2>Top Snowfall</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="20%">
-
-                                    <col style="30%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Snowfall</th>
-
-                                            <th>Lifts/Trails </th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                        
-
-                                    </tbody>
-
-                                </table>
-
-
-
-                                <h2>Highlighted Resorts</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="50%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Summer Activities</th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                                                    <tr>
-
-                            <td><a class="dark-button" href="/snow-report/pennsylvania/blue-knob-all-seasons-resort/">Blue Knob All Seasons Resort, PA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>5:41am Mon Mar 21 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/pennsylvania/blue-mountain-resort/">Blue Mountain Resort, PA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>5:46pm Sun Mar 27 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-thunderstorm"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/massachusetts/berkshire-east-mountain-resort/">Berkshire East Mountain Resort, MA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>6:01am Mon Mar 28 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-cloudy"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/maine/big-squaw-mountain/">Big Squaw Mountain, ME</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>9:32am Wed Mar 30 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/new-york/belleayre-mountain/">Belleayre Mountain, NY</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>4:40pm Sat Apr 23 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/vermont/burke-mountain-resort/">Burke Mountain Resort, VT</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:37pm Sun Apr 10 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/new-hampshire/bretton-woods/">Bretton Woods, NH</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:33pm Sun Apr 10 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/vermont/bolton-valley-resort/">Bolton Valley Resort, VT</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:17am Sat Apr 9 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-
-
-                                    </tbody>
-
-                                </table>
-
-
-
-
-
-
-
-
-
+                                <div id="eastern-top-snowfall-list" class="grid-container region top-snowfall ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+
+                                    <div class="grid-header">Overnight </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Base Depth</div>
+
+                                </div>
+
+                                <h2 class="m-t-10">Highlighted Resorts</h2>
+                                <div id="eastern-members-list" class="grid-container region members ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                                    <div class="grid-header">New Snow </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Surface</div>
+                                    <div class="grid-header">Base Depth</div>
+                                    <div class="grid-header">Open Trails</div>
+                                </div>
                             </div>
 
                         </div><!-- end banner -->
 
                     </div><!-- end left -->
-
-
-
-                      <div class="right-report">
-
-                        <div class="quick-report clearfix">
-
-                            <h6 class="ucase">Eastern Weather Forecast</h6>
-
-                            <p> </p>
-
-                            <ul class="forecast-list">
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">VT, NH, ME</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">
-
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat. Phasellus eget semper augue, eget porttitor magna. Morbi nisl lectus, efficitur id orci ut, faucibus bibendum metus. 
-
-                                    </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">NJ, NY, MA</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat. Phasellus eget semper augue, eget porttitor magna. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">Southeast</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat. Phasellus eget semper augue, eget porttitor magna. Morbi nisl lectus, efficitur id orci ut, faucibus bibendum metus. Nulla egestas nec elit eu mattis. Praesent condimentum venenatis ligula id lacinia. Aenean iaculis sed risus ac auctor. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-
-
-                            </ul>
-
-                            <p></p>
-
-                        </div><!-- end report -->
-
-                    </div><!-- end right -->                     
-
 
 
 
@@ -877,345 +572,40 @@ layout: home-page.njk
 
                 <span class="small">Report</span></a>
 
-                <div class="fly-box  animated fadeInRight"  id="offers-flybox">
+                <div class="fly-box  animated fadeInRight"  id="midwest-container">
 
-                                              <div class="left-report">
+                    <div class="snow-reports">
 
                         <div class="qbanner" style="background: none; height: auto; margin-bottom: 5px;">
-
-                            <div class="table-snowconditions currentConditions">
-
+                            
+                            <div id="midwest" class="table-snowconditions currentConditions">
                                 <h2>Top Snowfall</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="20%">
-
-                                    <col style="30%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Snowfall</th>
-
-                                            <th>Lifts/Trails </th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                        
-
-                                    </tbody>
-
-                                </table>
-
-
-
-                                <h2>Highlighted Resorts</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="50%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Summer Activities </th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                                                    <tr>
-
-                            <td><a class="dark-button" href="/snow-report/wisconsin/granite-peak-ski-area/">Granite Peak Ski Area, WI</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>11:02am Sun Apr 17 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-cloudy"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/wisconsin/mountain-top-at-grand-geneva/">Mountain Top at Grand Geneva, WI</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:20pm Sun Mar 13 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-cloudy"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/michigan/nubs-nob-ski-area/">Nubs Nob Ski Area, MI</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:06pm Sun Apr 3 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/minnesota/lutsen-mountains/">Lutsen Mountains, MN</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>8:03am Sun May 8 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/michigan/ski-brule/">Ski Brule, MI</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>9:11am Fri Apr 15 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/michigan/crystal-mountain-resort/">Crystal Mountain Resort, MI</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:06pm Sun Apr 3 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-cloudy"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/michigan/treetops-resort/">Treetops Resort, MI</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>6:09am Mon Apr 4 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/michigan/the-highlands-at-harbor-springs/">The Highlands at Harbor Springs, MI</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:38am Mon Mar 28 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-
-
-                                    </tbody>
-
-                                </table>
-
-
-
-
-
-
-
-
-
+                                <div id="midwest-top-snowfall-list" class="grid-container region top-snowfall ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                            
+                                    <div class="grid-header">Overnight </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Base Depth</div>
+                            
+                                </div>
+                            
+                                <h2 class="m-t-10">Highlighted Resorts</h2>
+                                <div id="midwest-members-list" class="grid-container region members ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                                    <div class="grid-header">New Snow </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Surface</div>
+                                    <div class="grid-header">Base Depth</div>
+                                    <div class="grid-header">Open Trails</div>
+                                </div>
                             </div>
 
                         </div><!-- end banner -->
 
                     </div><!-- end left -->
-
-
-
-                      <div class="right-report">
-
-                        <div class="quick-report clearfix">
-
-                            <h6 class="ucase">MidWestern Weather Forecast</h6>
-
-                            <p> </p>
-
-                            <ul class="forecast-list">
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">MN, WI, MI</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">
-
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat. Phasellus eget semper augue, eget porttitor magna. Morbi nisl lectus, efficitur id orci ut, faucibus bibendum metus. 
-
-                                    </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">IA, IL, IN, OH</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat. Phasellus eget semper augue, eget porttitor magna. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">MO</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat. Phasellus eget semper augue, eget porttitor magna. Morbi nisl lectus, efficitur id orci ut, faucibus bibendum metus. Nulla egestas nec elit eu mattis. Praesent condimentum venenatis ligula id lacinia. Aenean iaculis sed risus ac auctor. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-
-
-                            </ul>
-
-                            <p></p>
-
-                        </div><!-- end report -->
-
-                    </div><!-- end right -->                     
-
-
+                
 
                     <hr>
 
@@ -1253,252 +643,33 @@ layout: home-page.njk
 
                 <span class="small">Report</span></a>
 
-                <div class="fly-box  animated fadeInRight" id="offers-flybox">
+                <div class="fly-box  animated fadeInRight" id="rockies-container">
 
-                                              <div class="left-report">
+                    <div class="snow-reports">
 
                         <div class="qbanner" style="background: none; height: auto; margin-bottom: 5px;">
-
-                            <div class="table-snowconditions currentConditions">
-
+                            <div id="rockies" class="table-snowconditions currentConditions">
                                 <h2>Top Snowfall</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="20%">
-
-                                    <col style="30%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Snowfall</th>
-
-                                            <th>Lifts/Trails </th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                        
-
-                                    </tbody>
-
-                                </table>
-
-
-
-                                <h2>Highlighted Resorts</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="50%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Summer Activities</th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                                                    <tr>
-
-                            <td><a class="dark-button" href="/snow-report/colorado/cooper-chicago-ridge/">Cooper/Chicago Ridge, CO</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>2:41pm Sun Apr 17 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/utah/deer-valley-resort/">Deer Valley Resort, UT</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:04pm Thu Apr 21 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/wyoming/jackson-hole-mountain-resort/">Jackson Hole Mountain Resort, WY</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>1:42pm Sun Apr 10 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/colorado/wolf-creek-ski-area/">Wolf Creek Ski Area, CO</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>2:42pm Sun Apr 17 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/montana/whitefish-mountain-resort/">Whitefish Mountain Resort, MT</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>1:28pm Sun Apr 10 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-cloudy"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/colorado/sunlight-mountain-resort/">Sunlight Mountain Resort, CO</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>6:10am Mon Apr 4 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/colorado/copper-mountain-resort/">Copper Mountain Resort, CO</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:57am Mon Apr 25 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/colorado/arapahoe-basin/">Arapahoe Basin, CO</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>5:32pm Sun Jun 5 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-
-
-                                    </tbody>
-
-                                </table>
-
-
-
-
-
-
-
-
-
+                                <div id="rockies-top-snowfall-list" class="grid-container region top-snowfall ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                            
+                                    <div class="grid-header">Overnight </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Base Depth</div>
+                            
+                                </div>
+                            
+                                <h2 class="m-t-10">Highlighted Resorts</h2>
+                                <div id="rockies-members-list" class="grid-container region members ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                                    <div class="grid-header">New Snow </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Surface</div>
+                                    <div class="grid-header">Base Depth</div>
+                                    <div class="grid-header">Open Trails</div>
+                                </div>
                             </div>
 
                         </div><!-- end banner -->
@@ -1507,109 +678,7 @@ layout: home-page.njk
 
 
 
-                      <div class="right-report">
-
-                        <div class="quick-report clearfix">
-
-                            <h6 class="ucase">Rockies Weather Forecast</h6>
-
-                            <p> </p>
-
-                            <ul class="forecast-list">
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">MT, WY</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">
-
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat. 
-
-                                    </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">Utah</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat.  </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">Colorado</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat.  </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">New Mexico</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat.  </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-
-
-                            </ul>
-
-                            <p></p>
-
-                        </div><!-- end report -->
-
-                    </div><!-- end right -->                     
+                                    
 
 
 
@@ -1653,367 +722,39 @@ layout: home-page.njk
 
                 <span class="small">Report</span></a>
 
-                <div class="fly-box  animated fadeInRight" id="offers-flybox">
+                <div class="fly-box  animated fadeInRight" id="western-container">
 
-                                              <div class="left-report">
+                    <div class="snow-reports">
 
                         <div class="qbanner" style="background: none; height: auto; margin-bottom: 5px;">
-
-                            <div class="table-snowconditions currentConditions">
-
+                            <div id="western" class="table-snowconditions currentConditions">
                                 <h2>Top Snowfall</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="20%">
-
-                                    <col style="30%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Snowfall</th>
-
-                                            <th>Lifts/Trails </th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                        
-
-                                    </tbody>
-
-                                </table>
-
-
-
-                                <h2>Highlighted Resorts</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="50%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Summer Activities</th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                                                    <tr>
-
-                            <td><a class="dark-button" href="/snow-report/california/palisades-tahoe/">Palisades Tahoe Olympic Valley, CA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>9:59am Tue May 31 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/california/snow-summit/">Snow Summit, CA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>10:39am Sun Apr 17 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/california/june-mountain/">June Mountain, CA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>12:20pm Sun Apr 10 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/california/mammoth-mountain/">Mammoth Mountain, CA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>4:32pm Sun Jun 5 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/washington/crystal-mountain-resort/">Crystal Mountain Resort, WA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>11:43am Mon Jun 13 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-showers"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/idaho/schweitzer/">Schweitzer, ID</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:07am Mon Apr 11 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-cloudy"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/california/big-bear-mountain-resort/">Bear Mountain Resort, CA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>12:19pm Sun Apr 10 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/mtn-bike-open.png' /><img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/california/mountain-high-resort/">Mountain High Resort, CA</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>12:21pm Sun Apr 10 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/lift-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-
-
-                                    </tbody>
-
-                                </table>
-
-
-
-
-
-
-
-
-
+                                <div id="western-top-snowfall-list" class="grid-container region top-snowfall ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                            
+                                    <div class="grid-header">Overnight </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Base Depth</div>
+                            
+                                </div>
+                            
+                                <h2 class="m-t-10">Highlighted Resorts</h2>
+                                <div id="western-members-list" class="grid-container region members ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                                    <div class="grid-header">New Snow </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Surface</div>
+                                    <div class="grid-header">Base Depth</div>
+                                    <div class="grid-header">Open Trails</div>
+                                </div>
                             </div>
+                            
 
                         </div><!-- end banner -->
 
-                    </div><!-- end left -->
-
-
-
-                      <div class="right-report">
-
-                        <div class="quick-report clearfix">
-
-                            <h6 class="ucase">Western Weather Forecast</h6>
-
-                            <p> </p>
-
-                            <ul class="forecast-list">
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">WA, OR</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">
-
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat.
-
-                                    </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">Idaho</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">California</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">AZ, NV</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-
-
-                            </ul>
-
-                            <p></p>
-
-                        </div><!-- end report -->
-
-                    </div><!-- end right -->                     
-
-
-
-
+                    </div><!-- end snow-reports -->
 
                     <div class="clearfix"></div>
 
@@ -2049,367 +790,37 @@ layout: home-page.njk
 
                 <span class="small">Report</span></a>
 
-                <div class="fly-box  animated fadeInRight" id="offers-flybox">
+                <div class="fly-box  animated fadeInRight" id="canada-container">
 
-                                              <div class="left-report">
+                    <div class="snow-reports">
 
                         <div class="qbanner" style="background: none; height: auto; margin-bottom: 5px;">
-
-                            <div class="table-snowconditions currentConditions">
-
+                            <div id="canada" class="table-snowconditions currentConditions">
                                 <h2>Top Snowfall</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="20%">
-
-                                    <col style="30%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Snowfall</th>
-
-                                            <th>Lifts/Trails </th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                        
-
-                                    </tbody>
-
-                                </table>
-
-
-
-                                <h2>Highlighted Resorts</h2>
-
-                                <table class="table">
-
-                                    <col style="30%">
-
-                                    <col style="20%">
-
-                                    <col style="50%">
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th>Resort</th>
-
-                                            <th>Weather</th>
-
-                                            <th>Summer Activities</th>
-
-                                        </tr>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                                                    <tr>
-
-                            <td><a class="dark-button" href="/snow-report/quebec/tremblant/">Tremblant, QC</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>4:37pm Sun Apr 17 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-sunny-overcast"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-    <img src='assets/images/summer/golf-open.png' /><img src='assets/images/summer/lift-open.png' /><img src='assets/images/summer/hiking-open.png' />   </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="/snow-report/ontario/blue-mountain-resort/">Blue Mountain Resort, ON</a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>3:01pm Sun Mar 27 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-day-cloudy"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="">, </a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:00pm Wed Dec 31 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-meteor"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="">, </a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:00pm Wed Dec 31 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-meteor"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="">, </a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:00pm Wed Dec 31 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-meteor"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="">, </a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:00pm Wed Dec 31 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-meteor"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="">, </a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:00pm Wed Dec 31 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-meteor"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-                        <tr>
-
-                            <td><a class="dark-button" href="">, </a> <br/>
-
-                               <!-- <span class="small lcase asof"><em>7:00pm Wed Dec 31 </em></span>-->
-
-                            </td>
-
-                            <td class=""><i class="wi wi-meteor"></i> </td>
-
-                            <td>
-        <div class='summer-activities'>
-       </div> </td>
-
-
-
-                        </tr>
-
-                    
-
-
-
-                                    </tbody>
-
-                                </table>
-
-
-
-
-
-
-
-
-
+                                <div id="canada-top-snowfall-list" class="grid-container region top-snowfall ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                            
+                                    <div class="grid-header">Overnight </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Base Depth</div>
+                            
+                                </div>
+                            
+                                <h2 class="m-t-10">Highlighted Resorts</h2>
+                                <div id="canada-members-list" class="grid-container region members ">
+                                    <div class="grid-header resort-name">Resort</div>
+                                    <div class="grid-header">Report Date</div>
+                                    <div class="grid-header">New Snow </div>
+                                    <div class="grid-header">Weather</div>
+                                    <div class="grid-header">Surface</div>
+                                    <div class="grid-header">Base Depth</div>
+                                    <div class="grid-header">Open Trails</div>
+                                </div>
                             </div>
-
                         </div><!-- end banner -->
 
-                    </div><!-- end left -->
-
-
-
-                      <div class="right-report">
-
-                        <div class="quick-report clearfix">
-
-                            <h6 class="ucase">Canada Weather Forecast</h6>
-
-                            <p> </p>
-
-                            <ul class="forecast-list">
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">British Columbia</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">
-
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. Vivamus eu enim vitae lectus blandit finibus blandit consequat erat.
-
-                                    </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">Alberta</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">Manitoba, Ontario</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-                                <li class="clearfix weather-post" > 
-
-                                    <div class="weather-left">
-
-                                    <strong class="ucase">Quebec, NB, NS</strong><br/>
-
-                                    <img src="assets/images/weather/29X.png" title="Precipitation: Trace." class="remove-bottom" width="84">
-
-                                    </div>
-
-                                    <div class="weather-right">
-
-                                    <span class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet ante ut ante viverra congue at ac erat. Proin elementum lacus a finibus maximus. </span>
-
-                                    </div>
-
-                                    <a class="weather-post-link" href="#"> </a>
-
-                                </li>
-
-
-
-                            </ul>
-
-                            <p></p>
-
-                        </div><!-- end report -->
-
-                    </div><!-- end right -->                     
-
-
-
-
+                    </div><!-- end snow-reports -->
 
                     <div class="clearfix"></div>
 

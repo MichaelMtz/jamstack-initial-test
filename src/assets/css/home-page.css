@@ -5,4 +5,38 @@
   background-image: linear-gradient(90deg, #0097BE, #0071AC);
 }
 
+.grid-container.region {
+  margin-bottom: 10px;
+  background: unset;
+  grid-template-columns: 2fr 1.3fr 1.3fr 1fr 1fr;
+}
+.grid-container.region div.grid-header {
+  color: #373737;
+}
+.grid-container.region div.resort-name a.light-button {
+  color: #0079c1;
+}
+.grid-container.region div.resort-name a.light-button:hover {
+  color: white;
+}
+.grid-container.region div {
+  color: #373737;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.45);
+}
+.grid-container.region div p.surface-terrain {
+  margin: 0px;
+}
+.grid-container.region div:not(.resort-name) {
+  text-align: center;
+  font-size: 14.5px;
+}
+
+.grid-container.region.members {
+  grid-template-columns: 2fr 1.3fr 1.3fr 1fr 1fr 1fr 1fr;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
 /*# sourceMappingURL=home-page.css.map */
