@@ -205,6 +205,9 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 	padding: 10px;
 	height: 70px;
 }
+.logo.no-white img {
+	background-color: unset;
+}
 /*NAVIGATION*/
 .mobile-nav { display: none; float: right; margin-right: 10px;  }
 .mobile-close, .expand { display: none; }
