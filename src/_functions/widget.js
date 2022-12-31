@@ -10,6 +10,6 @@ exports.handler = async function(event, context, callback) {
     headers: {
       "Content-Type": "text/html",
     },
-    body: (url + response.data)
+    body: (response.data)
   });
 };
