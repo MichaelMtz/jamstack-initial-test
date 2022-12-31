@@ -2,3 +2,9 @@
   command = "npx @11ty/eleventy"
   publish = "dist"
   functions = "src/_functions"
+  
+[[redirects]]
+  from = "/news-post/*"
+  to = "/news-post/:splat"
+  status = 302
+  force = true
