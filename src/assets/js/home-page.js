@@ -246,29 +246,50 @@ document.addEventListener('DOMContentLoaded',()=> {
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   };
   
+  const createStoriesSection = (elStories, posts) => {
+    _log('createStoriesSection: posts:');
+    console.log('posts:',posts);
+    const html = posts.map(iterPost => `      
+
+      <div class="deals" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+          <div class="deals-content">
+              <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
+          </div><!-- end deals-content -->
+          <div class="deals-desc">  
+              <a href="news/${iterPost.permalink}?postID=${iterPost.id}" class="button redbtn dealClick" >
+              Read...
+              </a>
+          </div><!-- end desc -->
+      </div>
+      `).join('');
+    elStories.insertAdjacentHTML('afterbegin',html);
+  };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
-    const url = ".netlify/functions/home-recent-stories-api";
+    //const localURL = 'http://localhost/sno/snoCountryHeadless/snow-reports/home-page-stories.php';
+    const localURL = 'https://www.snow-country.com/resorts/api-easy-blog-list.php';
+    const url = (window.location.hostname !== 'localhost') ? ".netlify/functions/home-recent-stories-api": localURL;
+    
     fetch(url).then(response => {      
       return response.json();
     }).then(data => {
       _log('--getRecentStories: data');    
       console.log('stories:',data);
+      if (data.status) {
+        waitForElement('#offers').then((elStories) => {
+          _log('getRecentStories: stories:');
+          console.log(data.list);
+          createStoriesSection(elStories,data.stories);
+        }).catch( (e) => { console.error('Error waiting for getRecentStories data:',e);});        
+      }
       
-      // Object.keys(data).forEach(iterRegion => {
-      //   populateRegionTopSnowfallSection(iterRegion, data[iterRegion].topsnowfall);
-      //   populateRegionMemberSection(iterRegion,data[iterRegion].members);
-      // });
-      
-    }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
+    }).catch( (e) => { console.error('Error waiting for getRecentStories fetch:',e);});
   };
+  
   getTopSnowfall();
   getRegionResorts();
   getRecentStories();
-  
   const pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
-  console.log(`>>> load: ${pageLoadTime}`);
-  //document.querySelector("#browsertime").innerText = pageLoadTime;
 
   _log(`Home page initialized:  ${pageLoadTime}`);
   

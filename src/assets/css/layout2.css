@@ -531,16 +531,16 @@ ul.feature-boxes li .fly-box {
  ul.feature-boxes li.flipped .fly-box { display: block;  }
  
  /**OFFERS**/
- #offers .deals { width: 250px; height: 180px; float: left; margin: 0 10px 10px 0;  color: #fff; position: relative; overflow: hidden !important; background-size: cover !important;    }
+ #offers .deals { width: 250px; height: 180px; float: left; margin: 0 10px 10px 0;  color: #fff; position: relative; overflow: hidden !important; background-size: cover !important;   box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 33%); }
 
  #offers .deals h6 { color: #fff; font-size: 19px; }
  #offers .deals span.small { font-size: 14px; font-weight: 300; }
-  #offers .deals .deals-desc {  overflow: hidden; opacity: 0; visibility: hidden; position: absolute; background: url(../images/blue-bg.png);  top: 0px;  left: 0px; height: 100%; width: 100%; padding: 10px;  }
+  #offers .deals .deals-desc {  overflow: hidden; opacity: 0; visibility: hidden; position: absolute; background: url(../images/blue-bg.png);  top: 0px;  left: 0px; height: 100%; width: 100%; padding: 10px; display:grid; place-items: center; }
  #offers .deals .deals-content { background: url(../images/small-shadow.png) repeat-x top; padding: 10px; position: absolute; bottom: 0; width: 100%; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  }
   #offers .deals:hover .deals-desc { opacity: 1; visibility: visible; top: 0; left: 0; }
   #offers .deals:hover .deals-content { opacity: 0; visibility: hidden; }
   #offers .deals.featured-deal { width: 510px;  }
- #offers .deals:nth-child(3), #offers .deals:nth-child(6) { margin-right: 0; }
+ #offers .deals:nth-child(3), #offers .deals:nth-child(6), #offers .deals:nth-child(9) { margin-right: 0; }
  
  /**UPDATES**/
  .latest-updates { float: left; width: 490px;  padding-right: 10px;  }
