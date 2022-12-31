@@ -5,5 +5,5 @@
   
 [[redirects]]
   from = "/widget/*"
-  to = "/.netlify/_functions/widget"
+  to = "/.netlify/functions/widget"
   status = 200
