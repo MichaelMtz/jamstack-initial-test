@@ -123,7 +123,7 @@ const getPost = () => {
   const params = new URLSearchParams(document.location.search);
   const postID = params.get("postID");
   const localURL = `https://www.snow-country.com/resorts/api-easy-blog-post.php?postID=${postID}`;
-  const url = (window.location.hostname !== 'localhost') ? ".netlify/functions/news-post-api?postID=${postID}": localURL;
+  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-post-api?postID=${postID}`: localURL;
   
   fetch(url).then(response => {      
     return response.json();
