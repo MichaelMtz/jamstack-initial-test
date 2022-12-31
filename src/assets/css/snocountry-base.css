@@ -385,6 +385,7 @@ a:focus {outline:0;}
 a.large-button { font-weight: 300; padding: 10px 23px; }
 a.redbtn, input.redbtn { background: #fe523e; border:0; color:#fff; }
 a.redbtn {background: #77C0FC;}
+a.readbtn {background: #77C0FC;  padding: 14px 30px; font-size:17px;}
 a.redbtn:hover, input.redbtn:hover { background: #0079c1; }
 a.orange { background: #fe523e; border:0; color:#fff!important;; }
 a.orange:hover { background: #ff7566; }
@@ -394,7 +395,12 @@ a.button-link { font-weight: 800; }
 
 a.bluebtn, input.bluebtn { background: #0079c1; border:0; color:#fff; }
 a.bluebtn:hover, input.bluebtn:hover { background: #fe523e; }
-
+a.home-bluebtn {
+	background: #77C0FC;border:0; color:#fff;
+}
+a.home-bluebtn:hover {
+	background: #0079c1; 
+}
 /* #Misc
 ================================================== */
 .remove-bottom { margin-bottom: 0 !important; }
