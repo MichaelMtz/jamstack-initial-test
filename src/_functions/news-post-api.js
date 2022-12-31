@@ -1,8 +1,8 @@
 const axios = require("axios");
 
 exports.handler = async function(event, context, callback) {
-  const params = new URLSearchParams(document.location.search);
-  const postID = params.get("postID");
+  console.log('event:',event);
+  const { postID } = event.queryStringParameters;
   const url = `https://www.snow-country.com/resorts/api-easy-blog-post.php?postID=${postID}`;
   const response = await axios.get(url);
   callback(null, {

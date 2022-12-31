@@ -958,6 +958,7 @@ div.thriveVideo_Video iframe { width: 100% !important;  }
 .slide-content p a {background:none; border:1px #fff solid; color:#fff; margin:10px 0 0 0;}
 .slide-content.mobile-caption { display: none; }
 #slider-pagination { 
+  display:none;
     position: absolute; 
     top: 132px; 
     z-index: 2; 
