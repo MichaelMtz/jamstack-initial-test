@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   
   const getRecentStories = () => {
     _log('--getRecentStories: init');
-    const url = ".netlify/functions/home-region-stories-api";
+    const url = ".netlify/functions/home-recent-stories-api";
     fetch(url).then(response => {      
       return response.json();
     }).then(data => {
