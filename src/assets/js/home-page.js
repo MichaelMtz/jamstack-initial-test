@@ -246,13 +246,30 @@ document.addEventListener('DOMContentLoaded',()=> {
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   };
   
+  const getRecentStories = () => {
+    _log('--getRecentStories: init');
+    const url = ".netlify/functions/home-region-stories-api";
+    fetch(url).then(response => {      
+      return response.json();
+    }).then(data => {
+      _log('--getRecentStories: data');    
+      console.log('stories:',data);
+      
+      // Object.keys(data).forEach(iterRegion => {
+      //   populateRegionTopSnowfallSection(iterRegion, data[iterRegion].topsnowfall);
+      //   populateRegionMemberSection(iterRegion,data[iterRegion].members);
+      // });
+      
+    }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
+  };
   getTopSnowfall();
   getRegionResorts();
+  getRecentStories();
   
   const pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
   console.log(`>>> load: ${pageLoadTime}`);
-  document.querySelector("#browsertime").innerText = pageLoadTime;
+  //document.querySelector("#browsertime").innerText = pageLoadTime;
 
-  _log('Home page initialized.');
+  _log(`Home page initialized:  ${pageLoadTime}`);
   
 });
