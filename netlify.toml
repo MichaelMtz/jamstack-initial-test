@@ -3,3 +3,7 @@
   publish = "dist"
   functions = "src/_functions"
   
+[[redirects]]
+  from = "/widget/*"
+  to = "/.netlify/functions/widget"
+  status = 200
