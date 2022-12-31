@@ -256,8 +256,9 @@ document.addEventListener('DOMContentLoaded',()=> {
               <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
           </div><!-- end deals-content -->
           <div class="deals-desc"> 
-              <!-- <a href="news-post/?postID=${iterPost.id}" class="button readbtn dealClick" > -->
-              <a href="news-post/${iterPost.permalink}?postID=${iterPost.id}" class="button readbtn dealClick" >
+              <!-- <a href="news-post/${iterPost.permalink}?postID=${iterPost.id}" class="button readbtn dealClick" > -->
+              
+              <a href="news-post/?postID=${iterPost.id}" class="button readbtn dealClick" >
               Read...
               </a>
           </div><!-- end desc -->
