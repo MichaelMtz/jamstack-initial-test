@@ -1054,6 +1054,7 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 		}	
 		.breadcrumb-link.xc-link {
 			margin-left: auto;
+			display:none;
 		}
 		.breadcrumb-link.active {
 			text-decoration: underline;

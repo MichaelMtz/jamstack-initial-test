@@ -8,12 +8,16 @@ const abbrToLongName = {
   , "PA":"pennsylvania", "RI":"rhode-island", "SD":"south-dakota", "TN":"tennessee", "UT":"utah", "VT":"vermont", "VA":"virginia", "WA":"washington"
   , "WV":"west-virginia", "WI":"wisconsin", "WY":"wyoming"
   , "MID WEST:" : "mid-west", "NORTH EAST:" : "north-east", "NORTH WEST:" : "north-west", "ROCKIES:": "rockies", "SOUTH WEST:": "south-west","SOUTH EAST:": "south-east" 
+  , 'AB':'alberta','BC':'british-columbia','MB':'manitoba','NB':'new-brunswick','NS':'nova-scotia','ON':'ontario','QC':'quebec'
+  ,"ARG":"argentina","AUS":"australia","CHL": "chile","NZL": "new-zealand"
+  ,"AND":'andorra',"AUT":'austria',"CHE":'switzerland',"CZE": 'czech-republic',"DEU": 'germany',"ESP": 'spain',"FIN": 'finland',"FRA": 'france'
+  ,"ITA":'italy',"NOR":'norway',"SWE": 'switzerland'
 };
 
 function upperCaseWords(input) {
   input = input.replace(/-/g, ' ');
-  let iterName = input.split(" ");
-  let output = iterName.map((word) => {
+  const iterName = input.split(" ");
+  const output = iterName.map((word) => {
     return word[0].toUpperCase() + word.substring(1);
   }).join(" ");
   return output;
@@ -24,11 +28,11 @@ function formatBreadCrumbLink(breadcrumb) {
 };
 
 function formatBreadCrumbs(breadcrumbs) {
-  let breadCrumbList = []; 
+  const breadCrumbList = []; 
   breadcrumbs.forEach(iterBreadCrumb => {
     if (abbrToLongName[iterBreadCrumb]) {
-      let link = formatBreadCrumbLink(iterBreadCrumb);
-      let aBreadCrumb = { link: link, abbrName: iterBreadCrumb};
+      const link = formatBreadCrumbLink(iterBreadCrumb);
+      const aBreadCrumb = { link: link, abbrName: iterBreadCrumb};
       breadCrumbList.push(aBreadCrumb);
     }
   });
