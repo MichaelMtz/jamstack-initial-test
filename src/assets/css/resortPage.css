@@ -471,6 +471,7 @@
 @media screen and (max-width: 645px) {
   .snow-report-container .resort .conditions__forecast .weather-forecast {
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    place-items: center;
   }
 }
 .snow-report-container .resort .conditions__forecast .weather-forecast__item {
@@ -556,8 +557,6 @@
 .snow-report-container figure.quote {
   margin: 0;
   margin-bottom: 15px;
-  background: #EAEDF0;
-  padding: 1em;
   border-radius: 1em;
 }
 .snow-report-container .quote figcaption {

@@ -445,7 +445,8 @@
                     display:grid;
                     grid-template-columns: repeat(auto-fit, minmax(225px,1fr));
                     @media screen and (max-width:645px) {
-                        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr))
+                        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+                        place-items:center;
                     }
                     &__item {
                         margin-top:10px;
@@ -546,8 +547,6 @@
     figure.quote {
       margin: 0;
       margin-bottom: 15px;
-      background: #EAEDF0;
-      padding: 1em;
       border-radius: 1em;
     }
     .quote figcaption {
