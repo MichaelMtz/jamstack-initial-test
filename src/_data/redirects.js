@@ -1,5 +1,4 @@
 const resorts = require("./resorts.json");
-const breadcrumbs = require("./breadcrumbs.json");
 
 const abbrToLongName = {
   "AL":"alabama", "AK":"alaska", "AZ":"arizona", "CA":"california", "CO":"colorado", "CT":"connecticut", "ID":"idaho", "IL":"illinois", "IN":"indiana"
@@ -9,7 +8,51 @@ const abbrToLongName = {
   , "WV":"west-virginia", "WI":"wisconsin", "WY":"wyoming"
   , "MID WEST:" : "mid-west", "NORTH EAST:" : "north-east", "NORTH WEST:" : "north-west", "ROCKIES:": "rockies", "SOUTH WEST:": "south-west","SOUTH EAST:": "south-east" 
 };
-
+const longToShort = {
+  "alabama": "AL",
+  "alaska": "AK",
+  "arizona": "AZ",
+  "california": "CA",
+  "colorado": "CO",
+  "connecticut": "CT",
+  "idaho": "ID",
+  "illinois": "IL",
+  "indiana": "IN",
+  "iowa": "IA",
+  "maine": "ME",
+  "maryland": "MD",
+  "massachusetts": "MA",
+  "michigan": "MI",
+  "minnesota": "MN",
+  "missouri": "MO",
+  "montana": "MT",
+  "nevada": "NV",
+  "new-hampshire": "NH",
+  "new-jersey": "NJ",
+  "new-mexico": "NM",
+  "new-york": "NY",
+  "north-carolina": "NC",
+  "north-dakota": "ND",
+  "ohio": "OH",
+  "oregon": "OR",
+  "pennsylvania": "PA",
+  "rhode-island": "RI",
+  "south-dakota": "SD",
+  "tennessee": "TN",
+  "utah": "UT",
+  "vermont": "VT",
+  "virginia": "VA",
+  "washington": "WA",
+  "west-virginia": "WV",
+  "wisconsin": "WI",
+  "wyoming": "WY",
+  "mid-west": "MIDWEST:",
+  "north-east": "NORTHEAST:",
+  "north-west": "NORTHWEST:",
+  "rockies": "ROCKIES:",
+  "south-west": "SOUTHWEST:",
+  "south-east": "SOUTHEAST:"
+};
 function upperCaseWords(input) {
   input = input.replace(/-/g, ' ');
   const iterName = input.split(" ");
@@ -19,45 +62,27 @@ function upperCaseWords(input) {
   return output;
 }
 
-function formatBreadCrumbLink(breadcrumb) {
-  return "snow-report/" + abbrToLongName[breadcrumb];
-};
 
-function formatBreadCrumbs(breadcrumbs) {
-  const breadCrumbList = []; 
-  breadcrumbs.forEach(iterBreadCrumb => {
-    if (abbrToLongName[iterBreadCrumb]) {
-      const link = formatBreadCrumbLink(iterBreadCrumb);
-      const aBreadCrumb = { link: link, abbrName: iterBreadCrumb};
-      breadCrumbList.push(aBreadCrumb);
-    }
-  });
-  return breadCrumbList;
-}
+
 
 module.exports = async function() {
   console.log("*** resorts.js");
-  let iterStateNameProper, iterName, masterBreadCrumb = {};
+  let iterName = {};
   //console.log("---breadcrumbs:",breadcrumbs);
-  breadcrumbs.forEach(iterBreadCrumb => {
-    masterBreadCrumb[iterBreadCrumb.stateName] = formatBreadCrumbs(iterBreadCrumb.breadcrumbs); 
-  });
   //console.log("--masterBreadCrumb:",masterBreadCrumb);
   resorts.forEach(iter => {
     if (iter.entryType === 'resort')  { //resort
       iterName = iter.stateName.split('/');
-      iter["stateNameProperLowerCase"] = iterName[1].replace('-', ' ');
+      iter["stateNameLowerCase"] = iterName[0];
+      iter["stateNameAbbr"] = (longToShort[iterName[0]]) ? longToShort[iterName[0]].toLowerCase() : 'empty';
+      iter["resortNameLowerCase"] = iterName[1];
+      iter["stateNameProperLowerCase"] = iterName[0].replace(/-/gi, '');
+      iter["resortNameProperLowerCase"] = iterName[1].replace(/-/gi, '');
       iter["stateNameProper"] = upperCaseWords(iterName[1]);
       iter["snowreport"] = iter.resort_id;
       iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
 
-      //Third party scripts
-      iter["scripts"] = ['https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js'];
-      if (masterBreadCrumb[iterName[0]]) {
-        //iter["breadCrumbList"] = formatBreadCrumbs(masterBreadCrumb[iterName[0]]);
-        iter["breadCrumbList"] = masterBreadCrumb[iterName[0]];
-      }
-      
+      //console.log('>> redirects:',iter);
     }
   });
   return resorts;
