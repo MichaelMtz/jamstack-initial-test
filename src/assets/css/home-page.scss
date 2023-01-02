@@ -38,10 +38,12 @@
 .m-t-10 {
   margin-top: 10px;
 }
-
+.mobile-stories {
+  display:none;
+}
 @media only screen and (max-width: 767px) { 
   body { 
-    height: 2200px;
+    height: 1600px;
   }
   ul.feature-boxes {
     display:none;
