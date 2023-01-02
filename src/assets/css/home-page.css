@@ -64,6 +64,10 @@
   }
   .carousel ul#banner_carousel #customText #top-snowfall #top-snowfall-list {
     padding-left: 15px !important;
+<<<<<<< HEAD
+=======
+    background: rgba(49, 135, 197, 0.75) none repeat scroll 0 0;
+>>>>>>> 5984ec0 (Hmmm)
   }
   .carousel ul#banner_carousel #customText #top-snowfall #top-snowfall-list .resort-name {
     padding-left: 15px !important;
