@@ -39,4 +39,39 @@
   margin-top: 10px;
 }
 
+@media only screen and (max-width: 767px) {
+  body {
+    height: 2200px;
+  }
+  ul.feature-boxes {
+    display: none;
+  }
+  .section .slider-container {
+    height: auto;
+  }
+  .carousel ul#banner_carousel #customText {
+    right: unset;
+    left: 25px;
+    max-width: unset;
+    width: 80%;
+  }
+  .carousel ul#banner_carousel #customText #top-snowfall {
+    margin-top: 20px;
+  }
+  .carousel ul#banner_carousel #customText #top-snowfall #top-snowfall-list {
+    padding-left: 15px !important;
+  }
+  .carousel ul#banner_carousel #customText #top-snowfall #top-snowfall-list .resort-name {
+    padding-left: 15px !important;
+  }
+  .carousel ul#banner_carousel #customText #top-snowfall #top-snowfall-list .light-button {
+    font-size: 12px;
+    min-width: 125px;
+  }
+  .carousel ul#banner_carousel #customText #top-snowfall #top-snowfall-list .surface-terrain {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
 /*# sourceMappingURL=home-page.css.map */

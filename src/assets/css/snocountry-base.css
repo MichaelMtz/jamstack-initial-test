@@ -208,6 +208,7 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 .logo.no-white img {
 	background-color: unset;
 }
+
 /*NAVIGATION*/
 .mobile-nav { display: none; float: right; margin-right: 10px;  }
 .mobile-close, .expand { display: none; }
@@ -332,7 +333,15 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 }
 
 
-
+@media only screen and (max-width: 1030px) {
+	.logo {
+		height: auto;
+		width: 200px !important;
+	}
+	.logo img {
+		height: auto;
+	}
+}
 /* ==========================================================================
    Embedded content
    ========================================================================== */
@@ -691,12 +700,12 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 	.sticky-header .mobile-nav { margin-top: 10px; }
 	/*SLIDER*/
 	.slider-container { padding: 0; margin-top: 0; height: 500px;}
-	.slider-container #slider {  background: url(/custom/templates/page/panorama-home/images/slider-winter2.jpg); background-size: cover; padding:120px 0 0 0;  }
+	.slider-container #slider {  background: url(/custom/templates/page/panorama-home/images/slider-winter2.jpg); background-size: cover; padding:0px 0 0 0;  }
 	.summerZone .slider-container #slider {  background: url(/custom/templates/page/panorama-home/images/slider-summer.jpg); background-size: cover; padding:120px 0 0 0;  }
 	.banner-container { padding: 0; height: 500px; }
 	.banner-container.featured-template.noBanner { height: 180px; background-size: auto 100%; background-position: 50% 50px; }
 	.banner-container.featured-template { padding: 0; height: 500px; }
-	 .slider-image, #slider-pagination { display: none !important; visibility: hidden !important; }
+	/* .slider-image, #slider-pagination { display: none !important; visibility: hidden !important; } */
 	ul.feature-boxes li:hover .fly-box, ul.feature-boxes li.flipped .fly-box  { display: none; }
 	.slide-content.mobile-caption { color:#fff; display: block; width: 80%; max-width: 80%; position: static; margin: 0px auto 25px; padding:16px; text-align: center; }
 	.snowfall-content.mobile-caption { color:#fff; display: block; width: 80%; max-width: 80%; position: static; margin: 0px auto 25px; padding:16px; text-align: center; }

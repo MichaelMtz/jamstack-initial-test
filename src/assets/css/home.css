@@ -35,9 +35,11 @@
     .banner_carousel_container .carousel { z-index: 1; }
     #banner_carousel, .banner_carousel_container, #banner_carousel li { height: 100% !important; }
     ul.feature-boxes { top: 162px; }
+    /* 
     @media only screen and (max-width: 767px) {
       .banner_carousel_container { display: none; }		
     }
+    */
     @media only screen and (max-width: 479px) {
       ul.feature-boxes { top: auto !important; }
     }
@@ -235,7 +237,11 @@ a.resort-link-snowfall:hover {
     max-width: 50%; 
     padding:5px 5px 5px 0px; 
 }
-
+@media only screen and (max-width: 1127px) {
+    .snowfall-content { 
+        max-width:55%;
+    }
+}
 .snowfall-content h2 {font-family: "Brandon Grotesque", Arial, sans-serif; color: #fff; text-shadow: 0 0 3px #000;  text-shadow: 0 0 3px rgba(0,0,0,0.85);  font-size: 46px; line-height:49px; text-transform: uppercase; letter-spacing: 3px; }
 .snowfall-content.inner-caption {  z-index: 1;  }
 .snowfall-content.inner-caption i { display: none; }
@@ -323,8 +329,13 @@ h2.topmenu {
     padding-left: 25px !important;
     text-align: left;
 }
+@media only screen and (max-width: 1127px) {
+    .open-resorts .resort-name {
+        padding-left:15px;
+    }
+}
 #top-snowfall {
-    margin-bottom: 25px;
+    margin: 40px 0px 25px;
 }
 .summer-activities {
     display:flex; 
