@@ -247,8 +247,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   };
   
   const createStoriesSection = (elStories, posts) => {
-    _log('createStoriesSection: posts:');
-    console.log('posts:',posts);
+    //_log('createStoriesSection: Desktop:');
     const html = posts.map(iterPost => `      
 
       <div class="deals" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
@@ -266,6 +265,19 @@ document.addEventListener('DOMContentLoaded',()=> {
       `).join('');
     elStories.insertAdjacentHTML('afterbegin',html);
   };
+  
+  const createStoriesSectionMobile = (elMobileStories,posts) => {
+    _log('--createStoriesSectionMobile: init');
+    const html = posts.map(iterPost => `      
+    
+      <a href="news-post/?postID=${iterPost.id}" class="card" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+          <div class="card-content">
+              <h6 class="card-copy"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
+          </div>
+      </a>
+      `).join('');
+    elMobileStories.insertAdjacentHTML('beforeend',html);
+  };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
     //const localURL = 'http://localhost/sno/snoCountryHeadless/snow-reports/home-page-stories.php';
@@ -282,7 +294,10 @@ document.addEventListener('DOMContentLoaded',()=> {
           _log('getRecentStories: stories:');
           console.log(data.list);
           createStoriesSection(elStories,data.stories);
-        }).catch( (e) => { console.error('Error waiting for getRecentStories data:',e);});        
+        }).catch( (e) => { console.error('Error building desktop news:',e);});  
+        waitForElement('#mobile-stories').then((elMobileStories) => {
+          createStoriesSectionMobile(elMobileStories,data.stories.slice(0,6));
+        }).catch( (e) => { console.error('Error building mobile news:',e);});        
       }
       
     }).catch( (e) => { console.error('Error waiting for getRecentStories fetch:',e);});

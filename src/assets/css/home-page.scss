@@ -38,10 +38,12 @@
 .m-t-10 {
   margin-top: 10px;
 }
-
+.mobile-stories {
+  display:none;
+}
 @media only screen and (max-width: 767px) { 
   body { 
-    height: 2200px;
+    height: 1600px;
   }
   ul.feature-boxes {
     display:none;
@@ -77,5 +79,75 @@
         }
       }
     }
+  }
+  .mobile-stories {
+    display:block;
+    width: 100%;
+    h2 {
+      margin-top: 25px;
+    }
+    .card {
+      width: 250px;
+      height: 180px;
+      float: left;
+      margin: 0 10px 10px 0;
+      color: #fff;
+      position: relative;
+      overflow: hidden !important;
+      background-size: cover !important;
+      box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 33%);
+      
+      .card-content {
+        background: url(../images/small-shadow.png) repeat-x top;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        .card-copy {
+          color: #fff;
+          font-size: 19px;
+          font-weight: 700;
+        }
+      }
+    }
+    div.state-list {
+      h6 {
+        color: white;
+        letter-spacing: 2px;
+      }
+      a {
+        margin: 10px 5px 0 0;
+        padding: 5px;
+        background: none;
+        border: 1px #fff solid;
+        color: #fff;
+        font-size: 12px;
+      }
+      a:hover {
+        background: #0079c1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 660px) { 
+  body { 
+    height: 2200px;
+  }
+}
+@media only screen and (max-width: 472px) { 
+  body { 
+    height: 2350px;
+  }
+}
+@media only screen and (max-width: 449px) { 
+  body { 
+    height: 2450px;
+  }
+}
+@media only screen and (max-width: 410px) { 
+  body { 
+    height: 2525px;
   }
 }
