@@ -83,6 +83,10 @@ body {
   width: 812px;
 }
 
+.fly-box .region-statelist {
+  margin-bottom: unset;
+}
+
 @media only screen and (max-width: 1620px) {
   #latest-flybox {
     width: 550px;
@@ -92,6 +96,9 @@ body {
   }
   #offers .deals:nth-child(3), #offers .deals:nth-child(6), #offers .deals:nth-child(9) {
     margin-right: 10px;
+  }
+  #offers .deals:nth-child(n+7) {
+    display: none;
   }
 }
 @media only screen and (max-width: 1027px) {
