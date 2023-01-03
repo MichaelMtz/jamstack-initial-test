@@ -124,7 +124,34 @@ document.addEventListener('DOMContentLoaded',()=> {
     };
   };
   initBannerScroller();
-
+  window.snoCloseNewsProcessing = false;
+  const configureXClose = () => {
+    observeSelector('.xclose', (elXClose) => {
+      elXClose.addEventListener('click',(e) => {
+        window.snoCloseNewsProcessing = true;
+        _log('configureXClose...');
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        elXClose.closest('li').classList.remove('flipped');
+        setTimeout(()=> {
+          window.snoCloseNewsProcessing = false;
+        },250);
+      });
+      elXClose.addEventListener('mouseenter',(e) => {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      });
+      elXClose.addEventListener('mouseleave',(e) => {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      });	
+    });
+    
+    // waitForElement('.xclose').then((elXClose) => {
+    //   
+    //   
+    // }).catch( (e) => { console.error('Error configureXClose:',e);});
+  };
   const  createHighlightResortsSection = (elHomepageHighlightResorts,data, key, sel) => {
     if (data.length > 0) {
       const html = data.map(iterResort => `      
@@ -306,6 +333,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   getTopSnowfall();
   getRegionResorts();
   getRecentStories();
+  configureXClose();
   const pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
 
   _log(`Home page initialized:  ${pageLoadTime}`);

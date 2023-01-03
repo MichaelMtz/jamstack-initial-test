@@ -47,6 +47,41 @@ body {
   height: 82%;
 }
 
+.xclose {
+  position: absolute;
+  right: 12px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  opacity: 0.3;
+}
+
+.xclose:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.xclose:before, .xclose:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 16px;
+  width: 2px;
+  background-color: #333;
+}
+
+.xclose:before {
+  transform: rotate(45deg);
+}
+
+.xclose:after {
+  transform: rotate(-45deg);
+}
+
+#offers .deals {
+  width: 245px;
+}
+
 @media only screen and (max-width: 1027px) {
   body {
     height: 100%;
@@ -161,7 +196,7 @@ body {
 }
 @media only screen and (max-width: 410px) {
   body {
-    height: 2525px;
+    height: 2600px;
   }
 }
 

@@ -27,7 +27,7 @@ $(function () {
     
     if (!$(this).hasClass('dropped')) {
       $(this).addClass('dropped');
-			let temp = this;
+      const temp = this;
       console.log('--this?',temp);
     }
     else {
@@ -55,23 +55,28 @@ $(function () {
   }
   
   $("ul.feature-boxes li").hover(function () {
-    $(this).siblings().removeClass('flipped');
-    //if tab clicked is already open(flipped) close it
-    if (!$(this).hasClass('flipped')) {
-      $(this).addClass('flipped');
-      //if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || ($(window).width() < 320)) {
-      //On small displays just use slider buttons as links
-      if(isMobile() || $('.fly-box',this).length == 0){
-        return true;
-      }
-      else {
+    console.log(`flip?:${window.snoCloseNewsProcessing}`);
+    if (!window.snoCloseNewsProcessing) {
+      $(this).siblings().removeClass('flipped');
+      //if tab clicked is already open(flipped) close it
+      if (!$(this).hasClass('flipped')) {
+        console.log('----flipping----');
+        $(this).addClass('flipped');
+        //if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || ($(window).width() < 320)) {
+        //On small displays just use slider buttons as links
+        if(isMobile() || $('.fly-box',this).length == 0){
+          return true;
+        }
+        else {
+          return false;
+        }
+      } else {
+        //$(this).removeClass('flipped');
+        //console.log('--here');
         return false;
       }
-    } else {
-      //$(this).removeClass('flipped');
-      //console.log('--here');
-      return false;
     }
+    
   });
    
 
