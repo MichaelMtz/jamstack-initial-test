@@ -71,14 +71,19 @@ body {
 .xclose:after {
   transform: rotate(-45deg);
 }
-#latest-flybox {
-  width:550px;
+  #latest-flybox {
+  width:812px;
 }
-#offers .deals {
-  width:245px;
-}
-#offers .deals:nth-child(3), #offers .deals:nth-child(6), #offers .deals:nth-child(9) {
-  margin-right:10px;
+@media only screen and (max-width: 1620px) { 
+  #latest-flybox {
+    width:550px;
+  }
+  #offers .deals {
+    width:245px;
+  }
+  #offers .deals:nth-child(3), #offers .deals:nth-child(6), #offers .deals:nth-child(9) {
+    margin-right:10px;
+  }
 }
 @media only screen and (max-width: 1027px) { 
   body {

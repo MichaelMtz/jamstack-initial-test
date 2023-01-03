@@ -80,17 +80,20 @@ body {
 }
 
 #latest-flybox {
-  width: 550px;
+  width: 812px;
 }
 
-#offers .deals {
-  width: 245px;
+@media only screen and (max-width: 1620px) {
+  #latest-flybox {
+    width: 550px;
+  }
+  #offers .deals {
+    width: 245px;
+  }
+  #offers .deals:nth-child(3), #offers .deals:nth-child(6), #offers .deals:nth-child(9) {
+    margin-right: 10px;
+  }
 }
-
-#offers .deals:nth-child(3), #offers .deals:nth-child(6), #offers .deals:nth-child(9) {
-  margin-right: 10px;
-}
-
 @media only screen and (max-width: 1027px) {
   body {
     height: 100%;
