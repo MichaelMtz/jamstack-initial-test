@@ -272,8 +272,140 @@ const checkForResortAds = () => {
       width:728, 
       height:90,
       alt: 'Lee Canyon'
+    },802009:{
+      img: 'Magic-Mountain-11-23-21.jpg',
+      href:"http://www.magicmtn.com",
+      width:728, 
+      height:90,
+      alt: 'Magic Mountain'
+    },703003:{
+      img: 'Massanutten_Resort_11-15-21.jpg',
+      href:"https://www.massresort.com/play/snow-sports/50th-celebration/?utm_source=SnoCountry&utm_medium=Banner&utm_campaign=SnoCountry+Ads&utm_id=SnoCountry+Ads",
+      width:728, 
+      height:90,
+      alt: 'Massanutten Deals'
+    },603015:{
+      img: 'McIntyre_SnoCountry2022-23_728x90.jpg',
+      href:"https://www.mcintyreskiarea.com/mountain-report/",
+      width:728, 
+      height:90,
+      alt: 'McIntyre Ski Area'
+    },503004:{
+      img: 'Mt_Bchelor_2-24-21.jpg',
+      href:"https://www.mtbachelor.com/plan-your-trip/tickets-passes/lift-tickets",
+      width:728, 
+      height:90,
+      alt: 'Mt. Bachelor'
+    },914004:{
+      img: 'MtPeter-2022-728x90-Ad.jpg',
+      href:"https://www.mtpeter.com/sc/",
+      width:728, 
+      height:90,
+      alt: 'Mt. Peter NY'
+    },801016:{
+      img: 'Nordic_Valley_1-19-20.jpg',
+      href:"https://store.nordicvalley.ski/Calendar.aspx?Department=TICKET%3AWIN&Category=VARIABLE&Item=1DAY",
+      width:728, 
+      height:90,
+      alt: 'Nordic Valley UT'
+    },518007:{
+      img: 'Oak_Mountain_11-12-21.gif',
+      href:"https://www.oakmountainski.com/",
+      width:728, 
+      height:90,
+      alt: 'Oak Mountain NY'
+    },203004:{
+      img: 'Powder_Ridge_12-6-21.jpg',
+      href:"https://powderridgepark.com/",
+      width:728, 
+      height:90,
+      alt: 'Powder Ridge CT'
+    },207006:{
+      img: 'Saddleback-Favorite-Mtn_728x90.jpg',
+      href:"https://www.saddlebackmaine.com/shop/lift-tickets/",
+      width:728, 
+      height:90,
+      alt: 'Saddleback ME'
+    },208008:{
+      img: 'Schweitzer-LodgingAd-728x90-11-5-21.jpg',
+      href:"https://www.schweitzer.com/",
+      width:728, 
+      height:90,
+      alt: 'Schweitzer ID'
+    },717016:{
+      img: 'Big-Bear-12-15-21.png',
+      href:"https://www.ski-bigbear.com/",
+      width:728, 
+      height:90,
+      alt: 'Ski Big Bear PA'
+    },203005:{
+      img: 'Ski-Sundown-WMB-2022-728x90.jpg',
+      href:"https://www.skisundown.com/",
+      width:728, 
+      height:90,
+      alt: 'Ski Sundown CT'
+    },801010:{
+      img: 'Snowbird_12-9-20.jpg',
+      href:"https://www.snowbird.com/lodging/specials/?utm_source=snocountry.com&utm_medium=display&utm_campaign=snow_news_newsletter_leaderboard",
+      width:728, 
+      height:90,
+      alt: 'Snowbird UT'
+    },304001:{
+      img: 'Snowshoe-12-8-20.jpg',
+      href:"https://www.snowshoemtn.com/",
+      width:728, 
+      height:90,
+      alt: 'Snowshoe WV'
+    },802019:{
+      img: 'Stratton_11-26-21.jpg',
+      href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
+      width:728, 
+      height:90,
+      alt: 'Stratton Mountain VT'
+    },802023:{
+      img: 'Sugarbush-3-11-22.jpg',
+      href:"https://www.sugarbush.com/plan-your-trip/season-passes",
+      width:728, 
+      height:90,
+      alt: 'Sugarbush VT'
+    },607005:{
+      img: 'Swain-11-23-21.png',
+      href:"https://swain.com/",
+      width:728, 
+      height:90,
+      alt: 'Swain NY'
+    },303022:{
+      img: 'Telluride_1-18-21.jpg',
+      href:"https://tellurideskiresort.com/insider-deals/",
+      width:728, 
+      height:90,
+      alt: 'Telluride CO'
+    },703002:{
+      img: 'Omni_Homestead_12-4-21.jpg',
+      href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
+      width:728, 
+      height:90,
+      alt: 'Omni Homestead VA'
+    },603001:{
+      img: 'Waterville-Valley-11-23-21.jpg',
+      href:"https://www.waterville.com/kids-ski-free",
+      width:728, 
+      height:90,
+      alt: 'Waterville Valley NH'
+    },603026:{
+      img: 'Whaleback_Mountain_728_x_90_px.jpg',
+      href:"https://www.whaleback.com/",
+      width:728, 
+      height:90,
+      alt: 'Whaleback NH'
+    },518009:{
+      img: 'Windham_Mountain_12-1-21.jpg',
+      href:"https://www.windhammountain.com?utm_source=snocountry&utm_medium=display&utm_campaign=winter_2&utm_id=snocountry",
+      width:728, 
+      height:90,
+      alt: 'Windham NY'
     }
- 
+
 
   };
   if (currentResortAds[resort_id]) {
