@@ -214,8 +214,38 @@ const getSnowReport = () => {
   }).catch( () => { console.log('Error waiting for EL:');});
 };
 
+const checkForResortAds = () => {
+  const resort_id = document.body.dataset.snowreport;
+  const currentResortAds = {
+    719003 : {
+      img: '719003.jpg',
+      href:"https://www.skicooper.com/cooper-day-pass/",
+      width:728, 
+      height:90,
+      alt: 'Ski Cooper'
+    }
+  };
+  if (currentResortAds[resort_id]) {
+    const resortAd = currentResortAds[resort_id];
+    const html = `
+    <div class="resort-ad">
+      <a href="${resortAd.href}">
+        <img src="assets/images/resort-ads/${resortAd.img}" alt="${resortAd.alt}" width="${resortAd.width}" height="${resortAd.height}"">
+      </a>
+    </div>
+    `;
+    waitForElement('#resort-name').then((elResortName) => {
+      elResortName.insertAdjacentHTML('beforebegin',html);
+    }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+    waitForElement('.footer-resort-ad .resort__container').then((elResortName) => {
+      elResortName.insertAdjacentHTML('afterbegin',html);
+    }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+  }
+};
+
 document.addEventListener('DOMContentLoaded',()=> {
   getSnowReport();
   fixPageNavLinks();
+  checkForResortAds();
   createCharts();
 });

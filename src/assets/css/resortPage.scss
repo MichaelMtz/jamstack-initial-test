@@ -30,6 +30,7 @@
 
         .resort-logo {
             width:140px;
+            padding-left:5px;
         }
         .flex-box-vert {
             margin-top:10px;
@@ -82,7 +83,10 @@
     .resort {
         padding: 0px 15px 10px;
         color: #5c5e60;
-        
+        .resort-ad {
+          text-align: center;
+        }
+
         .resort__header {
             margin-top:20px;
             text-align: center; 
