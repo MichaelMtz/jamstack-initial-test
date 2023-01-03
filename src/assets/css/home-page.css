@@ -79,6 +79,13 @@ body {
   transform: rotate(-45deg);
 }
 
+ul.feature-boxes {
+  height: 450px;
+}
+ul.feature-boxes .last-region-box {
+  border-radius: 0 0px 3px 3px;
+}
+
 #latest-flybox {
   width: 812px;
 }

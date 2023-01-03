@@ -266,12 +266,6 @@ const checkForResortAds = () => {
       width:728, 
       height:90,
       alt: 'Jackson Hole'
-    },702002:{
-      img: '702002.png',
-      href:"https://www.leecanyonlv.com/plan-your-trip/skiing-snowboarding/experiences",
-      width:728, 
-      height:90,
-      alt: 'Lee Canyon'
     },802009:{
       img: 'Magic-Mountain-11-23-21.jpg',
       href:"http://www.magicmtn.com",
@@ -290,24 +284,12 @@ const checkForResortAds = () => {
       width:728, 
       height:90,
       alt: 'McIntyre Ski Area'
-    },503004:{
-      img: 'Mt_Bchelor_2-24-21.jpg',
-      href:"https://www.mtbachelor.com/plan-your-trip/tickets-passes/lift-tickets",
-      width:728, 
-      height:90,
-      alt: 'Mt. Bachelor'
     },914004:{
       img: 'MtPeter-2022-728x90-Ad.jpg',
       href:"https://www.mtpeter.com/sc/",
       width:728, 
       height:90,
       alt: 'Mt. Peter NY'
-    },801016:{
-      img: 'Nordic_Valley_1-19-20.jpg',
-      href:"https://store.nordicvalley.ski/Calendar.aspx?Department=TICKET%3AWIN&Category=VARIABLE&Item=1DAY",
-      width:728, 
-      height:90,
-      alt: 'Nordic Valley UT'
     },518007:{
       img: 'Oak_Mountain_11-12-21.gif',
       href:"https://www.oakmountainski.com/",
@@ -344,12 +326,6 @@ const checkForResortAds = () => {
       width:728, 
       height:90,
       alt: 'Ski Sundown CT'
-    },801010:{
-      img: 'Snowbird_12-9-20.jpg',
-      href:"https://www.snowbird.com/lodging/specials/?utm_source=snocountry.com&utm_medium=display&utm_campaign=snow_news_newsletter_leaderboard",
-      width:728, 
-      height:90,
-      alt: 'Snowbird UT'
     },304001:{
       img: 'Snowshoe-12-8-20.jpg',
       href:"https://www.snowshoemtn.com/",
@@ -374,12 +350,6 @@ const checkForResortAds = () => {
       width:728, 
       height:90,
       alt: 'Swain NY'
-    },303022:{
-      img: 'Telluride_1-18-21.jpg',
-      href:"https://tellurideskiresort.com/insider-deals/",
-      width:728, 
-      height:90,
-      alt: 'Telluride CO'
     },703002:{
       img: 'Omni_Homestead_12-4-21.jpg',
       href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
