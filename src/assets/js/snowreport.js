@@ -224,7 +224,57 @@ const checkForResortAds = () => {
       width:728, 
       height:90,
       alt: 'Ski Cooper'
+    }, 603005 : {
+      img: '603005.gif',
+      href:"https://www.brettonwoods.com/?utm_source=snocountry&utm_medium=banner&utm_campaign=prospecting-brettonwoods-leisure-2021_2022",
+      width:728, 
+      height:90,
+      alt: 'Bretton Woods'
+    }, 616006 : {
+      img: '616006.jpg',
+      href:"https://shopcrystal.crystalmountain.com/categories/lift-tickets",
+      width:728, 
+      height:90,
+      alt: 'Crystal Mountain'
+    }, 603009 : {
+      img: '603009.jpg',
+      href:"https://www.gunstock.com/?utm_source=snocountry&utm_medium=display&utm_campaign=winter_general",
+      width:728, 
+      height:90,
+      alt: 'Gunstock'
+    },715002:{
+      img: '715002.jpg',
+      href:"https://order.skigranitepeak.com/v2/lodging-offers?utm_source=snocountry&utm_medium=banner&utm_campaign=display&utm_content=728x90",
+      width:728, 
+      height:90,
+      alt: 'Granite'
+    },607001:{
+      img: '607001.png',
+      href:"http://hopelakelodge.com/finger-lakes-vacation-packages",
+      width:728, 
+      height:90,
+      alt: 'Greek Peak'
+    },716003:{
+      img: '716003.jpg',
+      href:"https://www.holidayvalley.com/lodging/inn-holiday-valley/",
+      width:728, 
+      height:90,
+      alt: 'Holiday Valley'
+    },307008:{
+      img: '307008.jpg',
+      href:"https://www.jacksonhole.com/winter?utm_source=snocountry&utm_medium=display&utm_campaign=winter",
+      width:728, 
+      height:90,
+      alt: 'Jackson Hole'
+    },702002:{
+      img: '702002.png',
+      href:"https://www.leecanyonlv.com/plan-your-trip/skiing-snowboarding/experiences",
+      width:728, 
+      height:90,
+      alt: 'Lee Canyon'
     }
+ 
+
   };
   if (currentResortAds[resort_id]) {
     _log('checkForResortAds: applying ad');
