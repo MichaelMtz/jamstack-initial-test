@@ -215,6 +215,7 @@ const getSnowReport = () => {
 };
 
 const checkForResortAds = () => {
+  _log('checkForResortAds');
   const resort_id = document.body.dataset.snowreport;
   const currentResortAds = {
     719003 : {
@@ -226,6 +227,7 @@ const checkForResortAds = () => {
     }
   };
   if (currentResortAds[resort_id]) {
+    _log('checkForResortAds: applying ad');
     const resortAd = currentResortAds[resort_id];
     const html = `
     <div class="resort-ad">
