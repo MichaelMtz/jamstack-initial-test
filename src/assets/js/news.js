@@ -165,7 +165,7 @@ const getOtherPostList = (postID) => {
   fetch(url).then(response => {      
     return response.json();
   }).then(data => {
-    _log('--getPost: data');    
+    _log('--getOtherPostList: data');    
     console.log('stories:',data);
     if (data.status) {
       waitForElement('.news-list ').then((elPostList) => {
