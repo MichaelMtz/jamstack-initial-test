@@ -118,10 +118,8 @@ const createPost = (elPost, post) => {
   }
   elPost.querySelector('.intro').innerHTML = mainImage + post.intro;
 };
-const getPost = () => {
-  _log('--getPost: init');
-  const params = new URLSearchParams(document.location.search);
-  const postID = params.get("postID");
+const getPost = (postID) => {
+  
   const localURL = `https://www.snow-country.com/resorts/api-easy-blog-post.php?postID=${postID}`;
   const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-post-api?postID=${postID}`: localURL;
   
@@ -140,6 +138,49 @@ const getPost = () => {
     
   }).catch( (e) => { console.error('Error waiting for getPost fetch:',e);});
 };
+
+const createPostList = (elPostList, posts) => {
+  const html = posts.map(iterPost => `      
+    <div class="news-list-post">
+      <a href="news-post/?postID=${iterPost.id}">
+        <img src="${iterPost.image}">
+        <div class="post-title">${iterPost.title}
+        </div>
+        <div class="post-info">
+          <div class="post-info-author">${iterPost.author}</div>
+          <div class="post-info-published">${iterPost.publish_up}</div> 
+        </div>
+      </a>
+    </div> <!-- news-list-post -->
+
+    `).join('');
+  elPostList.insertAdjacentHTML('beforeend',html);
+};
+const getOtherPostList = (postID) => {
+  _log('--getOtherPostList: init');
+  
+  const localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?notPostID=${postID}`;
+  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-list-api?notPostID=${postID}`: localURL;
+  
+  fetch(url).then(response => {      
+    return response.json();
+  }).then(data => {
+    _log('--getPost: data');    
+    console.log('stories:',data);
+    if (data.status) {
+      waitForElement('.news-list ').then((elPostList) => {
+        _log('getOtherPostList:');
+        console.log('post:',data.stories);
+        createPostList(elPostList,data.stories);
+      }).catch( (e) => { console.error('Error waiting for getOtherPostList data:',e);});        
+    }
+    
+  }).catch( (e) => { console.error('Error waiting for getOtherPostList fetch:',e);});
+
+};
 document.addEventListener('DOMContentLoaded',()=> {
-  getPost();
+  const params = new URLSearchParams(document.location.search);
+  const postID = params.get("postID");
+  getPost(postID);
+  getOtherPostList(postID);
 });

@@ -5,11 +5,13 @@ body {
 #news-post {
   margin-top: unset;
   padding: 135px 25px 0px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr minmax(310px, 25%);
+  gap: 10px;
 }
 #news-post .post-panel {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 15px 25px;
   position: relative;
   z-index: 3;
@@ -116,6 +118,49 @@ body {
 }
 #news-post .post-panel .intro .ebd-block .eb-thumbs .eb-thumbs-col .eb-thumb {
   margin: 0px 5px;
+}
+#news-post .news-list {
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  z-index: 3;
+  background-color: #fff;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+}
+#news-post .news-list .news-list-header {
+  height: 42px;
+  margin-bottom: 25px;
+  border-radius: 5px 5px 0px 0px;
+  padding: 12px;
+  background-color: rgb(14, 28, 44);
+  color: white;
+  font-size: 18px;
+}
+#news-post .news-list .news-list-post {
+  margin: 10px 12px;
+  border-bottom: 1px solid rgba(26, 26, 27, 0.07);
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+#news-post .news-list .news-list-post a {
+  text-align: center;
+}
+#news-post .news-list .news-list-post img {
+  width: 140px;
+}
+#news-post .news-list .news-list-post .post-title {
+  margin: 10px 0px 10px 10px;
+  font-weight: 600;
+  color: #5c5e60;
+}
+#news-post .news-list .news-list-post .post-info {
+  width: 100%;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+  color: #5c5e60;
 }
 
 /*# sourceMappingURL=news.css.map */
