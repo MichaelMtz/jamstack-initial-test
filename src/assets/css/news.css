@@ -9,6 +9,11 @@ body {
   grid-template-columns: 1fr minmax(310px, 25%);
   gap: 10px;
 }
+@media screen and (max-width: 767px) {
+  #news-post {
+    display: block;
+  }
+}
 #news-post .post-panel {
   width: 100%;
   border-radius: 5px;
@@ -126,6 +131,11 @@ body {
   z-index: 3;
   background-color: #fff;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+}
+@media screen and (max-width: 767px) {
+  #news-post .news-list {
+    margin-top: 25px;
+  }
 }
 #news-post .news-list .news-list-header {
   height: 42px;

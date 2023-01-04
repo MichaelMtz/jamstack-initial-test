@@ -250,7 +250,7 @@ const checkForResortAds = () => {
       alt: 'Granite'
     },607001:{
       img: '607001.png',
-      href:"http://hopelakelodge.com/finger-lakes-vacation-packages",
+      href:"https://www.greekpeak.net",
       width:728, 
       height:90,
       alt: 'Greek Peak'
