@@ -103,7 +103,7 @@
  ,{"entryType":"resort","resort_id":"999217526","stateName":"maine/bethel-village-trails/"}
  ,{"entryType":"resort","resort_id":"207010","stateName":"maine/big-squaw-mountain/"}
  ,{"entryType":"resort","resort_id":"207014","stateName":"maine/bigrock-mountain/"}
- ,{"entryType":"resort","resort_id":"207001","stateName":"maine/black-mountain-ski-resort/"}
+ ,{"entryType":"resort","resort_id":"207001","stateName":"/maine/black-mountain-of-maine/"}
  ,{"entryType":"resort","resort_id":"999042185","stateName":"maine/black-mountain-touring-center/"}
  ,{"entryType":"resort","resort_id":"207002","stateName":"maine/camden-snow-bowl/"}
  ,{"entryType":"resort","resort_id":"99904217","stateName":"maine/carters-bethel-cross-country-center/"}
@@ -121,7 +121,7 @@
  ,{"entryType":"resort","resort_id":"999901526","stateName":"maine/quarry-road-trails/"}
  ,{"entryType":"resort","resort_id":"99904970","stateName":"maine/rangeley-lakes-trails-center/"}
  ,{"entryType":"resort","resort_id":"207006","stateName":"maine/saddleback-mountain-resort/"}
- ,{"entryType":"resort","resort_id":"207007","stateName":"maine/shawnee-peak/"}
+ ,{"entryType":"resort","resort_id":"207007","stateName":"maine/pleasant-mountain/"}
  ,{"entryType":"resort","resort_id":"999049187","stateName":"maine/sugarloaf-outdoor-center/"}
  ,{"entryType":"resort","resort_id":"207008","stateName":"maine/sugarloaf/"}
  ,{"entryType":"resort","resort_id":"207009","stateName":"maine/sunday-river/"}
@@ -139,7 +139,7 @@
  ,{"entryType":"resort","resort_id":"508004","stateName":"massachusetts/nashoba-valley-ski-area/"}
  ,{"entryType":"resort","resort_id":"999013157","stateName":"massachusetts/northfield-mountain-cross-country-ski-area/"}
  ,{"entryType":"resort","resort_id":"999012155","stateName":"massachusetts/notchview-reservation/"}
- ,{"entryType":"resort","resort_id":"413008","stateName":"massachusetts/massachusetts/otis-ridge-ski-area/"}
+ ,{"entryType":"resort","resort_id":"413008","stateName":"massachusetts/otis-ridge-ski-area/"}
  ,{"entryType":"resort","resort_id":"508002","stateName":"massachusetts/ski-bradford/"}
  ,{"entryType":"resort","resort_id":"413004","stateName":"massachusetts/ski-butternut/"}
  ,{"entryType":"resort","resort_id":"508006","stateName":"massachusetts/ski-ward-ski-area/"}
@@ -148,7 +148,7 @@
  ,{"entryType":"resort","resort_id":"999024159","stateName":"massachusetts/weston-ski-track/"}
  ,{"entryType":"resort","resort_id":"313001","stateName":"michigan/alpine-valley-ski-area/"}
  ,{"entryType":"resort","resort_id":"906001","stateName":"michigan/big-powderhorn-mountain-resort/"}
- ,{"entryType":"resort","resort_id":"906004","stateName":"michigan/big-snow-resort/"}
+ ,{"entryType":"resort","resort_id":"906004","stateName":"michigan/snowriver-mountain-resort/"}
  ,{"entryType":"resort","resort_id":"616001","stateName":"michigan/bittersweet-ski-resort/"}
  ,{"entryType":"resort","resort_id":"616002","stateName":"michigan/boyne-highlands-resort-in-harbor-springs/"}
  ,{"entryType":"resort","resort_id":"616003","stateName":"michigan/boyne-mountain-resort/"}
@@ -341,7 +341,7 @@
  ,{"entryType":"resort","resort_id":"717013","stateName":"pennsylvania/whitetail-resort/"}
  ,{"entryType":"resort","resort_id":"401001","stateName":"rhode-island/yawgoo-valley-ski-area/"}
  ,{"entryType":"resort","resort_id":"605002","stateName":"south-dakota/terry-peak-ski-area/"}
- ,{"entryType":"resort","resort_id":"615001","stateName":"tennessee/ober-gatlinburg/"}
+ ,{"entryType":"resort","resort_id":"615001","stateName":"tennessee/ober-mountain/"}
  ,{"entryType":"resort","resort_id":"801001","stateName":"utah/alta/"}
  ,{"entryType":"resort","resort_id":"801002","stateName":"utah/beaver-mountain/"}
  ,{"entryType":"resort","resort_id":"801013","stateName":"utah/brian-head-resort/"}
@@ -394,7 +394,7 @@
  ,{"entryType":"resort","resort_id":"999051054","stateName":"vermont/stratton-mountain-nordic-center/"}
  ,{"entryType":"resort","resort_id":"802019","stateName":"vermont/stratton-mountain-resort/"}
  ,{"entryType":"resort","resort_id":"802023","stateName":"vermont/sugarbush-resort/"}
- ,{"entryType":"resort","resort_id":"802021","stateName":"vermont/suicide-six/"}
+ ,{"entryType":"resort","resort_id":"802021","stateName":"vermont/saskadena-six-ski-area/"}
  ,{"entryType":"resort","resort_id":"999053197","stateName":"vermont/timber-creek-cross-country-ski-center/"}
  ,{"entryType":"resort","resort_id":"999056203","stateName":"vermont/trapp-family-lodge-outdoor-center/"}
  ,{"entryType":"resort","resort_id":"999051190","stateName":"vermont/viking-nordic-center/"}
