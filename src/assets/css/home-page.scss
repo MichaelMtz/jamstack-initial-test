@@ -85,6 +85,61 @@ ul.feature-boxes {
     margin-bottom: unset;
   }
 }
+#top-snowfall {
+    margin: 15px 0px 25px;
+    text-shadow: 0 0 3px #000;  
+    text-shadow: 0 0 3px rgba(0,0,0,0.85);
+}
+div.radio-home-link {
+  cursor:pointer;
+
+  .radio-home {       
+    margin-top: 25px;
+    background: rgba(255,255,255,0.73);
+    border-radius: 5px;
+    padding: 5px;   
+    display:flex;
+    flex-flow: column wrap;
+    gap:10px;
+    
+
+    
+    .radio-home-copy {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      height: inherit;
+      align-items: baseline;
+      position:relative;
+      .radio-home-header {
+        position:relative;
+        top:-1.8px;
+        padding-right: 5px;
+        font-size: 27.2px;
+        text-shadow: unset;
+        font-family: "Causten Black","Open Sans", sans-serif;
+        font-weight: 600;
+        color: rgb(14,28,44);
+        text-transform: uppercase;
+      }
+      img {
+        height:48px;
+      }
+    }
+    .tags {
+      text-align: center;
+      span {
+        border-radius: 3px;
+        padding: 2px 11px;
+        margin: 1px 2px;
+        background-color: rgb(67,199,231);
+        font-weight: bold;
+        color:white;
+      }
+    }
+
+  }
+}
 @media only screen and (max-width: 1620px) { 
   #latest-flybox {
     width:550px;
@@ -123,6 +178,7 @@ ul.feature-boxes {
         max-width: unset;
         width: 80%;
         
+      
         #top-snowfall {
           margin-top: 20px;
           #top-snowfall-list {

@@ -132,3 +132,9 @@
   font-weight: 300;
   font-style: italic;
 }
+@font-face {
+  font-family: 'Causten Black';
+  src: url("../font/Causten-Black.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}

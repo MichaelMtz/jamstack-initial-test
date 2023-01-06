@@ -17,7 +17,7 @@ const observeSelector = (selector, callback, options = {
 
   let obs, isDone = false;
   const done = () => {
-    if (!obs) console.warn('observeSelector failed to run done()');
+    if (!obs) console.warn(`observeSelector failed to run done():${selector}`);
     if (obs) obs.disconnect();
     processed = undefined;
     obs = undefined;
@@ -331,10 +331,20 @@ document.addEventListener('DOMContentLoaded',()=> {
     }).catch( (e) => { console.error('Error waiting for getRecentStories fetch:',e);});
   };
   
+  const configureHomeSnoRadio = () => {
+    waitForElement('#sno-radio').then((elRadioFooter) => {
+      elRadioFooter.addEventListener('click',() => {
+        window.open('https://snow-report.org/SnoCountryRadio/','_blank','width=600, height=600');
+      });
+    }).catch((e) => { 
+      console.error('Error waiting for snoRadio:',e);
+    });
+  };
   getTopSnowfall();
   getRegionResorts();
   getRecentStories();
   configureXClose();
+  configureHomeSnoRadio();
   const pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
 
   _log(`Home page initialized:  ${pageLoadTime}`);
