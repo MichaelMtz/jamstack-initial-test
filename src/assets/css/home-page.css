@@ -66,7 +66,7 @@ body {
   position: absolute;
   left: 15px;
   content: " ";
-  height: 16px;
+  height: 18px;
   width: 2px;
   background-color: #333;
 }
@@ -86,7 +86,7 @@ ul.feature-boxes .last-region-box {
   border-radius: 0 0px 3px 3px;
 }
 
-#latest-flybox {
+.latest-flybox {
   width: 812px;
 }
 
@@ -105,7 +105,7 @@ div.radio-home-link {
 }
 div.radio-home-link .radio-home {
   margin-top: 25px;
-  background: rgba(255, 255, 255, 0.73);
+  background: rgba(255, 255, 255, 0.83);
   border-radius: 5px;
   padding: 5px;
   display: flex;
@@ -146,8 +146,49 @@ div.radio-home-link .radio-home .tags span {
   color: white;
 }
 
+ul.feature-boxes li.pepsi-box > a span.small-pepsi {
+  font-size: 8px;
+}
+ul.feature-boxes li.pepsi-box .fly-box {
+  width: 712px;
+}
+
+.pepsi .pepsi-content {
+  padding: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+.pepsi .pepsi-content .pepsi-header {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 5px;
+  align-content: center;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container {
+  display: flex;
+  gap: 15px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-pepsi {
+  height: 48px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-telluride {
+  height: 48px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-copy {
+  text-align: center;
+  font-size: 30px;
+}
+.pepsi .pepsi-content .pepsi-video {
+  padding: 15px;
+}
+.pepsi .pepsi-resort-link-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media only screen and (max-width: 1620px) {
-  #latest-flybox {
+  .latest-flybox {
     width: 550px;
   }
   #offers .deals {
