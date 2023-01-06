@@ -4,7 +4,7 @@ permalink: _redirects
 
 {%- for resort in lists %}
   {%- if resort.entryType == "state" %}
-/snow-report/us/{{ resort.stateName }}/ /snow-report/{{resort.stateName}}/ 301
+/snow-reports/us/{{ resort.stateName }}/ /snow-report/{{resort.stateName}}/ 301
   {%- elseif resort.entryType == "region" %}
 /snow-reports/us/{{ resort.stateNameProperLowerCase | replace(" ","") }}/ /snow-report/{{resort.stateName}}/ 301
   {%- endif %}
