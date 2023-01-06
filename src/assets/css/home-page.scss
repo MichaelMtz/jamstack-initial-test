@@ -164,6 +164,9 @@ div.radio-home-link {
   body { 
     height: 1600px;
   }
+  div.radio-home-link {
+    display: none;
+  }
   ul.feature-boxes {
     display:none;
   }

@@ -169,6 +169,9 @@ div.radio-home-link .radio-home .tags span {
   body {
     height: 1600px;
   }
+  div.radio-home-link {
+    display: none;
+  }
   ul.feature-boxes {
     display: none;
   }
