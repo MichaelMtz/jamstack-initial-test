@@ -675,3 +675,45 @@
 #sp-main-body .container {
     max-width: 100%;
 }
+
+.pepsi {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: grid;
+  place-items: center;
+  .pepsi-content {
+    padding:15px;
+    display:flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    .pepsi-header {
+      margin-top: 30px;
+      display:flex;
+      flex-flow: column wrap;
+      gap:5px;
+      align-content: center;
+      justify-content: space-evenly;
+      .pepsi-logo-container {
+        display:flex;
+        gap:15px;
+        img.logo-pepsi {
+          height: 48px;
+        }
+        img.logo-telluride {
+          height:48px;
+        }
+      }
+      .pepsi-copy {
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+    .pepsi-video {
+      padding:15px;
+      text-align: center;
+    }
+  }
+  .pepsi-resort-link-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

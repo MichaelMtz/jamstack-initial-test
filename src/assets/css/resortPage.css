@@ -686,4 +686,46 @@
   max-width: 100%;
 }
 
+.pepsi {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: grid;
+  place-items: center;
+}
+.pepsi .pepsi-content {
+  padding: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.pepsi .pepsi-content .pepsi-header {
+  margin-top: 30px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 5px;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container {
+  display: flex;
+  gap: 15px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-pepsi {
+  height: 48px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-telluride {
+  height: 48px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-copy {
+  text-align: center;
+  font-size: 30px;
+}
+.pepsi .pepsi-content .pepsi-video {
+  padding: 15px;
+  text-align: center;
+}
+.pepsi .pepsi-resort-link-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /*# sourceMappingURL=resortPage.css.map */
