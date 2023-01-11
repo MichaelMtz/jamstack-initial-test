@@ -255,7 +255,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Windham NY', 
         position: 'both'
       }]
+    },303009:{
+      ads: [{
+        img: 'SNOCOUNTRY-AD-COPPER.jpg',
+        href:"https://www.coppercolorado.com/plan-your-trip/season-passes/copper-season-pass-2022-23",
+        width:728, 
+        height:90,
+        alt: 'Copper Mountain CO', 
+        position: 'both'
+      }]
     }
+    
+    
   };
   if (currentResortAds[resort_id]) {
     _log('checkForResortAds: applying ad');

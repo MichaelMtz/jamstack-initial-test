@@ -220,10 +220,12 @@ ul.feature-boxes li.pepsi-box .fly-box {
     height: auto;
   }
   .carousel ul#banner_carousel #customText {
+    width: 80%;
+    max-width: unset;
     right: unset;
     left: 25px;
-    max-width: unset;
-    width: 80%;
+    position: unset;
+    margin-inline: auto;
   }
   .carousel ul#banner_carousel #customText #top-snowfall {
     margin-top: 20px;
@@ -249,19 +251,23 @@ ul.feature-boxes li.pepsi-box .fly-box {
   }
   .mobile-stories h2 {
     margin-top: 25px;
+    text-align: center;
   }
-  .mobile-stories .card {
+  .mobile-stories .mobile-stories-container {
+    display: flex;
+    flex-flow: column;
+  }
+  .mobile-stories .mobile-stories-container .card {
     width: 250px;
     height: 180px;
-    float: left;
-    margin: 0 10px 10px 0;
+    margin-inline: auto;
     color: #fff;
     position: relative;
     overflow: hidden !important;
     background-size: cover !important;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.33);
   }
-  .mobile-stories .card .card-content {
+  .mobile-stories .mobile-stories-container .card .card-content {
     background: url(../images/small-shadow.png) repeat-x top;
     padding: 10px;
     position: absolute;
@@ -269,7 +275,7 @@ ul.feature-boxes li.pepsi-box .fly-box {
     width: 100%;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
-  .mobile-stories .card .card-content .card-copy {
+  .mobile-stories .mobile-stories-container .card .card-content .card-copy {
     color: #fff;
     font-size: 19px;
     font-weight: 700;

@@ -85,6 +85,18 @@ const waitForElement = selector=>{
   });
 };
 
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+const configurePepsiBackgroundImages = () => {
+  waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
+    const tellurideImages =  ['view', 'powder', 'chair'];
+    const randomIndex = random(0,3);
+    const selectedImage = tellurideImages[randomIndex];
+    _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
+    elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/telluride/Telluride-${selectedImage}.jpg")`;
+  }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
+  
+};
 
 document.addEventListener('DOMContentLoaded',()=> {
 
@@ -112,6 +124,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     $('#banner_carousel #customText').removeClass('hidden');
     $(thrive_carousel_loader).on('slideLoaded.ThriveCarousel', function(e, settings, newSlide, direction){
       $('.pano-loader').hide();
+      configurePepsiBackgroundImages();
       return true;
     });
     window.onload = function() {
@@ -323,7 +336,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           const storyList = (window.innerWidth >= 1530) ? data.stories : data.stories.slice(0,6);
           createStoriesSection(elStories,storyList);
         }).catch( (e) => { console.error('Error building desktop news:',e);});  
-        waitForElement('#mobile-stories').then((elMobileStories) => {
+        waitForElement('#mobile-stories .mobile-stories-container').then((elMobileStories) => {
           createStoriesSectionMobile(elMobileStories,data.stories.slice(0,6));
         }).catch( (e) => { console.error('Error building mobile news:',e);});        
       }
@@ -331,6 +344,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     }).catch( (e) => { console.error('Error waiting for getRecentStories fetch:',e);});
   };
   
+
   const configureHomeSnoRadio = () => {
     waitForElement('#sno-radio').then((elRadioFooter) => {
       elRadioFooter.addEventListener('click',() => {
@@ -345,8 +359,8 @@ document.addEventListener('DOMContentLoaded',()=> {
   getRecentStories();
   configureXClose();
   configureHomeSnoRadio();
+  
   const pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
-
   _log(`Home page initialized:  ${pageLoadTime}`);
   
 });

@@ -178,6 +178,7 @@ ul.feature-boxes li.pepsi-box {
     }
     .pepsi-video {
       padding:15px;
+      
     }
   }
   .pepsi-resort-link-container {
@@ -222,11 +223,12 @@ ul.feature-boxes li.pepsi-box {
   .carousel {
     ul#banner_carousel {
       #customText {
+        width: 80%;
+        max-width: unset;
         right: unset;
         left: 25px;
-        max-width: unset;
-        width: 80%;
-        
+        position: unset;
+        margin-inline: auto;  
       
         #top-snowfall {
           margin-top: 20px;
@@ -254,32 +256,37 @@ ul.feature-boxes li.pepsi-box {
     width: 100%;
     h2 {
       margin-top: 25px;
+      text-align: center;
     }
-    .card {
-      width: 250px;
-      height: 180px;
-      float: left;
-      margin: 0 10px 10px 0;
-      color: #fff;
-      position: relative;
-      overflow: hidden !important;
-      background-size: cover !important;
-      box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 33%);
-      
-      .card-content {
-        background: url(../images/small-shadow.png) repeat-x top;
-        padding: 10px;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        .card-copy {
-          color: #fff;
-          font-size: 19px;
-          font-weight: 700;
+    .mobile-stories-container {
+      display: flex;
+      flex-flow: column;
+      .card {
+        width: 250px;
+        height: 180px;
+        margin-inline: auto;
+        color: #fff;
+        position: relative;
+        overflow: hidden !important;
+        background-size: cover !important;
+        box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 33%);
+        
+        .card-content {
+          background: url(../images/small-shadow.png) repeat-x top;
+          padding: 10px;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+          .card-copy {
+            color: #fff;
+            font-size: 19px;
+            font-weight: 700;
+          }
         }
       }
     }
+    
     div.state-list {
       background: rgba(247, 254, 253, 0.3) none repeat scroll 0 0;
       padding: 9px;
