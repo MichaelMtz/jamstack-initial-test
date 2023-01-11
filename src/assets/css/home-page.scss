@@ -184,6 +184,9 @@ ul.feature-boxes li.pepsi-box {
   .pepsi-resort-link-container {
     display: flex;
     justify-content: space-between;
+    audio {
+      height: 33px;
+    }
   }
 }
 

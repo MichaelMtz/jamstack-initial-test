@@ -186,6 +186,9 @@ ul.feature-boxes li.pepsi-box .fly-box {
   display: flex;
   justify-content: space-between;
 }
+.pepsi .pepsi-resort-link-container audio {
+  height: 33px;
+}
 
 @media only screen and (max-width: 1620px) {
   .latest-flybox {
