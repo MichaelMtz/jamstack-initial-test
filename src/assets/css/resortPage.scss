@@ -680,11 +680,20 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: grid;
   place-items: center;
+  @include bpmaxw(414px) {
+    box-shadow: unset;
+  }
   .pepsi-content {
     padding:15px;
     display:flex;
     flex-flow: row wrap;
     gap: 10px;
+    @include bpmaxw(1054px) {
+      justify-content: center;
+    }
+    @include bpmaxw(414px) {
+      padding:unset;
+    }
     .pepsi-header {
       margin-top: 30px;
       display:flex;
@@ -710,6 +719,26 @@
     .pepsi-video {
       padding:15px;
       text-align: center;
+      @include bpmaxw(414px) {
+        padding:unset;
+      }
+      iframe {
+        @include bpmaxw(1200px) {
+          width:540px;
+          margin-left:25px;
+        }
+        @include bpmaxw(1122px) {
+          width:460px;
+          margin-left:25px;
+        }
+        @include bpmaxw(1054px) {
+          width:540px;
+        }
+        @include bpmaxw(660px) {
+          width:90%;
+        }
+      }
+      
     }
   }
   .pepsi-resort-link-container {
