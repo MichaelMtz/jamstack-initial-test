@@ -294,26 +294,26 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   }
 
-  if (resort_id === '303022') {
+  if (resort_id === '303001') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
-        <div id="pepsi" class="pepsi">
+        <div id="pepsi" class="pepsi abasin">
         
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-telluride" src="assets/images/ads/pepsi/telluride/TSR_bold-100.png" alt="Telluride Ski Resort">
+                        <img class="logo-abasin" src="assets/images/ads/pepsi/abasin/arapahoe-basin-logo.png" alt="Arapahoe Basin Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
                     <audio controls id="myaudio">
                       
-                       <source src="assets/audio/pepsi/Telluride-ROTW.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/Arapahoe-Basin-PZS-ROTW.mp3" type="audio/mpeg">
                     
                     </audio>
                 </div>
                 <div class="pepsi-video">
-                  <iframe width="640" height="360" src="https://www.youtube.com/embed/jxuJt6T6FsM?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/1xxdBKazTTI?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         

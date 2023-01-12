@@ -165,10 +165,14 @@ ul.feature-boxes li.pepsi-box {
         display:flex;
         gap:15px;
         img.logo-pepsi {
-          height: 48px;
+          height: 48px;  //telluride
+          height: 82px;  //abasin
         }
         img.logo-telluride {
-          height:48px;
+          height: 48px;
+        }
+        img.logo-abasin {
+          height:100px;
         }
       }
       .pepsi-copy {

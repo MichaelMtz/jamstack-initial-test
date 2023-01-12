@@ -687,6 +687,8 @@
 }
 
 .pepsi {
+  max-width: 1200px;
+  margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: grid;
   place-items: center;
@@ -726,9 +728,13 @@
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-pepsi {
   height: 48px;
+  height: 82px;
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-telluride {
   height: 48px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-abasin {
+  height: 100px;
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
@@ -744,30 +750,67 @@
   }
 }
 @media screen and (max-width: 1200px) {
-  .pepsi .pepsi-content .pepsi-video iframe {
+  .pepsi .pepsi-content .pepsi-video iframe.telluride {
     width: 540px;
     margin-left: 25px;
   }
 }
 @media screen and (max-width: 1122px) {
-  .pepsi .pepsi-content .pepsi-video iframe {
+  .pepsi .pepsi-content .pepsi-video iframe.telluride {
     width: 460px;
     margin-left: 25px;
   }
 }
 @media screen and (max-width: 1054px) {
-  .pepsi .pepsi-content .pepsi-video iframe {
+  .pepsi .pepsi-content .pepsi-video iframe.telluride {
     width: 540px;
   }
 }
 @media screen and (max-width: 660px) {
-  .pepsi .pepsi-content .pepsi-video iframe {
+  .pepsi .pepsi-content .pepsi-video iframe.telluride {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1281px) {
+  .pepsi .pepsi-content .pepsi-video iframe.abasin {
+    width: 540px;
+    margin-left: 25px;
+  }
+}
+@media screen and (max-width: 1205px) {
+  .pepsi .pepsi-content .pepsi-video iframe.abasin {
+    width: 460px;
+    margin-left: 25px;
+  }
+}
+@media screen and (max-width: 1054px) {
+  .pepsi .pepsi-content .pepsi-video iframe.abasin {
+    width: 540px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .pepsi .pepsi-content .pepsi-video iframe.abasin {
     width: 90%;
   }
 }
 .pepsi .pepsi-resort-link-container {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1126px) {
+  .pepsi.abasin .pepsi-content .pepsi-header .pepsi-logo-container {
+    flex-direction: column;
+  }
+  .pepsi.abasin .pepsi-content .pepsi-header .pepsi-logo-container img.logo-abasin {
+    width: 232px;
+    height: unset;
+    align-self: center;
+    order: 2;
+  }
+  .pepsi.abasin .pepsi-content .pepsi-header .pepsi-logo-container img.logo-pepsi {
+    order: 1;
+  }
 }
 
 /*# sourceMappingURL=resortPage.css.map */

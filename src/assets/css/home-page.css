@@ -171,9 +171,13 @@ ul.feature-boxes li.pepsi-box .fly-box {
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-pepsi {
   height: 48px;
+  height: 82px;
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-telluride {
   height: 48px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-abasin {
+  height: 100px;
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
