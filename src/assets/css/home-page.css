@@ -263,6 +263,7 @@ ul.feature-boxes li.pepsi-box .fly-box {
   .mobile-stories .mobile-stories-container {
     display: flex;
     flex-flow: column;
+    gap: 10px;
   }
   .mobile-stories .mobile-stories-container .card {
     width: 250px;
