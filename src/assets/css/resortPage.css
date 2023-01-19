@@ -703,6 +703,7 @@
   display: flex;
   flex-flow: row wrap;
   gap: 10px;
+  justify-content: center;
 }
 @media screen and (max-width: 1054px) {
   .pepsi .pepsi-content {
