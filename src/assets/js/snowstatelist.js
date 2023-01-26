@@ -1,6 +1,6 @@
 // Logic to pull in snow report from SnoCountry Feed API
-var t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e};
-var _log = function (text, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`);};
+const t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e;};
+const _log = function (text, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`);};
 _log('Initialized...');
 
 const observeSelector = (selector, callback, options = {
@@ -89,7 +89,7 @@ const waitForElement = selector=>{
 
 
 const initializeFilters = () => {
-  var elCurrentActive;
+  let elCurrentActive;
   waitForElement(`.filter-container #filter-all`).then(elFilterAll => {
     elCurrentActive = elFilterAll;
     document.querySelectorAll('.filter-container button[id^="filter-"]').forEach(iterElBtn => {
@@ -99,7 +99,7 @@ const initializeFilters = () => {
         elCurrentActive.className = "";
         iterElBtn.classList.add('active');
         elCurrentActive = iterElBtn;
-        let elSnowReportsContainer = document.querySelector('#container-snow-reports');
+        const elSnowReportsContainer = document.querySelector('#container-snow-reports');
         if (elSnowReportsContainer) {
           elSnowReportsContainer.className = "";
           elSnowReportsContainer.classList.add(iterElBtn.dataset.id);          
@@ -113,13 +113,14 @@ const initializeFilters = () => {
 
 };
 document.addEventListener('DOMContentLoaded',()=> {
-  let target = document.body.dataset.snowreport;
-  let src = document.body.dataset.source;
-  let endpoint = (src !== 'resort') ? 'list' : 'resort';  
+  const target = document.body.dataset.snowreport;
+  const src = document.body.dataset.source;
+  const requestType = document.body.dataset.resorttype;
+  const endpoint = (src !== 'resort') ? 'list' : 'resort';  
   // fetch(url,{"headers": {"sec-fetch-mode": "cors","Access-Control-Allow-Origin":"*"}, "mode":"cors"}).then(response => {
   
   //const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}` ;
-  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}` : `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-${endpoint}.php?target=${target}&src=${src}`;
+  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}&type=${requestType}` : `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-${endpoint}.php?target=${target}&src=${src}&type=${requestType}`;
   _log(`snowreport-api: ${url}`);
   fetch(url).then(response => {
     return response.json();
@@ -128,7 +129,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
     //process progressbars
     (function() {
-      let progressBarList = document.querySelectorAll('.progress-bar');
+      const progressBarList = document.querySelectorAll('.progress-bar');
       if (progressBarList) {
         progressBarList.forEach(iterBar => {
           iterBar.style.width = iterBar.dataset.percentage;

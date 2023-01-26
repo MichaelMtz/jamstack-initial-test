@@ -10,10 +10,18 @@ permalink: /snow-report/{{ resorts.stateName }}/index.html
 <div class="conditions">
       <nav class="nav-breadcrumbs"> 
         {% for iterBreadCrumb in resorts.breadCrumbList %}
+          {% if resorts.resortType == 'alpine' %}
           <a class="breadcrumb-link" href="{{ iterBreadCrumb.link }}">{{ iterBreadCrumb.abbrName }}</a>
+          {% elif resorts.resortType == 'xc' %}
+          <a class="breadcrumb-link" href="{{ iterBreadCrumb.link }}-cross-country">{{ iterBreadCrumb.abbrName }}</a>
+          {% endif %}
         {% endfor %}
-        {% if resorts.entryType != 'resort' %}
-          <a class="breadcrumb-link xc-link" href="snow-report/{{ resorts.stateName }}-cross-country"> {{ resorts.stateNameProper }} XC</a>
+        {% if resorts.entryType == 'state' and resorts.hasXC %}
+          {% if resorts.resortType == 'alpine' %}
+          <a class="breadcrumb-link breadcrumb-link-right xc-link" href="snow-report/{{ resorts.stateName }}-cross-country"> {{ resorts.stateNameProper }} XC</a>
+          {% elif resorts.resortType == 'xc' %}
+          <a class="breadcrumb-link breadcrumb-link-right" href="snow-report/{{ resorts.alpineName }}"> {{ resorts.stateNameProper }} Alpine</a>
+          {% endif %}
         {% endif %}
       </nav>
     <div id="container-snow-reports" class="container-snow-reports sort-default">

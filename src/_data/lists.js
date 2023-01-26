@@ -13,7 +13,12 @@ const abbrToLongName = {
   ,"AND":'andorra',"AUT":'austria',"CHE":'switzerland',"CZE": 'czech-republic',"DEU": 'germany',"ESP": 'spain',"FIN": 'finland',"FRA": 'france'
   ,"ITA":'italy',"NOR":'norway',"SWE": 'switzerland'
 };
-
+const validXCStates = [
+  'california','maine','massachusetts','new-hampshire','new-jersey','new-mexico','new-york','vermont','west-virginia','wyoming'
+];
+const validXCStatesAbbr = [
+  'CA','ME','MA','NH','NJ','NM','NY','VT','WV','WY'
+];
 function upperCaseWords(input) {
   input = input.replace(/-/g, ' ');
   const iterName = input.split(" ");
@@ -41,36 +46,36 @@ function formatBreadCrumbs(breadcrumbs) {
 
 module.exports = async function() {
   console.log("*** lists.js");
-  let iterStateNameProper, iterName, masterBreadCrumb = {};
+  const crossCountry = [];
   lists.forEach(iter => {
-    if (iter.entryType !== 'resort') {
-      iter["stateNameProperLowerCase"] = iter.stateName.replace('-', ' ');
-      iter["stateNameProper"] = upperCaseWords(iter.stateName);
-      iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
-      iter["snowreport"] = iter.stateName;
 
-      iter["styles"] = ['state-page.css','state-page-card.css' ];
-      
-      //Save breadcrumb for resort usage later, 
-      //note this requires "state" and "region" entryTypes to be declared before associated "resort" types
-      //masterBreadCrumb[iter.stateName] = iter.breadcrumbs;
-      masterBreadCrumb[iter.stateName] = iter["breadCrumbList"];
-
-    } else { //resort
-      iterName = iter.stateName.split('/');
-      iter["stateNameProperLowerCase"] = iterName[1].replace('-', ' ');
-      iter["stateNameProper"] = upperCaseWords(iterName[1]);
-      iter["snowreport"] = iter.resort_id;
-      iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
-
-      //Third party scripts
-      iter["scripts"] = ['https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js'];
-      if (masterBreadCrumb[iterName[0]]) {
-        //iter["breadCrumbList"] = formatBreadCrumbs(masterBreadCrumb[iterName[0]]);
-        iter["breadCrumbList"] = masterBreadCrumb[iterName[0]];
-      }
-      
+    iter["stateNameProperLowerCase"] = iter.stateName.replace('-', ' ');
+    iter["stateNameProper"] = upperCaseWords(iter.stateName);
+    iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
+    iter["snowreport"] = iter.stateName;
+    iter["resortType"] = 'alpine';
+    
+    iter["styles"] = ['state-page.css','state-page-card.css' ];
+    iter["hasXC"] = false;
+    if ( (iter.entryType === 'state') && (validXCStates.includes(iter.stateName))) {
+      iter['hasXC'] = true;
+      const tempEntry = Object.assign({},iter);
+      tempEntry.breadcrumbs = Object.assign({}, iter.breadcrumbs);
+      tempEntry["alpineName"] = tempEntry["stateName"];
+      tempEntry["stateName"] = `${tempEntry['stateName']}-cross-country`;
+      tempEntry["resortType"] = 'xc';
+      const xcBreadcrumbs = [];
+      tempEntry['breadCrumbList'].forEach(iterBreadCrumb => {
+        if (validXCStatesAbbr.includes(iterBreadCrumb.abbrName)) {
+          xcBreadcrumbs.push(iterBreadCrumb); 
+        }
+      });
+      tempEntry.breadCrumbList = xcBreadcrumbs; //Object.assign({}, xcBreadcrumbs);
+      crossCountry.push(tempEntry);
     }
   });
-  return lists;
+
+  //const completeList = [...lists, ...crossCountry];
+  //console.log('--- completeList',completeList);
+  return [...lists, ...crossCountry];
 };

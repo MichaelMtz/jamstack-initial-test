@@ -681,6 +681,14 @@ body {
     display: none;
   }
 }
+.resorts-container .resort.xc .resort__info .section-container .section-item .xc-basedepth {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+.resorts-container .resort.xc .resort__info .section-container .section-item .xc-basedepth .base-depth {
+  font-size: 28px;
+}
 @media screen and (max-width: 710px) {
   .resorts-container .resort.open {
     height: 211px;

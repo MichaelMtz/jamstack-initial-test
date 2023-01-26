@@ -1061,10 +1061,10 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 			padding: 5px 3px;
     	color: #004B8B;
 		}	
-		.breadcrumb-link.xc-link {
+		.breadcrumb-link-right {
 			margin-left: auto;
-			display:none;
 		}
+
 		.breadcrumb-link.active {
 			text-decoration: underline;
 		}

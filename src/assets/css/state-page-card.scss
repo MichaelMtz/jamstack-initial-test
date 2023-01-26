@@ -635,6 +635,19 @@ body {
             }
           }
     }
+    .resort.xc {
+      .resort__info .section-container .section-item {
+        .xc-basedepth {
+          display:flex;
+          flex-flow: row nowrap;
+          justify-content: space-evenly;
+          .base-depth {
+            font-size:28px;
+          }
+        }
+        
+      }
+    }
     @include bpmaxw(710px) {
       .resort.open {
         height:211px;
