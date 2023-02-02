@@ -450,6 +450,7 @@
   top: 25px;
   vertical-align: top;
   margin-left: -13px;
+  margin-left: 0px;
   font-weight: 500;
   font-size: 23px;
 }
@@ -736,6 +737,9 @@
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-abasin {
   height: 100px;
+}
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-whitetail {
+  height: 74px;
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;

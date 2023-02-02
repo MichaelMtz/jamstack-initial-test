@@ -55,12 +55,12 @@ $(function () {
   }
   
   $("ul.feature-boxes li").hover(function () {
-    console.log(`flip?:${window.snoCloseNewsProcessing}`);
+   
     if (!window.snoCloseNewsProcessing) {
       $(this).siblings().removeClass('flipped');
       //if tab clicked is already open(flipped) close it
       if (!$(this).hasClass('flipped')) {
-        console.log('----flipping----');
+        //console.log('----flipping----');
         $(this).addClass('flipped');
         //if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || ($(window).width() < 320)) {
         //On small displays just use slider buttons as links

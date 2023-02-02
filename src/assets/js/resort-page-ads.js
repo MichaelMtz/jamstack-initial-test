@@ -273,6 +273,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Grand Targhee CO', 
         position: 'both'
       }]
+    },717013:{
+      ads: [{
+        img: 'whitetail-banner-ad.jpg',
+        href:"https://www.skiwhitetail.com",
+        width:728, 
+        height:90,
+        alt: 'Whitetail Resort PA', 
+        position: 'both'
+      }]
     }
     
     
@@ -303,7 +312,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   }
 
-  if (resort_id === '603009') {
+  if (resort_id === '717013') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -311,7 +320,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-abasin" src="assets/images/ads/pepsi/gunstock/GUNSTOCK_PRIMARY_WINE_CAP-G-01.jpg" alt="Gunstock Ski Resort">
+                        <img class="logo-whitetail" src="assets/images/ads/pepsi/whitetail/Whitetail_BuckHoriz_green.png" alt="Whitetail Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -322,7 +331,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/UvE8WzrUWew?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/TuptQr2EiPc?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         
