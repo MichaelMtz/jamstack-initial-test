@@ -89,11 +89,11 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    const tellurideImages =  ['view', 'torchlight', 'snowmaking'];
-    const randomIndex = random(0,3);
+    const tellurideImages =  ['view', 'instruct', 'pose','action'];
+    const randomIndex = random(0,4);
     const selectedImage = tellurideImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
-    elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/whitetail/whitetail-${selectedImage}.jpg")`;
+    elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/lee-canyon/LeesCanyon-${selectedImage}.jpeg")`;
   }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
   
 };

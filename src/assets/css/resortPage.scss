@@ -642,7 +642,7 @@
     .conditions.icon.hard-pack:before {
       content: "";
     }
-    conditions.icon.machine-made:before {
+    .conditions.icon.machine-made:before {
       content: "";
     }
     .conditions.icon.packed-powder-spring:before {
@@ -721,6 +721,9 @@
         img.logo-whitetail {
           height:74px;
         }
+        svg.lee-canyon {
+          margin-top:10px;
+        }
       }
       .pepsi-copy {
         text-align: center;
@@ -780,6 +783,7 @@
       .pepsi-logo-container {
         @include bpmaxw(1126px) {
           flex-direction: column;
+          align-items: center;
           img.logo-abasin {
             width: 232px;
             height: unset;

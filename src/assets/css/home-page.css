@@ -182,6 +182,9 @@ ul.feature-boxes li.pepsi-box .fly-box {
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-whitetail {
   height: 74px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container svg.lee-canyon {
+  margin-top: 10px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;

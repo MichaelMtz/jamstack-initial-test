@@ -650,7 +650,7 @@
 .snow-report-container .conditions.icon.hard-pack:before {
   content: "\e91b";
 }
-.snow-report-container conditions.icon.machine-made:before {
+.snow-report-container .conditions.icon.machine-made:before {
   content: "\e938";
 }
 .snow-report-container .conditions.icon.packed-powder-spring:before {
@@ -741,6 +741,9 @@
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-whitetail {
   height: 74px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container svg.lee-canyon {
+  margin-top: 10px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;
@@ -806,6 +809,7 @@
 @media screen and (max-width: 1126px) {
   .pepsi.abasin .pepsi-content .pepsi-header .pepsi-logo-container {
     flex-direction: column;
+    align-items: center;
   }
   .pepsi.abasin .pepsi-content .pepsi-header .pepsi-logo-container img.logo-abasin {
     width: 232px;
