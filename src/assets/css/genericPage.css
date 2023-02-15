@@ -1,0 +1,177 @@
+body {
+  background-image: linear-gradient(90deg, #0097BE, #0071AC);
+}
+
+#generic-container {
+  margin-top: unset;
+  padding: 135px 25px 0px;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+}
+@media screen and (max-width: 767px) {
+  #generic-container {
+    display: block;
+  }
+}
+#generic-container .generic-panel {
+  width: 100%;
+  margin-bottom: 35px;
+  border-radius: 5px;
+  padding: 15px 25px;
+  position: relative;
+  z-index: 3;
+  background-color: #fff;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+#generic-container .generic-panel h1 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #314d5a;
+  font-weight: 800;
+  font-size: 33px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-style: normal;
+  color: #5c5e60;
+  letter-spacing: 7.1px;
+}
+#generic-container .generic-panel h1 .infoline {
+  margin: 3px 0 0 2px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-family: "Proxima Nova", sans-serif;
+  font-style: italic;
+  color: #5c5e60;
+  font-weight: 100;
+  text-transform: initial;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 767px) {
+  #generic-container .generic-panel h1 .infoline {
+    flex-flow: column nowrap;
+  }
+}
+#generic-container .generic-panel h1 .infoline .material-icons {
+  vertical-align: text-bottom;
+  margin-right: 5px;
+}
+#generic-container .generic-panel h1 .infoline .published a {
+  color: #0187BC;
+  font-size: 16px;
+  margin-right: 25px;
+}
+#generic-container .generic-panel h1 .infoline .published a:hover {
+  text-decoration: underline;
+}
+#generic-container .generic-panel h1 .infoline .read-time {
+  margin-left: 10px;
+}
+@media screen and (max-width: 767px) {
+  #generic-container .generic-panel h1 .infoline .read-time {
+    align-self: flex-end;
+  }
+}
+#generic-container .generic-panel img#post-main-image {
+  margin-bottom: 25px;
+}
+#generic-container .generic-panel .intro {
+  margin: 3px 0 0 2px;
+  font-size: 15px;
+  font-family: "Proxima Nova", sans-serif;
+  color: #5c5e60;
+  font-weight: 400;
+  text-transform: initial;
+  letter-spacing: 1px;
+}
+#generic-container .generic-panel .intro .image-container {
+  float: left;
+  margin-right: 10px;
+}
+@media screen and (max-width: 1024px) {
+  #generic-container .generic-panel .intro .image-container {
+    float: unset;
+    margin-right: unset;
+  }
+}
+#generic-container .generic-panel .intro .image-container img#post-main-image {
+  max-height: 400px;
+}
+@media screen and (max-width: 1024px) {
+  #generic-container .generic-panel .intro .image-container img#post-main-image {
+    max-height: unset;
+  }
+}
+#generic-container .generic-panel .intro .ebd-block {
+  width: 100%;
+}
+#generic-container .generic-panel .intro .ebd-block .eb-thumbs {
+  width: 100%;
+  display: flex;
+}
+#generic-container .generic-panel .intro .ebd-block .eb-thumbs .eb-thumbs-col {
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 0;
+  -ms-flex-basis: 0;
+  flex-basis: 0;
+  height: 100%;
+  position: relative;
+  vertical-align: top;
+}
+#generic-container .generic-panel .intro .ebd-block .eb-thumbs .eb-thumbs-col .eb-thumb {
+  margin: 0px 5px;
+}
+#generic-container .news-list {
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  z-index: 3;
+  background-color: #fff;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+}
+@media screen and (max-width: 767px) {
+  #generic-container .news-list {
+    margin-top: 25px;
+  }
+}
+#generic-container .news-list .news-list-header {
+  height: 42px;
+  margin-bottom: 25px;
+  border-radius: 5px 5px 0px 0px;
+  padding: 12px;
+  background-color: rgb(14, 28, 44);
+  color: white;
+  font-size: 18px;
+}
+#generic-container .news-list .news-list-post {
+  margin: 10px 12px;
+  border-bottom: 1px solid rgba(26, 26, 27, 0.07);
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+#generic-container .news-list .news-list-post a {
+  text-align: center;
+}
+#generic-container .news-list .news-list-post img {
+  width: 140px;
+}
+#generic-container .news-list .news-list-post .post-title {
+  margin: 10px 0px 10px 10px;
+  font-weight: 600;
+  color: #5c5e60;
+}
+#generic-container .news-list .news-list-post .post-info {
+  width: 100%;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+  color: #5c5e60;
+}
+
+/*# sourceMappingURL=genericPage.css.map */
