@@ -1,6 +1,27 @@
 // Note: Do not need to declare _log, waitForElement, because it is included in snowreport.js.  But this needs included after snowreport.js.
 _log('resort-page-ads Initialized...');
 
+const checkForAd = () => {
+  const targetList = [
+    "maine", "massachusetts", "new-hampshire", "rhode-island","vermont", "quebec"
+  ];
+  const target = document.body.dataset.location;
+  if (targetList.includes(target)) {
+    
+    const html = `
+    <div class="internal">
+      <a href="https://westernwhitemtns.com/plan-your-next-snow-day/?utm_source=TMM+SnoC+Display&utm_medium=CPM+Display+Wint23&utm_campaign=SnoC+Wint23+Display" target="_blank" >
+        <img class="internal-desktop" src="assets/images/ads/WWMCC/WWMCC-Winter22-23_728X90.gif" alt="Western White Mountains" width="728" height="90"">
+        <img class="internal-mobile" src="assets/images/ads/WWMCC/WWMCC-Winter22-23_320X50.gif" alt="Western White Mountains" width="320" height="50"">
+      </a>
+    </div>
+    `;
+    waitForElement('#container-snow-reports .resort.right-col').then((elSnowReportContainer) => {
+      elSnowReportContainer.insertAdjacentHTML('afterbegin',html);
+    }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
+  }
+};
+
 document.addEventListener('DOMContentLoaded',()=> {
   _log('checkForResortAds');
 
@@ -400,5 +421,5 @@ document.addEventListener('DOMContentLoaded',()=> {
       elTarget.insertAdjacentHTML('beforebegin',html);
     }).catch( () => { console.log('Error waiting for checkForResortAds:');});
   }
-
+  checkForAd();
 });
