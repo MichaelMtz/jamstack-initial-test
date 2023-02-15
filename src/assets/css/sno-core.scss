@@ -3,7 +3,11 @@
     @content;
   }
 }
-
+@mixin bpminw($mw) {
+  @media screen and (min-width: $mw) {
+  @content;
+  }
+}
 .header {
   .m-nav {
     #mobile-menu {
@@ -38,13 +42,57 @@
       }
     }
   }
-
-  
+}
+.conditions {
+  .internal {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    .internal-desktop {
+      display: none;
+    }
+    .internal-mobile {
+      display: inline;
+    }
+    @include bpminw(734px) {
+      .internal-desktop {
+        display: inline;
+      }
+      .internal-mobile {
+        display: none;
+      }
+    }
+  }
 }
 footer {
   display:grid;
   place-items: center;
-  
+  .internal {
+    width: 100%;
+    padding-top: 20px;
+    background-image: url('../images/core/newsletter-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 0 0;
+    display:grid;
+    place-items: center;
+    
+    .internal-desktop {
+      display: none;
+    }
+    .internal-mobile {
+      display: inline;
+    }
+    @include bpminw(734px) {
+      .internal-desktop {
+        display: inline;
+      }
+      .internal-mobile {
+        display: none;
+      }
+    }
+  }
   .action {
     width: 100%;
     margin: 0px;
