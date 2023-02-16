@@ -744,6 +744,9 @@
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container svg.lee-canyon {
   margin-top: 10px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-camelback {
+  height: 80px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;
