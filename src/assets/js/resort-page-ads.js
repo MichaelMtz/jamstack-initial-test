@@ -105,13 +105,21 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: '307008.jpg',
-        href:"https://www.jacksonhole.com/winter?utm_source=snocountry&utm_medium=display&utm_campaign=winter",
+        img: 'jackson-hole-300x250.gif',
+        href:"https://www.jacksonhole.com/rendezvous?utm_source=snocountry&utm_medium=display&utm_campaign=rendezvous ",
+        width:300, 
+        height:250,
+        alt: 'Jackson Hole',
+        position:'top'
+      },{
+        img: 'jackson-hole-ad-728x90.gif',
+        href:"https://www.jacksonhole.com/rendezvous?utm_source=snocountry&utm_medium=display&utm_campaign=rendezvous ",
         width:728, 
         height:90,
         alt: 'Jackson Hole',
-        position:'both'
+        position:'bottom'
       }]
+      
     },802009:{
       ads: [{
         img: 'Magic-Mountain-11-23-21.jpg',
@@ -332,7 +340,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     resortAds.forEach((iterResortAd) => {
       const html = `
       <div class="resort-ad">
-        <a href="${iterResortAd.href}">
+        <a href="${iterResortAd.href}" target="_blank">
           <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
         </a>
       </div>
