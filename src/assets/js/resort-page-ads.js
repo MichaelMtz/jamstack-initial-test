@@ -329,6 +329,26 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Camelback PA', 
         position: 'both'
       }]
+    }, 503004 : {
+      ads: [{
+        img: 'MTB_Banner_728x90.jpg',
+        href:"https://www.mtbachelor.com/things-to-do/events/sunchaser-spring ",
+        width:728, 
+        height:90,
+        alt: 'Mt Bachelor OR',
+        position: 'top',
+        start_date: '2023-01-02',
+        end_date: '2023-03-10'
+      },{
+        img: 'Mt-Bachelor-728x90.png',
+        href:"https://www.mtbachelor.com/plan-your-trip/tickets-passes/season-passes",
+        width:728, 
+        height:90,
+        alt: 'Mt Bachelor OR',
+        position: 'bottom',
+        start_date: '2023-01-02',
+        end_date: '2023-04-01'
+      }]
     }
     
     
@@ -359,7 +379,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   }
 
-  if (resort_id === '717003') {
+  if (resort_id === '503004') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -367,7 +387,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/camelback/camelback-resort-logo.jpg" alt="Arapahoe Basin Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/mtbachelor/503004logo.jpg" alt="Mt Bachelor Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -378,7 +398,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/yYALHX0adPY?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/14K_eyppCgg?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         
