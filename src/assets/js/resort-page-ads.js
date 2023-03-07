@@ -349,7 +349,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2023-01-02',
         end_date: '2023-04-01'
       }]
+    }, 303016:{
+      ads: [{
+        img: 'Powderhorn-Ad-728x90.png',
+        href:"https://www.powderhorn.com/",
+        width:728, 
+        height:90,
+        alt: 'Powderhorn CO', 
+        position: 'both'
+      }]
     }
+    
     
     
   };
@@ -379,7 +389,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   }
 
-  if (resort_id === '503004') {
+  if (resort_id === '303016') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -387,7 +397,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/mtbachelor/503004logo.jpg" alt="Mt Bachelor Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/powderhorn/powderhorn-logo.jpg" alt="Powderhorn Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -398,7 +408,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/A5wMTGZy8r0?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/oEl7aZNxMHE?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         
