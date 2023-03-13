@@ -358,7 +358,26 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Powderhorn CO', 
         position: 'both'
       }]
-    }
+    }, 814002:{
+      ads: [{
+        img: 'Seven-Springs-resort-ad-728x90.jpg',
+        href:"https://www.7springs.com/",
+        width:728, 
+        height:90,
+        alt: 'Seven Springs PA', 
+        position: 'both'
+      }]
+    }, 603019:{
+      ads: [{
+        img: 'Ragged-Mountain-728x90.png',
+        href:"https://www.raggedmountainresort.com/Season-Passes/ ",
+        width:728, 
+        height:90,
+        alt: 'Ragged Mountain NH', 
+        position: 'both'
+      }]
+    }, 
+    
     
     
     
@@ -387,9 +406,11 @@ document.addEventListener('DOMContentLoaded',()=> {
       }
     });
 
+  } else {
+    checkForAd();
   }
 
-  if (resort_id === '303016') {
+  if (resort_id === '814002') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -397,7 +418,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/powderhorn/powderhorn-logo.jpg" alt="Powderhorn Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/seven-springs/Seven-Springs-Logo-BW.png" alt="Seven Springs Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -408,7 +429,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/oEl7aZNxMHE?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/3_hYylQTuGo?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         
@@ -418,5 +439,5 @@ document.addEventListener('DOMContentLoaded',()=> {
       elTarget.insertAdjacentHTML('beforebegin',html);
     }).catch( () => { console.log('Error waiting for checkForResortAds:');});
   }
-  checkForAd();
+  
 });
