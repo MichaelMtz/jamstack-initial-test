@@ -376,7 +376,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Ragged Mountain NH', 
         position: 'both'
       }]
-    }, 
+    }, 801008:{
+      ads: [{
+        img: 'PowderMountain_ad_snocountry_728x90.jpg',
+        href:"https://powdermountain.com/spring-skiing",
+        width:728, 
+        height:90,
+        alt: 'Ragged Mountain NH', 
+        position: 'both'
+      }]
+    }
+    
+    
     
     
     
@@ -410,7 +421,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForAd();
   }
 
-  if (resort_id === '814002') {
+  if (resort_id === '801008') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -418,7 +429,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/seven-springs/Seven-Springs-Logo-BW.png" alt="Seven Springs Ski Resort">
+                        <img class="logo-powder-mountain" src="assets/images/ads/pepsi/powder-mountain/801008logo.jpg" alt="Powder Mountain Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -429,7 +440,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/3_hYylQTuGo?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/yN31BnLnueQ?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         
