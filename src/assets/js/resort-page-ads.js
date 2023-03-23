@@ -385,6 +385,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Ragged Mountain NH', 
         position: 'both'
       }]
+    },802013: {
+      ads: [{
+        img: 'okemo-ad.jpg',
+        href:"https://www.okemo.com/?utm_source=web&utm_medium=banner&utm_campaign=resort_of_the_week+&utm_id=snocountry2023",
+        width:728, 
+        height:90,
+        alt: 'Okemo Mountain VT', 
+        position: 'both'
+      }]
     }
     
     
@@ -421,7 +430,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForAd();
   }
 
-  if (resort_id === '801008') {
+  if (resort_id === '802013') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -429,7 +438,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-powder-mountain" src="assets/images/ads/pepsi/powder-mountain/801008logo.jpg" alt="Powder Mountain Ski Resort">
+                        <img class="logo-okemo" src="assets/images/ads/pepsi/okemo/Okemo-logo.jpg" alt="Okemo Mountain Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -440,7 +449,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/yN31BnLnueQ?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/fiGlCCOD6WA?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         

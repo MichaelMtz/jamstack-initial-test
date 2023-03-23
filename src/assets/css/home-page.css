@@ -193,6 +193,10 @@ ul.feature-boxes li.pepsi-box .fly-box {
   margin-bottom: unset;
   margin-top: 20px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-okemo {
+  height: 88px;
+  margin-bottom: unset;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;
