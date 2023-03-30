@@ -197,6 +197,10 @@ ul.feature-boxes li.pepsi-box .fly-box {
   height: 88px;
   margin-bottom: unset;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-china-peak {
+  height: 78px;
+  margin-bottom: unset;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;

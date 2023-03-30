@@ -755,6 +755,9 @@
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-okemo {
   height: 88px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-china-peak {
+  height: 78px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;

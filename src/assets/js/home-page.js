@@ -89,11 +89,11 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    const tellurideImages =  ['view', 'powder'];
-    const randomIndex = random(0,2);
+    const tellurideImages =  ['guest', 'powder', 'groom'];
+    const randomIndex = random(0,3);
     const selectedImage = tellurideImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
-    elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/okemo/Okemo-${selectedImage}.png")`;
+    elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/china-peak/china-peak-${selectedImage}.jpg")`;
   }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
   
 };
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     $('#banner_carousel #customText').removeClass('hidden');
     $(thrive_carousel_loader).on('slideLoaded.ThriveCarousel', function(e, settings, newSlide, direction){
       $('.pano-loader').hide();
-      //configurePepsiBackgroundImages();
+      configurePepsiBackgroundImages();
       return true;
     });
     window.onload = function() {
