@@ -89,11 +89,11 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    const tellurideImages =  ['guest', 'powder', 'groom'];
-    const randomIndex = random(0,3);
-    const selectedImage = tellurideImages[randomIndex];
+    const homePageImages =  ['daniel-dvorsky-PFbDoh58U64-unsplash.jpg', 'andhika-soreng-US06QF_sxu8-unsplash.jpg'];
+    const randomIndex = random(0,2);
+    const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
-    elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/china-peak/china-peak-${selectedImage}.jpg")`;
+    elMainSlider.style.backgroundImage = `url("assets/images/homepage/${selectedImage}")`;
   }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
   
 };
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     $('#banner_carousel #customText').removeClass('hidden');
     $(thrive_carousel_loader).on('slideLoaded.ThriveCarousel', function(e, settings, newSlide, direction){
       $('.pano-loader').hide();
-      //configurePepsiBackgroundImages();
+      configurePepsiBackgroundImages();
       return true;
     });
     window.onload = function() {

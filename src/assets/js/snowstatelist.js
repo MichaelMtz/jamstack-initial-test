@@ -112,6 +112,7 @@ const initializeFilters = () => {
 };
 
 const checkForAd = (target) => {
+  return;
   const targetList = [
     "maine", "massachusetts", "new-hampshire", "rhode-island","vermont", "quebec"
   ];
