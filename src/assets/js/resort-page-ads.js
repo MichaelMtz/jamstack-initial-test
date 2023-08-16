@@ -131,11 +131,11 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },703003:{
       ads: [{
-        img: 'Massanutten_Resort_11-15-21.jpg',
-        href:"https://www.massresort.com/play/snow-sports/50th-celebration/?utm_source=SnoCountry&utm_medium=Banner&utm_campaign=SnoCountry+Ads&utm_id=SnoCountry+Ads",
+        img: 'Massanutten-2023-08-03-728x90.jpg',
+        href:"https://www.massresort.com/play/snow-sports/season-passes/?utm_source=SnoCountry&utm_medium=banner&utm_campaign=ski-season-pass",
         width:728, 
         height:90,
-        alt: 'Massanutten Deals',
+        alt: 'Massanutten New High Speed Lift',
         position:'both'
       }]
     },603015:{
