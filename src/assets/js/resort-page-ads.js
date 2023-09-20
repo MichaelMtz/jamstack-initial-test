@@ -105,17 +105,17 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: 'jackson-hole-300x250.gif',
-        href:"https://www.jacksonhole.com/rendezvous?utm_source=snocountry&utm_medium=display&utm_campaign=rendezvous ",
-        width:300, 
-        height:250,
+        img: 'Jackson-Hole-2023-09-19-728x90.jpg',
+        href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+        width:728, 
+        height:90,
         alt: 'Jackson Hole',
         position:'top'
       },{
-        img: 'jackson-hole-ad-728x90.gif',
-        href:"https://www.jacksonhole.com/rendezvous?utm_source=snocountry&utm_medium=display&utm_campaign=rendezvous ",
-        width:728, 
-        height:90,
+        img: 'Jackson-Hole-2023-09-19-320x50.jpg',
+        href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+        width:300, 
+        height:50,
         alt: 'Jackson Hole',
         position:'bottom'
       }]
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },203005:{
       ads: [{
-        img: 'Ski-Sundown-WMB-2022-728x90.jpg',
+        img: 'Ski-Sundown-2023-09-14-728x90.jpg',
         href:"https://www.skisundown.com/",
         width:728, 
         height:90,
