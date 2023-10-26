@@ -105,14 +105,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: 'Jackson-Hole-2023-09-19-728x90.jpg',
+        img: 'Jackson-Hole-2023-10-16-728x90.jpg',
         href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
         width:728, 
         height:90,
         alt: 'Jackson Hole',
         position:'top'
       },{
-        img: 'Jackson-Hole-2023-09-19-320x50.jpg',
+        img: 'Jackson-Hole-2023-10-16-320x50.jpg',
         href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
         width:300, 
         height:50,

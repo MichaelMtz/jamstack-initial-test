@@ -242,6 +242,7 @@
  ,{"entryType":"resort","resort_id":"603001","stateName":"new-hampshire/waterville-valley-resort/"}
  ,{"entryType":"resort","resort_id":"603026","stateName":"new-hampshire/whaleback-mountain/"}
  ,{"entryType":"resort","resort_id":"603021","stateName":"new-hampshire/wildcat-mountain/"}
+ ,{"entryType":"resort","resort_id":"603013","stateName":"new-hampshire/tenney-mountain/"}
  ,{"entryType":"resort","resort_id":"201004","stateName":"new-jersey/campgaw-mountain/"}
  ,{"entryType":"resort","resort_id":"999074209","stateName":"new-jersey/high-point-cross-country-ski-center/"}
  ,{"entryType":"resort","resort_id":"201003","stateName":"new-jersey/mountain-creek-resort/"}
@@ -297,14 +298,14 @@
  ,{"entryType":"resort","resort_id":"518010","stateName":"new-york/west-mountain/"}
  ,{"entryType":"resort","resort_id":"518012","stateName":"new-york/whiteface-mountain/"}
  ,{"entryType":"resort","resort_id":"518011","stateName":"new-york/willard-mountain/"}
- ,{"entryType":"resort","resort_id":"518009","stateName":"new-york/windham-mountain-resort/"}
+ ,{"entryType":"resort","resort_id":"518009","stateName":"new-york/windham-mountain/"}
  ,{"entryType":"resort","resort_id":"315008","stateName":"new-york/woods-valley-ski-area/"}
  ,{"entryType":"resort","resort_id":"704001","stateName":"north-carolina/appalachian-ski-mtn/"}
  ,{"entryType":"resort","resort_id":"704010","stateName":"north-carolina/beech-mountain-resort/"}
  ,{"entryType":"resort","resort_id":"704002","stateName":"north-carolina/cataloochee-ski-area/"}
  ,{"entryType":"resort","resort_id":"704003","stateName":"north-carolina/sapphire-valley-ski-area/"}
  ,{"entryType":"resort","resort_id":"704006","stateName":"north-carolina/sugar-mountain-resort/"}
- ,{"entryType":"resort","resort_id":"704007","stateName":"north-carolina/wolf-ridge-ski-resort/"}
+ ,{"entryType":"resort","resort_id":"704007","stateName":"north-carolina/hatley-pointe/"}
  ,{"entryType":"resort","resort_id":"701004","stateName":"north-dakota/huff-hills-ski-area/"}
  ,{"entryType":"resort","resort_id":"216001","stateName":"ohio/alpine-valley/"}
  ,{"entryType":"resort","resort_id":"216002","stateName":"ohio/boston-mills-brandywine-ski-resort/"}
