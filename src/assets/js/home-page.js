@@ -96,7 +96,7 @@ const configurePepsiBackgroundImages = () => {
       'bradley-king-3m6vbzY69s4-unsplash.jpg',
       'luka-senica-G4cwmnaGLRg-unsplash.jpg',
       'powder-skier-slashing-alaska.jpg'];
-    const randomIndex = random(0,2);
+    const randomIndex = random(0,6);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
     elMainSlider.style.backgroundImage = `url("assets/images/homepage/${selectedImage}")`;
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-open-resorts.php`;
     const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/home-open-resorts-api` : localURL;
     
-    //_log(`home-open-resorts-api resort: ${url}`);
+    _log(`home-open-resorts-api resort: ${url}`);
     fetch(url).then(response => {      
       return response.json();
     }).then(data => {
@@ -240,18 +240,20 @@ document.addEventListener('DOMContentLoaded',()=> {
       _log('--getTopsSnowfall: data');    
       console.log(data);
       const fetchOpenResorts = (data.length > 5) ? false : true;
+      console.log(fetchOpenResorts);
       if (data.length > 0) {
         waitForElement('#top-snowfall-list').then((elHomepageHighlightResorts) => {
           createHighlightResortsSection(elHomepageHighlightResorts,data, 'snowfall','#top-snowfall');
         }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
       } 
-      if (fetchOpenResorts) {
-        getOpenResorts();
-      } else {
-        waitForElement('#open-resorts').then((elOpenResorts) => {
-          elOpenResorts.classList.add('sno-hide');
-        }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
-      }
+      getOpenResorts();
+      // if (fetchOpenResorts) {
+      //   getOpenResorts();
+      // } else {
+      //   waitForElement('#open-resorts').then((elOpenResorts) => {
+      //     elOpenResorts.classList.add('sno-hide');
+      //   }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
+      // }
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   
   };
