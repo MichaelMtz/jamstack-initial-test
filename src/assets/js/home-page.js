@@ -89,7 +89,13 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    const homePageImages =  ['daniel-dvorsky-PFbDoh58U64-unsplash.jpg', 'andhika-soreng-US06QF_sxu8-unsplash.jpg'];
+    const homePageImages =  [
+      'Gondola-1600x1067.jpg', 
+      'alex-lange-Ca9u0f1nDt0-unsplash.jpg',
+      'glade-optics-ttGLlNElbCc-unsplash.jpg',
+      'bradley-king-3m6vbzY69s4-unsplash.jpg',
+      'luka-senica-G4cwmnaGLRg-unsplash.jpg',
+      'powder-skier-slashing-alaska.jpg'];
     const randomIndex = random(0,2);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
