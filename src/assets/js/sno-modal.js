@@ -24,7 +24,7 @@ const setupModalDisplay = () => {
   
   const saveUser =  (form) => {
     
-    const url = 'http://feeds.snocountry.net/proof-of-concept/ping.php';
+    const url = 'https://feeds.snocountry.net/proof-of-concept/ping.php';
     //url = 'http://localhost/zdevelop/templates/modals/ping-sno.php';
     const data = form;
     //   firstName : formData.firstName
