@@ -59,7 +59,7 @@ const setupModalDisplay = () => {
       //} 
       setTimeout(()=> {
         closeModal();
-      },3500);
+      },6000);
       
     }).catch( (e) => { console.error('Error waiting for ping :',e);});
     
