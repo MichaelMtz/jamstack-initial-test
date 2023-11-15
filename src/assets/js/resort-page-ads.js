@@ -149,12 +149,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },914004:{
       ads: [{
-        img: 'MtPeter-2022-728x90-Ad.jpg',
+        img: 'MtPeter-SnoCountryDigitalAd-2023-11-15.gif',
         href:"https://www.mtpeter.com/sc/",
         width:728, 
         height:90,
         alt: 'Mt. Peter NY',
-        position:'both'
+        position:'both',
+        start_date: '2023-12-10',
+        end_date: '2024-03-22'
       }]
     },518007:{
       ads: [{
@@ -396,20 +398,29 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },909001: {
       ads: [{
-        img: 'Big-Bear.jpg',
-        href:"https://www.bigbearmountainresort.com/ski-and-snowboard/season-passes?utm_source=snowcountry&utm_medium=email&utm_campaign=BBMR_spring_pass_sale&utm_id=23_24_sps&utm_content=snowcountry",
+        img: 'Big-Bear-2023-11-15.jpg',
+        href:"https://www.bigbearmountainresort.com/?utm_source=snowcountry&utm_medium=email&utm_content=snowcountry",
+        width:728, 
+        height:90,
+        alt: 'Snow Summit CA', 
+        position: 'both'
+      }]
+    },909002: {
+      ads: [{
+        img: 'Big-Bear-2023-11-15.jpg',
+        href:"https://www.bigbearmountainresort.com/?utm_source=snowcountry&utm_medium=email&utm_content=snowcountry",
         width:728, 
         height:90,
         alt: 'Big Bear CA', 
         position: 'both'
       }]
-    },909002: {
+    },909005: {
       ads: [{
-        img: 'Big-Bear.jpg',
-        href:"https://www.bigbearmountainresort.com/ski-and-snowboard/season-passes?utm_source=snowcountry&utm_medium=email&utm_campaign=BBMR_spring_pass_sale&utm_id=23_24_sps&utm_content=snowcountry",
+        img: 'Big-Bear-2023-11-15.jpg',
+        href:"https://www.bigbearmountainresort.com/?utm_source=snowcountry&utm_medium=email&utm_content=snowcountry",
         width:728, 
         height:90,
-        alt: 'Big Bear CA', 
+        alt: 'Snow Valley CA', 
         position: 'both'
       }]
     },619006: {
