@@ -154,7 +154,16 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Mt. Peter NY',
-        position:'both',
+        position:'top',
+        start_date: '2023-12-10',
+        end_date: '2024-03-22'
+      }, {
+        img: 'MtPeter-SnoCountryDigitalAd-2023-11-15.gif',
+        href:"https://www.mtpeter.com/sc/",
+        width:728, 
+        height:90,
+        alt: 'Mt. Peter NY',
+        position:'bottom',
         start_date: '2023-12-10',
         end_date: '2024-03-22'
       }]
@@ -371,12 +380,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603019:{
       ads: [{
-        img: 'Ragged-Mountain-728x90.png',
-        href:"https://www.raggedmountainresort.com/Season-Passes/ ",
+        img: 'Ragged-Mountain-2023-12-01-728x90.png',
+        href:"https://www.raggedmountainresort.com/4-packs/ ",
         width:728, 
         height:90,
         alt: 'Ragged Mountain NH', 
-        position: 'both'
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2023-12-18'
       }]
     }, 801008:{
       ads: [{
@@ -431,6 +442,28 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Mountain High CA', 
         position: 'both'
+      }]
+    }, 413006: {
+      ads: [{
+        img: 'Jiminy-2023-12-01-728x90px-3.jpg',
+        href:"https://www.jiminypeak.com/",
+        width:728, 
+        height:90,
+        alt: 'Jiminy Peak MA', 
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-04-07'
+      }]
+    }, 603013: {
+      ads: [{
+        img: 'Tenney-2023-12-01-728x90.png',
+        href:"https://www.skitenney.com",
+        width:728, 
+        height:90,
+        alt: 'Tenney NH', 
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-04-07'
       }]
     }
     
