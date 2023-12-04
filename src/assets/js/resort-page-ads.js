@@ -1,7 +1,8 @@
 // Note: Do not need to declare _log, waitForElement, because it is included in snowreport.js.  But this needs included after snowreport.js.
 _log('resort-page-ads Initialized...');
 
-const checkForAd = () => {
+const checkForGeneralAd = () => {
+  return;;
   const targetList = [
     "maine", "massachusetts", "new-hampshire", "rhode-island","vermont", "quebec"
   ];
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         href:"https://www.skicooper.com/cooper-day-pass/",
         width:728, 
         height:90,
-        alt: 'Ski Cooper',
+        alt: 'Ski Cooper, CO',
         position:'both'
       }]
     }, 603005 : {
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         href:"https://www.brettonwoods.com/?utm_source=snocountry&utm_medium=banner&utm_campaign=prospecting-brettonwoods-leisure-2021_2022",
         width:728, 
         height:90,
-        alt: 'Bretton Woods',
+        alt: 'Bretton Woods, NH',
         position: 'both'
       }]
     }, 616006 : {
@@ -105,19 +106,23 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
+        img: 'Jackson-Hole-2024-12-02-728x90.jpg',
+        href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+        width:728, 
+        height:90,
+        alt: 'Jackson Hole',
+        position:'top',
+        start_date: '2023-12-02',
+        end_date: '2024-04-14'
+      },{
         img: 'Jackson-Hole-2023-10-16-728x90.jpg',
         href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
         width:728, 
         height:90,
         alt: 'Jackson Hole',
-        position:'top'
-      },{
-        img: 'Jackson-Hole-2023-10-16-320x50.jpg',
-        href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
-        width:300, 
-        height:50,
-        alt: 'Jackson Hole',
-        position:'bottom'
+        position:'bottom',
+        start_date: '2023-10-16',
+        end_date: '2023-12-31'
       }]
       
     },802009:{
@@ -414,7 +419,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Snow Summit CA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-01-11'
       }]
     },909002: {
       ads: [{
@@ -423,7 +430,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Big Bear CA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-01-11'
       }]
     },909005: {
       ads: [{
@@ -432,7 +441,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Snow Valley CA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-01-11'
       }]
     },619006: {
       ads: [{
@@ -465,6 +476,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2023-12-01',
         end_date: '2024-04-07'
       }]
+    }, 802021: {
+      ads: [{
+        img: 'Saskadena-Six-2023-12-04.gif',
+        href:"https://www.saskadenasix.com/winter/skiing-snowboarding?utm_source=SnoCountry&utm_medium=Banner&utm_campaign=S6",
+        width:728, 
+        height:90,
+        alt: 'Saskadena Six VT', 
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-03-24'
+      }]
     }
     
   };
@@ -493,7 +515,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     });
 
   } else {
-    checkForAd();
+    checkForGeneralAd();
   }
 
   if (resort_id === '209005') {

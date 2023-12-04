@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           createHighlightResortsSection(elHomepageHighlightResorts,data, 'snowfall','#top-snowfall');
         }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
       } 
-      getOpenResorts();
+      //getOpenResorts();
       // if (fetchOpenResorts) {
       //   getOpenResorts();
       // } else {
