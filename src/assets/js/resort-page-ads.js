@@ -48,23 +48,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 616006 : {
       ads: [{
-        img: '728x90_Crystal_22688_WMTASki&Stay_v1.jpg',
-        href:"https://www.crystalmountain.com/your-visit/specials-packages/hot-dates/",
+        img: 'Crystal-2023-12-08-Hurry-728x90.jpg',
+        href:"https://www.crystalmountain.com/ski/slopes/",
         width:728, 
         height:90,
         alt: 'Crystal Mountain MI',
-        position: 'top',
-        start_date: '2023-01-02',
-        end_date: '2023-03-10'
-      },{
-        img: '728x90_Crystal_22700_OnlineLiftTickets.jpg',
-        href:"https://www.crystalmountain.com/ski/lift-tickets/",
-        width:728, 
-        height:90,
-        alt: 'Crystal Mountain MI',
-        position: 'bottom',
-        start_date: '2023-01-02',
-        end_date: '2023-04-01'
+        position: 'both',
+        start_date: '2023-12-08',
+        end_date: '2024-04-01'
       }]
     }, 603009 : {
       ads: [{
