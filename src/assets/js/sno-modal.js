@@ -101,7 +101,7 @@ const setupModalDisplay = () => {
         firstName : 'Michael',
         lastName : 'Martinez',
         email : 'test@email.com',
-        state : 'NM',
+        state : '',
         uuid: window.snoUser.uuid
       }
     };
@@ -133,6 +133,7 @@ const setupModalDisplay = () => {
           break;
       }
     });
+    form.data.state = document.querySelector('#sno-modal select').value ; 
     form.status = formStatus;
     return form;
   };
