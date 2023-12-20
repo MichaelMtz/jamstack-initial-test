@@ -164,23 +164,23 @@ const checkUser = () => {
       const now = new Date();
       if (now.getTime() > user.redisplayDate) {
         user.displayModal = true;
-        const threeWeeks = new Date(now);
-        threeWeeks.setDate(threeWeeks.getDate() + 21);
-        user.redisplayDate = threeWeeks.getTime();
+        const twoWeeks = new Date(now);
+        twoWeeks.setDate(twoWeeks.getDate() + 14);
+        user.redisplayDate = twoWeeks.getTime();
         localStorage.setItem('sno-user', JSON.stringify(user));
       }
     }
     console.info('** user exists:',user);
   } else {
     const now = new Date();
-    const threeWeeks = new Date(now);
-    threeWeeks.setDate(threeWeeks.getDate() + 21);
+    const twoWeeks = new Date(now);
+    twoWeeks.setDate(twoWeeks.getDate() + 14);
     
     user = {
       uuid: crypto.randomUUID(),
       displayModal: true,
       subscribed: false,
-      redisplayDate: threeWeeks.getTime()
+      redisplayDate: twoWeeks.getTime()
     };
     localStorage.setItem('sno-user', JSON.stringify(user));
   }
@@ -189,7 +189,7 @@ const checkUser = () => {
 };
 
 const checkPage = () => {
-  const validPagesRegex = /\/snow-report\/(colorado|maine|vermont|new-hampshire|california\/)/;
+  const validPagesRegex = /\/snow-report\/(colorado|maine|vermont|new-hampshire|california|new-mexico|utah|washington|pennsylvania|new-york|north-carolina\/)/;
   return location.pathname.match(validPagesRegex) ? true : false;
 };
 
