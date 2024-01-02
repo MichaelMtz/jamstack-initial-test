@@ -201,6 +201,10 @@ ul.feature-boxes li.pepsi-box .fly-box {
   height: 78px;
   margin-bottom: unset;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-snowbird {
+  height: 77px;
+  margin-bottom: unset;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;
@@ -315,7 +319,6 @@ ul.feature-boxes li.pepsi-box .fly-box {
   }
   .mobile-stories div.state-list {
     background: rgba(247, 254, 253, 0.3) none repeat scroll 0 0;
-    background: rgba(49, 135, 197, 0.72) none repeat scroll 0 0;
     padding: 9px;
     border-radius: 5px;
   }
