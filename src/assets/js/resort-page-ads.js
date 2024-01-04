@@ -438,8 +438,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },619006: {
       ads: [{
-        img: 'Mountain-High.jpg',
-        href:"https://www.thecalipass.com/ ",
+        img: 'Mountain-High-2024-01-03-728x90.jpg',
+        href:"https://www.mthigh.com/site",
         width:728, 
         height:90,
         alt: 'Mountain High CA', 
@@ -478,6 +478,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2023-12-01',
         end_date: '2024-03-24'
       }]
+    }, 303022: {
+      ads: [{
+        img: 'Telluride-2024-01-04-Pepsi.png',
+        href:"https://tellurideskiresort.com/",
+        width:728, 
+        height:90,
+        alt: 'Telluride CO', 
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-03-24'
+      }]
+      
     }
     
   };
@@ -509,7 +521,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForGeneralAd();
   }
 
-  if (resort_id === '505099') {
+  if (resort_id === '303022') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -517,18 +529,18 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-china-peak" src="assets/images/ads/pepsi/snowbird/Snowbird-logo.png" alt="China Peak Resort">
+                        <img class="logo-telluride" src="assets/images/ads/pepsi/telluride/TSR_bold-100.png" alt="Telluride Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
-                    <!--
+                    
                     <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/x.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/2024-01-03-Telluride-ROTW.mp3" type="audio/mpeg">
                     </audio>
-                    -->
+                    
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/MF81UjUs4Ew??autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="telluride" width="640" height="360" src="https://www.youtube.com/embed/DHbpb4O0Ygg?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
         
