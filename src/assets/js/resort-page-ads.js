@@ -105,15 +105,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         position:'top',
         start_date: '2023-12-02',
         end_date: '2024-04-14'
-      },{
-        img: 'Jackson-Hole-2023-10-16-728x90.jpg',
-        href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
-        width:728, 
-        height:90,
-        alt: 'Jackson Hole',
-        position:'bottom',
-        start_date: '2023-10-16',
-        end_date: '2023-12-31'
       }]
       
     },802009:{
@@ -123,15 +114,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Magic Mountain',
-        position:'both'
-      }]
-    },703003:{
-      ads: [{
-        img: 'Massanutten-2023-08-03-728x90.jpg',
-        href:"https://www.massresort.com/play/snow-sports/season-passes/?utm_source=SnoCountry&utm_medium=banner&utm_campaign=ski-season-pass",
-        width:728, 
-        height:90,
-        alt: 'Massanutten New High Speed Lift',
         position:'both'
       }]
     },603015:{
@@ -374,17 +356,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Seven Springs PA', 
         position: 'both'
       }]
-    }, 603019:{
-      ads: [{
-        img: 'Ragged-Mountain-2023-12-01-728x90.png',
-        href:"https://www.raggedmountainresort.com/4-packs/ ",
-        width:728, 
-        height:90,
-        alt: 'Ragged Mountain NH', 
-        position: 'both',
-        start_date: '2023-12-01',
-        end_date: '2023-12-18'
-      }]
     }, 801008:{
       ads: [{
         img: 'PowderMountain_ad_snocountry_728x90.jpg',
@@ -402,39 +373,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Okemo Mountain VT', 
         position: 'both'
-      }]
-    },909001: {
-      ads: [{
-        img: 'Big-Bear-2023-11-15.jpg',
-        href:"https://www.bigbearmountainresort.com/?utm_source=snowcountry&utm_medium=email&utm_content=snowcountry",
-        width:728, 
-        height:90,
-        alt: 'Snow Summit CA', 
-        position: 'both',
-        start_date: '2023-12-01',
-        end_date: '2024-01-11'
-      }]
-    },909002: {
-      ads: [{
-        img: 'Big-Bear-2023-11-15.jpg',
-        href:"https://www.bigbearmountainresort.com/?utm_source=snowcountry&utm_medium=email&utm_content=snowcountry",
-        width:728, 
-        height:90,
-        alt: 'Big Bear CA', 
-        position: 'both',
-        start_date: '2023-12-01',
-        end_date: '2024-01-11'
-      }]
-    },909005: {
-      ads: [{
-        img: 'Big-Bear-2023-11-15.jpg',
-        href:"https://www.bigbearmountainresort.com/?utm_source=snowcountry&utm_medium=email&utm_content=snowcountry",
-        width:728, 
-        height:90,
-        alt: 'Snow Valley CA', 
-        position: 'both',
-        start_date: '2023-12-01',
-        end_date: '2024-01-11'
       }]
     },619006: {
       ads: [{
