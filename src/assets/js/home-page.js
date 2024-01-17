@@ -89,23 +89,19 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    let homePageImages =  [
+    const homePageImages =  [
       'Gondola-1600x1067.jpg', 
       'alex-lange-Ca9u0f1nDt0-unsplash.jpg',
       'glade-optics-ttGLlNElbCc-unsplash.jpg',
       'bradley-king-3m6vbzY69s4-unsplash.jpg',
       'luka-senica-G4cwmnaGLRg-unsplash.jpg',
       'powder-skier-slashing-alaska.jpg'];
-    homePageImages = [
-      'Telluride-chair.jpg',
-      'Telluride-powder.jpg',
-      'Telluride-view.jpg'
-    ]; 
-    const randomIndex = random(0,3);
+    
+    const randomIndex = random(0,6);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
-    //elMainSlider.style.backgroundImage = `url("assets/images/homepage/${selectedImage}")`;
-    elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/telluride/${selectedImage}")`;
+    elMainSlider.style.backgroundImage = `url("assets/images/homepage/${selectedImage}")`;
+    //elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/telluride/${selectedImage}")`;
   }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
   
 };
