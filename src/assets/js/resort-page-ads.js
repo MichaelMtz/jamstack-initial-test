@@ -59,12 +59,24 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603009 : {
       ads: [{
-        img: 'Gunstock-SnowCountry3-728x90_YayWinter.jpg',
-        href:"https://www.gunstock.com/on-snow/tickets-passes/?utm_source=snocountry&utm_medium=ad&utm_campaign=chill&utm_id=tickets",
+        img: '2024-Gunstock-SC-728x90.jpg',
+        href:"https://www.gunstock.com/winter/tickets-passes/",
         width:728, 
         height:90,
         alt: 'Gunstock',
-        position: 'both'
+        position: 'top',
+        start_date: '2024-01-08',
+        end_date: '2024-04-01'
+      },{
+        
+        img: '2024-Gunstock-RV-700x100.jpg',
+        href:"https://www.gunstock.com/winter/tickets-passes/",
+        width:728, 
+        height:90,
+        alt: 'Gunstock',
+        position: 'bottom',
+        start_date: '2024-01-08',
+        end_date: '2024-04-01'
       }]
     },715002:{
       ads: [{
@@ -97,7 +109,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: 'Jackson-Hole-2024-12-02-728x90.jpg',
+        img: '2024-JacksonHole-728x90.jpg',
         href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
         width:728, 
         height:90,
@@ -284,7 +296,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307002:{
       ads: [{
-        img: 'Grand-Targhee.png',
+        img: '2024-Grand-Targhee-728x90.png',
         href:"https://www.grandtarghee.com/",
         width:728, 
         height:90,
@@ -405,6 +417,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2023-12-01',
         end_date: '2024-04-07'
       }]
+    }, 603018: {
+      ads: [{
+        img: '2024-Pats-Peak.jpg',
+        href:"https://www.patspeak.com/the-mountain/mountain-info/snow-report/",
+        width:728, 
+        height:90,
+        alt: 'Pats Peak NH', 
+        position: 'both',
+        start_date: '2023-12-01',
+        end_date: '2024-04-07'
+      }]
     }, 802021: {
       ads: [{
         img: 'Saskadena-Six-2023-12-04.gif',
@@ -428,6 +451,62 @@ document.addEventListener('DOMContentLoaded',()=> {
         end_date: '2024-03-24'
       }]
       
+    }, 303001: {
+      ads: [{
+        img: '2024-Abasin-LFAR_LiftTicket_640x100.jpg',
+        href:"https://www.arapahoebasin.com/tickets-and-passes/?utm_source=Banner+Ad&utm_medium=banner&utm_campaign=Lift+Tickets+&utm_id=SnoCountry",
+        width:640, 
+        height:100,
+        alt: 'Arapahoe Basin CO', 
+        position: 'both',
+        start_date: '2024-01-08',
+        end_date: '2024-04-24'
+      }]
+      
+    }, 703003: {
+      ads: [{
+        img: 'Massanutten-2023-08-03-728x90.jpg',
+        href:"https://www.massresort.com/play/snow-sports/season-passes/?utm_source=SnoCountry&utm_medium=banner&utm_campaign=ski-season-pass",
+        width:640, 
+        height:100,
+        alt: 'Massanutten VA', 
+        position: 'both',
+        start_date: '2024-01-08',
+        end_date: '2024-04-24'
+      }]
+    }, 909002: {
+      ads: [{
+        img: '2024-BigBearMountainResort-728x90.jpg',
+        href:"https://www.bigbearmountainresort.com/deals-and-discounts/triple-pack?utm_source=SnoCountry&utm_medium=Banner&utm_campaign=Triple-Pack-Promo&utm_id=Triple-Pack",
+        width:640, 
+        height:100,
+        alt: 'Big Bear Mountain Resort CA', 
+        position: 'both',
+        start_date: '2024-01-16',
+        end_date: '2024-02-27'
+      }]
+    }, 909001: {
+      ads: [{
+        img: '2024-BigBearMountainResort-728x90.jpg',
+        href:"https://www.bigbearmountainresort.com/deals-and-discounts/triple-pack?utm_source=SnoCountry&utm_medium=Banner&utm_campaign=Triple-Pack-Promo&utm_id=Triple-Pack",
+        width:640, 
+        height:100,
+        alt: 'Snow Summit Resort CA', 
+        position: 'both',
+        start_date: '2024-01-16',
+        end_date: '2024-02-27'
+      }]
+    }, 909005: {
+      ads: [{
+        img: '2024-SnowValley.jpg',
+        href:"https://www.bigbearmountainresort.com/deals-and-discounts/triple-pack?utm_source=SnoCountry&utm_medium=Banner&utm_campaign=Triple-Pack-Promo&utm_id=Triple-Pack",
+        width:640, 
+        height:100,
+        alt: 'Snow Valleu Resort CA', 
+        position: 'both',
+        start_date: '2024-01-16',
+        end_date: '2024-02-27'
+      }]
     }
     
   };
