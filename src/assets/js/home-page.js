@@ -332,8 +332,8 @@ document.addEventListener('DOMContentLoaded',()=> {
     _log('--getRecentStories: init');
     //const localURL = 'http://localhost/sno/snoCountryHeadless/snow-reports/home-page-stories.php';
     const localURL = 'https://www.snow-country.com/resorts/api-easy-blog-list.php';
-    const url = (window.location.hostname !== 'localhost') ? ".netlify/functions/home-recent-stories-api": localURL;
-    
+    let url = (window.location.hostname !== 'localhost') ? ".netlify/functions/home-recent-stories-api": localURL;
+    url = localURL;
     fetch(url).then(response => {      
       return response.json();
     }).then(data => {
