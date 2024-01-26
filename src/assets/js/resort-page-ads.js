@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603009 : {
       ads: [{
-        img: '2024-Gunstock-SC-728x90.jpg',
+        img: 'ROTWGunstockAd.png',
         href:"https://www.gunstock.com/winter/tickets-passes/",
         width:728, 
         height:90,
@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForGeneralAd();
   }
 
-  if (resort_id === '307002') {
+  if (resort_id === '603009') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -546,18 +546,18 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-abasin" src="assets/images/ads/pepsi/grand-targhee/Grand-Targhee-logo.png" alt="Grand Targhee Resort">
+                        <img class="logo-abasin" src="assets/images/ads/pepsi/gunstock/GUNSTOCK_PRIMARY_WINE_CAP-G-01.jpg" alt="Gunstock Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
                     <!--
                     <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/2024-01-03-Telluride-ROTW.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/01-25-Gunstock-ROTW.mp3" type="audio/mpeg">
                     </audio>
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/f_u3Hq1aYck?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/LZMuCyOFN0U?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                 </div>
             </div>    
 
