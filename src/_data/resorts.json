@@ -224,7 +224,7 @@
  ,{"entryType":"resort","resort_id":"999035168","stateName":"new-hampshire/franconia-village-ski-center/"}
  ,{"entryType":"resort","resort_id":"999431452","stateName":"new-hampshire/granite-gorge-nordic-center/"}
  ,{"entryType":"resort","resort_id":"999035167","stateName":"new-hampshire/great-glen-trails-outdoor-center/"}
- ,{"entryType":"resort","resort_id":"999032161","stateName":"new-hampshire/gunstock-cross-country-center/"}
+ ,{"entryType":"resort","resort_id":"999032161","stateName":"new-hampshire/gunstock-outdoor-center/"}
  ,{"entryType":"resort","resort_id":"603009","stateName":"new-hampshire/gunstock-mountain-resort/"}
  ,{"entryType":"resort","resort_id":"999038175","stateName":"new-hampshire/jackson-ski-touring-center/"}
  ,{"entryType":"resort","resort_id":"603011","stateName":"new-hampshire/king-pine-ski-area/"}
@@ -271,6 +271,7 @@
  ,{"entryType":"resort","resort_id":"914003","stateName":"new-york/holiday-mountain/"}
  ,{"entryType":"resort","resort_id":"716003","stateName":"new-york/holiday-valley/"}
  ,{"entryType":"resort","resort_id":"716010","stateName":"new-york/holimont/"}
+ ,{"entryType":"resort","resort_id":"716004","stateName":"new-york/hunt-hollow/"}
  ,{"entryType":"resort","resort_id":"518006","stateName":"new-york/hunter-mountain/"}
  ,{"entryType":"resort","resort_id":"716004","stateName":"new-york/kissing-bridge/"}
  ,{"entryType":"resort","resort_id":"607002","stateName":"new-york/labrador-mountain/"}
