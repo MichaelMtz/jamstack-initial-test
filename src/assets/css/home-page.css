@@ -212,6 +212,20 @@ ul.feature-boxes li.pepsi-box .fly-box {
 .pepsi .pepsi-content .pepsi-video {
   padding: 15px;
 }
+.pepsi .pepsi-content .pepsi-image {
+  padding: 15px 0px;
+  width: 640px;
+  height: 360px;
+}
+.pepsi .pepsi-content .pepsi-image a.flex {
+  display: flex;
+}
+.pepsi .pepsi-content .pepsi-image .img-small {
+  height: 320px;
+}
+.pepsi .pepsi-content .pepsi-image .p-r-10 {
+  padding-right: 10px;
+}
 .pepsi .pepsi-resort-link-container {
   display: flex;
   justify-content: space-between;

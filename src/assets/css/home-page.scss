@@ -210,6 +210,20 @@ ul.feature-boxes li.pepsi-box {
       padding:15px;
       
     }
+    .pepsi-image {
+      padding: 15px 0px;
+      width: 640px;
+      height: 360px;
+      a.flex {
+        display: flex;
+      }
+      .img-small {
+        height: 320px;
+      }
+      .p-r-10 {
+        padding-right:10px;
+      }
+    }
   }
   .pepsi-resort-link-container {
     display: flex;

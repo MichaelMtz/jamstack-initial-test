@@ -819,6 +819,9 @@
     width: 90%;
   }
 }
+.pepsi .pepsi-content .pepsi-image .img-small {
+  height: 360px;
+}
 .pepsi .pepsi-resort-link-container {
   display: flex;
   justify-content: space-evenly;
