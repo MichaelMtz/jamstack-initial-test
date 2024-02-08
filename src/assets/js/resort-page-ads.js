@@ -22,7 +22,20 @@ const checkForGeneralAd = () => {
     }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
   }
 };
-
+const checkAdDates = (iterResortAd) => {
+  let showAd = true;
+  if ((iterResortAd.start_date) && (iterResortAd.end_date)) {
+    const now = new Date();
+    const startDate = new Date(iterResortAd.start_date);
+    const endDate = new Date(iterResortAd.end_date + " 23:59:00");
+    _log(`checkForResortAds: st:${startDate} > now:${now} < end:${endDate}`);
+    if ((now < startDate) || (now > endDate)) {
+      showAd = false;
+    }
+  }
+  _log(`checkForResortAds-showAd: ${showAd}`);
+  return showAd;
+};
 document.addEventListener('DOMContentLoaded',()=> {
   _log('checkForResortAds');
 
@@ -511,26 +524,30 @@ document.addEventListener('DOMContentLoaded',()=> {
     
   };
   if (currentResortAds[resort_id]) {
-    _log('checkForResortAds: applying ad');
+    
     
     const resortAds = currentResortAds[resort_id].ads;
+
     resortAds.forEach((iterResortAd) => {
-      const html = `
-      <div class="resort-ad">
-        <a href="${iterResortAd.href}" target="_blank">
-          <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
-        </a>
-      </div>
-      `;
-      if ((iterResortAd.position === 'top') || (iterResortAd.position === 'both') ) {
-        waitForElement('#resort-name').then((elResortName) => {
-          elResortName.insertAdjacentHTML('beforebegin',html);
-        }).catch( () => { console.log('Error waiting for checkForResortAds:');});
-      }
-      if ((iterResortAd.position === 'bottom') || (iterResortAd.position === 'both') ) {
-        waitForElement('.footer-resort-ad .resort__container').then((elResortName) => {
-          elResortName.insertAdjacentHTML('afterbegin',html);
-        }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+      if (checkAdDates(iterResortAd)) {    
+        _log('checkForResortAds: applying ad');   
+        const html = `
+        <div class="resort-ad">
+          <a href="${iterResortAd.href}" target="_blank">
+            <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
+          </a>
+        </div>
+        `;
+        if ((iterResortAd.position === 'top') || (iterResortAd.position === 'both') ) {
+          waitForElement('#resort-name').then((elResortName) => {
+            elResortName.insertAdjacentHTML('beforebegin',html);
+          }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+        }
+        if ((iterResortAd.position === 'bottom') || (iterResortAd.position === 'both') ) {
+          waitForElement('.footer-resort-ad .resort__container').then((elResortName) => {
+            elResortName.insertAdjacentHTML('afterbegin',html);
+          }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+        }
       }
     });
 
@@ -600,11 +617,11 @@ document.addEventListener('DOMContentLoaded',()=> {
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
-                   <!--
+                   
                     <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/2024-02-01-Whitetail-ROTW.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/2024-02-09-Lee-Canyon-ROTW.mp3" type="audio/mpeg">
                     </audio>
-                    -->
+                    
                 </div>
                 <div class="pepsi-video">
                   <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/8v1EyswwZec?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
