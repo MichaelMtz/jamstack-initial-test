@@ -189,7 +189,7 @@ const checkUser = () => {
 };
 
 const checkPage = () => {
-  const validPagesRegex = /\/snow-report\/(colorado|maine|vermont|new-hampshire|california|new-mexico|utah|washington|pennsylvania|new-york|north-carolina\/)/;
+  const validPagesRegex = /\/snow-report\/(colorado|maine|vermont|new-hampshire|california|new-mexico|utah|washington|pennsylvania|new-york|north-carolina|montana|new-mexico|wyoming\/)/;
   return location.pathname.match(validPagesRegex) ? true : false;
 };
 
