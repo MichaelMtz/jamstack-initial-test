@@ -36,6 +36,11 @@ const checkAdDates = (iterResortAd) => {
   _log(`checkForResortAds-showAd: ${showAd}`);
   return showAd;
 };
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const randomPositions = () => {
+  const randomIndex = random(0,2);
+  return (randomIndex == 0) ? ['#resort-name','.footer-resort-ad .resort__container'] : ['.footer-resort-ad .resort__container','#resort-name'];
+};
 document.addEventListener('DOMContentLoaded',()=> {
   _log('checkForResortAds');
 
@@ -77,7 +82,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Gunstock',
-        position: 'top',
+        position: 'random',
         start_date: '2024-01-08',
         end_date: '2024-04-01'
       },{
@@ -87,7 +92,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Gunstock',
-        position: 'bottom',
+        position: 'random',
         start_date: '2024-01-08',
         end_date: '2024-04-01'
       }]
@@ -127,9 +132,27 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Jackson Hole',
-        position:'top',
+        position:'random',
         start_date: '2023-12-02',
         end_date: '2024-04-14'
+      },{
+        img: '2024-02-15-JacksonHole-AirCredit.jpg',
+        href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
+        width:728, 
+        height:90,
+        alt: 'Jackson Hole',
+        position:'random',
+        start_date: '2023-12-02',
+        end_date: '2024-03-31'        
+      },{
+        img: '2024-02-15-JacksonHole-Spring-Break.jpg',
+        href:"https://www.jacksonhole.com/best-spring-break-ever?utm_source=snocountry&utm_medium=display&utm_campaign=spring-break",
+        width:728, 
+        height:90,
+        alt: 'Jackson Hole',
+        position:'random',
+        start_date: '2023-12-02',
+        end_date: '2024-04-14'        
       }]
       
     },802009:{
@@ -157,7 +180,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Mt. Peter NY',
-        position:'top',
+        position:'random',
         start_date: '2023-12-10',
         end_date: '2024-03-22'
       }, {
@@ -166,7 +189,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Mt. Peter NY',
-        position:'bottom',
+        position:'random',
         start_date: '2023-12-10',
         end_date: '2024-03-22'
       }]
@@ -352,7 +375,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Mt Bachelor OR',
-        position: 'top',
+        position: 'random',
         start_date: '2023-01-02',
         end_date: '2023-03-10'
       },{
@@ -361,7 +384,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Mt Bachelor OR',
-        position: 'bottom',
+        position: 'random',
         start_date: '2023-01-02',
         end_date: '2023-04-01'
       }]
@@ -529,10 +552,23 @@ document.addEventListener('DOMContentLoaded',()=> {
     
     
     const resortAds = currentResortAds[resort_id].ads;
-
+    if(resortAds.length > 2) {
+      const randomIndex = random(0,resortAds.length);
+      resortAds.splice(randomIndex,1);
+    }
+    let randomAdPositions = [];
+    let first = true;
+    let adPosition = 0;
     resortAds.forEach((iterResortAd) => {
+      if ((iterResortAd.position == 'random') && (first)) {
+        first = false;
+        randomAdPositions = randomPositions();
+        _log('checkForResortAds: Random detected:');
+        console.log(randomAdPositions);
+      }
       if (checkAdDates(iterResortAd)) {    
         _log('checkForResortAds: applying ad');   
+        console.log(iterResortAd);
         const html = `
         <div class="resort-ad">
           <a href="${iterResortAd.href}" target="_blank">
@@ -540,6 +576,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           </a>
         </div>
         `;
+        
         if ((iterResortAd.position === 'top') || (iterResortAd.position === 'both') ) {
           waitForElement('#resort-name').then((elResortName) => {
             elResortName.insertAdjacentHTML('beforebegin',html);
@@ -549,6 +586,16 @@ document.addEventListener('DOMContentLoaded',()=> {
           waitForElement('.footer-resort-ad .resort__container').then((elResortName) => {
             elResortName.insertAdjacentHTML('afterbegin',html);
           }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+        }
+        
+        if (iterResortAd.position === 'random') {
+          const sel = randomAdPositions[adPosition];
+          _log(`checkForResortAds: Random sel:`);
+          console.log('sel:',sel);
+          waitForElement(sel).then((elResortName) => {
+            elResortName.insertAdjacentHTML('afterbegin',html);
+          }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+          adPosition++;
         }
       }
     });
