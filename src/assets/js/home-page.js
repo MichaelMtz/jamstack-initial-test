@@ -97,7 +97,7 @@ const configurePepsiBackgroundImages = () => {
       'luka-senica-G4cwmnaGLRg-unsplash.jpg',
       'powder-skier-slashing-alaska.jpg'];
     
-    const randomIndex = random(0,6);
+    const randomIndex = random(0,homePageImages.length);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
     elMainSlider.style.backgroundImage = `url("assets/images/homepage/${selectedImage}")`;

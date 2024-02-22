@@ -388,16 +388,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2023-01-02',
         end_date: '2023-04-01'
       }]
-    }, 303016:{
-      ads: [{
-        img: 'Powderhorn-Ad-728x90.png',
-        href:"https://www.powderhorn.com/",
-        width:728, 
-        height:90,
-        alt: 'Powderhorn CO', 
-        position: 'both'
-      }]
-    }, 814002:{
+    },  814002:{
       ads: [{
         img: 'Seven-Springs-resort-ad-728x90.jpg',
         href:"https://www.7springs.com/",
@@ -545,6 +536,39 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-01-16',
         end_date: '2024-02-27'
       }]
+    }, 406001: {
+      ads: [{
+        img: '2024-02-20-WMR-3030_728x90.jpg',
+        href:"https://skiwhitefish.com/specials-packages/",
+        width:728, 
+        height:90,
+        alt: 'Whitefish Mountain Resort MT', 
+        position: 'both',
+        start_date: '2024-02-20',
+        end_date: '2024-04-27'
+      }]
+    }, 303025 : {
+      ads: [{
+        img: '2024-02-18-WolfCreek-300x50.png',
+        href:"https://wolfcreekski.com/events-and-deals/",
+        width:300, 
+        height:50,
+        alt: 'Wolf Creek CO', 
+        position: 'both',
+        start_date: '2024-02-20',
+        end_date: '2024-04-27'
+      }]
+    }, 303016: {
+      ads: [{
+        img: '2024-02-20-Powderhorn.png',
+        href:"https://powderhorn.com/",
+        width:728, 
+        height:90,
+        alt: 'Powderhorn CO', 
+        position: 'both',
+        start_date: '2024-02-20',
+        end_date: '2024-04-27'
+      }]
     }
     
   };
@@ -604,7 +628,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForGeneralAd();
   }
 
-  if (resort_id === '717003') {
+  if (resort_id === '503004') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -612,18 +636,18 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/camelback/camelback-resort-logo.jpg" alt="Camelback Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/mtbachelor/503004logo.jpg" alt="Mt. Bachelor Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
                    
                     <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/2024-02-15-Camelback-ROTW.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/2024-02-22-MtBachelor-ROTW.mp3" type="audio/mpeg">
                     </audio>
                     
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/yYALHX0adPY?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/CS_0h8jtd_M?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
