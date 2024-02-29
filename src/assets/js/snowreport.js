@@ -214,10 +214,38 @@ const getSnowReport = () => {
   }).catch( () => { console.log('Error waiting for EL:');});
 };
 
-
+const createResortGeoSDL = () => {
+  const resort_id = document.body.dataset.snowreport;
+  const url = (window.location.hostname !== 'localhost') ? `https://feeds.snocountry.net/proof-of-concept/resort-geo.php?target=${resort_id}` : `http://localhost/sno/snoCountryHeadless/snow-reports/resort-geo.php?target=${resort_id}`;
+  // _log(`snowreport-api resort: ${url}`);
+  fetch(url).then(response => {
+    return response.json();
+  }).then(data => { 
+    const sdl = `
+    <script type="application/ld+json">
+    {"@context":"https://schema.org",
+    "@type":"SkiResort","name":"${data.resortName}",
+    "address":{"@type":"PostalAddress",
+    "addressCountry":"${data.country}",
+    "addressRegion":"${data.stateAbbr}",
+    "addressLocality":"${data.state}",
+    "streetAddress":"${data.address}"},
+    "url":"${window.location.href}",
+    "image":"https://www.snow-country.com/trail_maps/large_trail_maps/${data.id}.jpg",
+    "email":"mailto:${data.email}",
+    "telephone":"${data.phone}",
+    
+    "geo":{"@type":"GeoCoordinates","latitude":"${data.latitude}","longitude":"${data.longitude}"}}
+    </script>
+    `;
+    document.querySelector('head').insertAdjacentHTML('beforeend',sdl);
+  }).catch( () => { console.log('Error waiting for EL:');});
+  
+};
 
 document.addEventListener('DOMContentLoaded',()=> {
   getSnowReport();
   fixPageNavLinks();
   createCharts();
+  //createResortGeoSDL();
 });

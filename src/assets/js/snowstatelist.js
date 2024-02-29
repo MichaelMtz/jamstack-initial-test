@@ -112,7 +112,7 @@ const initializeFilters = () => {
 };
 
 const checkForAd = (target) => {
-  return;
+  
   const targetList = [
     "maine", "massachusetts", "new-hampshire", "rhode-island","vermont", "quebec"
   ];
@@ -160,6 +160,6 @@ document.addEventListener('DOMContentLoaded',()=> {
     initializeFilters();
   }).catch( () => { console.log('Error waiting for EL:');});
 
-  checkForAd(target);
+  //checkForAd(target);
 
 });

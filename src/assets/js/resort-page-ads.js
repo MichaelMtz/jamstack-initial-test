@@ -628,7 +628,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForGeneralAd();
   }
 
-  if (resort_id === '503004') {
+  if (resort_id === '303016') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -636,18 +636,18 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/mtbachelor/503004logo.jpg" alt="Mt. Bachelor Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/powderhorn/powderhorn-logo.jpg" alt="Powderhorn CO Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
                    
                     <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/2024-02-22-MtBachelor-ROTW.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/2024-02-29-Powderhorn-ROTW.mp3" type="audio/mpeg">
                     </audio>
                     
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/CS_0h8jtd_M?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/eorNy8HMLpM?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
@@ -659,6 +659,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         </div><!-- end pepsi --> 
       `;
       elTarget.insertAdjacentHTML('beforebegin',html);
+    }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+  } else {  //Skyview
+    waitForElement('#resort-name').then((elResortName) => {
+      const html = `
+     <div class="resort-ad">
+       <a href="${iterResortAd.href}" target="_blank">
+         <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
+       </a>
+     </div>
+     `;
+      elResortName.insertAdjacentHTML('beforebegin',html);
     }).catch( () => { console.log('Error waiting for checkForResortAds:');});
   }
   
