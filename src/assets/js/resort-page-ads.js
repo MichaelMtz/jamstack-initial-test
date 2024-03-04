@@ -415,14 +415,49 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Okemo Mountain VT', 
         position: 'both'
       }]
+    },209002: {
+      ads: [{
+        img: '2024-03-01-CaliPass-728x90.jpg',
+        href:"http://www.thecalipass.com",
+        width:728, 
+        height:90,
+        alt: 'Bear Valley Mountain Resort CA', 
+        position: 'both',
+        start_date: '2024-03-09',
+        end_date: '2024-04-30'
+      }]
+    },209003: {
+      ads: [{
+        img: '2024-03-01-CaliPass-728x90.jpg',
+        href:"http://www.thecalipass.com",
+        width:728, 
+        height:90,
+        alt: 'Dodge Ridge CA', 
+        position: 'both',
+        start_date: '2024-03-09',
+        end_date: '2024-04-30'
+      }]
+    },209005: {
+      ads: [{
+        img: '2024-03-01-CaliPass-728x90.jpg',
+        href:"http://www.thecalipass.com",
+        width:728, 
+        height:90,
+        alt: 'China Peak CA', 
+        position: 'both',
+        start_date: '2024-03-09',
+        end_date: '2024-04-30'
+      }]
     },619006: {
       ads: [{
-        img: 'Mountain-High-2024-01-03-728x90.jpg',
-        href:"https://www.mthigh.com/site",
+        img: '2024-03-01-CaliPass-728x90.jpg',
+        href:"http://www.thecalipass.com",
         width:728, 
         height:90,
         alt: 'Mountain High CA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2024-03-09',
+        end_date: '2024-04-30'
       }]
     }, 413006: {
       ads: [{
@@ -568,6 +603,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         position: 'both',
         start_date: '2024-02-20',
         end_date: '2024-04-27'
+      }]
+    }, 719002: {
+      ads: [{
+        img: '2024-03-Monarch-Wings-Pass.jpg',
+        href:"https://skimonarch.com/season-passes/",
+        width:600, 
+        height:388,
+        alt: 'Monarch Mountain CO', 
+        position: 'both',
+        start_date: '2024-02-20',
+        end_date: '2024-06-27'
       }]
     }
     
