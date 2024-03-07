@@ -615,6 +615,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-02-20',
         end_date: '2024-06-27'
       }]
+    }, 208002: {
+      ads: [{
+        img: '2024-03-BrundageBanner.png',
+        href:"https://brundage.com/",
+        width:600, 
+        height:388,
+        alt: 'Brundage ID ', 
+        position: 'both'
+      }]
     }
     
   };
@@ -674,7 +683,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForGeneralAd();
   }
 
-  if (resort_id === '303016') {
+  if (resort_id === '814002') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -682,18 +691,18 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/powderhorn/powderhorn-logo.jpg" alt="Powderhorn CO Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/seven-springs/Seven-Springs-Logo-BW.png" alt="Seven Springs PA Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
-                   
+                   <!--
                     <audio controls id="myaudio">
                        <source src="assets/audio/pepsi/2024-02-29-Powderhorn-ROTW.mp3" type="audio/mpeg">
                     </audio>
-                    
+                    -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/eorNy8HMLpM?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/3_hYylQTuGo?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
