@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   const currentResortAds = {
     719003 : {
       ads: [ {
-        img: '719003.jpg',
+        img: '2024-Cooper-Spring-728x90.jpg',
         href:"https://www.skicooper.com/cooper-day-pass/",
         width:728, 
         height:90,
@@ -63,6 +63,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Bretton Woods, NH',
         position: 'both'
+      }]
+    }, 603019 : {
+      ads: [{
+        img: '2024-Ragged-728x90.png',
+        href:"https://www.raggedmountainresort.com/season-passes/",
+        width:728, 
+        height:90,
+        alt: 'Ragged Mountain, NH',
+        position: 'both',
+        start_date: '2024-03-11',
+        end_date: '2024-04-08'
       }]
     }, 616006 : {
       ads: [{
@@ -683,7 +694,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForGeneralAd();
   }
 
-  if (resort_id === '814002') {
+  if (resort_id === '719003') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -691,18 +702,18 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/seven-springs/Seven-Springs-Logo-BW.png" alt="Seven Springs PA Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/ski-cooper/ski-cooper-logo.png" alt="Ski Cooper CO Ski Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
-                   <!--
+                   
                     <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/2024-02-29-Powderhorn-ROTW.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/2024-03-14-Ski-Cooper-ROTW.mp3" type="audio/mpeg">
                     </audio>
-                    -->
+                    
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/3_hYylQTuGo?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/6KnJvtgo_dQ?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
