@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },802013: {
       ads: [{
-        img: 'okemo-ad.jpg',
+        img: '2024-Okemo-728x90.jpg',
         href:"https://www.okemo.com/?utm_source=web&utm_medium=banner&utm_campaign=resort_of_the_week+&utm_id=snocountry2023",
         width:728, 
         height:90,
@@ -694,7 +694,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     checkForGeneralAd();
   }
 
-  if (resort_id === '719003') {
+  if (resort_id === '802013') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -702,18 +702,18 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/ski-cooper/ski-cooper-logo.png" alt="Ski Cooper CO Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/okemo/Okemo-2024-03.png" alt="Okemo Mountain Resort">
                         <img src="assets/images/ads/pepsi/pepsi-zero-sugar-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
                    
                     <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/2024-03-14-Ski-Cooper-ROTW.mp3" type="audio/mpeg">
+                       <source src="assets/audio/pepsi/22024-03-22-Okemo-ROTW.mp3" type="audio/mpeg">
                     </audio>
                     
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/6KnJvtgo_dQ?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/fiGlCCOD6WA?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
