@@ -220,21 +220,22 @@ const createResortGeoSDL = () => {
   // _log(`snowreport-api resort: ${url}`);
   fetch(url).then(response => {
     return response.json();
-  }).then(data => { 
+  }).then(geoData => { 
+    const data = geoData[0];
+    console.log('*** sdl:',data);
     const sdl = `
     <script type="application/ld+json">
     {"@context":"https://schema.org",
     "@type":"SkiResort","name":"${data.resortName}",
     "address":{"@type":"PostalAddress",
-    "addressCountry":"${data.country}",
-    "addressRegion":"${data.stateAbbr}",
+    "addressCountry":"${data.countryProper}",
+    "addressRegion":"${data.PhysState}",
     "addressLocality":"${data.state}",
-    "streetAddress":"${data.address}"},
+    "streetAddress":"${data.PhysStreet},${data.PhysCity}, ${data.PhysState} ${data.PhysZip}"},
     "url":"${window.location.href}",
     "image":"https://www.snow-country.com/trail_maps/large_trail_maps/${data.id}.jpg",
     "email":"mailto:${data.email}",
-    "telephone":"${data.phone}",
-    
+    "telephone":"${data.mainPhone}",
     "geo":{"@type":"GeoCoordinates","latitude":"${data.latitude}","longitude":"${data.longitude}"}}
     </script>
     `;
@@ -247,5 +248,5 @@ document.addEventListener('DOMContentLoaded',()=> {
   getSnowReport();
   fixPageNavLinks();
   createCharts();
-  //createResortGeoSDL();
+  createResortGeoSDL();
 });
