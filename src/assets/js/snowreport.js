@@ -194,7 +194,7 @@ const createCharts = () => {
   }).then(data => {
   
     console.log('--archiveData:',data);
-    waitForElement('#trailsChart-9').then(() => {
+    waitForElement('#trailsChart-10').then(() => {
       createSectionChart('baseDepthChart',data.BaseDepth, 'inches');
       createSectionChart('trailsChart',data.Trails, '# Open Trails');
     }).catch( (e) => { console.error('Error waiting for archive:',e);});
