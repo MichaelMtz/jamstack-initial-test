@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     $('#banner_carousel #customText').removeClass('hidden');
     $(thrive_carousel_loader).on('slideLoaded.ThriveCarousel', function(e, settings, newSlide, direction){
       $('.pano-loader').hide();
-      configurePepsiBackgroundImages();
+      //configurePepsiBackgroundImages();
       return true;
     });
     window.onload = function() {
