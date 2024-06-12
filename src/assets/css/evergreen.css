@@ -1,0 +1,172 @@
+body {
+  background-image: linear-gradient(90deg, #0097BE, #0071AC);
+  background-image: linear-gradient(45deg, #00a383, #00A331);
+  background-image: unset;
+  background-color: #fff;
+}
+
+.section.header {
+  background: linear-gradient(45deg, #00a383, #00A331);
+  background: linear-gradient(45deg, #00D6AB, #00a383);
+}
+
+footer .action {
+  background: linear-gradient(45deg, #00D6AB, #00a383);
+}
+
+.container-evergreen-main {
+  width: 100%;
+  margin-top: unset;
+  padding: 115px 0px 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 25px;
+}
+.container-evergreen-main .container-banner:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 115px;
+  width: 100%;
+  height: 280px;
+  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 163, 131, 0.15);
+  z-index: 0;
+}
+.container-evergreen-main .container-banner {
+  width: 100%;
+  background: url(../images/evergreen/evergreen-moose.png);
+  background: url(../images/evergreen/evergreen-goat.png);
+  background: url(../images/evergreen/evergreen-silhouette.png);
+  align-self: baseline;
+  display: grid;
+  place-items: center;
+}
+.container-evergreen-main .container-banner .banner-evergreen {
+  height: 280px;
+  display: grid;
+  place-items: center;
+}
+.container-evergreen-main .container-banner .banner-evergreen h1 {
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 7.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 60px;
+  color: white;
+}
+.container-evergreen-main section.evergreen {
+  align-self: center;
+}
+.container-evergreen-main section.evergreen p {
+  width: 69%;
+  margin: 0 auto;
+  color: #999;
+  font-size: 1.5rem;
+}
+.container-evergreen-main section.explanation {
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 25px;
+  text-align: center;
+}
+.container-evergreen-main section.explanation h2 {
+  color: #696969;
+  font-size: 3rem;
+}
+.container-evergreen-main section.posts {
+  padding: 40px 0px;
+}
+.container-evergreen-main section.posts .container-articles {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.container-evergreen-main section.posts .container-articles article {
+  position: relative;
+  flex: 0 1 400px;
+}
+.container-evergreen-main section.posts .container-articles article .item {
+  margin-bottom: 30px;
+}
+.container-evergreen-main section.posts .container-articles article .item figure.img-box {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+.container-evergreen-main section.posts .container-articles article .item figure.img-box img {
+  min-width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.container-evergreen-main section.posts .container-articles article .item figure.img-box .overlay {
+  position: absolute;
+  text-align: center;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 0%;
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.7s cubic-bezier(0.34, -0.13, 0.34, 1.1);
+  opacity: 0;
+  visibility: hidden;
+}
+.container-evergreen-main section.posts .container-articles article .item figure.img-box .overlay .inner-box {
+  position: relative;
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.container-evergreen-main section.posts .container-articles article .item figure.img-box .overlay .inner-box .content-box {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.container-evergreen-main section.posts .container-articles article .item div.content {
+  min-height: 160px;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 10px;
+  border: 1px solid #f4f4f4;
+  border-top: 0px;
+}
+.container-evergreen-main section.posts .container-articles article .item div.content .text.center {
+  text-align: center;
+}
+.container-evergreen-main section.posts .container-articles article .item div.content .text.center a {
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+}
+.container-evergreen-main section.posts .container-articles article .item div.content .text.center a h4 {
+  color: #696969;
+}
+.container-evergreen-main section.posts .container-articles article .item div.content .text.center p {
+  width: 100%;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #999;
+  line-height: 26px;
+  font-weight: 400;
+}
+.container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay {
+  height: 100%;
+  transition: 0.7s cubic-bezier(0.34, -0.13, 0.34, 1.1);
+  opacity: 1;
+  visibility: visible;
+}
+.container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay button {
+  border: 1px solid #0079c1;
+  border: unset;
+  color: #00a383;
+}
+.container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay button:hover {
+  color: white;
+  background-color: #00A383;
+}
+
+/*# sourceMappingURL=evergreen.css.map */
