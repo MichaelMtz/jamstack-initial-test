@@ -36,11 +36,17 @@ footer .action {
     background-color: rgba(0,163,131,0.15);
     z-index: 0;
   }
+  @include bpmaxw($mobile) {
+    .container-banner:before {
+      height:140px;
+    }
+  } 
   .container-banner {
     width:100%;
     background: url(../images/evergreen/evergreen-moose.png);
     background: url(../images/evergreen/evergreen-goat.png);
     background: url(../images/evergreen/evergreen-silhouette.png);
+    background-size: cover;
     align-self: baseline;
     display:grid;
     place-items: center;
@@ -59,6 +65,14 @@ footer .action {
         color: white;
       }
     }
+    @include bpmaxw($mobile) {
+      .banner-evergreen {
+        height: 140px;
+        h1 {
+          font-size: 4rem;
+        }
+      }
+    } 
   }
   section.evergreen {
     align-self: center;
@@ -179,6 +193,16 @@ footer .action {
           }
         }
       }
+      @include bpmaxw(454px) {
+        article {
+          flex: 0 1 85%;
+        }
+      }
     }
+  }
+}
+@include bpmaxw(1024px) {
+  .container-evergreen-main {
+    padding-top: 100px;
   }
 }
