@@ -9,7 +9,7 @@ const checkForGeneralAd = () => {
   const target = document.body.dataset.location;
   //if (targetList.includes(target)) {
     
-    const html = `
+  const html = `
     <div class="internal">
       <a href="https://www.upside.com/users/fuel-smartscript?af_xp=custom&pid=barrington_int&deep_link_value=promo&deep_link_sub1=radio&c=barrington_radio_skyview" target="_blank" >
         <img class="internal-desktop" src="assets/images/ads/upside/BMG-Skyview-Banners-728x90.png" alt="Upside" width="728" height="90"">
@@ -17,9 +17,9 @@ const checkForGeneralAd = () => {
       </a>
     </div>
     `;
-    waitForElement('#container-snow-reports .resort.right-col').then((elSnowReportContainer) => {
-      elSnowReportContainer.insertAdjacentHTML('afterbegin',html);
-    }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
+  waitForElement('#container-snow-reports .resort.right-col').then((elSnowReportContainer) => {
+    elSnowReportContainer.insertAdjacentHTML('afterbegin',html);
+  }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
   //}
 };
 const checkAdDates = (iterResortAd) => {
@@ -138,32 +138,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: '2024-JacksonHole-728x90.jpg',
-        href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+        img: '2024-06-24-JacksonHole-728x290.jpg',
+        href:"https://www.jacksonhole.com/summer-activities/via-ferrata?utm_source=snocountry&utm_medium=display&utm_campaign=via-ferrata",
         width:728, 
         height:90,
         alt: 'Jackson Hole',
-        position:'random',
-        start_date: '2023-12-02',
-        end_date: '2024-04-14'
-      },{
-        img: '2024-02-15-JacksonHole-AirCredit.jpg',
-        href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
-        width:728, 
-        height:90,
-        alt: 'Jackson Hole',
-        position:'random',
-        start_date: '2023-12-02',
-        end_date: '2024-03-31'        
-      },{
-        img: '2024-02-15-JacksonHole-Spring-Break.jpg',
-        href:"https://www.jacksonhole.com/best-spring-break-ever?utm_source=snocountry&utm_medium=display&utm_campaign=spring-break",
-        width:728, 
-        height:90,
-        alt: 'Jackson Hole',
-        position:'random',
-        start_date: '2023-12-02',
-        end_date: '2024-04-14'        
+        position:'both',
+        start_date: '2024-06-19',
+        end_date: '2024-10-06'
       }]
       
     },802009:{

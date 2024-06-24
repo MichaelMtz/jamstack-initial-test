@@ -35,7 +35,7 @@ footer .action {
 }
 @media screen and (max-width: 767px) {
   .container-evergreen-main .container-banner:before {
-    height: 140px;
+    height: 125px;
   }
 }
 .container-evergreen-main .container-banner {
