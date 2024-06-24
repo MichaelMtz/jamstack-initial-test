@@ -143,7 +143,16 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Jackson Hole',
-        position:'both',
+        position:'random',
+        start_date: '2024-06-19',
+        end_date: '2024-10-06'
+      },{
+        img: '2024-06-10-JacksonHoleTram-728x90.jpg',
+        href:"https://www.jacksonhole.com/summer-activities/summer-tram?utm_source=snocountry&utm_medium=display&utm_campaign=sightseeing",
+        width:728, 
+        height:90,
+        alt: 'Jackson Hole',
+        position:'random',
         start_date: '2024-06-19',
         end_date: '2024-10-06'
       }]
