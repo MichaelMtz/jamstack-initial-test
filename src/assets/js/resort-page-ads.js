@@ -372,23 +372,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 503004 : {
       ads: [{
-        img: 'MTB_Banner_728x90.jpg',
+        img: '2024-06-24-Bachelor-728x90.jpg',
         href:"https://www.mtbachelor.com/things-to-do/events/sunchaser-spring ",
         width:728, 
         height:90,
         alt: 'Mt Bachelor OR',
-        position: 'random',
-        start_date: '2023-01-02',
-        end_date: '2023-03-10'
-      },{
-        img: 'Mt-Bachelor-728x90.png',
-        href:"https://www.mtbachelor.com/plan-your-trip/tickets-passes/season-passes",
-        width:728, 
-        height:90,
-        alt: 'Mt Bachelor OR',
-        position: 'random',
-        start_date: '2023-01-02',
-        end_date: '2023-04-01'
+        position: 'both',
+        start_date: '2024-06-24',
+        end_date: '2024-09-30'
       }]
     },  814002:{
       ads: [{
