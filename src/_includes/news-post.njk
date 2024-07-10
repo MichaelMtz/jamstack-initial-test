@@ -23,7 +23,49 @@
         </script>
         <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://www.snocountry.com/","logo":"https://www.snocountry.com/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g"]}
         </script>
-        
+        <script type="application/ld+json">{
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "NewsArticle",
+                    "headline": "SnoNews Article Title",
+                    "image": {
+                        "@type": "ImageObject",
+                        "url": "URL for main image in article"
+                    },
+                    "datePublished": "2024-07-03T16:37:00",
+                    "dateModified": "date same format as above, ISO 8601 YYYY-MM-DDThh:mm:ss",
+                    "author": {
+                        "@type": "Person",
+                        "name": "First and Last name of author"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "SnoCountry",
+                        "url": "https://snocountry.com/",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://www.snocountry.com/images/snocountry_logo_v2.png"
+                        }
+                    },
+                    "mainEntityOfPage": "Article URL"
+                },
+                {
+                    "@type": "WebPage",
+                    "breadcrumb": {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "SnoNews",
+                                "item": "https://snocountry.com/news-post"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }</script>
         <link rel="stylesheet" href="/assets/font/mulish-font.css">
         <link rel="stylesheet" href="/assets/css/snocountry-base.css">
         <link rel="stylesheet" href="/assets/css/sno-core.css">
