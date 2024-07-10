@@ -224,12 +224,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },208008:{
       ads: [{
-        img: 'Schweitzer-LodgingAd-728x90-11-5-21.jpg',
-        href:"https://www.schweitzer.com/",
+        img: '2024-07-03-schweitzer-summer-728x90.jpg',
+        href:"https://bit.ly/3VTawv1",
         width:728, 
         height:90,
         alt: 'Schweitzer ID',
-        position:'both'
+        position:'both',
+        start_date: '2024-07-03',
+        end_date: '2024-09-01'
       }]
     },717016:{
       ads: [{
@@ -325,12 +327,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },303009:{
       ads: [{
-        img: 'SNOCOUNTRY-AD-COPPER.jpg',
-        href:"https://www.coppercolorado.com/plan-your-trip/season-passes/copper-season-pass-2022-23",
+        img: '2024-07-04-copper-snocountry-728x90.jpg',
+        href:"https://www.coppercolorado.com/plan-your-trip/season-passes/copper-season-pass-2024-25",
         width:728, 
         height:90,
         alt: 'Copper Mountain CO', 
-        position: 'both'
+        position: 'both',
+        start_date: '2024-07-02',
+        end_date: '2024-09-01'
       }]
     },307002:{
       ads: [{
@@ -566,14 +570,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 406001: {
       ads: [{
-        img: '2024-02-20-WMR-3030_728x90.jpg',
-        href:"https://skiwhitefish.com/specials-packages/",
+        img: '2024-07-02-Whitefish.gif',
+        href:"https://skiwhitefish.com/",
         width:728, 
         height:90,
         alt: 'Whitefish Mountain Resort MT', 
         position: 'both',
-        start_date: '2024-02-20',
-        end_date: '2024-04-27'
+        start_date: '2024-07-02',
+        end_date: '2024-11-01'
       }]
     }, 303025 : {
       ads: [{
