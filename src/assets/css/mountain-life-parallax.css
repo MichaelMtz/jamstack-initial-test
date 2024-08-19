@@ -44,10 +44,12 @@
 /**************************/
 @media screen and (max-width: 959px) and (min-width: 768px) {
   #parallax-snocountry .block, #parallax-snocountry .publisher {padding: 40px; width:620px;}
+  #parallax-snocountry h3 { letter-spacing: 2px;}
 }
 @media screen and (max-width: 767px) {
   #parallax-snocountry .block, #parallax-snocountry .publisher {padding: 30px; width:420px;}
   #parallax-snocountry h2 {font-size:30px;}
+  #parallax-snocountry h3 { letter-spacing: 2px;}
   #parallax-snocountry .block {padding: 30px;}
   #parallax-snocountry .parallax-one, #parallax-snocountry .parallax-two, #parallax-snocountry .parallax-three {padding-top:100px; padding-bottom:100px;}
 }
