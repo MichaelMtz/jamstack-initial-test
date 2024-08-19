@@ -11,7 +11,10 @@
 /**************************/
 #parallax-snocountry h1 {font-family:'Brandon Grotesque', sans-serif; font-size:24px; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;}
 #parallax-snocountry h2 {font-family:'Brandon Grotesque', sans-serif; font-size: clamp(1rem, 4.166vw, 5rem);letter-spacing:10px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.9; line-height: unset;}
-#parallax-snocountry h3 {font-family:'Brandon Grotesque', sans-serif; font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;}
+#parallax-snocountry h3 {font-family:'Brandon Grotesque', sans-serif; font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;
+  font-style: unset;
+  color: #373737 !important;
+}
 #parallax-snocountry p {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:15px; line-height:24px;}
 .first-character {font-weight:400; float: left; font-size: 84px; line-height: 64px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Source Sans Pro', sans-serif;}
 
