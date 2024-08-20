@@ -54,5 +54,5 @@
   #parallax-snocountry .parallax-one, #parallax-snocountry .parallax-two, #parallax-snocountry .parallax-three {padding-top:100px; padding-bottom:100px;}
 }
 @media screen and (max-width: 479px) {
-  #parallax-snocountry .block, #parallax-snocountry .publisher {padding: 30px 15px; width:290px;}
+  #parallax-snocountry .block, #parallax-snocountry .publisher {padding: 30px 15px; width:90%;}
 }
