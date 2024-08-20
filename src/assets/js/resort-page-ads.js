@@ -138,8 +138,35 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: '2024-06-24-JacksonHole-728x290.jpg',
-        href:"https://www.jacksonhole.com/summer-activities/via-ferrata?utm_source=snocountry&utm_medium=display&utm_campaign=via-ferrata",
+        img: '2024-08-20-Jackson-Hole-Early-Bird-728x90.jpg',
+        href:"https://www.jacksonhole.com/lift-tickets?utm_source=snocountry&utm_medium=display&utm_campaign=earlybird-sale",
+        width:728, 
+        height:90,
+        alt: 'Jackson Hole Early Bird Sale',
+        position:'random',
+        start_date: '2024-08-20',
+        end_date: '2024-09-30'
+      },{
+        img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
+        href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+        width:728, 
+        height:90,
+        alt: 'Jackson Hole Golden Ticket',
+        position:'random',
+        start_date: '2024-08-20',
+        end_date: '2025-04-13'
+      },{
+        img: '2024-08-06-Jackson-Hole-500off-728x90.jpg',
+        href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
+        width:728, 
+        height:90,
+        alt: 'Jackson Hole Flight Credit',
+        position:'random',
+        start_date: '2024-08-20',
+        end_date: '2024-09-30'
+      },{
+        img: '2024-06-10-JacksonHoleTram-728x90.jpg',
+        href:"https://www.jacksonhole.com/summer-activities/summer-tram?utm_source=snocountry&utm_medium=display&utm_campaign=sightseeing",
         width:728, 
         height:90,
         alt: 'Jackson Hole',
@@ -147,8 +174,8 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-06-19',
         end_date: '2024-10-06'
       },{
-        img: '2024-06-10-JacksonHoleTram-728x90.jpg',
-        href:"https://www.jacksonhole.com/summer-activities/summer-tram?utm_source=snocountry&utm_medium=display&utm_campaign=sightseeing",
+        img: '2024-06-24-JacksonHole-728x290.jpg',
+        href:"https://www.jacksonhole.com/summer-activities/via-ferrata?utm_source=snocountry&utm_medium=display&utm_campaign=via-ferrata",
         width:728, 
         height:90,
         alt: 'Jackson Hole',
@@ -244,7 +271,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },203005:{
       ads: [{
-        img: 'Ski-Sundown-2023-09-14-728x90.jpg',
+        img: '2024-08-01-Ski-Sundown-728x90.jpg',
         href:"https://www.skisundown.com/",
         width:728, 
         height:90,
@@ -619,6 +646,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:600, 
         height:388,
         alt: 'Brundage ID ', 
+        position: 'both'
+      }]
+    }, 802003: {
+      ads: [{
+        img: '2024-08-06-Bromley-728x90.jpg',
+        href:"https://www.bromley.com/",
+        width:728, 
+        height:90,
+        alt: 'Bromley VT ', 
         position: 'both'
       }]
     }
