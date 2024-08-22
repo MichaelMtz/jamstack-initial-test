@@ -8,6 +8,7 @@ body {
 .section.header {
   background: linear-gradient(45deg, #00a383, #00A331);
   background: linear-gradient(45deg, #00D6AB, #00a383);
+  position: unset;
 }
 
 footer .action {
@@ -17,7 +18,6 @@ footer .action {
 .container-evergreen-main {
   width: 100%;
   margin-top: unset;
-  padding: 115px 0px 0px;
   display: flex;
   flex-flow: column nowrap;
   gap: 25px;
@@ -79,6 +79,7 @@ footer .action {
   margin: 0 auto;
   color: #999;
   font-size: 1.5rem;
+  line-height: 1.4em;
 }
 .container-evergreen-main section.explanation {
   border-bottom: 1px solid #f4f4f4;
@@ -99,11 +100,14 @@ footer .action {
   gap: 15px;
 }
 .container-evergreen-main section.posts .container-articles article {
-  position: relative;
   flex: 0 1 400px;
+  position: relative;
 }
 .container-evergreen-main section.posts .container-articles article .item {
+  min-height: 535px;
+  height: auto;
   margin-bottom: 30px;
+  border: 1px solid #f4f4f4;
 }
 .container-evergreen-main section.posts .container-articles article .item figure.img-box {
   margin: 0;
@@ -113,6 +117,8 @@ footer .action {
 .container-evergreen-main section.posts .container-articles article .item figure.img-box img {
   min-width: 100%;
   max-width: 100%;
+  max-height: 260px;
+  height: 260px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -145,7 +151,6 @@ footer .action {
   position: relative;
   padding: 20px;
   padding-bottom: 10px;
-  border: 1px solid #f4f4f4;
   border-top: 0px;
 }
 .container-evergreen-main section.posts .container-articles article .item div.content .text.center {
@@ -156,15 +161,20 @@ footer .action {
   display: inline-block;
   outline: none;
 }
-.container-evergreen-main section.posts .container-articles article .item div.content .text.center a h4 {
-  color: #696969;
+.container-evergreen-main section.posts .container-articles article .item div.content .text.center a h3 {
+  font-size: 22px;
+  font-style: normal;
+  color: #696969 !important;
+}
+.container-evergreen-main section.posts .container-articles article .item div.content .text.center a.title-link:hover h3 {
+  color: #00a383 !important;
 }
 .container-evergreen-main section.posts .container-articles article .item div.content .text.center p {
   width: 100%;
   margin-bottom: 18px;
   font-size: 14px;
   color: #999;
-  line-height: 26px;
+  line-height: 1.3em;
   font-weight: 400;
 }
 .container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay {
@@ -172,6 +182,8 @@ footer .action {
   transition: 0.7s cubic-bezier(0.34, -0.13, 0.34, 1.1);
   opacity: 1;
   visibility: visible;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay button {
   border: 1px solid #0079c1;
@@ -181,6 +193,17 @@ footer .action {
 .container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay button:hover {
   color: white;
   background-color: #00A383;
+}
+.container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay .title-button {
+  border-radius: 5px;
+  padding: 7px 15px;
+  background-color: white;
+  color: #00a383;
+  text-transform: uppercase;
+}
+.container-evergreen-main section.posts .container-articles article .item:hover figure.img-box .overlay .title-button:hover {
+  background-color: #00a383;
+  color: white;
 }
 @media screen and (max-width: 454px) {
   .container-evergreen-main section.posts .container-articles article {

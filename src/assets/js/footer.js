@@ -103,4 +103,10 @@ document.addEventListener('DOMContentLoaded',()=> {
   }).catch((e) => { 
     console.error('Error waiting for getRecentStories fetch:',e);
   });
+  
+  waitForElement('#copyright-year').then((elCopyrightYear) => {
+    elCopyrightYear.innerHTML = new Date().getFullYear();
+  }).catch((e) => { 
+    console.error('Error setting Copyright year:',e);
+  });
 });

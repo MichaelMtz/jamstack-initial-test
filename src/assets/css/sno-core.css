@@ -61,6 +61,7 @@ footer .internal {
   background-position: 0 0;
   display: grid;
   place-items: center;
+  border-radius: 10px;
 }
 footer .internal .internal-desktop {
   display: none;
