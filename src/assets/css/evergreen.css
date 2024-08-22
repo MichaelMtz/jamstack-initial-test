@@ -29,8 +29,7 @@ footer .action {
   top: 115px;
   width: 100%;
   height: 280px;
-  background: rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 163, 131, 0.15);
+  height: 266px;
   z-index: 0;
 }
 @media screen and (max-width: 767px) {
@@ -63,12 +62,17 @@ footer .action {
   line-height: 60px;
   color: white;
 }
+@media screen and (max-width: 1320px) {
+  .container-evergreen-main .container-banner .banner-evergreen h1 {
+    font-size: clamp(3rem, 7vw, 7rem);
+  }
+}
 @media screen and (max-width: 767px) {
   .container-evergreen-main .container-banner .banner-evergreen {
     height: 140px;
   }
   .container-evergreen-main .container-banner .banner-evergreen h1 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 7vw, 5rem);
   }
 }
 .container-evergreen-main section.evergreen {
@@ -81,6 +85,11 @@ footer .action {
   font-size: 1.5rem;
   line-height: 1.4em;
 }
+@media screen and (max-width: 767px) {
+  .container-evergreen-main section.evergreen p {
+    font-size: 1.1rem;
+  }
+}
 .container-evergreen-main section.explanation {
   border-bottom: 1px solid #f4f4f4;
   padding-bottom: 25px;
@@ -90,10 +99,16 @@ footer .action {
   color: #696969;
   font-size: 3rem;
 }
+@media screen and (max-width: 1024px) {
+  .container-evergreen-main section.explanation h2 {
+    font-size: clamp(1rem, 10vw, 2.5rem);
+  }
+}
 .container-evergreen-main section.posts {
   padding: 40px 0px;
 }
 .container-evergreen-main section.posts .container-articles {
+  padding-inline: 25px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -107,7 +122,7 @@ footer .action {
   min-height: 535px;
   height: auto;
   margin-bottom: 30px;
-  border: 1px solid #f4f4f4;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .container-evergreen-main section.posts .container-articles article .item figure.img-box {
   margin: 0;
@@ -213,7 +228,7 @@ footer .action {
 
 @media screen and (max-width: 1024px) {
   .container-evergreen-main {
-    padding-top: 100px;
+    padding-top: 0px;
   }
 }
 
