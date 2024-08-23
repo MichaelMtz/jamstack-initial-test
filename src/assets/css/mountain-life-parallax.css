@@ -56,3 +56,12 @@
 @media screen and (max-width: 479px) {
   #parallax-snocountry .block, #parallax-snocountry .publisher {padding: 30px 15px; width:90%;}
 }
+@media (prefers-color-scheme: dark) {
+  #parallax-snocountry {
+    background-color: #333;
+    color: #eee;
+  }
+  #parallax-snocountry .block {
+    background: #333;
+  }
+}
