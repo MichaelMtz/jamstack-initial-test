@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           <div class="deals-desc"> 
               <!-- <a href="news-post/${iterPost.permalink}?postID=${iterPost.id}" class="button readbtn dealClick" > -->
               
-              <a href="news-post/?postID=${iterPost.id}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.eventTitle}" >
+              <a href="articles/${iterPost.eventTitle}/?postID=${iterPost.id}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.eventTitle}" >
               Read...
               </a>
           </div><!-- end desc -->
