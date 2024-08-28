@@ -142,7 +142,7 @@ const getPost = (postID) => {
 const createPostList = (elPostList, posts) => {
   const html = posts.map(iterPost => `      
     <div class="news-list-post">
-      <a href="articles/${iterPost.eventTitle}/?postID=${iterPost.id}">
+      <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}">
         <img src="${iterPost.image}">
         <div class="post-title">${iterPost.title}
         </div>

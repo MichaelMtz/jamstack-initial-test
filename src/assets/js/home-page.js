@@ -307,9 +307,7 @@ document.addEventListener('DOMContentLoaded',()=> {
               <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
           </div><!-- end deals-content -->
           <div class="deals-desc"> 
-              <!-- <a href="news-post/${iterPost.permalink}?postID=${iterPost.id}" class="button readbtn dealClick" > -->
-              
-              <a href="articles/${iterPost.eventTitle}/?postID=${iterPost.id}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.eventTitle}" >
+              <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.eventTitle}" >
               Read...
               </a>
           </div><!-- end desc -->
@@ -322,7 +320,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     _log('--createStoriesSectionMobile: init');
     const html = posts.map(iterPost => `      
     
-      <a href="news-post/?postID=${iterPost.id}" class="card" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+      <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}" class="card" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
           <div class="card-content">
               <h6 class="card-copy"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
           </div>
