@@ -269,10 +269,15 @@ div.ad-container-relative:hover{
     background-color: #EBF9FF;
 }
 
-
-
-
-
+div.ad-container-relative .mountain-life-ad {
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+div.ad-container-relative .mountain-life-ad:hover {
+    filter: brightness(1.1);
+    transform: scale(1.025);
+    transition: transform 250ms ease-out;
+}
 
 img.ad-large {
     width: 728px;

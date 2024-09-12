@@ -241,6 +241,7 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 }
 
 .topnav ul.navigation > li.dropped a:hover h2.admin-link{color:#FE523E!important;}
+.topnav ul.navigation > li.dropped a:hover h2.mountain-life-link{color:#00a383!important;}
 
 
 .topnav ul.navigation > li .menu-dropdown ul a:hover { 
@@ -288,6 +289,12 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 }
 .topnav ul.navigation > li.menu-admin:hover  { 
     color:red;
+}
+.topnav ul.navigation > li.menu-mountain-life:hover  { 
+		color:#00a383 !important;
+}
+.topnav ul.navigation > li.menu-mountain-life a:hover  { 
+		color:#00a383 !important;
 }
 
 #background-usa {
