@@ -84,7 +84,56 @@ const waitForElement = selector=>{
     observeSelector(selector, resolve, { once: true });
   });
 };
-
+const createNewsSDL = (post) => {
+  const publish = new Date(Date.parse(post.publish_up));
+  const publishISODate = publish.toISOString();
+  const sdlHTML = `
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "NewsArticle",
+                "headline": "${post.title}",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "${post.image}"
+                },
+                "datePublished": "${publishISODate}",
+                "dateModified": "${publishISODate}",
+                "author": {
+                    "@type": "Person",
+                    "name": "${post.author}"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "SnoCountry",
+                    "url": "https://snocountry.com/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.snocountry.com/images/snocountry_logo_v2.png"
+                    }
+                },
+                "mainEntityOfPage": "${location.href}"
+            },
+            {
+                "@type": "WebPage",
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "SnoNews",
+                            "item": "${location.href}"
+                        }
+                    ]
+                }
+            }
+        ]
+    }</script>
+  `;
+  document.head.insertAdjacentHTML('beforeend',sdlHTML);
+};
 const createPost = (elPost, post) => {
   const publish = new Date(Date.parse(post.publish_up));
   const params = JSON.parse(post.params);
