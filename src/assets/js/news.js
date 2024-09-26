@@ -166,6 +166,7 @@ const createPost = (elPost, post) => {
     post.intro = post.intro + post.content;
   }
   elPost.querySelector('.intro').innerHTML = mainImage + post.intro;
+  createNewsSDL(post);
 };
 const getPost = (postID) => {
   
