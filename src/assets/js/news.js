@@ -135,7 +135,7 @@ const createNewsSDL = (post) => {
   document.head.insertAdjacentHTML('beforeend',sdlHTML);
   const newsTitle = `SnoCountry News - ${post.title}`;
   document.querySelector('title').textContent = newsTitle;
-  document.querySelector("meta[property='og:desctitleription']").setAttribute('content', newsTitle);
+  document.querySelector("meta[property='og:title']").setAttribute('content', newsTitle);
 
   document.querySelector("meta[name='author']").setAttribute('content',post.author);
   document.querySelector("meta[name='rights']").setAttribute('content',`Copyright © ${new Date().getFullYear()}. All Rights Reserved.`);
