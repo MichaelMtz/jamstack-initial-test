@@ -85,7 +85,7 @@ const waitForElement = selector=>{
   });
 };
 const createNewsSDL = (post) => {
-  const publish = new Date(Date.parse(post.publish_up));
+  const publish = new Date(Date.parse(post.publish_up.replace(/-/g, '/')));
   const publishISODate = publish.toISOString();
   const sdlHTML = `
     <script type="application/ld+json">{
