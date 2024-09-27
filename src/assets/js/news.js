@@ -132,6 +132,7 @@ const createNewsSDL = (post) => {
         ]
     }</script>
   `;
+  document.title = `SnoCountry News - ${post.title}`;
   document.head.insertAdjacentHTML('beforeend',sdlHTML);
 };
 const createPost = (elPost, post) => {
