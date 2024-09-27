@@ -132,8 +132,24 @@ const createNewsSDL = (post) => {
         ]
     }</script>
   `;
-  document.title = `SnoCountry News - ${post.title}`;
   document.head.insertAdjacentHTML('beforeend',sdlHTML);
+  const newsTitle = `SnoCountry News - ${post.title}`;
+  document.querySelector('title').textContent = newsTitle;
+  document.querySelector("meta[property='og:desctitleription']").setAttribute('content', newsTitle);
+
+  document.querySelector("meta[name='author']").setAttribute('content',post.author);
+  document.querySelector("meta[name='rights']").setAttribute('content',`Copyright © ${new Date().getFullYear()}. All Rights Reserved.`);
+  
+  let metaDescription = JSON.parse(post.params);
+  // Remove the following format : (Image via Save Our Canyons Facebook)
+  const imageRemoveRegex = /\(Image.*\)/;  
+  metaDescription = metaDescription.image_cover_caption.replace(imageRemoveRegex,'');
+  document.querySelector("meta[name='description']").setAttribute('content',metaDescription);
+  document.querySelector("meta[property='og:description']").setAttribute('content',metaDescription);
+  document.querySelector("meta[property='og:url']").setAttribute('content',location.href);
+  
+
+  new Date().getFullYear();
 };
 const createPost = (elPost, post) => {
   const publish = new Date(Date.parse(post.publish_up));
