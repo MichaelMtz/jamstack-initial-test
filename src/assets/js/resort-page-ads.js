@@ -138,14 +138,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: '2024-08-20-Jackson-Hole-Early-Bird-728x90.jpg',
-        href:"https://www.jacksonhole.com/lift-tickets?utm_source=snocountry&utm_medium=display&utm_campaign=earlybird-sale",
+        img: '2024-10-1-Jackson-Hole-728x90.jpg',
+        href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
         width:728, 
         height:90,
-        alt: 'Jackson Hole Early Bird Sale',
+        alt: 'Jackson Hole 400 off air credit',
         position:'random',
-        start_date: '2024-08-20',
-        end_date: '2024-09-30'
+        start_date: '2024-10-01',
+        end_date: '2024-11-30'
       },{
         img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
         href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
