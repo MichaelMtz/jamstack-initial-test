@@ -111,27 +111,141 @@ const initializeFilters = () => {
   }).catch( () => { console.log('Error waiting for EL:');});
 };
 
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
 const checkForAd = (target) => {
   
   const targetList = [
-    "maine", "massachusetts", "new-hampshire", "rhode-island","vermont", "quebec"
+    "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
+    "wyoming", "colorado", 
+    "idaho", "montana", "oregon", 
   ];
   
-  //if (targetList.includes(target)) {
+  if (targetList.includes(target)) {
     
-    const html = `
-
-    <div class="internal">
-      <a href="https://www.upside.com/users/fuel-smartscript?af_xp=custom&pid=barrington_int&deep_link_value=promo&deep_link_sub1=radio&c=barrington_radio_skyview" target="_blank" >
-        <img class="internal-desktop" src="assets/images/ads/upside/BMG-Skyview-Banners-728x90.png" alt="Upside" width="728" height="90"">
-        <img class="internal-mobile" src="assets/images/ads/upside/BMG-Skyview-Banners-320x50.png" alt="Upside" width="320" height="50"">
-      </a>
-    </div>
-    `;
-    waitForElement('#container-snow-reports').then((elSnowReportContainer) => {
-      elSnowReportContainer.insertAdjacentHTML('beforebegin',html);
-    }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
-  //}
+    const currentResortAds = {
+      connecticut : {
+        ads: [{
+          img: '2024-08-01-Ski-Sundown-728x90.jpg',
+          href:"https://www.skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+        }]
+      },maine : {
+        ads: [{
+          img: '2024-08-01-Ski-Sundown-728x90.jpg',
+          href:"https://www.skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+        }]
+      },massachusetts : {
+        ads: [{
+          img: '2024-08-01-Ski-Sundown-728x90.jpg',
+          href:"https://www.skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+        }]
+      },"new-hampshire" : {
+        ads: [{
+          img: '2024-08-01-Ski-Sundown-728x90.jpg',
+          href:"https://www.skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+        }]
+      },"rhode-island" : {
+        ads: [{
+          img: '2024-08-01-Ski-Sundown-728x90.jpg',
+          href:"https://www.skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+        }]
+      },vermont : {
+        ads: [{
+          img: 'Stratton_11-26-21.jpg',
+          href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
+          width:728, 
+          height:90,
+          alt: 'Stratton Mountain VT', 
+          position: 'both'
+        }]
+      },idaho : {
+        ads: [{
+          img: '2024-07-03-schweitzer-summer-728x90.jpg',
+          href:"https://bit.ly/3VTawv1",
+          width:728, 
+          height:90,
+          alt: 'Schweitzer ID',
+        }]
+      },wyoming : {
+        ads: [{ 
+          img: '2024-10-1-Jackson-Hole-728x90.jpg',
+          href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
+          width:728, 
+          height:90,
+          alt: 'Jackson Hole 400 off air credit',
+          position:'random',
+          start_date: '2024-10-01',
+          end_date: '2024-11-30'
+        },{
+          img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
+          href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+          width:728, 
+          height:90,
+          alt: 'Jackson Hole Golden Ticket',
+          position:'random',
+          start_date: '2024-08-20',
+          end_date: '2025-04-13'
+        }]
+      }, colorado: {
+        ads:[{
+          img: '2024-07-04-copper-snocountry-728x90.jpg',
+          href:"https://www.coppercolorado.com/plan-your-trip/season-passes/copper-season-pass-2024-25",
+          width:728, 
+          height:90,
+          alt: 'Copper Mountain CO', 
+          position: 'both',
+          start_date: '2024-07-02',
+          end_date: '2024-09-01'
+        },{
+          img: '2024-02-18-WolfCreek-300x50.png',
+          href:"https://wolfcreekski.com/events-and-deals/",
+          width:300, 
+          height:50,
+          alt: 'Wolf Creek CO', 
+          position: 'both',
+          start_date: '2024-02-20',
+          end_date: '2024-04-27'
+        }
+          
+        ]
+      }
+      
+    };
+    
+    if (currentResortAds[target]) {
+      const resortAds = currentResortAds[target].ads;
+      if(resortAds.length > 1) {
+        const randomIndex = random(0,resortAds.length);
+        resortAds.splice(randomIndex,1);
+      }
+      const html = `
+  
+      <div class="internal">
+        <a href="${resortAds[0].href}" target="_blank" >
+          <img src="assets/images/resort-ads/${resortAds[0].img}" alt="${resortAds[0].alt}" width="${resortAds[0].width}" height="${resortAds[0].height}"">
+        </a>
+      </div>
+      `;
+      waitForElement('#container-snow-reports').then((elSnowReportContainer) => {
+        elSnowReportContainer.insertAdjacentHTML('beforebegin',html);
+      }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
+    }
+  }
 };
 document.addEventListener('DOMContentLoaded',()=> {
   const target = document.body.dataset.snowreport;
