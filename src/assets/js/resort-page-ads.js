@@ -156,15 +156,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-08-20',
         end_date: '2025-04-13'
       },{
-        img: '2024-08-06-Jackson-Hole-500off-728x90.jpg',
-        href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
-        width:728, 
-        height:90,
-        alt: 'Jackson Hole Flight Credit',
-        position:'random',
-        start_date: '2024-08-20',
-        end_date: '2024-09-30'
-      },{
         img: '2024-06-10-JacksonHoleTram-728x90.jpg',
         href:"https://www.jacksonhole.com/summer-activities/summer-tram?utm_source=snocountry&utm_medium=display&utm_campaign=sightseeing",
         width:728, 
