@@ -142,6 +142,13 @@ const checkForAd = (target) => {
         }]
       },massachusetts : {
         ads: [{
+          img: 'Stratton_11-26-21.jpg',
+          href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
+          width:728, 
+          height:90,
+          alt: 'Stratton Mountain VT', 
+          position: 'both'
+        },{
           img: '2024-08-01-Ski-Sundown-728x90.jpg',
           href:"https://www.skisundown.com/",
           width:728, 
@@ -220,9 +227,7 @@ const checkForAd = (target) => {
           position: 'both',
           start_date: '2024-02-20',
           end_date: '2024-04-27'
-        }
-          
-        ]
+        }]
       }
       
     };
