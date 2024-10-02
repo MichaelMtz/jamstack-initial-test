@@ -682,8 +682,10 @@ body {
   }
 }
 .resorts-container .resort.featuredResort {
+  max-width: 90%;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
   border: 1.5px solid #ffd700;
+  position: relative;
 }
 .resorts-container .resort.featuredResort .new-featuredResort-wrapping-container {
   display: flex;
@@ -695,7 +697,7 @@ body {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.resorts-container .resort.featuredResort .new-featuredResort-wrapping-container .drawer {
+.resorts-container .resort.featuredResort .drawer {
   padding: 20px 20px 0px;
   border-radius: 5px;
   background-color: #fff;
@@ -708,7 +710,7 @@ body {
   height: 56px;
   color: #6b7280;
 }
-.resorts-container .resort.featuredResort .new-featuredResort-wrapping-container .circle {
+.resorts-container .resort.featuredResort .circle {
   width: 0.675rem;
   height: 0.675rem;
   background-color: rgb(243, 244, 246);
