@@ -242,7 +242,7 @@ const checkForAd = (target) => {
   
       <div class="internal">
         <a href="${resortAds[0].href}" target="_blank" >
-          <img src="assets/images/resort-ads/${resortAds[0].img}" alt="${resortAds[0].alt}" width="${resortAds[0].width}" height="${resortAds[0].height}"">
+          <img class="adHighlight" src="assets/images/resort-ads/${resortAds[0].img}" alt="${resortAds[0].alt}" width="${resortAds[0].width}" height="${resortAds[0].height}"">
         </a>
       </div>
       `;

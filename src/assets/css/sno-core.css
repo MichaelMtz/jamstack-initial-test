@@ -38,6 +38,10 @@
 .conditions .internal .internal-mobile {
   display: inline;
 }
+.conditions .internal img.adHighlight {
+  border-radius: 10px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
 @media screen and (min-width: 734px) {
   .conditions .internal .internal-desktop {
     display: inline;

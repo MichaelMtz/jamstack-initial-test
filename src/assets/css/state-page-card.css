@@ -716,8 +716,8 @@ body {
   align-items: baseline;
 }
 .resorts-container .resort.featuredResort .circle {
-  width: 0.675rem;
-  height: 0.675rem;
+  width: 7px;
+  height: 6px;
   background-color: rgb(243, 244, 246);
   display: inline-block;
   border-radius: 9999px;
