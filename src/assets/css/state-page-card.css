@@ -712,6 +712,8 @@ body {
   bottom: -53px;
   height: 56px;
   color: #6b7280;
+  display: flex;
+  align-items: baseline;
 }
 .resorts-container .resort.featuredResort .circle {
   width: 0.675rem;
@@ -1053,6 +1055,10 @@ body {
   margin-top: 18px;
   margin-bottom: 22px;
   background-color: #F9F9F9;
+}
+.resorts-container .resort.featuredResort:hover {
+  margin-top: 18px;
+  margin-bottom: 48px;
 }
 
 .bg-open {

@@ -667,6 +667,8 @@ body {
         bottom: -53px;
         height: 56px;
         color: #6b7280;
+        display: flex;
+        align-items: baseline;
       }
       
       .circle {
@@ -678,6 +680,9 @@ body {
         border-color: rgb(229,231,235);
         border: 1px solid;
         margin-right: 10px;
+      }
+      .info {
+        
       }
     }
     .resort.xc {
@@ -998,6 +1003,10 @@ body {
         margin-top: 18px;
         margin-bottom:22px;
         background-color: #F9F9F9;
+    }
+    .resort.featuredResort:hover {
+      margin-top: 18px;
+      margin-bottom:48px;
     }
 }
 .bg-open {
