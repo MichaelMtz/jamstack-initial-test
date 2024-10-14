@@ -690,10 +690,16 @@ body {
   position: relative;
   overflow: unset;
 }
+@media screen and (max-width: 430px) {
+  .resorts-container .resort.featuredResort {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+}
 .resorts-container .resort.featuredResort .new-featuredResort-wrapping-container {
   display: flex;
   overflow: hidden;
-  width: 95%;
+  width: 100%;
 }
 .resorts-container .resort.featuredResort .new-featuredResort-wrapping-container .resort__header {
   background-color: #3E0085;
@@ -721,6 +727,16 @@ body {
   font-size: 1.7rem;
   color: #004B8B;
 }
+@media screen and (max-width: 430px) {
+  .resorts-container .resort.featuredResort .top-drawer {
+    width: 165px;
+    height: 34px;
+    top: -30px;
+  }
+  .resorts-container .resort.featuredResort .top-drawer .info {
+    font-size: 1.2rem;
+  }
+}
 .resorts-container .resort.featuredResort .drawer {
   padding: 10px 20px 0px;
   border-radius: 5px;
@@ -736,6 +752,23 @@ body {
   color: #6b7280;
   display: flex;
   align-items: baseline;
+}
+@media screen and (max-width: 768px) {
+  .resorts-container .resort.featuredResort .drawer {
+    bottom: -59px;
+    height: 64px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .resorts-container .resort.featuredResort .drawer .info {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  .resorts-container .resort.featuredResort .drawer {
+    bottom: -80px;
+    height: 86px;
+  }
 }
 .resorts-container .resort.featuredResort .circle {
   width: 7px;
