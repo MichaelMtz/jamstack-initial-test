@@ -738,7 +738,7 @@ body {
   }
 }
 .resorts-container .resort.featuredResort .drawer {
-  padding: 10px 20px 0px;
+  padding: 0px 20px;
   border-radius: 5px;
   background-color: #fff;
   width: 90%;
@@ -750,8 +750,8 @@ body {
   bottom: -53px;
   height: 56px;
   color: #6b7280;
-  display: flex;
-  align-items: baseline;
+  display: grid;
+  place-items: center;
 }
 @media screen and (max-width: 768px) {
   .resorts-container .resort.featuredResort .drawer {

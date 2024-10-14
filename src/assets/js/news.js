@@ -188,8 +188,8 @@ const createPost = (elPost, post) => {
 const getPost = (postID) => {
   
   const localURL = `https://www.snow-country.com/resorts/api-easy-blog-post.php?postID=${postID}`;
-  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-post-api?postID=${postID}`: localURL;
-  
+  let url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-post-api?postID=${postID}`: localURL;
+  url = localURL;
   fetch(url).then(response => {      
     return response.json();
   }).then(data => {
