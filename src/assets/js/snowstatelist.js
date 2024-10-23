@@ -219,14 +219,14 @@ const checkForAd = (target) => {
           start_date: '2024-07-02',
           end_date: '2024-09-01'
         },{
-          img: '2024-02-18-WolfCreek-300x50.png',
-          href:"https://wolfcreekski.com/events-and-deals/",
-          width:300, 
-          height:50,
+          img: '2024-10-17-WolfCreek.jpg',
+          href:"https://wolfcreekski.com",
+          width:728, 
+          height:90,
           alt: 'Wolf Creek CO', 
           position: 'both',
-          start_date: '2024-02-20',
-          end_date: '2024-04-27'
+          start_date: '2024-10-20',
+          end_date: '2025-04-30'
         }]
       }
       

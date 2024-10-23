@@ -599,14 +599,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 303025 : {
       ads: [{
-        img: '2024-02-18-WolfCreek-300x50.png',
-        href:"https://wolfcreekski.com/events-and-deals/",
+        img: '2024-10-17-WolfCreek.jpg',
+        href:"https://wolfcreekski.com",
         width:300, 
         height:50,
         alt: 'Wolf Creek CO', 
         position: 'both',
-        start_date: '2024-02-20',
-        end_date: '2024-04-27'
+        start_date: '2024-10-17',
+        end_date: '2025-04-30'
       }]
     }, 303016: {
       ads: [{
