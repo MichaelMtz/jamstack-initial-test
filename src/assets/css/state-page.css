@@ -166,12 +166,6 @@ div.conditions {
   -webkit-animation-fill-mode: forwards;
 }
 
-#container-snow-reports.filter-open-top div.featuredResort {
-  order: 1;
-  animation-name: showresorts;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-}
 #container-snow-reports.filter-open-top div.resort.open {
   order: 3;
   animation-name: showresorts;
@@ -186,6 +180,12 @@ div.conditions {
 }
 #container-snow-reports.filter-open-top div.resort.clsed {
   order: 5;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open-top div.featuredResort {
+  order: 1;
   animation-name: showresorts;
   animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
