@@ -1,17 +1,194 @@
-/* Error: Expected identifier.
- *     ,
- * 155 |   div..featuredResort{
- *     |       ^
- *     '
- *   /Library/WebServer/Documents/sno/2021/jamstack-initial-test/src/assets/css/state-page.scss 155:7  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected identifier.\a     \2577 \a 155 \2502    div..featuredResort{\a     \2502        ^\a     \2575 \a   /Library/WebServer/Documents/sno/2021/jamstack-initial-test/src/assets/css/state-page.scss 155:7  root stylesheet";
+.conditions {
+  margin: 125px 25px 0px;
 }
+
+div.conditions {
+  margin-top: unset;
+  padding-top: 135px;
+}
+
+#container-snow-reports.filter-open .resort.pto {
+  display: none;
+}
+
+#container-snow-reports.filter-open #filter-open {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+#container-snow-reports.filter-pto .resort.open {
+  display: none;
+}
+
+#container-snow-reports.filter-pto #filter-pto {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+#container-snow-reports.sort-open .resort.open {
+  order: 1;
+}
+
+#container-snow-reports.sort-open .resort.pto {
+  order: 2;
+}
+
+#container-snow-reports.sort-open #sort-open {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+#container-snow-reports.sort-default #sort-default {
+  border: 1px solid white;
+  background-color: #004b8b;
+  color: #fff;
+}
+
+@keyframes faderesorts {
+  to {
+    opacity: 0;
+    height: 0;
+    min-height: unset;
+    margin: unset;
+  }
+}
+@keyframes hideresorts {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes showresorts {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#container-snow-reports div.resorts.summer {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports .open, #container-snow-reports .pto, #container-snow-reports .closed {
+  order: 4;
+}
+#container-snow-reports .resorts-container__header, #container-snow-reports .filter-container, #container-snow-reports .featuredResort {
+  order: 1;
+}
+
+#container-snow-reports.all div.resort.summer {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.hiking div.resort.summer:not(.hiking) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.hiking div.resort.summer.hiking {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.mtn-bike div.resort.summer:not(.mtn-bike) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.mtn-bike div.resort.summer.mtn-bike {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.golf div.resort.summer:not(.golf) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.golf div.resort.summer.golf {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.lift div.resort.summer:not(.lift) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.lift div.resort.summer.lift {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.filter-open div.resort:not(.open) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open div.resort.open {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.filter-pto div.resort:not(.pto) {
+  animation-name: faderesorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-pto div.resort.pto {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.filter-all div.resort {
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#container-snow-reports.filter-open-top div.featuredResort {
+  order: 1;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open-top div.resort.open {
+  order: 3;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open-top div.resort.pto {
+  order: 4;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open-top div.resort.clsed {
+  order: 5;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/*# sourceMappingURL=state-page.css.map */
