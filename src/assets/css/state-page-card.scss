@@ -661,6 +661,16 @@ body {
           border-top-left-radius: 10px;
           border-bottom-left-radius: 10px;
         }
+
+        .resort__header:hover {
+          a:hover,a.resort__link:hover {
+            color:#ffd700;
+            h2 {
+                color:#ffd700;
+            }
+          }
+            
+        }
       }
       .top-drawer {
         top: -50px;

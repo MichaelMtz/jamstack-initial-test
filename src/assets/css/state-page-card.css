@@ -708,6 +708,12 @@ body {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+.resorts-container .resort.featuredResort .new-featuredResort-wrapping-container .resort__header:hover a:hover, .resorts-container .resort.featuredResort .new-featuredResort-wrapping-container .resort__header:hover a.resort__link:hover {
+  color: #ffd700;
+}
+.resorts-container .resort.featuredResort .new-featuredResort-wrapping-container .resort__header:hover a:hover h2, .resorts-container .resort.featuredResort .new-featuredResort-wrapping-container .resort__header:hover a.resort__link:hover h2 {
+  color: #ffd700;
+}
 .resorts-container .resort.featuredResort .top-drawer {
   top: -50px;
   right: 5%;
