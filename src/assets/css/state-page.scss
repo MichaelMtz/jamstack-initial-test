@@ -78,11 +78,11 @@ div.conditions {
   div.resorts.summer {
     @include resort-fade-in();
   }
-  .resorts-container__header,.filter-container {
-    order:1;
-  }
   .open,.pto,.closed {
     order:4;
+  }
+  .resorts-container__header,.filter-container,.featuredResort {
+    order:1;
   }
 }
 #container-snow-reports.all {
