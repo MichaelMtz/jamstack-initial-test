@@ -41,7 +41,7 @@ body {
       display:flex;
       justify-content: space-evenly;
       gap: 30px;
-      order:2;
+      order:1;
       @include bpmax(664px) {
         gap:10px;
       }

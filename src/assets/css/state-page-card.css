@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   gap: 30px;
-  order: 2;
+  order: 1;
 }
 @media screen and (max-width: 664px) {
   .resorts-container .filter-container {

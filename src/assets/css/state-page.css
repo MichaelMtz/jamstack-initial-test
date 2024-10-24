@@ -81,6 +81,12 @@ div.conditions {
   animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
 }
+#container-snow-reports .resorts-container__header, #container-snow-reports .filter-container {
+  order: 1;
+}
+#container-snow-reports .open, #container-snow-reports .pto, #container-snow-reports .closed {
+  order: 4;
+}
 
 #container-snow-reports.all div.resort.summer {
   animation-name: showresorts;
