@@ -85,7 +85,7 @@ div.conditions {
   order: 4;
 }
 #container-snow-reports .resorts-container__header, #container-snow-reports .filter-container, #container-snow-reports .featuredResort {
-  order: 1;
+  order: 1 !important;
 }
 
 #container-snow-reports.all div.resort.summer {
