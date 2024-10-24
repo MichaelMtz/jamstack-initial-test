@@ -152,6 +152,10 @@ div.conditions {
 }
 
 #container-snow-reports.filter-open-top {
+  div..featuredResort {
+    order:1;
+    @include resort-fade-in();
+  }
   div.resort.open {
     order:3;
     @include resort-fade-in();
