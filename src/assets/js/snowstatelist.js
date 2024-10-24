@@ -90,8 +90,8 @@ const waitForElement = selector=>{
 
 const initializeFilters = () => {
   let elCurrentActive;
-  waitForElement(`.filter-container #filter-open-top`).then(elFilterOpenTop => {
-    elCurrentActive = elFilterOpenTop;
+  waitForElement(`.filter-container #filter-all`).then(elFilterAll => {
+    elCurrentActive = elFilterAll;
     document.querySelectorAll('.filter-container button[id^="filter-"]').forEach(iterElBtn => {
       iterElBtn.addEventListener('click',() => {
         _log('Filter btn clicked');
