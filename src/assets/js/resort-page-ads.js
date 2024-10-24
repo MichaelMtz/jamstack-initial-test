@@ -601,8 +601,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       ads: [{
         img: '2024-10-17-WolfCreek.jpg',
         href:"https://wolfcreekski.com",
-        width:300, 
-        height:50,
+        width:728, 
+        height:90,
         alt: 'Wolf Creek CO', 
         position: 'both',
         start_date: '2024-10-17',

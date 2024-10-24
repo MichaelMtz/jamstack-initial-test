@@ -141,3 +141,18 @@ div.conditions {
     @include resort-fade-in();
   }
 }
+
+#container-snow-reports.filter-open-top {
+  div.resort.open {
+    order:3;
+    @include resort-fade-in();
+  }
+  div.resort.pto {
+    order:4;
+    @include resort-fade-in();
+  }
+  div.resort.clsed {
+    order:5;
+    @include resort-fade-in();
+  }
+}

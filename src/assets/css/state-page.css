@@ -160,4 +160,23 @@ div.conditions {
   -webkit-animation-fill-mode: forwards;
 }
 
+#container-snow-reports.filter-open-top div.resort.open {
+  order: 3;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open-top div.resort.pto {
+  order: 4;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#container-snow-reports.filter-open-top div.resort.clsed {
+  order: 5;
+  animation-name: showresorts;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
 /*# sourceMappingURL=state-page.css.map */

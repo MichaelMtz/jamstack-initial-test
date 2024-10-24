@@ -21,6 +21,7 @@ body {
   color: #fff;
   text-align: center;
   font-weight: 400;
+  order: 1;
 }
 .resorts-container .filter-container {
   max-width: 1200px;
@@ -29,6 +30,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   gap: 30px;
+  order: 2;
 }
 @media screen and (max-width: 664px) {
   .resorts-container .filter-container {
