@@ -518,7 +518,7 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 	 
 	 
 	}
-	
+
 	/* This is a fix for lower screen heights **/
 	@media only screen and (max-height: 650px) and (min-width: 1120px) { 
 	.header { padding-top: 5px; height: auto; }
@@ -944,8 +944,11 @@ img.alignright, table.alignLeft, .contentImage.alignright, .contentImage.alignRi
 		.article-crumbs ul li.breadcrumbhome  { margin-right: 1px;  }
 		
 		.booking-widget.mobile .ui-accordion .ui-accordion-content {
-		padding: 20px !important;
-	}
+			padding: 20px !important;
+		}
+		.slider-image {
+			background-attachment: fixed;
+		}
 		/**FEATURED BOXES**/
 		ul.feature-boxes { width: 80%; position: absolute; bottom: 30px; height: auto; top: inherit; z-index: 1; left: 0; right: 0; margin: 0 auto; }
 		ul.feature-boxes > li { width: 100%; float: left; height: auto;  background: url(/custom/templates/page/panorama-home/images/blue-bg.png); }

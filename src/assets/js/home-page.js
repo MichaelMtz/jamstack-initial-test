@@ -89,7 +89,7 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    let homePageImages =  [
+    const homePageImages =  [
       'Gondola-1600x1067.jpg', 
       'alex-lange-Ca9u0f1nDt0-unsplash.jpg',
       'glade-optics-ttGLlNElbCc-unsplash.jpg',
@@ -98,7 +98,7 @@ const configurePepsiBackgroundImages = () => {
       'powder-skier-slashing-alaska.jpg'];
     
     //summer
-    homePageImages = ['daniel-dvorsky-PFbDoh58U64-unsplash.jpg', 'andhika-soreng-US06QF_sxu8-unsplash.jpg'];
+    //homePageImages = ['daniel-dvorsky-PFbDoh58U64-unsplash.jpg', 'andhika-soreng-US06QF_sxu8-unsplash.jpg'];
     const randomIndex = random(0,homePageImages.length);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     $('#banner_carousel #customText').removeClass('hidden');
     $(thrive_carousel_loader).on('slideLoaded.ThriveCarousel', function(e, settings, newSlide, direction){
       $('.pano-loader').hide();
-      //configurePepsiBackgroundImages();
+      configurePepsiBackgroundImages();
       return true;
     });
     window.onload = function() {
@@ -249,15 +249,20 @@ document.addEventListener('DOMContentLoaded',()=> {
         waitForElement('#top-snowfall-list').then((elHomepageHighlightResorts) => {
           createHighlightResortsSection(elHomepageHighlightResorts,data, 'snowfall','#top-snowfall');
         }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
-      } 
+      } else {
+        waitForElement('#top-snowfall').then((elTopSnowContainer) => {
+          elTopSnowContainer.classList.add('sno-hide');
+        }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
+          
+      }
       //getOpenResorts();
-      // if (fetchOpenResorts) {
-      //   getOpenResorts();
-      // } else {
-      //   waitForElement('#open-resorts').then((elOpenResorts) => {
-      //     elOpenResorts.classList.add('sno-hide');
-      //   }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
-      // }
+      if (fetchOpenResorts) {
+        getOpenResorts();
+      } else {
+        waitForElement('#open-resorts').then((elOpenResorts) => {
+          elOpenResorts.classList.add('sno-hide');
+        }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
+      }
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   
   };
@@ -347,7 +352,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           createStoriesSection(elStories,storyList);
         }).catch( (e) => { console.error('Error building desktop news:',e);});  
         waitForElement('#mobile-stories .mobile-stories-container').then((elMobileStories) => {
-          createStoriesSectionMobile(elMobileStories,data.stories.slice(0,6));
+          createStoriesSectionMobile(elMobileStories,data.stories.slice(0,9));
         }).catch( (e) => { console.error('Error building mobile news:',e);});        
       }
       
