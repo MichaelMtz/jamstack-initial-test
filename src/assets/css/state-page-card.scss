@@ -855,7 +855,7 @@ body {
     }
     .resort.pto {
       @include bpmaxw(710px) {
-        height: 175px;
+        height: 187px;
       }
       .resort__header {
         &-weather {
@@ -914,6 +914,9 @@ body {
             flex: 0 1 30%;
             @include bpmax(710px) {
               margin-bottom: unset;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
             }
             .section-header {
               @include bpmaxw(710px) {

@@ -904,7 +904,7 @@ body {
 }
 @media screen and (max-width: 710px) {
   .resorts-container .resort.pto {
-    height: 175px;
+    height: 187px;
   }
 }
 @media screen and (max-width: 465px) {
@@ -962,6 +962,9 @@ body {
 @media screen and (max-width: 710px) {
   .resorts-container .resort.pto .resort__info-projected-open-date.section-container {
     margin-bottom: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 }
 @media screen and (max-width: 710px) {
