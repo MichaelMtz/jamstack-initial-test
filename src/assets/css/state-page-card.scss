@@ -257,7 +257,7 @@ body {
             width: 100%;
             display: flex;
             flex-flow: row wrap;
-            justify-content: space-between;
+            
 
             .section-container {
                 margin:5px;
@@ -854,6 +854,9 @@ body {
       }
     }
     .resort.pto {
+      @include bpmaxw(710px) {
+        height: 175px;
+      }
       .resort__header {
         &-weather {
           
@@ -913,7 +916,8 @@ body {
               margin-bottom: unset;
             }
             .section-header {
-              @include bpmaxw(455px) {
+              @include bpmaxw(710px) {
+                display: none;
                 font-size:10px;
               }
               @include bpmaxw(400px) {
@@ -921,28 +925,76 @@ body {
               }
             }
             .section-open-date {
-                height: 63%;
+                height: auto;
+                margin-bottom: 15px;
                 padding-top: 6px;
                 display:grid;
                 place-items: center;
                 opacity: 1 !important;
-                font-size: 2.7rem;
+                font-size: 2rem;
                 font-weight: unset;
                 color: #004B8B;
-                @include bpmax(966px) {
-                  font-size:2.5rem;
+                @include bpmax(991px) {
+                  font-size:1.8rem;
                 }
-                @include bpmax(816px) {
-                  font-size:2rem;
+                @include bpmax(930px) {
+                  font-size:1.4rem;
                 }
-                @include bpmax(710px) {
+                @include bpmax(811px) {
                   margin: 0px 0px;
                   font-size: 1.2rem;
                 }
+                @include bpmax(710px) {
+                  margin-bottom:3px;
+                  padding-top: unset;
+                 
+                }
+            }
+            .opening-dates-container {
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+              gap: 5px;
+              width: 100%;
+              background-color: #004B8B;
+              border-radius: 3px;
+              padding: 5px 5px;
+              color: white;
+              // background-color: #414756;
+              /* background-color: #842942; */
+              /* background-color: #005a2b; */
+              /* background-color: #00174c; */
+              
+              .opening-dates-header {
+                text-transform: uppercase;
+                @include bpmax(964px) {
+                  font-size:10px;
+                }
+                @include bpmax(820px) {
+                  font-size:9px;
+                }
+                @include bpmax(776px) {
+                  font-size:8px;
+                }
+              }
+              .opening-dates-list {
+                display: flex;
+                font-size: 12px;
+                justify-content: space-around;
+                flex-flow: row wrap;
+                width: 100%;
+                
+                @include bpmax(964px) {
+                  font-size:10px;
+                }
+                @include bpmax(820px) {
+                  font-size:9px;
+                }
+              }
             }
         }
         &-extended-weather-pto {
-          max-width: 530px;
+          // max-width: 530px;
           border-left: 1px solid #ccc;
           padding-left: 10px !important;
           flex: 0 1 64%;
@@ -951,6 +1003,7 @@ body {
             margin-top: 0px;
             border-top: 1px solid #ccc;
             border-left: unset;
+            padding-left: unset !important;
           }
           @include bpmaxw(505px) {
             margin: 5px 5px;
