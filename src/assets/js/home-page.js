@@ -199,7 +199,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         <div><p class='surface-terrain'>${iterResort.baseDepth}</p></div>
         `).join('');
       elHomepageRegion.insertAdjacentHTML('beforeend',html);
-    } 
+    } else {
+      elHomepageRegion.closest('.region-top-snowfall-container')?.classList.add('sno-hide');
+    }
   };
   const createMemberResortsSection = (elHomepageRegion, data) => {
     if (data.length > 0) {
@@ -213,7 +215,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         <div><p class='surface-terrain'>${iterResort.OpenDownHillTrails}</p></div>
         `).join('');
       elHomepageRegion.insertAdjacentHTML('beforeend',html);
-    } 
+    }  else {
+      elHomepageRegion.classList.add('sno-hide');
+    }
   };
   
   const getOpenResorts = () => {
@@ -279,12 +283,34 @@ document.addEventListener('DOMContentLoaded',()=> {
   
   const populateRegionMemberSection = (selRegion, membersData) => {
     const sel = `#${selRegion}-members-list`;
-    waitForElement(sel).then((elRegionTopSnowfallResorts) => {
+    waitForElement(sel).then((elRegionOpenMemberResorts) => {
       _log('populateRegionMembersSection: members:');
       console.log(membersData);
-      createMemberResortsSection(elRegionTopSnowfallResorts,membersData);
+      createMemberResortsSection(elRegionOpenMemberResorts,membersData);
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
-  };  
+  }; 
+  
+  const populateRegionPTOSection = (selRegion, ptoData) => {
+    const sel = `#${selRegion}-pto-list`;
+    waitForElement(sel).then((elRegionPTOResorts) => {
+      if (ptoData.length > 0) {
+        const html = ptoData.map(iterResort => `      
+          <div class="resort-name"><a class="light-button" href="snow-report${iterResort.snoLink}"> ${iterResort.resortName}, ${iterResort.state}</a></div>
+          <div class="region-reportdatetime"><p class='surface-terrain'>${iterResort.ReportDateTime}</p></div>
+          <div class="region-os"><p class='surface-terrain'>${iterResort.OperatingStatus}</p></div>
+          <div class="region-weather-icon"><i class="wi ${iterResort.weatherIcon}" title="${iterResort.weatherTitle}"></i> </div>
+          <div class="region-weather"><p class='surface-terrain'>${iterResort.temperatureLow} - ${iterResort.temperatureHigh}</p></div>
+
+          `).join('');
+        elRegionPTOResorts.insertAdjacentHTML('beforeend',html);
+        elRegionPTOResorts.classList.remove('sno-hide');
+      }  else {
+        elRegionPTOResorts.classList.add('sno-hide');
+      }
+    }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
+  }; 
+  
+   
   const getRegionResorts = () => {
     const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-region-resorts.php`;
     const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/home-region-resorts-api` : localURL;
@@ -298,6 +324,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       Object.keys(data).forEach(iterRegion => {
         populateRegionTopSnowfallSection(iterRegion, data[iterRegion].topsnowfall);
         populateRegionMemberSection(iterRegion,data[iterRegion].members);
+        populateRegionPTOSection(iterRegion,data[iterRegion].pto);
       });
       
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});

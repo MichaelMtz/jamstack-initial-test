@@ -35,6 +35,9 @@
 .grid-container.region.members {
   grid-template-columns: 2fr 1.3fr 1.3fr 1fr 1fr 1fr 1fr;
 }
+.grid-container.region.pto {
+  grid-template-columns: 2fr 1.3fr 1.3fr 1fr 1fr;
+}
 .m-t-10 {
   margin-top: 10px;
 }
@@ -379,7 +382,7 @@ ul.feature-boxes li.pepsi-box {
 
 @media only screen and (max-width: 767px) { 
   body { 
-    height: 2500px;
+    height: 2750px;
   }
 }
 @media only screen and (max-width: 472px) { 
@@ -389,11 +392,5 @@ ul.feature-boxes li.pepsi-box {
       background-image: unset !important;
       background-color: #003952;
     }
-  }
-}
-
-@media only screen and (max-width: 410px) { 
-  body { 
-    height: 2600px;
   }
 }
