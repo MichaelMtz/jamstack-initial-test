@@ -326,14 +326,15 @@ ul.feature-boxes li.pepsi-box {
     .mobile-stories-container {
       display: flex;
       flex-flow: column;
-      gap:10px;
+      gap:15px;
       .card {
-        width: 250px;
+        width: clamp(250px,100%,500px);
         height: 180px;
         margin-inline: auto;
         color: #fff;
         position: relative;
         overflow: hidden !important;
+        border-radius: 10px;
         background-size: cover !important;
         box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 33%);
         
@@ -376,21 +377,21 @@ ul.feature-boxes li.pepsi-box {
   }
 }
 
-@media only screen and (max-width: 660px) { 
+@media only screen and (max-width: 767px) { 
   body { 
-    height: 2200px;
+    height: 2500px;
   }
 }
 @media only screen and (max-width: 472px) { 
   body { 
-    height: 2350px;
+
+    #banner_carousel li.slider-image {
+      background-image: unset !important;
+      background-color: #003952;
+    }
   }
 }
-@media only screen and (max-width: 449px) { 
-  body { 
-    height: 2450px;
-  }
-}
+
 @media only screen and (max-width: 410px) { 
   body { 
     height: 2600px;

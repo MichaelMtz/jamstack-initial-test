@@ -89,7 +89,7 @@ body {
   float: left;
   margin-right: 10px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1125px) {
   #news-post .post-panel .intro .image-container {
     float: unset;
     margin-right: unset;
@@ -98,7 +98,7 @@ body {
 #news-post .post-panel .intro .image-container img#post-main-image {
   max-height: 400px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1125px) {
   #news-post .post-panel .intro .image-container img#post-main-image {
     max-height: unset;
   }
@@ -157,7 +157,7 @@ body {
   text-align: center;
 }
 #news-post .news-list .news-list-post img {
-  width: 140px;
+  width: clamp(140px, 100%, 500px);
 }
 #news-post .news-list .news-list-post .post-title {
   margin: 10px 0px 10px 10px;

@@ -91,13 +91,13 @@ body {
       .image-container {
         float: left;
         margin-right: 10px;
-        @include bpmaxw(1024px) {
+        @include bpmaxw(1125px) {
           float: unset;
           margin-right: unset;
         }
         img#post-main-image {
           max-height: 400px;
-          @include bpmaxw(1024px) {
+          @include bpmaxw(1125px) {
             max-height: unset;
           }
         }
@@ -159,7 +159,7 @@ body {
         text-align: center;
       }
       img {
-        width:140px;
+        width: clamp(140px,100%,500px);     
       }
       .post-title {
         margin: 10px 0px 10px 10px;

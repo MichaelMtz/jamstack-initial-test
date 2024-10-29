@@ -93,7 +93,13 @@ footer .action {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+}
+@media screen and (max-width: 472px) {
+  footer .action {
+    border-top: 1px inset rgba(255, 255, 255, 0.8);
+    background-image: unset;
+    background-color: #003952;
+  }
 }
 footer .action #newsletter-signup, footer .action .radio {
   flex: 0 1 400px;
