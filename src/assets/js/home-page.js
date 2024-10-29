@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           <div class="region-reportdatetime"><p class='surface-terrain'>${iterResort.ReportDateTime}</p></div>
           <div class="region-os"><p class='surface-terrain'>${iterResort.OperatingStatus}</p></div>
           <div class="region-weather-icon"><i class="wi ${iterResort.weatherIcon}" title="${iterResort.weatherTitle}"></i> </div>
-          <div class="region-weather"><p class='surface-terrain'>${iterResort.temperatureLow} - ${iterResort.temperatureHigh}</p></div>
+          <div class="region-weather"><p class='surface-terrain'>${iterResort.temperatureLow} - ${iterResort.temperatureHigh}˚</p></div>
 
           `).join('');
         elRegionPTOResorts.insertAdjacentHTML('beforeend',html);
