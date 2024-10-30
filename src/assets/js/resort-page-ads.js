@@ -588,14 +588,12 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 406001: {
       ads: [{
-        img: '2024-07-02-Whitefish.gif',
-        href:"https://skiwhitefish.com/",
+        img: '2024-10-30-Whitefish-728x90.jpg',
+        href:"https://bit.ly/3Uy6A2P",
         width:728, 
         height:90,
         alt: 'Whitefish Mountain Resort MT', 
-        position: 'both',
-        start_date: '2024-07-02',
-        end_date: '2024-11-01'
+        position: 'both'
       }]
     }, 303025 : {
       ads: [{
