@@ -113,6 +113,16 @@ const initializeFilters = () => {
 
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
+const trackBanner = (bannerName) => {
+  if (window.umami) {
+    window.umami.track(`banner-state-display-${bannerName}`);
+  } else {    
+    setTimeout(()=> {
+      trackBanner(bannerName);
+    },1000);
+  }
+};
+
 const checkForAd = (target) => {
   
   const targetList = [
@@ -238,16 +248,18 @@ const checkForAd = (target) => {
         const randomIndex = random(0,resortAds.length);
         resortAds.splice(randomIndex,1);
       }
+      const alt = resortAds[0].alt.replaceAll(' ', '-');
       const html = `
   
       <div class="internal">
-        <a href="${resortAds[0].href}" target="_blank" >
-          <img class="adHighlight" src="assets/images/resort-ads/${resortAds[0].img}" alt="${resortAds[0].alt}" width="${resortAds[0].width}" height="${resortAds[0].height}"">
+        <a href="${resortAds[0].href}" target="_blank" data-umami-event="banner-state-click-${alt}">
+          <img class="adHighlight" src="assets/images/resort-ads/${resortAds[0].img}" alt="${resortAds[0].alt}" width="${resortAds[0].width}" height="${resortAds[0].height}" data-umami-event="banner-state-click-${alt}">
         </a>
       </div>
       `;
       waitForElement('#container-snow-reports').then((elSnowReportContainer) => {
         elSnowReportContainer.insertAdjacentHTML('beforebegin',html);
+        trackBanner(alt);
       }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
     }
   }

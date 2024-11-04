@@ -36,6 +36,17 @@ const checkAdDates = (iterResortAd) => {
   _log(`checkForResortAds-showAd: ${showAd}`);
   return showAd;
 };
+
+const trackBanner = (bannerName) => {
+  if (window.umami) {
+    window.umami.track(`banner-resort-display-${bannerName}`);
+  } else {    
+    setTimeout(()=> {
+      trackBanner(bannerName);
+    },1000);
+  }
+};
+
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const randomPositions = () => {
   const randomIndex = random(0,2);
@@ -670,10 +681,11 @@ document.addEventListener('DOMContentLoaded',()=> {
       if (checkAdDates(iterResortAd)) {    
         _log('checkForResortAds: applying ad');   
         console.log(iterResortAd);
+        const alt = iterResortAd.alt.replaceAll(' ', '-'); 
         const html = `
         <div class="resort-ad">
-          <a href="${iterResortAd.href}" target="_blank">
-            <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
+          <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
+            <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}" data-umami-event="banner-resort-click-${alt}">
           </a>
         </div>
         `;
@@ -698,6 +710,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           }).catch( () => { console.log('Error waiting for checkForResortAds:');});
           adPosition++;
         }
+        trackBanner(alt);
       }
     });
 
