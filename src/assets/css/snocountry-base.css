@@ -216,11 +216,11 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 .topnav ul.navigation { margin: 0; padding: 10px 0 0 0; list-style: none; font-size: 12px; }
 .topnav ul.navigation > li { display: block; float: left; margin:0; padding:15px; position:relative;}
 .topnav ul.navigation > li h2, .topnav ul.navigation > li p { margin:0; line-height: 18px; font-size: 12px; }
-.topnav ul.navigation > li h2 { 
+.topnav ul.navigation > li .menu-header { 
     font-size: 1.5rem; 
     color:#fff; 
     line-height:22px; 
-    font-weight:300;    /*snoxx*/
+		font-weight: 600;
     }
 .topnav ul.navigation > li a { /*color: #383838;*/ color:#373737; }
 .topnav ul.navigation > li:hover {background:#00acf3; color:#fff!important;}
@@ -232,7 +232,7 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 
 
 
-.topnav ul.navigation > li.dropped a h2 {
+.topnav ul.navigation > li.dropped a .menu-header {
     color:#0070C1!important;
 }
 
@@ -240,8 +240,8 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
     color:#383838!important;
 }
 
-.topnav ul.navigation > li.dropped a:hover h2.admin-link{color:#FE523E!important;}
-.topnav ul.navigation > li.dropped a:hover h2.mountain-life-link{color:#00a383!important;}
+.topnav ul.navigation > li.dropped a:hover .admin-link{color:#FE523E!important;}
+.topnav ul.navigation > li.dropped a:hover .mountain-life-link{color:#00a383!important;}
 
 
 .topnav ul.navigation > li .menu-dropdown ul a:hover { 

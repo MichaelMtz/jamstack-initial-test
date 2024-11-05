@@ -264,6 +264,34 @@ const checkForAd = (target) => {
     }
   }
 };
+const insertSEOItemListOfResorts = () => {
+  waitForElement('.statelist-rendered').then(() => {
+    
+    let resortList = '';
+    let delim = '';
+    document.querySelectorAll('a.resort__link h2').forEach((iterEl) => {
+      resortList += `${delim} "${iterEl.innerText}"\n`;
+      delim = ',';
+    });
+    let state = document.body.dataset.snowreport.replaceAll('-',' ');
+    state = state.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    const seoItemList = `
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          ${resortList}
+        ],
+        "itemListOrder": "https://schema.org/ItemListUnordered",
+        "name": "Ski Resorts in ${state}"
+      }
+      </script>
+    `;
+    document.querySelector('head').insertAdjacentHTML('beforeend',seoItemList);
+  }).catch( (e) => { console.error('Error waiting for resort list to create SEO state list of resorts:',e);});
+};
+
 document.addEventListener('DOMContentLoaded',()=> {
   const target = document.body.dataset.snowreport;
   const src = document.body.dataset.source;
@@ -290,8 +318,9 @@ document.addEventListener('DOMContentLoaded',()=> {
       }
     })();
     initializeFilters();
+    insertSEOItemListOfResorts();
+
   }).catch( () => { console.log('Error waiting for EL:');});
 
   checkForAd(target);
-
 });

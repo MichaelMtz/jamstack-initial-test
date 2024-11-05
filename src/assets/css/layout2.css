@@ -259,14 +259,14 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 .topnav { float: right; }
 .topnav ul.navigation { margin: 0; padding: 10px 0 0 0; list-style: none; font-size: 12px; }
 .topnav ul.navigation > li { display: block; float: left; margin:0; padding:15px; position:relative;}
-.topnav ul.navigation > li h2, .topnav ul.navigation > li p { 
+.topnav ul.navigation > li .menu-header, .topnav ul.navigation > li p { 
     margin:0; line-height: 18px; font-size: 12px; 
     font-weight: 600;
     letter-spacing: 0.3px;
   }
-.topnav ul.navigation > li h2 { 
+ .topnav ul.navigation > li .menu-header { 
     font-size: 1.5rem; 
-    
+    font-family: 'Brandon Grotesque', Arial, Sans-serif;
     color:#fff; 
     line-height:22px; 
     }
