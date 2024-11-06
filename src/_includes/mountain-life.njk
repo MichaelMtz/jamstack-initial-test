@@ -1,79 +1,84 @@
 <!DOCTYPE HTML>
 <HTML>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 {% include 'basehref.html' %}
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="SnoCountry News" />
-        <meta name="rights" content="Copyright © 2022. All Rights Reserved." />
-        <meta name="author" content="Snow Reports" />
-        <meta name="robots" content="index,follow" />
-        <meta name="description" content="Discover summer activities in the mountains, from hiking, mountain coasters, and family-friendly activities to outdoor adventures for adrenaline junkies." />
-        <title>{{ title }}</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="keywords" content="SnoCountry News" />
+      <meta name="rights" content="Copyright © 2022. All Rights Reserved." />
+      <meta name="author" content="Snow Reports" />
+      <meta name="robots" content="index,follow" />
+      <meta name="description" content="Discover summer activities in the mountains, from hiking, mountain coasters, and family-friendly activities to outdoor adventures for adrenaline junkies." />
+      <title>{{ title }}</title>
 
-        <meta property="og:title" content="Snow Report and Weather Conditions | SnoCountry" />
-        <meta property="og:description " content="Skiing, Snowboarding snow condition reports, weather and resort news" />
-        <meta property="og:url" content="https://www.snocountry.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="SnoCountry" />
-        <meta property="og:image" content="https://www.snocountry.com/images/snocountry_logo_v2.png" />
-        
-        <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://www.snocountry.com/","name":"SnoCountry.Com","description":"Ski Resorts and Snow Reports, for the Snowboarder and Skier","publisher":"SnoCountry"}
-        </script>
-        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://www.snocountry.com/","logo":"https://www.snocountry.com/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
-        </script>
-        
-        <link rel="stylesheet" href="/assets/font/mulish-font.css">
-        <link rel="stylesheet" href="/assets/font/fonts.css">
-        <link rel="stylesheet" href="/assets/css/snocountry-base.css">
-        <link rel="stylesheet" href="/assets/css/sno-core.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/genericPage.css">
-        <link rel="stylesheet" href="/assets/css/evergreen.css">
-        <link rel="stylesheet" href="/assets/css/mountain-life-parallax.css">
-       
-{% include 'google.html' %}
+      <meta property="og:title" content="Snow Report and Weather Conditions | SnoCountry" />
+      <meta property="og:description " content="Skiing, Snowboarding snow condition reports, weather and resort news" />
+      <meta property="og:url" content="https://www.snocountry.com/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="SnoCountry" />
+      <meta property="og:image" content="https://www.snocountry.com/images/snocountry_logo_v2.png" />
+      
+      <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://www.snocountry.com/","name":"SnoCountry.Com","description":"Ski Resorts and Snow Reports, for the Snowboarder and Skier","publisher":"SnoCountry"}
+      </script>
+      <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://www.snocountry.com/","logo":"https://www.snocountry.com/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
+      </script>
+      
       <script type="application/ld+json">
         {
           "@context": "http://schema.org",
-          "@type": "WebPage",
-          "@id": "{{ schemaAbsoluteUrl }}",
-          "name": "{{ schemaName }}",
-          "url": "{{ schemaAbsoluteUrl }}",
-          "mainEntityOfPage": "{{ schemaAbsoluteUrl }} ",
-          "description": "{{ schemaDescription }}",
-          "datePublished": "{{ schemaDate }}",
-          "dateModified": "{{ schemaDate }}",
-          "author": {
-            "@type": "Person",
-            "name": "{{ schemaAuthor }}"
-          },
-          "publisher": {
-              "@type": "Organization",
-              "@id": "{{ env.base.site }}",
-              "name": "SnoCountry",
-              "url": "https://snocountry.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.snocountry.com/images/snocountry_logo_v2.png",
-                "height": 276,
-                "width": 70, 
-                "caption": "Real riders and skiers who know the snow"
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "{{ schemaAbsoluteUrl }}",
+              "name": "{{ schemaName }}",
+              "url": "{{ schemaAbsoluteUrl }}",
+              "mainEntityOfPage": "{{ schemaAbsoluteUrl }} ",
+              "description": "{{ schemaDescription }}",
+              "datePublished": "{{ schemaDate }}",
+              "dateModified": "{{ schemaDate }}",
+              "author": {
+                "@type": "Person",
+                "name": "{{ schemaAuthor }}"
+              },
+              "publisher": {
+                  "@type": "Organization",
+                  "@id": "{{ env.base.site }}",
+                  "name": "SnoCountry",
+                  "url": "https://snocountry.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.snocountry.com/images/snocountry_logo_v2.png",
+                    "height": 276,
+                    "width": 70, 
+                    "caption": "Real riders and skiers who know the snow"
+                  }
               }
-          },{
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Mountain Life",
-                  "item": "https://snocountry.com/mountain-life"
-                },
-              ]
-           }
+            },{
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Mountain Life",
+                    "item": "https://snocountry.com/mountain-life"
+                  },
+                ]
+             }
+          ]
         }
       </script>
+      <link rel="stylesheet" href="/assets/font/mulish-font.css">
+      <link rel="stylesheet" href="/assets/font/fonts.css">
+      <link rel="stylesheet" href="/assets/css/snocountry-base.css">
+      <link rel="stylesheet" href="/assets/css/sno-core.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="/assets/css/genericPage.css">
+      <link rel="stylesheet" href="/assets/css/evergreen.css">
+      <link rel="stylesheet" href="/assets/css/mountain-life-parallax.css">
+     
+
+    {% include 'google.html' %}
     </head>
     <body data-source="" >
         
