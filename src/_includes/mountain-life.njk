@@ -32,6 +32,7 @@
               "@type": "WebPage",
               "@id": "{{ schemaAbsoluteUrl }}",
               "name": "{{ schemaName }}",
+              "headline": "{{ schemaName }}",
               "url": "{{ schemaAbsoluteUrl }}",
               "mainEntityOfPage": "{{ schemaAbsoluteUrl }} ",
               "description": "{{ schemaDescription }}",
@@ -41,6 +42,9 @@
                 "@type": "Person",
                 "name": "{{ schemaAuthor }}"
               },
+              "image": {
+                "@id": "{{ schemaArticleImage }}"
+              },
               "publisher": {
                   "@type": "Organization",
                   "@id": "{{ env.base.site }}",
@@ -48,7 +52,7 @@
                   "url": "https://snocountry.com",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://www.snocountry.com/images/snocountry_logo_v2.png",
+                    "url": "https://www.snocountry.com/assets/images/snocountry_logo_v2.png",
                     "height": 276,
                     "width": 70, 
                     "caption": "Real riders and skiers who know the snow"
