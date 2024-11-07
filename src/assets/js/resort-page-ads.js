@@ -657,6 +657,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Bromley VT ', 
         position: 'both'
       }]
+    }, 517005: {
+      ads: [{
+        img: '2024-11-07-TreeTop-NewYear-728x90.jpg',
+        href:"https://www.treetops.com/events/",
+        width:728, 
+        height:90,
+        alt: 'Treetops MI', 
+        position: 'both'
+      }]
     }
     
   };
