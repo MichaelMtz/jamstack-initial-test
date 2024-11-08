@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Loveland Ski Area CO', 
         position: 'both',
         start_date: '2024-11-07',
-        end_date: '2025-11-24'
+        end_date: '2024-11-24'
       }]
     }, 303016: {
       ads: [{
