@@ -617,6 +617,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-10-17',
         end_date: '2025-04-30'
       }]
+    }, 303015 : {
+      ads: [{
+        img: '2024-11-08-Loveland-728x90-4Pak.jpg',
+        href:"https://skiloveland.com/4-pak/",
+        width:728, 
+        height:90,
+        alt: 'Loveland Ski Area CO', 
+        position: 'both',
+        start_date: '2024-11-07',
+        end_date: '2025-11-24'
+      }]
     }, 303016: {
       ads: [{
         img: '2024-02-20-Powderhorn.png',

@@ -237,6 +237,15 @@ const checkForAd = (target) => {
           position: 'both',
           start_date: '2024-10-20',
           end_date: '2025-04-30'
+        },{
+          img: '2024-11-08-Loveland-728x90-4Pak.jpg',
+          href:"https://skiloveland.com/4-pak/",
+          width:728, 
+          height:90,
+          alt: 'Loveland Ski Area CO', 
+          position: 'both',
+          start_date: '2024-11-07',
+          end_date: '2025-11-24'
         }]
       }
       
@@ -244,16 +253,20 @@ const checkForAd = (target) => {
     
     if (currentResortAds[target]) {
       const resortAds = currentResortAds[target].ads;
+      let randomIndex = 0;
       if(resortAds.length > 1) {
-        const randomIndex = random(0,resortAds.length);
-        resortAds.splice(randomIndex,1);
+        randomIndex = random(0,resortAds.length);
       }
-      const alt = resortAds[0].alt.replaceAll(' ', '-');
+      const targetResortAd = resortAds[randomIndex];
+      _log(`resortAds ${resortAds.length}`);
+      console.log(targetResortAd);
+
+      const alt = targetResortAd.alt.replaceAll(' ', '-');
       const html = `
   
       <div class="internal">
-        <a href="${resortAds[0].href}" target="_blank" data-umami-event="banner-state-click-${alt}">
-          <img class="adHighlight" src="assets/images/resort-ads/${resortAds[0].img}" alt="${resortAds[0].alt}" width="${resortAds[0].width}" height="${resortAds[0].height}" data-umami-event="banner-state-click-${alt}">
+        <a href="${targetResortAd.href}" target="_blank" data-umami-event="banner-state-click-${alt}">
+          <img class="adHighlight" src="assets/images/resort-ads/${targetResortAd.img}" alt="${targetResortAd.alt}" width="${targetResortAd.width}" height="${targetResortAd.height}" data-umami-event="banner-state-click-${alt}">
         </a>
       </div>
       `;
