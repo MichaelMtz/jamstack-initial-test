@@ -356,7 +356,36 @@ document.addEventListener('DOMContentLoaded',()=> {
           </div><!-- end desc -->
       </div>
       `).join('');
-    elStories.insertAdjacentHTML('afterbegin',html);
+    const howToPosts = [
+      {
+        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
+        "image": "https://snocountry.com/assets/images/mountain-life/how-to/adjust-bindings-1024w.png",
+        "title": "How-To Prep your snowboard for winter",
+        "author": "Josh Petit",
+        "umami": "how-to-prep-snowboard-for-winter"
+      }, {
+        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-skis-for-winter/",
+        "image": "https://snocountry.com/assets/images/mountain-life/how-to/ski-how-to-inspecting-1024w.png",
+        "title": "How-To Prep your skis for winter",
+        "author": "Josh Petit",
+        "umami": "how-to-prep-skis-for-winter"
+      }
+    ];
+    
+    const howToHTML = howToPosts.map(iterPost => `      
+    
+    <div class="deals" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+        <div class="deals-content">
+            <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
+        </div><!-- end deals-content -->
+        <div class="deals-desc"> 
+            <a href="${iterPost.url}" class="button readbtn dealClick" data-umami-event="${iterPost.umami}" >
+            Read...
+            </a>
+        </div><!-- end desc -->
+    </div>
+    `).join('');
+    elStories.insertAdjacentHTML('afterbegin',howToHTML + html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
