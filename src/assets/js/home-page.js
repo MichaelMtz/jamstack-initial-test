@@ -340,22 +340,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   };
-  
-  const createStoriesSection = (elStories, posts) => {
-    //_log('createStoriesSection: Desktop:');
-    const html = posts.map(iterPost => `      
-
-      <div class="deals" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
-          <div class="deals-content">
-              <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
-          </div><!-- end deals-content -->
-          <div class="deals-desc"> 
-              <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.eventTitle}" >
-              Read...
-              </a>
-          </div><!-- end desc -->
-      </div>
-      `).join('');
+  const getMtnLifePosts = () => {
     const howToPosts = [
       {
         "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -385,7 +370,54 @@ document.addEventListener('DOMContentLoaded',()=> {
         </div><!-- end desc -->
     </div>
     `).join('');
-    elStories.insertAdjacentHTML('afterbegin',howToHTML + html);
+    
+    return howToHTML;
+  };
+  const getMtnLifePostsMobile = () => {
+    const howToPosts = [
+      {
+        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
+        "image": "https://snocountry.com/assets/images/mountain-life/how-to/adjust-bindings-1024w.png",
+        "title": "How-To Prep your snowboard for winter",
+        "author": "Josh Petit",
+        "umami": "how-to-prep-snowboard-for-winter"
+      }, {
+        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-skis-for-winter/",
+        "image": "https://snocountry.com/assets/images/mountain-life/how-to/ski-how-to-inspecting-1024w.png",
+        "title": "How-To Prep your skis for winter",
+        "author": "Josh Petit",
+        "umami": "how-to-prep-skis-for-winter"
+      }
+    ];
+    const howToHTML = howToPosts.map(iterPost => `      
+    <a href="${iterPost.url}" class="card" data-umami-event="${iterPost.umami}" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+        <div class="card-content">
+            <h6 class="card-copy"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
+        </div>
+    </a>
+    `).join('');
+    
+    return howToHTML;
+
+  };
+  const createStoriesSection = (elStories, posts) => {
+    //_log('createStoriesSection: Desktop:');
+    const html = posts.map(iterPost => `      
+
+      <div class="deals" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+          <div class="deals-content">
+              <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
+          </div><!-- end deals-content -->
+          <div class="deals-desc"> 
+              <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.eventTitle}" >
+              Read...
+              </a>
+          </div><!-- end desc -->
+      </div>
+      
+      `).join('');
+
+    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -398,7 +430,8 @@ document.addEventListener('DOMContentLoaded',()=> {
           </div>
       </a>
       `).join('');
-    elMobileStories.insertAdjacentHTML('beforeend',html);
+      
+    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
