@@ -25,7 +25,11 @@
   font-size: clamp(1rem, 2.8vw, 4rem);
   color: #373737;
 }
-
+@media screen and (max-width: 479px) {
+  #parallax-snocountry h2.inline-title {
+    line-height: 1.5rem;
+  }
+}
 #parallax-snocountry .highlight {
   letter-spacing: 2px;
   font-weight: 500;
