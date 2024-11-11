@@ -113,6 +113,21 @@ const initializeFilters = () => {
 
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
+const checkAdDates = (iterResortAd) => {
+  let showAd = true;
+  if ((iterResortAd.start_date) && (iterResortAd.end_date)) {
+    const now = new Date();
+    const startDate = new Date(iterResortAd.start_date);
+    const endDate = new Date(iterResortAd.end_date + " 23:59:00");
+    _log(`checkForResortAds: st:${startDate} > now:${now} < end:${endDate}`);
+    if ((now < startDate) || (now > endDate)) {
+      showAd = false;
+    }
+  }
+  _log(`checkForResortAds-showAd: ${showAd}`);
+  return showAd;
+};
+
 const trackBanner = (bannerName) => {
   if (window.umami) {
     window.umami.track(`banner-state-display-${bannerName}`);
@@ -190,14 +205,6 @@ const checkForAd = (target) => {
           alt: 'Stratton Mountain VT', 
           position: 'both'
         }]
-      },idaho : {
-        ads: [{
-          img: '2024-07-03-schweitzer-summer-728x90.jpg',
-          href:"https://bit.ly/3VTawv1",
-          width:728, 
-          height:90,
-          alt: 'Schweitzer ID',
-        }]
       },wyoming : {
         ads: [{ 
           img: '2024-10-1-Jackson-Hole-728x90.jpg',
@@ -245,7 +252,7 @@ const checkForAd = (target) => {
           alt: 'Loveland Ski Area CO', 
           position: 'both',
           start_date: '2024-11-07',
-          end_date: '2025-11-24'
+          end_date: '2024-11-24'
         }]
       }
       
@@ -258,22 +265,24 @@ const checkForAd = (target) => {
         randomIndex = random(0,resortAds.length);
       }
       const targetResortAd = resortAds[randomIndex];
-      _log(`resortAds ${resortAds.length}`);
-      console.log(targetResortAd);
-
-      const alt = targetResortAd.alt.replaceAll(' ', '-');
-      const html = `
+      if (checkAdDates(targetResortAd)) {    
+        _log(`resortAds ${resortAds.length}`);
+        console.log(targetResortAd);
   
-      <div class="internal">
-        <a href="${targetResortAd.href}" target="_blank" data-umami-event="banner-state-click-${alt}">
-          <img class="adHighlight" src="assets/images/resort-ads/${targetResortAd.img}" alt="${targetResortAd.alt}" width="${targetResortAd.width}" height="${targetResortAd.height}" data-umami-event="banner-state-click-${alt}">
-        </a>
-      </div>
-      `;
-      waitForElement('#container-snow-reports').then((elSnowReportContainer) => {
-        elSnowReportContainer.insertAdjacentHTML('beforebegin',html);
-        trackBanner(alt);
-      }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
+        const alt = targetResortAd.alt.replaceAll(' ', '-');
+        const html = `
+    
+        <div class="internal">
+          <a href="${targetResortAd.href}" target="_blank" data-umami-event="banner-state-click-${alt}">
+            <img class="adHighlight" src="assets/images/resort-ads/${targetResortAd.img}" alt="${targetResortAd.alt}" width="${targetResortAd.width}" height="${targetResortAd.height}" data-umami-event="banner-state-click-${alt}">
+          </a>
+        </div>
+        `;
+        waitForElement('#container-snow-reports').then((elSnowReportContainer) => {
+          elSnowReportContainer.insertAdjacentHTML('beforebegin',html);
+          trackBanner(alt);
+        }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
+      } // checkAdDates
     }
   }
 };
