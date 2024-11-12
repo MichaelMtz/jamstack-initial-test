@@ -27,7 +27,7 @@ const checkAdDates = (iterResortAd) => {
   if ((iterResortAd.start_date) && (iterResortAd.end_date)) {
     const now = new Date();
     const startDate = new Date(iterResortAd.start_date);
-    const endDate = new Date(iterResortAd.end_date + " 23:59:00");
+    const endDate = new Date(iterResortAd.end_date );
     _log(`checkForResortAds: st:${startDate} > now:${now} < end:${endDate}`);
     if ((now < startDate) || (now > endDate)) {
       showAd = false;
