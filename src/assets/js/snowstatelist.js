@@ -1,6 +1,6 @@
 // Logic to pull in snow report from SnoCountry Feed API
 const t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e;};
-const _log = function (text, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`);};
+const _log = function (text, param, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`, param);};
 _log('Initialized...');
 
 const observeSelector = (selector, callback, options = {
@@ -138,12 +138,33 @@ const trackBanner = (bannerName) => {
   }
 };
 
+const selectCurrentAd = (resortAdList) => {
+  _log('selectCurrentAd::resortAdList:',resortAdList);
+  // 1st check how many are valid after date check
+  const validResortAds = [];
+  resortAdList.forEach((iterResortAd) => {
+    if (checkAdDates(iterResortAd)) {
+      validResortAds.push(iterResortAd);
+    }
+  });
+  let returnValidAds = [];
+  if (validResortAds.length > 2) {
+    for (let ind=0; ind < 2; ind++) {
+      returnValidAds.push(validResortAds.splice(random(0,validResortAds.length),1));
+    }
+  } else {
+    returnValidAds = validResortAds;
+  }
+  _log('selectCurrentAd::returnValidAds:',returnValidAds);
+  return returnValidAds;
+};
+
 const checkForAd = (target) => {
   
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
     "wyoming", "colorado", 
-    "idaho", "montana", "oregon", 
+    "idaho", "montana", "oregon", "new-york"
   ];
   
   if (targetList.includes(target)) {
@@ -254,19 +275,51 @@ const checkForAd = (target) => {
           start_date: '2024-11-07',
           end_date: '2024-11-24'
         }]
+      },"new-york" : {
+        ads: [{
+          img: '2024-11-13-skicny-season.png',
+          href:"https://www.skicny.com",
+          width:728, 
+          height:90,
+          alt: 'Labrador NY', 
+          position: 'both',
+          start_date: '2024-11-13',
+          end_date: '2024-11-21'
+        },{
+          img: '2024-11-13-skicny-black-friday.png',
+          href:"https://www.skicny.com",
+          width:728, 
+          height:90,
+          alt: 'Labrador NY', 
+          position: 'both',
+          start_date: '2024-11-22',
+          end_date: '2024-12-02'
+        },{
+          img: '2024-11-13-skicny-sno.png',
+          href:"https://www.skicny.com",
+          width:728, 
+          height:90,
+          alt: 'Labrador NY', 
+          position: 'both',
+          start_date: '2024-12-03',
+          end_date: '2025-03-01'
+        }]
       }
       
     };
     
     if (currentResortAds[target]) {
-      const resortAds = currentResortAds[target].ads;
+      let resortAds = currentResortAds[target].ads;
+      _log(`resortAds ${resortAds.length}`);
       let randomIndex = 0;
       if(resortAds.length > 1) {
-        randomIndex = random(0,resortAds.length);
+        resortAds = selectCurrentAd(resortAds);
+        randomIndex = (resortAds.length > 1) ? random(0,resortAds.length) : 0;
       }
+
       const targetResortAd = resortAds[randomIndex];
       if (checkAdDates(targetResortAd)) {    
-        _log(`resortAds ${resortAds.length}`);
+        
         console.log(targetResortAd);
   
         const alt = targetResortAd.alt.replaceAll(' ', '-');

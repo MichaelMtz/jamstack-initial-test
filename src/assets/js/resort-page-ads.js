@@ -28,12 +28,12 @@ const checkAdDates = (iterResortAd) => {
     const now = new Date();
     const startDate = new Date(iterResortAd.start_date);
     const endDate = new Date(iterResortAd.end_date );
-    _log(`checkForResortAds: st:${startDate} > now:${now} < end:${endDate}`);
+    //_log(`checkForResortAds: st:${startDate} > now:${now} < end:${endDate}`);
     if ((now < startDate) || (now > endDate)) {
       showAd = false;
     }
   }
-  _log(`checkForResortAds-showAd: ${showAd}`);
+  // _log(`checkForResortAds-showAd: ${showAd}`);
   return showAd;
 };
 
@@ -52,8 +52,29 @@ const randomPositions = () => {
   const randomIndex = random(0,2);
   return (randomIndex == 0) ? ['#resort-name','.footer-resort-ad .resort__container'] : ['.footer-resort-ad .resort__container','#resort-name'];
 };
+const selectCurrentAd = (resortAdList) => {
+  _log('selectCurrentAd::resortAdList:',resortAdList);
+  // 1st check how many are valid after date check
+  const validResortAds = [];
+  resortAdList.forEach((iterResortAd) => {
+    if (checkAdDates(iterResortAd)) {
+      validResortAds.push(iterResortAd);
+    }
+  });
+  let returnValidAds = [];
+  if (validResortAds.length > 2) {
+    for (let ind=0; ind < 2; ind++) {
+      returnValidAds.push(validResortAds.splice(random(0,validResortAds.length),1));
+    }
+  } else {
+    returnValidAds = validResortAds;
+  }
+  _log('selectCurrentAd::returnValidAds:',returnValidAds);
+  return returnValidAds;
+};
+
 document.addEventListener('DOMContentLoaded',()=> {
-  _log('checkForResortAds');
+  _log('checkForResortAds begin');
 
   const resort_id = document.body.dataset.snowreport;
   const currentResortAds = {
@@ -677,17 +698,76 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Treetops MI', 
         position: 'both'
       }]
+    }, 607002: {
+      ads: [{
+        img: '2024-11-13-skicny-season.png',
+        href:"https://www.skicny.com",
+        width:728, 
+        height:90,
+        alt: 'Labrador NY', 
+        position: 'both',
+        start_date: '2024-11-13',
+        end_date: '2024-11-21'
+      },{
+        img: '2024-11-13-skicny-black-friday.png',
+        href:"https://www.skicny.com",
+        width:728, 
+        height:90,
+        alt: 'Labrador NY', 
+        position: 'both',
+        start_date: '2024-11-22',
+        end_date: '2024-12-02'
+      },{
+        img: '2024-11-13-skicny-sno.png',
+        href:"https://www.skicny.com",
+        width:728, 
+        height:90,
+        alt: 'Labrador NY', 
+        position: 'both',
+        start_date: '2024-12-03',
+        end_date: '2025-03-01'
+      }]
+    }, 315006: {
+      ads: [{
+        img: '2024-11-13-skicny-season.png',
+        href:"https://www.skicny.com",
+        width:728, 
+        height:90,
+        alt: 'Labrador NY', 
+        position: 'both',
+        start_date: '2024-11-13',
+        end_date: '2024-11-21'
+      },{
+        img: '2024-11-13-skicny-black-friday.png',
+        href:"https://www.skicny.com",
+        width:728, 
+        height:90,
+        alt: 'Labrador NY', 
+        position: 'both',
+        start_date: '2024-11-22',
+        end_date: '2024-12-02'
+      },{
+        img: '2024-11-13-skicny-sno.png',
+        href:"https://www.skicny.com",
+        width:728, 
+        height:90,
+        alt: 'Labrador NY', 
+        position: 'both',
+        start_date: '2024-12-03',
+        end_date: '2025-03-01'
+      }]
     }
-    
   };
+  
+
   if (currentResortAds[resort_id]) {
-    
-    
-    const resortAds = currentResortAds[resort_id].ads;
+    let resortAds = currentResortAds[resort_id].ads;
+    _log(`checkForResortAds::resort_id: ${resort_id}: `,resortAds);
+
     if(resortAds.length > 2) {
-      const randomIndex = random(0,resortAds.length);
-      resortAds.splice(randomIndex,1);
+      resortAds = selectCurrentAd(resortAds);
     }
+
     let randomAdPositions = [];
     let first = true;
     let adPosition = 0;
@@ -698,40 +778,38 @@ document.addEventListener('DOMContentLoaded',()=> {
         _log('checkForResortAds: Random detected:');
         console.log(randomAdPositions);
       }
-      if (checkAdDates(iterResortAd)) {    
-        _log('checkForResortAds: applying ad');   
-        console.log(iterResortAd);
-        const alt = iterResortAd.alt.replaceAll(' ', '-'); 
-        const html = `
-        <div class="resort-ad">
-          <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
-            <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}" data-umami-event="banner-resort-click-${alt}">
-          </a>
-        </div>
-        `;
-        
-        if ((iterResortAd.position === 'top') || (iterResortAd.position === 'both') ) {
-          waitForElement('#resort-name').then((elResortName) => {
-            elResortName.insertAdjacentHTML('beforebegin',html);
-          }).catch( () => { console.log('Error waiting for checkForResortAds:');});
-        }
-        if ((iterResortAd.position === 'bottom') || (iterResortAd.position === 'both') ) {
-          waitForElement('.footer-resort-ad .resort__container').then((elResortName) => {
-            elResortName.insertAdjacentHTML('afterbegin',html);
-          }).catch( () => { console.log('Error waiting for checkForResortAds:');});
-        }
-        
-        if (iterResortAd.position === 'random') {
-          const sel = randomAdPositions[adPosition];
-          _log(`checkForResortAds: Random sel:`);
-          console.log('sel:',sel);
-          waitForElement(sel).then((elResortName) => {
-            elResortName.insertAdjacentHTML('afterbegin',html);
-          }).catch( () => { console.log('Error waiting for checkForResortAds:');});
-          adPosition++;
-        }
-        trackBanner(alt);
+      _log('checkForResortAds: applying ad');   
+      console.log(iterResortAd);
+      const alt = iterResortAd.alt.replaceAll(' ', '-'); 
+      const html = `
+      <div class="resort-ad">
+        <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
+          <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}" data-umami-event="banner-resort-click-${alt}">
+        </a>
+      </div>
+      `;
+      
+      if ((iterResortAd.position === 'top') || (iterResortAd.position === 'both') ) {
+        waitForElement('#resort-name').then((elResortName) => {
+          elResortName.insertAdjacentHTML('beforebegin',html);
+        }).catch( () => { console.log('Error waiting for checkForResortAds:');});
       }
+      if ((iterResortAd.position === 'bottom') || (iterResortAd.position === 'both') ) {
+        waitForElement('.footer-resort-ad .resort__container').then((elResortName) => {
+          elResortName.insertAdjacentHTML('afterbegin',html);
+        }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+      }
+      
+      if (iterResortAd.position === 'random') {
+        const sel = randomAdPositions[adPosition];
+        _log(`checkForResortAds: Random sel:`);
+        console.log('sel:',sel);
+        waitForElement(sel).then((elResortName) => {
+          elResortName.insertAdjacentHTML('afterbegin',html);
+        }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+        adPosition++;
+      }
+      trackBanner(alt);
     });
 
   } else {
