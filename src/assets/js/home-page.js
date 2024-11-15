@@ -446,9 +446,9 @@ document.addEventListener('DOMContentLoaded',()=> {
       console.log('stories:',data);
       if (data.status) {
         waitForElement('#offers').then((elStories) => {
-          _log('getRecentStories: stories:');
+          _log('getRecentStories: stories:',data.stories);
           console.log(data.list);
-          const storyList = (window.innerWidth >= 1530) ? data.stories : data.stories.slice(0,7);
+          const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,7) : data.stories.slice(0,6);
           createStoriesSection(elStories,storyList);
         }).catch( (e) => { console.error('Error building desktop news:',e);});  
         waitForElement('#mobile-stories .mobile-stories-container').then((elMobileStories) => {
