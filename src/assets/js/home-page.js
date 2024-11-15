@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         waitForElement('#offers').then((elStories) => {
           _log('getRecentStories: stories:');
           console.log(data.list);
-          const storyList = (window.innerWidth >= 1530) ? data.stories : data.stories.slice(0,6);
+          const storyList = (window.innerWidth >= 1530) ? data.stories : data.stories.slice(0,7);
           createStoriesSection(elStories,storyList);
         }).catch( (e) => { console.error('Error building desktop news:',e);});  
         waitForElement('#mobile-stories .mobile-stories-container').then((elMobileStories) => {

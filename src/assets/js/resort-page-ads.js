@@ -762,7 +762,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   if (currentResortAds[resort_id]) {
     let resortAds = currentResortAds[resort_id].ads;
-    _log(`checkForResortAds::resort_id: ${resort_id}: `,resortAds);
+    //_log(`checkForResortAds::resort_id: ${resort_id}: `,resortAds);
 
     if(resortAds.length > 2) {
       resortAds = selectCurrentAd(resortAds);
