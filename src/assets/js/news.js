@@ -88,6 +88,7 @@ const createNewsSDL = (post) => {
   const publish = new Date(Date.parse(post.publish_up.replace(/-/g, '/')));
   const publishISODate = publish.toISOString();
   const sdlHTML = `
+    <meta property="og:image" content="${post.image}" />
     <script type="application/ld+json">{
         "@context": "https://schema.org",
         "@graph": [
