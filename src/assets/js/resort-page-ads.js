@@ -404,7 +404,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Whitetail Resort PA', 
         position: 'both'
       }]
-    },702002:{
+    },702001:{
+      ads: [{
+        img: '2024-11-19-Diamond-Peak.jpg',
+        href:"https://www.diamondpeak.com/tickets-passes-rentals/lift-tickets/",
+        width:728, 
+        height:90,
+        alt: 'Diamond Peak CA', 
+        position: 'both'
+      }]
+    },
+    702002:{
       ads: [{
         img: 'Less-Canyon-Ad.png',
         href:"https://www.leecanyonlv.com/midweek-magic/",
@@ -415,14 +425,12 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },717003:{
       ads: [{
-        img: '2024-02-15-Camelback-Ad.jpg',
+        img: '2024-11-19-Camelback-Winter.jpg',
         href:"https://www.camelbackresort.com/ski-tube/ski-tickets-passes/",
         width:728, 
         height:90,
         alt: 'Camelback PA', 
-        position: 'both',       
-        start_date: '2024-02-14',
-        end_date: '2024-02-23'
+        position: 'both',
       }]
     }, 503004 : {
       ads: [{
@@ -497,14 +505,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },619006: {
       ads: [{
-        img: '2024-03-01-CaliPass-728x90.jpg',
-        href:"http://www.thecalipass.com",
+        img: '2024-11-20-Mountain-High.png',
+        href:"https://www.mthigh.com/site/tickets-and-groups/season-passes/season-pass.html",
         width:728, 
         height:90,
         alt: 'Mountain High CA', 
         position: 'both',
-        start_date: '2024-03-09',
-        end_date: '2024-04-30'
+        start_date: '2024-11-20',
+        end_date: '2024-11-30'
       }]
     }, 413006: {
       ads: [{
@@ -530,14 +538,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603018: {
       ads: [{
-        img: '2024-Pats-Peak.jpg',
+        img: '2024-11-19-Pats-Peak.jpg',
         href:"https://www.patspeak.com/the-mountain/mountain-info/snow-report/",
         width:728, 
         height:90,
         alt: 'Pats Peak NH', 
         position: 'both',
-        start_date: '2023-12-01',
-        end_date: '2024-04-07'
+        start_date: '2024-11-19',
+        end_date: '2028-12-01'
       }]
     }, 802021: {
       ads: [{
