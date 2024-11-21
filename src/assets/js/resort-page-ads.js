@@ -672,14 +672,12 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 719002: {
       ads: [{
-        img: '2024-03-Monarch-Wings-Pass.jpg',
-        href:"https://skimonarch.com/season-passes/",
+        img: '2024-11-20-Monarch.jpg',
+        href:"https://skimonarch.com/",
         width:600, 
         height:388,
         alt: 'Monarch Mountain CO', 
-        position: 'both',
-        start_date: '2024-02-20',
-        end_date: '2024-06-27'
+        position: 'both'
       }]
     }, 208002: {
       ads: [{
