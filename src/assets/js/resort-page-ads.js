@@ -764,7 +764,31 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-12-03',
         end_date: '2025-03-01'
       }]
+    }, 608001: {
+      ads: [{
+        img: '2024-11-22-CascadeMtn.jpg',
+        href:"https://www.cascademountain.com/",
+        width:728, 
+        height:90,
+        alt: 'Cascade WI', 
+        position: 'both',
+        start_date: '2024-11-22',
+        end_date: '2025-11-11'
+      }]
+    }, 413001: {
+      ads: [{
+        img: '2024-11-22-BerkshireEast.png',
+        href:"https://berkshireeast.com",
+        width:728, 
+        height:90,
+        alt: 'Berkshire East MA', 
+        position: 'both',
+        start_date: '2024-11-22',
+        end_date: '2025-03-15'
+      }]
     }
+    
+    
   };
   
 

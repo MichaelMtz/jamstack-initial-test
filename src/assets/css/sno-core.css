@@ -229,6 +229,15 @@ footer .footer-proper .social {
   gap: 10px;
   justify-content: center;
 }
+footer .footer-proper .social img {
+  width: 60px;
+  height: 60px;
+}
+footer .footer-proper .social img.xtwitter {
+  width: unset;
+  height: 50px;
+  margin-top: 5px;
+}
 footer .footer-proper .info {
   display: flex;
   flex-flow: row wrap;

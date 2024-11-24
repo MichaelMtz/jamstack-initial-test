@@ -243,6 +243,15 @@ footer {
       flex-flow: row wrap;
       gap:10px;
       justify-content: center;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+      img.xtwitter {
+        width:unset;
+        height: 50px;
+        margin-top:5px;
+      }
     }
     .info {
       display:flex;
