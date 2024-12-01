@@ -277,6 +277,15 @@ const checkForAd = (target) => {
         }]
       },"new-york" : {
         ads: [{
+          img: '2024-11-22-West-Mountain.jpg',
+          href:"https://westmountain.com/",
+          width:728, 
+          height:90,
+          alt: 'West Mountain NY',
+          position:'both',
+          start_date: '2024-11-25',
+          end_date: '2025-05-01'
+        },{
           img: '2024-11-13-skicny-season.png',
           href:"https://www.skicny.com",
           width:728, 

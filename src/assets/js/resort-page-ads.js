@@ -254,6 +254,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Oak Mountain NY',
         position:'both'
       }]
+    },518010:{
+      ads: [{
+        img: '2024-11-22-West-Mountain.jpg',
+        href:"https://westmountain.com/",
+        width:728, 
+        height:90,
+        alt: 'West Mountain NY',
+        position:'both',
+        start_date: '2024-11-25',
+        end_date: '2025-05-01'
+      }]
     },203004:{
       ads: [{
         img: 'Powder_Ridge_12-6-21.jpg',
@@ -705,6 +716,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Treetops MI', 
         position: 'both'
+      }]
+    }, 313006: {
+      ads: [{
+        img: '2024-11-30-Ostego.png',
+        href:"https://www.otsegoclub.com/ski/mountain-information/",
+        width:728, 
+        height:90,
+        alt: 'Otsego Club MI', 
+        position: 'both',
+        start_date: '2024-12-01',
+        end_date: '2025-04-27'
       }]
     }, 607002: {
       ads: [{
