@@ -447,14 +447,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 503004 : {
       ads: [{
-        img: '2024-06-24-Bachelor-728x90.jpg',
-        href:"https://www.mtbachelor.com/things-to-do/events/sunchaser-spring ",
+        img: '2024-Mt-Bachelor.jpg',
+        href:"https://www.mtbachelor.com/tickets-passes/lift-tickets",
         width:728, 
         height:90,
         alt: 'Mt Bachelor OR',
         position: 'both',
-        start_date: '2024-06-24',
-        end_date: '2024-09-30'
+        start_date: '2024-12-03',
+        end_date: '2025-02-28'
       }]
     },  814002:{
       ads: [{
