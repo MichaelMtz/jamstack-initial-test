@@ -455,6 +455,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         position: 'both',
         start_date: '2024-12-03',
         end_date: '2025-02-28'
+      },{
+        img: '2024-Mt-Bachelor-Book-Your-Trip.jpg',
+        href:"https://www.mtbachelor.com/tickets-passes/lift-tickets",
+        width:728, 
+        height:90,
+        alt: 'Mt Bachelor OR',
+        position: 'both',
+        start_date: '2024-12-04',
+        end_date: '2025-05-19'
       }]
     },  814002:{
       ads: [{
