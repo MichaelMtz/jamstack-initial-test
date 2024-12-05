@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Mt Bachelor OR',
-        position: 'both',
+        position: 'random',
         start_date: '2024-12-03',
         end_date: '2025-02-28'
       },{
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Mt Bachelor OR',
-        position: 'both',
+        position: 'random',
         start_date: '2024-12-04',
         end_date: '2025-05-19'
       }]
