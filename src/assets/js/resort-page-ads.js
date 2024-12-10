@@ -274,6 +274,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Powder Ridge CT',
         position:'both'
       }]
+    },207001:{
+      ads: [{
+        img: '2024-12-05-BlackMountain.png',
+        href:"https://skiblackmountain.org/tickets-passes",
+        width:728, 
+        height:90,
+        alt: 'Saddleback ME',
+        position:'both'
+      }]
     },207006:{
       ads: [{
         img: 'Saddleback-Favorite-Mtn_728x90.jpg',
