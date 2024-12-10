@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
     elStories.insertAdjacentHTML('afterbegin', html);
   };
   
