@@ -15,7 +15,8 @@
 #parallax-snocountry h3 {font-family:'Brandon Grotesque', sans-serif; font-size:14px;  font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;
   font-style: unset;
   color: #373737 !important;
-  font-size: clamp(1rem, 2.2vw, 4rem);
+  font-size: clamp(1rem, 2vw, 4rem);
+  font-size: clamp(1rem, 2vw, 21px);
   text-align: center;
 }
 #parallax-snocountry p {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:17px; line-height:24px;}

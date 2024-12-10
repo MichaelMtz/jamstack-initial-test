@@ -343,18 +343,25 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
-        "image": "https://snocountry.com/assets/images/mountain-life/how-to/adjust-bindings-1024w.png",
-        "title": "How-To Prep your snowboard for winter",
+        "url": "https://snocountry.com/mountain-life/travel/winter-driving-safety-tips",
+        "image": "https://snocountry.com/assets/images/mountain-life/winter-driving/which-tires-for-winter-mod.png",
+        "title": "Winter Driving Tips",
         "author": "Josh Petit",
-        "umami": "how-to-prep-snowboard-for-winter"
-      }, {
-        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-skis-for-winter/",
-        "image": "https://snocountry.com/assets/images/mountain-life/how-to/ski-how-to-inspecting-1024w.png",
-        "title": "How-To Prep your skis for winter",
-        "author": "Josh Petit",
-        "umami": "how-to-prep-skis-for-winter"
+        "umami": "travel-winter-driving-tips"
       }
+      // {
+      //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
+      //   "image": "https://snocountry.com/assets/images/mountain-life/how-to/adjust-bindings-1024w.png",
+      //   "title": "How-To Prep your snowboard for winter",
+      //   "author": "Josh Petit",
+      //   "umami": "how-to-prep-snowboard-for-winter"
+      // }, {
+      //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-skis-for-winter/",
+      //   "image": "https://snocountry.com/assets/images/mountain-life/how-to/ski-how-to-inspecting-1024w.png",
+      //   "title": "How-To Prep your skis for winter",
+      //   "author": "Josh Petit",
+      //   "umami": "how-to-prep-skis-for-winter"
+      // }
     ];
     
     const howToHTML = howToPosts.map(iterPost => `      
@@ -376,18 +383,25 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
-        "image": "https://snocountry.com/assets/images/mountain-life/how-to/adjust-bindings-1024w.png",
-        "title": "How-To Prep your snowboard for winter",
+        "url": "https://snocountry.com/mountain-life/travel/winter-driving-safety-tips",
+        "image": "https://snocountry.com/assets/images/mountain-life/winter-driving/which-tires-for-winter-mod.png",
+        "title": "Winter Driving Tips",
         "author": "Josh Petit",
-        "umami": "how-to-prep-snowboard-for-winter"
-      }, {
-        "url": "https://snocountry.com/mountain-life/how-to/preparing-your-skis-for-winter/",
-        "image": "https://snocountry.com/assets/images/mountain-life/how-to/ski-how-to-inspecting-1024w.png",
-        "title": "How-To Prep your skis for winter",
-        "author": "Josh Petit",
-        "umami": "how-to-prep-skis-for-winter"
+        "umami": "travel-winter-driving-tips"
       }
+      // {
+      //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
+      //   "image": "https://snocountry.com/assets/images/mountain-life/how-to/adjust-bindings-1024w.png",
+      //   "title": "How-To Prep your snowboard for winter",
+      //   "author": "Josh Petit",
+      //   "umami": "how-to-prep-snowboard-for-winter"
+      // }, {
+      //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-skis-for-winter/",
+      //   "image": "https://snocountry.com/assets/images/mountain-life/how-to/ski-how-to-inspecting-1024w.png",
+      //   "title": "How-To Prep your skis for winter",
+      //   "author": "Josh Petit",
+      //   "umami": "how-to-prep-skis-for-winter"
+      // }
     ];
     const howToHTML = howToPosts.map(iterPost => `      
     <a href="${iterPost.url}" class="card" data-umami-event="${iterPost.umami}" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
@@ -417,8 +431,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
-    elStories.insertAdjacentHTML('afterbegin', html);
+    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    // elStories.insertAdjacentHTML('afterbegin', html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -432,8 +446,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       </a>
       `).join('');
       
-    //elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
-    elMobileStories.insertAdjacentHTML('beforeend', html);
+    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
+    //elMobileStories.insertAdjacentHTML('beforeend', html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
