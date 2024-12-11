@@ -100,7 +100,7 @@ const fixPageNavLinks = () => {
 };
 window.snoCharts = new Array();
 const createSectionChart = (section,chart,yAxisUnit) => {
-  _log(`createSectionChart: ${section}`);
+  _log(`createSectionChart: ${section}`,chart);
   // const sectionCharts = new Array();
   const chartDataSets = chart.data;
   const titles = chart.titles;

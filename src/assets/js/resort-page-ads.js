@@ -589,6 +589,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2023-12-01',
         end_date: '2024-03-24'
       }]
+    }, 303020: {
+      ads: [{
+        img: '2024-12-10-Aspen-Snowmass.jpg',
+        href:"https://www.aspensnowmass.com/discover/experiences/stories/long-love-aspen-long-love-skiing",
+        width:728, 
+        height:90,
+        alt: 'Aspen Snowmass CO', 
+        position: 'both',
+        start_date: '2024-12-11',
+        end_date: '2025-04-30'
+      }]
+      
     }, 303022: {
       ads: [{
         img: 'Telluride-2024-01-04-Pepsi.png',
@@ -603,14 +615,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       
     }, 303001: {
       ads: [{
-        img: '2024-Abasin-LFAR_LiftTicket_640x100.jpg',
-        href:"https://www.arapahoebasin.com/tickets-and-passes/?utm_source=Banner+Ad&utm_medium=banner&utm_campaign=Lift+Tickets+&utm_id=SnoCountry",
+        img: '2024-12-10-ABasin.jpg',
+        href:"https://store.arapahoebasin.com/s/2024-25-passes",
         width:640, 
         height:100,
         alt: 'Arapahoe Basin CO', 
         position: 'both',
-        start_date: '2024-01-08',
-        end_date: '2024-04-24'
+        start_date: '2024-12-10',
+        end_date: '2025-01-02'
       }]
       
     }, 703003: {
@@ -698,6 +710,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         position: 'both',
         start_date: '2024-02-20',
         end_date: '2024-04-27'
+      }]
+    }, 303019: {
+      ads: [{
+        img: '2024-12-10-Sunlight.jpeg',
+        href:"https://powderhorn.com/",
+        width:728, 
+        height:90,
+        alt: 'Sunlight Mtn CO', 
+        position: 'both',
+        start_date: '2024-12-11',
+        end_date: '2025-04-03'
       }]
     }, 719002: {
       ads: [{
@@ -836,10 +859,8 @@ document.addEventListener('DOMContentLoaded',()=> {
     let resortAds = currentResortAds[resort_id].ads;
     //_log(`checkForResortAds::resort_id: ${resort_id}: `,resortAds);
 
-    if(resortAds.length > 2) {
-      resortAds = selectCurrentAd(resortAds);
-    }
 
+    resortAds = selectCurrentAd(resortAds);
     let randomAdPositions = [];
     let first = true;
     let adPosition = 0;
@@ -885,7 +906,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     });
 
   } else {
-    checkForGeneralAd();
+    //checkForGeneralAd();
   }
 
   if (resort_id === '209005') {
