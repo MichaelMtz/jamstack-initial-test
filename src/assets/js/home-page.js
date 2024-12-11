@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         "url": "https://snocountry.com/mountain-life/travel/winter-driving-safety-tips",
         "image": "https://snocountry.com/assets/images/mountain-life/winter-driving/which-tires-for-winter-mod.png",
         "title": "Winter Driving Tips",
-        "author": "Josh Petit",
+        "author": "In Control",
         "umami": "travel-winter-driving-tips"
       }
       // {
@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         "url": "https://snocountry.com/mountain-life/travel/winter-driving-safety-tips",
         "image": "https://snocountry.com/assets/images/mountain-life/winter-driving/which-tires-for-winter-mod.png",
         "title": "Winter Driving Tips",
-        "author": "Josh Petit",
+        "author": "In Control",
         "umami": "travel-winter-driving-tips"
       }
       // {

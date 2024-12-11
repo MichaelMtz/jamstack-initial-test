@@ -291,11 +291,17 @@ a.button-link-left { background: url(../images/6.png) no-repeat left; padding-le
 
 .topnav ul.navigation > li.menu-resort .menu-dropdown { right: -40px; }
 .topnav ul.navigation > li.menu-deals .menu-dropdown, 
-.topnav ul.navigation > li.menu-news .menu-dropdown, 
 .topnav ul.navigation > li.menu-gear .menu-dropdown 
 { 
     left:auto;
     right: 0px; 
+}
+.topnav ul.navigation > li.menu-news .menu-dropdown {
+	left: -55px;
+	right: auto;
+}
+.topnav ul.navigation > li.menu-usa .menu-dropdown {
+	left: -255px;
 }
 .topnav ul.navigation > li.menu-admin:hover  { 
     color:red;
