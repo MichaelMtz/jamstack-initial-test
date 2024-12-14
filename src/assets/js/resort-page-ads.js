@@ -89,8 +89,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603005 : {
       ads: [{
-        img: '603005.gif',
-        href:"https://www.brettonwoods.com/?utm_source=snocountry&utm_medium=banner&utm_campaign=prospecting-brettonwoods-leisure-2021_2022",
+        img: '2024-12-11-Bretton-Woods.jpg',
+        href:"https://www.brettonwoods.com",
         width:728, 
         height:90,
         alt: 'Bretton Woods, NH',
@@ -849,7 +849,28 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-11-22',
         end_date: '2025-03-15'
       }]
+    }, 615001: {
+      ads: [{
+        img: '2024-12-11-Ober.jpg',
+        href:"https://obermountain.com/",
+        width:728, 
+        height:90,
+        alt: 'Ober Mountain TN', 
+        position: 'both',
+        comment: 'general ad - can keep running'
+      }]
+    }, 704006: {
+      ads: [{
+        img: '2024-12-11-Sugar-Mountain.jpg',
+        href:"https://www.skisugar.com",
+        width:728, 
+        height:90,
+        alt: 'Sugar Mountain NC', 
+        position: 'both',
+        comment: 'general ad - can keep running'
+      }]
     }
+    
     
     
   };

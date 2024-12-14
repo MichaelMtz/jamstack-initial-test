@@ -147,6 +147,8 @@ const selectCurrentAd = (resortAdList) => {
       validResortAds.push(iterResortAd);
     }
   });
+  _log(`selectCurrentAd::validResortAds:`, validResortAds);
+
   let returnValidAds = [];
   if (validResortAds.length > 2) {
     for (let ind=0; ind < 2; ind++) {
@@ -164,7 +166,8 @@ const checkForAd = (target) => {
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
     "wyoming", "colorado", 
-    "idaho", "montana", "oregon", "new-york"
+    "idaho", "montana", "oregon", "new-york",
+    "south-east", "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia"
   ];
   
   if (targetList.includes(target)) {
@@ -313,8 +316,134 @@ const checkForAd = (target) => {
           start_date: '2024-12-03',
           end_date: '2025-03-01'
         }]
+      }, "south-east": {
+        ads: [{
+          img: '2024-12-11-Ober.jpg',
+          href:"https://obermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Ober Mountain TN', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }, {
+          img: '2024-12-11-Sugar-Mountain.jpg',
+          href:"https://www.skisugar.com",
+          width:728, 
+          height:90,
+          alt: 'Sugar Mountain NC', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }]
+      }, alabama: {
+        ads: [{
+          img: '2024-12-11-Ober.jpg',
+          href:"https://obermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Ober Mountain TN', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }, {
+          img: '2024-12-11-Sugar-Mountain.jpg',
+          href:"https://www.skisugar.com",
+          width:728, 
+          height:90,
+          alt: 'Sugar Mountain NC', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }]
+      }, maryland: {
+        ads: [{
+          img: '2024-12-11-Ober.jpg',
+          href:"https://obermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Ober Mountain TN', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }, {
+          img: '2024-12-11-Sugar-Mountain.jpg',
+          href:"https://www.skisugar.com",
+          width:728, 
+          height:90,
+          alt: 'Sugar Mountain NC', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }]
+      }, "north-carolina": {
+        ads: [{
+          img: '2024-12-11-Ober.jpg',
+          href:"https://obermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Ober Mountain TN', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }, {
+          img: '2024-12-11-Sugar-Mountain.jpg',
+          href:"https://www.skisugar.com",
+          width:728, 
+          height:90,
+          alt: 'Sugar Mountain NC', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }]
+      }, tennessee: {
+        ads: [{
+          img: '2024-12-11-Ober.jpg',
+          href:"https://obermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Ober Mountain TN', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }, {
+          img: '2024-12-11-Sugar-Mountain.jpg',
+          href:"https://www.skisugar.com",
+          width:728, 
+          height:90,
+          alt: 'Sugar Mountain NC', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }]
+      }, virginia: {
+        ads: [{
+          img: '2024-12-11-Ober.jpg',
+          href:"https://obermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Ober Mountain TN', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }, {
+          img: '2024-12-11-Sugar-Mountain.jpg',
+          href:"https://www.skisugar.com",
+          width:728, 
+          height:90,
+          alt: 'Sugar Mountain NC', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }]
+      }, "west-virginia": {
+        ads: [{
+          img: '2024-12-11-Ober.jpg',
+          href:"https://obermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Ober Mountain TN', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }, {
+          img: '2024-12-11-Sugar-Mountain.jpg',
+          href:"https://www.skisugar.com",
+          width:728, 
+          height:90,
+          alt: 'Sugar Mountain NC', 
+          position: 'both',
+          comment: 'general ad - can keep running'
+        }]
       }
-      
+
     };
     
     if (currentResortAds[target]) {
