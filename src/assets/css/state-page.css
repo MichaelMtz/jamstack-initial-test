@@ -27,6 +27,13 @@ div.conditions {
   color: #fff;
 }
 
+#container-snow-reports.filter-uphill .resort {
+  display: none;
+}
+#container-snow-reports.filter-uphill .resort.uphill {
+  display: flex;
+}
+
 #container-snow-reports.sort-open .resort.open {
   order: 1;
 }
