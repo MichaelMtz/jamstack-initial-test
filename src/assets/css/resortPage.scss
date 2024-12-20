@@ -7,6 +7,14 @@
 ul.resort-list {
   li {
     list-style: inside;
+    .last-updated {
+      font-style: italic;
+      font-family: "Proxima Nova", sans-serif;
+      font-weight: 100;
+      text-transform: initial;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
   }
 }
 .snow-report-container {
