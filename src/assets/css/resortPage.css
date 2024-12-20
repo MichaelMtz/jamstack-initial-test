@@ -1,5 +1,6 @@
 ul.resort-list li {
-  list-style: inside;
+  list-style: outside;
+  line-height: normal;
 }
 ul.resort-list li .last-updated {
   font-style: italic;

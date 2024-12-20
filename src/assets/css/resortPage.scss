@@ -6,7 +6,8 @@
 
 ul.resort-list {
   li {
-    list-style: inside;
+    list-style: outside;
+    line-height: normal;
     .last-updated {
       font-style: italic;
       font-family: "Proxima Nova", sans-serif;
