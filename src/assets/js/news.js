@@ -228,7 +228,6 @@ const getOtherPostList = (postID) => {
   
   const localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?notPostID=${postID}`;
   const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-list-api?notPostID=${postID}`: localURL;
-  _log(`--getOtherPostList: url:${url}`);
   
   fetch(url).then(response => {      
     return response.json();
