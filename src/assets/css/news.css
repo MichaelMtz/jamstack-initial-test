@@ -21,6 +21,7 @@ body {
   background-color: rgb(14, 28, 44);
   color: white;
   font-size: 18px;
+  line-height: unset;
 }
 .news-home .news-container .news-list {
   display: flex;
@@ -45,7 +46,9 @@ body {
 }
 .news-home .news-container .news-list .news-list-post .post-title {
   margin: 10px 0px 10px 10px;
+  font-size: 13px;
   font-weight: 600;
+  line-height: unset;
   color: #5c5e60;
 }
 .news-home .news-container .news-list .news-list-post .post-info {

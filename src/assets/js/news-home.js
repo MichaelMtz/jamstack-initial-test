@@ -58,8 +58,7 @@ const createPostList = (elPostList, posts) => {
     <div id="post-${iterPost.id}" class="news-list-post">
       <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}">
         <img src="${iterPost.image}">
-        <div class="post-title">${iterPost.title}
-        </div>
+        <h2 class="post-title">${iterPost.title}</h2>
         <div class="post-info">
           <div class="post-info-author">${iterPost.author}</div>
           <div class="post-info-published">${iterPost.publish_up}</div> 

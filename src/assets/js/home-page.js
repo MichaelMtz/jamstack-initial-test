@@ -431,8 +431,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
-    // elStories.insertAdjacentHTML('afterbegin', html);
+    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    elStories.insertAdjacentHTML('afterbegin', html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -446,8 +446,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       </a>
       `).join('');
       
-    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
-    //elMobileStories.insertAdjacentHTML('beforeend', html);
+    //elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
+    elMobileStories.insertAdjacentHTML('beforeend', html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         waitForElement('#offers').then((elStories) => {
           _log('getRecentStories: stories:',data.stories);
           console.log(data.list);
-          const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,7) : data.stories.slice(0,6);
+          const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,9) : data.stories.slice(0,6);
           createStoriesSection(elStories,storyList);
         }).catch( (e) => { console.error('Error building desktop news:',e);});  
         waitForElement('#mobile-stories .mobile-stories-container').then((elMobileStories) => {
