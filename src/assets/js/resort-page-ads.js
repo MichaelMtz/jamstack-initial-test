@@ -938,7 +938,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-abasin" src="assets/images/ads/pepsi/abasin/arapahoe-basin-logo.png" alt="Arapahoe Basin Resort">
+                        <img class="logo-abasin" src="assets/images/ads/pepsi/abasin/ab_thelegend_header_1c_dkBlue_rgb.png" alt="Arapahoe Basin Resort">
                         <img src="assets/images/ads/pepsi/2024-pepsi-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
