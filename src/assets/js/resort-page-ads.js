@@ -930,7 +930,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     //checkForGeneralAd();
   }
 
-  if (resort_id === '303001') {
+  if (resort_id === '603018') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -938,7 +938,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container">   
-                        <img class="logo-abasin" src="assets/images/ads/pepsi/abasin/ab_thelegend_header_1c_dkBlue_rgb.png" alt="Arapahoe Basin Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/pats-peak/PatsPeak_logo.png" alt="Pat's Peak Resort">
                         <img src="assets/images/ads/pepsi/2024-pepsi-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -949,7 +949,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/4pEC80-rueg?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="abasin" width="640" height="360" src="https://www.youtube.com/embed/1TYdeND01V8?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
