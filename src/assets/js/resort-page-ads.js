@@ -714,7 +714,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     }, 303019: {
       ads: [{
         img: '2024-12-10-Sunlight.jpeg',
-        href:"https://powderhorn.com/",
+        href:"https://sunlightmtn.com/plan-your-trip/lessons",
         width:728, 
         height:90,
         alt: 'Sunlight Mtn CO', 
