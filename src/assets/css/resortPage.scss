@@ -753,6 +753,9 @@ ul.resort-list {
         img.logo-china-peak {
           height: 78px;
         }
+        img.logo-snowbird {
+          height:70px;
+        }
       }
       .pepsi-copy {
         text-align: center;
@@ -764,10 +767,24 @@ ul.resort-list {
       }
     }
     .pepsi-video {
+      width:100%;
       padding:15px;
       text-align: center;
       @include bpmaxw(414px) {
         padding:unset;
+      }
+      iframe.default {
+        @include bpmaxw(1054px) {
+          width:640px;
+          margin-left:25px;
+        }
+        @include bpmaxw(900px) {
+          width:540px;
+        }
+        @include bpmaxw(660px) {
+          width:95%;
+          margin-left: unset;
+        }
       }
       iframe.telluride {
         @include bpmaxw(1200px) {
@@ -783,6 +800,7 @@ ul.resort-list {
         }
         @include bpmaxw(660px) {
           width:90%;
+          margin-left: unset;
         }
       }
       iframe.abasin {

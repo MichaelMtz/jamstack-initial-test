@@ -771,6 +771,9 @@ ul.resort-list li .last-updated {
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-china-peak {
   height: 78px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-snowbird {
+  height: 70px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;
@@ -780,12 +783,30 @@ ul.resort-list li .last-updated {
   margin: 0 auto;
 }
 .pepsi .pepsi-content .pepsi-video {
+  width: 100%;
   padding: 15px;
   text-align: center;
 }
 @media screen and (max-width: 414px) {
   .pepsi .pepsi-content .pepsi-video {
     padding: unset;
+  }
+}
+@media screen and (max-width: 1054px) {
+  .pepsi .pepsi-content .pepsi-video iframe.default {
+    width: 640px;
+    margin-left: 25px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .pepsi .pepsi-content .pepsi-video iframe.default {
+    width: 540px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .pepsi .pepsi-content .pepsi-video iframe.default {
+    width: 95%;
+    margin-left: unset;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -808,6 +829,7 @@ ul.resort-list li .last-updated {
 @media screen and (max-width: 660px) {
   .pepsi .pepsi-content .pepsi-video iframe.telluride {
     width: 90%;
+    margin-left: unset;
   }
 }
 @media screen and (max-width: 1281px) {
