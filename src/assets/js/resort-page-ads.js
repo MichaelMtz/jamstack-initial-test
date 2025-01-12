@@ -80,12 +80,14 @@ document.addEventListener('DOMContentLoaded',()=> {
   const currentResortAds = {
     719003 : {
       ads: [ {
-        img: '2024-Cooper-Spring-728x90.jpg',
+        img: '2025-01-10-Cooper-728x90.jpg',
         href:"https://www.skicooper.com/cooper-day-pass/",
         width:728, 
         height:90,
         alt: 'Ski Cooper, CO',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-10',
+        end_date: '2025-01-31'
       }]
     }, 603005 : {
       ads: [{
@@ -207,6 +209,15 @@ document.addEventListener('DOMContentLoaded',()=> {
         end_date: '2024-10-06'
       }]
       
+    },802006: {
+      ads: [{
+        img: '2025-01-10-Jay-Peak_2025_Pepsi_Ad.jpg',
+        href:"https://jaypeakresort.com/",
+        width:728, 
+        height:90,
+        alt: 'Jay Peak',
+        position:'both'
+      }]
     },802009:{
       ads: [{
         img: 'Magic-Mountain-11-23-21.jpg',
@@ -280,7 +291,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         href:"https://skiblackmountain.org/tickets-passes",
         width:728, 
         height:90,
-        alt: 'Saddleback ME',
+        alt: 'Black Mountain ME',
         position:'both'
       }]
     },207006:{
@@ -292,6 +303,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Saddleback ME',
         position:'both'
       }]
+    },207014: {
+      ads: [{
+        img: '2025-01-04-BigRock-728x90.png',
+        href:"https://www.groupon.com/deals/gl-big-rock-mountain",
+        width:728, 
+        height:90,
+        alt: 'Big Rock ME',
+        position:'both',
+        start_date: '2025-01-10',
+        end_date: '2025-03-23'
+      }]
+      
     },208008:{
       ads: [{
         img: '2024-07-03-schweitzer-summer-728x90.jpg',
@@ -702,14 +725,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 303016: {
       ads: [{
-        img: '2024-02-20-Powderhorn.png',
+        img: '2025-01-04-PowderhornSnoCtBannerV0.png',
         href:"https://powderhorn.com/",
         width:728, 
         height:90,
         alt: 'Powderhorn CO', 
         position: 'both',
-        start_date: '2024-02-20',
-        end_date: '2024-04-27'
+        start_date: '2025-01-10',
+        end_date: '2025-05-27'
       }]
     }, 303019: {
       ads: [{
@@ -911,7 +934,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       const html = `
       <div class="resort-ad">
         <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
-          <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}" data-umami-event="banner-resort-click-${alt}">
+          <img class="img-resort-ad" src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}" data-umami-event="banner-resort-click-${alt}">
         </a>
       </div>
       `;
@@ -980,7 +1003,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       const html = `
      <div class="resort-ad">
        <a href="${iterResortAd.href}" target="_blank">
-         <img src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
+         <img class="img-resort-ad" src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
        </a>
      </div>
      `;

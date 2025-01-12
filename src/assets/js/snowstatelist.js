@@ -150,24 +150,25 @@ const selectCurrentAd = (resortAdList) => {
   _log(`selectCurrentAd::validResortAds:`, validResortAds);
 
   let returnValidAds = [];
-  if (validResortAds.length > 2) {
-    for (let ind=0; ind < 2; ind++) {
-      returnValidAds.push(validResortAds.splice(random(0,validResortAds.length),1));
-    }
-  } else {
-    returnValidAds = validResortAds;
-  }
+  // if (validResortAds.length > 2) {
+  //   for (let ind=0; ind < 2; ind++) {
+  //     returnValidAds.push(validResortAds.splice(random(0,validResortAds.length),1));
+  //   }
+  // } else {
+  //   returnValidAds = validResortAds;
+  // }
+  returnValidAds = validResortAds;
   _log('selectCurrentAd::returnValidAds:',returnValidAds);
   return returnValidAds;
 };
 
 const checkForAd = (target) => {
-  
+  _log(`checkForAd:target: ${target}`);
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
     "wyoming", "colorado", 
     "idaho", "montana", "oregon", "new-york",
-    "south-east", "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia"
+    "north-east","south-east", "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia"
   ];
   
   if (targetList.includes(target)) {
@@ -188,6 +189,38 @@ const checkForAd = (target) => {
           width:728, 
           height:90,
           alt: 'Ski Sundown CT', 
+        },{
+          img: '2025-01-04-BigRock-728x90.png',
+          href:"https://www.groupon.com/deals/gl-big-rock-mountain",
+          width:728, 
+          height:90,
+          alt: 'Big Rock ME',
+          position:'both',
+        },{
+          img: '2024-12-05-BlackMountain.png',
+          href:"https://skiblackmountain.org/tickets-passes",
+          width:728, 
+          height:90,
+          alt: 'Black Mountain ME',
+          position:'both'
+        },{ 
+          img: '2024-10-1-Jackson-Hole-728x90.jpg',
+          href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
+          width:728, 
+          height:90,
+          alt: 'Jackson Hole 400 off air credit',
+          position:'random',
+          start_date: '2024-10-01',
+          end_date: '2024-11-30'
+        },{
+          img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
+          href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+          width:728, 
+          height:90,
+          alt: 'Jackson Hole Golden Ticket',
+          position:'random',
+          start_date: '2024-08-20',
+          end_date: '2025-04-13'
         }]
       },massachusetts : {
         ads: [{
@@ -251,32 +284,14 @@ const checkForAd = (target) => {
         }]
       }, colorado: {
         ads:[{
-          img: '2024-07-04-copper-snocountry-728x90.jpg',
-          href:"https://www.coppercolorado.com/plan-your-trip/season-passes/copper-season-pass-2024-25",
+          img: '2025-01-10-Cooper-728x90.jpg',
+          href:"https://www.skicooper.com/cooper-day-pass/",
           width:728, 
           height:90,
-          alt: 'Copper Mountain CO', 
-          position: 'both',
-          start_date: '2024-07-02',
-          end_date: '2024-09-01'
-        },{
-          img: '2024-10-17-WolfCreek.jpg',
-          href:"https://wolfcreekski.com",
-          width:728, 
-          height:90,
-          alt: 'Wolf Creek CO', 
-          position: 'both',
-          start_date: '2024-10-20',
-          end_date: '2025-04-30'
-        },{
-          img: '2024-11-08-Loveland-728x90-4Pak.jpg',
-          href:"https://skiloveland.com/4-pak/",
-          width:728, 
-          height:90,
-          alt: 'Loveland Ski Area CO', 
-          position: 'both',
-          start_date: '2024-11-07',
-          end_date: '2024-11-24'
+          alt: 'Ski Cooper, CO',
+          position:'both',
+          start_date: '2025-01-10',
+          end_date: '2025-01-31'
         }]
       },"new-york" : {
         ads: [{
@@ -333,6 +348,43 @@ const checkForAd = (target) => {
           alt: 'Sugar Mountain NC', 
           position: 'both',
           comment: 'general ad - can keep running'
+        }]
+      }, "north-east": {
+        ads: [{
+          img: '2024-12-05-BlackMountain.png',
+          href:"https://skiblackmountain.org/tickets-passes",
+          width:728, 
+          height:90,
+          alt: 'Black Mountain ME',
+          position:'both'
+        }, {
+          img: '2024-11-22-BerkshireEast.png',
+          href:"https://berkshireeast.com",
+          width:728, 
+          height:90,
+          alt: 'Berkshire East MA', 
+          position: 'both'
+        }, {
+          img: '2024-11-13-skicny-sno.png',
+          href:"https://www.skicny.com",
+          width:728, 
+          height:90,
+          alt: 'Labrador NY', 
+          position: 'both'
+        },{
+          img: '2024-08-06-Bromley-728x90.jpg',
+          href:"https://www.bromley.com/",
+          width:728, 
+          height:90,
+          alt: 'Bromley VT ', 
+          position: 'both'
+        },{
+          img: '2024-12-11-Bretton-Woods.jpg',
+          href:"https://www.brettonwoods.com",
+          width:728, 
+          height:90,
+          alt: 'Bretton Woods, NH',
+          position: 'both'
         }]
       }, alabama: {
         ads: [{
@@ -448,17 +500,17 @@ const checkForAd = (target) => {
     
     if (currentResortAds[target]) {
       let resortAds = currentResortAds[target].ads;
-      _log(`resortAds ${resortAds.length}`);
+      _log(`resortAds:`,resortAds);
       let randomIndex = 0;
       if(resortAds.length > 1) {
         resortAds = selectCurrentAd(resortAds);
         randomIndex = (resortAds.length > 1) ? random(0,resortAds.length) : 0;
       }
-
+      _log(`resortAds:randomIndex: ${randomIndex}`);
       const targetResortAd = resortAds[randomIndex];
       if (checkAdDates(targetResortAd)) {    
         
-        console.log(targetResortAd);
+        _log(`targetResortAd:selected:`,targetResortAd);
   
         const alt = targetResortAd.alt.replaceAll(' ', '-');
         const html = `

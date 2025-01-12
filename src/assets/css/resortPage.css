@@ -95,6 +95,10 @@ ul.resort-list li .last-updated {
 .snow-report-container .resort .resort-ad {
   text-align: center;
 }
+.snow-report-container .resort .resort-ad .img-resort-ad {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 5px;
+}
 .snow-report-container .resort .resort__header {
   margin-top: 20px;
   text-align: center;
