@@ -168,7 +168,8 @@ const checkForAd = (target) => {
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
     "wyoming", "colorado", 
     "idaho", "montana", "oregon", "new-york",
-    "north-east","south-east", "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia"
+    "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
+    "north-east","south-east", "rockies"
   ];
   
   if (targetList.includes(target)) {
@@ -292,6 +293,15 @@ const checkForAd = (target) => {
           position:'both',
           start_date: '2025-01-10',
           end_date: '2025-01-31'
+        },{
+          img: '2024-10-17-WolfCreek.jpg',
+          href:"https://wolfcreekski.com",
+          width:728, 
+          height:90,
+          alt: 'Wolf Creek CO', 
+          position: 'both',
+          start_date: '2024-10-20',
+          end_date: '2025-04-30'
         }]
       },"new-york" : {
         ads: [{
@@ -494,6 +504,28 @@ const checkForAd = (target) => {
           position: 'both',
           comment: 'general ad - can keep running'
         }]
+      }, "rockies": {
+        ads:[
+          {
+            img: '2025-01-10-Cooper-728x90.jpg',
+            href:"https://www.skicooper.com/cooper-day-pass/",
+            width:728, 
+            height:90,
+            alt: 'Ski Cooper, CO',
+            position:'both',
+            start_date: '2025-01-10',
+            end_date: '2025-01-31'
+          },{
+            img: '2024-10-17-WolfCreek.jpg',
+            href:"https://wolfcreekski.com",
+            width:728, 
+            height:90,
+            alt: 'Wolf Creek CO', 
+            position: 'both',
+            start_date: '2024-10-20',
+            end_date: '2025-04-30'
+          }
+        ]
       }
 
     };

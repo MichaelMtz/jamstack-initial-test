@@ -258,12 +258,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },518007:{
       ads: [{
-        img: 'Oak_Mountain_11-12-21.gif',
+        img: '2025-01-14-Oak-Mountain.png',
         href:"https://www.oakmountainski.com/",
         width:728, 
         height:90,
         alt: 'Oak Mountain NY',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-13',
+        end_date: '2025-03-23'
       }]
     },518010:{
       ads: [{
@@ -431,14 +433,12 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307002:{
       ads: [{
-        img: '2024-11-20-Grand-Targhee.gif',
-        href:"https://www.grandtarghee.com/plan-your-trip/planning-tools/airport-shuttle-services/ride-gtr",
+        img: '2025-01-14-Grand-Targhee.png',
+        href:"https://www.grandtarghee.com/",
         width:728, 
         height:90,
         alt: 'Grand Targhee CO', 
-        position: 'both',
-        start_date: '2024-11-19',
-        end_date: '2025-04-06'
+        position: 'both'
       }]
     },717013:{
       ads: [{
