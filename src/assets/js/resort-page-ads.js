@@ -111,14 +111,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 616006 : {
       ads: [{
-        img: 'Crystal-2023-12-08-Hurry-728x90.jpg',
+        img: '2025-01-16-Crystal-Hurry.jpg',
         href:"https://www.crystalmountain.com/ski/slopes/",
         width:728, 
         height:90,
         alt: 'Crystal Mountain MI',
         position: 'both',
-        start_date: '2023-12-08',
-        end_date: '2024-04-01'
+        start_date: '2025-01-16',
+        end_date: '2025-04-05'
       }]
     }, 603009 : {
       ads: [{
@@ -152,14 +152,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },607001:{
       ads: [{
-        img: 'SnoCountry-GPMR-728x90.png',
+        img: '2025-01-16-Greek-Peak.jpg',
         href:"https://www.greekpeak.net",
         width:728, 
         height:90,
-        alt: 'Greek Peak',
+        alt: 'Greek Peak NY',
         position: 'both',
-        start_date: '2023-01-02',
-        end_date: '2023-04-30'
+        start_date: '2025-01-02',
+        end_date: '2025-04-30'
       }]
     },716003:{
       ads: [{
@@ -217,6 +217,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Jay Peak',
         position:'both'
+      }]
+    },802007: {
+      ads: [{
+        img: '2025-01-16-Killington-Winter.jpg',
+        href:"https://www.killington.com/be-the-beast?utm_campaign=brand?utm_source=snocountry?utm_medium=web-listing",
+        width:728, 
+        height:90,
+        alt: 'Killington VT',
+        position:'both',
+        start_date: '2025-01-16',
+        end_date: '2025-04-30'
       }]
     },802009:{
       ads: [{
@@ -357,8 +368,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },802019:{
       ads: [{
-        img: 'Stratton_11-26-21.jpg',
-        href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
+        img: '2025-01-16-Stratton-Snow-Alert.jpg',
+        href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=banner&utm_medium=snowtime&utm_id=snocountry",
         width:728, 
         height:90,
         alt: 'Stratton Mountain VT', 
@@ -393,14 +404,12 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },603001:{
       ads: [{
-        img: 'WVR SEM_SeasonPass_728x90pdf-01.jpg',
+        img: '2025-01-16-Waterville.jpg',
         href:"https://www.waterville.com/season-passes",
         width:728, 
         height:90,
         alt: 'Waterville Valley NH', 
-        position: 'both',
-        start_date: '2023-01-02',
-        end_date: '2023-04-30'
+        position: 'both'
       }]
     },603026:{
       ads: [{
@@ -579,7 +588,16 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2023-12-01',
         end_date: '2024-04-07'
       }]
-    }, 603013: {
+    }, 413008: {
+      ads: [{
+        img: '2025-01-16-Otis-Ridge.png',
+        href:"https://otisridge.com/",
+        width:728, 
+        height:90,
+        alt: 'Otis Ridge MA', 
+        position: 'both'
+      }]
+    }, 603013 : {
       ads: [{
         img: 'Tenney-2023-12-01-728x90.png',
         href:"https://www.skitenney.com",
@@ -792,6 +810,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-12-01',
         end_date: '2025-04-27'
       }]
+    }, 313012: {
+      ads: [{
+        img: '2025-01-17-Schuss-at-Shanty.jpg',
+        href:"http://shantycreek.com/compare-save",
+        width:728, 
+        height:90,
+        alt: 'Schuss Mountain at Shanty Creek Resort MI', 
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-04-27'
+      }]
     }, 607002: {
       ads: [{
         img: '2024-11-13-skicny-season.png',
@@ -905,6 +934,16 @@ document.addEventListener('DOMContentLoaded',()=> {
         comment: 'winter ad - pepsi'
       }]
       
+    }, 218002: {
+      ads: [{
+        img: '2025-01-16-Giants-Ridge.png',
+        href:"https://www.giantsridge.com/",
+        width:728, 
+        height:90,
+        alt: 'Giants Ridge MN', 
+        position: 'both',
+        comment: 'winter ad'
+      }]
     }
     
     
