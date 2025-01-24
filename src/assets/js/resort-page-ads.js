@@ -61,14 +61,14 @@ const selectCurrentAd = (resortAdList) => {
       validResortAds.push(iterResortAd);
     }
   });
-  let returnValidAds = [];
-  if (validResortAds.length > 2) {
-    for (let ind=0; ind < 2; ind++) {
-      returnValidAds.push(validResortAds.splice(random(0,validResortAds.length),1));
-    }
-  } else {
-    returnValidAds = validResortAds;
-  }
+  const returnValidAds = validResortAds;
+  // if (validResortAds.length > 2) {
+  //   for (let ind=0; ind < 2; ind++) {
+  //     returnValidAds.push(validResortAds.splice(random(0,validResortAds.length),1));
+  //   }
+  // } else {
+  //   returnValidAds = validResortAds;
+  // }
   _log('selectCurrentAd::returnValidAds:',returnValidAds);
   return returnValidAds;
 };
@@ -100,14 +100,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603019 : {
       ads: [{
-        img: '2024-Ragged-728x90.png',
-        href:"https://www.raggedmountainresort.com/season-passes/",
+        img: '2025-01-21-Ragged-resized.jpg',
+        href:"https://www.raggedmountainresort.com/",
         width:728, 
         height:90,
         alt: 'Ragged Mountain, NH',
         position: 'both',
-        start_date: '2024-03-11',
-        end_date: '2024-04-08'
+        start_date: '2025-01-17',
+        end_date: '2025-04-04'
       }]
     }, 616006 : {
       ads: [{
@@ -249,23 +249,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },914004:{
       ads: [{
-        img: 'MtPeter-SnoCountryDigitalAd-2023-11-15.gif',
+        img: '2025-01-22-Mt-Peter.jpg',
         href:"https://www.mtpeter.com/sc/",
         width:728, 
         height:90,
         alt: 'Mt. Peter NY',
         position:'random',
-        start_date: '2023-12-10',
-        end_date: '2024-03-22'
-      }, {
-        img: 'MtPeter-SnoCountryDigitalAd-2023-11-15.gif',
-        href:"https://www.mtpeter.com/sc/",
-        width:728, 
-        height:90,
-        alt: 'Mt. Peter NY',
-        position:'random',
-        start_date: '2023-12-10',
-        end_date: '2024-03-22'
+        start_date: '2025-01-17',
+        end_date: '2025-04-22'
       }]
     },518007:{
       ads: [{
@@ -377,12 +368,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },802023:{
       ads: [{
-        img: 'Sugarbush-3-11-22.jpg',
-        href:"https://www.sugarbush.com/plan-your-trip/season-passes",
+        img: '2025-01-22-Sugarbush.jpg',
+        href:"https://www.sugarbush.com/things-to-do/challenge",
         width:728, 
         height:90,
         alt: 'Sugarbush VT', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-22',
+        end_date: '2025-05-01'
       }]
     },607005:{
       ads: [{
@@ -470,8 +463,8 @@ document.addEventListener('DOMContentLoaded',()=> {
     },
     702002:{
       ads: [{
-        img: 'Less-Canyon-Ad.png',
-        href:"https://www.leecanyonlv.com/midweek-magic/",
+        img: '2025-01-22-Lee-Canyon.png',
+        href:"https://www.leecanyonlv.com/",
         width:728, 
         height:90,
         alt: 'Lee Canyon NV', 
@@ -599,14 +592,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603013 : {
       ads: [{
-        img: 'Tenney-2023-12-01-728x90.png',
+        img: '2025-01-17-Tenney.png',
         href:"https://www.skitenney.com",
         width:728, 
         height:90,
         alt: 'Tenney NH', 
         position: 'both',
-        start_date: '2023-12-01',
-        end_date: '2024-04-07'
+        start_date: '2025-01-17',
+        end_date: '2025-04-15'
       }]
     }, 603018: {
       ads: [{
@@ -944,10 +937,76 @@ document.addEventListener('DOMContentLoaded',()=> {
         position: 'both',
         comment: 'winter ad'
       }]
+    }, 508002: {
+      ads: [{
+        img: '2025-01-17-Bradford.png',
+        href:"http://skibradford.com",
+        width:300, 
+        height:250,
+        alt: 'Ski Bradford MA', 
+        position: 'both',
+        comment: 'winter ad'
+      }]
+    },802015:{
+      ads: [{
+        img: '2025-01-21-Quechee-Explore.png',
+        href:"https://quecheeclub.com/web/pages/season-passes-and-daily-rates?utm_source=snocountry&utm_medium=ad1",
+        width:728, 
+        height:90,
+        alt: 'Ski Quechee VT',
+        position:'random',
+        start_date: '2025-01-21',
+        end_date: '2025-03-01'
+      },{
+        img: '2025-01-21-Quechee-Explore-2.png',
+        href:"https://quecheeclub.com/web/pages/season-passes-and-daily-rates?utm_source=snocountry&utm_medium=ad4",
+        width:728, 
+        height:90,
+        alt: 'Ski Quechee VT',
+        position:'random',
+        start_date: '2025-01-21',
+        end_date: '2025-03-01'
+      },{
+        img: '2025-01-21-Quechee-Explore-3.png',
+        href:"https://quecheeclub.com/web/pages/season-passes-and-daily-rates?utm_source=snocountry&utm_medium=ad5",
+        width:728, 
+        height:90,
+        alt: 'Ski Quechee VT',
+        position:'random',
+        start_date: '2025-01-21',
+        end_date: '2025-03-01'
+      }] 
+    }, 616002: {
+      ads: [{
+        img: '2025-01-22-Highlands.jpg',
+        href:"https://www.highlandsharborsprings.com/tickets?utm_source=SnoCountry&utm_medium=banner&utm_campaign=SnoCountry_2425",
+        width:728, 
+        height:90,
+        alt: 'The Highlands MI', 
+        position: 'both',
+        comment: 'winter ad'
+      }]
+    }, 201003 : {
+      ads: [{
+        img: '2025-01-23-Mountain-Creek.gif',
+        href:"https://mountaincreek.com/",
+        width:728, 
+        height:90,
+        alt: 'Mountain Creek NJ', 
+        position: 'both',
+        comment: 'winter ad'
+      }]
+    }, 603007 : {
+      ads: [{
+        img: '2025-01-24-Cranmore.png',
+        href:"https://cranmore.com/tickets",
+        width:728, 
+        height:90,
+        alt: 'Cranmore NH', 
+        position: 'both',
+        comment: 'winter ad'
+      }]
     }
-    
-    
-    
   };
   
 
