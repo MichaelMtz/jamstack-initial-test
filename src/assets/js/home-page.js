@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     }).then(data => {
       _log('--getTopsSnowfall: data');    
       console.log(data);
-      const fetchOpenResorts = (data.length > 5) ? false : true;
+      const fetchOpenResorts = (data.length > 3) ? false : true;
       console.log(fetchOpenResorts);
       if (data.length > 0) {
         waitForElement('#top-snowfall-list').then((elHomepageHighlightResorts) => {
@@ -271,13 +271,14 @@ document.addEventListener('DOMContentLoaded',()=> {
           
       }
       //getOpenResorts();
-      if (fetchOpenResorts) {
-        getOpenResorts();
-      } else {
-        waitForElement('#open-resorts').then((elOpenResorts) => {
-          elOpenResorts.classList.add('sno-hide');
-        }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
-      }
+      // Only show Open Resorts for early season
+      // if (fetchOpenResorts) {
+      //   getOpenResorts();
+      // } else {
+      //   waitForElement('#open-resorts').then((elOpenResorts) => {
+      //     elOpenResorts.classList.add('sno-hide');
+      //   }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
+      // }
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   
   };
