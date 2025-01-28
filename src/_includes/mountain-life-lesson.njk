@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% include 'basehref.html' %}
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="keywords" content="SnoCountry News" />
+      <meta name="rights" content="Copyright © 2024. All Rights Reserved." />
+      <meta name="author" content="{{ schemaAuthor }}" />
+      <meta name="robots" content="index,follow" />
+      <meta name="description" content="{{ schemaDescription }}" />
+      <meta name="robots" content="max-image-preview:large">
+      <title>{{ title }}</title>
+
+      <meta property="og:title" content="{{ title }}" />
+      <meta property="og:description " content="{{ schemaDescription }}" />
+      <meta property="og:url" content="https://www.snocountry.com/" />
+      <meta property="og:type" content="article">
+      <meta property="og:site_name" content="SnoCountry" />
+      <meta property="og:image" content="{{ schemaHeroImage }}" />
+      <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.ico">
+      <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://www.snocountry.com/","name":"SnoCountry.Com","description":"Ski Resorts and Snow Reports, for the Snowboarder and Skier","publisher":"SnoCountry"}
+      </script>
+      <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://www.snocountry.com/","logo":"https://www.snocountry.com/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
+      </script>
+      
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "{{ schemaAbsoluteUrl }}",
+              "name": "{{ schemaName }}",
+              "headline": "{{ schemaName }}",
+              "url": "{{ schemaAbsoluteUrl }}",
+              "mainEntityOfPage": "{{ schemaAbsoluteUrl }} ",
+              "description": "{{ schemaDescription }}",
+              "datePublished": "{{ schemaDate }}",
+              "dateModified": "{{ schemaDate }}",
+              "author": {
+                "@type": "Person",
+                "name": "{{ schemaAuthor }}"
+              },
+              "image": {
+                "@id": "{{ schemaArticleImage }}"
+              },
+              "publisher": {
+                  "@type": "Organization",
+                  "@id": "{{ env.base.site }}",
+                  "name": "SnoCountry",
+                  "url": "https://snocountry.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.snocountry.com/assets/images/snocountry_logo_v2.png",
+                    "height": 276,
+                    "width": 70, 
+                    "caption": "Real riders and skiers who know the snow"
+                  }
+              }
+            },{
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Mountain Life",
+                    "item": "https://snocountry.com/mountain-life"
+                  }
+                ]
+             }
+          ]
+        }
+      </script>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What to Expect When Taking Your First Ski or Snowboard Lesson",
+        "description": "A comprehensive guide to help beginners prepare for their first ski or snowboard lesson, including what to wear, how to check in, and how to master the basics.",
+        "author": {
+          "@type": "Person",
+          "name": "Josh Petit"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SnoCountry.com"
+        },
+        "datePublished": "{{ schemaDate }}"
+      }
+      </script>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Taking Your First Ski or Snowboard Lesson",
+        "description": "A step-by-step guide to prepare for your first ski or snowboard lesson, covering what to wear, how to check in, and mastering the basics.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Arrive Early",
+            "text": "Plan to arrive early to allow time for parking, checking in, and getting familiar with the base area."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Wear Proper Attire",
+            "text": "Dress in warm, waterproof clothing such as snow pants, a jacket, mittens, and layers for flexibility. Avoid wearing jeans."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Check In for Your Lesson",
+            "text": "Head to the ski school or guest services to confirm your lesson details and pick up your lesson ticket."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Get Rental Equipment",
+            "text": "Visit the rental shop to get fitted for boots, skis or snowboard, and a helmet. Ensure your gear fits comfortably."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Find the Meeting Point",
+            "text": "Go to the designated lesson meeting area a few minutes early to meet your instructor and group."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Learn the Basics",
+            "text": "Start with basic skills like putting on your equipment, turning, stopping, and maintaining proper stance."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Practice and Receive Feedback",
+            "text": "Practice fundamental skills on gentle terrain and get personalized feedback from your instructor."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Wrap Up and Review",
+            "text": "At the end of your lesson, review what you’ve learned and ask your instructor for tips on practicing further."
+          }
+        ]
+      }
+      </script>
+      <link rel="stylesheet" href="/assets/font/mulish-font.css">
+      <link rel="stylesheet" href="/assets/font/fonts.css">
+      <link rel="stylesheet" href="/assets/css/snocountry-base.css">
+      <link rel="stylesheet" href="/assets/css/sno-core.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="/assets/css/genericPage.css">
+      <link rel="stylesheet" href="/assets/css/evergreen.css">
+      <link rel="stylesheet" href="/assets/css/mountain-life-parallax.css">
+     
+
+    {% include 'google.html' %}
+    </head>
+    <body data-source="" >
+        
+{% include 'nav-header.html' %}
+{{ content | safe }}
+{% include 'footer.html' %}
+  <script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
+  <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',(event)=> {
+        var pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
+        console.log(`>>> load: ${pageLoadTime}`);
+    });
+  </script>
+  
+  
+  
+  </body>
+</html>
+
+

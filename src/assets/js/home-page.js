@@ -343,11 +343,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/travel/winter-driving-safety-tips",
-        "image": "https://snocountry.com/assets/images/mountain-life/winter-driving/which-tires-for-winter-mod.png",
-        "title": "Winter Driving Tips",
-        "author": "In Control",
-        "umami": "travel-winter-driving-tips"
+        "url": "https://snocountry.com/mountain-life/beginner-guide/taking-your-first-ski-snowboard-lesson",
+        "image": "https://snocountry.com/assets/images/mountain-life/beginner-guide/snowboard-friends.jpg",
+        "title": "Your First Lesson",
+        "author": "Josh Petit",
+        "umami": "mountain-life-beginner-guide-lesson"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -383,11 +383,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/travel/winter-driving-safety-tips",
-        "image": "https://snocountry.com/assets/images/mountain-life/winter-driving/which-tires-for-winter-mod.png",
-        "title": "Winter Driving Tips",
-        "author": "In Control",
-        "umami": "travel-winter-driving-tips"
+        "url": "https://snocountry.com/mountain-life/beginner-guide/taking-your-first-ski-snowboard-lesson",
+        "image": "https://snocountry.com/assets/images/mountain-life/beginner-guide/snowboard-friends.jpg",
+        "title": "Your First Lesson",
+        "author": "Josh Petit",
+        "umami": "mountain-life-beginner-guide-lesson"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -431,8 +431,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
-    elStories.insertAdjacentHTML('afterbegin', html);
+    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    //elStories.insertAdjacentHTML('afterbegin', html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -446,8 +446,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       </a>
       `).join('');
       
-    //elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
-    elMobileStories.insertAdjacentHTML('beforeend', html);
+    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
+    //elMobileStories.insertAdjacentHTML('beforeend', html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
