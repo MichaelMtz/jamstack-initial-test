@@ -270,6 +270,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         }).catch( (e) => { console.error('Error waiting for getTopSnowfall data:',e);});
           
       }
+      waitForElement('#open-resorts').then((elOpenResorts) => {
+        elOpenResorts.classList.add('sno-hide');
+      }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
       //getOpenResorts();
       // Only show Open Resorts for early season
       // if (fetchOpenResorts) {
