@@ -1064,15 +1064,15 @@ document.addEventListener('DOMContentLoaded',()=> {
     //checkForGeneralAd();
   }
 
-  if (resort_id === '603009') {
+  if (resort_id === '303016') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
         
             <div class="pepsi-content">
                 <div class="pepsi-header">
-                    <div class="pepsi-logo-container">   
-                        <img class="logo-abasin" src="assets/images/ads/pepsi/gunstock/GUNSTOCK_PRIMARY_WINE_CAP-G-01.jpg" alt="GunstockResort"> 
+                    <div class="pepsi-logo-container powderhorn">   
+                        <img class="logo-powderhorn" src="assets/images/ads/pepsi/powderhorn/powderhorn-logo.jpg" alt="Powderhorn CO "> 
                         <img src="assets/images/ads/pepsi/2024-pepsi-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -1083,7 +1083,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/JzxdiqSC2F8?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/eorNy8HMLpM?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />

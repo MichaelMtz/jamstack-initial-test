@@ -761,7 +761,7 @@ ul.resort-list li .last-updated {
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container svg.lee-canyon {
   margin-top: 10px;
 }
-.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-camelback {
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-camelback, .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-powderhorn {
   height: 80px;
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-powder-mountain {
@@ -879,6 +879,11 @@ ul.resort-list li .last-updated {
   }
   .pepsi.abasin .pepsi-content .pepsi-header .pepsi-logo-container img.logo-pepsi {
     order: 1;
+  }
+}
+@media screen and (max-width: 1126px) {
+  .pepsi.abasin .pepsi-content .pepsi-header .pepsi-logo-container.powderhorn {
+    flex-direction: row;
   }
 }
 

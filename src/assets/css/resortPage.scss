@@ -743,7 +743,7 @@ ul.resort-list {
         svg.lee-canyon {
           margin-top:10px;
         }
-        img.logo-camelback {
+        img.logo-camelback, img.logo-powderhorn {
           height:80px;
         }
         img.logo-powder-mountain {
@@ -853,6 +853,12 @@ ul.resort-list {
           img.logo-pepsi {
             order: 1;
           }
+
+        }
+      }
+      .pepsi-logo-container.powderhorn {
+        @include bpmaxw(1126px) {
+          flex-direction: row;
         }
       }
     }
