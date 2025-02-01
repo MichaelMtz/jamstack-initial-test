@@ -298,16 +298,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Black Mountain ME',
         position:'both'
       }]
-    },207006:{
-      ads: [{
-        img: 'Saddleback-Favorite-Mtn_728x90.jpg',
-        href:"https://www.saddlebackmaine.com/shop/lift-tickets/",
-        width:728, 
-        height:90,
-        alt: 'Saddleback ME',
-        position:'both'
-      }]
-    },207014: {
+    },,207014: {
       ads: [{
         img: '2025-01-04-BigRock-728x90.png',
         href:"https://www.groupon.com/deals/gl-big-rock-mountain",
