@@ -120,6 +120,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2025-01-16',
         end_date: '2025-04-05'
       }]
+    }, 906004 : {
+      ads: [{
+        img: '2025-02-07-Snow-River.jpg',
+        href:"https://www.saddlebackmaine.com/?utm_source=SnoCountry&utm_medium=Display&utm_campaign=SkierVisits25",
+        width:728, 
+        height:90,
+        alt: 'SnowRiver MI',
+        position: 'both',
+        start_date: '2025-02-06',
+        end_date: '2025-04-06'
+      }]
     }, 603009 : {
       ads: [{
         img: '2024-12-14-Gunstock-winter.png',
@@ -297,6 +308,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Black Mountain ME',
         position:'both'
+      }]
+    },207006:{
+      ads: [{
+        img: '2025-02-07-Saddleback.png',
+        href:"https://www.saddlebackmaine.com/?utm_source=SnoCountry&utm_medium=Display&utm_campaign=SkierVisits25",
+        width:728, 
+        height:90,
+        alt: 'Saddleback ME',
+        position:'both',
+        start_date: '2025-02-06',
+        end_date: '2025-04-06'
       }]
     },207014: {
       ads: [{
@@ -481,13 +503,13 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 503004 : {
       ads: [{
-        img: '2024-Mt-Bachelor.jpg',
+        img: '2025-02-07-Mt-Bachelor.jpg',
         href:"https://www.mtbachelor.com/tickets-passes/lift-tickets",
         width:728, 
         height:90,
         alt: 'Mt Bachelor OR',
         position: 'random',
-        start_date: '2024-12-03',
+        start_date: '2025-02-06',
         end_date: '2025-02-28'
       },{
         img: '2024-Mt-Bachelor-Book-Your-Trip.jpg',
