@@ -169,7 +169,7 @@ const checkForAd = (target) => {
   _log(`checkForAd:target: ${target}`);
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
-    "wyoming", "colorado", 
+    "wyoming", "colorado", "california",
     "idaho", "montana", "oregon", "new-york",
     "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
     "north-east","south-east", "rockies"
@@ -250,7 +250,16 @@ const checkForAd = (target) => {
           start_date: '2024-08-20',
           end_date: '2025-04-13'
         }]
-      },massachusetts : {
+      },california: {
+        ads: [{
+          img: '2025-02-13-Mountin-High-Cheers-to-100-Years.png',
+          href:"https://shop.mthigh.com/reservations",
+          width:728, 
+          height:90,
+          alt: 'Mountain High CA', 
+          position: 'both'
+        }]
+      }, massachusetts : {
         ads: [{
           img: 'Stratton_11-26-21.jpg',
           href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",

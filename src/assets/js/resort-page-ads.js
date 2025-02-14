@@ -548,15 +548,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Seven Springs PA', 
         position: 'both'
       }]
-    }, 801008:{
-      ads: [{
-        img: 'PowderMountain_ad_snocountry_728x90.jpg',
-        href:"https://powdermountain.com/spring-skiing",
-        width:728, 
-        height:90,
-        alt: 'Ragged Mountain NH', 
-        position: 'both'
-      }]
     },802013: {
       ads: [{
         img: '2024-Okemo-728x90.jpg',
