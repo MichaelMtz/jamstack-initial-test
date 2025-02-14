@@ -170,7 +170,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Greek Peak NY',
         position: 'both',
         start_date: '2025-01-02',
-        end_date: '2025-04-30'
+        end_date: '2025-04-30',
+        position: 'random'
+      },{
+        img: '2025-02-14-Greek-Peak.png',
+        href:"https://www.greekpeak.net",
+        width:728, 
+        height:90,
+        alt: 'Greek Peak NY',
+        position: 'both',
+        start_date: '2025-02-14',
+        end_date: '2025-03-341',
+        position: 'random'
       }]
     },716003:{
       ads: [{
@@ -363,12 +374,19 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },203005:{
       ads: [{
-        img: '2024-08-01-Ski-Sundown-728x90.jpg',
-        href:"https://www.skisundown.com/",
+        img: '2025-02-13-Sundown-Night-Skiing-728x90.png',
+        href:"https://skisundown.com/the-mountain/night-skiing/",
         width:728, 
         height:90,
         alt: 'Ski Sundown CT', 
-        position: 'both'
+        position: 'random'
+      },{
+        img: '2025-02-13-Sundown-Clase-To-Home-728x90.png',
+        href:"https://skisundown.com/",
+        width:728, 
+        height:90,
+        alt: 'Ski Sundown CT', 
+        position: 'random'
       }]
     },304001:{
       ads: [{
@@ -583,14 +601,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },619006: {
       ads: [{
-        img: '2024-11-20-Mountain-High.png',
-        href:"https://www.mthigh.com/site/tickets-and-groups/season-passes/season-pass.html",
+        img: '2025-02-13-Mountin-High-Cheers-to-100-Years.png',
+        href:"https://shop.mthigh.com/reservations",
         width:728, 
         height:90,
         alt: 'Mountain High CA', 
         position: 'both',
-        start_date: '2024-11-20',
-        end_date: '2024-11-30'
+        start_date: '2025-02-14',
+        end_date: '2025-02-28'
       }]
     }, 413006: {
       ads: [{

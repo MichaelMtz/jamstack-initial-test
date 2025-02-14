@@ -129,12 +129,15 @@ const checkAdDates = (iterResortAd) => {
 };
 
 const trackBanner = (bannerName) => {
+  const today = new Date();
+  const currentMonth = today.toLocaleDateString('default', { month:'short'});
   if (window.umami) {
-    window.umami.track(`banner-state-display-${bannerName}`);
+    window.umami.track(`banner-${currentMonth}-${document.body.dataset.snowreport}-display-${bannerName}`);
+    _log(`banner-${currentMonth}-${document.body.dataset.snowreport}-display-${bannerName}`);
   } else {    
     setTimeout(()=> {
       trackBanner(bannerName);
-    },1000);
+    },3000);
   }
 };
 
@@ -177,19 +180,43 @@ const checkForAd = (target) => {
     const currentResortAds = {
       connecticut : {
         ads: [{
-          img: '2024-08-01-Ski-Sundown-728x90.jpg',
-          href:"https://www.skisundown.com/",
+          img: '2025-02-13-Sundown-Night-Skiing-728x90.png',
+          href:"https://skisundown.com/the-mountain/night-skiing/",
           width:728, 
           height:90,
           alt: 'Ski Sundown CT', 
+          position: 'both',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
+        },{
+          img: '2025-02-13-Sundown-Clase-To-Home-728x90.png',
+          href:"https://skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+          position: 'both',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
         }]
       },maine : {
         ads: [{
-          img: '2024-08-01-Ski-Sundown-728x90.jpg',
-          href:"https://www.skisundown.com/",
+          img: '2025-02-13-Sundown-Night-Skiing-728x90.png',
+          href:"https://skisundown.com/the-mountain/night-skiing/",
           width:728, 
           height:90,
           alt: 'Ski Sundown CT', 
+          position: 'both',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
+        },{
+          img: '2025-02-13-Sundown-Clase-To-Home-728x90.png',
+          href:"https://skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+          position: 'both',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
         },{
           img: '2025-01-04-BigRock-728x90.png',
           href:"https://www.groupon.com/deals/gl-big-rock-mountain",
@@ -231,28 +258,48 @@ const checkForAd = (target) => {
           height:90,
           alt: 'Stratton Mountain VT', 
           position: 'both'
-        },{
-          img: '2024-08-01-Ski-Sundown-728x90.jpg',
-          href:"https://www.skisundown.com/",
-          width:728, 
-          height:90,
-          alt: 'Ski Sundown CT', 
         }]
       },"new-hampshire" : {
         ads: [{
-          img: '2024-08-01-Ski-Sundown-728x90.jpg',
-          href:"https://www.skisundown.com/",
+          img: '2024-12-11-Bretton-Woods.jpg',
+          href:"https://www.brettonwoods.com",
           width:728, 
           height:90,
-          alt: 'Ski Sundown CT', 
+          alt: 'Bretton Woods, NH',
+          position: 'both',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
+        },{
+          img: '2024-12-14-Gunstock-winter.png',
+          href:"https://www.gunstock.com/",
+          width:728, 
+          height:90,
+          alt: 'Gunstock NH',
+          position: 'random',
+          start_date: '2024-12-14',
+          end_date: '2025-04-15',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
         }]
       },"rhode-island" : {
         ads: [{
-          img: '2024-08-01-Ski-Sundown-728x90.jpg',
-          href:"https://www.skisundown.com/",
+          img: '2025-02-13-Sundown-Night-Skiing-728x90.png',
+          href:"https://skisundown.com/the-mountain/night-skiing/",
           width:728, 
           height:90,
           alt: 'Ski Sundown CT', 
+          position: 'both',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
+        },{
+          img: '2025-02-13-Sundown-Clase-To-Home-728x90.png',
+          href:"https://skisundown.com/",
+          width:728, 
+          height:90,
+          alt: 'Ski Sundown CT', 
+          position: 'both',
+          start_date: '2025-02-01',
+          end_date: '2025-03-31'
         }]
       },vermont : {
         ads: [{
@@ -548,8 +595,8 @@ const checkForAd = (target) => {
         const html = `
     
         <div class="internal">
-          <a href="${targetResortAd.href}" target="_blank" data-umami-event="banner-state-click-${alt}">
-            <img class="adHighlight" src="assets/images/resort-ads/${targetResortAd.img}" alt="${targetResortAd.alt}" width="${targetResortAd.width}" height="${targetResortAd.height}" data-umami-event="banner-state-click-${alt}">
+          <a href="${targetResortAd.href}" target="_blank" data-umami-event="banner-${document.body.dataset.snowreport}-click-${alt}">
+            <img class="adHighlight" src="assets/images/resort-ads/${targetResortAd.img}" alt="${targetResortAd.alt}" width="${targetResortAd.width}" height="${targetResortAd.height}" data-umami-event="banner-${document.body.dataset.snowreport}-click-${alt}">
           </a>
         </div>
         `;
