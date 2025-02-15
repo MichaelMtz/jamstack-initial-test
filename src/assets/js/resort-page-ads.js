@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Greek Peak NY',
         position: 'both',
         start_date: '2025-02-14',
-        end_date: '2025-03-341',
+        end_date: '2025-03-31',
         position: 'random'
       }]
     },716003:{
@@ -320,7 +320,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Black Mountain ME',
         position:'both'
       }]
-    },207006:{
+    },207002: {
+      ads: [{
+        img: '2025-02-15-Camden.jpg',
+        href:"https://camdensnowbowl.com/",
+        width:728, 
+        height:90,
+        alt: 'Camden Snowbowl ME',
+        position:'both',
+        start_date: '2025-02-14',
+        end_date: '2025-03-31'
+      }]
+    }, 207006:{
       ads: [{
         img: '2025-02-07-Saddleback.png',
         href:"https://www.saddlebackmaine.com/?utm_source=SnoCountry&utm_medium=Display&utm_campaign=SkierVisits25",
@@ -428,12 +439,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },703002:{
       ads: [{
-        img: 'Omni_Homestead_12-4-21.jpg',
+        img: '2025-02-14-Omni-Homestead.jpg',
         href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
         width:728, 
         height:90,
         alt: 'Omni Homestead VA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-02-14',
+        end_date: '2025-05-01'
       }]
     },603001:{
       ads: [{

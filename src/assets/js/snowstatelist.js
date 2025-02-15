@@ -170,7 +170,7 @@ const checkForAd = (target) => {
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
     "wyoming", "colorado", "california",
-    "idaho", "montana", "oregon", "new-york",
+    "idaho", "montana", "oregon", "new-york","michigan",
     "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
     "north-east","south-east", "rockies"
   ];
@@ -200,56 +200,67 @@ const checkForAd = (target) => {
         }]
       },maine : {
         ads: [{
-          img: '2025-02-13-Sundown-Night-Skiing-728x90.png',
-          href:"https://skisundown.com/the-mountain/night-skiing/",
+          img: '2025-02-15-Camden.jpg',
+          href:"https://camdensnowbowl.com/",
           width:728, 
           height:90,
-          alt: 'Ski Sundown CT', 
-          position: 'both',
-          start_date: '2025-02-01',
-          end_date: '2025-03-31'
-        },{
-          img: '2025-02-13-Sundown-Clase-To-Home-728x90.png',
-          href:"https://skisundown.com/",
-          width:728, 
-          height:90,
-          alt: 'Ski Sundown CT', 
-          position: 'both',
-          start_date: '2025-02-01',
-          end_date: '2025-03-31'
-        },{
-          img: '2025-01-04-BigRock-728x90.png',
-          href:"https://www.groupon.com/deals/gl-big-rock-mountain",
-          width:728, 
-          height:90,
-          alt: 'Big Rock ME',
+          alt: 'Camden Snowbowl ME',
           position:'both',
-        },{
-          img: '2024-12-05-BlackMountain.png',
-          href:"https://skiblackmountain.org/tickets-passes",
-          width:728, 
-          height:90,
-          alt: 'Black Mountain ME',
-          position:'both'
-        },{ 
-          img: '2024-10-1-Jackson-Hole-728x90.jpg',
-          href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
-          width:728, 
-          height:90,
-          alt: 'Jackson Hole 400 off air credit',
-          position:'random',
-          start_date: '2024-10-01',
-          end_date: '2024-11-30'
-        },{
-          img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
-          href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
-          width:728, 
-          height:90,
-          alt: 'Jackson Hole Golden Ticket',
-          position:'random',
-          start_date: '2024-08-20',
-          end_date: '2025-04-13'
-        }]
+          start_date: '2025-02-14',
+          end_date: '2025-03-31'
+        }
+        //   {
+        //   img: '2025-02-13-Sundown-Night-Skiing-728x90.png',
+        //   href:"https://skisundown.com/the-mountain/night-skiing/",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Ski Sundown CT', 
+        //   position: 'both',
+        //   start_date: '2025-02-01',
+        //   end_date: '2025-03-31'
+        // },{
+        //   img: '2025-02-13-Sundown-Clase-To-Home-728x90.png',
+        //   href:"https://skisundown.com/",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Ski Sundown CT', 
+        //   position: 'both',
+        //   start_date: '2025-02-01',
+        //   end_date: '2025-03-31'
+        // },{
+        //   img: '2025-01-04-BigRock-728x90.png',
+        //   href:"https://www.groupon.com/deals/gl-big-rock-mountain",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Big Rock ME',
+        //   position:'both',
+        // },{
+        //   img: '2024-12-05-BlackMountain.png',
+        //   href:"https://skiblackmountain.org/tickets-passes",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Black Mountain ME',
+        //   position:'both'
+        // },{ 
+        //   img: '2024-10-1-Jackson-Hole-728x90.jpg',
+        //   href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Jackson Hole 400 off air credit',
+        //   position:'random',
+        //   start_date: '2024-10-01',
+        //   end_date: '2024-11-30'
+        // },{
+        //   img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
+        //   href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Jackson Hole Golden Ticket',
+        //   position:'random',
+        //   start_date: '2024-08-20',
+        //   end_date: '2025-04-13'
+        // }
+        ]
       },california: {
         ads: [{
           img: '2025-02-13-Mountin-High-Cheers-to-100-Years.png',
@@ -266,6 +277,15 @@ const checkForAd = (target) => {
           width:728, 
           height:90,
           alt: 'Stratton Mountain VT', 
+          position: 'both'
+        }]
+      }, michigan: {
+        ads: [{
+          img: '2024-11-07-TreeTop-NewYear-728x90.jpg',
+          href:"https://www.treetops.com/events/",
+          width:728, 
+          height:90,
+          alt: 'Treetops MI', 
           position: 'both'
         }]
       },"new-hampshire" : {
@@ -370,23 +390,25 @@ const checkForAd = (target) => {
           start_date: '2024-11-25',
           end_date: '2025-05-01'
         },{
-          img: '2024-11-13-skicny-season.png',
-          href:"https://www.skicny.com",
+          img: '2025-01-16-Greek-Peak.jpg',
+          href:"https://www.greekpeak.net",
           width:728, 
           height:90,
-          alt: 'Labrador NY', 
+          alt: 'Greek Peak NY',
           position: 'both',
-          start_date: '2024-11-13',
-          end_date: '2024-11-21'
+          start_date: '2025-01-02',
+          end_date: '2025-04-30',
+          position: 'random'
         },{
-          img: '2024-11-13-skicny-black-friday.png',
-          href:"https://www.skicny.com",
+          img: '2025-02-14-Greek-Peak.png',
+          href:"https://www.greekpeak.net",
           width:728, 
           height:90,
-          alt: 'Labrador NY', 
+          alt: 'Greek Peak NY',
           position: 'both',
-          start_date: '2024-11-22',
-          end_date: '2024-12-02'
+          start_date: '2025-02-14',
+          end_date: '2025-03-31',
+          position: 'random'
         },{
           img: '2024-11-13-skicny-sno.png',
           href:"https://www.skicny.com",
@@ -526,22 +548,33 @@ const checkForAd = (target) => {
         }]
       }, virginia: {
         ads: [{
-          img: '2024-12-11-Ober.jpg',
-          href:"https://obermountain.com/",
+          img: '2025-02-14-Omni-Homestead.jpg',
+          href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
           width:728, 
           height:90,
-          alt: 'Ober Mountain TN', 
+          alt: 'Omni Homestead VA', 
           position: 'both',
-          comment: 'general ad - can keep running'
-        }, {
-          img: '2024-12-11-Sugar-Mountain.jpg',
-          href:"https://www.skisugar.com",
-          width:728, 
-          height:90,
-          alt: 'Sugar Mountain NC', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }]
+          start_date: '2025-02-14',
+          end_date: '2025-03-01'
+        }
+        //   {
+        //   img: '2024-12-11-Ober.jpg',
+        //   href:"https://obermountain.com/",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Ober Mountain TN', 
+        //   position: 'both',
+        //   comment: 'general ad - can keep running'
+        // }, {
+        //   img: '2024-12-11-Sugar-Mountain.jpg',
+        //   href:"https://www.skisugar.com",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Sugar Mountain NC', 
+        //   position: 'both',
+        //   comment: 'general ad - can keep running'
+        // }
+        ]
       }, "west-virginia": {
         ads: [{
           img: '2024-12-11-Ober.jpg',
