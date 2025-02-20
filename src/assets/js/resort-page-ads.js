@@ -1120,7 +1120,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     //checkForGeneralAd();
   }
 
-  if (resort_id === '717003') {
+  if (resort_id === '503004') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -1129,7 +1129,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container powderhorn">   
                         <!-- <img class="logo-powderhorn" src="assets/images/ads/pepsi/powderhorn/powderhorn-logo.jpg" alt="Powderhorn CO ">  -->
-                        <img class="logo-camelback" src="assets/images/ads/pepsi/camelback/camelback-resort-logo.jpg" alt="Camelback Ski Resort">
+                        <img class="logo-camelback" src="assets/images/ads/pepsi/mtbachelor/503004logo-orange.jpg" alt="Mt. Bachelor Ski Resort">
                         <img src="assets/images/ads/pepsi/2024-pepsi-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -1140,7 +1140,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/yYALHX0adPY?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/gqUkrp9ln2A?autoplay=1&mute=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
