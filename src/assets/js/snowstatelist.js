@@ -172,7 +172,7 @@ const checkForAd = (target) => {
     "wyoming", "colorado", "california",
     "idaho", "montana", "oregon", "new-york","michigan",
     "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
-    "north-east","south-east", "rockies"
+    "north-east","south-east", "rockies", "mid-west"
   ];
   
   if (targetList.includes(target)) {
@@ -340,15 +340,15 @@ const checkForAd = (target) => {
           position: 'both'
         }]
       },wyoming : {
-        ads: [{ 
-          img: '2024-10-1-Jackson-Hole-728x90.jpg',
+        ads: [{
+          img: '2025-02-20-Jackson-Hole.gif',
           href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
           width:728, 
           height:90,
           alt: 'Jackson Hole 400 off air credit',
           position:'random',
-          start_date: '2024-10-01',
-          end_date: '2024-11-30'
+          start_date: '2025-02-20',
+          end_date: '2025-03-31'       
         },{
           img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
           href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
@@ -360,25 +360,26 @@ const checkForAd = (target) => {
           end_date: '2025-04-13'
         }]
       }, colorado: {
-        ads:[{
-          img: '2025-01-10-Cooper-728x90.jpg',
-          href:"https://www.skicooper.com/cooper-day-pass/",
-          width:728, 
-          height:90,
-          alt: 'Ski Cooper, CO',
-          position:'both',
-          start_date: '2025-01-10',
-          end_date: '2025-01-31'
-        },{
-          img: '2024-10-17-WolfCreek.jpg',
-          href:"https://wolfcreekski.com",
-          width:728, 
-          height:90,
-          alt: 'Wolf Creek CO', 
-          position: 'both',
-          start_date: '2024-10-20',
-          end_date: '2025-04-30'
-        }]
+        ads:[
+          {
+            img: '2025-02-20-Monarch.jpg',
+            href:"https://skimonarch.com/",
+            width:600, 
+            height:388,
+            alt: 'Monarch Mountain CO', 
+            position: 'both'
+          },{
+            img: '2025-02-20-Sunlight.png',
+            href:"https://sunlightmtn.com",
+            width:728, 
+            height:90,
+            alt: 'Sunlight Mtn CO', 
+            position: 'random',
+            start_date: '2024-12-11',
+            end_date: '2025-03-31'
+            
+          }
+        ]
       },"new-york" : {
         ads: [{
           img: '2025-01-16-Greek-Peak.jpg',
@@ -595,6 +596,43 @@ const checkForAd = (target) => {
             position: 'both',
             start_date: '2024-10-20',
             end_date: '2025-04-30'
+          },{
+            img: '2025-02-20-Sunlight.png',
+            href:"https://sunlightmtn.com",
+            width:728, 
+            height:90,
+            alt: 'Sunlight Mtn CO', 
+            position: 'both',
+            start_date: '2024-12-11',
+            end_date: '2025-03-31'
+            
+          },{
+            img: '2025-02-20-Monarch.jpg',
+            href:"https://skimonarch.com/",
+            width:600, 
+            height:388,
+            alt: 'Monarch Mountain CO', 
+            position: 'both'
+          },{
+            img: '2025-02-20-Jackson-Hole.gif',
+            href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
+            width:728, 
+            height:90,
+            alt: 'Jackson Hole 400 off air credit',
+            position:'random',
+            start_date: '2025-02-20',
+            end_date: '2025-03-31'       
+          }
+        ]
+      }, "mid-west": {
+        ads: [
+          {
+            img: '2024-11-07-TreeTop-NewYear-728x90.jpg',
+            href:"https://www.treetops.com/events/",
+            width:728, 
+            height:90,
+            alt: 'Treetops MI', 
+            position: 'both'
           }
         ]
       }

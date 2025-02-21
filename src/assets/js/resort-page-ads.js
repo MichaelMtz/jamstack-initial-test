@@ -194,14 +194,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },307008:{
       ads: [{
-        img: '2024-10-1-Jackson-Hole-728x90.jpg',
+        img: '2025-02-20-Jackson-Hole.gif',
         href:"https://www.jacksonhole.com/300-off?utm_source=snocountry&utm_medium=display&utm_campaign=air-credit",
         width:728, 
         height:90,
         alt: 'Jackson Hole 400 off air credit',
         position:'random',
-        start_date: '2024-10-01',
-        end_date: '2024-11-30'
+        start_date: '2025-02-20',
+        end_date: '2025-03-31'       
       },{
         img: '2024-08-06-Jackson-Hole-GT-728x90.jpg',
         href:"https://www.jacksonhole.com/golden-ticket?utm_source=snocountry&utm_medium=display&utm_campaign=golden-ticket",
@@ -211,24 +211,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         position:'random',
         start_date: '2024-08-20',
         end_date: '2025-04-13'
-      },{
-        img: '2024-06-10-JacksonHoleTram-728x90.jpg',
-        href:"https://www.jacksonhole.com/summer-activities/summer-tram?utm_source=snocountry&utm_medium=display&utm_campaign=sightseeing",
-        width:728, 
-        height:90,
-        alt: 'Jackson Hole',
-        position:'random',
-        start_date: '2024-06-19',
-        end_date: '2024-10-06'
-      },{
-        img: '2024-06-24-JacksonHole-728x290.jpg',
-        href:"https://www.jacksonhole.com/summer-activities/via-ferrata?utm_source=snocountry&utm_medium=display&utm_campaign=via-ferrata",
-        width:728, 
-        height:90,
-        alt: 'Jackson Hole',
-        position:'random',
-        start_date: '2024-06-19',
-        end_date: '2024-10-06'
       }]
       
     },802006: {
@@ -390,14 +372,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Ski Sundown CT', 
-        position: 'random'
+        position: 'random',
+        start_date: '2025-02-13',
+        end_date: '2025-02-28'
       },{
         img: '2025-02-13-Sundown-Clase-To-Home-728x90.png',
         href:"https://skisundown.com/",
         width:728, 
         height:90,
         alt: 'Ski Sundown CT', 
-        position: 'random'
+        position: 'random',
+        start_date: '2025-03-01',
+        end_date: '2025-03-31'
       }]
     },304001:{
       ads: [{
@@ -796,13 +782,23 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Sunlight Mtn CO', 
-        position: 'both',
+        position: 'random',
         start_date: '2024-12-11',
         end_date: '2025-04-03'
+      }, {
+        img: '2025-02-20-Sunlight.png',
+        href:"https://sunlightmtn.com",
+        width:728, 
+        height:90,
+        alt: 'Sunlight Mtn CO', 
+        position: 'random',
+        start_date: '2024-12-11',
+        end_date: '2025-03-31'
+        
       }]
     }, 719002: {
       ads: [{
-        img: '2024-11-20-Monarch.jpg',
+        img: '2025-02-20-Monarch.jpg',
         href:"https://skimonarch.com/",
         width:600, 
         height:388,

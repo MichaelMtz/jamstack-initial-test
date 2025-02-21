@@ -84,8 +84,8 @@ const getNewsHomeList = () => {
     if (data.status) {
       waitForElement('.news-list ').then((elPostList) => {
         _log('post:',data.stories);
-        window.snoNewsLastPostID = data.stories[data.stories.length-1].id;
         createPostList(elPostList,data.stories);
+        window.snoNewsLastPostID = data.stories[data.stories.length-1].id;
         scrollHandler();
       }).catch( (e) => { console.error('Error waiting for getOtherPostList data:',e);});        
     }
