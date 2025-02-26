@@ -1029,13 +1029,15 @@ document.addEventListener('DOMContentLoaded',()=> {
       }] 
     }, 616002: {
       ads: [{
-        img: '2025-01-22-Highlands.jpg',
-        href:"https://www.highlandsharborsprings.com/tickets?utm_source=SnoCountry&utm_medium=banner&utm_campaign=SnoCountry_2425",
+        img: '2025-02-21-The-Highlands.jpg',
+        href:"https://www.highlandsharborsprings.com/tickets?utm_source=SnoCountry&utm_medium=banner&utm_campaign=SnoCountry_feb25",
         width:728, 
         height:90,
         alt: 'The Highlands MI', 
         position: 'both',
-        comment: 'winter ad'
+        comment: 'winter ad',
+        start_date: '2025-02-22',
+        end_date: '2025-03-21'  
       }]
     }, 201003 : {
       ads: [{
