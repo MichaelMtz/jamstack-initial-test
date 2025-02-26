@@ -529,6 +529,17 @@ const checkForAd = (target) => {
           position: 'both',
           comment: 'general ad - can keep running'
         }]
+      }, oregon: {
+        ads: [{
+          img: '2025-02-22-Mount-Hood.jpg',
+          href:"https://www.skihood.com/store/passes",
+          width:728, 
+          height:90,
+          alt: 'Mount Hood Meadows OR',
+          position: 'random',
+          start_date: '2025-02-22',
+          end_date: '2025-03-31'
+        }]
       }, virginia: {
         ads: [{
           img: '2025-02-14-Omni-Homestead.jpg',

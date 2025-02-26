@@ -538,7 +538,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2024-12-04',
         end_date: '2025-05-19'
       }]
-    },  814002:{
+    }, 503006: {
+      ads: [{
+        img: '2025-02-22-Mount-Hood.jpg',
+        href:"https://www.skihood.com/store/passes",
+        width:728, 
+        height:90,
+        alt: 'Mount Hood Meadows OR',
+        position: 'both',
+        start_date: '2025-02-22',
+        end_date: '2025-02-29'
+      }]
+    }, 814002:{
       ads: [{
         img: 'Seven-Springs-resort-ad-728x90.jpg',
         href:"https://www.7springs.com/",
