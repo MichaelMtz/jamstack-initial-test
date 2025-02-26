@@ -67,6 +67,28 @@ body {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
     }
+    .news-list-footer {
+      height: 42px;
+      margin-bottom: 25px;
+      border-radius: 5px 5px 0px 0px;
+      padding: 12px;
+      text-align: right;
+      background-color: rgb(14, 28, 44);
+      color: white;
+      font-size: 18px;
+      line-height: unset;
+      a.next-page {
+        padding: 5px;
+        color:white;
+        text-decoration: underline;
+      }
+      a.next-page:hover {
+        border-radius: 3px;
+        background-color: white;
+        color: #0079c1;
+        cursor: pointer;
+      }
+    }
   }
 }
 #news-post {

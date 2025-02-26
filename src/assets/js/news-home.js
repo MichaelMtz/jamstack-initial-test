@@ -30,12 +30,7 @@ const waitForElement = (selector) => {
   });
 };
 
-const isElementInView = (el, pixelsShown = 0)=>{
-  const s1 = el.offsetTop + el.offsetHeight - window.scrollY;
-  const s2 = window.scrollY + window.innerHeight - el.offsetTop;
-  return s1 > pixelsShown && s2 > pixelsShown;
-  // return el.offsetTop + el.offsetHeight > window.scrollY && el.offsetTop < window.scrollY + window.innerHeight;
-};
+
 const scrollHandler = () => {
   const loadingIndicator = document.getElementById('loading');
   
@@ -71,9 +66,18 @@ const createPostList = (elPostList, posts) => {
 };
 
 const getNewsHomeList = () => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const page = searchParams.get('page');
   
-  const localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?action=news-home&lastID=${window.snoNewsLastPostID}`;
-  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-home-api?action=news-home&lastID=${window.snoNewsLastPostID}`: localURL;
+  let localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?action=news-home&lastID=${window.snoNewsLastPostID}`;
+  let url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-home-api?action=news-home&lastID=${window.snoNewsLastPostID}`: localURL;
+  _log(`--getNewsHomeList: page:${page}`);
+  if (page) {
+    _log(`--getNewsHomeList: Inpage:${page}`);
+    localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?action=news-home&lastID=page-${page}`;
+    url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-home-api?action=news-home&lastID=page-${page}`: localURL;
+  }
+  
   _log(`--getNewsHomeList: url:${url}`);
   
   fetch(url).then(response => {      
@@ -86,7 +90,8 @@ const getNewsHomeList = () => {
         _log('post:',data.stories);
         createPostList(elPostList,data.stories);
         window.snoNewsLastPostID = data.stories[data.stories.length-1].id;
-        scrollHandler();
+        window.snoNewsFetchAllowed = true;
+        //scrollHandler();
       }).catch( (e) => { console.error('Error waiting for getOtherPostList data:',e);});        
     }
     
@@ -94,8 +99,44 @@ const getNewsHomeList = () => {
 
 };
 
+const isElementInView = (el, pixelsShown = 0)=>{
+  const s1 = el.offsetTop + el.offsetHeight - window.scrollY;
+  const s2 = window.scrollY + window.innerHeight - el.offsetTop;
+  return s1 > pixelsShown && s2 > pixelsShown;
+  // return el.offsetTop + el.offsetHeight > window.scrollY && el.offsetTop < window.scrollY + window.innerHeight;
+};
+
+const setScrollHandler = () => {
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollPosition / documentHeight) * 100;
+    if (scrollPercentage >= 50) {
+      if (window.snoNewsFetchAllowed && isElementInView(window.snoNewsLoadingIndicator)) {
+        window.snoNewsFetchAllowed = false;
+        if (!window.snoTestNextPage) {
+          getNewsHomeList();
+        }
+      } 
+    }
+  });
+};
 document.addEventListener('DOMContentLoaded',()=> {
   window.snoNewsLastPostID = 0;  //default to latest
-  window.setScrollHandler = true;
+  window.snoNewsLoadingIndicator = document.getElementById('loading');
+  window.snoNewsFetchAllowed = true;
+  const searchParams = new URLSearchParams(window.location.search);
+  let page = searchParams.get('page');
+
+  if (page) {
+    page++;
+    const url = `news-home/?page=${page}`;
+    document.getElementById('next-page').href= url;
+  }
+  window.snoTestNextPage = searchParams.get('test-next-page');
+  if (window.snoTestNextPage) {
+    document.getElementById('next-page').href += "&test-next-page=yes";
+  }
+  setScrollHandler();
   getNewsHomeList();
 });
