@@ -299,14 +299,12 @@ const checkForAd = (target) => {
           start_date: '2025-02-01',
           end_date: '2025-03-31'
         },{
-          img: '2024-12-14-Gunstock-winter.png',
+          img: '2025-03-01-Gunstock.png',
           href:"https://www.gunstock.com/",
           width:728, 
           height:90,
           alt: 'Gunstock NH',
           position: 'random',
-          start_date: '2024-12-14',
-          end_date: '2025-04-15',
           start_date: '2025-02-01',
           end_date: '2025-03-31'
         }]
