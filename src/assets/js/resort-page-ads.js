@@ -133,24 +133,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603009 : {
       ads: [{
-        img: '2024-12-14-Gunstock-winter.png',
-        href:"https://www.gunstock.com/",
-        width:728, 
-        height:90,
-        alt: 'Gunstock NH',
-        position: 'random',
-        start_date: '2024-12-14',
-        end_date: '2025-04-15'
-      },{
-        
-        img: '2024-Gunstock-RV-700x100.jpg',
+        img: '2025-03-01-Gunstock.png',
         href:"https://www.gunstock.com/winter/tickets-passes/",
         width:728, 
         height:90,
         alt: 'Gunstock',
-        position: 'random',
-        start_date: '2024-01-08',
-        end_date: '2024-04-01'
+        position: 'both',
+        start_date: '2025-03-01',
+        end_date: '2025-04-01'
       }]
     },715002:{
       ads: [{
