@@ -375,10 +375,19 @@ const checkForAd = (target) => {
             position: 'random',
             start_date: '2024-12-11',
             end_date: '2025-03-31'
-            
           }
         ]
-      },"new-york" : {
+      },idaho:{
+        ads: [{        
+          img: '2025-03-06-Soldier-Mtn.png',
+          href:"https://soldiermountain.com/",
+          width:728, 
+          height:90,
+          alt: 'Soldier Mountain ID',
+          position:'both',
+          comment: 'General ad'
+        }]
+      }, "new-york" : {
         ads: [{
           img: '2025-01-16-Greek-Peak.jpg',
           href:"https://www.greekpeak.net",
@@ -388,7 +397,6 @@ const checkForAd = (target) => {
           position: 'both',
           start_date: '2025-01-02',
           end_date: '2025-04-30',
-          position: 'random'
         },{
           img: '2025-02-14-Greek-Peak.png',
           href:"https://www.greekpeak.net",
@@ -398,7 +406,6 @@ const checkForAd = (target) => {
           position: 'both',
           start_date: '2025-02-14',
           end_date: '2025-03-31',
-          position: 'random'
         }]
       }, "south-east": {
         ads: [{

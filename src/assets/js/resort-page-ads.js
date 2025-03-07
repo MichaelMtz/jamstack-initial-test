@@ -100,14 +100,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 603019 : {
       ads: [{
-        img: '2025-01-21-Ragged-resized.jpg',
-        href:"https://www.raggedmountainresort.com/",
+        img: '2025-03-06-Ragged-Pass-Sale.png',
+        href:"https://www.raggedmountainresort.com/mission-affordable-season-passes/",
         width:728, 
         height:90,
         alt: 'Ragged Mountain, NH',
         position: 'both',
-        start_date: '2025-01-17',
-        end_date: '2025-04-04'
+        start_date: '2025-03-07',
+        end_date: '2025-04-07'
       }]
     }, 616006 : {
       ads: [{
@@ -345,6 +345,16 @@ document.addEventListener('DOMContentLoaded',()=> {
         position:'both',
         start_date: '2024-07-03',
         end_date: '2024-09-01'
+      }]
+    }, 208010: {
+      ads: [{        
+        img: '2025-03-06-Soldier-Mtn.png',
+        href:"https://soldiermountain.com/",
+        width:728, 
+        height:90,
+        alt: 'Soldier Mountain ID',
+        position:'both',
+        comment: 'General ad'
       }]
     },717016:{
       ads: [{
