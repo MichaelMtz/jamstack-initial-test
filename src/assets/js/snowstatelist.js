@@ -169,7 +169,7 @@ const checkForAd = (target) => {
   _log(`checkForAd:target: ${target}`);
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
-    "wyoming", "colorado", "california",
+    "wyoming", "colorado", "california","utah",
     "idaho", "montana", "oregon", "new-york","michigan",
     "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
     "north-east","south-east", "rockies", "mid-west"
@@ -337,6 +337,27 @@ const checkForAd = (target) => {
           alt: 'Stratton Mountain VT', 
           position: 'both'
         }]
+      },utah : {
+        ads: [{
+          img: '2025-03-10-Powder-Mtn-Lines-Carve.png',
+          href:"https://powdermountain.com/tickets/season-passes",
+          width:728, 
+          height:90,
+          alt: 'Powder Mountain UT', 
+          position: 'random',
+          start_date: '2025-03-10',
+          end_date: '2025-04-11',   
+        },{
+          img: '2025-03-10-Powder-Mtn.png',
+          href:"https://powdermountain.com/tickets/season-passes",
+          width:728, 
+          height:90,
+          alt: 'Powder Mountain UT', 
+          position: 'random',
+          start_date: '2025-03-10',
+          end_date: '2025-04-11',
+          comment: 'winter ad'
+        }]
       },wyoming : {
         ads: [{
           img: '2025-02-20-Jackson-Hole.gif',
@@ -385,7 +406,9 @@ const checkForAd = (target) => {
           height:90,
           alt: 'Soldier Mountain ID',
           position:'both',
-          comment: 'General ad'
+          comment: 'General ad',
+          start_date: '2025-12-11',
+          end_date: '2025-04-15'
         }]
       }, "new-york" : {
         ads: [{

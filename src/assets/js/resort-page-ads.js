@@ -965,6 +965,28 @@ document.addEventListener('DOMContentLoaded',()=> {
         position: 'both',
         comment: 'general ad - can keep running'
       }]
+    }, 801008: {
+      ads: [{
+        img: '2025-03-10-Powder-Mtn-Lines-Carve.png',
+        href:"https://powdermountain.com/tickets/season-passes",
+        width:728, 
+        height:90,
+        alt: 'Powder Mountain UT', 
+        position: 'random',
+        start_date: '2025-03-10',
+        end_date: '2025-04-11',
+        comment: 'winter ad'
+      },{
+        img: '2025-03-10-Powder-Mtn.png',
+        href:"https://powdermountain.com/tickets/season-passes",
+        width:728, 
+        height:90,
+        alt: 'Powder Mountain UT', 
+        position: 'random',
+        start_date: '2025-03-10',
+        end_date: '2025-04-11',
+        comment: 'winter ad'
+      }]
     }, 801010: {
       ads: [{
         img: '2024-12-26-Snowbird-728x90.jpg',
