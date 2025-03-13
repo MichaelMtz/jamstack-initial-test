@@ -263,12 +263,14 @@ const checkForAd = (target) => {
         ]
       },california: {
         ads: [{
-          img: '2025-02-13-Mountin-High-Cheers-to-100-Years.png',
-          href:"https://shop.mthigh.com/reservations",
+          img: '2025-03-11-Cali-Pass.png',
+          href:"https://www.thecalipass.com/buynow",
           width:728, 
           height:90,
-          alt: 'Mountain High CA', 
-          position: 'both'
+          alt: 'Bear Valley Mountain Resort CA', 
+          position: 'both',
+          start_date: '2025-03-11',
+          end_date: '2025-03-31'
         }]
       }, massachusetts : {
         ads: [{

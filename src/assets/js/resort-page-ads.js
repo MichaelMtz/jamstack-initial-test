@@ -569,36 +569,36 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },209002: {
       ads: [{
-        img: '2024-03-01-CaliPass-728x90.jpg',
-        href:"http://www.thecalipass.com",
+        img: '2025-03-11-Cali-Pass.png',
+        href:"https://www.thecalipass.com/buynow",
         width:728, 
         height:90,
         alt: 'Bear Valley Mountain Resort CA', 
         position: 'both',
-        start_date: '2024-03-09',
-        end_date: '2024-04-30'
+        start_date: '2025-03-11',
+        end_date: '2025-04-30'
       }]
     },209003: {
       ads: [{
-        img: '2024-03-01-CaliPass-728x90.jpg',
-        href:"http://www.thecalipass.com",
+        img: '2025-03-11-Cali-Pass.png',
+        href:"http://www.thecalipass.com/buynow",
         width:728, 
         height:90,
         alt: 'Dodge Ridge CA', 
         position: 'both',
-        start_date: '2024-03-09',
-        end_date: '2024-04-30'
+        start_date: '2025-03-11',
+        end_date: '2025-04-30'
       }]
     },209005: {
       ads: [{
-        img: '2024-03-01-CaliPass-728x90.jpg',
-        href:"http://www.thecalipass.com",
+        img: '2025-03-11-Cali-Pass.png',
+        href:"http://www.thecalipass.com/buynow",
         width:728, 
         height:90,
         alt: 'China Peak CA', 
         position: 'both',
-        start_date: '2024-03-09',
-        end_date: '2024-04-30'
+        start_date: '2025-03-11',
+        end_date: '2025-04-30'
       }]
     },619006: {
       ads: [{
@@ -1151,7 +1151,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     //checkForGeneralAd();
   }
 
-  if (resort_id === '303022') {
+  if (resort_id === '802006') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -1159,8 +1159,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container powderhorn">   
-                        <img class="logo-telluride" src="assets/images/ads/pepsi/telluride/TSR_bold-100.png" alt="Telluride CO ">  
-                        <!--  <img class="logo-camelback" src="assets/images/ads/pepsi/mtbachelor/503004logo-orange.jpg" alt="Mt. Bachelor Ski Resort"> -->
+                        <img class="" src="assets/images/ads/pepsi/jay-peak/jay_logo.svg" alt="Jay Peak Resort VT">
                         <img src="assets/images/ads/pepsi/2024-pepsi-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -1171,7 +1170,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/DHbpb4O0Ygg?autoplay=1&mute=1&rel=0" title="Pepsi ROTW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/sBXF9FQW0Io?autoplay=1&mute=1&rel=0&start=2" title="Pepsi ROTW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
