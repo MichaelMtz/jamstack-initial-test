@@ -409,8 +409,17 @@ const checkForAd = (target) => {
           alt: 'Soldier Mountain ID',
           position:'both',
           comment: 'General ad',
-          start_date: '2025-12-11',
+          start_date: '2024-12-11',
           end_date: '2025-04-15'
+        },{
+          img: '2025-03-13-Lookout-Idaho.jpg',
+          href:"https://skilookout.com/season-pass",
+          width:728, 
+          height:90,
+          alt: 'Ski Lookout ID',
+          position:'both',
+          start_date: '2025-03-13',
+          end_date: '2025-04-20'
         }]
       }, "new-york" : {
         ads: [{

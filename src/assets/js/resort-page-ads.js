@@ -335,6 +335,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         alt: 'Bogus Basin ID',
         position:'both'
       }]
+    },208004: {
+      ads: [{
+        img: '2025-03-13-Lookout-Idaho.jpg',
+        href:"https://skilookout.com/season-pass",
+        width:728, 
+        height:90,
+        alt: 'Ski Lookout ID',
+        position:'both',
+        start_date: '2025-03-13',
+        end_date: '2025-04-20'
+      }]
     },208008:{
       ads: [{
         img: '2024-07-03-schweitzer-summer-728x90.jpg',
@@ -602,14 +613,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },619006: {
       ads: [{
-        img: '2025-02-13-Mountin-High-Cheers-to-100-Years.png',
+        img: '2025-03-11-Cali-Pass.png',
         href:"https://shop.mthigh.com/reservations",
         width:728, 
         height:90,
         alt: 'Mountain High CA', 
         position: 'both',
-        start_date: '2025-02-14',
-        end_date: '2025-02-28'
+        start_date: '2025-03-11',
+        end_date: '2025-04-30'
       }]
     }, 413006: {
       ads: [{
