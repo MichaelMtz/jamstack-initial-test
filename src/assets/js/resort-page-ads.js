@@ -1162,7 +1162,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     //checkForGeneralAd();
   }
 
-  if (resort_id === '802006') {
+  if (resort_id === '802007') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">
@@ -1170,7 +1170,7 @@ document.addEventListener('DOMContentLoaded',()=> {
             <div class="pepsi-content">
                 <div class="pepsi-header">
                     <div class="pepsi-logo-container powderhorn">   
-                        <img class="" src="assets/images/ads/pepsi/jay-peak/jay_logo.svg" alt="Jay Peak Resort VT">
+                        <img class="logo-okemo" src="assets/images/ads/pepsi/killington/Killington-logo.jpg" alt="Killington Resort VT">
                         <img src="assets/images/ads/pepsi/2024-pepsi-logo.png" alt="Pepsi" class="logo-pepsi">
                     </div>
                     <div class="pepsi-copy">Resort of the Week</div>
@@ -1181,7 +1181,7 @@ document.addEventListener('DOMContentLoaded',()=> {
                     -->
                 </div>
                 <div class="pepsi-video">
-                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/sBXF9FQW0Io?autoplay=1&mute=1&rel=0&start=2" title="Pepsi ROTW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/QLqenBoGNtc?autoplay=1&mute=1&rel=0&start=2" title="Pepsi ROTW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
                   <!--
                   <div class="pepsi-image">
                           <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
