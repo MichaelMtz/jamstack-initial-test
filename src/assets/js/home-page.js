@@ -347,11 +347,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/beginner-guide/taking-your-first-ski-snowboard-lesson",
-        "image": "https://snocountry.com/assets/images/mountain-life/beginner-guide/snowboard-friends.jpg",
-        "title": "Your First Lesson",
-        "author": "Josh Petit",
-        "umami": "mountain-life-beginner-guide-lesson"
+        "url": "https://snocountry.com/mountain-life/travel/a-day-at-ski-cooper-colorado/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/ski-cooper/Ski-Cooper-Hero.jpg",
+        "title": "Road Trip to Ski Cooper CO",
+        "author": "Scott Clarkson",
+        "umami": "mountain-life-travel-Ski-Cooper-Colorado"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -387,11 +387,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/beginner-guide/taking-your-first-ski-snowboard-lesson",
-        "image": "https://snocountry.com/assets/images/mountain-life/beginner-guide/snowboard-friends.jpg",
-        "title": "Your First Lesson",
-        "author": "Josh Petit",
-        "umami": "mountain-life-beginner-guide-lesson"
+        "url": "https://snocountry.com/mountain-life/travel/a-day-at-ski-cooper-colorado/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/ski-cooper/Ski-Cooper-Hero.jpg",
+        "title": "Road Trip to Ski Cooper CO",
+        "author": "Scott Clarkson",
+        "umami": "mountain-life-travel-Ski-Cooper-Colorado"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",

@@ -42,7 +42,9 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
 }
-
+#parallax-snocountry .mountain-life-list li {
+  margin-bottom: 3px;
+}
 /* Section - Title */
 /**************************/
 #parallax-snocountry .title {background: white; padding: 60px; margin:0 auto; text-align:center;}
