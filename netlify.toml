@@ -7,3 +7,11 @@
   from = "/widget/*"
   to = "/.netlify/functions/widget"
   status = 200
+  
+  [[plugins]]
+  package = "@netlify/plugin-sitemap"
+  
+    [plugins.inputs]
+    buildDir = "dist"
+    prettyURLs = true
+    trailingSlash = true
