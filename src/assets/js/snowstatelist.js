@@ -473,33 +473,41 @@ const checkForAd = (target) => {
         }]
       }, "north-east": {
         ads: [{
-          img: '2024-12-05-BlackMountain.png',
-          href:"https://skiblackmountain.org/tickets-passes",
+          img: '2025-01-16-Killington-Winter.jpg',
+          href:"https://www.killington.com/be-the-beast?utm_campaign=brand?utm_source=snocountry?utm_medium=web-listing",
           width:728, 
           height:90,
-          alt: 'Black Mountain ME',
-          position:'both'
+          alt: 'Killington VT',
+          position:'both',
+          start_date: '2025-01-16',
+          end_date: '2025-04-30'
         }, {
-          img: '2024-11-22-BerkshireEast.png',
-          href:"https://berkshireeast.com",
+          img: '2025-03-01-Gunstock.png',
+          href:"https://www.gunstock.com/winter/tickets-passes/",
           width:728, 
           height:90,
-          alt: 'Berkshire East MA', 
-          position: 'both'
-        }, {
-          img: '2024-11-13-skicny-sno.png',
-          href:"https://www.skicny.com",
-          width:728, 
-          height:90,
-          alt: 'Labrador NY', 
-          position: 'both'
+          alt: 'Gunstock',
+          position: 'both',
+          start_date: '2025-03-01',
+          end_date: '2025-04-01'
         },{
-          img: '2024-08-06-Bromley-728x90.jpg',
-          href:"https://www.bromley.com/",
+          img: '2025-02-15-Camden.jpg',
+          href:"https://camdensnowbowl.com/",
           width:728, 
           height:90,
-          alt: 'Bromley VT ', 
-          position: 'both'
+          alt: 'Camden Snowbowl ME',
+          position:'both',
+          start_date: '2025-02-14',
+          end_date: '2025-03-31'
+        },{
+          img: '2025-01-16-Greek-Peak.jpg',
+          href:"https://www.greekpeak.net",
+          width:728, 
+          height:90,
+          alt: 'Greek Peak NY',
+          position: 'both',
+          start_date: '2025-01-02',
+          end_date: '2025-04-30',
         },{
           img: '2024-12-11-Bretton-Woods.jpg',
           href:"https://www.brettonwoods.com",
