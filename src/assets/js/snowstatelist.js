@@ -172,7 +172,7 @@ const checkForAd = (target) => {
     "wyoming", "colorado", "california","utah",
     "idaho", "montana", "oregon", "new-york","michigan",
     "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
-    "north-east","south-east", "rockies", "mid-west"
+    "north-east","south-east", "rockies", "mid-west", "north-west"
   ];
   
   if (targetList.includes(target)) {
@@ -470,6 +470,15 @@ const checkForAd = (target) => {
           alt: 'Sugar Mountain NC', 
           position: 'both',
           comment: 'general ad - can keep running'
+        },{
+          img: '2025-02-14-Omni-Homestead.jpg',
+          href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
+          width:728, 
+          height:90,
+          alt: 'Omni Homestead VA', 
+          position: 'both',
+          start_date: '2025-02-14',
+          end_date: '2025-05-01'
         }]
       }, "north-east": {
         ads: [{
@@ -715,6 +724,36 @@ const checkForAd = (target) => {
             comment: 'winter ad',
             start_date: '2025-02-22',
             end_date: '2025-03-21'  
+          }
+        ]
+      }, "north-west": {
+        ads: [
+          {
+            img: '2025-02-22-Mount-Hood.jpg',
+            href:"https://www.skihood.com/store/passes",
+            width:728, 
+            height:90,
+            alt: 'Mount Hood Meadows OR',
+            position: 'both',
+            start_date: '2025-02-22',
+            end_date: '2025-02-29'
+          }, {
+            img: '2025-03-13-Lookout-Idaho.jpg',
+            href:"https://skilookout.com/season-pass",
+            width:728, 
+            height:90,
+            alt: 'Ski Lookout ID',
+            position:'both',
+            start_date: '2025-03-13',
+            end_date: '2025-04-20'
+          }, {        
+            img: '2025-03-06-Soldier-Mtn.png',
+            href:"https://soldiermountain.com/",
+            width:728, 
+            height:90,
+            alt: 'Soldier Mountain ID',
+            position:'both',
+            comment: 'General ad'
           }
         ]
       }
