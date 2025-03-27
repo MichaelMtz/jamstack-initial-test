@@ -217,6 +217,9 @@ ul.feature-boxes li.pepsi-box .fly-box {
   height: 77px;
   margin-bottom: unset;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container .logo-bogus-basin {
+  margin-top: 7px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-copy {
   text-align: center;
   font-size: 30px;
