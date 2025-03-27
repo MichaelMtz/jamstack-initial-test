@@ -347,11 +347,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/travel/a-day-at-ski-cooper-colorado/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/ski-cooper/Ski-Cooper-Hero.jpg",
-        "title": "Road Trip to Ski Cooper CO",
-        "author": "Scott Clarkson",
-        "umami": "mountain-life-travel-Ski-Cooper-Colorado"
+        "url": "https://snocountry.com/mountain-life/how-to/advanced-level-ski-snowboard-lessons/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/how-to/ski-school-moguls.jpg",
+        "title": "Ski School: Not Just for Beginners",
+        "author": "Josh Petit",
+        "umami": "mountain-life-how-to-advanced-ski-snowboard-lesson"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -387,11 +387,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/travel/a-day-at-ski-cooper-colorado/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/ski-cooper/Ski-Cooper-Hero.jpg",
-        "title": "Road Trip to Ski Cooper CO",
-        "author": "Scott Clarkson",
-        "umami": "mountain-life-travel-Ski-Cooper-Colorado"
+        "url": "https://snocountry.com/mountain-life/how-to/advanced-level-ski-snowboard-lessons/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/how-to/ski-school-moguls.jpg",
+        "title": "Ski School: Not Just for Beginners",
+        "author": "Josh Petit",
+        "umami": "mountain-life-how-to-advanced-ski-snowboard-lesson"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
