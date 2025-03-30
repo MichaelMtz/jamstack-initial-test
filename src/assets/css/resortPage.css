@@ -121,6 +121,17 @@ ul.resort-list li .last-updated {
   font-weight: 800;
   color: #5c5e60;
 }
+.snow-report-container .resort .resort__header h1 .website-link {
+  text-decoration: none;
+}
+.snow-report-container .resort .resort__header h1 .website-link:hover {
+  text-decoration: underline;
+}
+.snow-report-container .resort .resort__header h1 .address {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: normal;
+}
 @media screen and (max-width: 926px) {
   .snow-report-container .resort .resort__header h1 {
     font-size: clamp(38px, 5.3vw, 56px);

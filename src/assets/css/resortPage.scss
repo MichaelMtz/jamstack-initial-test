@@ -124,18 +124,29 @@ ul.resort-list {
                 letter-spacing: 7.1px;
                 font-weight: 800;
                 color: #5c5e60;
+                .website-link {
+                  text-decoration: none;
+                }
+                .website-link:hover {
+                  text-decoration: underline;
+                }
+                .address {
+                  margin-top: 10px;
+                  font-size: 12px;
+                  line-height: normal;
+                }
                 @include bpmaxw(926px) {
                   font-size: clamp(38px, 5.3vw ,56px);
                 }
-                 @media screen and (max-width:818px) {
-                     font-size:2.5rem;
-                     font-weight: 600;
-                 }
-                 @media screen and (max-width:540px) {
-                    margin-top: 20px;
-                    border-bottom: 2px solid #5c5e60;
-                    padding-bottom: 25px;
-                    font-size: 42px;
+                @media screen and (max-width:818px) {
+                  font-size:2.5rem;
+                  font-weight: 600;
+                }
+                @media screen and (max-width:540px) {
+                  margin-top: 20px;
+                  border-bottom: 2px solid #5c5e60;
+                  padding-bottom: 25px;
+                  font-size: 42px;
                     
                 }
            }
