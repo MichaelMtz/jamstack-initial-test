@@ -314,6 +314,14 @@ document.addEventListener('DOMContentLoaded',()=> {
         start_date: '2025-02-06',
         end_date: '2025-04-06'
       }]
+    }, 207008:{
+      ads: [{
+        img: '2025-05-02-Sugarloaf.jpg',
+        href: "https://www.sugarloaf.com/",
+        height:90,
+        alt: 'Sugarloaf ME',
+        position:'both',
+      }]
     },207014: {
       ads: [{
         img: '2025-01-04-BigRock-728x90.png',
@@ -1162,7 +1170,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     //checkForGeneralAd();
   }
 
-  if (resort_id === '208001') {
+  if (resort_id === '1') {
     waitForElement('#resort-name').then((elTarget) => {
       const html = `
         <div id="pepsi" class="pepsi abasin">

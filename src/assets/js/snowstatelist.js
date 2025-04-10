@@ -482,48 +482,22 @@ const checkForAd = (target) => {
         }]
       }, "north-east": {
         ads: [{
-          img: '2025-01-16-Killington-Winter.jpg',
-          href:"https://www.killington.com/be-the-beast?utm_campaign=brand?utm_source=snocountry?utm_medium=web-listing",
-          width:728, 
+          img: '2025-05-02-Sugarloaf.jpg',
+          href: "https://www.sugarloaf.com/",
           height:90,
-          alt: 'Killington VT',
+          alt: 'Sugarloaf ME',
           position:'both',
-          start_date: '2025-01-16',
-          end_date: '2025-04-30'
-        }, {
-          img: '2025-03-01-Gunstock.png',
-          href:"https://www.gunstock.com/winter/tickets-passes/",
+          start_date: '2025-01-22',
+          end_date: '2025-05-01'
+        },{
+          img: '2025-01-22-Sugarbush.jpg',
+          href:"https://www.sugarbush.com/things-to-do/challenge",
           width:728, 
           height:90,
-          alt: 'Gunstock',
+          alt: 'Sugarbush VT', 
           position: 'both',
-          start_date: '2025-03-01',
-          end_date: '2025-04-01'
-        },{
-          img: '2025-02-15-Camden.jpg',
-          href:"https://camdensnowbowl.com/",
-          width:728, 
-          height:90,
-          alt: 'Camden Snowbowl ME',
-          position:'both',
-          start_date: '2025-02-14',
-          end_date: '2025-03-31'
-        },{
-          img: '2025-01-16-Greek-Peak.jpg',
-          href:"https://www.greekpeak.net",
-          width:728, 
-          height:90,
-          alt: 'Greek Peak NY',
-          position: 'both',
-          start_date: '2025-01-02',
-          end_date: '2025-04-30',
-        },{
-          img: '2024-12-11-Bretton-Woods.jpg',
-          href:"https://www.brettonwoods.com",
-          width:728, 
-          height:90,
-          alt: 'Bretton Woods, NH',
-          position: 'both'
+          start_date: '2025-01-22',
+          end_date: '2025-05-01'
         }]
       }, alabama: {
         ads: [{

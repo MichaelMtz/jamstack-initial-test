@@ -435,8 +435,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
-    //elStories.insertAdjacentHTML('afterbegin', html);
+    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    elStories.insertAdjacentHTML('afterbegin', html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -450,8 +450,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       </a>
       `).join('');
       
-    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
-    //elMobileStories.insertAdjacentHTML('beforeend', html);
+    //elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
+    elMobileStories.insertAdjacentHTML('beforeend', html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
