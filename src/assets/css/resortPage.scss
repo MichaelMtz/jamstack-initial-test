@@ -561,8 +561,7 @@ ul.resort-list {
     }
     .display {
         font-size: 1rem;
-        font-family: "Proxima Nova", sans-serif;
-        font-style: italic;
+
         color: #5c5e60;
         font-weight: 100;
         text-transform: initial;
@@ -570,12 +569,12 @@ ul.resort-list {
         &.field {
             margin-left: 20px;
             display: inline-block;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             letter-spacing: 1px;                
         }
         &.value{
             margin-left: 5px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: 600;            
         }
     }
