@@ -20,7 +20,7 @@ function upperCaseWords(input) {
 }
 
 function formatBreadCrumbLink(breadcrumb) {
-  return "snow-report/" + abbrToLongName[breadcrumb];
+  return "snow-report/" + abbrToLongName[breadcrumb] + "/";
 };
 
 function formatBreadCrumbs(breadcrumbs) {
