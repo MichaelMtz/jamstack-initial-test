@@ -347,11 +347,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/how-to/advanced-level-ski-snowboard-lessons/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/how-to/ski-school-moguls.jpg",
-        "title": "Ski School: Not Just for Beginners",
+        "url": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/culture/slang/hero-snowboard-glades.jpg",
+        "title": "Skiing & Snowboarding Terms, Slang and Jargon",
         "author": "Josh Petit",
-        "umami": "mountain-life-how-to-advanced-ski-snowboard-lesson"
+        "umami": "mountain-life-culture-slang"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -387,11 +387,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/how-to/advanced-level-ski-snowboard-lessons/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/how-to/ski-school-moguls.jpg",
-        "title": "Ski School: Not Just for Beginners",
+        "url": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/culture/slang/hero-snowboard-glades.jpg",
+        "title": "Skiing & Snowboarding Terms, Slang and Jargon",
         "author": "Josh Petit",
-        "umami": "mountain-life-how-to-advanced-ski-snowboard-lesson"
+        "umami": "mountain-life-culture-slang"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -435,8 +435,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
-    elStories.insertAdjacentHTML('afterbegin', html);
+    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    //elStories.insertAdjacentHTML('afterbegin', html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -450,8 +450,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       </a>
       `).join('');
       
-    //elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
-    elMobileStories.insertAdjacentHTML('beforeend', html);
+    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
+    //elMobileStories.insertAdjacentHTML('beforeend', html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
