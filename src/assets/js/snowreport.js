@@ -91,7 +91,7 @@ const fixPageNavLinks = () => {
   waitForElement('.container-state-links').then((elStateLinks) => {
     const navItems = elStateLinks.parentElement.querySelectorAll('.nav-item-link');
     navItems.forEach(elNavItem => {
-      elNavItem.href = window.location.href.split('#')[0] + elNavItem.dataset.section;
+      elNavItem.href = window.location.href.split('#')[0] + elNavItem.dataset.section + '/';
     });
   }).catch((e) => { 
     console.error('Error waiting for local page links:',e);
@@ -210,6 +210,8 @@ const getSnowReport = () => {
     return response.json();
   }).then(data => { 
     document.querySelector('#container-snow-reports').innerHTML = data.snowreport;
+    createCharts();
+    fixPageNavLinks();
   }).catch( () => { console.log('Error waiting for EL:');});
 };
 
@@ -245,7 +247,5 @@ const createResortGeoSDL = () => {
 
 document.addEventListener('DOMContentLoaded',()=> {
   getSnowReport();
-  fixPageNavLinks();
-  createCharts();
   createResortGeoSDL();
 });
