@@ -71,11 +71,13 @@ const getNewsHomeList = () => {
   
   let localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?action=news-home&lastID=${window.snoNewsLastPostID}`;
   let url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-home-api?action=news-home&lastID=${window.snoNewsLastPostID}`: localURL;
+  url = localURL;   // Override netlify function,  for some reason it is failing.
   _log(`--getNewsHomeList: page:${page}`);
   if (page) {
     _log(`--getNewsHomeList: Inpage:${page}`);
     localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?action=news-home&lastID=page-${page}`;
     url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-home-api?action=news-home&lastID=page-${page}`: localURL;
+    url = localURL;
   }
   
   _log(`--getNewsHomeList: url:${url}`);
