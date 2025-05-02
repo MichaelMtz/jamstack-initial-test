@@ -168,6 +168,8 @@ const checkUser = () => {
         twoWeeks.setDate(twoWeeks.getDate() + 14);
         user.redisplayDate = twoWeeks.getTime();
         localStorage.setItem('sno-user', JSON.stringify(user));
+      } else {
+        user.displayModal = false;
       }
     }
     console.info('** user exists:',user);
