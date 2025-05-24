@@ -89,17 +89,17 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    const homePageImages =  [
-      'johannes-waibel-WdBQHcIiSIw-unsplash.jpg',
-      'john-price-CrVKoYDDJIU-unsplash.jpg',
-      'tim-vanderhoydonck-QV58wLRuV6I-unsplash.jpg',
-      'mattias-olsson-nQz49efZEFs-unsplash.jpg',
-      'robson-hatsukami-morgan-5C6veSN6hec-unsplash.jpg',
-      'karsten-winegeart-pCS5YlrskC8-unsplash.jpg',
-      'maarten-duineveld-pmfJcN7RGiw-unsplash.jpg',
-      'zach-lucero-jYBtuN6aKg0-unsplash.jpg',
-      'powder-skier-slashing-alaska.jpg',
-    ];
+    // const homePageImages =  [
+    //   'johannes-waibel-WdBQHcIiSIw-unsplash.jpg',
+    //   'john-price-CrVKoYDDJIU-unsplash.jpg',
+    //   'tim-vanderhoydonck-QV58wLRuV6I-unsplash.jpg',
+    //   'mattias-olsson-nQz49efZEFs-unsplash.jpg',
+    //   'robson-hatsukami-morgan-5C6veSN6hec-unsplash.jpg',
+    //   'karsten-winegeart-pCS5YlrskC8-unsplash.jpg',
+    //   'maarten-duineveld-pmfJcN7RGiw-unsplash.jpg',
+    //   'zach-lucero-jYBtuN6aKg0-unsplash.jpg',
+    //   'powder-skier-slashing-alaska.jpg',
+    // ];
       
     // 'Gondola-1600x1067.jpg', 
     // 'alex-lange-Ca9u0f1nDt0-unsplash.jpg',
@@ -109,11 +109,21 @@ const configurePepsiBackgroundImages = () => {
     // 'powder-skier-slashing-alaska.jpg'];
     
     //summer
-    //homePageImages = ['daniel-dvorsky-PFbDoh58U64-unsplash.jpg', 'andhika-soreng-US06QF_sxu8-unsplash.jpg'];
+    const homePageImages = [
+      'jacob-thorson-fFYBRyC_OAk-unsplash.jpg', 
+      'barcs-tamas-BqSiMKeSiq8-unsplash.jpg',
+      'courtney-cook-SsIIw_MET0E-unsplash.jpg',
+      'dan-congdon-gJeusCuFyYA-unsplash.jpg',
+      'tim-foster-e0jQbe0tw3I-unsplash.jpg',
+      'jens-de-decker-W2vKVr4C3Xc-unsplash.jpg',
+      'barcs-tamas-xNUxUjhow68-unsplash.jpg',
+      'matthew-mcbrayer-fZL3EN4aJUI-unsplash.jpg',
+      'tim-foster-maeQsJtfAyg-unsplash.jpg',
+    ];
     const randomIndex = random(0,homePageImages.length);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
-    elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/${selectedImage}")`;
+    elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/summer/${selectedImage}")`;
     //elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/telluride/${selectedImage}")`;
   }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
   
@@ -344,14 +354,15 @@ document.addEventListener('DOMContentLoaded',()=> {
       
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   };
+  
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/culture/slang/hero-snowboard-glades.jpg",
-        "title": "Skiing & Snowboarding Terms, Slang and Jargon",
-        "author": "Josh Petit",
-        "umami": "mountain-life-culture-slang"
+        "url": "https://snocountry.com/mountain-life/summer/summer-in-the-mountains/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/summer-in-the-mountains/camping-1024.png",
+        "title": "Summer in the Mountains",
+        "author": "James Crosby",
+        "umami": "mountain-life-summer-in-the-mountains"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -387,11 +398,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/culture/slang/hero-snowboard-glades.jpg",
-        "title": "Skiing & Snowboarding Terms, Slang and Jargon",
-        "author": "Josh Petit",
-        "umami": "mountain-life-culture-slang"
+        "url": "https://snocountry.com/mountain-life/summer/summer-in-the-mountains/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/summer-in-the-mountains/camping-1024.png",
+        "title": "Summer in the Mountains",
+        "author": "James Crosby",
+        "umami": "mountain-life-summer-in-the-mountains"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",

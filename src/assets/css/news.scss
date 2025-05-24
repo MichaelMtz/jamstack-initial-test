@@ -216,6 +216,10 @@ body {
     margin-bottom: 5px;
     border-radius: 10px;
     display: none;
+    
+    @include bpmaxw($mobile) {
+      margin-top: 20px;
+    }
   }
   
   .news-ad.show {

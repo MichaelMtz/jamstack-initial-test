@@ -212,6 +212,11 @@ body {
   border-radius: 10px;
   display: none;
 }
+@media screen and (max-width: 767px) {
+  #news-post .news-ad {
+    margin-top: 20px;
+  }
+}
 #news-post .news-ad.show {
   display: block;
 }

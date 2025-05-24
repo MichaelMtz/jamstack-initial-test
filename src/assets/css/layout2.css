@@ -484,6 +484,7 @@ ul.feature-boxes > li.offer-box span.box-icon { background: url(../images/sprite
 ul.feature-boxes > li.updates-box span.box-icon { background: url(../images/sprite.png) no-repeat 2px -2px; }
 ul.feature-boxes > li.weather-box span.box-icon { background: url(../images/sprite.png) no-repeat -61px 0px; }
 ul.feature-boxes > li.region-box span.box-icon { background: url(../images/sprite.png) no-repeat -61px 0px; }
+ul.feature-boxes.summer-flyout > li.region-box span.box-icon { background: url(../images/sprite.png) no-repeat -93px 0px; }
 
 ul.feature-boxes > li.favorites-box span.box-icon { background: url(../images/sprite.png) no-repeat -61px 0px; }
 ul.feature-boxes.summer-flyout >  li.favorites-box span.box-icon { background: url(../images/sprite.png) no-repeat -94px 0px; }
