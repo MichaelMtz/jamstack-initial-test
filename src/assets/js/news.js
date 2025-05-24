@@ -112,13 +112,14 @@ const displayNewsAd = () => {
   const html = `
     <div class="resort-ad">
       <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
-        <img class="img-resort-ad" src="assets/images/ads/news/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}" data-umami-event="SnoNews-ad_${alt}_click banner-resort-click-${alt}">
+        <img class="img-resort-ad" src="assets/images/ads/news/${iterResortAd.img}" alt="${iterResortAd.alt}" width="100%"  data-umami-event="SnoNews-ad_${alt}_click banner-resort-click-${alt}">
       </a>
     </div>
   `;
   const sel = '#news-ad';
   waitForElement(sel).then((elNewsAd) => {
     elNewsAd.insertAdjacentHTML('afterbegin', html);
+    elNewsAd.classList.add('show');
     trackNewsAd(alt);
   }).catch( () => { console.log('Error waiting for news-ad element:');});
   

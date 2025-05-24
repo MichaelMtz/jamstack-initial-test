@@ -207,6 +207,17 @@ body {
 #news-post .post-panel .intro .ebd-block .eb-thumbs .eb-thumbs-col .eb-thumb {
   margin: 0px 5px;
 }
+#news-post .news-ad {
+  margin-bottom: 25px;
+  border-radius: 10px;
+  display: none;
+}
+#news-post .news-ad.show {
+  display: block;
+}
+#news-post .news-ad.show:hover {
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
 #news-post .news-list {
   width: 100%;
   border-radius: 5px;
@@ -219,15 +230,6 @@ body {
   #news-post .news-list {
     margin-top: 25px;
   }
-}
-#news-post .news-list .news-ad {
-  margin-bottom: 25px;
-  border-radius: 10px;
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-  display: none;
-}
-#news-post .news-list .news-ad.show {
-  display: block;
 }
 #news-post .news-list .news-list-header {
   height: 42px;
