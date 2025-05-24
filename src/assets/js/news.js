@@ -111,8 +111,8 @@ const displayNewsAd = () => {
   const alt = iterResortAd.alt.replaceAll(' ', '-'); 
   const html = `
     <div class="resort-ad">
-      <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
-        <img class="img-resort-ad" src="assets/images/ads/news/${iterResortAd.img}" alt="${iterResortAd.alt}" width="100%"  data-umami-event="SnoNews-ad_${alt}_click banner-resort-click-${alt}">
+      <a href="${iterResortAd.href}" target="_blank" data-umami-event="SnoNews-ad_${alt}_click">
+        <img class="img-resort-ad" src="assets/images/ads/news/${iterResortAd.img}" alt="${iterResortAd.alt}" width="100%"  data-umami-event="SnoNews-ad_${alt}_click">
       </a>
     </div>
   `;
