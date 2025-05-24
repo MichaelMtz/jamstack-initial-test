@@ -84,6 +84,45 @@ const waitForElement = selector=>{
     observeSelector(selector, resolve, { once: true });
   });
 };
+const trackNewsAd = (alt) => {
+  if (window.umami) {
+    window.umami.track(`SnoNews-ad_${alt}_display`);
+  } else {    
+    setTimeout(()=> {
+      trackNewsAd(alt);
+    },1000);
+  }
+};
+
+const displayNewsAd = () => {
+  const ads = [ {
+    img: 'Ski Bradford_ad.png',
+    href:"http://skibradford.com/",
+    width:320, 
+    height:250,
+    alt: 'Ski Bradford',
+    start_date: '2025-01-10',
+    end_date: '2025-01-31'
+  }];
+  const iterResortAd = ads[0];
+  if (ads.length > 1) {
+    //  
+  }
+  const alt = iterResortAd.alt.replaceAll(' ', '-'); 
+  const html = `
+    <div class="resort-ad">
+      <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
+        <img class="img-resort-ad" src="assets/images/ads/news/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}" data-umami-event="SnoNews-ad_${alt}_click banner-resort-click-${alt}">
+      </a>
+    </div>
+  `;
+  const sel = '#news-ad';
+  waitForElement(sel).then((elNewsAd) => {
+    elNewsAd.insertAdjacentHTML('afterbegin', html);
+    trackNewsAd(alt);
+  }).catch( () => { console.log('Error waiting for news-ad element:');});
+  
+};
 const createNewsSDL = (post) => {
   const publish = new Date(Date.parse(post.publish_up.replace(/-/g, '/')));
   const publishISODate = publish.toISOString();
@@ -250,4 +289,5 @@ document.addEventListener('DOMContentLoaded',()=> {
   const postID = params.get("postID");
   getPost(postID);
   getOtherPostList(postID);
+  displayNewsAd();
 });

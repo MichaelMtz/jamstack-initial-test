@@ -95,7 +95,7 @@ body {
   margin-top: unset;
   padding: 135px 25px 0px;
   display: grid;
-  grid-template-columns: 1fr minmax(310px, 25%) ;
+  grid-template-columns: 1fr minmax(320px, 25%) ;
   gap: 10px;
   
   @include bpmaxw($mobile) {
@@ -223,7 +223,16 @@ body {
     @include bpmaxw($mobile) {
       margin-top:25px;
     }
-
+    .news-ad {
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+      display: none;
+    }
+    
+    .news-ad.show {
+      display: block;
+    }
     .news-list-header {
       height: 42px;
       margin-bottom:25px;
