@@ -621,14 +621,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     },619006: {
       ads: [{
-        img: '2025-03-11-Cali-Pass.png',
-        href:"https://shop.mthigh.com/reservations",
+        img: '2025-06-12-Mountain-High.png',
+        href:"https://www.mthigh.com/site/mountain/events-and-activities/mountain-biking",
         width:728, 
         height:90,
         alt: 'Mountain High CA', 
         position: 'both',
-        start_date: '2025-03-11',
-        end_date: '2025-04-30'
+        start_date: '2025-06-11',
+        end_date: '2025-10-30'
       }]
     }, 413006: {
       ads: [{
@@ -709,14 +709,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       
     }, 303001: {
       ads: [{
-        img: '2024-12-10-ABasin.jpg',
-        href:"https://store.arapahoebasin.com/s/2024-25-passes",
+        img: '2025-6-11-ABasin.png',
+        href:"https://arapahoebasin.com/",
         width:640, 
         height:100,
         alt: 'Arapahoe Basin CO', 
         position: 'both',
-        start_date: '2024-12-10',
-        end_date: '2025-01-02'
+        start_date: '2025-06-10',
+        end_date: '2025-06-16'
       }]
       
     }, 703003: {
@@ -771,6 +771,17 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Whitefish Mountain Resort MT', 
         position: 'both'
+      }]
+    }, 406009: {
+      ads: [{
+        img: '2025-06-10-RedLodge.jpg',
+        href:"https://www.redlodgemountain.com/summer-operations/",
+        width:728, 
+        height:90,
+        alt: 'Red Lodge MT', 
+        position: 'both',
+        start_date: '2025-06-10',
+        end_date: '2025-09-10'
       }]
     }, 303025 : {
       ads: [{
@@ -837,12 +848,14 @@ document.addEventListener('DOMContentLoaded',()=> {
       }]
     }, 208002: {
       ads: [{
-        img: '2024-03-BrundageBanner.png',
+        img: '2025-06-11-Brundage.png',
         href:"https://brundage.com/",
         width:600, 
         height:388,
         alt: 'Brundage ID ', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-06-11',
+        end_date: '2025-10-31'
       }]
     }, 802003: {
       ads: [{
