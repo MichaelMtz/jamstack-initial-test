@@ -75,6 +75,7 @@ body {
     .resort.summer {
       max-width:1214px;
       margin: 20px auto;
+      order: 4;
       @include bpmax(1175px) {
         min-height: 150px;
         height: 262px;

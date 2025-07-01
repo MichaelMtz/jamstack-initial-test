@@ -71,6 +71,7 @@ body {
 .resorts-container .resort.summer {
   max-width: 1214px;
   margin: 20px auto;
+  order: 4;
 }
 @media screen and (max-width: 1175px) {
   .resorts-container .resort.summer {
@@ -878,8 +879,6 @@ body {
   .resorts-container .resort.open .resort__info .resort__info-snow-condition.section-container .section-item.section-conditions .base-copy {
     font-size: 10px;
   }
-}
-@media screen and (max-width: 710px) {
   .resorts-container .resort.open .resort__info .resort__info-snowfall.section-container {
     flex: 1 1 77px;
   }
