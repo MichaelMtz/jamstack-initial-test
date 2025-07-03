@@ -1042,6 +1042,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         position: 'both',
         comment: 'winter ad'
       }]
+    }, 218003: {
+      ads: [{
+        img: '2025-06-24-Lutsen-728x90.jpg',
+        href:"https://www.lutsen.com/?utm_source=snocountry&utm_medium=display&utm_campaign=banner&utm_id=summer",
+        width:728, 
+        height:90,
+        alt: 'Lutsen Mountains MN', 
+        position: 'both',
+        comment: 'summer ad',
+        start_date: '2025-07-01',
+        end_date: '2025-08-01',
+      }]
     }, 508002: {
       ads: [{
         img: '2025-01-17-Bradford.png',

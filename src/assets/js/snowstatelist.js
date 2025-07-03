@@ -170,7 +170,7 @@ const checkForAd = (target) => {
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
     "wyoming", "colorado", "california","utah",
-    "idaho", "montana", "oregon", "new-york","michigan",
+    "idaho", "montana", "oregon", "new-york","michigan", "minnesota"
     "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
     "north-east","south-east", "rockies", "mid-west", "north-west"
   ];
@@ -680,25 +680,30 @@ const checkForAd = (target) => {
       }, "mid-west": {
         ads: [
           {
-            img: '2025-02-07-Snow-River.jpg',
-            href:"https://www.saddlebackmaine.com/?utm_source=SnoCountry&utm_medium=Display&utm_campaign=SkierVisits25",
+            img: '2025-06-24-Lutsen-728x90.jpg',
+            href:"https://www.lutsen.com/?utm_source=snocountry&utm_medium=display&utm_campaign=banner&utm_id=summer",
             width:728, 
             height:90,
-            alt: 'SnowRiver MI',
+            alt: 'Lutsen Mountains MN', 
             position: 'both',
-            start_date: '2025-02-06',
-            end_date: '2025-04-06'
-          },{
-            img: '2025-02-21-The-Highlands.jpg',
-            href:"https://www.highlandsharborsprings.com/tickets?utm_source=SnoCountry&utm_medium=banner&utm_campaign=SnoCountry_feb25",
+            comment: 'summer ad',
+            start_date: '2025-07-01',
+            end_date: '2025-10-01',
+          } 
+        ]
+      }, "minnesota": {
+        ads: [
+          {
+            img: '2025-06-24-Lutsen-728x90.jpg',
+            href:"https://www.lutsen.com/?utm_source=snocountry&utm_medium=display&utm_campaign=banner&utm_id=summer",
             width:728, 
             height:90,
-            alt: 'The Highlands MI', 
+            alt: 'Lutsen Mountains MN', 
             position: 'both',
-            comment: 'winter ad',
-            start_date: '2025-02-22',
-            end_date: '2025-03-21'  
-          }
+            comment: 'summer ad',
+            start_date: '2025-07-01',
+            end_date: '2025-10-01',
+          } 
         ]
       }, "north-west": {
         ads: [
