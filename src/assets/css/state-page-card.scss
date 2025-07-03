@@ -649,7 +649,7 @@ body {
       
       @include bpmaxw(430px) {
         width:100%;
-        margin-bottom: 80px;
+        margin-bottom: 100px;
       }
       
       .new-featuredResort-wrapping-container {
@@ -721,6 +721,8 @@ body {
         @include bpmaxw(768px) {
           bottom: -59px;
           height: 64px;
+          height: 80px;
+          bottom: -75px;
         }
         @include bpmaxw(620px) {
           
@@ -728,9 +730,13 @@ body {
             font-size: 0.85rem;
           }
         }
-        @include bpmaxw(430px) {
+        @include bpmaxw(550px) {
           bottom: -80px;
           height: 86px;
+        }
+        @include bpmaxw(430px) {
+          bottom: -100px;
+          height: 100px;
         }
       }
       

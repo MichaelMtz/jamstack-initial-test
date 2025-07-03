@@ -695,7 +695,7 @@ body {
 @media screen and (max-width: 430px) {
   .resorts-container .resort.featuredResort {
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
   }
 }
 .resorts-container .resort.featuredResort .new-featuredResort-wrapping-container {
@@ -765,6 +765,8 @@ body {
   .resorts-container .resort.featuredResort .drawer {
     bottom: -59px;
     height: 64px;
+    height: 80px;
+    bottom: -75px;
   }
 }
 @media screen and (max-width: 620px) {
@@ -772,10 +774,16 @@ body {
     font-size: 0.85rem;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 550px) {
   .resorts-container .resort.featuredResort .drawer {
     bottom: -80px;
     height: 86px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .resorts-container .resort.featuredResort .drawer {
+    bottom: -100px;
+    height: 100px;
   }
 }
 .resorts-container .resort.featuredResort .circle {
