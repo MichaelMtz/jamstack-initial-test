@@ -170,7 +170,7 @@ const checkForAd = (target) => {
   const targetList = [
     "connecticut", "maine",  "massachusetts", "new-hampshire", "rhode-island","vermont", 
     "wyoming", "colorado", "california","utah",
-    "idaho", "montana", "oregon", "new-york","michigan", "minnesota"
+    "idaho", "montana", "oregon", "new-york","michigan", "minnesota",
     "alabama", "maryland", "north-carolina", "tennessee", "virginia", "west-virginia",
     "north-east","south-east", "rockies", "mid-west", "north-west"
   ];
