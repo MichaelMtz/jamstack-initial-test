@@ -272,16 +272,18 @@ const checkForAd = (target) => {
           start_date: '2025-03-11',
           end_date: '2025-03-31'
         }]
-      }, massachusetts : {
-        ads: [{
-          img: 'Stratton_11-26-21.jpg',
-          href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
-          width:728, 
-          height:90,
-          alt: 'Stratton Mountain VT', 
-          position: 'both'
-        }]
-      }, michigan: {
+      }, 
+      // massachusetts : {
+      //   ads: [{
+      //     img: 'Stratton_11-26-21.jpg',
+      //     href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Stratton Mountain VT', 
+      //     position: 'both'
+      //   }]
+      // }, 
+      michigan: {
         ads: [{
           img: '2025-02-07-Snow-River.jpg',
           href:"https://www.saddlebackmaine.com/?utm_source=SnoCountry&utm_medium=Display&utm_campaign=SkierVisits25",
@@ -342,16 +344,18 @@ const checkForAd = (target) => {
           start_date: '2025-02-01',
           end_date: '2025-03-31'
         }]
-      },vermont : {
-        ads: [{
-          img: 'Stratton_11-26-21.jpg',
-          href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
-          width:728, 
-          height:90,
-          alt: 'Stratton Mountain VT', 
-          position: 'both'
-        }]
-      },utah : {
+      },
+      // vermont : {
+      //   ads: [{
+      //     img: 'Stratton_11-26-21.jpg',
+      //     href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=SnoCountry&utm_medium=link&utm_campaign=winter",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Stratton Mountain VT', 
+      //     position: 'both'
+      //   }]
+      // }, 
+      utah : {
         ads: [{
           img: '2025-03-10-Powder-Mtn-Lines-Carve.png',
           href:"https://powdermountain.com/tickets/season-passes",
@@ -454,23 +458,25 @@ const checkForAd = (target) => {
           end_date: '2025-03-31',
         }]
       }, "south-east": {
-        ads: [{
-          img: '2024-12-11-Ober.jpg',
-          href:"https://obermountain.com/",
-          width:728, 
-          height:90,
-          alt: 'Ober Mountain TN', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }, {
-          img: '2024-12-11-Sugar-Mountain.jpg',
-          href:"https://www.skisugar.com",
-          width:728, 
-          height:90,
-          alt: 'Sugar Mountain NC', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        },{
+        ads: [
+        // {
+        //   img: '2024-12-11-Ober.jpg',
+        //   href:"https://obermountain.com/",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Ober Mountain TN', 
+        //   position: 'both',
+        //   comment: 'general ad - can keep running'
+        // }, {
+        //   img: '2024-12-11-Sugar-Mountain.jpg',
+        //   href:"https://www.skisugar.com",
+        //   width:728, 
+        //   height:90,
+        //   alt: 'Sugar Mountain NC', 
+        //   position: 'both',
+        //   comment: 'general ad - can keep running'
+        // },
+        {
           img: '2025-02-14-Omni-Homestead.jpg',
           href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
           width:728, 
@@ -499,137 +505,141 @@ const checkForAd = (target) => {
           start_date: '2025-01-22',
           end_date: '2025-05-01'
         }]
-      }, alabama: {
-        ads: [{
-          img: '2024-12-11-Ober.jpg',
-          href:"https://obermountain.com/",
-          width:728, 
-          height:90,
-          alt: 'Ober Mountain TN', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }, {
-          img: '2024-12-11-Sugar-Mountain.jpg',
-          href:"https://www.skisugar.com",
-          width:728, 
-          height:90,
-          alt: 'Sugar Mountain NC', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }]
-      }, maryland: {
-        ads: [{
-          img: '2024-12-11-Ober.jpg',
-          href:"https://obermountain.com/",
-          width:728, 
-          height:90,
-          alt: 'Ober Mountain TN', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }, {
-          img: '2024-12-11-Sugar-Mountain.jpg',
-          href:"https://www.skisugar.com",
-          width:728, 
-          height:90,
-          alt: 'Sugar Mountain NC', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }]
-      }, "north-carolina": {
-        ads: [{
-          img: '2024-12-11-Ober.jpg',
-          href:"https://obermountain.com/",
-          width:728, 
-          height:90,
-          alt: 'Ober Mountain TN', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }, {
-          img: '2024-12-11-Sugar-Mountain.jpg',
-          href:"https://www.skisugar.com",
-          width:728, 
-          height:90,
-          alt: 'Sugar Mountain NC', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }]
-      }, tennessee: {
-        ads: [{
-          img: '2024-12-11-Ober.jpg',
-          href:"https://obermountain.com/",
-          width:728, 
-          height:90,
-          alt: 'Ober Mountain TN', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }, {
-          img: '2024-12-11-Sugar-Mountain.jpg',
-          href:"https://www.skisugar.com",
-          width:728, 
-          height:90,
-          alt: 'Sugar Mountain NC', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }]
-      }, oregon: {
-        ads: [{
-          img: '2025-02-22-Mount-Hood.jpg',
-          href:"https://www.skihood.com/store/passes",
-          width:728, 
-          height:90,
-          alt: 'Mount Hood Meadows OR',
-          position: 'random',
-          start_date: '2025-02-22',
-          end_date: '2025-03-31'
-        }]
-      }, virginia: {
-        ads: [{
-          img: '2025-02-14-Omni-Homestead.jpg',
-          href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
-          width:728, 
-          height:90,
-          alt: 'Omni Homestead VA', 
-          position: 'both',
-          start_date: '2025-02-14',
-          end_date: '2025-03-01'
-        }
-        //   {
-        //   img: '2024-12-11-Ober.jpg',
-        //   href:"https://obermountain.com/",
-        //   width:728, 
-        //   height:90,
-        //   alt: 'Ober Mountain TN', 
-        //   position: 'both',
-        //   comment: 'general ad - can keep running'
-        // }, {
-        //   img: '2024-12-11-Sugar-Mountain.jpg',
-        //   href:"https://www.skisugar.com",
-        //   width:728, 
-        //   height:90,
-        //   alt: 'Sugar Mountain NC', 
-        //   position: 'both',
-        //   comment: 'general ad - can keep running'
-        // }
-        ]
-      }, "west-virginia": {
-        ads: [{
-          img: '2024-12-11-Ober.jpg',
-          href:"https://obermountain.com/",
-          width:728, 
-          height:90,
-          alt: 'Ober Mountain TN', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }, {
-          img: '2024-12-11-Sugar-Mountain.jpg',
-          href:"https://www.skisugar.com",
-          width:728, 
-          height:90,
-          alt: 'Sugar Mountain NC', 
-          position: 'both',
-          comment: 'general ad - can keep running'
-        }]
-      }, "rockies": {
+      }, 
+      // alabama: {
+      //   ads: [{
+      //     img: '2024-12-11-Ober.jpg',
+      //     href:"https://obermountain.com/",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Ober Mountain TN', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }, {
+      //     img: '2024-12-11-Sugar-Mountain.jpg',
+      //     href:"https://www.skisugar.com",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Sugar Mountain NC', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }]
+      //}, 
+      // maryland: {
+      //   ads: [{
+      //     img: '2024-12-11-Ober.jpg',
+      //     href:"https://obermountain.com/",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Ober Mountain TN', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }, {
+      //     img: '2024-12-11-Sugar-Mountain.jpg',
+      //     href:"https://www.skisugar.com",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Sugar Mountain NC', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }]
+      // }, "north-carolina": {
+      //   ads: [{
+      //     img: '2024-12-11-Ober.jpg',
+      //     href:"https://obermountain.com/",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Ober Mountain TN', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }, {
+      //     img: '2024-12-11-Sugar-Mountain.jpg',
+      //     href:"https://www.skisugar.com",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Sugar Mountain NC', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }]
+      // }, tennessee: {
+      //   ads: [{
+      //     img: '2024-12-11-Ober.jpg',
+      //     href:"https://obermountain.com/",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Ober Mountain TN', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }, {
+      //     img: '2024-12-11-Sugar-Mountain.jpg',
+      //     href:"https://www.skisugar.com",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Sugar Mountain NC', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }]
+      // }, 
+      // oregon: {
+      //   ads: [{
+      //     img: '2025-02-22-Mount-Hood.jpg',
+      //     href:"https://www.skihood.com/store/passes",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Mount Hood Meadows OR',
+      //     position: 'random',
+      //     start_date: '2025-02-22',
+      //     end_date: '2025-03-31'
+      //   }]
+      // }, virginia: {
+      //   ads: [{
+      //     img: '2025-02-14-Omni-Homestead.jpg',
+      //     href:"https://www.omnihotels.com/hotels/homestead-virginia/specials/ski-package?utm_source=snocountry&utm_medium=banner&utm_campaign=awareness-homrst-leisure-ski",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Omni Homestead VA', 
+      //     position: 'both',
+      //     start_date: '2025-02-14',
+      //     end_date: '2025-03-01'
+      //   }
+      //     {
+      //     img: '2024-12-11-Ober.jpg',
+      //     href:"https://obermountain.com/",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Ober Mountain TN', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }, {
+      //     img: '2024-12-11-Sugar-Mountain.jpg',
+      //     href:"https://www.skisugar.com",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Sugar Mountain NC', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }]
+      // }, 
+      // "west-virginia": {
+      //   ads: [{
+      //     img: '2024-12-11-Ober.jpg',
+      //     href:"https://obermountain.com/",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Ober Mountain TN', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }, {
+      //     img: '2024-12-11-Sugar-Mountain.jpg',
+      //     href:"https://www.skisugar.com",
+      //     width:728, 
+      //     height:90,
+      //     alt: 'Sugar Mountain NC', 
+      //     position: 'both',
+      //     comment: 'general ad - can keep running'
+      //   }]
+      // }, 
+      "rockies": {
         ads:[
           {
             img: '2025-01-10-Cooper-728x90.jpg',
@@ -725,14 +735,6 @@ const checkForAd = (target) => {
             position:'both',
             start_date: '2025-03-13',
             end_date: '2025-04-20'
-          }, {        
-            img: '2025-03-06-Soldier-Mtn.png',
-            href:"https://soldiermountain.com/",
-            width:728, 
-            height:90,
-            alt: 'Soldier Mountain ID',
-            position:'both',
-            comment: 'General ad'
           }
         ]
       }

@@ -96,7 +96,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Bretton Woods, NH',
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 603019 : {
       ads: [{
@@ -149,7 +151,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Granite',
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },607001:{
       ads: [{
@@ -158,7 +162,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Greek Peak NY',
-        position: 'both',
         start_date: '2025-01-02',
         end_date: '2025-04-30',
         position: 'random'
@@ -168,7 +171,6 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Greek Peak NY',
-        position: 'both',
         start_date: '2025-02-14',
         end_date: '2025-03-31',
         position: 'random'
@@ -180,7 +182,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Holiday Valley',
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },307008:{
       ads: [{
@@ -210,7 +214,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Jay Peak',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },802007: {
       ads: [{
@@ -230,7 +236,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Magic Mountain',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },603015:{
       ads: [{
@@ -239,7 +247,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'McIntyre Ski Area',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },914004:{
       ads: [{
@@ -281,7 +291,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Powder Ridge CT',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },207001:{
       ads: [{
@@ -290,7 +302,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Black Mountain ME',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },207002: {
       ads: [{
@@ -321,6 +335,8 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Sugarloaf ME',
         position:'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },207014: {
       ads: [{
@@ -341,7 +357,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Bogus Basin ID',
-        position:'both'
+        position:'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },208004: {
       ads: [{
@@ -373,7 +391,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Soldier Mountain ID',
         position:'both',
-        comment: 'General ad'
+        comment: 'General ad',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },717016:{
       ads: [{
@@ -382,7 +402,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Ski Big Bear PA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },203005:{
       ads: [{
@@ -411,18 +433,24 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Snowshoe WV', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
-    },802019:{
+    },
+    802019:{
       ads: [{
         img: '2025-01-16-Stratton-Snow-Alert.jpg',
         href:"https://www.stratton.com/plan-your-trip/deals-and-packages?utm_source=banner&utm_medium=snowtime&utm_id=snocountry",
         width:728, 
         height:90,
         alt: 'Stratton Mountain VT', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
-    },802023:{
+    },
+    802023:{
       ads: [{
         img: '2025-01-22-Sugarbush.jpg',
         href:"https://www.sugarbush.com/things-to-do/challenge",
@@ -440,7 +468,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Swain NY', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },703002:{
       ads: [{
@@ -460,7 +490,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Waterville Valley NH', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },603026:{
       ads: [{
@@ -469,7 +501,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Whaleback NH', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },518009:{
       ads: [{
@@ -478,7 +512,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Windham NY', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },303009:{
       ads: [{
@@ -498,7 +534,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Grand Targhee CO', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },717013:{
       ads: [{
@@ -507,7 +545,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Whitetail Resort PA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },702001:{
       ads: [{
@@ -516,7 +556,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Diamond Peak CA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },
     702002:{
@@ -526,7 +568,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Lee Canyon NV', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },717003:{
       ads: [{
@@ -536,6 +580,8 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Camelback PA', 
         position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 503004 : {
       ads: [{
@@ -575,7 +621,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Seven Springs PA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },802013: {
       ads: [{
@@ -584,7 +632,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Okemo Mountain VT', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },209002: {
       ads: [{
@@ -648,7 +698,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Otis Ridge MA', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 603013 : {
       ads: [{
@@ -770,7 +822,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Whitefish Mountain Resort MT', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 406009: {
       ads: [{
@@ -844,7 +898,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:600, 
         height:388,
         alt: 'Monarch Mountain CO', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 208002: {
       ads: [{
@@ -864,7 +920,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         width:728, 
         height:90,
         alt: 'Bromley VT ', 
-        position: 'both'
+        position: 'both',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 517005: {
       ads: [{
@@ -985,7 +1043,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Ober Mountain TN', 
         position: 'both',
-        comment: 'general ad - can keep running'
+        comment: 'general ad - can keep running',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 704006: {
       ads: [{
@@ -995,7 +1055,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Sugar Mountain NC', 
         position: 'both',
-        comment: 'general ad - can keep running'
+        comment: 'general ad - can keep running',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 801008: {
       ads: [{
@@ -1040,7 +1102,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Giants Ridge MN', 
         position: 'both',
-        comment: 'winter ad'
+        comment: 'winter ad',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 218003: {
       ads: [{
@@ -1062,7 +1126,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:250,
         alt: 'Ski Bradford MA', 
         position: 'both',
-        comment: 'winter ad'
+        comment: 'winter ad',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     },802015:{
       ads: [{
@@ -1113,7 +1179,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Mountain Creek NJ', 
         position: 'both',
-        comment: 'winter ad'
+        comment: 'winter ad',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 603007 : {
       ads: [{
@@ -1123,7 +1191,9 @@ document.addEventListener('DOMContentLoaded',()=> {
         height:90,
         alt: 'Cranmore NH', 
         position: 'both',
-        comment: 'winter ad'
+        comment: 'winter ad',
+        start_date: '2025-01-01',
+        end_date: '2025-05-01'
       }]
     }, 203001 : {
       ads: [{
