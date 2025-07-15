@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="canonical" href="https://snocountry.com/snow-report/multi-pass/{{ resorts.passNameProperLowerCase }}/">
+{% include 'basehref.html' %}
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="{{ resorts.passName }} Mountains Snow, Snow for {{ resorts.passName }}, Snow in {{ resorts.passName }}, {{ resorts.passName }} snow report, Snow Report {{ resorts.passName }}, {{ resorts.passName }} Ski Report, {{ resorts.passName }} Snow, Snow {{ resorts.passName }}, Ski Report {{ resorts.passName }},  where is the snow in {{ resorts.passName }}" />
+        <meta name="rights" content="Copyright © 2024. All Rights Reserved." />
+        <meta name="author" content="Snow Reports" />
+        <meta name="robots" content="index,follow" />
+        <meta name="description" content="The latest {{ resorts.passName }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.passName }}." />
+        <title>{{ resorts.passName }} Snow Report and Weather Conditions | SnoCountry</title>
+
+        <meta property="og:title" content="{{ resorts.passName }} Snow Report and Weather Conditions | SnoCountry" />
+        <meta property="og:description " content="The latest {{ resorts.passName }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.passName }}" />
+        <meta property="og:url" content="https://snocountry.com/snow-report/multi-pass/{{ resorts.passNameProperLowerCase }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SnoCountry" />
+        <meta property="og:image" content="https://snocountry.com/assets/images/snocountry_logo_v2.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.ico">
+
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://snocountry.com/","name":"SnoCountry.Com","description":"Ski Resorts and Snow Reports, for the Snowboarder and Skier","publisher":"SnoCountry"}
+        </script>
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://snocountry.com/","logo":"https://snocountry.com/assets/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
+        </script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "{{ resorts.passName }} Snow Report",
+          "url": "https://snocountry.com/snow-report/multi-pass/{{ resorts.passNameProperLowerCase }}/",
+          "description": "Get the latest snow report for {{ resorts.passName }} ski resorts, including snow depth, weather forecasts, and trail conditions.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "SnoCountry",
+                "item": "https://snocountry.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "{{ resorts.passName }} Ski Resorts",
+                "item": "https://snocountry.com/snow-report/multi-pass/{{ resorts.passNameProperLowerCase }}/"
+              }
+            ]
+          }
+        }
+        </script>
+
+        <link rel="stylesheet" href="/assets/font/mulish-font.css">
+        <link rel="stylesheet" href="/assets/css/fonts.css">
+        <link rel="stylesheet" href="/assets/css/snocountry-base.css">
+        <link rel="stylesheet" href="/assets/css/sno-core.css">
+        <link rel="stylesheet" href="/assets/css/sno-modal.css">
+
+        {% if resorts.styles %}
+          {% for cssFileName in resorts.styles %}
+            <link rel="stylesheet" href="/assets/css/{{cssFileName}}">
+          {% endfor %}
+         {% endif %}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% include 'google.html' %}
+    </head>
+    <body data-source="{{ resorts.entryType }}" data-snowreport="{{ resorts.passName }}"" data-resorttype="{{ resorts.resortType }}">
+        
+
+{% include 'nav-header.html' %}
+{{ content | safe }}
+  <div id="sno-modal" class="modal">
+    <div class="modal-container">
+      <div class="modal-left">
+        <div class="input-container">
+          <h1 class="modal-title">Join the SnoCountry Community!</h1>
+          <p class="modal-desc">The latest reports and snow sports delivered directly to you!</p>
+        
+          <div class="input-block">
+            <label for="firtName" class="input-label">First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" autofocus>
+          </div>
+          <div class="input-block">
+            <label for="lastName" class="input-label">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+          </div>
+          <div class="input-block">
+            <label for="email" class="input-label">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email">
+          </div>
+          <div class="input-block">
+            <label for="state" class="input-label">State/Province</label>
+            
+            <select  id="state" name="state" required="">
+              <option selected="" value="">
+              </option>
+              <option value="ALABAMA">
+               ALABAMA
+              </option>
+              <option value="ALASKA">
+               ALASKA
+              </option>
+              <option value="ARIZONA">
+               ARIZONA
+              </option>
+              <option value="ARKANSAS">
+               ARKANSAS
+              </option>
+              <option value="CALIFORNIA">
+               CALIFORNIA
+              </option>
+              <option value="COLORADO">
+               COLORADO
+              </option>
+              <option value="CONNECTICUT">
+               CONNECTICUT
+              </option>
+              <option value="DELAWARE">
+               DELAWARE
+              </option>
+              <option value="DISTRICT OF COLUMBIA">
+               DISTRICT OF COLUMBIA
+              </option>
+              <option value="FLORIDA">
+               FLORIDA
+              </option>
+              <option value="GEORGIA">
+               GEORGIA
+              </option>
+              <option value="HAWAII">
+               HAWAII
+              </option>
+              <option value="IDAHO">
+               IDAHO
+              </option>
+              <option value="ILLINOIS">
+               ILLINOIS
+              </option>
+              <option value="INDIANA">
+               INDIANA
+              </option>
+              <option value="IOWA">
+               IOWA
+              </option>
+              <option value="KANSAS">
+               KANSAS
+              </option>
+              <option value="KENTUCKY">
+               KENTUCKY
+              </option>
+              <option value="LOUISIANA">
+               LOUISIANA
+              </option>
+              <option value="MAINE">
+               MAINE
+              </option>
+              <option value="MARYLAND">
+               MARYLAND
+              </option>
+              <option value="MASSACHUSETTS">
+               MASSACHUSETTS
+              </option>
+              <option value="MICHIGAN">
+               MICHIGAN
+              </option>
+              <option value="MINNESOTA">
+               MINNESOTA
+              </option>
+              <option value="MISSISSIPPI">
+               MISSISSIPPI
+              </option>
+              <option value="MISSOURI">
+               MISSOURI
+              </option>
+              <option value="MONTANA">
+               MONTANA
+              </option>
+              <option value="NEBRASKA">
+               NEBRASKA
+              </option>
+              <option value="NEVADA">
+               NEVADA
+              </option>
+              <option value="NEW HAMPSHIRE">
+               NEW HAMPSHIRE
+              </option>
+              <option value="NEW JERSEY">
+               NEW JERSEY
+              </option>
+              <option value="NEW MEXICO">
+               NEW MEXICO
+              </option>
+              <option value="NEW YORK">
+               NEW YORK
+              </option>
+              <option value="NORTH CAROLINA">
+               NORTH CAROLINA
+              </option>
+              <option value="NORTH DAKOTA">
+               NORTH DAKOTA
+              </option>
+              <option value="OHIO">
+               OHIO
+              </option>
+              <option value="OKLAHOMA">
+               OKLAHOMA
+              </option>
+              <option value="OREGON">
+               OREGON
+              </option>
+              <option value="PENNSYLVANIA">
+               PENNSYLVANIA
+              </option>
+              <option value="RHODE ISLAND">
+               RHODE ISLAND
+              </option>
+              <option value="SOUTH CAROLINA">
+               SOUTH CAROLINA
+              </option>
+              <option value="SOUTH DAKOTA">
+               SOUTH DAKOTA
+              </option>
+              <option value="TENNESSEE">
+               TENNESSEE
+              </option>
+              <option value="TEXAS">
+               TEXAS
+              </option>
+              <option value="UTAH">
+               UTAH
+              </option>
+              <option value="VERMONT">
+               VERMONT
+              </option>
+              <option value="VIRGINIA">
+               VIRGINIA
+              </option>
+              <option value="WASHINGTON">
+               WASHINGTON
+              </option>
+              <option value="WEST VIRGINIA">
+               WEST VIRGINIA
+              </option>
+              <option value="WISCONSIN">
+               WISCONSIN
+              </option>
+              <option value="WYOMING">
+               WYOMING
+              </option>
+              <option value="ALBERTA">
+               ALBERTA
+              </option>
+              <option value="BRITISH COLUMBIA">
+               BRITISH COLUMBIA
+              </option>
+              <option value="MANITOBA">
+               MANITOBA
+              </option>
+              <option value="NEW BRUNSWICK">
+               NEW BRUNSWICK
+              </option>
+              <option value="NEWFOUNDLAND AND LABRADOR">
+               NEWFOUNDLAND AND LABRADOR
+              </option>
+              <option value="NORTHWEST TERRITORIES">
+               NORTHWEST TERRITORIES
+              </option>
+              <option value="NOVA SCOTIA">
+               NOVA SCOTIA
+              </option>
+              <option value="ONTARIO">
+               ONTARIO
+              </option>
+              <option value="PRINCE EDWARD ISLAND">
+               PRINCE EDWARD ISLAND
+              </option>
+              <option value="QUEBEC">
+               QUEBEC
+              </option>
+              <option value="SASKATCHEWAN">
+               SASKATCHEWAN
+              </option>
+              <option value="other">
+               Other
+              </option>
+              <option value="n-a">
+                N-A
+              </option>
+             </select>
+          </div>
+          
+          <div class="modal-buttons">
+            <button id="modal-submit" class="input-button">Send It!</button>
+          </div>
+        </div>
+        <div class="signup-result">
+          <h1 class="modal-title">You nailed the landing!</h1>
+          <p id="result-message" class="modal-desc">Look in your inbox for the latest Sno News. <br/>  <small>(Modal will close shortly)</small></p>
+          <div class="social">
+          
+               <a href="https://www.facebook.com/SnoCountryMountainReports/" target="_blank" rel="noopener noreferrer">
+                  <img class=" jch-lazyloaded" src="/assets/images/core/facebook.png" data-src="/assets/images/core/facebook.png" alt="facebook">
+                  <noscript><img src="/assets/images/core/facebook.png" alt="facebook" /></noscript></a> 
+            <a href="https://twitter.com/SnoCountryCom" target="_blank" rel="noopener noreferrer">
+               <img class=" jch-lazyloaded" src="/assets/images/core/twitter.png" data-src="/assets/images/core/twitter.png" alt="twitter">
+               <noscript><img src="/assets/images/core/twitter.png" alt="twitter" /></noscript>
+            </a>
+            <a href="https://www.instagram.com/Sno_Cntry/">
+               <img class=" jch-lazyloaded" src="/assets/images/core/instagram.png" data-src="/assets/images/core/instagram.png" alt="instagram">
+               <noscript><img src="/assets/images/core/instagram.png" alt="instagram" /></noscript>
+            </a>
+            <a href="https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g" target="_blank" rel="noopener noreferrer">
+               <img class=" jch-lazyloaded" src="/assets/images/core/youtube.png" data-src="/assets/images/core/youtube.png" alt="youtube">
+               <noscript><img src="/assets/images/core/youtube.png" alt="youtube" /></noscript>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-right">
+        <img src="http://snocountry.com/assets/images/sign-up/sign-up.png" alt="">
+      </div>
+      <button class="icon-button close-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+      <path d="M 25 3 C 12.86158 3 3 12.86158 3 25 C 3 37.13842 12.86158 47 25 47 C 37.13842 47 47 37.13842 47 25 C 47 12.86158 37.13842 3 25 3 z M 25 5 C 36.05754 5 45 13.94246 45 25 C 45 36.05754 36.05754 45 25 45 C 13.94246 45 5 36.05754 5 25 C 5 13.94246 13.94246 5 25 5 z M 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.980469 15.990234 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 z"></path>
+  </svg>
+        </button>
+    </div>
+   
+  </div>
+{% include 'footer.html' %}
+	<script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script>
+    <script src="../../assets/js/snowstatelist.js" type="text/javascript"></script>
+    <script src="../../assets/js/sno-modal.js" type="text/javascript"></script>
+    {% if resorts.scripts %}
+      {% for scriptFileName in resorts.scripts %}
+        <script src="{{scriptFileName}}" type="text/javascript"></script>
+      {% endfor %}
+     {% endif %}
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',(event)=> {
+        var pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
+        console.log(`>>> load: ${pageLoadTime}`);
+        document.querySelector("#browsertime").innerText = pageLoadTime;
+
+    });
+    </script>
+    </body>
+</html>
+
+

@@ -1,0 +1,19 @@
+---
+layout: multi-pass-page.njk
+pagination: 
+  data: multi-pass 
+  size: 1
+  alias: resorts
+permalink: /snow-report/multi-pass/{{ resorts.passNameProperLowerCase }}/index.html
+---
+
+<div class="conditions">
+      <nav class="nav-breadcrumbs"> 
+        {% for iterBreadCrumb in resorts.breadCrumbList %}
+          <a class="breadcrumb-link" href="{{ iterBreadCrumb.link }}">{{ iterBreadCrumb.breadCrumbName }}</a>
+        {% endfor %}
+      </nav>
+    <div id="container-snow-reports" class="container-snow-reports filter-open-top">
+        
+    </div>
+</div>
