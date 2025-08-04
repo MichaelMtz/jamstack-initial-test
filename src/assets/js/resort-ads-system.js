@@ -30,7 +30,7 @@ function selectRandomAd(ads) {
 }
 
 function createAdHTML(ad) {
-  const width = 780;
+  const width = 728;
   const height = 90;
   
   return `
@@ -46,7 +46,9 @@ function trackAdImpression(ad) {
   if (ad.trackingPixelUrl) {
     const img = new Image();
     img.src = ad.trackingPixelUrl.replace('[timestamp]', Date.now());
+    return img;
   }
+  return;
 }
 
 /**
@@ -64,7 +66,10 @@ async function loadAndDisplayAd() {
     waitForElement('#resort-name').then((elResortName) => {
         _log('loadAndDisplayAd::elResortName:found ad placement',elResortName);
         elResortName.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
-        trackAdImpression(selectedAd);
+        const img = trackAdImpression(selectedAd);
+        if (img) {
+          elResortName.insertAdjacentHTML('afterend', img);
+        }
       }).catch( () => { console.log('Error waiting for checkForResortAds:');});
   }
 }
