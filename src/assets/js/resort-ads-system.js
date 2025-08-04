@@ -68,7 +68,7 @@ async function loadAndDisplayAd() {
         elResortName.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
         const img = trackAdImpression(selectedAd);
         if (img) {
-          elResortName.insertAdjacentHTML('afterend', img);
+          elResortName.appendChild(img);
         }
       }).catch( () => { console.log('Error waiting for checkForResortAds:');});
   }
