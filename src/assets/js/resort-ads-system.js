@@ -61,11 +61,11 @@ async function loadAndDisplayAd() {
   
   if (selectedAd) {
     _log('loadAndDisplayAd::selectedAd:',selectedAd);
-    const resortNameElement = document.getElementById('resort-name');
-    if (resortNameElement) {
-      resortNameElement.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
-      trackAdImpression(selectedAd);
-    }
+    waitForElement('#resort-name').then((elResortName) => {
+        _log('loadAndDisplayAd::elResortName:found ad placement',elResortName);
+        elResortName.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
+        trackAdImpression(selectedAd);
+      }).catch( () => { console.log('Error waiting for checkForResortAds:');});
   }
 }
 
