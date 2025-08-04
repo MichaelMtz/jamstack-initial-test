@@ -59,3 +59,50 @@ CSS organized by component:
 - Compiled CSS in `assets/css/`
 
 The codebase follows a content-first architecture where resort and weather data drives page generation, with Netlify Functions providing dynamic API capabilities for real-time information.
+
+## API Endpoints
+
+### Public HTTP Endpoints
+
+#### GET /api/ads
+Retrieve active ads for a specific region or resort.
+
+**Query Parameters:**
+- `region` (optional): Target region (e.g., "colorado", "utah")
+  - If (document.body.dataset.source is not "resort")  then use document.body.dataset.snowreport as the "region" value
+- `resortId` (optional): Specific resort ID (e.g., "303001")
+  - If (document.body.dataset.source is "resort")  then use document.body.dataset.snowreport as the "resortId" value
+
+**Example Request:**
+```bash
+curl "https://affable-hummingbird-827.convex.site/api/ads?resortId=?region=colorado"
+curl "https://affable-hummingbird-827.convex.site/api/ads?resortId=303023"
+```
+
+**Example Response:**
+```json
+{
+  "ads": [
+    {
+      "_id": "ad123",
+      "name": "Winter Gear Sale",
+      "imageUrl": "https://storage.url/image.jpg",
+      "linkUrl": "https://ad.doubleclick.net/ddm/trackclk/N5320.1214838SNOCOUNTRY.COM/B33862223.426546645;dc_trk_aid=619042053;dc_trk_cid=238863989;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ltd=;dc_tdv=1",
+
+      "trackingPixelUrl": "https://ad.doubleclick.net/ddm/trackimp/N5320.1214838SNOCOUNTRY.COM/B33862223.426546645;dc_trk_aid=619042053;dc_trk_cid=238863989;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ltd=;dc_tdv=1?",
+      "regions": ["colorado", "utah"],
+      "startDate": "2024-01-01",
+      "endDate": "2024-03-31"
+    }
+  ]
+}
+```
+
+#### POST /api/track/page-impression
+Track a web page impression.
+
+#### POST /api/track/ad-impression  
+Track an ad impression.
+
+#### POST /api/track/ad-click
+Track an ad click.
