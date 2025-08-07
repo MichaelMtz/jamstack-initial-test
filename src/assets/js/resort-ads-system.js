@@ -114,7 +114,7 @@ async function loadAndDisplayAd() {
   _log('SnoAdDashboard:result:',ads);
   if (selectedAd) {
     _log('loadAndDisplayAd::selectedAd:',selectedAd);
-    waitForElement('#resort-namex').then((elResortName) => {
+    waitForElement('#resort-name').then((elResortName) => {
         elResortName.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
         trackAdImpression(selectedAd);
 
