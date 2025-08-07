@@ -35,21 +35,71 @@ function createAdHTML(ad) {
   
   return `
 <div class="resort-ad">
-  <a href="${ad.linkUrl}" target="_blank" data-umami-event="banner-resort-click-${ad.name}">
+  <a id="resort-page-ad" href="${ad.linkUrl}" target="_blank" data-umami-event="banner-resort-click-${ad.name}">
     <img class="img-resort-ad" src="${ad.imageUrl}" alt="${ad.name}" width="${width}" height="${height}" data-umami-event="banner-resort-click-${ad.name}">
   </a>
 </div>
 `;
 }
 
-function trackAdImpression(ad) {
-  if (ad.trackingPixelUrl) {
-    const img = new Image();
-    img.src = ad.trackingPixelUrl.replace('[timestamp]', Date.now());
-    return img;
+async function trackAdImpression(selectedAd) {
+  const {"_id" : adId, name } = selectedAd;
+
+  //Track on Sno Ad dashboard
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/track/ad-impression`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        adId: adId,
+        url: location.pathname,
+        pageName: name + location.pathname.replaceAll('/','-'),
+        userAgent: navigator.userAgent,
+        // Note: ipAddress will be automatically detected server-side
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to track ad impression:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error tracking ad impression:', error);
   }
-  return;
+  // setup Google tracking ad if provided
+  if (selectedAd.trackingPixelUrl) {
+    const img = new Image();
+    img.src = selectedAd.trackingPixelUrl.replace('[timestamp]', Date.now());
+    document.getElementById('resort-maps').appendChild(img)
+  }
 }
+
+async function trackAdClick(selectedAd) {
+  const {"_id" : adId, name } = selectedAd;
+  _log('SnowAdDashboard:trackAdClick:ad clicked');
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/track/ad-click`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        adId: adId,
+        url: location.pathname,
+        userAgent: navigator.userAgent,
+        // Note: ipAddress will be automatically detected server-side
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to track ad click:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error tracking ad click:', error);
+  }
+}
+
 
 /**
  * Loads a list of ads for the current resort or region, selects a random ad
@@ -58,19 +108,34 @@ function trackAdImpression(ad) {
  * ad impression.
  */
 async function loadAndDisplayAd() {
+
   const ads = await fetchResortAds();
   const selectedAd = selectRandomAd(ads);
-  
+  _log('SnoAdDashboard:result:',ads);
   if (selectedAd) {
     _log('loadAndDisplayAd::selectedAd:',selectedAd);
-    waitForElement('#resort-name').then((elResortName) => {
-        _log('loadAndDisplayAd::elResortName:found ad placement',elResortName);
+    waitForElement('#resort-namex').then((elResortName) => {
         elResortName.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
-        const img = trackAdImpression(selectedAd);
-        if (img) {
-          document.getElementById('comments__tba').appendChild(img);
-        }
-      }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+        trackAdImpression(selectedAd);
+
+        waitForElement('#resort-page-ad').then((elResortAd) => {
+          _log('SnowAdDashboard: Found ad set click event listerner');
+          elResortAd.addEventListener('click', () => {
+            _log('SnowAdDashboard:ad clicked1');
+            trackAdClick(selectedAd);
+            _log('SnowAdDashboard:ad clicked2');
+            // Small delay to ensure tracking request is sent
+            setTimeout(() => {
+              window.open(selectedAd.linkUrl, '_blank');
+            }, 100);
+            
+            // Prevent default link behavior if this is an <a> tag
+            event.preventDefault();
+          });
+          
+        }).catch( () => { console.error('Error: Found ad, ad placed, could not find anchor element to set click event for Sno dashboard:');});
+
+      }).catch( () => { console.error('Error: Found ad, but did not find #resort-name to place ad on page.');});
   }
 }
 
@@ -78,4 +143,5 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', loadAndDisplayAd);
 } else {
   loadAndDisplayAd();
+
 }
