@@ -404,7 +404,10 @@ const checkForAd = (target) => {
             width:600, 
             height:388,
             alt: 'Monarch Mountain CO', 
-            position: 'both'
+            position: 'both',
+            start_date: '2025-02-20',
+            end_date: '2025-05-31'
+            
           },{
             img: '2025-02-20-Sunlight.png',
             href:"https://sunlightmtn.com",
