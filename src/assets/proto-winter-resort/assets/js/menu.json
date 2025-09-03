@@ -1,0 +1,210 @@
+[
+  {
+    "label": "Snow Conditions",
+    "link": "#",
+    "sub-menu": true,
+    "sub-menu-items": [
+      {
+        "label": "North West",
+        "link": "/snow-report/north-west/",
+        "sub-menu": true,
+        "sub-menu-items": [
+          {
+            "label": "Alaska",
+            "link": "/snow-report/alaska/"
+          },
+          {
+            "label": "Idaho",
+            "link": "/snow-report/idaho/"
+          },
+          {
+            "label": "Oregon",
+            "link": "/snow-report/oregon/"
+          },
+          {
+            "label": "Washington",
+            "link": "/snow-report/washington/"
+          }
+        ]
+      },
+      {
+        "label": "Rockies",
+        "link": "/snow-report/rockies/",
+        "sub-menu": true,
+        "sub-menu-items": [
+          {
+            "label": "Colorado",
+            "link": "/snow-report/colorado/"
+          },
+          {
+            "label": "Montana",
+            "link": "/snow-report/montana/"
+          },
+          {
+            "label": "New Mexico",
+            "link": "/snow-report/new-mexico/"
+          },
+          {
+            "label": "Utah",
+            "link": "/snow-report/utah/"
+          },
+          {
+            "label": "Wyoming",
+            "link": "/snow-report/wyoming/"
+          }
+        ]
+      },
+      {
+        "label": "North East",
+        "link": "/snow-report/north-east/",
+        "sub-menu": true,
+        "sub-menu-items": [
+          {
+            "label": "Connecticut",
+            "link": "/snow-report/connecticut/"
+          },
+          {
+            "label": "Massachusetts",
+            "link": "/snow-report/massachusetts/"
+          },
+          {
+            "label": "Maine",
+            "link": "/snow-report/maine/"
+          },
+          {
+            "label": "New Hampshire",
+            "link": "/snow-report/new-hampshire/"
+          },
+          {
+            "label": "New Jersey",
+            "link": "/snow-report/new-jersey/"
+          },
+          {
+            "label": "New York",
+            "link": "/snow-report/new-york/"
+          },
+          {
+            "label": "Pennsylvania",
+            "link": "/snow-report/pennsylvania/"
+          },
+          {
+            "label": "Rhode Island",
+            "link": "/snow-report/rhode-island/"
+          },
+          {
+            "label": "Vermont",
+            "link": "/snow-report/vermont/"
+          }
+        ]
+      },
+      {
+        "label": "South West",
+        "link": "/snow-report/south-west/",
+        "sub-menu": true,
+        "sub-menu-items": [
+          {
+            "label": "Arizona",
+            "link": "/snow-report/arizona/"
+          },
+          {
+            "label": "California",
+            "link": "/snow-report/california/"
+          },
+          {
+            "label": "Nevada",
+            "link": "/snow-report/nevada/"
+          }
+        ]
+      },
+      {
+        "label": "Mid West",
+        "link": "/snow-report/mid-west/",
+        "sub-menu": true,
+        "sub-menu-items": [
+          {
+            "label": "Iowa",
+            "link": "/snow-report/iowa/"
+          },
+          {
+            "label": "Illinois",
+            "link": "/snow-report/illinois/"
+          },
+          {
+            "label": "Indiana",
+            "link": "/snow-report/indiana/"
+          },
+          {
+            "label": "Michigan",
+            "link": "/snow-report/michigan/"
+          },
+          {
+            "label": "Minnesota",
+            "link": "/snow-report/minnesota/"
+          },
+          {
+            "label": "Missouri",
+            "link": "/snow-report/missouri/"
+          },
+          {
+            "label": "Ohio",
+            "link": "/snow-report/ohio/"
+          },
+          {
+            "label": "South Dakota",
+            "link": "/snow-report/south-dakota/"
+          },
+          {
+            "label": "Wisconsin",
+            "link": "/snow-report/wisconsin/"
+          }
+        ]
+      },
+      {
+        "label": "South east",
+        "link": "/snow-report/south-east/",
+        "sub-menu": true,
+        "sub-menu-items": [
+          {
+            "label": "Alabama",
+            "link": "/snow-report/alabama/"
+          },
+          {
+            "label": "Maryland",
+            "link": "/snow-report/maryland/"
+          },
+          {
+            "label": "North Carolina",
+            "link": "/snow-report/north-carolina/"
+          },
+          {
+            "label": "Tennessee",
+            "link": "/snow-report/tennessee/"
+          },
+          {
+            "label": "Virginia",
+            "link": "/snow-report/virginia/"
+          },
+          {
+            "label": "West Virginia",
+            "link": "/snow-report/west-virginia/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "SnoCountry News",
+    "link": "/news-home/",
+    "sub-menu": false
+  },
+  {
+    "label": "Mountain Life",
+    "link": "/mountain-life/",
+    "sub-menu": false
+  },
+  {
+    "label": "Admin",
+    "link": "/admin/",
+    "sub-menu": false
+  }
+]
