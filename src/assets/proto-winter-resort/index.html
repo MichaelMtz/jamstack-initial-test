@@ -117,7 +117,7 @@
 
             <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
                 <div id="resort-ad" class="">
-                    <div class="w-[320px] h-[50px] md:w-[728px] md:h-[90px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  bg-gray-200 rounded-sm"></div>
+                    <div class="w-[320px] h-[50px] md:w-[728px] md:h-[90px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  bg-gray-200 rounded-sm shadow-lg"></div>
                 </div>
                 <!-- Breadcrumb Navigation -->
                 <div class="my-4">
@@ -147,17 +147,15 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
                     <!-- Left Column -->
-                    <div class="lg:col-span-2 space-y-6">
+                    <div class="lg:col-span-3 space-y-6">
                         <!-- Video Player -->
-                        <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="rounded-lg shadow-md p-6 bg-gradient-to-br from-cyan-500/5 to-transparent">
                             <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                                <button class="bg-gray-600 text-white rounded-full p-4 hover:bg-gray-700">
-                                    <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"/>
-                                    </svg>
-                                </button>
+
+                                <iframe width="640" height="360" src="https://www.youtube.com/embed/kOziWKH8M_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;" allowfullscreen="allowfullscreen"></iframe>
+                                <!-- <button class="bg-gray-600 text-white rounded-full p-4 hover:bg-gray-700"> <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24"> <path d="M8 5v14l11-7z"/> </svg> </button> -->
                             </div>
 
                             <p class="text-sm text-gray-600 mt-2">Updated: April 10, 2025 at 2:47pm</p>
@@ -165,7 +163,7 @@
                         </div>
 
                         <!-- Resort Information -->
-                        <div class="bg-white rounded-lg shadow-md p-6 group relative">
+                        <div class=" rounded-lg shadow-md p-6 group relative bg-gradient-to-br from-sky-500/10 to-transparent">
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                             <h1 class="text-3xl font-bold text-gray-800 ">Wachusett Mountain Ski Area</h1>
                             <div class="space-y-3">
@@ -180,7 +178,7 @@
                         </div>
 
                         <!-- News and Promos -->
-                        <div class="bg-white rounded-lg shadow-md p-6 group relative">
+                        <div class="bg-white rounded-lg shadow-md p-6 group relative bg-gradient-to-br from-cyan-500/5 to-transparent ">
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
 
                             <h2 class="text-xl font-bold text-gray-800 mb-4">News and Promos</h2>
@@ -288,13 +286,10 @@
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
 
                             <h2 class="text-xl font-bold text-gray-800 mb-4">Wachusett Mountain Trail Map</h2>
-                            <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-                                <div class="text-gray-500">
-                                    <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewbox="0 0 24 24">
-                                        <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
-                                    </svg>
-                                    <p class="text-center">Trail Map</p>
-                                </div>
+                            <div class="aspect-square  rounded-lg flex items-center justify-center">
+                                <a href="http://snocountry.com/assets/images/resorts/trail-map/508007.jpg" target="_blank">
+                                    <img src="http://snocountry.com/assets/images/resorts/trail-maps/508007.jpg" alt="Wachusett Mountain Trail Map" class="w-full h-full object-cover shadow-lg">
+                                </a>
                             </div>
                         </div>
 
@@ -327,16 +322,16 @@
                     </div>
 
                     <!-- Right Column -->
-                    <div class="space-y-6">
+                    <div class="space-y-6 lg:col-span-2">
                         <!-- Trails and Lifts -->
-                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-cyan-500/5 to-transparent shadow-md ">
+                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-cyan-500/10 to-transparent shadow-md ">
                             <div class="grid grid-cols-2 gap-4 mb-6">
                                 <div class="text-center">
                                     <h3 class="font-semibold text-gray-700 mb-2">Trails Open</h3>
                                     <div class="relative w-20 h-20 mx-auto z-20">
                                         <svg class="w-20 h-20 transform -rotate-90 z-20" viewbox="0 0 36 36">
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E5E7EB" stroke-width="3"/>
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="55, 100"/>
+                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E5E7EB" stroke-width="5"/>
+                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#3B82F6" stroke-width="5" stroke-dasharray="55, 100"/>
                                         </svg>
                                         <div class="absolute inset-0 flex items-center justify-center z-20">
                                             <div class="text-center">
@@ -350,8 +345,8 @@
                                     <h3 class="font-semibold text-gray-700 mb-2">Lifts Open</h3>
                                     <div class="relative w-20 h-20 mx-auto z-20">
                                         <svg class="w-20 h-20 transform -rotate-90 z-20" viewbox="0 0 36 36">
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E5E7EB" stroke-width="3"/>
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="75, 100"/>
+                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E5E7EB" stroke-width="5"/>
+                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#3B82F6" stroke-width="5" stroke-dasharray="75, 100"/>
                                         </svg>
                                         <div class="absolute inset-0 flex items-center justify-center">
                                             <div class="text-center">
@@ -365,7 +360,7 @@
                         </div>
 
                         <!-- Recent Snowfall -->
-                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-cyan-500/5 to-transparent shadow-md hover:scale-[1.01] transition-transform duration-300">
+                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-sky-500/10 to-transparent shadow-md hover:scale-[1.01] transition-transform duration-300">
                             <h2 class="text-lg font-bold text-gray-800 mb-4">Recent Snowfall</h2>
                             <div class="grid grid-cols-2 gap-4 text-sm">
                                 <div>
@@ -384,7 +379,7 @@
                         </div>
 
                         <!-- Snow Conditions -->
-                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-cyan-500/5 to-transparent shadow-md">
+                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-blue-500/10 to-transparent shadow-md">
                             <h2 class="text-lg font-bold text-gray-800 mb-4">Snow Conditions</h2>
                             <div class="space-y-3 text-sm">
                                 <div>
@@ -420,64 +415,76 @@
                         </div>
 
                         <!-- Recent SnoNews -->
-                        <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class=" rounded-lg shadow-md p-6  bg-gradient-to-br from-sky-400/10 to-transparent shadow-md">
                             <h2 class="text-lg font-bold text-gray-800 mb-4">Recent SnoNews</h2>
                             <div class="grid grid-cols-2 gap-3">
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="https://snow-country.com/news/autumns-splendor-starting-to-emerge-in-utahs-high-country/" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6404/Utah-Cottonwood-Cover.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Autumn's Splendor Starting To Emerge In Utah's High Country</p>
+                                        </div>
+                                    </a>
+
                                 </div>
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="https://snow-country.com/news/indy-pass-continues-to-fill-out-its-roster-in-the-west/" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6403/Indy-Eyak-Cover.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Indy Pass Continues To Fill Out Its Roster In The West</p>
+                                        </div>
+                                    </a>
+
                                 </div>
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="#" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6402/Sept-ABasin-Cover.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Colorado Resorts Hit Full Stride With September Festivals, Celebrations</p>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="#" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6401/Divide-Monarch-Colors.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Hiking On The Continental Divide As Seasons Change In Colorado</p>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="https://snow-country.com/news/autumns-splendor-starting-to-emerge-in-utahs-high-country/" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6404/Utah-Cottonwood-Cover.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Autumn's Splendor Starting To Emerge In Utah's High Country</p>
+                                        </div>
+                                    </a>
+
                                 </div>
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="https://snow-country.com/news/indy-pass-continues-to-fill-out-its-roster-in-the-west/" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6403/Indy-Eyak-Cover.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Indy Pass Continues To Fill Out Its Roster In The West</p>
+                                        </div>
+                                    </a>
+
                                 </div>
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="#" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6402/Sept-ABasin-Cover.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Colorado Resorts Hit Full Stride With September Festivals, Celebrations</p>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="border border-gray-200 rounded p-3">
-                                    <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
-                                    <div class="space-y-1">
-                                        <div class="h-2 bg-gray-200 rounded"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                                    </div>
+                                    <a href="#" target="_blank">
+                                        <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6401/Divide-Monarch-Colors.jpg" alt="Recent SnoNews">
+                                        <div class="space-y-1">
+                                            <p class="text-sm">Hiking On The Continental Divide As Seasons Change In Colorado</p>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             <button class="w-full mt-4 px-4 py-2 border border-gray-300 rounded text-sm hover:bg-gray-50">More News</button>
@@ -487,7 +494,7 @@
 
             </main>
             <footer class="bg-background border-t border-border flex flex-col items-center justify-between">
-                <div id="footer-container" class="min-w-[100dvw] py-4 px-2  flex flex-col gap-1 lg:flex-row justify-center text-muted text-sm">
+                <div id="footer-container" class="min-w-[100dvw] py-4 px-6  flex flex-col gap-1 lg:flex-row justify-around text-muted text-sm">
                     <ul class="social-icons flex justify-center">
                         <li>
                             <a href="#">

@@ -422,4 +422,9 @@ footer #footer-container ul.social-icons li a:hover {
   text-shadow: 0 0 5px #0F97FF;
 }
 
+.news-image {
+  width: clamp(128px, 100%, 180px);
+  height: clamp(97px, 100%, 135px);
+}
+
 /*# sourceMappingURL=sno-base.css.map */
