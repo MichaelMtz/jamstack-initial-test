@@ -4,11 +4,25 @@ async function fetchResortAds() {
   try {
     const params = new URLSearchParams();
     
-    if (document.body.dataset.source === 'resort') {
-      params.append('resortId', document.body.dataset.snowreport);
-    } else {
-      params.append('region', document.body.dataset.snowreport);
+    _log('Ads-System:', document.body.dataset.source);
+    switch (document.body.dataset.source) {
+      case 'resort':
+        params.append('resortId', document.body.dataset.snowreport);
+      break;
+      case 'state':
+      case 'region': 
+        params.append('region', document.body.dataset.snowreport);
+      break;
+      
+      default: // home, news-home, news-page
+        params.append('region', document.body.dataset.source);
+      break;
     }
+    // if (document.body.dataset.source === 'resort') {
+    //   params.append('resortId', document.body.dataset.snowreport);
+    // } else {
+    //   params.append('region', document.body.dataset.snowreport);
+    // }
     
     const response = await fetch(`${API_BASE_URL}/api/ads?${params}`);
     if (!response.ok) {
@@ -30,8 +44,9 @@ function selectRandomAd(ads) {
 }
 
 function createAdHTML(ad) {
-  const width = 728;
-  const height = 90;
+  const newsPostPage = window.location.pathname.includes('news-post');
+  const width = (newsPostPage) ? 320 : 728;
+  const height = (newsPostPage) ? 50 : 90;
   
   return `
 <div class="resort-ad">
@@ -114,7 +129,21 @@ async function loadAndDisplayAd() {
   _log('SnoAdDashboard:result:',ads);
   if (selectedAd) {
     _log('loadAndDisplayAd::selectedAd:',selectedAd);
-    waitForElement('#resort-name').then((elResortName) => {
+    let sel = '';
+    switch (document.body.dataset.source) {
+      case 'resort':
+        sel = '#resort-name';
+      break;
+      case 'state':
+      case 'region': 
+        sel = '#container-snow-reports';
+      break;
+      
+      default: // home, news-home, news-page
+        sel = '#news-ad';
+      break;
+    }
+    waitForElement(sel).then((elResortName) => {
         elResortName.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
         trackAdImpression(selectedAd);
 
