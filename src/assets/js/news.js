@@ -94,36 +94,7 @@ const trackNewsAd = (alt) => {
   }
 };
 
-const displayNewsAd = () => {
-  const ads = [ {
-    img: 'Ski Bradford_ad.png',
-    href:"http://skibradford.com/",
-    width:320, 
-    height:250,
-    alt: 'Ski Bradford',
-    start_date: '2025-01-10',
-    end_date: '2025-01-31'
-  }];
-  const iterResortAd = ads[0];
-  if (ads.length > 1) {
-    //  
-  }
-  const alt = iterResortAd.alt.replaceAll(' ', '-'); 
-  const html = `
-    <div class="resort-ad">
-      <a href="${iterResortAd.href}" target="_blank" data-umami-event="SnoNews-ad_${alt}_click">
-        <img class="img-resort-ad" src="assets/images/ads/news/${iterResortAd.img}" alt="${iterResortAd.alt}" width="100%"  data-umami-event="SnoNews-ad_${alt}_click">
-      </a>
-    </div>
-  `;
-  const sel = '#news-ad';
-  waitForElement(sel).then((elNewsAd) => {
-    elNewsAd.insertAdjacentHTML('afterbegin', html);
-    elNewsAd.classList.add('show');
-    trackNewsAd(alt);
-  }).catch( () => { console.log('Error waiting for news-ad element:');});
-  
-};
+
 const createNewsSDL = (post) => {
   const publish = new Date(Date.parse(post.publish_up.replace(/-/g, '/')));
   const publishISODate = publish.toISOString();
@@ -290,5 +261,4 @@ document.addEventListener('DOMContentLoaded',()=> {
   const postID = params.get("postID");
   getPost(postID);
   getOtherPostList(postID);
-  displayNewsAd();
 });
