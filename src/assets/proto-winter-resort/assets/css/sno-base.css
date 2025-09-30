@@ -427,4 +427,17 @@ footer #footer-container ul.social-icons li a:hover {
   height: clamp(97px, 100%, 135px);
 }
 
+.donut-progress {
+  animation: fillDonut 1.2s ease-out forwards;
+}
+
+@keyframes fillDonut {
+  from {
+    stroke-dashoffset: var(--circumference);
+  }
+  to {
+    stroke-dashoffset: var(--offset);
+  }
+}
+
 /*# sourceMappingURL=sno-base.css.map */

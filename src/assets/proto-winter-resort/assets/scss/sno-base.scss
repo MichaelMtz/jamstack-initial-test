@@ -317,3 +317,14 @@ footer {
 //     }
 //   }
 // }
+.donut-progress {
+  animation: fillDonut 1.2s ease-out forwards;
+}
+@keyframes fillDonut {
+  from {
+      stroke-dashoffset: var(--circumference);
+  }
+  to {
+      stroke-dashoffset: var(--offset);
+  }
+}

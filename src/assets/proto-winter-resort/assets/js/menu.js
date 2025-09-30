@@ -252,16 +252,18 @@ class NavigationMenu {
             }
         });
 
-        document.addEventListener('mouseleave', (e) => {
-            if (e.target?.closest('.group') && !e.relatedTarget?.closest('.group')) {
-                setTimeout(() => {
-                    if (!document.querySelector('.group:hover')) {
-                        this.closeAllDropdowns();
-                    }
-                }, 100);
-            }
+        // document.addEventListener('mouseleave', (e) => {
+        //     if (e.target?.closest('.group') && !e.relatedTarget?.closest('.group')) {
+        //         setTimeout(() => {
+        //             if (!document.querySelector('.group:hover')) {
+        //                 this.closeAllDropdowns();
+        //             }
+        //         }, 100);
+        //     }
+        // });
+        document.getElementById('dropdown-0').addEventListener('mouseleave', (e) => {
+            this.closeAllDropdowns();
         });
-
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 this.closeAllDropdowns();
