@@ -75,7 +75,7 @@ Retrieve active ads for a specific region or resort.
 
 **Example Request:**
 ```bash
-curl "https://affable-hummingbird-827.convex.site/api/ads?resortId=?region=colorado"
+curl "https://affable-hummingbird-827.convex.site/api/ads?region=colorado"
 curl "https://affable-hummingbird-827.convex.site/api/ads?resortId=303023"
 ```
 
