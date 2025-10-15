@@ -157,7 +157,6 @@ class ResponsiveLayoutManager {
      */
     handleLayoutChange(isDesktop) {
         const targetLayout = isDesktop ? 'desktop' : 'mobile';
-
         // Prevent unnecessary DOM manipulations
         if (this.currentLayout === targetLayout) {
             return;
@@ -192,8 +191,10 @@ class ResponsiveLayoutManager {
 
         // Now move all cards to left column in the specified mobile order
         this.mobileOrder.forEach(cardId => {
+            console.log(`applyMobileLayout:${cardId}`);
             const card = this.elements.cards.get(cardId);
             if (card) {
+                console.log(`applyMobileLayout:inserting:${cardId}`);
                 leftColumn.appendChild(card);
             }
         });
