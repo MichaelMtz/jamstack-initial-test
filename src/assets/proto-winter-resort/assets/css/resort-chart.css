@@ -1,0 +1,63 @@
+        /* Desktop card dimensions: 720px x 442px */
+.chart-card {
+    width: 720px;
+    height: 442px;
+}
+
+/* Mobile card dimensions: 382px x 420px */
+@media (max-width: 639px) {
+    .chart-card {
+        width: 382px;
+        height: 420px;
+    }
+}
+
+/* Custom slider styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    height: 16px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #02182E;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: -4px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #02182E;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: white;
+    border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: white;
+    border-radius: 4px;
+}
+
+/* Adjust button sizes on mobile */
+@media (max-width: 639px) {
+    button {
+        font-size: 11px;
+        padding: 0.25rem 0.5rem;
+    }
+}

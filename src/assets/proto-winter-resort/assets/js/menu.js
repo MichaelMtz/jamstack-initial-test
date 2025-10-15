@@ -62,7 +62,7 @@ class NavigationMenu {
 
             li.innerHTML = `
                 <button 
-                    class="flex items-center px-4 py-2 font-bold text-menu hover:text-primary hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none "
+                    class="flex items-center px-4 py-2 font-bold text-menu hover:scale-105 hover:text-primary hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none "
                     data-dropdown-toggle="dropdown-${index}"
                     aria-expanded="false"
                     aria-haspopup="true"
@@ -78,7 +78,7 @@ class NavigationMenu {
             li.innerHTML = `
                 <a 
                     href="${item.link}" 
-                    class="flex items-center px-4 py-2  font-bold text-menu hover:text-primary hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 "    
+                    class="flex items-center px-4 py-2  font-bold text-menu hover:text-primary hover:scale-105 hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 "    
                 >
                     ${item.label}
                 </a>

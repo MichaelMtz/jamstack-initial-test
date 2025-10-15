@@ -3,15 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SnoCountry Page Concept</title>
+        <title>Shaded Background SnoCountry Page Concept</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="assets/css/sno-base.css">
+        <link rel="stylesheet" href="assets/css/resort-chart.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <script>
             tailwind.config = {
                 theme: {
                     extend: {
                         colors: {
+                            midnight: {
+                                900: '#01162E',
+                                800: '#01203D',
+                                700: '#003460',
+                                600: '#044B81',
+                                500: '#0D568B',
+                                400: '#266E9F',
+                                300: '#529CC3',
+                            },
+                            earth: {
+                                800: '#174050',
+                                600: '#0C657C',
+                                400: '#442816',
+                                300: '#704121',
+                                200: '#AB6F44',
+                            },
                             border: 'hsl(214.3 31.8% 91.4%)',
                             input: 'hsl(214.3 31.8% 91.4%)',
                             ring: 'hsl(222.2 84% 4.9%)',
@@ -52,10 +69,22 @@
                 }
             }
         </script>
+        <style>
+            @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+            }
+            .animate-shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+            }
+        </style>
     </head>
-    <body class="bg-background">
+    <!-- <body class="bg-gradient-to-br from-sky-500/5 to-transparent"> <body class="from-slate-50 via-sky-50 to-blue-50 bg-gradient-to-br">-->
+    <body class="bg-gradient-to-br from-sky-200 to-transparent via-sky-50">
         <div class="grid grid-rows-[auto_1fr_auto] min-h-[100dvh]">
-            <nav class="sno-nav relative  border-b border-border">
+            <nav class="bg-background sno-nav relative  border-b border-border">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div id="navigation-container" class="flex justify-between h-24">
                         <div class="sm:hidden">
@@ -115,57 +144,78 @@
                 </div>
             </div>
 
-            <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
+            <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <div id="resort-ad" class="">
-                    <div class="w-[320px] h-[50px] md:w-[728px] md:h-[90px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  bg-gray-200 rounded-sm shadow-lg"></div>
+                    <img class="w-[728px] h-[90px]  mx-auto  rounded-lg shadow-xl img-resort-ad" src="https://affable-hummingbird-827.convex.cloud/api/storage/3acfee69-ad01-453a-b349-a4905b743efa" alt="Mountain Collective Fall Awareness" width="728" height="90" data-umami-event="banner-resort-click-Mountain Collective Fall Awareness">
+
                 </div>
                 <!-- Breadcrumb Navigation -->
-                <div class="my-4">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="my-4 p-2 sm:p-6 mb-6 rounded-lg shadow-md bg-background border" >
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-lg md:text-xl">
                         <div class="flex  py-2 text-sm overflow-x-scroll sm:overflow-x-auto">
-                            <div class="mr-4 text-xs sm:text-base text-gray-600 py-1">NORTH EAST:</div>
+                            <div class="mr-4  text-gray-600 py-1 text-md md:text-xl">NORTH EAST:</div>
                             <div class="flex sm:space-x-2">
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 hover:border-accent/50 hover:rounded">CT</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">MA</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">ME</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">NH</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">NJ</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">NY</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">PA</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">RI</button>
-                                <button class="px-1 sm:px-2 py-1 text-xs sm:text-base text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 sm:border-l-2 hover:border-accent/50 hover:rounded">VT</button>
+                                <button class="px-1 sm:px-2 py-1 text-md md:text-xl text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50 hover:border-accent/50 hover:rounded">CT</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md text-orange-600 md:text-2xl hover:text-navtop  hover:rounded">MA</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md md:text-xl text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50  hover:border-accent/50 hover:rounded">ME</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md md:text-xl text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50  hover:border-accent/50 hover:rounded">NH</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md md:text-xl text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50  hover:border-accent/50 hover:rounded">NJ</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md md:text-xl text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50  hover:border-accent/50 hover:rounded">NY</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md md:text-xl text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50  hover:border-accent/50 hover:rounded">PA</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md md:text-xl text-gray-600 hover:bg-gray-100 hover:text-navtop hover:bg-accent/50  hover:border-accent/50 hover:rounded">RI</button>
+                                <div class="bg-slate-300 h-8 hidden sm:block w-px"></div>
+                                <button class="px-1 sm:px-2 py-1 text-md  text-blue-600 md:text-2xl hover:text-navtop  hover:rounded">VT</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- end of Breadcrumb Navigation -->
                 <!-- Resort Header -->
-                <div class="z-0 p-6 mb-6 min-h-[100px]  rounded-lg shadow-md ">
+                <div class="z-0 sm:min-h-[100px] p-2 sm:p-6 mb-6 rounded-lg shadow-md bg-background border relative group">
                     <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] items-center gap-4 items-center gap-4 relative">
                         <img src="http://snow-country.com/ski_area_logos/508007logo.jpg" class="resort-logo hidden sm:block mr-4 " width="140px" alt="Wachusett Mountain logo" title="Wachusett Mountain logo">
                         <h1 class="md:w-full  text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800  ">Wachusett Mountain Ski Area</h1>
                     </div>
+                    <div class="flex justify-between absolute -top-3 right-3 bg-gradient-to-r from-sky-500 to-blue-500 shadow-sky-500 text-xs font-bold rounded-full px-3 py-1 md:py-1.5 text-white shadow-md  animate-pulse-slow font-sans" style="transition: outline 0.1s ease-in-out;">
+                        <div class="mr-1">Member Resort since 1981</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="snowflake" class="lucide lucide-snowflake h-4 w-4"><path d="m10 20-1.25-2.5L6 18"></path><path d="M10 4 8.75 6.5 6 6"></path><path d="m14 20 1.25-2.5L18 18"></path><path d="m14 4 1.25 2.5L18 6"></path><path d="m17 21-3-6h-4"></path><path d="m17 3-3 6 1.5 3"></path><path d="M2 12h6.5L10 9"></path><path d="m20 10-1.5 2 1.5 2"></path><path d="M22 12h-6.5L14 15"></path><path d="m4 10 1.5 2L4 14"></path><path d="m7 21 3-6-1.5-3"></path><path d="m7 3 3 6h4"></path></svg>
+                    </div>
+                    <div class="flex justify-between absolute -top-3 left-3 bg-gradient-to-r from-orange-500 to-red-500 shadow-orange-500 text-xs font-bold rounded-full px-3 py-1 md:py-1.5 text-white shadow-md  animate-pulse-slow font-sans" style="transition: outline 0.1s ease-in-out;">
+                        <div class="mr-1">Member Resort since 1981</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="snowflake" class="lucide lucide-snowflake h-4 w-4"><path d="m10 20-1.25-2.5L6 18"></path><path d="M10 4 8.75 6.5 6 6"></path><path d="m14 20 1.25-2.5L18 18"></path><path d="m14 4 1.25 2.5L18 6"></path><path d="m17 21-3-6h-4"></path><path d="m17 3-3 6 1.5 3"></path><path d="M2 12h6.5L10 9"></path><path d="m20 10-1.5 2 1.5 2"></path><path d="M22 12h-6.5L14 15"></path><path d="m4 10 1.5 2L4 14"></path><path d="m7 21 3-6-1.5-3"></path><path d="m7 3 3 6h4"></path></svg>
+                    </div>
+
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                <div id="snow-report" class="grid grid-cols-1 lg:grid-cols-5 gap-6">
                     <!-- Left Column -->
-                    <div class="lg:col-span-3 space-y-6">
+                    <div id="left-column" class="lg:col-span-3 space-y-6">
                         <!-- Video Player -->
-                        <div class="rounded-lg shadow-md p-6 bg-gradient-to-br from-cyan-500/5 to-transparent">
+                        <div id="card-video" class="sno-class rounded-lg shadow-md p-6 bg-background border">
                             <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-4">
 
                                 <iframe width="640" height="360" src="https://www.youtube.com/embed/kOziWKH8M_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;" allowfullscreen="allowfullscreen"></iframe>
                                 <!-- <button class="bg-gray-600 text-white rounded-full p-4 hover:bg-gray-700"> <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24"> <path d="M8 5v14l11-7z"/> </svg> </button> -->
                             </div>
 
-                            <p class="text-sm text-gray-600 mt-2">Updated: April 10, 2025 at 2:47pm</p>
-                            <h3 class="font-semibold text-gray-800 mt-2">Wachusett Mountain Ski Area</h3>
                         </div>
 
                         <!-- Resort Information -->
-                        <div class=" rounded-lg shadow-md p-6 group relative bg-gradient-to-br from-sky-500/10 to-transparent">
+                        <div id="card-blurb" class="sno-class  rounded-lg shadow-md p-6 group relative  bg-background border">
+                            
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                            <h1 class="text-3xl font-bold text-gray-800 ">Wachusett Mountain Ski Area</h1>
+                            <div class="flex justify-between ">
+                              <h2 class="text-3xl font-bold text-gray-800 ">Wachusett Mountain Ski Area</h2>
+                              <div class="px-2 py-1 rounded-xl text-xl bg-gradient-to-r bg-clip-text text-transparent inline-block mb-4 from-slate-800 via-slate-600 to-purple-700 animate-shimmer border border-gray-200" style="box-shadow: 0 10px 40px rgba(124, 58, 237, 0.2);">Member Resort since 1981 </div>
+                            </div>
                             <div class="space-y-3">
                                 <p class="blurb px-3">
                                     <br>Wachusett Mountain, located just 60 minutes from Boston, is easily accessible for day trips and winter getaways. The resort is known for its family-oriented atmosphere, with numerous ski lessons, a top ski and snowboard school, and a dedicated "Dev" team for young skiers. Wachusett Mountain boasts a top-notch snowmaking system and grooming services, ensuring excellent skiing conditions year-round. Beyond skiing, Wachusett Mountain offers a variety of outdoor activities, including snowshoeing, hiking, and more, making it a versatile destination for winter enthusiasts.
@@ -178,7 +228,8 @@
                         </div>
 
                         <!-- News and Promos -->
-                        <div class="bg-white rounded-lg shadow-md p-6 group relative bg-gradient-to-br from-cyan-500/5 to-transparent ">
+                        <div id="card-comments" class="sno-class bg-white rounded-lg shadow-md p-6 group relative ">
+
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
 
                             <h2 class="text-xl font-bold text-gray-800 mb-4">News and Promos</h2>
@@ -214,31 +265,10 @@
                             </div>
                         </div>
 
-                        <!-- Resort Information -->
-                        <div class="bg-white rounded-lg shadow-md p-6 group relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-
-                            <h2 class="text-xl font-bold text-gray-800 mb-4">Resort Information</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-md">
-                                <div>
-                                    <p>
-                                        <span class="font-semibold">Website:</span>
-                                        www.wachusett.com</p>
-                                    <p>
-                                        <span class="font-semibold">Address:</span>
-                                        499 Mountain Road, Princeton, MA 01541</p>
-                                    <p>
-                                        <span class="font-semibold">Phone:</span>
-                                        (978) 464-2300</p>
-                                    <p>
-                                        <span class="font-semibold">Email:</span>
-                                        info@wachusett.com</p>
-                                </div>
-                            </div>
-                        </div>
+ 
 
                         <!-- Weather Forecast -->
-                        <div class="bg-white rounded-lg shadow-md p-6 group relative">
+                        <div id="card-weather" class="sno-class bg-white rounded-lg shadow-md p-6 group relative">
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
 
                             <h2 class="text-xl font-bold text-gray-800 mb-4">Weather Forecast</h2>
@@ -282,21 +312,143 @@
                         </div>
 
                         <!-- Trail Map -->
-                        <div class="bg-white rounded-lg shadow-md p-6 group relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        <div id="card-trailmap" class="sno-class bg-white rounded-lg shadow-md p-6 group relative">
 
                             <h2 class="text-xl font-bold text-gray-800 mb-4">Wachusett Mountain Trail Map</h2>
                             <div class="aspect-square  rounded-lg flex items-center justify-center">
-                                <a href="http://snocountry.com/assets/images/resorts/trail-map/508007.jpg" target="_blank">
-                                    <img src="http://snocountry.com/assets/images/resorts/trail-maps/508007.jpg" alt="Wachusett Mountain Trail Map" class="w-full h-full object-cover shadow-lg">
-                                </a>
+                                <img id="trailMapDesktop" src="http://snocountry.com/assets/images/resorts/trail-maps/508007.jpg" alt="Wachusett Mountain Trail Map" class="cursor-pointer duration-300 h-full hover:scale-[1.02] object-cover rounded-lg shadow-lg w-full">
                             </div>
                         </div>
 
-                        <!-- Resort Stats -->
-                        <div class="bg-white rounded-lg shadow-md p-6 group relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        
+                        <!-- Archive -->
+                        <div id="card-archive" class="container mx-auto flex flex-col items-center gap-6">
+                            <!-- Base Depth Chart Card -->
+                            <div class="bg-gradient-to-br chart-card from-sky-200 p-6 rounded-lg shadow-lg shadow-slate-400 to-sky-50 via-sky-100">
+                                <div class="flex justify-between items-center gap-2 mb-2">
+                                    <div class="flex-1 flex items-center gap-2">
+                                        <input type="range" id="sliderBaseDepth" min="0" max="100" value="0" class="flex-1 cursor-pointer">
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button id="playBaseDepth" class="bg-gradient-to-r from-midnight-900 to-midnight-700 hover:scale-105 px-3 py-1 rounded text-sm text-white">Play</button>
+                                        <button id="pauseBaseDepth" class="bg-gradient-to-r from-midnight-500 to-midnight-300 hover:scale-105 px-3 py-1 rounded text-sm text-white">Pause</button>
+                                    </div>
+                                </div>
+                                <div id="baseDepthRace" style="width: 100%; height: calc(100% - 40px);"></div>
+                            </div>
+                        
+                            <!-- Trails Chart Card -->
+                            <div class="bg-gradient-to-br bg-white chart-card from-orange-100 p-6 rounded-lg shadow-lg shadow-xl to-transparent via-orange-50">
+                                <div class="flex justify-between items-center gap-2 mb-2">
+                                    <div class="flex-1 flex items-center gap-2">
+                                        <input type="range" id="sliderTrails" min="0" max="100" value="0" class="flex-1 cursor-pointer">
+                                    </div>
+                                    <div class="flex gap-2">           
+                                        <button id="playTrails" class="bg-gradient-to-r from-earth-800 to-earth-600 hover:scale-105 px-3 py-1 rounded text-sm text-white">Play</button>
+                                        <button id="pauseTrails" class="bg-gradient-to-r from-earth-400 to-earth-300  hover:scale-105 px-3 py-1 rounded text-sm text-white">Pause</button>
+                                    </div>
+                                </div>
+                                <div id="trailsRace" style="width: 100%; height: calc(100% - 40px);"></div>
+                            </div>
+                        </div>
+                        
 
+                    </div>
+
+                    <!-- Right Column -->
+                    <div id="right-column" class="space-y-6 lg:col-span-2">
+                        <!-- Trails and Lifts <div class="p-6 bg-white rounded-lg bg-background border shadow-md relative group hover:scale-[1.02] hover:shadow-sky-500/5 hover:shadow-emerald-100 hover:shadow-xl transition-all duration-300"> -->
+                        <div id="card-trails-lifts" class="sno-class p-6  bg-white rounded-lg  bg-background border shadow-md relative group  hover:scale-[1.02] hover:shadow-sky-200  hover:shadow-xl transition-all duration-300">
+                            <!-- <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div> -->
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-white rounded-xl shadow-lg text-center">
+                                    <h2 class="mb-2  font-bold text-gray-800  text-lg group-hover:text-sky-700 transition-all duration-300">Trails Open</h2>
+                                    <!-- <div class="rounded-3xl bg-white/30 backdrop-blur-xl border border-white/20 p-6 flex items-center justify-center shadow-xl translate-y-4 transition-all duration-700 ease-out" style="animation: slideIn 0.7s ease-out 0.8s forwards;"> -->
+                                    <div id="donutTrails" class="sno-class  p-6 flex items-center justify-center  transition-all duration-700 ease-out" style="animation: slideIn 0.7s ease-out 0.8s forwards;"></div>
+                                </div>
+                                <div class="bg-white rounded-xl shadow-lg text-center">
+                                    <h2 class="mb-2 font-bold text-gray-800  text-lg group-hover:text-sky-700 transition-all duration-300">Lifts Open</h2>
+                                    <div id="donutLifts" class="sno-class  p-6 flex items-center justify-center  transition-all duration-700 ease-out" style="animation: slideIn 0.7s ease-out 0.8s forwards;"></div>
+                                </div>
+                            </div>
+                            <h3 id="ReportDateTime" class="sno-class text-center text-sm font-semibold text-slate-800 mt-2">Updated: April 10, 2025 at 2:47pm</h3>
+                        </div>
+
+                        <!-- Recent Snowfall -->
+                        <div id="card-snowfall" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+                            <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="flex justify-between absolute top-1 right-1  xl:bg-gray-50 border-gray-200 border rounded-2xl px-2 py-1 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]  " style="">
+                                <h3 class="xl:text-xl text-xl text-gray-900 font-geist font-light tracking-tighter" style="">Member since 1981</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield" class="lucide lucide-shield h-3.5 w-3.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                              </div>
+
+
+                            <h2 class="text-lg font-bold text-gray-800 mb-4">Recent Snowfall</h2>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p class="font-semibold">Past 24 Hours</p>
+                                    <p class="text-lg">6 - 8"</p>
+                                    <p class="font-semibold mt-2">Past 72 Hours</p>
+                                    <p class="text-lg">15"</p>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Past 48 Hours</p>
+                                    <p class="text-lg">12"</p>
+                                    <p class="font-semibold mt-2">Past 7 Days</p>
+                                    <p class="text-lg">25"</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Snow Conditions -->
+                        <div id="card-conditions" class="sno-class bg-white rounded-lg p-6 border-cyan-100  shadow-md relative group">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="flex justify-between">
+                            <h2 class="text-lg font-bold text-gray-800 mb-4">Snow Conditions</h2>
+                            
+                            <div class="-mt-1 text-xl bg-gradient-to-r bg-clip-text text-transparent inline-block mb-4 from-slate-800 via-slate-600 to-purple-700 animate-shimmer" >
+                                Member Resort since 1981 </div>    
+                            </div>
+                            <div class="space-y-3 text-sm">
+                                <div>
+                                    <p class="font-semibold">Primary Surface</p>
+                                    <p>Machine Groomed / Packed Powder</p>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="font-semibold">Base Depth</p>
+                                        <p>12 - 18"</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">Season Total</p>
+                                        <p>345"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hours-Status -->
+                        <div id="card-hours" class="sno-class bg-white rounded-lg p-6 border-cyan-100 shadow-md relative group">
+                            <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+
+                            <h2 class="text-lg font-bold text-gray-800 mb-4">Status:</h2>
+                            <p class="text-sm text-green-600 mb-2">Open for Summer Operations</p>
+                            <div class="text-sm">
+                                <p class="font-semibold">Hours:</p>
+                                <p>
+                                    <span class="font-semibold">Weekend:</span>
+                                    Sat 9am-9a 4p</p>
+                                <p>
+                                    <span class="font-semibold">Weekdays:</span>
+                                    Mon-Fri 9a 4p</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Resort Stats -->
+                        <div id="card-stats" class="sno-class bg-white rounded-lg shadow-md p-6 group relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        
                             <h2 class="text-xl font-bold text-gray-800 mb-4">Resort Stats</h2>
                             <div class="grid grid-cols-2 gap-4 text-md">
                                 <div>
@@ -319,170 +471,110 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="space-y-6 lg:col-span-2">
-                        <!-- Trails and Lifts -->
-                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-cyan-500/10 to-transparent shadow-md ">
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div class="text-center">
-                                    <h3 class="font-semibold text-gray-700 mb-2">Trails Open</h3>
-                                    <div class="relative w-20 h-20 mx-auto z-20">
-                                        <svg class="w-20 h-20 transform -rotate-90 z-20" viewbox="0 0 36 36">
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E5E7EB" stroke-width="5"/>
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#3B82F6" stroke-width="5" stroke-dasharray="55, 100"/>
-                                        </svg>
-                                        <div class="absolute inset-0 flex items-center justify-center z-20">
-                                            <div class="text-center">
-                                                <div class="text-lg font-bold text-sno-blue">15/27</div>
-                                                <div class="text-xs text-gray-500">56%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <h3 class="font-semibold text-gray-700 mb-2">Lifts Open</h3>
-                                    <div class="relative w-20 h-20 mx-auto z-20">
-                                        <svg class="w-20 h-20 transform -rotate-90 z-20" viewbox="0 0 36 36">
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E5E7EB" stroke-width="5"/>
-                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#3B82F6" stroke-width="5" stroke-dasharray="75, 100"/>
-                                        </svg>
-                                        <div class="absolute inset-0 flex items-center justify-center">
-                                            <div class="text-center">
-                                                <div class="text-lg font-bold text-sno-blue">6/8</div>
-                                                <div class="text-xs text-gray-500">75%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Recent Snowfall -->
-                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-sky-500/10 to-transparent shadow-md hover:scale-[1.01] transition-transform duration-300">
-                            <h2 class="text-lg font-bold text-gray-800 mb-4">Recent Snowfall</h2>
-                            <div class="grid grid-cols-2 gap-4 text-sm">
+                        
+                        <!-- Resort Information -->
+                        <div id="card-info" class="sno-class bg-white rounded-lg shadow-md p-6 group relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        
+                            <h2 class="text-xl font-bold text-gray-800 mb-4">Resort Information</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-md">
                                 <div>
-                                    <p class="font-semibold">Past 24 Hours</p>
-                                    <p class="text-lg">6 - 8"</p>
-                                    <p class="font-semibold mt-2">Past 72 Hours</p>
-                                    <p class="text-lg">15"</p>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Past 48 Hours</p>
-                                    <p class="text-lg">12"</p>
-                                    <p class="font-semibold mt-2">Past 7 Days</p>
-                                    <p class="text-lg">25"</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Snow Conditions -->
-                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-blue-500/10 to-transparent shadow-md">
-                            <h2 class="text-lg font-bold text-gray-800 mb-4">Snow Conditions</h2>
-                            <div class="space-y-3 text-sm">
-                                <div>
-                                    <p class="font-semibold">Primary Surface</p>
-                                    <p>Machine Groomed / Packed Powder</p>
-                                </div>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <p class="font-semibold">Base Depth</p>
-                                        <p>12 - 18"</p>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold">Season Total</p>
-                                        <p>345"</p>
-                                    </div>
+                                    <p>
+                                        <span class="font-semibold">Website:</span>
+                                        www.wachusett.com</p>
+                                    <p>
+                                        <span class="font-semibold">Address:</span>
+                                        499 Mountain Road, Princeton, MA 01541</p>
+                                    <p>
+                                        <span class="font-semibold">Phone:</span>
+                                        (978) 464-2300</p>
+                                    <p>
+                                        <span class="font-semibold">Email:</span>
+                                        info@wachusett.com</p>
                                 </div>
                             </div>
                         </div>
+                        
 
-                        <!-- Status -->
-                        <div class="bg-white rounded-lg p-6 border-cyan-100 bg-gradient-to-br from-cyan-500/5 to-transparent shadow-md">
-                            <h2 class="text-lg font-bold text-gray-800 mb-4">Status:</h2>
-                            <p class="text-sm text-green-600 mb-2">Open for Summer Operations</p>
-                            <div class="text-sm">
-                                <p class="font-semibold">Hours:</p>
-                                <p>
-                                    <span class="font-semibold">Weekend:</span>
-                                    Sat 9am-9a 4p</p>
-                                <p>
-                                    <span class="font-semibold">Weekdays:</span>
-                                    Mon-Fri 9a 4p</p>
-                            </div>
+                        
+                        <!-- Kayak example -->
+                        <div id="card-affiliate" class="sno-class bg-white rounded-lg  border-cyan-100    shadow-md relative group">
+                            <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+
+                            <img src="assets/images/kayak-sample.png" alt="Kayak" class="w-full h-full object-cover">
                         </div>
 
-                        <!-- Recent SnoNews -->
-                        <div class=" rounded-lg shadow-md p-6  bg-gradient-to-br from-sky-400/10 to-transparent shadow-md">
+                        <!-- Recent SnoNews
+                        <div id="card-snonews" class="sno-class  rounded-lg shadow-md p-6  bg-gradient-to-br from-sky-400/10 to-transparent shadow-md">
+                        -->
+                        <div id="card-snonews" class="sno-class  rounded-lg shadow-md p-6  bg-white shadow-xl shadow-lg">
                             <h2 class="text-lg font-bold text-gray-800 mb-4">Recent SnoNews</h2>
                             <div class="grid grid-cols-2 gap-3">
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="https://snow-country.com/news/autumns-splendor-starting-to-emerge-in-utahs-high-country/" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6404/Utah-Cottonwood-Cover.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Autumn's Splendor Starting To Emerge In Utah's High Country</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Autumn's Splendor Starting To Emerge In Utah's High Country</p>
                                         </div>
                                     </a>
 
                                 </div>
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="https://snow-country.com/news/indy-pass-continues-to-fill-out-its-roster-in-the-west/" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6403/Indy-Eyak-Cover.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Indy Pass Continues To Fill Out Its Roster In The West</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Indy Pass Continues To Fill Out Its Roster In The West</p>
                                         </div>
                                     </a>
 
                                 </div>
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="#" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6402/Sept-ABasin-Cover.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Colorado Resorts Hit Full Stride With September Festivals, Celebrations</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Colorado Resorts Hit Full Stride With September Festivals, Celebrations</p>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="#" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6401/Divide-Monarch-Colors.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Hiking On The Continental Divide As Seasons Change In Colorado</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Hiking On The Continental Divide As Seasons Change In Colorado</p>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="https://snow-country.com/news/autumns-splendor-starting-to-emerge-in-utahs-high-country/" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6404/Utah-Cottonwood-Cover.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Autumn's Splendor Starting To Emerge In Utah's High Country</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Autumn's Splendor Starting To Emerge In Utah's High Country</p>
                                         </div>
                                     </a>
 
                                 </div>
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="https://snow-country.com/news/indy-pass-continues-to-fill-out-its-roster-in-the-west/" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6403/Indy-Eyak-Cover.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Indy Pass Continues To Fill Out Its Roster In The West</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Indy Pass Continues To Fill Out Its Roster In The West</p>
                                         </div>
                                     </a>
 
                                 </div>
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="#" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6402/Sept-ABasin-Cover.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Colorado Resorts Hit Full Stride With September Festivals, Celebrations</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Colorado Resorts Hit Full Stride With September Festivals, Celebrations</p>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="border border-gray-200 rounded p-3">
+                                <div class="border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
                                     <a href="#" target="_blank">
                                         <img class="news-image  rounded mb-2" src="https://snow-country.com/images/easyblog_articles/6401/Divide-Monarch-Colors.jpg" alt="Recent SnoNews">
                                         <div class="space-y-1">
-                                            <p class="text-sm">Hiking On The Continental Divide As Seasons Change In Colorado</p>
+                                            <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">Hiking On The Continental Divide As Seasons Change In Colorado</p>
                                         </div>
                                     </a>
                                 </div>
@@ -540,6 +632,21 @@
                 </div>
             </footer>
         </div>
+        <!-- Trail Map Modal -->
+        <div id="trailMapModal" class="closeTrailMapModal fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm">
+            <div class="relative w-[95vw] h-[95vh] flex items-center justify-center">
+                <button class="closeTrailMapModal absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
+                <img src="http://snocountry.com/assets/images/resorts/trail-maps/508007.jpg" alt="Wachusett Mountain Trail Map" class="max-w-full max-h-full object-contain">
+            </div>
+        </div>
+        <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+        <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+        <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
         <script src="assets/js/menu.js"></script>
+        <script src="assets/js/donut-creator.js"></script>
+        <script src="assets/js/resort-page.js"></script>
+        <script src="assets/js/responsive-layout.js"></script>
+        <script src="assets/js/resort-chart.js"></script>
+
     </body>
 </html>

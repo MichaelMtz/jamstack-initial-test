@@ -439,5 +439,7 @@ footer #footer-container ul.social-icons li a:hover {
     stroke-dashoffset: var(--offset);
   }
 }
-
+#aura-image {
+ background-image: url("../images/background-gradient.jpeg"); 
+}
 /*# sourceMappingURL=sno-base.css.map */
