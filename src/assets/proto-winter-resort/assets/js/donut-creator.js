@@ -10,7 +10,7 @@ function createDonut(containerId, x, y, label) {
     const offset = circumference - (percentage / 100) * circumference;
 
     const svg = `
-    <svg class="donut-chart h-[155px]" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+    <svg class="donut-chart" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
         <!-- Background circle  -->
         <circle
             cx="${size / 2}"
