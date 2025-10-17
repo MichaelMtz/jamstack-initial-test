@@ -1,6 +1,36 @@
+/**
+ * Resort Page Ads Management System
+ * 
+ * This module handles the display of targeted advertisements on resort pages.
+ * It manages both general ads and resort-specific ads with date-based scheduling,
+ * random positioning, and analytics tracking.
+ * 
+ * Dependencies:
+ * - snowreport.js (provides _log and waitForElement functions)
+ * - Umami analytics (for tracking banner interactions)
+ * 
+ * @fileoverview Resort advertisement management and display system
+ * @author SnoCountry Development Team
+ * @version 1.0.0
+ */
+
 // Note: Do not need to declare _log, waitForElement, because it is included in snowreport.js.  But this needs included after snowreport.js.
 _log('resort-page-ads Initialized...');
 
+/**
+ * Displays a general advertisement for specific geographic regions
+ * 
+ * This function shows a general Upside fuel rewards ad for users in specific
+ * New England states and Quebec. The ad includes both desktop and mobile versions
+ * and is inserted into the snow report container.
+ * 
+ * @function checkForGeneralAd
+ * @returns {void}
+ * 
+ * @example
+ * // Called automatically when no resort-specific ads are available
+ * checkForGeneralAd();
+ */
 const checkForGeneralAd = () => {
   _log('resort-page-ads Setting general ad...');
   const targetList = [
@@ -22,6 +52,27 @@ const checkForGeneralAd = () => {
   }).catch( (e) => { console.log('Error waiting for Snow Report Container:',e);});
   //}
 };
+/**
+ * Validates if an advertisement should be displayed based on date range
+ * 
+ * Checks if the current date falls within the advertisement's active date range.
+ * If no dates are specified, the ad is considered valid. If dates are provided,
+ * the current date must be between start_date and end_date (inclusive).
+ * 
+ * @function checkAdDates
+ * @param {Object} iterResortAd - The advertisement object to validate
+ * @param {string} [iterResortAd.start_date] - Start date in YYYY-MM-DD format
+ * @param {string} [iterResortAd.end_date] - End date in YYYY-MM-DD format
+ * @returns {boolean} True if the ad should be displayed, false otherwise
+ * 
+ * @example
+ * const ad = {
+ *   start_date: '2025-01-01',
+ *   end_date: '2025-03-31',
+ *   img: 'example.jpg'
+ * };
+ * const shouldShow = checkAdDates(ad); // Returns true if current date is within range
+ */
 const checkAdDates = (iterResortAd) => {
   let showAd = true;
   if ((iterResortAd.start_date) && (iterResortAd.end_date)) {
@@ -37,6 +88,20 @@ const checkAdDates = (iterResortAd) => {
   return showAd;
 };
 
+/**
+ * Tracks banner display events using Umami analytics
+ * 
+ * Sends a tracking event to Umami analytics when a banner is displayed.
+ * If Umami is not yet loaded, it retries every second until it becomes available.
+ * The event name follows the pattern: "banner-resort-display-{bannerName}"
+ * 
+ * @function trackBanner
+ * @param {string} bannerName - The name/identifier of the banner being displayed
+ * @returns {void}
+ * 
+ * @example
+ * trackBanner('ski-cooper-co'); // Tracks "banner-resort-display-ski-cooper-co"
+ */
 const trackBanner = (bannerName) => {
   if (window.umami) {
     window.umami.track(`banner-resort-display-${bannerName}`);
@@ -47,11 +112,65 @@ const trackBanner = (bannerName) => {
   }
 };
 
+/**
+ * Generates a random integer between min (inclusive) and max (exclusive)
+ * 
+ * @function random
+ * @param {number} min - Minimum value (inclusive)
+ * @param {number} max - Maximum value (exclusive)
+ * @returns {number} Random integer between min and max
+ * 
+ * @example
+ * random(0, 2); // Returns 0 or 1
+ */
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+/**
+ * Generates random positioning order for advertisements
+ * 
+ * Returns an array of two CSS selectors in random order. This is used
+ * to randomize the placement of multiple ads with 'random' position type.
+ * The two positions are: top of resort name and bottom of footer resort ad.
+ * 
+ * @function randomPositions
+ * @returns {string[]} Array of two CSS selectors in random order
+ * 
+ * @example
+ * const positions = randomPositions();
+ * // Returns either:
+ * // ['#resort-name', '.footer-resort-ad .resort__container'] or
+ * // ['.footer-resort-ad .resort__container', '#resort-name']
+ */
 const randomPositions = () => {
   const randomIndex = random(0,2);
   return (randomIndex == 0) ? ['#resort-name','.footer-resort-ad .resort__container'] : ['.footer-resort-ad .resort__container','#resort-name'];
 };
+/**
+ * Filters resort advertisements to only include currently valid ones
+ * 
+ * Takes a list of resort advertisements and filters out any that are not
+ * currently active based on their date ranges. Uses checkAdDates() to
+ * validate each advertisement.
+ * 
+ * @function selectCurrentAd
+ * @param {Object[]} resortAdList - Array of advertisement objects
+ * @param {string} [resortAdList[].start_date] - Start date in YYYY-MM-DD format
+ * @param {string} [resortAdList[].end_date] - End date in YYYY-MM-DD format
+ * @param {string} resortAdList[].img - Image filename
+ * @param {string} resortAdList[].href - Link URL
+ * @param {string} resortAdList[].alt - Alt text for image
+ * @param {number} resortAdList[].width - Image width
+ * @param {number} resortAdList[].height - Image height
+ * @param {string} resortAdList[].position - Position type ('top', 'bottom', 'both', 'random')
+ * @returns {Object[]} Array of currently valid advertisement objects
+ * 
+ * @example
+ * const ads = [
+ *   { img: 'ad1.jpg', start_date: '2025-01-01', end_date: '2025-03-31' },
+ *   { img: 'ad2.jpg', start_date: '2025-06-01', end_date: '2025-08-31' }
+ * ];
+ * const validAds = selectCurrentAd(ads); // Returns only currently valid ads
+ */
 const selectCurrentAd = (resortAdList) => {
   _log('selectCurrentAd::resortAdList:',resortAdList);
   // 1st check how many are valid after date check
@@ -62,21 +181,50 @@ const selectCurrentAd = (resortAdList) => {
     }
   });
   const returnValidAds = validResortAds;
-  // if (validResortAds.length > 2) {
-  //   for (let ind=0; ind < 2; ind++) {
-  //     returnValidAds.push(validResortAds.splice(random(0,validResortAds.length),1));
-  //   }
-  // } else {
-  //   returnValidAds = validResortAds;
-  // }
   _log('selectCurrentAd::returnValidAds:',returnValidAds);
   return returnValidAds;
 };
 
+/**
+ * Main advertisement management system - executed when DOM is loaded
+ * 
+ * This is the primary function that manages resort-specific advertisements.
+ * It reads the resort ID from the page's data attribute, looks up corresponding
+ * ads in the currentResortAds database, validates them by date, and displays
+ * them in the appropriate positions on the page.
+ * 
+ * Special handling:
+ * - Resort ID '1' shows a special Pepsi "Resort of the Week" video
+ * - Other resort IDs show targeted banner advertisements
+ * - Fallback to general ads if no resort-specific ads are found
+ * 
+ * @event DOMContentLoaded
+ * @listens document#DOMContentLoaded
+ */
 document.addEventListener('DOMContentLoaded',()=> {
   _log('checkForResortAds begin');
 
   const resort_id = document.body.dataset.snowreport;
+  
+  /**
+   * Database of resort-specific advertisements
+   * 
+   * This object contains all available resort advertisements keyed by resort ID.
+   * Each resort can have multiple ads with different date ranges and positioning.
+   * 
+   * @type {Object.<string, Object>}
+   * @property {Object.<string, Object>} currentResortAds - Main ads database
+   * @property {Object[]} currentResortAds[resortId].ads - Array of ads for specific resort
+   * @property {string} currentResortAds[resortId].ads[].img - Image filename
+   * @property {string} currentResortAds[resortId].ads[].href - Link URL
+   * @property {number} currentResortAds[resortId].ads[].width - Image width in pixels
+   * @property {number} currentResortAds[resortId].ads[].height - Image height in pixels
+   * @property {string} currentResortAds[resortId].ads[].alt - Alt text for accessibility
+   * @property {string} currentResortAds[resortId].ads[].position - Position type ('top', 'bottom', 'both', 'random')
+   * @property {string} [currentResortAds[resortId].ads[].start_date] - Start date (YYYY-MM-DD)
+   * @property {string} [currentResortAds[resortId].ads[].end_date] - End date (YYYY-MM-DD)
+   * @property {string} [currentResortAds[resortId].ads[].comment] - Optional comment for management
+   */
   const currentResortAds = {
     719003 : {
       ads: [ {
@@ -1211,25 +1359,36 @@ document.addEventListener('DOMContentLoaded',()=> {
   };
   
 
+  // Process resort-specific advertisements
   if (currentResortAds[resort_id]) {
     let resortAds = currentResortAds[resort_id].ads;
     //_log(`checkForResortAds::resort_id: ${resort_id}: `,resortAds);
 
-
+    // Filter ads to only show currently valid ones
     resortAds = selectCurrentAd(resortAds);
+    
+    // Initialize variables for random positioning
     let randomAdPositions = [];
     let first = true;
     let adPosition = 0;
+    
+    // Process each valid advertisement
     resortAds.forEach((iterResortAd) => {
+      // Set up random positioning for the first random ad encountered
       if ((iterResortAd.position == 'random') && (first)) {
         first = false;
         randomAdPositions = randomPositions();
         _log('checkForResortAds: Random detected:');
         console.log(randomAdPositions);
       }
+      
       _log('checkForResortAds: applying ad');   
       console.log(iterResortAd);
+      
+      // Create sanitized alt text for analytics tracking
       const alt = iterResortAd.alt.replaceAll(' ', '-'); 
+      
+      // Generate HTML for the advertisement
       const html = `
       <div class="resort-ad">
         <a href="${iterResortAd.href}" target="_blank" data-umami-event="banner-resort-click-${alt}">
@@ -1238,6 +1397,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       </div>
       `;
       
+      // Position advertisement based on position type
       if ((iterResortAd.position === 'top') || (iterResortAd.position === 'both') ) {
         waitForElement('#resort-name').then((elResortName) => {
           elResortName.insertAdjacentHTML('beforebegin',html);
@@ -1258,59 +1418,26 @@ document.addEventListener('DOMContentLoaded',()=> {
         }).catch( () => { console.log('Error waiting for checkForResortAds:');});
         adPosition++;
       }
+      
+      // Track banner display for analytics
       trackBanner(alt);
     });
 
   } else {
+    // Fallback to general ads if no resort-specific ads found
     //checkForGeneralAd();
   }
 
+  // Handle special Pepsi Resort of the Week for resort ID '1'
   if (resort_id === '1') {
-    waitForElement('#resort-name').then((elTarget) => {
-      const html = `
-        <div id="pepsi" class="pepsi abasin">
-        
-            <div class="pepsi-content">
-                <div class="pepsi-header">
-                    <div class="pepsi-logo-container powderhorn">   
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 67" width="100" height="67" fill="#054166" class="logo-bogus-basin" role="img">
-                          <title>Bogus Basin</title>
-                          <path d="M16.33 28.46c0 .7-.156 1.167-.545 1.478a2.111 2.111 0 0 1-1.322.466h-1.166v-3.732h1.166c.545 0 1.011.155 1.4.466.311.234.467.7.467 1.322ZM16.718 37.403c0 .7-.155 1.244-.544 1.555-.389.389-.933.544-1.477.544h-1.322v-4.354h1.244c.233 0 .544.077.777.155.234.078.467.233.7.389.234.156.39.389.467.7.078.233.155.622.155 1.01Z M35.536 30.482c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644ZM50 0C22.395 0 0 14.774 0 33.048s22.395 33.126 50 33.126 50-14.774 50-33.048C99.922 14.775 77.527 0 50 0ZM21.928 41.135c-.388.856-1.01 1.633-1.71 2.1-.7.544-1.478.933-2.333 1.166a9.48 9.48 0 0 1-2.488.311H7.543V21.384h7.231c.7 0 1.478.078 2.333.233a6.137 6.137 0 0 1 2.333.933 5.422 5.422 0 0 1 1.789 1.945c.466.855.7 1.866.7 3.188 0 1.4-.312 2.566-.856 3.421-.389.544-.777 1.011-1.244 1.322.155.078.233.156.389.233.466.311.855.7 1.244 1.167.389.466.7 1.01.933 1.71.233.7.311 1.4.311 2.256-.155 1.322-.389 2.41-.777 3.343Zm19.44-3.11c-.388 1.477-1.01 2.8-1.788 3.888-.777 1.089-1.71 1.944-2.877 2.566-1.167.622-2.41.933-3.81.933s-2.722-.31-3.81-.933c-1.167-.622-2.1-1.477-2.878-2.566-.777-1.089-1.4-2.41-1.788-3.888a19.808 19.808 0 0 1-.622-4.977c0-1.788.233-3.421.622-4.899.389-1.477 1.01-2.8 1.788-3.888s1.711-1.944 2.877-2.488c1.167-.622 2.411-.855 3.81-.855 1.4 0 2.722.31 3.811.855 1.166.622 2.1 1.477 2.877 2.488.778 1.089 1.322 2.333 1.789 3.888.388 1.478.622 3.11.622 4.9a20.28 20.28 0 0 1-.622 4.976Zm18.119 5.132-.233.156a11.154 11.154 0 0 1-2.722 1.4c-1.089.388-2.333.544-3.733.544-1.477 0-2.799-.311-3.965-.933a8.523 8.523 0 0 1-2.955-2.567c-.778-1.088-1.4-2.332-1.867-3.81a19.182 19.182 0 0 1-.622-4.899c0-1.788.234-3.421.622-4.899.39-1.477 1.011-2.8 1.789-3.888.777-1.088 1.788-1.944 2.877-2.566 1.166-.622 2.41-.933 3.81-.933 1.556 0 2.955.311 4.044.855 1.089.545 1.944 1.245 2.566 2.1l.233.311-3.421 4.588-.467-.622c-.622-.933-1.555-1.322-2.644-1.322-.544 0-1.088.155-1.477.466-.467.311-.778.778-1.089 1.322-.31.545-.544 1.244-.7 2.022a13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.566.156.778.39 1.478.623 2.022.31.544.622 1.011 1.088 1.322.389.311.855.467 1.478.467.544 0 .933-.078 1.244-.234v-3.266h-2.41v-5.443h7.853v12.675h.078Zm18.273-7.154c0 1.244-.155 2.488-.466 3.577a8.67 8.67 0 0 1-1.4 2.955 6.093 6.093 0 0 1-2.566 2.022c-1.01.466-2.255.777-3.732.777-1.4 0-2.644-.233-3.655-.777a6.366 6.366 0 0 1-2.488-2.022c-.623-.855-1.09-1.866-1.4-2.955a17.383 17.383 0 0 1-.389-3.577V21.462h6.143v14.074c0 .623 0 1.167.078 1.711.078.467.155.933.311 1.244.156.312.311.545.622.7.233.156.544.234.933.234s.7-.078.933-.234c.234-.155.467-.389.622-.7a2.93 2.93 0 0 0 .311-1.244c.078-.544.078-1.088.078-1.71V21.461h6.066v14.541Zm14.697 4.899c-.389 1.01-1.01 1.788-1.633 2.488-.7.622-1.477 1.167-2.41 1.478-.856.31-1.867.466-2.8.466-1.4 0-2.721-.233-3.888-.777-1.166-.545-2.1-1.167-2.8-1.867l-.31-.31 3.188-4.666.467.466c.466.467.933.856 1.477 1.089.544.233 1.089.389 1.71.389.467 0 .856-.156 1.167-.467.311-.31.467-.7.467-1.244s-.156-1.01-.545-1.322c-.466-.389-1.166-.855-2.1-1.322-.621-.31-1.243-.622-1.788-1.01a8.738 8.738 0 0 1-1.555-1.4c-.466-.545-.777-1.167-1.01-1.944-.234-.7-.39-1.556-.39-2.566 0-1.322.234-2.489.7-3.422.467-.933 1.011-1.788 1.711-2.333.7-.622 1.478-1.088 2.41-1.322a7.463 7.463 0 0 1 2.567-.466c1.244 0 2.41.233 3.499.622 1.01.389 1.944 1.01 2.566 1.71l.311.312-3.266 4.587-.466-.544c-.311-.389-.7-.7-1.167-.855-.855-.389-1.788-.467-2.488.078-.311.233-.467.7-.467 1.322 0 .544.156.933.467 1.166.389.389 1.088.777 1.944 1.166a8.748 8.748 0 0 1 1.633.933 7.07 7.07 0 0 1 1.633 1.4c.544.544.933 1.167 1.244 1.944.311.778.544 1.71.544 2.722 0 1.4-.233 2.566-.622 3.499ZM34.915 28.46a3.093 3.093 0 0 0-.934-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-.933-.078-1.788-.234-2.566-.155-.933-.31-1.555-.622-2.1Zm.621 2.022c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Zm0 0c-.155-.777-.31-1.477-.622-2.022a3.093 3.093 0 0 0-.933-1.244 1.91 1.91 0 0 0-1.166-.389 1.91 1.91 0 0 0-1.166.39c-.39.31-.7.699-.934 1.243a10.41 10.41 0 0 0-.622 2.022 13.11 13.11 0 0 0-.233 2.566c0 .933.078 1.789.233 2.644.156.778.311 1.477.622 2.022.234.544.545.933.933 1.244.312.233.7.389 1.167.389.467 0 .778-.156 1.166-.389.39-.311.7-.7.933-1.244.234-.544.467-1.244.622-2.022.156-.778.234-1.71.234-2.566 0-1.01-.078-1.866-.234-2.644Z"></path>
-                        </svg>
-                        <img src="assets/images/ads/pepsi/2024-pepsi-logo.png" alt="Pepsi" class="logo-pepsi">
-                    </div>
-                    <div class="pepsi-copy">Resort of the Week</div>
-                   <!--
-                    <audio controls id="myaudio">
-                       <source src="assets/audio/pepsi/2024-03-28-China-Peak-ROTW.mp3" type="audio/mpeg">
-                    </audio>
-                    -->
-                </div>
-                <div class="pepsi-video">
-                  <iframe class="default" width="720" height="405" src="https://www.youtube.com/embed/aCaoGm4TQC8?autoplay=1&mute=1&rel=0&start=2" title="Pepsi ROTW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
-                  <!--
-                  <div class="pepsi-image">
-                          <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
-                  </div>
-                  -->
-                </div>
-            </div>    
-
-        </div><!-- end pepsi --> 
-      `;
-      elTarget.insertAdjacentHTML('beforebegin',html);
-    }).catch( () => { console.log('Error waiting for checkForResortAds:');});
-  } else {  //Skyview
-    waitForElement('#resort-name').then((elResortName) => {
-      const html = `
-     <div class="resort-ad">
-       <a href="${iterResortAd.href}" target="_blank">
-         <img class="img-resort-ad" src="assets/images/resort-ads/${iterResortAd.img}" alt="${iterResortAd.alt}" width="${iterResortAd.width}" height="${iterResortAd.height}"">
-       </a>
-     </div>
-     `;
-      elResortName.insertAdjacentHTML('beforebegin',html);
-    }).catch( () => { console.log('Error waiting for checkForResortAds:');});
+    // Note: Pepsi ROTW logic has been moved to pepsi-resort-week.js
+    // This ensures proper separation of concerns and maintainability
+    if (typeof initPepsiROTW === 'function') {
+      initPepsiROTW();
+    } else {
+      console.warn('Pepsi ROTW module not loaded. Please include pepsi-resort-week.js');
+    }
   }
+  
   
 });
