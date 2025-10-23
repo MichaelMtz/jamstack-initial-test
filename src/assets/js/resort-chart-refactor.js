@@ -105,7 +105,7 @@ class ResortChart {
     const month = date.getMonth();
     const day = date.getDate();
     // Ski season: Nov-Dec → 2023, Jan-May → 2024
-    const year = month >= 0 && month <= 4 ? 2024 : 2023;
+    const year = month >= 0 && month <= 6 ? 2024 : 2023;
     return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
   }
 
