@@ -534,7 +534,7 @@ class ResortDataManager {
       const baseDepthChart = new ResortChart(
         'baseDepthRace',
         baseDepthData,
-        this.resortData.resortName + ' Base Depth past 7 seasons',
+        ' Base Depth past 7 seasons',
         'Base Depth (inches)',
         200,
         'BaseDepth'
@@ -547,7 +547,7 @@ class ResortDataManager {
       const trailsChart = new ResortChart(
         'trailsRace',
         trailsData,
-        this.resortData.resortName + ' Open Trails past 7 seasons',
+        ' Open Trails past 7 seasons',
         'Number of Trails',
         200,
         'Trails'
@@ -592,9 +592,9 @@ class ResortDataManager {
 
       weatherHTML += `
         <div class="text-center">
-          <h3 class="font-semibold text-sm">${day.label}</h3>
+          <h3 class="font-bold text-sm">${day.label}</h3>
           <div class="my-2">${emoji}</div>
-          <p class="text-xs">${conditionText}</p>
+          <p class="text-xs font-semibold">${conditionText}</p>
           <p class="text-xs text-red-500">High: ${highTemp}°</p>
           <p class="text-xs text-blue-500">Low: ${lowTemp}°</p>
         </div>
