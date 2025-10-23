@@ -89,17 +89,17 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    // const homePageImages =  [
-    //   'johannes-waibel-WdBQHcIiSIw-unsplash.jpg',
-    //   'john-price-CrVKoYDDJIU-unsplash.jpg',
-    //   'tim-vanderhoydonck-QV58wLRuV6I-unsplash.jpg',
-    //   'mattias-olsson-nQz49efZEFs-unsplash.jpg',
-    //   'robson-hatsukami-morgan-5C6veSN6hec-unsplash.jpg',
-    //   'karsten-winegeart-pCS5YlrskC8-unsplash.jpg',
-    //   'maarten-duineveld-pmfJcN7RGiw-unsplash.jpg',
-    //   'zach-lucero-jYBtuN6aKg0-unsplash.jpg',
-    //   'powder-skier-slashing-alaska.jpg',
-    // ];
+    const homePageImages =  [
+      'johannes-waibel-WdBQHcIiSIw-unsplash.jpg',
+      'john-price-CrVKoYDDJIU-unsplash.jpg',
+      'tim-vanderhoydonck-QV58wLRuV6I-unsplash.jpg',
+      'mattias-olsson-nQz49efZEFs-unsplash.jpg',
+      'robson-hatsukami-morgan-5C6veSN6hec-unsplash.jpg',
+      'karsten-winegeart-pCS5YlrskC8-unsplash.jpg',
+      'maarten-duineveld-pmfJcN7RGiw-unsplash.jpg',
+      'zach-lucero-jYBtuN6aKg0-unsplash.jpg',
+      'powder-skier-slashing-alaska.jpg',
+    ];
       
     // 'Gondola-1600x1067.jpg', 
     // 'alex-lange-Ca9u0f1nDt0-unsplash.jpg',
@@ -109,21 +109,22 @@ const configurePepsiBackgroundImages = () => {
     // 'powder-skier-slashing-alaska.jpg'];
     
     //summer
-    const homePageImages = [
-      'jacob-thorson-fFYBRyC_OAk-unsplash.jpg', 
-      'barcs-tamas-BqSiMKeSiq8-unsplash.jpg',
-      'courtney-cook-SsIIw_MET0E-unsplash.jpg',
-      'dan-congdon-gJeusCuFyYA-unsplash.jpg',
-      'tim-foster-e0jQbe0tw3I-unsplash.jpg',
-      'jens-de-decker-W2vKVr4C3Xc-unsplash.jpg',
-      'barcs-tamas-xNUxUjhow68-unsplash.jpg',
-      'matthew-mcbrayer-fZL3EN4aJUI-unsplash.jpg',
-      'tim-foster-maeQsJtfAyg-unsplash.jpg',
-    ];
+    // const homePageImages = [
+    //   'jacob-thorson-fFYBRyC_OAk-unsplash.jpg', 
+    //   'barcs-tamas-BqSiMKeSiq8-unsplash.jpg',
+    //   'courtney-cook-SsIIw_MET0E-unsplash.jpg',
+    //   'dan-congdon-gJeusCuFyYA-unsplash.jpg',
+    //   'tim-foster-e0jQbe0tw3I-unsplash.jpg',
+    //   'jens-de-decker-W2vKVr4C3Xc-unsplash.jpg',
+    //   'barcs-tamas-xNUxUjhow68-unsplash.jpg',
+    //   'matthew-mcbrayer-fZL3EN4aJUI-unsplash.jpg',
+    //   'tim-foster-maeQsJtfAyg-unsplash.jpg',
+    // ];
     const randomIndex = random(0,homePageImages.length);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
-    elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/summer/${selectedImage}")`;
+    //elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/summer/${selectedImage}")`;
+    elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/${selectedImage}")`;
     //elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/telluride/${selectedImage}")`;
   }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
   
@@ -446,8 +447,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
-    //elStories.insertAdjacentHTML('afterbegin', html);
+    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    elStories.insertAdjacentHTML('afterbegin', html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -461,8 +462,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       </a>
       `).join('');
       
-    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
-    //elMobileStories.insertAdjacentHTML('beforeend', html);
+    //elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
+    elMobileStories.insertAdjacentHTML('beforeend', html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
