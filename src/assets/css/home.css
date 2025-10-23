@@ -31,7 +31,7 @@
 	
 
     .slider-container { padding-top: 0; }
-    .banner_carousel_container { padding-top: 100px; }
+    /* .banner_carousel_container { padding-top: 100px; } */
     .banner_carousel_container .carousel { z-index: 1; }
     #banner_carousel, .banner_carousel_container, #banner_carousel li { height: 100% !important; }
     ul.feature-boxes { top: 162px; }

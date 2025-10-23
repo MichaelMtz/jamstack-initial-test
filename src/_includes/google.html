@@ -1,3 +1,94 @@
+      
+      <script src="https://cdn.tailwindcss.com"></script> 
+      <link rel="stylesheet" href="assets/css/sno-base.css">
+
+      <script src="assets/js/menu-simple.js"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                midnight: {
+                  900: '#01162E',
+                  800: '#01203D',
+                  700: '#003460',
+                  600: '#044B81',
+                  500: '#0D568B',
+                  400: '#266E9F',
+                  300: '#529CC3'
+                },
+                earth: {
+                  800: '#174050',
+                  600: '#0C657C',
+                  400: '#442816',
+                  300: '#704121',
+                  200: '#AB6F44'
+                },
+                breadcrumbpill: '#2085F8',
+                border: 'hsl(214.3 31.8% 91.4%)',
+                input: 'hsl(214.3 31.8% 91.4%)',
+                ring: 'hsl(222.2 84% 4.9%)',
+                background: 'hsl(0 0% 100%)',
+                foreground: 'hsl(0, 0%, 26.67%)',
+                menu: 'hsl(0, 0%, 47.84%)',
+      
+                primary: {
+                  DEFAULT: 'hsl(222.2 47.4% 11.2%)',
+                  foreground: 'hsl(210 40% 98%)'
+                },
+                secondary: {
+                  DEFAULT: 'hsl(210 40% 96%)',
+                  foreground: 'hsl(222.2 84% 4.9%)'
+                },
+                muted: {
+                  DEFAULT: 'hsl(210 40% 96%)',
+                  foreground: 'hsl(215.4 16.3% 46.9%)'
+                },
+                accent: {
+                  DEFAULT: 'hsl(210 40% 96%)',
+                  foreground: 'hsl(222.2 84% 4.9%)'
+                },
+                popover: {
+                  DEFAULT: 'hsl(0 0% 100%)',
+                  foreground: 'hsl(222.2 84% 4.9%)'
+                },
+                card: {
+                  DEFAULT: 'hsl(0 0% 100%)',
+                  foreground: 'hsl(222.2 84% 4.9%)'
+                },
+                navtop: {
+                  DEFAULT: 'hsl(198.04, 100%, 31.96%)',
+                  foreground: 'hsl(210 40% 98%)'
+                }
+              }
+            }
+          }
+        }
+      </script>
+      <style>
+        
+        #navigation-menu {
+          font-family: "Brandon Grotesque", "Mulish", Arial, Sans-serif !important;
+        }
+        #navigation-menu:hover li {
+          opacity: 0.2;
+          transition: 0.5s;
+        }
+        #navigation-menu li:hover {
+          opacity: 1;
+          transition: border-width 0s ease-out, background-color 0.5s linear;
+        }
+        #navigation-menu li a {
+          transition: 0.5s;
+        }
+        #navigation-menu li:hover a {
+          color: hsl(198.04, 100%, 31.96%);
+          transition: 0.5s;
+        }
+        #navigation-menu .menu-dropdown:hover a:hover {
+          color: #ea580c !important;
+        }
+      </style>
       <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ8PTPGTSS"></script>
       <script>

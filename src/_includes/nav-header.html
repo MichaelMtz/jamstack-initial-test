@@ -1,271 +1,294 @@
-      <div class="">
-        <div class="section header">
-
-        <div class="wrap">
-
-            <div class="logo">
-
-                <a href="/" ><img alt="SnoCountry Logo" src="../../assets/images/snocountry_logo_v2.png" /></a> 
-                <!-- <a href="/"><img src="../../assets/images/SnoCountry_COM_logo_white.png" /></a> -->
-                <ul class="zone-switch"><div id="version-page" class="version-page">Skunkworks v2.0</div>
-
-                    <li id="servertime" class="winter-zone active ">n/a</li>
-                    <li id="browsertime" class="summer-zone "></li>
-
-                </ul>
-            
-
-            </div><!-- end logo -->
-
-            <div class="mobile-nav">
-              <div class="m-nav">
-                <div id="mobile-menu" class="mobile-menu"></div>
-              </div><!-- end nav -->
-
+    <nav class="bg-white sno-nav relative  border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="navigation-container" class="flex justify-between h-24">
+            <div class="sm:hidden">
+                <button id="mobile-menu-button" class="border-none mt-[15px] inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Hamburger icon -->
+                    <svg class="block h-12 w-12" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                    </svg>
+                    <!-- Close icon -->
+                    <svg class="hidden h-12 w-12" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
-            <!-- end mobile menu -->
+            <div class="flex w-full justify-center sm:justify-between">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="text-xl font-bold text-foreground hover:scale-[1.01] transition-transform duration-400">
+                        <img src="assets/images/SnoCountry-logo-simple.png" alt="SnoCountry Logo" class="h-16">
+                    </a>
+                </div>
+                <div class="hidden mt-3 sm:ml-6 sm:flex sm:space-x-0 sm:text-lg md:text-2xl ">
+                    <ul id="navigation-menu" class="flex items-center space-x-0 "><li class="relative group  main-menu-item ">
+    <button class="border-none flex items-center px-4 py-2 font-bold text-menu hover:scale-105 hover:text-primary hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none " data-dropdown-toggle="dropdown-0" aria-expanded="true" aria-haspopup="true">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-sky-600">Snow Conditions</span>
+        <svg class="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+    <div id="dropdown-0" class="menu-dropdown absolute left-0 top-full mt-1 bg-popover border border-border rounded-md shadow-lg opacity-0 invisible transform scale-95 transition-all duration-50 text-base z-50 min-w-max text-xl "><div class="grid grid-cols-3 gap-8 p-6"><div class="sno-menu-region-items flex flex-col min-w-[140px]"><a href="/snow-report/north-west/" class="font-semibold text-md text-foreground mb-3 uppercase tracking-wide hover:text-primary hover:bg-accent border-b px-2 py-1 transition-colors duration-50">Northwest</a><div><a href="/snow-report/alaska/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Alaska</a><a href="/snow-report/idaho/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Idaho</a><a href="/snow-report/oregon/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Oregon</a><a href="/snow-report/washington/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Washington</a></div></div><div class="sno-menu-region-items flex flex-col min-w-[140px]"><a href="/snow-report/rockies/" class="font-semibold text-md text-foreground mb-3 uppercase tracking-wide hover:text-primary hover:bg-accent border-b px-2 py-1 transition-colors duration-50">Rockies</a><div><a href="/snow-report/colorado/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Colorado</a><a href="/snow-report/montana/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Montana</a><a href="/snow-report/new-mexico/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">New Mexico</a><a href="/snow-report/utah/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Utah</a><a href="/snow-report/wyoming/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Wyoming</a></div></div><div class="sno-menu-region-items flex flex-col min-w-[140px]"><a href="/snow-report/north-east/" class="font-semibold text-md text-foreground mb-3 uppercase tracking-wide hover:text-primary hover:bg-accent border-b px-2 py-1 transition-colors duration-50">Northeast</a><div><a href="/snow-report/connecticut/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Connecticut</a><a href="/snow-report/massachusetts/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Massachusetts</a><a href="/snow-report/maine/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Maine</a><a href="/snow-report/new-hampshire/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">New Hampshire</a><a href="/snow-report/new-jersey/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">New Jersey</a><a href="/snow-report/new-york/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">New York</a><a href="/snow-report/pennsylvania/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Pennsylvania</a><a href="/snow-report/rhode-island/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Rhode Island</a><a href="/snow-report/vermont/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Vermont</a></div></div><div class="sno-menu-region-items flex flex-col min-w-[140px]"><a href="/snow-report/south-west/" class="font-semibold text-md text-foreground mb-3 uppercase tracking-wide hover:text-primary hover:bg-accent border-b px-2 py-1 transition-colors duration-50">Southwest</a><div><a href="/snow-report/arizona/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Arizona</a><a href="/snow-report/california/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">California</a><a href="/snow-report/nevada/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Nevada</a></div></div><div class="sno-menu-region-items flex flex-col min-w-[140px]"><a href="/snow-report/mid-west/" class="font-semibold text-md text-foreground mb-3 uppercase tracking-wide hover:text-primary hover:bg-accent border-b px-2 py-1 transition-colors duration-50">Midwest</a><div><a href="/snow-report/iowa/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Iowa</a><a href="/snow-report/illinois/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Illinois</a><a href="/snow-report/indiana/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Indiana</a><a href="/snow-report/michigan/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Michigan</a><a href="/snow-report/minnesota/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Minnesota</a><a href="/snow-report/missouri/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Missouri</a><a href="/snow-report/ohio/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Ohio</a><a href="/snow-report/south-dakota/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">South Dakota</a><a href="/snow-report/wisconsin/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Wisconsin</a></div></div><div class="sno-menu-region-items flex flex-col min-w-[140px]"><a href="/snow-report/south-east/" class="font-semibold text-md text-foreground mb-3 uppercase tracking-wide hover:text-primary hover:bg-accent border-b px-2 py-1 transition-colors duration-50">Southeast</a><div><a href="/snow-report/alabama/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Alabama</a><a href="/snow-report/maryland/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Maryland</a><a href="/snow-report/north-carolina/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">North Carolina</a><a href="/snow-report/tennessee/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Tennessee</a><a href="/snow-report/virginia/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Virginia</a><a href="/snow-report/west-virginia/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">West Virginia</a></div></div><div class="sno-menu-region-items flex flex-col min-w-[140px] colspan-3 col-span-3"><a href="#" class="font-semibold text-md text-foreground mb-3 uppercase tracking-wide hover:text-primary hover:bg-accent border-b px-2 py-1 transition-colors duration-50">Canada</a><div class="flex"><a href="/snow-report/alberta/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Alberta</a><a href="/snow-report/british-columbia/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">B. C.</a><a href="/snow-report/manitoba/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Manitoba</a><a href="/snow-report/new-brunswick/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">New Brunswick</a><a href="/snow-report/nova-scotia/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Nova Scotia</a><a href="/snow-report/ontario/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Ontario</a><a href="/snow-report/quebec/" class="block xyz text-md text-muted-foreground hover:text-foreground hover:bg-accent rounded-md px-2 py-1 transition-colors duration-50">Quebec</a></div></div></div></div>
+      </li><li class="relative group border-l hover:border-l-0 main-menu-item ">
+          <a href="/news-home/" class="flex items-center px-4 py-2  font-bold text-menu hover:text-primary hover:scale-105 hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ">
+              SnoCountry News
+          </a>
+      </li><li class="relative group border-l hover:border-l-0 main-menu-item ">
+          <a href="/mountain-life/" class="flex items-center px-4 py-2  font-bold text-menu hover:text-primary hover:scale-105 hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ">
+              Mountain Life
+          </a>
+      </li><li class="relative group border-l hover:border-l-0 main-menu-item ">
+          <a href="https://snow-report.org/login.php" class="flex items-center px-4 py-2  font-bold text-menu hover:text-primary hover:scale-105 hover:bg-accent/50 rounded-md transition-colors duration-50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ">
+              Admin
+          </a>
+      </li></ul>
+                </div>
+            </div>
 
-
-
-            <div class="topnav" id="topnav">
-
-                <a href="#" class="mobile-close"><i class="icon-remove-sign"></i> Close</a>
-
-                <ul class="navigation clearfix">
-                    <li class="menu-mountain-life" ><a href="/news-home/" ><div class="menu-header snox">SnoCountry <br/> News</div></a></li>
-                    <li class="menu-mountain-life" ><a href="/mountain-life/" ><div class="menu-header mountain-life-link">Mountain <br/> Life</div></a></li>
-
-                    <li class="menu-usa"><a href="#" onclick="return false;"><div class="menu-header">U S A<br/>Conditions</div></a>
-                        <div class="menu-dropdown" id="background-usa">
-                            <ul class="menu-group">
-                                <li class="">
-                                    <span><a href="snow-report/north-west">NORTHWEST</a></span>
-                                    <ul>
-                                        <li><a href="snow-report/alaska/">Alaska</a></li>
-                                        <li><a href="snow-report/idaho/">Idaho</a></li>
-                                        <li><a href="snow-report/oregon/">Oregon</a></li>
-                                        <li><a href="snow-report/washington/">Washington</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <ul class="menu-group">
-                                <li class="">
-                                    <span><a href="snow-report/rockies/">ROCKIES</a></span>
-                                    <ul>
-                                        <li><a href="snow-report/colorado/">Colorado</a></li>
-                                        <li><a href="snow-report/montana/">Montana</a></li>
-                                        <li><a href="snow-report/new-mexico/">New Mexico</a></li>
-                                        <li><a href="snow-report/utah/">Utah</a></li>
-                                        <li><a href="snow-report/wyoming/">Wyoming</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <ul class="menu-group">
-                                <li class="">
-                                    <span><a href="snow-report/north-east/">NORTHEAST</a></span>
-                                    <ul>
-                                        <li><a href="snow-report/connecticut/">Connecticut</a></li>
-                                        <li><a href="snow-report/massachusetts/">Massachusetts</a></li>
-                                        <li><a href="snow-report/maine/">Maine</a></li>
-                                        <li><a href="snow-report/new-hampshire/">New Hampshire</a></li>
-                                        <li><a href="snow-report/new-jersey/">New Jersey</a></li>
-                                        <li><a href="snow-report/new-york/">New York</a></li>
-                                        <li><a href="snow-report/pennsylvania/">Pennsylvania</a></li>
-                                        <li><a href="snow-report/rhode-island/">Rhode Island</a></li>
-                                        <li><a href="snow-report/vermont/">Vermont</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <ul class="menu-group">
-
-                                <li class="">
-
-                                    <span><a href="snow-report/south-west/">SOUTHWEST</a></span>
-                                    <ul>
-                                        <li><a href="snow-report/arizona/">Arizona</a></li>
-                                        <li><a href="snow-report/california/">California</a></li>
-                                        <li><a href="snow-report/nevada/">Nevada</a></li>
-                                    </ul>
-
-                                </li>
-
-                            </ul>
-
-                            
-
-                            <ul class="menu-group">
-                                <li class="">
-                                    <span><a href="snow-report/mid-west/">MIDWEST</a></span>
-                                    <ul>
-                                        <li><a href="snow-report/iowa/">Iowa</a></li>
-                                        <li><a href="snow-report/illinois/">Illinois</a></li>
-                                        <li><a href="snow-report/indiana/">Indiana</a></li>
-                                        <li><a href="snow-report/michigan/">Michigan</a></li>
-                                        <li><a href="snow-report/minnesota/">Minnesota</a></li>
-                                        <li><a href="snow-report/missouri/">Missouri</a></li>
-                                        <li><a href="snow-report/ohio/">Ohio</a></li>
-                                        <li><a href="snow-report/south-dakota/">South Dakota</a></li>
-                                        <li><a href="snow-report/wisconsin/">Wisconsin</a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-
-                            <ul class="menu-group">
-                                <li class="">
-                                    <span><a href="snow-report/south-east/">SOUTHEAST</a></span>
-                                    <ul>
-                                        <li><a href="snow-report/alabama/">Alabama</a></li>
-                                        <li><a href="snow-report/maryland/">Maryland</a></li>
-                                        <li><a href="snow-report/north-carolina/">North Carolina</a></li>
-                                        <li><a href="snow-report/tennessee/">Tennessee</a></li>
-                                        <li><a href="snow-report/virginia/">Virginia</a></li>
-                                        <li><a href="snow-report/west-virginia/">West Virginia</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="menu-feature"><div class="menu-feature-overlay"></div></div>
-
-                        </div>
-
-                    </li><!-- end parent -->
-
- 
-
-                     <li class="menu-canada">
-                        <a href="#" onclick="return false;"><div class="menu-header">Canadian<br/>Conditions</div></a>
-                        <div class="menu-dropdown">
-
-                            <ul class="menu-group">
-                                <li><a href="snow-report/alberta/">Alberta</a></li>
-                                <li><a href="snow-report/british-columbia/">British Columbia</a></li>
-                                <li><a href="snow-report/manitoba/">Manitoba</a></li>
-                                <li><a href="snow-report/new-brunswick/">New Brunswick</a></li>
-                                <li><a href="snow-report/nova-scotia/">Nova Scotia</a></li>
-                                <li><a href="snow-report/ontario/">Ontario</a></li>
-                                <li><a href="snow-report/quebec/">Quebec</a></li>
-                            </ul>
-                            <div class="menu-feature"><div class="menu-feature-overlay"></div></div>
-
-                        </div>
-
-                    </li>
-                    <!--                    
-                    <li class="menu-europe">
-                        <a href="#" onclick="return false;"><div class="menu-header">European<br/>Conditions</div></a>
-                        <div class="menu-dropdown">
-                            <ul class="menu-group">
-                                <li class="">
-                                    <ul>
-                                        <li><a href="snow-report/andorra">Andorra</a></li>
-                                        <li><a href="snow-report/austria">Austria</a></li>
-                                        <li><a href="snow-report/finland">Finland</a></li>
-                                        <li><a href="snow-report/france">France</a></li>
-                                        <li><a href="snow-report/germany">Germany</a></li>
-                                        
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="menu-group">
-                                <li class="">
-                                    <ul>
-                                        <li><a href="snow-report/italy">Italy</a></li>
-                                        <li><a href="snow-report/norway">Norway</a></li>
-                                        
-                                        <li><a href="snow-report/spain">Spain</a></li>
-                                        <li><a href="snow-report/sweden">Sweden</a></li>
-                                        <li><a href="snow-report/switzerland">Switzerland</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="menu-feature"><div class="menu-feature-overlay"></div></div>
-                        </div>
-                    </li> 
-
-
-
-                    <li class="menu-southern-hemisphere">
-                        <a href="#" onclick="return false;"><div class="menu-header">Southern <br/>Hemisphere</div></a>
-                        <div class="menu-dropdown">
-                            <ul class="menu-group">
-                                <li><a href="snow-report/argentina">Argentina</a></li>
-                                <li><a href="snow-report/australia">Australia</a></li>
-                                <li><a href="snow-report/chile">Chile</a></li>
-                                <li><a href="snow-report/new-zealand">New Zealand</a></li>
-                            </ul>
-                            <div class="menu-feature"><div class="menu-feature-overlay"></div></div>
-                        </div>
-                    </li>
-                -->
-                
-
-
-                    <!-- Deals
-                    <li class="menu-deals">
-                        <a href="#" onclick="return false;"><div class="menu-header">Great<br/>Deals</div></a>
-                        <div class="menu-dropdown">
-                            <ul class="menu-group">
-                                <li><a href="#">Deals listed by state</a></li>
-                                <li><a href="#">Lift Ticket Deals</a></li>
-                                <li><a href="#">Season Passes</a></li>
-                                <li><a href="#">Kids Ski FREE - Resort list</a></li>
-                                <li><a href="#">Learn To Ski & Ride</a></li>
-                                <li><a href="#">Vacation Deals</a></li>
-                            </ul>
-
-                            <div class="menu-feature"><div class="menu-feature-overlay"></div></div>
-                        </div>
-                    </li>
-                    deals -->
-
-
-
-                    <li class="menu-news">
-
-                        <a href="/news-home/" onclick="return false;"><div class="menu-header">Get<br/>News</div></a>
-
-                    
-
-                        <div class="menu-dropdown">
-                            <ul class="menu-group">
-                                <li><a href="/news-home/">Top Stories</a></li>
-
-                                <li><a href="/snonews-signup-page">eNewsletter Signup</a></li>
-                            </ul>
-                            <div class="menu-feature"><div class="menu-feature-overlay"></div></div>
-
-                        </div>
-
-                    </li><!-- end European -->
-
-                
-                    <!-- end 
-                    <li class="menu-gear">
-                        <a href="#" onclick="return false;"><div class="menu-header">Gear<br/>Guide</div></a>
-                        <div class="menu-dropdown">
-                            <ul class="menu-group">
-                                <li><a href="#">Gear News & Reviews</a></li>
-                                <li><a href="#">Alpine Equipment</a></li>
-                                <li><a href="#">AT & Backcountry Gear</a></li>
-                                <li><a href="#">Snowboard Gear</a></li>
-                                <li><a href="#">Road Bikes</a></li>
-                                <li><a href="#">Cyclocross / Gravel Bikes</a></li>
-                                <li><a href="#">Mountain Bikes</a></li>
-                            </ul>
-                            <div class="menu-feature"><div class="menu-feature-overlay"></div></div>
-                        </div>
-
-                    </li>
-                    gear -->
-                    <li class="menu-admin" ><a href="https://snow-report.org/login.php" target="_blank"><div class="menu-header admin-link">Admin <br/> Login</div></a></li>
-                </ul>
-            </div><!-- end top nav -->
-            <div class="clearx"></div>
-        </div><!-- end wrap -->
-        <div class="top-swoosh"></div><!-- end swoosh -->
-    </div><!-- end header --> 
-    <div class="clearx"></div>
-</div>        
+        </div>
+    </div>
+</nav>
+    <!-- Mobile Drawer -->
+<div id="mobile-drawer" class="fixed inset-0 z-50 lg:hidden hidden">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/20 backdrop-blur-sm" aria-hidden="true"></div>
+    
+        <!-- Drawer Panel -->
+        <div class="fixed right-0 top-0 h-full w-80 bg-background border-l border-border shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <!-- Drawer Header -->
+            <div class="flex items-center justify-between p-4 border-b border-border">
+                <span class="text-lg font-semibold text-foreground">Menu</span>
+                <button id="close-drawer-button" class="border-none inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+    
+            <!-- Drawer Content -->
+            <div class="p-4 overflow-y-auto h-full text-lg">
+                <div id="mobile-navigation-menu" class="space-y-2"><div class="border-b border-border last:border-b-0">
+        <button class="border-none flex items-center justify-between w-full px-3 py-4 text-left !text-navtop hover:bg-accent rounded-md transition-colors duration-200" data-mobile-toggle="mobile-section-0" aria-expanded="false">
+            <span class="font-medium">Snow Conditions</span>
+            <svg class="h-5 w-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+        <div id="mobile-section-0" class="hidden pl-4 pb-2">
+            
+            <div class="mb-4">
+                <a href="/snow-report/north-west/" class="block font-semibold text-md text-menu mb-2 hover:text-primary transition-colors duration-150 border-b border-border pb-1">
+                    Northwest
+                </a>
+                <div class="space-y-1 ml-2">
+        
+                <a href="/snow-report/alaska/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Alaska
+                </a>
+            
+                <a href="/snow-report/idaho/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Idaho
+                </a>
+            
+                <a href="/snow-report/oregon/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Oregon
+                </a>
+            
+                <a href="/snow-report/washington/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Washington
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-4">
+                <a href="/snow-report/rockies/" class="block font-semibold text-md text-menu mb-2 hover:text-primary transition-colors duration-150 border-b border-border pb-1">
+                    Rockies
+                </a>
+                <div class="space-y-1 ml-2">
+        
+                <a href="/snow-report/colorado/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Colorado
+                </a>
+            
+                <a href="/snow-report/montana/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Montana
+                </a>
+            
+                <a href="/snow-report/new-mexico/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    New Mexico
+                </a>
+            
+                <a href="/snow-report/utah/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Utah
+                </a>
+            
+                <a href="/snow-report/wyoming/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Wyoming
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-4">
+                <a href="/snow-report/north-east/" class="block font-semibold text-md text-menu mb-2 hover:text-primary transition-colors duration-150 border-b border-border pb-1">
+                    Northeast
+                </a>
+                <div class="space-y-1 ml-2">
+        
+                <a href="/snow-report/connecticut/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Connecticut
+                </a>
+            
+                <a href="/snow-report/massachusetts/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Massachusetts
+                </a>
+            
+                <a href="/snow-report/maine/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Maine
+                </a>
+            
+                <a href="/snow-report/new-hampshire/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    New Hampshire
+                </a>
+            
+                <a href="/snow-report/new-jersey/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    New Jersey
+                </a>
+            
+                <a href="/snow-report/new-york/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    New York
+                </a>
+            
+                <a href="/snow-report/pennsylvania/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Pennsylvania
+                </a>
+            
+                <a href="/snow-report/rhode-island/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Rhode Island
+                </a>
+            
+                <a href="/snow-report/vermont/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Vermont
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-4">
+                <a href="/snow-report/south-west/" class="block font-semibold text-md text-menu mb-2 hover:text-primary transition-colors duration-150 border-b border-border pb-1">
+                    Southwest
+                </a>
+                <div class="space-y-1 ml-2">
+        
+                <a href="/snow-report/arizona/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Arizona
+                </a>
+            
+                <a href="/snow-report/california/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    California
+                </a>
+            
+                <a href="/snow-report/nevada/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Nevada
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-4">
+                <a href="/snow-report/mid-west/" class="block font-semibold text-md text-menu mb-2 hover:text-primary transition-colors duration-150 border-b border-border pb-1">
+                    Midwest
+                </a>
+                <div class="space-y-1 ml-2">
+        
+                <a href="/snow-report/iowa/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Iowa
+                </a>
+            
+                <a href="/snow-report/illinois/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Illinois
+                </a>
+            
+                <a href="/snow-report/indiana/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Indiana
+                </a>
+            
+                <a href="/snow-report/michigan/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Michigan
+                </a>
+            
+                <a href="/snow-report/minnesota/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Minnesota
+                </a>
+            
+                <a href="/snow-report/missouri/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Missouri
+                </a>
+            
+                <a href="/snow-report/ohio/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Ohio
+                </a>
+            
+                <a href="/snow-report/south-dakota/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    South Dakota
+                </a>
+            
+                <a href="/snow-report/wisconsin/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Wisconsin
+                </a>
+            
+                </div>
+            </div>
+        
+            <div class="mb-4">
+                <a href="/snow-report/south-east/" class="block font-semibold text-md text-menu mb-2 hover:text-primary transition-colors duration-150 border-b border-border pb-1">
+                    Southeast
+                </a>
+                <div class="space-y-1 ml-2">
+        
+                <a href="/snow-report/alabama/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Alabama
+                </a>
+            
+                <a href="/snow-report/maryland/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Maryland
+                </a>
+            
+                <a href="/snow-report/north-carolina/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    North Carolina
+                </a>
+            
+                <a href="/snow-report/tennessee/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Tennessee
+                </a>
+            
+                <a href="/snow-report/virginia/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    Virginia
+                </a>
+            
+                <a href="/snow-report/west-virginia/" class="block text-md text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded px-2 py-1 transition-colors duration-150">
+                    West Virginia
+                </a>
+            
+                </div>
+            </div>
+        
+        </div>
+    </div><div class="border-b border-border last:border-b-0">
+        <a href="/news-home/" class="block px-3 py-4 text-navtop hover:bg-accent rounded-md transition-colors duration-200 font-medium ">
+            SnoCountry News
+        </a>
+    </div><div class="border-b border-border last:border-b-0">
+        <a href="/mountain-life/" class="block px-3 py-4 text-navtop hover:bg-accent rounded-md transition-colors duration-200 font-medium ">
+            Mountain Life
+        </a>
+    </div><div class="border-b border-border last:border-b-0">
+        <a href="/admin/" class="block px-3 py-4 text-navtop hover:bg-accent rounded-md transition-colors duration-200 font-medium ">
+            Admin
+        </a>
+    </div></div>
+            </div>
+        </div>
+    </div>
