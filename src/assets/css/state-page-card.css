@@ -17,11 +17,14 @@ body {
   font-family: "Mulish", sans-serif;
 }
 .resorts-container .resorts-container__header {
+  margin-bottom: 14px;
   font-family: "Mulish", sans-serif;
   color: #fff;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   order: 1;
+  font-size: 46px;
+  line-height: 50px;
 }
 .resorts-container .filter-container {
   max-width: 1200px;
@@ -50,8 +53,12 @@ body {
   }
 }
 .resorts-container .filter-container button {
-  border-radius: 14px;
+  border-radius: 18px;
   color: #004B8B;
+  background: white;
+  padding: 6px 13px;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 @media screen and (max-width: 585px) {
   .resorts-container .filter-container button {
@@ -1215,6 +1222,11 @@ body {
 .bg-groomed {
   background-color: #f5803e !important;
   background-color: #414756 !important;
+}
+
+.resort-ad {
+  display: grid;
+  place-items: center;
 }
 
 /*# sourceMappingURL=state-page-card.css.map */

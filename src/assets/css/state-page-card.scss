@@ -28,11 +28,14 @@ body {
     font-family: $snowReportFont;
     
     .resorts-container__header {
+        margin-bottom: 14px;
         font-family: $snowReportFont;
         color:#fff;
         text-align: center;
-        font-weight: 400;
+        font-weight: 600;
         order:1;
+        font-size: 46px;
+        line-height: 50px;
     }
     .filter-container {
       max-width: 1200px;
@@ -54,8 +57,12 @@ body {
         gap:10px
       }
       button {
-        border-radius: 14px;
+        border-radius: 18px;
         color: #004B8B;
+        background: white;
+        padding: 6px 13px;
+        font-weight: 600;
+        font-size: 1.2rem;
         @include bpmax(585px) {
           flex: 0 1 88px;
           font-size:10px;
