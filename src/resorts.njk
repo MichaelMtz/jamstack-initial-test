@@ -196,28 +196,13 @@ permalink: /snow-report/{{ resorts.stateName }}/index.html
 
   
       <!-- Archive -->
-      <div id="card-archive" class="sno-class mx-auto flex flex-col items-center gap-6">
-      
-        <!-- Trails Chart Card -->
-          <div class="bg-gradient-to-br chart-card from-sky-200 p-6 rounded-lg shadow-lg shadow-slate-400 to-sky-50 via-sky-100">
-            <div class="flex justify-between items-center gap-2 mb-2">
-              <div class="flex-1 flex items-center gap-2">
-                <input type="range" id="sliderTrails" min="0" max="100" value="0" class="flex-1 cursor-pointer">
-              </div>
-              <div class="flex gap-2">
-                <button id="playTrails" class="bg-gradient-to-r from-midnight-900 to-midnight-700 hover:scale-105 px-3 py-1 rounded text-sm text-white">Play</button>
-                <button id="pauseTrails" class="bg-gradient-to-r from-midnight-500 to-midnight-300  hover:scale-105 px-3 py-1 rounded text-sm text-white">Pause</button>
-              </div>
-            </div>
-            <div id="trailsRace" style="width: 100%; height: calc(100% - 40px);"></div>
-          </div>
-        </div>
-      
+      <div id="card-archive" class="sno-class container mx-auto flex flex-col items-center gap-6">
         <!-- Base Depth Chart Card -->
         <div class="bg-gradient-to-br chart-card from-sky-200 p-6 rounded-lg shadow-lg shadow-slate-400 to-sky-50 via-sky-100">
           <div class="flex justify-between items-center gap-2 mb-2">
-            <div class="flex-1 flex items-center gap-2">
+            <div class="flex-1 flex flex-col gap-1">
               <input type="range" id="sliderBaseDepth" min="0" max="100" value="0" class="flex-1 cursor-pointer">
+              <div id="ticksBaseDepth" class="slider-ticks"></div>
             </div>
             <div class="flex gap-2">
               <button id="playBaseDepth" class="bg-gradient-to-r from-midnight-900 to-midnight-700 hover:scale-105 px-3 py-1 rounded text-sm text-white">Play</button>
@@ -226,10 +211,24 @@ permalink: /snow-report/{{ resorts.stateName }}/index.html
           </div>
           <div id="baseDepthRace" style="width: 100%; height: calc(100% - 40px);"></div>
         </div>
-  
-
-  
-    </div>
+      
+        <!-- Trails Chart Card -->
+        <div class="bg-gradient-to-br chart-card from-sky-200 p-6 rounded-lg shadow-lg shadow-slate-400 to-sky-50 via-sky-100">
+          <div class="flex justify-between items-center gap-2 mb-2">
+            <div class="flex-1 flex flex-col gap-1">
+              <input type="range" id="sliderTrails" min="0" max="100" value="0" class="flex-1 cursor-pointer">
+              <div id="ticksTrails" class="slider-ticks"></div>
+            </div>
+            <div class="flex gap-2">
+              <button id="playTrails" class="bg-gradient-to-r from-midnight-900 to-midnight-700 hover:scale-105 px-3 py-1 rounded text-sm text-white">Play</button>
+              <button id="pauseTrails" class="bg-gradient-to-r from-midnight-500 to-midnight-300  hover:scale-105 px-3 py-1 rounded text-sm text-white">Pause</button>
+            </div>
+          </div>
+          <div id="trailsRace" style="width: 100%; height: calc(100% - 40px);"></div>
+        </div>
+      </div><!-- card archive -->
+      
+    </div><!-- left  columns -->
   
     <!-- ---------------------------------------------------------------Right Column --------------------------------------------------------------- -->
     <div id="right-column" class="space-y-6 lg:col-span-2">
