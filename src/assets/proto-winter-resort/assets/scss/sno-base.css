@@ -359,6 +359,7 @@ a:focus {
 }
 #navigation-menu li a {
   transition: 0.5s;
+  color: #0079c1;
 }
 #navigation-menu li:hover a {
   color: hsl(198.04, 100%, 31.96%);

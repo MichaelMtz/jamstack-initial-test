@@ -551,7 +551,7 @@ ul.feature-boxes li .fly-box {
  #offers .deals h6 { color: #fff; font-size: 19px; }
  #offers .deals span.small { font-size: 14px; font-weight: 300; }
   #offers .deals .deals-desc {  overflow: hidden; opacity: 0; visibility: hidden; position: absolute; background: url(../images/blue-bg.png);  top: 0px;  left: 0px; height: 100%; width: 100%; padding: 10px; display:grid; place-items: center; }
- #offers .deals .deals-content { background: url(../images/small-shadow.png) repeat-x top; padding: 10px; position: absolute; bottom: 0; width: 100%; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  }
+ #offers .deals .deals-content {  padding: 10px; position: absolute; bottom: 0; width: 100%; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  }
   #offers .deals:hover .deals-desc { opacity: 1; visibility: visible; top: 0; left: 0; }
   #offers .deals:hover .deals-content { opacity: 0; visibility: hidden; }
   #offers .deals.featured-deal { width: 510px;  }
@@ -642,7 +642,7 @@ table td.weather{
 }
  .quick-cams .qcam-list li {  width: 320px; height: 182px; float: left; display: block; margin: 0 10px 10px 0; position: relative; overflow: hidden; }
   .quick-cams .qcam-list li a { height: 100%; width: 100%; float: left; }
- .quick-cams .qcam-list li .qcam-name {  position: absolute; bottom: 0; padding: 10px; background: url(../images/small-shadow.png) repeat-x top; color: #fff; height: auto; width: 100%; font-size: 11px;  }
+ .quick-cams .qcam-list li .qcam-name {  position: absolute; bottom: 0; padding: 10px;  color: #fff; height: auto; width: 100%; font-size: 11px;  }
   .quick-cams .qcam-list li:hover .qcam-name { bottom: -40px; } 
   
 .quick-charts div.qchart { width: 90px; height: 90px; background: transparent; -moz-border-radius: 110em;  -webkit-border-radius: 110em; border-radius: 110em; border: 3px #ddd solid; padding: 30px 10px; margin: 6px; cursor: pointer; }
@@ -761,7 +761,7 @@ h1.page-title { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bott
 .article-crumbs ul li.breadcrumbhome a { color: #fff; }
 .contentImage { background: #fff;  margin: 6px 0 25px 25px; width: 300px; position: relative; overflow: hidden; }
 .contentImage img { margin: 0 !important; }
-.contentImage .contentCaption { position: absolute; bottom: 0; padding: 10px; background: url(../images/small-shadow.png) repeat-x top; height: auto; width: 100%; }
+.contentImage .contentCaption { position: absolute; bottom: 0; padding: 10px;  height: auto; width: 100%; }
 .contentImage .contentCaption a, .contentImage .contentCaption { color: #fff; font-weight: 800; }
 .article-content  hr { border: solid #eee; border-width: 0px 0 1px;  margin: 0px 0 12px; height: 0; padding-top: 10px; } 
 .side-float { float: right; width: 20%;   margin: 0px 0 80px 3%; }
@@ -788,7 +788,7 @@ h1.page-title { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bott
 .side-float .deals h6 { color: #fff; font-size: 15px; }
 .side-float .deals span.small { font-size: 14px; font-weight: 300; }
 .side-float .deals .deals-desc {  overflow: hidden; opacity: 0; visibility: hidden; position: absolute; background: url(../images/blue-bg.png);  top: 0px;  left: 0px; height: 100%; width: 100%; padding: 10px;  }
-.side-float .deals .deals-content { background: url(../images/small-shadow.png) repeat-x top; padding: 10px; position: absolute; bottom: 0; width: 100%; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  }
+.side-float .deals .deals-content {  padding: 10px; position: absolute; bottom: 0; width: 100%; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  }
 .side-float .deals:hover .deals-desc { opacity: 1; visibility: visible; top: 0; left: 0; }
 .side-float .deals:hover .deals-content { opacity: 0; visibility: hidden; }
 
@@ -896,7 +896,7 @@ table th.name { width: 35%; } table th.hours { width: 50%; } table td.hours p { 
 .webcams-side { margin-bottom: 20px; position: relative; }
 .webcams-side ul { height: 200px; width: 100%; overflow: hidden; }
 .webcams-side ul li { background: #373737; background-size: 100% auto; height: 200px; width: 100%; position: relative; float: left; display: block;  }
-.webcams-side ul li div.side-cams-desc { position: absolute; width: 100%; height: auto; bottom: 0; padding: 10px; background: url(../images/small-shadow.png) top; }
+.webcams-side ul li div.side-cams-desc { position: absolute; width: 100%; height: auto; bottom: 0; padding: 10px;  }
 .webcams-side ul li a { color: #fff; height: 100%;width: 100%; float: left;  }
 /*.webcams-side ul li:hover  div.side-cams-desc { bottom: -40px; }*/
 

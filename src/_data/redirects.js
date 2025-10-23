@@ -80,7 +80,7 @@ module.exports = async function() {
       iter["resortNameProperLowerCase"] = iterName[1].replace(/-/gi, '');
       iter["stateNameProper"] = upperCaseWords(iterName[1]);
       iter["snowreport"] = iter.resort_id;
-      iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
+      //iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
 
       //console.log('>> redirects:',iter);
     }

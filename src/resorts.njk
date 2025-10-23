@@ -7,400 +7,472 @@ pagination:
 permalink: /snow-report/{{ resorts.stateName }}/index.html
 ---
 
-<div id="resort-top" class="conditions">
-      <nav class="nav-breadcrumbs"> 
-        {% for iterBreadCrumb in resorts.breadCrumbList %}
-          <a class="breadcrumb-link" href="{{ iterBreadCrumb.link }}">{{ iterBreadCrumb.abbrName }}</a>
-        {% endfor %}
-        {% if resorts.entryType != 'resort' %}
-          <a class="breadcrumb-link xc-link" href="snow-report/{{ resorts.stateName }}-cross-country"> {{ resorts.stateNameProper }} XC</a>
-        {% endif %}
-      </nav>
-    <div id="container-snow-reports" class="container-snow-reports sort-default">
-      <div class='snow-report-container'>
-          <div class='left-col'>
-              <nav class='nav-sidebar-left'>
-                  <a href='[memberWebSiteLink]' target='_resort'>
-                      <img src='[logo]' class='resort-logo' width='140px' alt='[resortName] logo' title='[resortName] logo'>
-                  </a>
-                  <div class='flex-box-vert'>
-                       <a class='nav-item-link first' data-section='#resort-top'>Top of page</a>
-                      <a class='nav-item-link' data-section='#conditions__details'>Snow Report</a>
-                      <a class='nav-item-link' data-section='#conditions-archive'>Conditions Archive</a>
-                      <!-- <a class='nav-item-link' data-section='#mountain-status'>Mountain Status</a>
-                      <a class='nav-item-link' data-section='#mountain-cams'>Mountain Cams</a> -->
-                      <a class='nav-item-link' data-section='#resort-maps'>Resort Maps</a>
-                      <div class='container-state-links'>
-                          [state-links]
-                      </div>
-                  </div>
-              </nav>
-          </div>
-          <div class='right-col resort'>
-              <article aria-label='Resort Report'>
-                  <section aria-label='Resort  Message'>
-                      <div id="resort-namex" class='resort__header covid'>
-                          <a class='mobile' href='[memberWebSiteLink]'>
-                              <img src='[logo]' class='resort-logo' width='100px' alt='[resortName]' title='[resortName]'>
-                          </a>
-                          <h1>{{ resorts.resortName }}</h1>
-                          [blurb]
-                      </div>
-                  </section>
-      
-                  [projectedOpenDate]
-      
-                  <section aria-label='Resort Message'>
-                      <div class='resort__container comments'>
-                          <h2 id='comments__messsage'>Resort Info </h2>
-                          <div class='resort__container__message'>
-                              [resortHours]
-                              [resortContact]
-                              [Comments]
-                              [Events]
-                              [Deals]
-      
-                          </div>
-                      </div> <!-- resort__container covid -->
-                  </section>
-                  [uphill]
-                  <section aria-label='Resort Conditions'>
-                      <div class='resort__container conditions'>
-                          <h2 id='conditions__details'>snow report
-                              <span class='last-updated'>
-                                  Last Update at [ReportDateTime]
-                              </span>
-                          </h2>
-                          <div class='conditions__wrapper'>
-                              <div class='current_weather'>
-                                <div class="simple-weather-wrapper">
-                                  <h3>Current Weather:</h3>
-                                  <div class='current_weather__container'>
-                                      <div class='weather_icon'>
-                                          <span class='conditions icon [weather-icon]'>
-                                              <span class='conditions-label'>[weatherToday_Condition]</span>
-                                          </span>
-                                      </div>
-                                      <div class='weather_temp'>
-                                          <span class='temperature'>[weatherToday_Temperature_High]
-                                              <span class='degree-unit'>°F</span>
-                                          </span>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="simple-conditions-wrapper">
-                                  <h3>Snow Conditions:</h3>
-                                  <span class='copy'>[primarySurfaceCondition] [secondarySurfaceCondition]</span>
-                                </div>
-      
-                              </div>
-                              <div class='snowfall_open_terrain'>
-                                <div class="simple-snowfall-wrapper">
-                                  <h3>Recent Snowfall:</h3>
-                                  <div class='recent_snowfall'>
-                                      [snowfall]
-                                  </div>
-                                </div>
-                                  <div class='open_terrain'>
-                                      <div>
-                                          <h3>Season Total <br/>Snowfall:</h3>
-                                           <div class='item'>
-                                              <span class='value'>[seasonTotal]<span class='degree-unit'>in</span> </span>
-                                          </div>
-                                      </div>
-                                      <div>
-                                          <h3>Base:</h3>
-                                           <div class='item'>
-                                              <span class='value'>[avgBaseDepthMin] - [avgBaseDepthMax]<span class='degree-unit'>in</span> </span>
-                                          </div>
-                                      </div>
-                                      <div>
-                                          <h3>Open Terrain:</h3>
-                                           <div class='item'>
-                                              <span class='value'>[openDownHillPercent]<span class='degree-unit'>%</span> </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class='open_terrain'>
-                                      [OPEN-TERRAIN]
-                                  </div><!-- open_terrain -->
-                              </div>
-                          </div>
-                          <div class='conditions__forecast'>
-                              <h3> Weather Forecast:</h3>
-                              <div class='weather-forecast'>
-      
-                                  <div class='weather-forecast__item'>
-                                      <div class='weather-forecast__day'>
-                                          <div class='day_name'>
-                                              [weatherTomorrow_day]
-                                          </div>
-                                      </div>
-                                      <div class='weather_icon'>
-                                          <span class='conditions icon [weather-icon-weatherTomorrow]' alt='[weatherTomorrow_Condition]'>
-                                              <span class='conditions-label'>[weatherTomorrow_Condition]</span>
-                                          </span>
-                                      </div>
-                                      <div class='weather-forecast__temps'>
-                                          <div class='temps__high'>
-                                              <div class='label'>High:</div>
-                                              <div class='value'>[weatherTomorrow_Temperature_High]°F</div>
-                                          </div>
-                                          <div class='temps__low'>
-                                              <div class='label'>Low:</div>
-                                              <div class='value'>[weatherTomorrow_Temperature_Low]°F</div>
-                                          </div>
-                                      </div>
-                                  </div>
-      
-                                  <div class='weather-forecast__item'>
-                                      <div class='weather-forecast__day'>
-                                          <div class='day_name'>
-                                              [weatherDayAfterTomorrow_day]
-                                          </div>
-                                      </div>
-                                      <div class='weather_icon'>
-                                          <span class='conditions icon [weather-icon-weatherDayAfterTomorrow]' alt='[weatherDayAfterTomorrow_Condition]'>
-                                              <span class='conditions-label'>[weatherDayAfterTomorrow_Condition]</span>
-                                          </span>
-                                      </div>
-                                      <div class='weather-forecast__temps'>
-                                          <div class='temps__high'>
-                                              <div class='label'>High:</div>
-                                              <div class='value'>[weatherDayAfterTomorrow_Temperature_High]°F</div>
-                                          </div>
-                                          <div class='temps__low'>
-                                              <div class='label'>Low:</div>
-                                              <div class='value'>[weatherDayAfterTomorrow_Temperature_Low]°F</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class='weather-forecast__item'>
-                                      <div class='weather-forecast__day'>
-                                          <div class='day_name'>
-                                              [weatherDay4_day]
-                                          </div>
-                                      </div>
-                                      <div class='weather_icon'>
-                                          <span class='conditions icon [weather-icon-weatherDay4]' alt='[weatherDay4_Condition]'>
-                                              <span class='conditions-label'>[weatherDay4_Condition]</span>
-                                          </span>
-                                      </div>
-                                      <div class='weather-forecast__temps'>
-                                          <div class='temps__high'>
-                                              <div class='label'>High:</div>
-                                              <div class='value'>[weatherDay4_Temperature_High]°F</div>
-                                          </div>
-                                          <div class='temps__low'>
-                                              <div class='label'>Low:</div>
-                                              <div class='value'>[weatherDay4_Temperature_Low]°F</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class='weather-forecast__item'>
-                                      <div class='weather-forecast__day'>
-                                          <div class='day_name'>
-                                              [weatherDay5_day]
-                                          </div>
-                                      </div>
-                                      <div class='weather_icon'>
-                                          <span class='conditions icon [weather-icon-weatherDay5]' alt='[weatherDay5_Condition]'>
-                                              <span class='conditions-label'>[weatherDay5_Condition]</span>
-                                          </span>
-                                      </div>
-                                      <div class='weather-forecast__temps'>
-                                          <div class='temps__high'>
-                                              <div class='label'>High:</div>
-                                              <div class='value'>[weatherDay5_Temperature_High]°F</div>
-                                          </div>
-                                          <div class='temps__low'>
-                                              <div class='label'>Low:</div>
-                                              <div class='value'>[weatherDay5_Temperature_Low]°F</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div><!-- weather-forecast -->
-      
-                          </div>
-                      </div>
-                  </section>
-                  <section aria-label='Resort Archive Conditions'>
-                      <div id='conditions-archive' class='resort__container archive'>
-                      <h2>Snow Conditions Archive:</h2>
-                      <div class='xcontain'>
-      
-                      <div class='tabs'>
-      
-                        <input type='radio' id='tab1' name='tab-control' checked>
-                        <input type='radio' id='tab2' name='tab-control'>
-                        <ul>
-                          <li title='Base Depth Archive'><label for='tab1' role='button'><span>Base Depth Archive</span></label></li>
-                          <li title='Trails Archive' ><label for='tab2' role='button'><span>Open Trails Archive</span></label></li>
-                        </ul>
-      
-                        <div class='slider'><div class='indicator'></div></div>
-                          <div class='content'>
-                              <section>
-                                  <div class='chart-flex'>
-                                      <div class='contain placeholder three33'>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-0'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-1'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-2'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-3'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-4'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-5'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-6'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-7'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-8'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-9'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-10'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='baseDepthChart-11'></canvas>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </section>
-      
-                              <section>
-                                  <div class='chart-flex'>
-                                      <div class='contain placeholder three33'>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-0'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-1'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-2'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-3'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-4'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-5'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-6'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-7'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-8'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-9'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-10'></canvas>
-                                              </div>
-                                          </div>
-                                          <div class='placeholder-item'>
-                                              <div class='chartHolder'>
-                                                  <canvas id='trailsChart-11'></canvas>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </section>
-      
-      
-      
-      
-                          </div>
-      
-      
-                      </div>
-                      </div>
-                      </div>
-                  </section>
-                  <section aria-label='Resort Maps'>
-                      <div class='resort__container resort_maps'>
-                          <h2 id='resort-maps'>[resortName] Trail Map </h2>
-                          <div class='resort_maps__container'>
-      
-                              <a class='resort-map-thumbnail' target='_blank' href='[lgTrailMapURL]'>
-                                  <img src='http://www.snow-country.com/trail_maps/large_trail_maps/[resort_id].jpg' alt='[simpleName] Trail Map' />
-                              </a>
-                          </div>
-                      </div> <!-- resort__container covid -->
-                  </section>
-                  <section class="footer-resort-ad" aria-label='footer-resort-ad'>
-                      <div class='resort__container'>
-                      </div>
-                  </section>
-              </article>
-          </div>
-      </div><!-- snow-report-container -->
+<main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+
+  <!-- Resort Ad will get inserted here -->
+  <!-- Breadcrumb Navigation -->
+  <div id="breadcrumb-navigation" class="my-4 p-1 sm:p-4 sm:p-6 mb-6 ">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3 py-2 overflow-x-auto">
+        <div class="flex  items-center gap-2 text-gray-700 font-bold whitespace-nowrap">
+          <a id="breadcrumb-navigation-home" href="https://snocountry.com" class="text-base sm:text-xl hover:text-breadcrumbpill ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </a>
+          <a id="breadcrumb-navigation-region" href="{{ resorts.resortRegion.link }}" class="text-base sm:text-xl hover:text-breadcrumbpill ">{{ resorts.resortRegion.abbrName }} </a>
+        </div>
+        <div id="breadcrumb-navigation-links" class="flex items-center gap-1 sm:gap-2 sm:gap-3 flex-wrap">
+
+          {% for iterBreadCrumb in resorts.breadCrumbList %}
+            <a href="{{ iterBreadCrumb.link }}" class="w-[43px] px-3 py-[5px] text-sm sm:text-base font-bold text-gray-700 bg-white rounded-md hover:bg-breadcrumbpill hover:text-white transition-colors duration-200 shadow-sm {{ iterBreadCrumb.active }}">{{ iterBreadCrumb.abbrName }}</a>
+          {% endfor %}
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  <!-- end of Breadcrumb Navigation -->
+  
+  <!-- ---------------------------------------------------------------Resort Header --------------------------------------------------------------- -->
+  
+  <div id="resort-header" class="z-0 sm:min-h-[100px] py-4 sm:p-6 mb-6 rounded-lg shadow-md bg-background border relative group">
+    <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] items-center gap-4 items-center gap-4 relative">
+      <div id="resort-header-logo" class="contents">
+        <div class="w-32 h-16 bg-gray-200 rounded mb-2"></div>
+      </div>
+      <h1 id="resort-header-title" class="resort-name md:w-full  text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800  ">
+        <div class="h-12 bg-sky-200 rounded w-3/4 inline-block"></div>
+      </h1>
+    </div>
+    <div id="member-resort" class="hidden flex justify-between absolute -top-3 right-3 bg-gradient-to-r from-sky-500 to-blue-500 shadow-sky-500 text-xs font-bold rounded-full px-3 py-1 md:py-1.5 text-white shadow-md  animate-pulse-slow font-sans" style="transition: outline 0.1s ease-in-out;">
+      <div class="mr-1">Member Resort</div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="snowflake" class="lucide lucide-snowflake h-4 w-4">
+        <path d="m10 20-1.25-2.5L6 18"></path>
+        <path d="M10 4 8.75 6.5 6 6"></path>
+        <path d="m14 20 1.25-2.5L18 18"></path>
+        <path d="m14 4 1.25 2.5L18 6"></path>
+        <path d="m17 21-3-6h-4"></path>
+        <path d="m17 3-3 6 1.5 3"></path>
+        <path d="M2 12h6.5L10 9"></path>
+        <path d="m20 10-1.5 2 1.5 2"></path>
+        <path d="M22 12h-6.5L14 15"></path>
+        <path d="m4 10 1.5 2L4 14"></path>
+        <path d="m7 21 3-6-1.5-3"></path>
+        <path d="m7 3 3 6h4"></path>
+      </svg>
+    </div>
+  
+    <div class="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-blue-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+  </div>
+
+  <!-- ---------------------------------------------------------------Snow Report --------------------------------------------------------------- -->
+  <div id="snow-report" class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+    <!-- Left Column -->
+    <div id="left-column" class="lg:col-span-3 space-y-6">
+    
+      <!-- Trail Map -->
+      <div id="card-trailmap" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+      
+        <div id="resort-trailmap" class="contents">
+          <h2 id="trailmap-header" class="hidden resort-name text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold"> Trail Map</h2>
+          <div id="trailmap-container" class="hidden aspect-square  rounded-lg flex items-center justify-center">
+            <img id="trailMapDesktop" src="http://snocountry.com/assets/images/resorts/trail-maps/{id}.jpg" alt="{resortName} Trail Map" class="w-full h-full object-cover shadow-lg cursor-pointer rounded-xl">
+          </div>
+          <div class="delete-me aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
+            <div class="text-gray-500">
+              <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path>
+              </svg>
+              <p class="text-center">Trail Map</p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+        
+      <!-- Video Player -->
+      <div id="card-video" class="sno-class rounded-lg shadow-md p-6 bg-background border hidden">
+        <div id="resort-asset" class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+  
+          <button class="bg-gray-600 text-white rounded-full p-4 hover:bg-gray-700">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+              </svg>
+          </button>          
+        </div>
+  
+      </div>
+  
+      <!-- Resort Information --> 
+      <div id="card-blurb" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+        <div class="flex justify-between ">  
+          <h2 id="resort-blurb-title" class="w-full resort-name text2-xl sm:text-3xl font-bold text-gray-800 group-hover:text-sky-700 group-hover:font-bold"><div class="h-4 bg-red-200 rounded w-3/4 inline-block"></div></h2>
+        </div>
+        <div class="space-y-3">
+          <p  class="blurb px-3">
+            <div id="resort-blurb" class="space-y-3 pt-3">
+                <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div>
+            </div>
+          </p>
+        </div>
+  
+      </div>
+  
+      <!-- News and Promos -->
+      <div id="card-comments" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+  
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">News and Promos</h2>
+        <div id="resort-comments" class="space-y-3">
+  
+  
+          <div class="space-y-3">
+                <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div>
+            </div>
+  
+        </div>
+      </div>
+  
+      <!-- Weather Forecast -->
+      <div id="card-weather" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">Weather Forecast</h2>
+        <div id="resort-weather-forecast" class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="text-center">
+            <h3 class="font-semibold text-sm">Today</h3>
+            <div class="my-2">☀️</div>
+            <p class="text-xs">Partly Cloudyx</p>
+            <p class="text-xs text-red-500">High: --</p>
+            <p class="text-xs text-blue-500">Low: --</p>
+          </div>
+          <div class="text-center">
+            <h3 class="font-semibold text-sm">--</h3>
+            <div class="my-2">☁️</div>
+            <p class="text-xs">Cloudy</p>
+            <p class="text-xs text-red-500">High: --</p>
+            <p class="text-xs text-blue-500">Low: --</p>
+          </div>
+          <div class="text-center">
+            <h3 class="font-semibold text-sm">--</h3>
+            <div class="my-2">⛅</div>
+            <p class="text-xs">Partly Sunny</p>
+            <p class="text-xs text-red-500">High: 85</p>
+            <p class="text-xs text-blue-500">Low: 70</p>
+          </div>
+          <div class="text-center">
+            <h3 class="font-semibold text-sm">--</h3>
+            <div class="my-2">☁️</div>
+            <p class="text-xs">Cloudy</p>
+            <p class="text-xs text-red-500">High: --</p>
+            <p class="text-xs text-blue-500">Low: --</p>
+          </div>
+          <div class="text-center">
+            <h3 class="font-semibold text-sm">--</h3>
+            <div class="my-2">☀️</div>
+            <p class="text-xs">Partly Cloudy</p>
+            <p class="text-xs text-red-500">High: --</p>
+            <p class="text-xs text-blue-500">Low: --</p>
+          </div>
+        </div>
+      </div>
+  
+
+  
+      <!-- Archive -->
+      <div id="card-archive" class="sno-class mx-auto flex flex-col items-center gap-6">
+      
+        <!-- Trails Chart Card -->
+          <div class="bg-gradient-to-br chart-card from-sky-200 p-6 rounded-lg shadow-lg shadow-slate-400 to-sky-50 via-sky-100">
+            <div class="flex justify-between items-center gap-2 mb-2">
+              <div class="flex-1 flex items-center gap-2">
+                <input type="range" id="sliderTrails" min="0" max="100" value="0" class="flex-1 cursor-pointer">
+              </div>
+              <div class="flex gap-2">
+                <button id="playTrails" class="bg-gradient-to-r from-midnight-900 to-midnight-700 hover:scale-105 px-3 py-1 rounded text-sm text-white">Play</button>
+                <button id="pauseTrails" class="bg-gradient-to-r from-midnight-500 to-midnight-300  hover:scale-105 px-3 py-1 rounded text-sm text-white">Pause</button>
+              </div>
+            </div>
+            <div id="trailsRace" style="width: 100%; height: calc(100% - 40px);"></div>
+          </div>
+        </div>
+      
+        <!-- Base Depth Chart Card -->
+        <div class="bg-gradient-to-br chart-card from-sky-200 p-6 rounded-lg shadow-lg shadow-slate-400 to-sky-50 via-sky-100">
+          <div class="flex justify-between items-center gap-2 mb-2">
+            <div class="flex-1 flex items-center gap-2">
+              <input type="range" id="sliderBaseDepth" min="0" max="100" value="0" class="flex-1 cursor-pointer">
+            </div>
+            <div class="flex gap-2">
+              <button id="playBaseDepth" class="bg-gradient-to-r from-midnight-900 to-midnight-700 hover:scale-105 px-3 py-1 rounded text-sm text-white">Play</button>
+              <button id="pauseBaseDepth" class="bg-gradient-to-r from-midnight-500 to-midnight-300 hover:scale-105 px-3 py-1 rounded text-sm text-white">Pause</button>
+            </div>
+          </div>
+          <div id="baseDepthRace" style="width: 100%; height: calc(100% - 40px);"></div>
+        </div>
+  
+
+  
+    </div>
+  
+    <!-- ---------------------------------------------------------------Right Column --------------------------------------------------------------- -->
+    <div id="right-column" class="space-y-6 lg:col-span-2">
+  
+  
+      <!-- Trails and Lifts <div class="p-6 bg-white rounded-lg bg-background border shadow-md relative group hover:scale-[1.02] hover:shadow-sky-500/5 hover:shadow-emerald-100 hover:shadow-xl transition-all duration-300"> -->
+      <div id="card-trails-lifts" class="sno-class p-6  bg-white rounded-lg  bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div class="bg-white rounded-xl shadow-lg text-center">
+            <h2 class="mb-2  font-bold text-gray-800  text-xl group-hover:text-sky-700 transition-all duration-300">Trails Open</h2>
+            <!-- <div class="rounded-3xl bg-white/30 backdrop-blur-xl border border-white/20 p-6 flex items-center justify-center shadow-xl translate-y-4 transition-all duration-700 ease-out" style="animation: slideIn 0.7s ease-out 0.8s forwards;"> -->
+            <div id="donutTrails" class="  p-6 flex items-center justify-center  transition-all duration-700 ease-out" style="animation: slideIn 0.7s ease-out 0.8s forwards;">
+              <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg text-center">
+            <h2 class="mb-2 font-bold text-gray-800  text-xl group-hover:text-sky-700 transition-all duration-300">Lifts Open</h2>
+            <div id="donutLifts" class="  p-6 flex items-center justify-center  transition-all duration-700 ease-out" style="animation: slideIn 0.7s ease-out 0.8s forwards;">
+              <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            </div>
+          </div>
+        </div>
+        <h3 id="resort-reportDateTime" class=" text-center text-sm font-semibold text-slate-800 mt-2 group-hover:text-sky-700 transition-all duration-300">
+          <div class="h-2 bg-gray-200 rounded w-3/4 inline-block">
+          </div>
+        </h3>
+      </div>
+  
+      <!-- Recent Snowfall -->
+      <div id="card-snowfall" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">Recent Snowfall</h2>
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="font-bold ">Past 24 Hours</p>
+            <div id="resort-snowfall-past24Hours" class="inline-block text-lg group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            <p class="font-bold mt-2">Past 72 Hours</p>
+            <div id="resort-snowfall-past72Hours" class="inline-block text-lg group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+          </div>
+          <div>
+            <p class="font-bold">Past 48 Hours</p>
+            <div id="resort-snowfall-past48Hours" class="inline-block text-lg group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            <p class="font-bold mt-2">Past 7 Days</p>
+            <div id="resort-snowfall-past7Days" class="inline-block text-lg group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- Snow Conditions -->
+      <div id="card-conditions" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        <div class="flex justify-between">
+          <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">Snow Conditions</h2>
+        </div>
+        <div class="space-y-3 text-sm">
+          <div>
+            <p class="font-bold">Primary Surface</p>
+            <div id="resort-primarySurface" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="font-bold">Base Depth</p>
+              <div id="resort-baseDepth" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            </div>
+            <div>
+              <p class="font-bold">Season Total</p>
+              <div id="resort-seasonTotal" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Hours-Status -->
+      <div id="card-hours" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">Status:</h2>
+        <div id="resort-operatingStatus" class="inline-block text-lg text-sky-600 mb-2 group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+        <div class="text-sm">
+          <p class="font-bold">Hours:</p>
+          <p class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300">
+            <div class="font-bold inline-block">Weekend:</div>
+            <div id="resort-weekendHours" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+          </p>
+          <p class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300">
+            <div class="font-bold inline-block">Weekdays:</div>
+            <div id="resort-weekdayHours" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+          </p>
+        </div>
+      </div>
+  
+      <!-- Resort Stats -->
+      <div id="card-stats" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">Resort Stats</h2>
+        <div class="grid grid-cols-2 gap-4 text-md">
+          <div>
+          <!--
+            <p>
+              <div class="font-bold">Average Snowfall:</div>
+              <div id="resort-averageSnowfall" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            </p>
+            -->
+              <div class="font-bold">Summit Elevation:</div>
+              <div id="resort-liftElevation" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+              <div class="font-bold">Base Elevation:</div>
+              <div id="resort-baseElevation" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+              <div class="font-bold">Vertical Drop:</div>
+              <div id="resort-verticalDrop" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+          </div>
+          <div>
+            <p>
+              <div class="font-bold">Skiable Acres:</div>
+              <div id="resort-maxOpenDownHillAcres" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            </p>
+            <p>
+              <div class="font-bold">Total Trails:</div>
+              <div id="resort-maxOpenDownHillTrails" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            </p>
+            <p>
+              <div class="font-bold">Total Chairlifts:</div>
+              <div id="resort-maxOpenDownHillLifts" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Resort Information -->
+      <div id="card-info" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl hover:bg-gradient-to-br hover:from-sky-500/5 hover:to-transparent">
+  
+        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">Resort Information</h2>
+        <div class="grid grid-cols-1 gap-4 text-md">
+          <div class="contents">
+  
+            <div class="">
+              <span class="font-bold">Website:</span>
+              <span id="resort-webSiteLinksite" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300">
+                <a href="#" class="group-hover:font-bold transition-all duration-300 hover:underline hover:text-sky-700" target="_blank"><div class="remove-me h-2 bg-gray-200 rounded w-3/4 inline-block"></div></a>
+              </span>
+            </div>
+            <div class=" ">
+              <span class="font-bold">Address:</span>
+              <span id="resort-address" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300">
+                <a class="group-hover:font-bold transition-all duration-300 hover:underline hover:text-sky-700" href="#" target="_blank"><div class="remove-me h-2 bg-gray-200 rounded w-3/4 inline-block"></div></a>
+              </span>
+            </div>
+            <div class="">
+              <span class="font-bold">Phone:</span>
+              <span id="resort-phone" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300">
+                <a href="#" class="group-hover:font-bold transition-all duration-300 hover:underline hover:text-sky-700"><div class="remove-me h-2 bg-gray-200 rounded w-3/4 inline-block"></div></a>
+              </span>
+            </div>
+            <div class=" ">
+              <span class="font-bold">Email:</span>
+              <span id="resort-email" class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300">
+                <a class="group-hover:font-bold transition-all duration-300 hover:underline hover:text-sky-700" href="#"><div class="remove-me h-2 bg-gray-200 rounded w-3/4 inline-block"></div></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Kayak example -->
+      <div id="card-affiliate" class="hidden sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+          <div class="w-sm h-[300px] bg-gray-200 rounded mb-2"></div>
+  
+        
+      </div>
+  
+      <!-- Recent SnoNews <div id="card-snonews" class="sno-class rounded-lg shadow-md p-6 bg-gradient-to-br from-sky-400/10 to-transparent shadow-md"> -->
+      <div id="card-snonews" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
+        <h2 class="text-lg font-bold text-gray-800 mb-4">Recent SnoNews</h2>
+        <div id="sno-news-container" class="grid grid-cols-2 gap-3">
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+  
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+  
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+          <div class="w-[188px] h-[256px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
+            <div class="w-32 h-32 bg-gray-200 rounded mb-2"></div>
+            <div class="space-y-1">
+                <div class="h-2 bg-gray-200 rounded"></div>
+                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+  
+        </div> <!-- end of sno-news-container -->
+        <button class="w-full mt-4 px-4 py-2 border border-gray-300 rounded text-sm hover:bg-gray-50">More News</button>
+      </div>
+    </div>
+  </div>
+
+  
+  
+</main>
+
