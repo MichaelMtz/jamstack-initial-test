@@ -503,7 +503,7 @@ class ResortDataManager {
           // Limit to 8 news stories
           newsFeedContainer.innerHTML = data.stories.slice(0, 8).map(story => `
               <div class="h-[240px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
-                <a href="news-post/${story.permalink}/?postId=${story.id}" target="_blank">
+                <a href="news-post/${story.eventTitle}/?postID=${story.id}" target="_blank">
                   <img class="news-image  rounded mb-2" src="${story.image}" alt="Recent SnoNews">
                   <div class="space-y-1">
                     <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">${story.title}</p>
