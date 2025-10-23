@@ -52,11 +52,6 @@
         }
         </script>
 
-        <link rel="stylesheet" href="/assets/font/mulish-font.css">
-        <link rel="stylesheet" href="/assets/css/fonts.css">
-        <link rel="stylesheet" href="/assets/css/snocountry-base.css">
-        <link rel="stylesheet" href="/assets/css/sno-core.css">
-        <link rel="stylesheet" href="/assets/css/sno-modal.css">
 
         {% if resorts.styles %}
           {% for cssFileName in resorts.styles %}
@@ -65,6 +60,12 @@
          {% endif %}
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% include 'google.html' %}
+        <link rel="stylesheet" href="/assets/font/mulish-font.css">
+      <link rel="stylesheet" href="/assets/css/fonts.css">
+      <link rel="stylesheet" href="/assets/css/snocountry-base.css">
+      <link rel="stylesheet" href="/assets/css/sno-core.css">
+      <link rel="stylesheet" href="/assets/css/sno-modal.css">
+
     </head>
     <body data-source="{{ resorts.entryType }}" data-snowreport="{{ resorts.snowreport }}"" data-resorttype="{{ resorts.resortType }}">
         
