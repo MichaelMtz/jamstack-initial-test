@@ -201,11 +201,15 @@ class ResortDataManager {
     } else {
       if (elementId === "resort-blurb-title") {
         element.innerHTML = this.formatValue(value, elementId);
-      } else {
-        element.textContent = this.formatValue(value, elementId);
+      } if (elementId === "resort-reportDateTime") {
+        const tempstr =  "Updated on: " + this.formatValue(value, elementId)
+        console.log('----- reportDateTime: ',tempstr);
+        element.textContent = tempstr;
+      }else {
+        element.innerHTML = this.formatValue(value, elementId);
       }
       //element.textContent = this.formatValue(value, elementId);
-      element.innerHTML = this.formatValue(value, elementId);
+      //element.innerHTML = this.formatValue(value, elementId);
     }
   }
 
