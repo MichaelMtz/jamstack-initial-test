@@ -246,8 +246,10 @@ body {
         }
         &__header.long-name {
           h2 {
+
             margin-top: 5px;
             font-size: 20px;
+            font-weight: 600;
             @include bpmax(427px) {
               margin-top:0px;
               font-size:18px
