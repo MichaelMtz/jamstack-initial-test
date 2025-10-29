@@ -29,29 +29,3 @@ const waitForElement = (selector) => {
     });
   });
 };
-
-
-document.addEventListener('DOMContentLoaded',()=> {
-  waitForElement('#sno-radio').then((elRadioFooter) => {
-    elRadioFooter.addEventListener('click',() => {
-      window.open('https://snow-report.org/SnoCountryRadio/','_blank','width=600, height=600');
-    });
-  }).catch((e) => { 
-    console.error('Error waiting for getRecentStories fetch:',e);
-  });
-  
-  waitForElement('#mobile-menu').then((elMobileMenu) => {
-    elMobileMenu.addEventListener('click',() => {
-      _log('mobileMenu clicked');
-      //document.querySelector('#topnav').classList.toggle('open-menu');
-    });
-  }).catch((e) => { 
-    console.error('Error waiting for getRecentStories fetch:',e);
-  });
-  
-  waitForElement('#copyright-year').then((elCopyrightYear) => {
-    elCopyrightYear.innerHTML = new Date().getFullYear();
-  }).catch((e) => { 
-    console.error('Error setting Copyright year:',e);
-  });
-});
