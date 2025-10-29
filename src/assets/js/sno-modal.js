@@ -216,7 +216,6 @@ if (! (crypto.randomUUID instanceof Function)) {
 }
 
 document.addEventListener('DOMContentLoaded',()=> {
-  _log('snoModal processing...');
   setupSnoActions();
   //saveUser()
 });

@@ -1,57 +1,5 @@
-const t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e;};
-const _log = function (text, param, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`, param);};
-
-const waitForElement = (selector) => {
-  return new Promise(function (resolve, reject) {
-    const element = document.querySelector(selector);
-
-    if (element) {
-      resolve(element);
-      return;
-    }
-
-    const observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        const nodes = Array.from(mutation.addedNodes);
-        for (const node of nodes) {
-          if (node.matches && node.matches(selector)) {
-            observer.disconnect();
-            resolve(node);
-            return;
-          }
-        }
-      });
-    });
-
-    observer.observe(document.documentElement, {
-      childList: true,
-      subtree: true,
-    });
-  });
-};
-
-
 document.addEventListener('DOMContentLoaded',()=> {
-  waitForElement('#sno-radio').then((elRadioFooter) => {
-    elRadioFooter.addEventListener('click',() => {
-      window.open('https://snow-report.org/SnoCountryRadio/','_blank','width=600, height=600');
-    });
-  }).catch((e) => { 
-    console.error('Error waiting for getRecentStories fetch:',e);
-  });
   
-  waitForElement('#mobile-menu').then((elMobileMenu) => {
-    elMobileMenu.addEventListener('click',() => {
-      _log('mobileMenu clicked');
-      //document.querySelector('#topnav').classList.toggle('open-menu');
-    });
-  }).catch((e) => { 
-    console.error('Error waiting for getRecentStories fetch:',e);
-  });
-  
-  waitForElement('#copyright-year').then((elCopyrightYear) => {
-    elCopyrightYear.innerHTML = new Date().getFullYear();
-  }).catch((e) => { 
-    console.error('Error setting Copyright year:',e);
-  });
+  document.getElementById('copyright-year').innerHTML = new Date().getFullYear();
+
 });

@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const createResortGeoSDL = () => {
       const resort_id = document.body.dataset.snowreport;
       const url = (window.location.hostname !== 'localhost') ? `https://feeds.snocountry.net/proof-of-concept/resort-geo.php?target=${resort_id}` : `http://localhost/sno/snoCountryHeadless/snow-reports/resort-geo.php?target=${resort_id}`;
-      // _log(`snowreport-api resort: ${url}`);
       fetch(url).then(response => {
         return response.json();
       }).then(geoData => { 

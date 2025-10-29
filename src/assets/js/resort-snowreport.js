@@ -531,8 +531,6 @@ class ResortDataManager {
       ? JSON.parse(this.resortData.jsonOpenTrails) 
       : null;
 
-    // _log('baseDepth:',baseDepthData);
-    // _log('trailsData:',trailsData);
     // Create Base Depth chart if data exists
     if (baseDepthData && document.getElementById('baseDepthRace')) {
       const baseDepthChart = new ResortChart(
