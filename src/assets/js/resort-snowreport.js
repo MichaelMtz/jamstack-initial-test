@@ -555,6 +555,20 @@ class ResortDataManager {
         });
     }
   }
+  
+  checkForValidChartData(chartData) {
+    let validData = true;
+    let nullCount = 0;
+    chartData.data.forEach((iterSeason) => {
+      if ((iterSeason === null) ||  (iterSeason.length === 0)) {
+        nullCount++;
+      }
+    });
+    if (nullCount > 3) {
+      validData = false;
+    }
+    return validData;
+  }
 
   /**
    * Create resort charts for base depth and trails
@@ -567,9 +581,11 @@ class ResortDataManager {
     const trailsData = this.resortData.jsonOpenTrails 
       ? JSON.parse(this.resortData.jsonOpenTrails) 
       : null;
-
+    const validTrailsData = this.checkForValidChartData(trailsData);
+    const validBaseDepthData = this.checkForValidChartData(baseDepthData);
+    
     // Create Base Depth chart if data exists
-    if (baseDepthData && document.getElementById('baseDepthRace')) {
+    if (validBaseDepthData && document.getElementById('baseDepthRace')) {
       const baseDepthChart = new ResortChart(
         'baseDepthRace',
         baseDepthData,
@@ -579,10 +595,12 @@ class ResortDataManager {
         'BaseDepth'
       );
       baseDepthChart.init();
+    } else {
+       document.getElementById('base-depth-chart-container').classList.add('hidden');
     }
 
     // Create Trails chart if data exists
-    if (trailsData && document.getElementById('trailsRace')) {
+    if (validTrailsData && document.getElementById('trailsRace')) {
       const trailsChart = new ResortChart(
         'trailsRace',
         trailsData,
@@ -592,6 +610,11 @@ class ResortDataManager {
         'Trails'
       );
       trailsChart.init();
+    } else {
+       document.getElementById('trails-chart-container').classList.add('hidden');
+    }
+    if (!validTrailsData && !validBaseDepthData) {
+      document.getElementById('card-archive').classList.add('hidden');
     }
   }
   /**
