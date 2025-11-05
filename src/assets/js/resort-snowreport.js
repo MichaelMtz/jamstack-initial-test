@@ -232,8 +232,10 @@ class ResortDataManager {
       img.alt = `${this.resortData.resortName} Logo`;
       img.className = "w-32 h-16 rounded mb-2 object-contain hidden sm:block ";
       if (!logoElement.querySelector("img")) {
+        const anchor = Object.assign(document.createElement('a'), { href: this.resortData.webSiteLink, target: '_blank' });
+        anchor.appendChild(img);
         logoElement.innerHTML = "";
-        logoElement.appendChild(img);
+        logoElement.appendChild(anchor);
       }
     }
 
@@ -253,6 +255,9 @@ class ResortDataManager {
     this.createDonut("donutTrails", this.resortData.openDownHillTrails, this.resortData.maxOpenDownHillTrails, "Trails Open");
     this.createDonut("donutLifts", this.resortData.openDownHillLifts, this.resortData.maxOpenDownHillLifts, "Lifts Open");
 
+    // Handle Operating status: 
+    this.handleOperatingStatus();
+    
     // Handle resort charts
     this.createResortCharts();
 
@@ -280,6 +285,38 @@ class ResortDataManager {
    
   }
 
+  handleOperatingStatus() {
+    let operatingStatus = '';
+    switch (this.resortData.resortStatus) {
+      case "1": 
+        operatingStatus = "Open for Snow Sports"
+        break;
+      case "2": 
+        operatingStatus = this.resortData.operatingStatus;
+        break;       
+      case "3": 
+        operatingStatus = "No Recent/Current Info";
+        break;      
+      case "4": 
+        operatingStatus = "Operating no details";
+        break;        
+      case "5": 
+        operatingStatus = this.resortData.operatingStatus;
+        break;          
+      case "6": 
+        operatingStatus = "Opening Soon for Snow Sports";
+        break;
+      case "7": 
+        operatingStatus = "Closed" ;
+        break;                     
+      case "8": 
+        operatingStatus = "Open for Summer Operations";
+        break;                      
+    
+    }
+    this.updateElementText("resort-operatingStatus", operatingStatus);
+
+  }
   /**
    * Populate resort comments from API data
    */
@@ -853,8 +890,6 @@ class ResortDataManager {
     const errorMessage = "Unable to load resort data";
 
     this.updateElementText("resort-header-title", errorMessage);
-    this.updateElementText("resort-operatingStatus", "Data unavailable");
-
     // Add error styling
     document.body.classList.add("data-error");
   }
