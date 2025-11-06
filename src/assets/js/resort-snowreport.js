@@ -301,13 +301,33 @@ class ResortDataManager {
     }
   }
   
+  /**
+   * Normalize URL to HTTPS
+   * Converts http:// URLs to https:// while preserving relative URLs
+   * @param {string} url - The URL to normalize
+   * @returns {string} - The normalized URL
+   */
+  normalizeToHttps(url) {
+    if (!url || typeof url !== 'string') {
+      return url;
+    }
+    
+    // If URL starts with http://, replace with https://
+    if (url.startsWith('http://')) {
+      return url.replace('http://', 'https://');
+    }
+    
+    // If already https:// or relative URL, return as-is
+    return url;
+  }
+
   
   handleResortLogo() {
     const logoElement = this.elements.get("resort-header-logo");
     if (logoElement && this.resortData.logo) {
       const img =
         logoElement.querySelector("img") || document.createElement("img");
-      img.src = this.resortData.logo;
+      img.src = this.normalizeToHttps(this.resortData.logo);
       img.alt = `${this.resortData.resortName} Logo`;
       img.className = "w-32 h-16 rounded mb-2 object-contain hidden sm:block ";
       if (!logoElement.querySelector("img")) {
