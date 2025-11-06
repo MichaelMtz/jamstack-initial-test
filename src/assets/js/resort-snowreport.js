@@ -224,21 +224,13 @@ class ResortDataManager {
     }
 
     // Handle resort logo
-    const logoElement = this.elements.get("resort-header-logo");
-    if (logoElement && this.resortData.logo) {
-      const img =
-        logoElement.querySelector("img") || document.createElement("img");
-      img.src = this.resortData.logo;
-      img.alt = `${this.resortData.resortName} Logo`;
-      img.className = "w-32 h-16 rounded mb-2 object-contain hidden sm:block ";
-      if (!logoElement.querySelector("img")) {
-        const anchor = Object.assign(document.createElement('a'), { href: this.resortData.webSiteLink, target: '_blank' });
-        anchor.appendChild(img);
-        logoElement.innerHTML = "";
-        logoElement.appendChild(anchor);
-      }
-    }
+    this.handleResortLogo();
 
+    if (this.resortData.id === '303009') {      
+      // Handle resort video/image
+      this.handleResortVideoImage();   // uncomment when ready to go live also remove hidden class from results.njk:#card-archive line 95ish
+    }
+    
     // Handle resort blurb format is in base64 encoded html
     const blurbElement = this.elements.get("resort-blurb");
     if (blurbElement && this.resortData.blurb) {
@@ -283,8 +275,51 @@ class ResortDataManager {
     this.populateResortComments();
     
    
-  }
+  } //fn handleSpecialElements
 
+  handleResortVideoImage() {
+    
+    const resortAssetElement = document.getElementById("resort-asset");
+    if (resortAssetElement && this.resortData.resortPhotos) {
+      const img =
+        resortAssetElement.querySelector("img") || document.createElement("img");
+      img.src = this.resortData.resortPhotos;
+      img.alt = `${this.resortData.resortName} Asset`;
+      img.className = "rounded mb-2 object-contain hidden sm:block ";
+      if (!resortAssetElement.querySelector("img")) {
+        resortAssetElement.innerHTML = "";
+        resortAssetElement.appendChild(img);
+      }
+      const resortAssetHeader = document.getElementById('resort-asset-header');
+      if (resortAssetHeader) {
+        resortAssetHeader.textContent = `${this.resortData.resortName} ${this.resortData.resortBackgroundImage}`;
+        resortAssetHeader.classList.remove("hidden");
+      }
+      document.getElementById('card-video').classList.remove('hidden');
+    } else {
+      document.getElementById('card-video').classList.add('hidden');
+    }
+  }
+  
+  
+  handleResortLogo() {
+    const logoElement = this.elements.get("resort-header-logo");
+    if (logoElement && this.resortData.logo) {
+      const img =
+        logoElement.querySelector("img") || document.createElement("img");
+      img.src = this.resortData.logo;
+      img.alt = `${this.resortData.resortName} Logo`;
+      img.className = "w-32 h-16 rounded mb-2 object-contain hidden sm:block ";
+      if (!logoElement.querySelector("img")) {
+        const anchor = Object.assign(document.createElement('a'), { href: this.resortData.webSiteLink, target: '_blank' });
+        anchor.appendChild(img);
+        logoElement.innerHTML = "";
+        logoElement.appendChild(anchor);
+      }
+    }
+
+  }
+  
   handleOperatingStatus() {
     let operatingStatus = '';
     switch (this.resortData.resortStatus) {
