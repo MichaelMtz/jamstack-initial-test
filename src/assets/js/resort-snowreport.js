@@ -311,10 +311,14 @@ class ResortDataManager {
       img.alt = `${this.resortData.resortName} Logo`;
       img.className = "w-32 h-16 rounded mb-2 object-contain hidden sm:block ";
       if (!logoElement.querySelector("img")) {
-        const anchor = Object.assign(document.createElement('a'), { href: this.resortData.webSiteLink, target: '_blank' });
-        anchor.appendChild(img);
         logoElement.innerHTML = "";
-        logoElement.appendChild(anchor);
+        if (this.resortData.nesacMember === '1') {
+          const anchor = Object.assign(document.createElement('a'), { href: this.resortData.webSiteLink, target: '_blank' });
+          anchor.appendChild(img);
+          logoElement.appendChild(anchor);
+        } else {
+          logoElement.appendChild(img);
+        }
       }
     }
 
