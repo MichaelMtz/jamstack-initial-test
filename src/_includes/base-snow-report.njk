@@ -38,7 +38,7 @@
          {% endif %}
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% include 'google.html' %}
-      <link rel="stylesheet" href="assets/css/resort-chart.css">
+      <link rel="stylesheet" href="/assets/css/resort-chart.css">
 
     </head>
     <body data-source="{{ resorts.entryType }}" data-snowreport="{{ resorts.snowreport }}" data-location="{{ resorts.stateNameActual }}" class="bg-gradient-to-br from-sky-200 to-transparent via-sky-50">
@@ -56,21 +56,21 @@
     <div id="trailMapModal" class="closeTrailMapModal fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm ">
         <div class="relative w-[95vw] h-[95vh] flex items-center justify-center">
           <button class="closeTrailMapModal absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
-          <img id="modalTrailMapImage" src="http://snocountry.com/assets/images/resorts/trail-maps/{resortId}.jpg" alt="{resortName} Trail Map" class="max-w-full max-h-full object-contain rounded-xl">
+          <img id="modalTrailMapImage" src="https://snocountry.com/assets/images/resorts/trail-maps/{{ resorts.snowreport }}.jpg" alt="{{ resorts.stateNameProper }} Trail Map" class="max-w-full max-h-full object-contain rounded-xl">
         </div>
       </div>
       <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
       <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
       <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-      <script src="assets/js/resort-chart-refactor.js"></script>
-      <script src="assets/js/resort-snowreport.js"></script>
-      <script src="assets/js/responsive-layout.js"></script>
-      <script src="assets/js/resort-page.js"></script>
+      <script src="/assets/js/resort-chart-refactor.js"></script>
+      <script src="/assets/js/resort-snowreport.js"></script>
+      <script src="/assets/js/responsive-layout.js"></script>
+      <script src="/assets/js/resort-page.js"></script>
       
-	 <script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
-    <!-- <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script> 
-    <script src="../../assets/js/snowreport.js" type="text/javascript"></script> -->
-    <script defer src="../../assets/js/resort-ads-system.js" type="text/javascript"></script>
+	 <script type="text/javascript" src="/assets/js/jquery-1.8.3.min.js"></script>
+    <!-- <script src="/assets/js/snocountry-base.js" type="text/javascript"></script> 
+    <script src="/assets/js/snowreport.js" type="text/javascript"></script> -->
+    <script defer src="/assets/js/resort-ads-system.js" type="text/javascript"></script>
     {% if resorts.scripts %}
       {% for scriptFileName in resorts.scripts %}
     <script src="{{scriptFileName}}" type="text/javascript"></script>

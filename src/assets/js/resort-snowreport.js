@@ -488,7 +488,7 @@ class ResortDataManager {
       }
       const trailMapDesktopImage = document.getElementById('trailMapDesktop');
       if (trailMapDesktopImage) {
-        trailMapDesktopImage.src = `http://snocountry.com/assets/images/resorts/trail-maps/${this.resortData.id}.jpg`;
+        trailMapDesktopImage.src = `https://snocountry.com/assets/images/resorts/trail-maps/${this.resortData.id}.jpg`;
         trailMapDesktopImage.alt = `${this.resortData.resortName} Trail Map`;
         trailMapDesktopImage.className = "w-full h-full object-cover shadow-lg cursor-pointer";
         document.getElementById('trailmap-container').classList.remove("hidden");
@@ -497,7 +497,7 @@ class ResortDataManager {
       // Update modal trail map image
       const modalTrailMapImage = document.getElementById('modalTrailMapImage');
       if (modalTrailMapImage) {
-        modalTrailMapImage.src = `http://snocountry.com/assets/images/resorts/trail-maps/${this.resortData.id}.jpg`;
+        modalTrailMapImage.src = `https://snocountry.com/assets/images/resorts/trail-maps/${this.resortData.id}.jpg`;
         modalTrailMapImage.alt = `${this.resortData.resortName} Trail Map`;
       }
 
