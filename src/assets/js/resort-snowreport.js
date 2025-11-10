@@ -27,13 +27,13 @@ class ResortDataManager {
       "resort-reportDateTime": "reportDateTime",
 
       // Snow conditions
-      "resort-snowfall-past24Hours": "newSnowMin",
-      "resort-snowfall-past48Hours": "snowLast48Hours",
-      "resort-snowfall-past72Hours": "snowLast48Hours", // Using 48h as proxy for 72h
-      "resort-snowfall-past7Days": "snowLast48Hours", // Using 48h as proxy for 7 days
+      // "resort-snowfall-past24Hours": "newSnowMin",
+      // "resort-snowfall-past48Hours": "snowLast48Hours",
+      // "resort-snowfall-past72Hours": "snowLast48Hours", // Using 48h as proxy for 72h
+      // "resort-snowfall-past7Days": "snowLast48Hours", // Using 48h as proxy for 7 days
       "resort-primarySurface": "primarySurfaceCondition",
       "resort-baseDepth": "avgBaseDepthMin",
-      "resort-seasonTotal": "avgBaseDepthMax", // Using as proxy for season total
+      //"resort-seasonTotal": "seasonTotal", // Using as proxy for season total seasonTotal
 
       // Operating status
       "resort-operatingStatus": "operatingStatus",
@@ -41,7 +41,7 @@ class ResortDataManager {
       "resort-weekdayHours": "weekdayHours",
 
       // Resort stats
-      "resort-averageSnowfall": "avgBaseDepthMin", // Using as proxy
+      //"resort-averageSnowfall": "avgBaseDepthMin", // Using as proxy
       "resort-liftElevation": "liftElevation",
       "resort-baseElevation": "baseElevation",
       "resort-verticalDrop": "maxDistance", // Using as proxy for vertical drop
@@ -258,6 +258,9 @@ class ResortDataManager {
 
     // Handle snowfall data with calculations
     this.populateSnowfallData();
+    
+    // Handle base depth
+    this.populateBaseDepth();
 
     // Handle vertical drop calculation
     this.calculateVerticalDrop();
@@ -802,12 +805,6 @@ class ResortDataManager {
    * Populate snowfall data with calculations from snowarchive
    */
   populateSnowfallData() {
-    if (
-      !this.resortData.snowarchive ||
-      !Array.isArray(this.resortData.snowarchive)
-    ) {
-      return;
-    }
 
     const now = new Date();
     const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
@@ -815,26 +812,49 @@ class ResortDataManager {
     const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
     // Calculate snowfall totals
-    const past24Hours = this.calculateSnowfallTotal(
-      this.resortData.snowarchive,
-      oneDayAgo
-    );
-    const past48Hours = this.calculateSnowfallTotal(
-      this.resortData.snowarchive,
-      twoDaysAgo
-    );
-    const past7Days = this.calculateSnowfallTotal(
-      this.resortData.snowarchive,
-      sevenDaysAgo
-    );
+    let past24Hours = '0';
+    if (this.resortData.newSnowMin.trim().length > 0) {
+      past24Hours = this.resortData.newSnowMin;
+      if (this.resortData.newSnowMax.trim().length > 0) {
+        past24Hours += '-' + this.resortData.newSnowMax;
+      }
+    }
+
+    let past48Hours = '0"';
+    if (this.resortData.snowLast48Hours.trim().length > 0) {
+      past48Hours = this.resortData.snowLast48Hours;
+    }
+    const snowComments = (this.resortData.snowComments.trim().length > 0) ? this.resortData.snowComments : '-';
+
+    let seasonTotal = '0';
+    if (this.resortData.seasonTotal.trim().length > 0) {
+      seasonTotal = this.resortData.seasonTotal;
+    }
+
+    // const past7Days = this.calculateSnowfallTotal(
+    //   this.resortData.snowarchive,
+    //   sevenDaysAgo
+    // );
 
     // Update elements
-    this.updateElementText("resort-snowfall-past24Hours", `${past24Hours}"`);
+    this.updateElementText("snowfall-past24Hours", `${past24Hours}"`);                   
     this.updateElementText("resort-snowfall-past48Hours", `${past48Hours}"`);
-    this.updateElementText("resort-snowfall-past72Hours", `${past48Hours}"`); // Using 48h as proxy
-    this.updateElementText("resort-snowfall-past7Days", `${past7Days}"`);
+    this.updateElementText("resort-snowfall-snowComments", `${snowComments}`); // Using 48h as proxy
+    this.updateElementText("resort-snowfall-seasonTotal", `${seasonTotal}"`);
+    
+    
   }
 
+  populateBaseDepth() {
+    let baseDepth = 'Not reported';
+    if (this.resortData.avgBaseDepthMin.trim().length > 0) {
+      baseDepth = this.resortData.avgBaseDepthMin;
+      if (this.resortData.avgBaseDepthMax.trim().length > 0) {
+        baseDepth += '-' + this.resortData.avgBaseDepthMax;
+      }
+    }
+    this.updateElementText("resort-baseDepth", `${baseDepth}"`);
+  }
   /**
    * Calculate snowfall total from archive data
    */
@@ -860,8 +880,8 @@ class ResortDataManager {
         const lift = parseInt(liftMatch[1]);
         const base = parseInt(baseMatch[1]);
         const verticalDrop = lift - base;
-
-        this.updateElementText("resort-verticalDrop", `${verticalDrop} ft`);
+        const verticalDropMeters = Math.round(verticalDrop * 0.3048);
+        this.updateElementText("resort-verticalDrop", `${verticalDrop} ft / ${verticalDropMeters} m`);
       }
     }
   }
@@ -950,8 +970,11 @@ class ResortDataManager {
    * Update element text content
    */
   updateElementText(elementId, text) {
-    const element = this.elements.get(elementId);
+    console.log(`--updateElementText:(${elementId}:`,text);
+
+    const element = document.getElementById(elementId);
     if (element) {
+      console.log(`--updateElementText2:(${elementId}:`,text);
       element.textContent = text;
     }
   }
