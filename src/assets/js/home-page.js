@@ -243,10 +243,10 @@ document.addEventListener('DOMContentLoaded',()=> {
   };
   
   const getOpenResorts = () => {
-    const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-open-resorts.php`;
+    //const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-open-resorts.php`;
+    const localURL = `https://feeds.snocountry.net/proof-of-concept/headless-home-open-resorts.php`;
     const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/home-open-resorts-api` : localURL;
     
-    _log(`home-open-resorts-api resort: ${url}`);
     fetch(url).then(response => {      
       return response.json();
     }).then(data => {
@@ -254,6 +254,7 @@ document.addEventListener('DOMContentLoaded',()=> {
       // console.log(data);
       waitForElement('#open-resorts-list').then((elHomepageHighlightResorts) => {
         createHighlightResortsSection(elHomepageHighlightResorts,data,'baseDepth', '#open-resorts');
+        document.getElementById('open-resorts').classList.remove('sno-hide');
       }).catch( (e) => { console.error('Error waiting for getOpenResorts data:',e);});
       
     }).catch( (e) => { console.error('Error waiting for getOpenResorts fetch:',e);});
@@ -261,7 +262,9 @@ document.addEventListener('DOMContentLoaded',()=> {
   };
   
   const getTopSnowfall = () => {
-    const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-top-snowfall.php`;
+    //const localURL = `http://localhost/sno/snoCountryHeadless/snow-reports/headless-home-top-snowfall.php`;
+    const localURL = `https://feeds.snocountry.net/proof-of-concept/headless-home-top-snowfall.php`;
+
     const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/home-top-snowfall-api` : localURL;
     
     fetch(url).then(response => {      
