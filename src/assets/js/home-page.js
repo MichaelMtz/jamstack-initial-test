@@ -285,14 +285,14 @@ document.addEventListener('DOMContentLoaded',()=> {
         elOpenResorts.classList.add('sno-hide');
       }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
       //getOpenResorts();
-      // Only show Open Resorts for early season
-      // if (fetchOpenResorts) {
-      //   getOpenResorts();
-      // } else {
-      //   waitForElement('#open-resorts').then((elOpenResorts) => {
-      //     elOpenResorts.classList.add('sno-hide');
-      //   }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
-      // }
+      //Only show Open Resorts for early season
+      if (fetchOpenResorts) {
+        getOpenResorts();
+      } else {
+        waitForElement('#open-resorts').then((elOpenResorts) => {
+          elOpenResorts.classList.add('sno-hide');
+        }).catch((e) => { console.error('Error waiting for #open-resorts:',e);});
+      }
     }).catch( (e) => { console.error('Error waiting for getTopSnowfall fetch:',e);});
   
   };
