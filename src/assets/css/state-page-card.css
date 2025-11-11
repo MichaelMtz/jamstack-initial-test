@@ -1123,7 +1123,7 @@ body {
   }
 }
 .resorts-container .resort.pto .resort__info-extended-weather-pto .section-summer-weather-item {
-  flex: 0 1 90px;
+  flex: 0 1 100px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
