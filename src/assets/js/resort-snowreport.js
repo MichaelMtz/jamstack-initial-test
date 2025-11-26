@@ -636,6 +636,11 @@ class ResortDataManager {
    * Create resort charts for base depth and trails
    */
   createResortCharts() {
+    //Hide Tenney for short term, archive data is tainted (unknown reason), 
+    if (this.resortData.id === '603013') { 
+      document.getElementById('card-archive').classList.add('hidden');
+      return; 
+    }
     // Parse JSON strings from API response
     const baseDepthData = this.resortData.jsonBaseDepth 
       ? JSON.parse(this.resortData.jsonBaseDepth) 
