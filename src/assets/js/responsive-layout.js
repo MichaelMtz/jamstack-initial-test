@@ -38,8 +38,8 @@ class ResponsiveLayoutManager {
                 'card-blurb',
                 'card-comments',
                 'card-weather',
-                'card-archive'
-                //'card-video',
+                'card-archive',
+                'card-video'
 
             ],
             rightColumn: [

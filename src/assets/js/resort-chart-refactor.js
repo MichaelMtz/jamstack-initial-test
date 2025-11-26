@@ -42,9 +42,16 @@ class ResortChart {
       console.warn(`ResortChart: Invalid data for ${this.containerId}`);
       return;
     }
+    try {
+      
+      const raceData = this.transformDataForRace(this.resortData, this.colorGradient);
+      this.createBarChartRace(raceData);
+    } catch (error) {
+       document.getElementById('card-archive').classList.add('hidden');
+       console.error('Chart error: ', error);
+       console.info('Chart data: ',this.resortData);
+    }
 
-    const raceData = this.transformDataForRace(this.resortData, this.colorGradient);
-    this.createBarChartRace(raceData);
   }
 
   /**
@@ -119,18 +126,32 @@ class ResortChart {
     // Create normalized data for each season with last-value carry-forward
     const seasonData = {};
     const seasonColors = {};
+    let   seasonsClean = [];
     seasons.forEach((season, index) => {
-      seasonData[season] = new Map();
-      seasonColors[season] = colors[index];
+      if (resortData.data[index] !== null) {    
+        if ( (resortData.data[index].length > 0)) {          
+          seasonData[season] = new Map();
+          seasonColors[season] = colors[index];
+          seasonsClean.push(season);
+        }    
+      }
     });
-    
+    console.info('transformDataForRace:seasons',seasons);
+    console.info('transformDataForRace:seasonsClean',seasonsClean);
+    console.info('transformDataForRace:seasonData',seasonData);
+    console.info('transformDataForRace:seasonColors',seasonColors);
+    console.info('transformDataForRace:resortData',resortData);
     // Normalize dates and store values for each season
     resortData.data.forEach((dataArray, seasonIndex) => {
-      const season = seasons[seasonIndex];
-      dataArray.forEach(point => {
-        const normalizedDate = this.normalizeDate(point.x);
-        seasonData[season].set(normalizedDate, parseInt(point.y));
-      });
+
+      if (dataArray !== null) { 
+        const season = seasons[seasonIndex];
+        dataArray.forEach(point => {
+          const normalizedDate = this.normalizeDate(point.x);
+          seasonData[season].set(normalizedDate, parseInt(point.y));
+        });             
+      } 
+
     });
     
     // Collect all unique normalized dates
@@ -148,11 +169,11 @@ class ResortChart {
     const frames = [];
     const lastKnownValues = {};
     seasons.forEach(season => lastKnownValues[season] = 0);
-    
+
     allDates.forEach(date => {
       const frameData = { date: date };
       
-      seasons.forEach(season => {
+      seasonsClean.forEach(season => {
         const dateMap = seasonData[season];
         if (dateMap.has(date)) {
           // Update with actual value
@@ -181,6 +202,7 @@ class ResortChart {
    */
   createBarChartRace(raceData) {
     const { frames, seasons, seasonColors } = raceData;
+    console.info('createBarChartRace:raceData',raceData);
     seasons.reverse();
 
     // Create root element
