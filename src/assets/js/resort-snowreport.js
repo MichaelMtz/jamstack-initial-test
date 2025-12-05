@@ -32,6 +32,7 @@ class ResortDataManager {
       // "resort-snowfall-past72Hours": "snowLast48Hours", // Using 48h as proxy for 72h
       // "resort-snowfall-past7Days": "snowLast48Hours", // Using 48h as proxy for 7 days
       "resort-primarySurface": "primarySurfaceCondition",
+      "resort-secondarySurfaceCondition": "secondarySurfaceCondition",
       "resort-baseDepth": "avgBaseDepthMin",
       //"resort-seasonTotal": "seasonTotal", // Using as proxy for season total seasonTotal
 
@@ -39,6 +40,7 @@ class ResortDataManager {
       "resort-operatingStatus": "operatingStatus",
       "resort-weekendHours": "weekendHours",
       "resort-weekdayHours": "weekdayHours",
+      "resort-SpecialHours": "SpecialHours",
 
       // Resort stats
       //"resort-averageSnowfall": "avgBaseDepthMin", // Using as proxy
@@ -833,7 +835,7 @@ class ResortDataManager {
     }
     const snowComments = (this.resortData.snowComments.trim().length > 0) ? this.resortData.snowComments : '-';
 
-    let seasonTotal = '0';
+    let seasonTotal = 'N/A';
     if (this.resortData.seasonTotal.trim().length > 0) {
       seasonTotal = this.resortData.seasonTotal;
     }
@@ -845,7 +847,7 @@ class ResortDataManager {
 
     // Update elements
     this.updateElementText("snowfall-past24Hours", `${past24Hours}"`);                   
-    this.updateElementText("resort-snowfall-past48Hours", `${past48Hours}"`);
+    this.updateElementText("resort-snowfall-past48Hours", `${past48Hours}`);
     this.updateElementText("resort-snowfall-snowComments", `${snowComments}`); // Using 48h as proxy
     this.updateElementText("resort-snowfall-seasonTotal", `${seasonTotal}"`);
     

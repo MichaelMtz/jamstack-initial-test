@@ -287,14 +287,18 @@ permalink: /snow-report/{{ resorts.stateName }}/index.html
         </div>
         <div class="space-y-3 text-sm">
 
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-3 gap-4">
             <div>
               <p class="font-bold">Primary Surface</p>
-              <div id="resort-primarySurface" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+              <div id="resort-primarySurface" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300 text-lg"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+            </div>
+            <div>
+              <p class="font-bold">Secondary Surface</p>
+              <div id="resort-secondarySurfaceCondition" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300 text-lg"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
             </div>
             <div>
               <p class="font-bold">Base Depth</p>
-              <div id="resort-baseDepth" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+              <div id="resort-baseDepth" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300 text-lg"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
             </div>
 
           </div>
@@ -305,10 +309,10 @@ permalink: /snow-report/{{ resorts.stateName }}/index.html
       <div id="card-hours" class="sno-class bg-white rounded-lg p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
         <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
   
-        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold">Status:</h2>
+        <h2 class="text-xl font-bold text-gray-800 mb-4 group-hover:text-sky-700 group-hover:font-bold inline mr-2 ">Status:</h2>
         <div id="resort-operatingStatus" class="inline-block text-lg text-sky-600 mb-2 group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
-        <div class="text-sm">
-          <p class="font-bold">Hours:</p>
+        <div class="text-md">
+          <p class="font-bold text-lg">Hours:</p>
           <p class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300">
             <div class="font-bold inline-block">Weekend:</div>
             <div id="resort-weekendHours" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
@@ -317,6 +321,11 @@ permalink: /snow-report/{{ resorts.stateName }}/index.html
             <div class="font-bold inline-block">Weekdays:</div>
             <div id="resort-weekdayHours" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
           </p>
+          <p class="group-hover:text-sky-700 group-hover:font-bold transition-all duration-300 text-md">
+            <div class="font-bold inline-block">Special:</div>
+            <div id="resort-SpecialHours" class="inline-block group-hover:text-sky-700 group-hover:font-bold transition-all duration-300"><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
+          </p>
+          
         </div>
       </div>
   
