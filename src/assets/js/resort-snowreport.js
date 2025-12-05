@@ -821,7 +821,7 @@ class ResortDataManager {
     const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
     // Calculate snowfall totals
-    let past24Hours = '0';
+    let past24Hours = '-';
     if (this.resortData.newSnowMin.trim().length > 0) {
       past24Hours = this.resortData.newSnowMin;
       if (this.resortData.newSnowMax.trim().length > 0) {
@@ -829,7 +829,7 @@ class ResortDataManager {
       }
     }
 
-    let past48Hours = '0"';
+    let past48Hours = '-';
     if (this.resortData.snowLast48Hours.trim().length > 0) {
       past48Hours = this.resortData.snowLast48Hours;
     }
