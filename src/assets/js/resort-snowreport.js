@@ -83,9 +83,13 @@ class ResortDataManager {
         await this.fetchResortData();
         this.populateElements();
         this.setupEventListeners();
+        // Handle news feed
+        this.populateNewsFeed();
+
       } catch (error) {
         console.error("ResortDataManager: Failed to load resort data:", error);
-        this.showErrorState();
+        //this.showErrorState();
+        this.setup();
       }
     } else {
       console.error(
@@ -271,8 +275,6 @@ class ResortDataManager {
     // Handle contact information fields
     this.populateContactInfo();
 
-    // Handle news feed
-    this.populateNewsFeed();
 
     // Handle resort comments
     this.populateResortComments();
