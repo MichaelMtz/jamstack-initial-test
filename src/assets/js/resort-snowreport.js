@@ -836,7 +836,7 @@ class ResortDataManager {
     const snowComments = (this.resortData.snowComments.trim().length > 0) ? this.resortData.snowComments : '-';
 
     let seasonTotal = 'N/A';
-    if (this.resortData.seasonTotal.trim().length > 0) {
+    if ((this.resortData.seasonTotal.trim().length > 0) && (this.resortData.seasonTotal !== '0'){
       seasonTotal = this.resortData.seasonTotal;
     }
 
