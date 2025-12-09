@@ -10,7 +10,7 @@ class ResortDataManager {
     this.apiBaseUrl = "https://good-cormorant-17.convex.site/api/resort-data";
     this.resortId = null;
     this.resortData = null;
-
+    this.logURL = "https://feeds.snocountry.net/endpoints/logging/log.php"
     // DOM elements cache
     this.elements = new Map();
 
@@ -91,7 +91,7 @@ class ResortDataManager {
       } catch (error) {
         console.error("ResortDataManager: Failed to load resort data:", error);
         //this.showErrorState();
-        this.setup();
+        //this.setup();
       }
     } else {
       console.error(
