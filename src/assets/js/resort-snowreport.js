@@ -8,9 +8,13 @@ class ResortDataManager {
   constructor() {
     // API configuration
     this.apiBaseUrl = "https://good-cormorant-17.convex.site/api/resort-data";
+    this.apiBackupURL = "https://feeds.snocountry.net/apiResortGet.php?";
+    this.apiRequestInitial = true;
+    this.apiRequests = 0;
     this.resortId = null;
     this.resortData = null;
-    this.logURL = "https://feeds.snocountry.net/endpoints/logging/log.php"
+    this.logURL = "https://feeds.snocountry.net/endpoints/logging/log.php";
+    
     // DOM elements cache
     this.elements = new Map();
 
@@ -90,8 +94,12 @@ class ResortDataManager {
 
       } catch (error) {
         console.error("ResortDataManager: Failed to load resort data:", error);
-        //this.showErrorState();
-        //this.setup();
+        if (this.apiRequests < 1) {         
+          this.setup();
+        } else {
+          //this.showErrorState();
+          // Log to server
+        }
       }
     } else {
       console.error(
@@ -140,9 +148,13 @@ class ResortDataManager {
     if (!this.resortId) {
       throw new Error("No resort ID available");
     }
-
-    const url = `${this.apiBaseUrl}?resortId=${this.resortId}`;
-
+    
+    let url = `${this.apiBaseUrl}?resortId=${this.resortId}`;
+    if (!this.apiRequestInitial) {
+      url = `${this.apiBackupURL}?resortId=${this.resortId}`;
+    }
+    this.apiRequestInitial = false;
+    
     try {
       const response = await fetch(url);
 
