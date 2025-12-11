@@ -88,6 +88,7 @@ class ResponsiveLayoutManager {
         this.cacheElements();
         this.setupEventListeners();
         this.configureInitialLayout();
+        this.checkEmbed();
     }
 
     /**
@@ -245,6 +246,33 @@ class ResponsiveLayoutManager {
     reconfigure() {
         this.currentLayout = null; // Force reconfiguration
         this.configureInitialLayout();
+    }
+    
+    applyWhitePineEmbed() {
+      console.log('applyWhitePineEmbed: ');
+
+      // 1st hide parameters 
+      const sel = "#mobile-drawer, .sno-nav, #breadcrumb-navigation, #resort-header, footer, #card-snonews, #card-trailmap, #card-blurb";
+      document.querySelectorAll(sel).forEach((elIterEl) => {
+        elIterEl.classList.add('hidden');
+      });
+      // 2nd move elements around
+      // Move weather card above News comments card
+      const elWeather = document.getElementById('card-weather');
+      //const elComments =  document.getElementById('card-comments');
+      this.elements.leftColumn.prepend(elWeather);
+    }
+    
+    checkEmbed() {
+      const resortId = document.body.getAttribute("data-snowreport");
+      if (resortId !== '307016') {
+        return;
+      }
+      const paramsFromCurrentUrl = new URLSearchParams(window.location.search);
+      const embed = paramsFromCurrentUrl.get('embed');
+      if (embed === 'true') {
+        this.applyWhitePineEmbed();
+      }
     }
 }
 
