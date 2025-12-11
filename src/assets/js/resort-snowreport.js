@@ -8,7 +8,7 @@ class ResortDataManager {
   constructor() {
     // API configuration
     this.apiBaseUrl = "https://good-cormorant-17.convex.site/api/resort-data";
-    this.apiBackupURL = "https://feeds.snocountry.net/apiResortGet.php?";
+    this.apiBackupURL = ".netlify/functions/snowreport-resort";
     this.apiRequestInitial = true;
     this.apiRequests = 0;
     this.resortId = null;
@@ -94,7 +94,8 @@ class ResortDataManager {
 
       } catch (error) {
         console.error("ResortDataManager: Failed to load resort data:", error);
-        if (this.apiRequests < 1) {         
+        if (this.apiRequests < 1) {   
+          this.apiRequests++;      
           this.setup();
         } else {
           //this.showErrorState();
@@ -150,9 +151,10 @@ class ResortDataManager {
     }
     
     let url = `${this.apiBaseUrl}?resortId=${this.resortId}`;
-    if (!this.apiRequestInitial) {
+    if ((!this.apiRequestInitial) || (this.resortId === '505001')){
       url = `${this.apiBackupURL}?resortId=${this.resortId}`;
     }
+    console.log('ResortDataManager:url:',url);
     this.apiRequestInitial = false;
     
     try {
