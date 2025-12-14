@@ -240,7 +240,13 @@ class ResortDataManager {
     // Handle resort header title
     const titleElement = this.elements.get("resort-header-title");
     if (titleElement && this.resortData.resortName) {
-      titleElement.textContent = this.resortData.resortName;
+      titleElement.textContent = '';
+      if (this.resortData.nesacMember === '1') {
+        const anchor = Object.assign(document.createElement('a'), { href: this.resortData.webSiteLink, target: '_blank', innerHTML:this.resortData.resortName, className: 'hover:text-sky-700' });
+        titleElement.appendChild(anchor);
+      } else {
+        titleElement.textContent = this.resortData.resortName;
+      }
     }
 
     // Handle resort logo
