@@ -95,7 +95,7 @@
  ,{"entryType":"resort","resort_id":"708002","stateName":"illinois/villa-olivia-ski-area/"}
  ,{"entryType":"resort","resort_id":"812002","stateName":"indiana/paoli-peaks/"}
  ,{"entryType":"resort","resort_id":"812001","stateName":"indiana/perfect-north-slopes/"}
- ,{"entryType":"resort","resort_id":"712003","stateName":"iowa/mt-crescent-ski-area/"}
+ ,{"entryType":"resort","resort_id":"712003","stateName":"iowa/crescent-hill-at-hitchcock/"}
  ,{"entryType":"resort","resort_id":"319003","stateName":"iowa/seven-oaks-recreation/"}
  ,{"entryType":"resort","resort_id":"319002","stateName":"iowa/sundown-mountain-resort/"}
  ,{"entryType":"resort","resort_id":"999441506","stateName":"maine/amc-maine-wilderness-lodges/"}
@@ -260,7 +260,7 @@
  ,{"entryType":"resort","resort_id":"914001","stateName":"new-york/belleayre-mountain/"}
  ,{"entryType":"resort","resort_id":"315001","stateName":"new-york/brantling-ski-slopes/"}
  ,{"entryType":"resort","resort_id":"716001","stateName":"new-york/bristol-mountain/"}
- ,{"entryType":"resort","resort_id":"6","stateName":"new-york/buffalo-ski-club/"}
+ ,{"entryType":"resort","resort_id":"6","stateName":"new-york/buffalo-ski-center/"}
  ,{"entryType":"resort","resort_id":"999129222","stateName":"new-york/cascade-cross-country-center/"}
  ,{"entryType":"resort","resort_id":"716002","stateName":"new-york/cockaigne-resort/"}
  ,{"entryType":"resort","resort_id":"315011","stateName":"new-york/dry-hill-ski-area/"}
@@ -449,7 +449,7 @@
  ,{"entryType":"resort","resort_id":"715005","stateName":"wisconsin/whitecap-mountain/"}
  ,{"entryType":"resort","resort_id":"312001","stateName":"wisconsin/wilmot-mountain/"}
  ,{"entryType":"resort","resort_id":"999834125","stateName":"wyoming/grand-targhee-nordic-center/"}
- ,{"entryType":"resort","resort_id":"307001","stateName":"wyoming/antelope-butte/"}
+ ,{"entryType":"resort","resort_id":"307001","stateName":"wyoming/antelope_butte_mountain_recreation_area/"}
  ,{"entryType":"resort","resort_id":"307002","stateName":"wyoming/grand-targhee-resort/"}
  ,{"entryType":"resort","resort_id":"307003","stateName":"wyoming/hogadon-basin-ski-area/"}
  ,{"entryType":"resort","resort_id":"307008","stateName":"wyoming/jackson-hole-mountain-resort/"}
