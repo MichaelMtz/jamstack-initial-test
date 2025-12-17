@@ -643,6 +643,11 @@ class ResortDataManager {
   }
   
   checkForValidChartData(chartData) {
+    console.log('checkForValidChartData:',chartData);
+    if (chartData === null) {
+      return false;
+    }
+    
     let validData = true;
     let nullCount = 0;
     chartData.data.forEach((iterSeason) => {
