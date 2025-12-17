@@ -252,7 +252,7 @@ class ResponsiveLayoutManager {
       console.log('applyWhitePineEmbed: ');
 
       // 1st hide parameters 
-      const sel = "#mobile-drawer, .sno-nav, #breadcrumb-navigation, #resort-header, footer, #card-snonews, #card-trailmap, #card-blurb";
+      const sel = "#mobile-drawer, .sno-nav, #breadcrumb-navigation, #resort-header, footer, #card-snonews, #card-trailmap, #card-blurb, #card-hours, #card-stats, #card-info, #card-archive";
       document.querySelectorAll(sel).forEach((elIterEl) => {
         elIterEl.classList.add('hidden');
       });
@@ -260,7 +260,19 @@ class ResponsiveLayoutManager {
       // Move weather card above News comments card
       const elWeather = document.getElementById('card-weather');
       //const elComments =  document.getElementById('card-comments');
+    
       this.elements.leftColumn.prepend(elWeather);
+      const isDesktop = this.mediaQuery.matches
+      if (isDesktop) {
+        this.elements.rightColumn.append(document.getElementById('card-trails-lifts'));
+      } else {
+        const elTrailsLifts = document.getElementById('card-trails-lifts');
+        const elConditions = document.getElementById('card-conditions');
+        elConditions.insertAdjacentElement('afterend',elTrailsLifts);
+        const elWeather = document.getElementById('card-weather');
+        elTrailsLifts.insertAdjacentElement('afterend',elWeather);
+      }
+      
     }
     
     checkEmbed() {
@@ -272,7 +284,7 @@ class ResponsiveLayoutManager {
       const embed = paramsFromCurrentUrl.get('embed');
       if (embed === 'true') {
         this.applyWhitePineEmbed();
-      }
+      } 
     }
 }
 
