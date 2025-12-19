@@ -252,27 +252,30 @@ class ResponsiveLayoutManager {
       console.log('applyWhitePineEmbed: ');
 
       // 1st hide parameters 
-      const sel = "#mobile-drawer, .sno-nav, #breadcrumb-navigation, #resort-header, footer, #card-snonews, #card-trailmap, #card-blurb, #card-hours, #card-stats, #card-info, #card-archive";
+      const sel = "#mobile-drawer, .sno-nav, #breadcrumb-navigation, #resort-header, footer, #card-snonews ,#card-trailmap, #card-blurb, #card-hours, #card-stats, #card-info, #card-archive ,#card-weather, #card-comments";
       document.querySelectorAll(sel).forEach((elIterEl) => {
         elIterEl.classList.add('hidden');
       });
       // 2nd move elements around
-      // Move weather card above News comments card
-      const elWeather = document.getElementById('card-weather');
-      //const elComments =  document.getElementById('card-comments');
-    
-      this.elements.leftColumn.prepend(elWeather);
+      // Move snowfall and xx to left col
+      document.getElementById('resort-reportDateTime').classList.add('text-xl');
+      
       document.body.classList.remove('bg-gradient-to-br');
 
       const isDesktop = this.mediaQuery.matches
       if (isDesktop) {
-        this.elements.rightColumn.append(document.getElementById('card-trails-lifts'));
+        const elTrailsLifts = document.getElementById('card-trails-lifts');
+        this.elements.rightColumn.prepend(elTrailsLifts);
+        elTrailsLifts.classList.add('h-[375px]');
+        this.elements.leftColumn.prepend(document.getElementById('card-conditions'));
+        this.elements.leftColumn.prepend(document.getElementById('card-snowfall'));
+
       } else {
         const elTrailsLifts = document.getElementById('card-trails-lifts');
         const elConditions = document.getElementById('card-conditions');
         elConditions.insertAdjacentElement('afterend',elTrailsLifts);
-        const elWeather = document.getElementById('card-weather');
-        elTrailsLifts.insertAdjacentElement('afterend',elWeather);
+        // const elWeather = document.getElementById('card-weather');
+        // elTrailsLifts.insertAdjacentElement('afterend',elWeather);
       }
       
     }
