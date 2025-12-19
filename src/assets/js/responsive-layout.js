@@ -262,6 +262,8 @@ class ResponsiveLayoutManager {
       //const elComments =  document.getElementById('card-comments');
     
       this.elements.leftColumn.prepend(elWeather);
+      document.body.classList.remove('bg-gradient-to-br');
+
       const isDesktop = this.mediaQuery.matches
       if (isDesktop) {
         this.elements.rightColumn.append(document.getElementById('card-trails-lifts'));
