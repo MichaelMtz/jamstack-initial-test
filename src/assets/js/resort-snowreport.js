@@ -151,7 +151,8 @@ class ResortDataManager {
     }
     
     let url = `${this.apiBaseUrl}?resortId=${this.resortId}`;
-    if ((!this.apiRequestInitial) || (this.resortId === '505001')){
+    //if ((!this.apiRequestInitial) || (this.resortId === '505001')){
+    if (!this.apiRequestInitial){
       url = `${this.apiBackupURL}?resortId=${this.resortId}`;
     }
     console.log('ResortDataManager:url:',url);

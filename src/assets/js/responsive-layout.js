@@ -198,7 +198,11 @@ class ResponsiveLayoutManager {
                 leftColumn.appendChild(card);
             }
         });
+        const elGatoradeROTW = document.getElementById('card-gatorade');
+        if (elGatoradeROTW) {
+          this.elements.leftColumn.prepend(elGatoradeROTW);
 
+        }
         console.log('ResponsiveLayoutManager: Applied mobile layout');
     }
 

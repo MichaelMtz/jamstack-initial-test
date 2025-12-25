@@ -185,6 +185,11 @@ ul.feature-boxes li.pepsi-box .fly-box {
   height: 48px;
   height: 82px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-gatorade {
+  height: 128px;
+  margin-top: -10px;
+  margin-right: 25px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-telluride {
   height: 48px;
 }
@@ -340,7 +345,7 @@ ul.feature-boxes li.pepsi-box .fly-box {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.33);
   }
   .mobile-stories .mobile-stories-container .card .card-content {
-    /*background: url(../images/small-shadow.png) repeat-x top; */
+    /* background: url(../images/small-shadow.png) repeat-x top; */
     padding: 10px;
     position: absolute;
     bottom: 0;
