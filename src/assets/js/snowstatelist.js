@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   // fetch(url,{"headers": {"sec-fetch-mode": "cors","Access-Control-Allow-Origin":"*"}, "mode":"cors"}).then(response => {
   
   //const url = `.netlify/functions/snowreport-api?target=${target}&src=${src}` ;
-  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}&type=${requestType}` : `http://localhost/sno/snoCountryHeadless/snow-reports/headless-snow-report-${endpoint}.php?target=${target}&src=${src}&type=${requestType}`;
+  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/snowreport-api?target=${target}&src=${src}&type=${requestType}` : `https://feeds.snocountry.net/proof-of-concept/headless-snow-report-${endpoint}.php?target=${target}&src=${src}&type=${requestType}`;
   _log(`snowreport-api: ${url}`);
   fetch(url).then(response => {
     return response.json();

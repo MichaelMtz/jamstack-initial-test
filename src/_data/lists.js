@@ -54,6 +54,7 @@ module.exports = async function() {
     iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
     iter["snowreport"] = iter.stateName;
     iter["resortType"] = 'alpine';
+    iter['scripts'] = ['assets/js/global.js'];
     
     iter["styles"] = ['state-page.css','state-page-card.css' ];
     iter["hasXC"] = false;

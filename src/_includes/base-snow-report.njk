@@ -7,14 +7,14 @@
 {% include 'basehref.html' %}
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="{{ resorts.stateNameProper }} Mountains Snow, Snow for {{ resorts.stateNameProper }}, Snow in {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} snow report, Snow Report {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} Ski Report, {{ resorts.stateNameProper }} Snow, Snow {{ resorts.stateNameProper }}, Ski Report {{ resorts.stateNameProper }},  where is the snow in {{ resorts.stateNameProperLowerCase }}" />
-        <meta name="rights" content="Copyright © 2024. All Rights Reserved." />
-        <meta name="author" content="Snow Reports" />
+        <meta name="rights" id="rights" content="Copyright © 2026. All Rights Reserved." />
+        <meta name="author" content="SnoCountry" />
         <meta name="robots" content="index,follow" />
-        <meta name="description" content="The latest {{ resorts.stateNameProper }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.stateNameProper }}." />
+        <meta name="description" content="Get the latest snow conditions for {{ resorts.stateNameProper }}, {{resorts.stateNameAbbr}}. See fresh snowfall, open trails & lifts, base depth, and weather updates to plan your perfect day on the slopes!." />
         <title>{{ resorts.stateNameProper }} Snow Report and Weather Conditions | SnoCountry</title>
 
         <meta property="og:title" content="{{ resorts.stateNameProper }} Snow Report and Weather Conditions | SnoCountry" />
-        <meta property="og:description " content="The latest {{ resorts.stateNameProper }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.stateNameProper }}" />
+        <meta property="og:description " content="Get the latest snow conditions for {{ resorts.stateNameProper }}, {{resorts.stateNameAbbr}}. See fresh snowfall, open trails & lifts, base depth, and weather updates to plan your perfect day on the slopes!." />
         <meta property="og:url" content="https://snocountry.com/snow-report/{{ resorts.stateName }}" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SnoCountry" />
@@ -23,7 +23,7 @@
     
         <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://snocountry.com/","name":"SnoCountry.Com","description":"Ski Resorts and Snow Reports, for the Snowboarder and Skier","publisher":"SnoCountry"}
         </script>
-        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://snocountry.com/","logo":"https://snocountry.com/assets/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://snocountry.com/","logo":"https://snocountry.com/assets/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://x/SnoCountryCom", "https://en.wikipedia.org/wiki/Snocountry","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
         </script>
                 
         <link rel="stylesheet" href="/assets/font/mulish-font.css">
@@ -59,6 +59,11 @@
           <img id="modalTrailMapImage" src="https://snocountry.com/assets/images/resorts/trail-maps/{{ resorts.snowreport }}.jpg" alt="{{ resorts.stateNameProper }} Trail Map" class="max-w-full max-h-full object-contain rounded-xl">
         </div>
       </div>
+      {% if resorts.scripts %}
+        {% for scriptFileName in resorts.scripts %}
+      <script src="{{scriptFileName}}" type="text/javascript"></script>
+        {% endfor %}
+       {% endif %}
       <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
       <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
       <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
@@ -70,11 +75,7 @@
 	 <script type="text/javascript" src="/assets/js/jquery-1.8.3.min.js"></script>
     <script src="/assets/js/resort-ads-system.js" type="text/javascript"></script>
     <script src="/assets/js/pepsi-resort-week.js" type="text/javascript"></script> 
-    {% if resorts.scripts %}
-      {% for scriptFileName in resorts.scripts %}
-    <script src="{{scriptFileName}}" type="text/javascript"></script>
-      {% endfor %}
-     {% endif %}
+
     </body>
 </html>
 

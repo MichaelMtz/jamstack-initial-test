@@ -10,6 +10,10 @@ const abbrToLongName = {
   , "MID WEST:" : "mid-west", "NORTH EAST:" : "north-east", "NORTH WEST:" : "north-west", "ROCKIES:": "rockies", "SOUTH WEST:": "south-west","SOUTH EAST:": "south-east" 
 };
 
+function getKeyByValue(object, value) {
+  return Object.keys(object).find(key => object[key] === value);
+}
+
 function upperCaseWords(input) {
   input = input.replace(/-/g, ' ');
   const iterName = input.split(" ");
@@ -59,7 +63,9 @@ module.exports = async function() {
       iter["stateNameProperLowerCase"] = iter["resortName"] = iterName[1].replace('-', ' ');
       iter["stateNameProper"] = upperCaseWords(iterName[1]);
       iter['stateNameActual'] = iterName[0];
-      iter["snowreport"] = iter.resort_id;
+      iter['stateNameAbbr'] = getKeyByValue(abbrToLongName, iterName[0]);
+      iter["snowreport"] = iter.resort_id; 
+      iter['scripts'] = ['assets/js/global.js'];
       //iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
       
       //Third party scripts

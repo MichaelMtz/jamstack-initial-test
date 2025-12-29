@@ -7,7 +7,7 @@
 {% include 'basehref.html' %}
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="{{ resorts.stateNameProper }} Mountains Snow, Snow for {{ resorts.stateNameProper }}, Snow in {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} snow report, Snow Report {{ resorts.stateNameProper }}, {{ resorts.stateNameProper }} Ski Report, {{ resorts.stateNameProper }} Snow, Snow {{ resorts.stateNameProper }}, Ski Report {{ resorts.stateNameProper }},  where is the snow in {{ resorts.stateNameProperLowerCase }}" />
-        <meta name="rights" content="Copyright © 2024. All Rights Reserved." />
+        <meta name="rights" id="rights" content="Copyright © 2026. All Rights Reserved." />
         <meta name="author" content="Snow Reports" />
         <meta name="robots" content="index,follow" />
         <meta name="description" content="The latest {{ resorts.stateNameProper }} snow report on conditions, trails, lifts and weather for each ski resort in {{ resorts.stateNameProper }}." />
@@ -23,7 +23,7 @@
 
         <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://snocountry.com/","name":"SnoCountry.Com","description":"Ski Resorts and Snow Reports, for the Snowboarder and Skier","publisher":"SnoCountry"}
         </script>
-        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://snocountry.com/","logo":"https://snocountry.com/assets/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://twitter.com/SnoCountryCom","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://snocountry.com/","logo":"https://snocountry.com/assets/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://x/SnoCountryCom", "https://en.wikipedia.org/wiki/Snocountry","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
         </script>
         <script type="application/ld+json">
         {
@@ -304,7 +304,7 @@
                <a href="https://www.facebook.com/SnoCountryMountainReports/" target="_blank" rel="noopener noreferrer">
                   <img class=" jch-lazyloaded" src="/assets/images/core/facebook.png" data-src="/assets/images/core/facebook.png" alt="facebook">
                   <noscript><img src="/assets/images/core/facebook.png" alt="facebook" /></noscript></a> 
-            <a href="https://twitter.com/SnoCountryCom" target="_blank" rel="noopener noreferrer">
+            <a href="https://x/SnoCountryCom", "https://en.wikipedia.org/wiki/Snocountry" target="_blank" rel="noopener noreferrer">
                <img class=" jch-lazyloaded" src="/assets/images/core/twitter.png" data-src="/assets/images/core/twitter.png" alt="twitter">
                <noscript><img src="/assets/images/core/twitter.png" alt="twitter" /></noscript>
             </a>
@@ -331,21 +331,22 @@
    
   </div>
 {% include 'footer.html' %}
-	<script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
+  {% if resorts.scripts %}
+    {% for scriptFileName in resorts.scripts %}
+      <script src="{{scriptFileName}}" type="text/javascript"></script>
+    {% endfor %}
+   {% endif %}
+	  <script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
     <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script>
     <script src="../../assets/js/resort-ads-system.js" type="text/javascript"></script>
     <script src="../../assets/js/snowstatelist.js" type="text/javascript"></script>
     <script src="../../assets/js/sno-modal.js" type="text/javascript"></script>
-    {% if resorts.scripts %}
-      {% for scriptFileName in resorts.scripts %}
-        <script src="{{scriptFileName}}" type="text/javascript"></script>
-      {% endfor %}
-     {% endif %}
+
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded',(event)=> {
         var pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
         console.log(`>>> load: ${pageLoadTime}`);
-        document.querySelector("#browsertime").innerText = pageLoadTime;
+        //document.querySelector("#browsertime").innerText = pageLoadTime;
 
     });
     </script>

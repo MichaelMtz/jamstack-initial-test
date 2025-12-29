@@ -29,3 +29,11 @@ const waitForElement = (selector) => {
     });
   });
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+  const elRights = document.getElementById('rights');
+  if (elRights) {    
+    const currentYear = new Date().getFullYear(); 
+    elRights.content = `Copyright © ${currentYear}. All Rights Reserved.`
+  }
+});
