@@ -27,7 +27,7 @@ class ResponsiveLayoutManager {
             'card-info',
             'card-stats',
             'card-archive',
-            //'card-affiliate',
+            'card-uphill',
             'card-snonews'
         ];
 

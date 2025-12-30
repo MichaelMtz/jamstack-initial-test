@@ -298,11 +298,11 @@ class ResortDataManager {
     // Handle contact information fields
     this.populateContactInfo();
 
-
     // Handle resort comments
     this.populateResortComments();
     
-   
+    // Handle Uphill
+    this.populateUphillInfo();    
   } //fn handleSpecialElements
 
   handleResortVideoImage() {
@@ -853,6 +853,7 @@ class ResortDataManager {
       if (this.resortData.newSnowMax.trim().length > 0) {
         past24Hours += '-' + this.resortData.newSnowMax;
       }
+      past24Hours += '"';
     }
 
     let past48Hours = '-';
@@ -863,7 +864,7 @@ class ResortDataManager {
 
     let seasonTotal = 'N/A';
     if ((this.resortData.seasonTotal.trim().length > 0) && (this.resortData.seasonTotal !== '0')){
-      seasonTotal = this.resortData.seasonTotal;
+      seasonTotal = this.resortData.seasonTotal + '"';
     }
 
     // const past7Days = this.calculateSnowfallTotal(
@@ -872,14 +873,31 @@ class ResortDataManager {
     // );
 
     // Update elements
-    this.updateElementText("snowfall-past24Hours", `${past24Hours}"`);                   
+    this.updateElementText("snowfall-past24Hours", `${past24Hours}`);                   
     this.updateElementText("resort-snowfall-past48Hours", `${past48Hours}`);
     this.updateElementText("resort-snowfall-snowComments", `${snowComments}`); // Using 48h as proxy
-    this.updateElementText("resort-snowfall-seasonTotal", `${seasonTotal}"`);
+    this.updateElementText("resort-snowfall-seasonTotal", `${seasonTotal}`);
     
     
   }
+  
+  /**
+   * Display and populate uphill info is allowed
+   */
+  populateUphillInfo() {
+    if (this.resortData.uphillAllowed === '1') {      
+      const elUphillCard = document.getElementById("card-uphill");
+      if (elUphillCard) {
+        elUphillCard.classList.remove('hidden');
+        document.getElementById('uphill-policy-page').innerHTML = this.resortData.uphillPolicy;
+        const passRequired = (this.resortData.uphillPassTicketReq === '1') ? 'Yes' : 'No';
+        document.getElementById('uphill-pass-required').innerHTML = passRequired;
+        document.getElementById('uphill-routes').innerHTML = this.resortData.uphillTravelRoutes;
+      }
+    }
 
+  }//populateUphillInfo
+  
   populateBaseDepth() {
     let baseDepth = 'Not reported';
     if (this.resortData.avgBaseDepthMin.trim().length > 0) {
