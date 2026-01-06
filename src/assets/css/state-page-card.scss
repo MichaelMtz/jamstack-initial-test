@@ -256,6 +256,18 @@ body {
             }
           }
         }
+        &__header.xtra-long-name {
+          h2 {
+        
+            margin-top: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            @include bpmax(427px) {
+              margin-top:0px;
+              font-size:18px
+            }
+          }
+        }
         &__info.summer {
           justify-content: flex-start;
           flex-flow: row nowrap;
@@ -761,6 +773,11 @@ body {
 
     }
     .resort.xc {
+      .resort__header {
+        .resort__header-weather-detail {
+          margin-top: unset;
+        }
+      }
       .resort__info .section-container .section-item {
         .xc-basedepth {
           display:flex;

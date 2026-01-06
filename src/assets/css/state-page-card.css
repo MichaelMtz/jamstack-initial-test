@@ -274,6 +274,17 @@ body {
     font-size: 18px;
   }
 }
+.resorts-container .resort__header.xtra-long-name h2 {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+@media screen and (max-width: 427px) {
+  .resorts-container .resort__header.xtra-long-name h2 {
+    margin-top: 0px;
+    font-size: 18px;
+  }
+}
 .resorts-container .resort__info.summer {
   justify-content: flex-start;
   flex-flow: row nowrap;
@@ -802,6 +813,9 @@ body {
   border-color: rgb(229, 231, 235);
   border: 1px solid;
   margin-right: 10px;
+}
+.resorts-container .resort.xc .resort__header .resort__header-weather-detail {
+  margin-top: unset;
 }
 .resorts-container .resort.xc .resort__info .section-container .section-item .xc-basedepth {
   display: flex;
