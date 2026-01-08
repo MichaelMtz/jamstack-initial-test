@@ -44,8 +44,8 @@ _log('pepsi-resort-week Initialized...');
  * @property {number} YOUTUBE_PARAMS.start - Start time in seconds
  */
 const PEPSI_CONFIG = {
-  TARGET_RESORT_ID: '603018',
-  YOUTUBE_VIDEO_ID: '1TYdeND01V8',
+  TARGET_RESORT_ID: '801010',
+  YOUTUBE_VIDEO_ID: 'vwyTP3cLD5s',
   VIDEO_DIMENSIONS: {
     width: '100%',
     height: '400px'
@@ -107,7 +107,7 @@ function generatePepsiROTWHTML() {
         <div class="pepsi-header flex flex-col gap-1">
           <div class="pepsi-logo-container items-center md:items-base md:px-4 flex flex-col md:flex-row md:gap-x-[100px] justify-center">   
             <img class="logo-gatorade h-[155px] md:h-[128px] " src="assets/images/ads/pepsi/GAT_GBolt Mark RGB _Black.png" alt="Gatorade" >
-            <img class="logo-camelback md:h-[100px] " src="assets/images/ads/pepsi/pats-peak/PatsPeak_logo.png" alt="Pat's Peak Resort">
+            <img class="logo-snowbird md:h-[100px] " src="assets/images/ads/pepsi/snowbird/Snowbird-logo.png" alt="Snowbird Resort Utah">
 
           </div>
           <div class="pepsi-copy text-3xl text-center">Gatorade Resort of the Week</div>

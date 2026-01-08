@@ -205,6 +205,10 @@ ul.feature-boxes li.pepsi-box .fly-box {
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-camelback {
   height: 80px;
 }
+.pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-snowbird {
+  height: 80px;
+  margin-top: 20px;
+}
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-powder-mountain {
   height: 44px;
   margin-bottom: unset;

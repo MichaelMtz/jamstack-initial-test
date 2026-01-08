@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% include 'basehref.html' %}
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="keywords" content="SnoCountry News" />
+      <meta name="rights" id="rights" content="Copyright © 2025. All Rights Reserved." />
+      <meta name="author" content="{{ schemaAuthor }}" />
+      <meta name="robots" content="index,follow" />
+      <meta name="description" content="{{ schemaDescription }}" />
+      <meta name="robots" content="max-image-preview:large">
+      <title>{{ title }}</title>
+
+      <meta property="og:title" content="{{ title }}" />
+      <meta property="og:description " content="{{ schemaDescription }}" />
+      <meta property="og:url" content="https://snocountry.com/" />
+      <meta property="og:type" content="article">
+      <meta property="og:site_name" content="SnoCountry" />
+      <meta property="og:image" content="{{ schemaHeroImage }}" />
+      <meta name="robots" content="max-image-preview:large">
+      <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+      <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://snocountry.com/","name":"SnoCountry.Com","description":"SnoCountry is your trusted source for up-to-date snow reports, ski conditions, and mountain weather across North America. Find the latest updates for ski resorts, trails, and lifts.","publisher":"SnoCountry"}
+      </script>
+      <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://snocountry.com/","logo":"https://snocountry.com/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://x.com/SnoCountryCom", "https://en.wikipedia.org/wiki/Snocountry","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
+      </script>
+      
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "{{ schemaAbsoluteUrl }}",
+              "name": "{{ schemaName }}",
+              "headline": "{{ schemaName }}",
+              "url": "{{ schemaAbsoluteUrl }}",
+              "mainEntityOfPage": "{{ schemaAbsoluteUrl }} ",
+              "description": "{{ schemaDescription }}",
+              "datePublished": "{{ schemaDate }}",
+              "dateModified": "{{ schemaDate }}",
+              "author": {
+                "@type": "Person",
+                "name": "{{ schemaAuthor }}"
+              },
+              "image": {
+                "@id": "{{ schemaArticleImage }}"
+              },
+              "publisher": {
+                  "@type": "Organization",
+                  "@id": "{{ env.base.site }}",
+                  "name": "SnoCountry",
+                  "url": "https://snocountry.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://snocountry.com/assets/images/snocountry_logo_v2.png",
+                    "height": 276,
+                    "width": 70, 
+                    "caption": "Real riders and skiers who know the snow"
+                  }
+              }
+            },{
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Mountain Life",
+                    "item": "https://snocountry.com/mountain-life"
+                  }
+                ]
+             }
+          ]
+        }
+      </script>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://snocountry.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Mountain Life",
+                "item": "https://snocountry.com/mountain-life/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Skiing and Snowboarding Terminology",
+                "item": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/"
+              }
+            ]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/#article",
+            "isPartOf": { "@id": "https://snocountry.com/mountain-life/history-culture/ski-snowboard-terminology-slang/#webpage" },
+            "author": {
+              "@type": "Person",
+              "name": "Josh Petit",
+              "url": "https://snocountry.com/"
+            },
+            "headline": "Skiing & Snowboarding Terms, Slang and Jargon",
+            "description": "A comprehensive guide to skiing and snowboarding jargon, from basics like chairlifts to deep-cut slang like gapers and snorkeling.",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SnoCountry",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://snocountry.com/wp-content/uploads/2021/08/snocountry-logo.png"
+              }
+            },
+            "mainEntity": {
+              "@type": "DefinedTermSet",
+              "name": "Skiing & Snowboarding Terms, Slang and Jargon",
+              "hasDefinedTerm": [
+                { "@type": "DefinedTerm", "name": "Alpine skiing", "description": "Downhill skiing where the toe and heel of the boot are fixed to the ski." },
+                { "@type": "DefinedTerm", "name": "Après/Après-ski", "description": "The nightlife following a day of skiing or snowboarding, e.g. eating, drinking, listening to live music or relaxing in a hot tub." },
+                { "@type": "DefinedTerm", "name": "Avy", "description": "Slang for an avalanche." },
+                { "@type": "DefinedTerm", "name": "Backcountry", "description": "Also called out-of-bounds or off-piste, this type of skiing happens in unmarked, unpatrolled areas beyond the boundaries of the resort." },
+                { "@type": "DefinedTerm", "name": "Backseat", "description": "Leaning too far toward the tail of your skis or snowboard." },
+                { "@type": "DefinedTerm", "name": "Base Area", "description": "The bottom of the mountain where the lodge is located." },
+                { "@type": "DefinedTerm", "name": "Base Depth", "description": "Average depth of snow on the mountain." },
+                { "@type": "DefinedTerm", "name": "Basket", "description": "A flat disc near the tip of a ski pole that prevents the pole from sinking too far in the snow." },
+                { "@type": "DefinedTerm", "name": "Beaver slap", "description": "When a snowboarder slaps their board on the ground to remove snow that is stuck to the topsheet." },
+                { "@type": "DefinedTerm", "name": "Big-mountain skiing or snowboarding", "description": "The style of skiing or snowboarding seen in ski movies, featuring steep vertical descents and cliff drops." },
+                { "@type": "DefinedTerm", "name": "Black Diamond", "description": "Ski runs classified by color, with a black diamond indicating expert terrain." },
+                { "@type": "DefinedTerm", "name": "Blower", "description": "A term for extremely light snow that exists in ample amounts." },
+                { "@type": "DefinedTerm", "name": "Bluebird", "description": "A day with clear, sunny skies and minimal cloud cover." },
+                { "@type": "DefinedTerm", "name": "Blue Run", "description": "Ski runs classified by color with a blue square indicating intermediate terrain." },
+                { "@type": "DefinedTerm", "name": "Boilerplate", "description": "Hard-packed, icy conditions that are hard to set an edge in; also called bullet proof." },
+                { "@type": "DefinedTerm", "name": "Bomb", "description": "To go downhill at high speed." },
+                { "@type": "DefinedTerm", "name": "Bonk", "description": "Deliberately tapping an object with your skis or snowboard." },
+                { "@type": "DefinedTerm", "name": "Bowl skiing", "description": "Skiing on wide bowl-shaped slopes with or without trees." },
+                { "@type": "DefinedTerm", "name": "Brain bucket", "description": "A slang term for a helmet." },
+                { "@type": "DefinedTerm", "name": "Bullet proof", "description": "Hard packed, icy conditions caused when snow melts and refreezes; also called boilerplate." },
+                { "@type": "DefinedTerm", "name": "Bullwheel", "description": "The large wheel at either end of a ski lift that drives the cable." },
+                { "@type": "DefinedTerm", "name": "Bunny slope", "description": "An area of the mountain with a gentle slope perfect for beginners." },
+                { "@type": "DefinedTerm", "name": "Butter", "description": "A trick where the rider shifts weight to press the nose or tail while spinning or sliding." },
+                { "@type": "DefinedTerm", "name": "Call your drop", "description": "Letting other riders know you’re taking your turn by calling out 'dropping'." },
+                { "@type": "DefinedTerm", "name": "Carve", "description": "Digging the ski/snowboard’s edge into packed snow to turn without skidding." },
+                { "@type": "DefinedTerm", "name": "Catching an edge", "description": "When the downhill edge accidentally digs into the snow, usually resulting in a fall." },
+                { "@type": "DefinedTerm", "name": "Cat-skiing", "description": "Backcountry terrain accessed using a snowcat." },
+                { "@type": "DefinedTerm", "name": "Cat track", "description": "A flat trail used by snowcats (groomers) to get around the mountain." },
+                { "@type": "DefinedTerm", "name": "Chairlift", "description": "An aerial lift consisting of a circulating cable loop carrying a series of chairs." },
+                { "@type": "DefinedTerm", "name": "Chondola", "description": "A lift that features a mix of both chair lifts and gondola cars." },
+                { "@type": "DefinedTerm", "name": "Chutes", "description": "Narrow sections of snow between rock walls typically skied by experts." },
+                { "@type": "DefinedTerm", "name": "Cold smoke", "description": "Very light, dry powder that blows around like a cloud of smoke." },
+                { "@type": "DefinedTerm", "name": "Corduroy", "description": "The ridges in the snow left behind by grooming machines." },
+                { "@type": "DefinedTerm", "name": "Corn", "description": "Snow characterized by large corn-kernel-sized shapes found in spring." },
+                { "@type": "DefinedTerm", "name": "Cornice", "description": "An overhanging mass of snow at the edge of a ridge or peak." },
+                { "@type": "DefinedTerm", "name": "Core shot", "description": "A deep gouge where the base has been punctured to expose the core material." },
+                { "@type": "DefinedTerm", "name": "Couloir", "description": "A narrow, steep, and often rocky gully or chute found in alpine terrain." },
+                { "@type": "DefinedTerm", "name": "Cross-country skiing", "description": "Skiing on flat terrain using lighter weight boots and narrower skis than alpine." },
+                { "@type": "DefinedTerm", "name": "Death before download", "description": "The belief that you should always ride down rather than taking the lift down." },
+                { "@type": "DefinedTerm", "name": "Death cookies", "description": "Hard, icy snow chunks on groomed runs formed by grooming machines." },
+                { "@type": "DefinedTerm", "name": "Detachable lift", "description": "A lift where chairs detach from the cable at stations to slow down for loading." },
+                { "@type": "DefinedTerm", "name": "DIN settings", "description": "Standardized release settings that determine when bindings release a boot." },
+                { "@type": "DefinedTerm", "name": "Double black diamond", "description": "A trail designated for experts with extremely steep and technical terrain." },
+                { "@type": "DefinedTerm", "name": "Double lift", "description": "A chairlift that carries two people." },
+                { "@type": "DefinedTerm", "name": "Downhill", "description": "A high-speed alpine racing discipline characterized by long turns." },
+                { "@type": "DefinedTerm", "name": "Dry slope", "description": "A ski hill made of synthetic material imitating a snowy surface." },
+                { "@type": "DefinedTerm", "name": "Ducking ropes", "description": "Riding into closed areas by going under boundary ropes." },
+                { "@type": "DefinedTerm", "name": "Dump", "description": "An unusually large or heavy snowfall." },
+                { "@type": "DefinedTerm", "name": "Dust on Crust", "description": "A thin covering of light snow on top of hard, icy snow." },
+                { "@type": "DefinedTerm", "name": "Early season", "description": "The beginning of ski season, typically before the New Year." },
+                { "@type": "DefinedTerm", "name": "Earn your turns", "description": "Putting in the physical effort to ascend a mountain before descending." },
+                { "@type": "DefinedTerm", "name": "Edge", "description": "The metal strip on the bottom sides of skis and snowboards used for turning." },
+                { "@type": "DefinedTerm", "name": "Ego bumps", "description": "Irregularly shaped moguls on ungroomed trails that can humble skiers." },
+                { "@type": "DefinedTerm", "name": "Ejected", "description": "When a skier's boots are forcefully released from their bindings." },
+                { "@type": "DefinedTerm", "name": "Epic", "description": "A day or run that is unforgettable and out of the norm." },
+                { "@type": "DefinedTerm", "name": "Euro carve", "description": "A carved turn where the rider travels back up the hill." },
+                { "@type": "DefinedTerm", "name": "Face shot", "description": "When deep snow kicks up into the skier or snowboarder's face." },
+                { "@type": "DefinedTerm", "name": "Falling leaf", "description": "A snowboarding maneuver zig-zagging on one edge like a falling leaf." },
+                { "@type": "DefinedTerm", "name": "Fall line", "description": "The most direct line down a slope." },
+                { "@type": "DefinedTerm", "name": "Figure eight", "description": "Ski or snowboard tracks that resemble the number '8'." },
+                { "@type": "DefinedTerm", "name": "Firing", "description": "Perfect conditions, often referring to fresh snow and weather." },
+                { "@type": "DefinedTerm", "name": "First chair", "description": "The first chair up the mountain each day." },
+                { "@type": "DefinedTerm", "name": "First tracks", "description": "Being the first to ride an area of fresh snow; also known as freshies." },
+                { "@type": "DefinedTerm", "name": "Fixed grip lift", "description": "A ski lift where chairs are permanently attached to the cable." },
+                { "@type": "DefinedTerm", "name": "Flat light", "description": "Low-contrast lighting where the terrain appears featureless." },
+                { "@type": "DefinedTerm", "name": "Free refills", "description": "When heavy snow covers tracks by the time the rider returns to the top." },
+                { "@type": "DefinedTerm", "name": "Freeride", "description": "Skiing or snowboarding featuring steep vertical descents and cliff drops." },
+                { "@type": "DefinedTerm", "name": "Freestyle skiing", "description": "A discipline incorporating aerial tricks and jumps." },
+                { "@type": "DefinedTerm", "name": "French Fry", "description": "Skiing with feet parallel." },
+                { "@type": "DefinedTerm", "name": "Freshies", "description": "First tracks in fresh snow." },
+                { "@type": "DefinedTerm", "name": "Frozen granular", "description": "A refrozen, crusty snow surface." },
+                { "@type": "DefinedTerm", "name": "Full send", "description": "Maximum commitment to a big jump, trick, or line." },
+                { "@type": "DefinedTerm", "name": "Gaper", "description": "Slang for an inexperienced or oblivious skier/rider." },
+                { "@type": "DefinedTerm", "name": "Gaper gap", "description": "The visible space between a helmet and goggles." },
+                { "@type": "DefinedTerm", "name": "Gear tuning", "description": "Preparing equipment for the next day on snow." },
+                { "@type": "DefinedTerm", "name": "Giant slalom", "description": "A race featuring wide, fast turns through gates." },
+                { "@type": "DefinedTerm", "name": "Glades", "description": "Wooded areas where trees are spaced for navigation." },
+                { "@type": "DefinedTerm", "name": "Gnarly", "description": "Something that is crazy, challenging, or dangerous." },
+                { "@type": "DefinedTerm", "name": "Gondola", "description": "An enclosed lift suspended from a cable for 4 to 8 passengers." },
+                { "@type": "DefinedTerm", "name": "Gondy", "description": "Slang for a gondola." },
+                { "@type": "DefinedTerm", "name": "Goofy", "description": "Riding a snowboard with the right foot forward." },
+                { "@type": "DefinedTerm", "name": "Granular Snow", "description": "Snow that looks like rock salt with a sand-like consistency." },
+                { "@type": "DefinedTerm", "name": "Green Run", "description": "A trail indicating beginner terrain marked by a green circle." },
+                { "@type": "DefinedTerm", "name": "Grom", "description": "A young skier or snowboarder." },
+                { "@type": "DefinedTerm", "name": "Groomed slope", "description": "A trail that has been smoothed with fresh corduroy." },
+                { "@type": "DefinedTerm", "name": "Halfpipe", "description": "A pipe-shaped snow construction for performing tricks." },
+                { "@type": "DefinedTerm", "name": "Hard pack", "description": "Compacted, firm snow that creates a solid surface." },
+                { "@type": "DefinedTerm", "name": "Headwall", "description": "A steep, often rocky section at the top of a run." },
+                { "@type": "DefinedTerm", "name": "Heel drag", "description": "When the heels of a snowboard boot catch the snow during a turn." },
+                { "@type": "DefinedTerm", "name": "Heelside hero", "description": "A snowboarder who relies almost exclusively on their heelside edge." },
+                { "@type": "DefinedTerm", "name": "Heli-skiing", "description": "Skiing/snowboarding accessed via helicopter." },
+                { "@type": "DefinedTerm", "name": "Hero snow", "description": "Soft, forgiving snow providing excellent grip." },
+                { "@type": "DefinedTerm", "name": "Herringbone", "description": "A technique for skating up a hill." },
+                { "@type": "DefinedTerm", "name": "Indy grab", "description": "Grabbing the toe edge of the board between the feet with the back hand." },
+                { "@type": "DefinedTerm", "name": "In-run", "description": "The area leading up to a jump or park feature." },
+                { "@type": "DefinedTerm", "name": "Inverted", "description": "A trick where the rider flips upside down." },
+                { "@type": "DefinedTerm", "name": "Jerry", "description": "A rider who lacks skill and mountain etiquette." },
+                { "@type": "DefinedTerm", "name": "Jib", "description": "Jumping or sliding on surfaces other than snow." },
+                { "@type": "DefinedTerm", "name": "Jib stick", "description": "A snowboard designed specifically for park riding." },
+                { "@type": "DefinedTerm", "name": "Jump turn", "description": "Turning by jumping and changing direction in the air." },
+                { "@type": "DefinedTerm", "name": "Kick turn", "description": "An about-face turn while stationary." },
+                { "@type": "DefinedTerm", "name": "Kicker", "description": "A sharply angled jump for gaining height." },
+                { "@type": "DefinedTerm", "name": "Knuckle", "description": "The very beginning of the landing area on a jump." },
+                { "@type": "DefinedTerm", "name": "Lawn chair", "description": "A fall where the body folds like a lawn chair." },
+                { "@type": "DefinedTerm", "name": "Leg burner", "description": "A long, nonstop run." },
+                { "@type": "DefinedTerm", "name": "Liftie", "description": "A lift operator." },
+                { "@type": "DefinedTerm", "name": "Line", "description": "The specific route taken down a slope." },
+                { "@type": "DefinedTerm", "name": "Lip", "description": "The critical point at the end of a jump." },
+                { "@type": "DefinedTerm", "name": "Magic carpet", "description": "A surface lift found in beginner learning areas." },
+                { "@type": "DefinedTerm", "name": "Mashed potatoes", "description": "Wet, heavy snow." },
+                { "@type": "DefinedTerm", "name": "Moguls", "description": "Mounds of snow found on ungroomed trails; also known as bumps." },
+                { "@type": "DefinedTerm", "name": "NASTAR", "description": "A public racing program for all skill levels." },
+                { "@type": "DefinedTerm", "name": "Never-ever", "description": "A first-time skier or snowboarder." },
+                { "@type": "DefinedTerm", "name": "Newbie", "description": "Slang for a beginner." },
+                { "@type": "DefinedTerm", "name": "No fall zone", "description": "An area where a fall could result in serious injury." },
+                { "@type": "DefinedTerm", "name": "Nollie", "description": "Pushing off the nose of the board to jump." },
+                { "@type": "DefinedTerm", "name": "Nordic skiing", "description": "Another term for cross-country skiing." },
+                { "@type": "DefinedTerm", "name": "Nose", "description": "The front of the board or skis." },
+                { "@type": "DefinedTerm", "name": "Nuking", "description": "Slang for extremely hard snowfall." },
+                { "@type": "DefinedTerm", "name": "Off-piste", "description": "Skiing in uncontrolled or backcountry terrain." },
+                { "@type": "DefinedTerm", "name": "Ollie", "description": "Pushing off the tail of the board to jump." },
+                { "@type": "DefinedTerm", "name": "On-piste", "description": "Skiing on a maintained trail or run." },
+                { "@type": "DefinedTerm", "name": "Out-of-bounds", "description": "Terrain outside the ski area boundary." },
+                { "@type": "DefinedTerm", "name": "Packed powder", "description": "Compressed snow that retains a fluffy texture." },
+                { "@type": "DefinedTerm", "name": "Parallel skiing", "description": "Technique where skis stay parallel during turns." },
+                { "@type": "DefinedTerm", "name": "Park rat", "description": "A rider who only spends time in the terrain park." },
+                { "@type": "DefinedTerm", "name": "Pillows", "description": "Piles of snow formed over rocks or trees." },
+                { "@type": "DefinedTerm", "name": "Pizza", "description": "Snow plowing to slow down; used by beginners." },
+                { "@type": "DefinedTerm", "name": "Pizza box", "description": "A single person lift plank." },
+                { "@type": "DefinedTerm", "name": "Poaching", "description": "Illegally riding a closed run." },
+                { "@type": "DefinedTerm", "name": "Pond skimming", "description": "Attempting to skim across water on skis/board." },
+                { "@type": "DefinedTerm", "name": "Pow", "description": "Short for powder." },
+                { "@type": "DefinedTerm", "name": "Powder", "description": "The ideal fresh snow condition." },
+                { "@type": "DefinedTerm", "name": "Powderhound", "description": "Someone who seeks out powder days." },
+                { "@type": "DefinedTerm", "name": "Pre-release", "description": "When skis release earlier than anticipated." },
+                { "@type": "DefinedTerm", "name": "Puking", "description": "Slang for snowing very hard." },
+                { "@type": "DefinedTerm", "name": "Quad lift", "description": "A chairlift carrying four people." },
+                { "@type": "DefinedTerm", "name": "Quiver", "description": "A collection of skis or snowboards." },
+                { "@type": "DefinedTerm", "name": "Railroad tracks", "description": "Parallel carved tracks in the snow." },
+                { "@type": "DefinedTerm", "name": "Rail slide", "description": "Sliding across a metal or wooden rail." },
+                { "@type": "DefinedTerm", "name": "Regular", "description": "Riding a snowboard with the left foot forward." },
+                { "@type": "DefinedTerm", "name": "Regular camber", "description": "Ski/board shape where the center is raised off the snow." },
+                { "@type": "DefinedTerm", "name": "Rime", "description": "Frost or ice buildup due to freezing fog." },
+                { "@type": "DefinedTerm", "name": "Rockered", "description": "Reverse camber shape where the center is curved downward." },
+                { "@type": "DefinedTerm", "name": "Rolling down the windows", "description": "Frantic arm-flailing while in the air." },
+                { "@type": "DefinedTerm", "name": "Rope tow", "description": "A lift where you hold a rope that pulls you uphill." },
+                { "@type": "DefinedTerm", "name": "Scorpion", "description": "A forward fall where feet flip over the head." },
+                { "@type": "DefinedTerm", "name": "Send it", "description": "Full commitment to a line or jump." },
+                { "@type": "DefinedTerm", "name": "Shaped skis", "description": "Hourglass-shaped skis for easier turning." },
+                { "@type": "DefinedTerm", "name": "Shot ski", "description": "A ski with shot glasses attached for groups." },
+                { "@type": "DefinedTerm", "name": "Six-pack", "description": "A chairlift carrying six people." },
+                { "@type": "DefinedTerm", "name": "Ski in ski out", "description": "Lodging with direct slope access." },
+                { "@type": "DefinedTerm", "name": "Skijoring", "description": "Being pulled over snow by an animal or vehicle." },
+                { "@type": "DefinedTerm", "name": "Ski lift", "description": "General term for aerial lifts like chairlifts." },
+                { "@type": "DefinedTerm", "name": "Ski touring", "description": "Skiing uphill and downhill without removing skis." },
+                { "@type": "DefinedTerm", "name": "Ski bum", "description": "Someone who lives for the mountain." },
+                { "@type": "DefinedTerm", "name": "Skins", "description": "Fabric strips for uphill traction." },
+                { "@type": "DefinedTerm", "name": "Slalom", "description": "Racing discipline with tightly spaced gates." },
+                { "@type": "DefinedTerm", "name": "Sleeper powder day", "description": "An unpredicted powder day." },
+                { "@type": "DefinedTerm", "name": "Slopeside", "description": "Lodging located right on the slopes." },
+                { "@type": "DefinedTerm", "name": "Slopestyle", "description": "Freestyle course with jumps and rails." },
+                { "@type": "DefinedTerm", "name": "Slush", "description": "Melted, wet snow." },
+                { "@type": "DefinedTerm", "name": "Slough", "description": "Loose snow that slides down after a turn." },
+                { "@type": "DefinedTerm", "name": "Snorkeling", "description": "Riding in powder so deep it blurs vision." },
+                { "@type": "DefinedTerm", "name": "Snowcat", "description": "A tracked vehicle for grooming or transport." },
+                { "@type": "DefinedTerm", "name": "Snowplow", "description": "A triangular braking maneuver; also called pizza." },
+                { "@type": "DefinedTerm", "name": "Speed check", "description": "A quick turn to reduce speed." },
+                { "@type": "DefinedTerm", "name": "Steeze", "description": "Style and ease in riding." },
+                { "@type": "DefinedTerm", "name": "Stem christie", "description": "A turn beginning with a wedge and finishing parallel." },
+                { "@type": "DefinedTerm", "name": "Stoke", "description": "High energy and excitement for the sport." },
+                { "@type": "DefinedTerm", "name": "Stomp", "description": "To land a trick flawlessly." },
+                { "@type": "DefinedTerm", "name": "Summit", "description": "The top of the mountain." },
+                { "@type": "DefinedTerm", "name": "Summit beers", "description": "Drinks enjoyed at the peak." },
+                { "@type": "DefinedTerm", "name": "Taco", "description": "A fall draped over a rail like a taco shell." },
+                { "@type": "DefinedTerm", "name": "T-Bar", "description": "A lift that pulls riders uphill by a T-shaped handle." },
+                { "@type": "DefinedTerm", "name": "Telemark skiing", "description": "Skiing where the heel is not fixed to the ski." },
+                { "@type": "DefinedTerm", "name": "Terrain park", "description": "Area with jumps, pipes, and rails." },
+                { "@type": "DefinedTerm", "name": "Thin cover", "description": "Areas where snow is thin, revealing grass or rocks." },
+                { "@type": "DefinedTerm", "name": "Toe drag", "description": "When snowboard boot toes catch the snow during a turn." },
+                { "@type": "DefinedTerm", "name": "Tomahawk", "description": "Flipping end over end during a fall." },
+                { "@type": "DefinedTerm", "name": "Topsheet", "description": "The top layer of a ski or snowboard." },
+                { "@type": "DefinedTerm", "name": "Tracked out", "description": "An area where fresh snow has been fully ridden." },
+                { "@type": "DefinedTerm", "name": "Train", "description": "Riders hitting a feature in quick succession." },
+                { "@type": "DefinedTerm", "name": "Tram", "description": "An aerial lift with a large contained cab." },
+                { "@type": "DefinedTerm", "name": "Traversing", "description": "Moving horizontally across a slope." },
+                { "@type": "DefinedTerm", "name": "Tree well", "description": "Hollow space around the base of a tree branch." },
+                { "@type": "DefinedTerm", "name": "Trench", "description": "Deep, aggressive carve lines." },
+                { "@type": "DefinedTerm", "name": "Triple lift", "description": "A chairlift carrying three people." },
+                { "@type": "DefinedTerm", "name": "Tweak", "description": "Exaggerating a grab for style." },
+                { "@type": "DefinedTerm", "name": "Ullr", "description": "The Norse god of snow and skiing." },
+                { "@type": "DefinedTerm", "name": "Unweighting", "description": "Taking weight off the ski to turn." },
+                { "@type": "DefinedTerm", "name": "Uphilling", "description": "Skinning up the mountain instead of lifting." },
+                { "@type": "DefinedTerm", "name": "Valley out", "description": "Riding into an area you have to hike out of." },
+                { "@type": "DefinedTerm", "name": "Vertical drop", "description": "Height from top to bottom." },
+                { "@type": "DefinedTerm", "name": "Washboard", "description": "Small, firm ridges on a run." },
+                { "@type": "DefinedTerm", "name": "Whales", "description": "Mounds of man-made snow." },
+                { "@type": "DefinedTerm", "name": "Whiteout", "description": "Visibility obscured by snow or fog." },
+                { "@type": "DefinedTerm", "name": "White ribbon of death", "description": "A narrow strip of snow surrounded by bare ground." },
+                { "@type": "DefinedTerm", "name": "White room", "description": "Vision obscured by kicked-up powder." },
+                { "@type": "DefinedTerm", "name": "Wind blown", "description": "Uneven snow patches created by high winds." },
+                { "@type": "DefinedTerm", "name": "Wind hold", "description": "Lifts shut down due to wind." },
+                { "@type": "DefinedTerm", "name": "World Cup", "description": "International professional racing circuit." },
+                { "@type": "DefinedTerm", "name": "XC", "description": "Abbreviation for cross-country skiing." },
+                { "@type": "DefinedTerm", "name": "Yard sale", "description": "A fall where equipment is scattered across the slope." },
+                { "@type": "DefinedTerm", "name": "Zipper line", "description": "The straightest line down a mogul run." },
+                { "@type": "DefinedTerm", "name": "Zig zag", "description": "Traversing a slope in a Z formation." }
+              ]
+            }
+          }
+        ]
+      }
+      </script>
+      <link rel="stylesheet" href="/assets/font/mulish-font.css">
+      <link rel="stylesheet" href="/assets/css/fonts.css">
+      <link rel="stylesheet" href="/assets/css/snocountry-base.css">
+      <link rel="stylesheet" href="/assets/css/sno-core.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="/assets/css/genericPage.css">
+      <link rel="stylesheet" href="/assets/css/evergreen.css">
+      <link rel="stylesheet" href="/assets/css/mountain-life-parallax.css">
+     
+
+    {% include 'google.html' %}
+    </head>
+    <body data-source="" >
+        
+{% include 'nav-header.html' %}
+{{ content | safe }}
+{% include 'footer.html' %}
+  <script type="text/javascript" src="../../assets/js/jquery-1.8.3.min.js"></script>
+  <script src="../../assets/js/snocountry-base.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',(event)=> {
+        var pageLoadTime = (performance.timing.domContentLoadedEventStart -  performance.timing.navigationStart) / 1000;
+        console.log(`>>> load: ${pageLoadTime}`);
+    });
+  </script>
+  
+  
+  
+  </body>
+</html>
