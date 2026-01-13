@@ -89,6 +89,7 @@ class ResponsiveLayoutManager {
         this.setupEventListeners();
         this.configureInitialLayout();
         this.checkEmbed();
+        this.checkSoldierCatSki();
     }
 
     /**
@@ -289,11 +290,38 @@ class ResponsiveLayoutManager {
       if (resortId !== '307016') {
         return;
       }
+      
       const paramsFromCurrentUrl = new URLSearchParams(window.location.search);
       const embed = paramsFromCurrentUrl.get('embed');
       if (embed === 'true') {
         this.applyWhitePineEmbed();
       } 
+    }
+    
+    checkSoldierCatSki() {
+      const resortId = document.body.getAttribute("data-snowreport");
+      if (resortId !== '208013') {
+        return;
+      }
+      
+      const sel = "#card-trails-lifts, #card-hours, #card-stats, #card-info, #card-archive , #card-comments, #card-conditions";
+      document.querySelectorAll(sel).forEach((elIterEl) => {
+        elIterEl.classList.add('hidden');
+      });
+
+      const isDesktop = this.mediaQuery.matches
+      if (isDesktop) {
+        const elSnowfall = document.getElementById('card-snowfall');
+        this.elements.rightColumn.prepend(elSnowfall);
+        const elBlurb = document.getElementById('card-blurb');
+        this.elements.leftColumn.prepend(elBlurb);
+      
+      } else {
+        const elTrailsLifts = document.getElementById('card-trails-lifts');
+        const elConditions = document.getElementById('card-conditions');
+        elConditions.insertAdjacentElement('afterend',elTrailsLifts);
+      }
+
     }
 }
 
