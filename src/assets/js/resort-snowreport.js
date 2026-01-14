@@ -686,7 +686,7 @@ class ResortDataManager {
       const baseDepthChart = new ResortChart(
         'baseDepthRace',
         baseDepthData,
-        ' Base Depth past 7 seasons',
+        ' Base Depth past seasons',
         'Base Depth (inches)',
         200,
         'BaseDepth'
@@ -701,7 +701,7 @@ class ResortDataManager {
       const trailsChart = new ResortChart(
         'trailsRace',
         trailsData,
-        ' Open Trails past 7 seasons',
+        ' Open Trails past seasons',
         'Number of Trails',
         200,
         'Trails'
