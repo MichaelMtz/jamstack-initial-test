@@ -143,6 +143,8 @@ const createNewsSDL = (post) => {
             }
         ]
     }</script>
+    <link rel="canonical" href="${location.href}" />
+
   `;
   document.head.insertAdjacentHTML('beforeend',sdlHTML);
   const newsTitle = `SnoCountry News - ${post.title}`;
