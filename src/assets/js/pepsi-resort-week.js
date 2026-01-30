@@ -44,8 +44,8 @@ _log('pepsi-resort-week Initialized...');
  * @property {number} YOUTUBE_PARAMS.start - Start time in seconds
  */
 const PEPSI_CONFIG = {
-  TARGET_RESORT_ID: '603009',  
-  YOUTUBE_VIDEO_ID: 'LZMuCyOFN0U',
+  TARGET_RESORT_ID: '303016',  
+  YOUTUBE_VIDEO_ID: 'eorNy8HMLpM',
   VIDEO_DIMENSIONS: {
     width: '100%',
     height: '400px'
@@ -107,7 +107,7 @@ function generatePepsiROTWHTML() {
         <div class="pepsi-header flex flex-col gap-1">
           <div class="pepsi-logo-container items-center md:items-base md:px-4 flex flex-col md:flex-row md:gap-x-[100px] justify-center">   
             <img class="logo-gatorade h-[155px] md:h-[128px] " src="assets/images/ads/pepsi/GAT_GBolt Mark RGB _Black.png" alt="Gatorade" >
-            <img class="logo-abasin h-[120px]" src="assets/images/ads/pepsi/gunstock/GUNSTOCK_PRIMARY_WINE_CAP-G-01.jpg" alt="GunstockResort"> 
+            <img class="logo-abasin h-[120px]" src="assets/images/ads/pepsi/powderhorn/powderhorn-logo.jpg" alt="Powderhorn"> 
 
           </div>
           <div class="pepsi-copy mt-3 text-3xl text-center">Gatorade Resort of the Week</div>
