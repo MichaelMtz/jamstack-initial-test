@@ -48,7 +48,9 @@ function createDonut(containerId, x, y, label) {
 `;
 
     container.innerHTML = svg;
-
+    let labelSel = (containerId === 'donutTrails') ? 'donutTrailsLabel' : 'donutLiftsLabel';
+    console.log(`donut: containerId:${containerId} => labelSel:${labelSel}`);
+    document.getElementById(labelSel).innerHTML = label;
     // Animate percentage and fraction count up
     const percentageElement = container.querySelector(`#donutPercentage-${containerId}`);
     const fractionElement = container.querySelector(`#donutFraction-${containerId}`);
@@ -74,6 +76,6 @@ function createDonut(containerId, x, y, label) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    createDonut('donutTrails', 225, 278, 'Trails Open');
-    createDonut('donutLifts', 6, 8, 'Lifts Open');
+    // createDonut('donutTrails', 225, 278, 'Trails Open');
+    // createDonut('donutLifts', 6, 8, 'Lifts Open');
 });

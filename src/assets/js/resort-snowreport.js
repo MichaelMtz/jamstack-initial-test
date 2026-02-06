@@ -271,8 +271,21 @@ class ResortDataManager {
       document.getElementById('member-resort').classList.remove('hidden');
     }
     // Handle donuts
-    this.createDonut("donutTrails", this.resortData.openDownHillTrails, this.resortData.maxOpenDownHillTrails, "Trails Open");
-    this.createDonut("donutLifts", this.resortData.openDownHillLifts, this.resortData.maxOpenDownHillLifts, "Lifts Open");
+    let openTrails = (this.resortData.resortType === 'XC') ? this.resortData.XCSkiingTrails : this.resortData.openDownHillTrails;
+    if (this.resortData.resortType !== 'XC')  {
+      this.createDonut("donutTrails", this.resortData.openDownHillTrails, this.resortData.maxOpenDownHillTrails, "Trails Open");
+      this.createDonut("donutLifts", this.resortData.openDownHillLifts, this.resortData.maxOpenDownHillLifts, "Lifts Open");
+    } else {
+      let tempXCTrailsOpen =  parseInt(this.resortData.xcSkiingTrails);
+      let tempXCTrailsMax =  parseInt(this.resortData.maxXCSkiTrails);
+      console.log(`XCopen: XCSkiingTrails:${tempXCTrailsOpen}, maxXCTrails:${tempXCTrailsMax}`)
+
+      this.createDonut("donutTrails", tempXCTrailsOpen, tempXCTrailsMax, "Trails Open");
+      let maxXCKM = parseInt(this.resortData.maxXCSkiingSkatingKM) + parseInt(this.resortData.maxXCSkiingClassicKM);
+      let totalXCKMOpen = parseInt(this.resortData.xcSkiingTotalKM_Open) + parseInt(this.resortData.xcSkiingSkatingKM);
+      console.log(`XC: open:${totalXCKMOpen}, max:${maxXCKM}`)
+      this.createDonut("donutLifts",  totalXCKMOpen, maxXCKM, "KM Open");
+    }
 
     // Handle Operating status: 
     this.handleOperatingStatus();
@@ -1122,6 +1135,9 @@ class ResortDataManager {
 `;
 
     container.innerHTML = svg;
+
+    let labelSel = (containerId === 'donutTrails') ? 'donutTrailsLabel' : 'donutLiftsLabel';
+    document.getElementById(labelSel).innerHTML = label;
 
     // Animate percentage and fraction count up
     const percentageElement = container.querySelector(`#donutPercentage-${containerId}`);
