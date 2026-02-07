@@ -281,8 +281,8 @@ class ResortDataManager {
       console.log(`XCopen: XCSkiingTrails:${tempXCTrailsOpen}, maxXCTrails:${tempXCTrailsMax}`)
 
       this.createDonut("donutTrails", tempXCTrailsOpen, tempXCTrailsMax, "Trails Open");
-      let maxXCKM = parseInt(this.resortData.maxXCSkiingSkatingKM) + parseInt(this.resortData.maxXCSkiingClassicKM);
-      let totalXCKMOpen = parseInt(this.resortData.xcSkiingTotalKM_Open) + parseInt(this.resortData.xcSkiingSkatingKM);
+      let maxXCKM = parseInt(this.resortData.maxDistance);
+      let totalXCKMOpen = parseInt(this.resortData.xcSkiingTotalKM_Open);
       console.log(`XC: open:${totalXCKMOpen}, max:${maxXCKM}`)
       this.createDonut("donutLifts",  totalXCKMOpen, maxXCKM, "KM Open");
     }
@@ -1087,6 +1087,13 @@ class ResortDataManager {
    */
   createDonut(containerId, x, y, label) {
     const container = document.getElementById(containerId);
+    if (isNaN(x) || isNaN(y))  {
+      container.innerHTML = '<h5 class="font-bold text-gray-800  text-xl">Missing data</h5>';
+      let labelSel = (containerId === 'donutTrails') ? 'donutTrailsLabel' : 'donutLiftsLabel';
+      document.getElementById(labelSel).innerHTML = label;
+      return;  
+    }
+    
     const percentage = Math.round((x / y) * 100);
 
     // SVG circle parameters
