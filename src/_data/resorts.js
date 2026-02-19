@@ -38,6 +38,7 @@ function formatBreadCrumbs(breadcrumbs) {
         iterBreadCrumb = iterBreadCrumb.charAt(0).toUpperCase() + iterBreadCrumb.slice(1);
       } 
       const aBreadCrumb = { link: link, abbrName: iterBreadCrumb, active: ''};
+      //console.log("--formatBreadCrumbs:aBreadCrumb",aBreadCrumb);
       breadCrumbList.push(aBreadCrumb);
       first = false;
     }
@@ -61,9 +62,9 @@ module.exports = async function() {
     if (iter.entryType === 'resort')  { //resort
       iterName = iter.stateName.split('/');
       iter["stateNameProperLowerCase"] = iter["resortName"] = iterName[1].replace('-', ' ');
-      iter["stateNameProper"] = upperCaseWords(iterName[1]);
-      iter['stateNameActual'] = iterName[0];
-      iter['stateNameAbbr'] = getKeyByValue(abbrToLongName, iterName[0]);
+      iter["stateNameProper"] = upperCaseWords(iterName[2]);
+      iter['stateNameActual'] = iterName[1];
+      iter['stateNameAbbr'] = getKeyByValue(abbrToLongName, iterName[1]);
       iter["snowreport"] = iter.resort_id; 
       iter['scripts'] = ['assets/js/global.js'];
       //iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
@@ -73,9 +74,9 @@ module.exports = async function() {
       // console.log('---- Master BreadCrumbs', masterBreadCrumb);
       // console.log('==== IterName-0',iterName[0]);
 
-      if (masterBreadCrumb[iterName[0]]) {
+      if (masterBreadCrumb[iterName[1]]) {
         //iter["breadCrumbList"] = formatBreadCrumbs(masterBreadCrumb[iterName[0]]);
-        let tempBreadCrumbs = masterBreadCrumb[iterName[0]];
+        let tempBreadCrumbs = masterBreadCrumb[iterName[1]];
         //let abbrState = stateLongToAbbr(iterName[0]);
         tempBreadCrumbs.breadCrumbList.forEach(iterBreadCrumb => {
           if (iterBreadCrumb.abbrName === iter.stateNameAbbr.toUpperCase()) {

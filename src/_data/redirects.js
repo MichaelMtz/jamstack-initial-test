@@ -73,12 +73,12 @@ module.exports = async function() {
   resorts.forEach(iter => {
     if (iter.entryType === 'resort')  { //resort
       iterName = iter.stateName.split('/');
-      iter["stateNameLowerCase"] = iterName[0];
-      iter["stateNameAbbr"] = (longToShort[iterName[0]]) ? longToShort[iterName[0]].toLowerCase() : 'empty';
-      iter["resortNameLowerCase"] = iterName[1];
-      iter["stateNameProperLowerCase"] = iterName[0].replace(/-/gi, '');
-      iter["resortNameProperLowerCase"] = iterName[1].replace(/-/gi, '');
-      iter["stateNameProper"] = upperCaseWords(iterName[1]);
+      iter["stateNameLowerCase"] = iterName[1];
+      iter["stateNameAbbr"] = (longToShort[iterName[1]]) ? longToShort[iterName[1]].toLowerCase() : 'empty';
+      iter["resortNameLowerCase"] = iterName[2];
+      iter["stateNameProperLowerCase"] = iterName[1].replace(/-/gi, '');
+      iter["resortNameProperLowerCase"] = iterName[2].replace(/-/gi, '');
+      iter["stateNameProper"] = upperCaseWords(iterName[2]);
       iter["snowreport"] = iter.resort_id;
       //iter["styles"] = ['font-awesome.min.css', 'resortPage-base.css', 'resortPage.css', 'tabs.css'];
 
