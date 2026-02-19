@@ -52,27 +52,4 @@
  ,{"entryType" : "region", "stateName": "quebec", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
  ,{"entryType" : "region", "stateName": "saskatchewan", "breadcrumbs": ["AB","BC","MB","NB","NS","ON","QC","SK"]}
 
-
- ,{"entryType" : "region", "stateName": "argentina", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
- ,{"entryType" : "region", "stateName": "australia", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
- ,{"entryType" : "region", "stateName": "chile", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
- ,{"entryType" : "region", "stateName": "new-zealand", "breadcrumbs": ["ARG","AUS","CHL","NZL"]}
-
- ,{"entryType" : "region", "stateName": "andorra", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "austria", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "czech-republic", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "finland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "france", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "germany", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "italy", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "liechtenstein", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "norway", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "poland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "scotland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "slovakia", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "spain", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "sweden", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
- ,{"entryType" : "region", "stateName": "switzerland", "breadcrumbs": ["AND","AUT","CHE","CZE","DEU","ESP","FIN","FRA","GBR","ITA","LIE","NOR","POL","SVK", "SCT","SWE"]}
-  
-
 ]

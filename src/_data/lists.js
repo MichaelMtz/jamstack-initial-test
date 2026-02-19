@@ -48,7 +48,7 @@ module.exports = async function() {
   console.log("*** lists.js");
   const crossCountry = [];
   lists.forEach(iter => {
-
+    console.log("lists.js:",iter.stateName);
     iter["stateNameProperLowerCase"] = iter.stateName.replace('-', ' ');
     iter["stateNameProper"] = upperCaseWords(iter.stateName);
     iter["breadCrumbList"] = formatBreadCrumbs(iter.breadcrumbs);
