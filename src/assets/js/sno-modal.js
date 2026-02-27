@@ -133,7 +133,18 @@ const setupModalDisplay = () => {
           break;
       }
     });
-    form.data.state = document.querySelector('#sno-modal select').value ; 
+    
+    // Validate state select field
+    const stateSelect = document.querySelector('#sno-modal select');
+    const stateValue = stateSelect ? stateSelect.value.trim() : '';
+    if (stateValue.length > 0) {
+      form.data.state = stateValue;
+      showInputError(stateSelect, 'hide');
+    } else {
+      showInputError(stateSelect, 'show');
+      formStatus = false;
+    }
+    
     form.status = formStatus;
     return form;
   };
@@ -150,6 +161,14 @@ const setupModalDisplay = () => {
       validateModalForm();
     });
   });
+  
+  // Add blur validation for state select field
+  const stateSelect = document.querySelector('#sno-modal select');
+  if (stateSelect) {
+    stateSelect.addEventListener('blur', () => {
+      validateModalForm();
+    });
+  }
   //let  validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   
 };
