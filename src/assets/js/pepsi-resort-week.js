@@ -44,8 +44,8 @@ _log('pepsi-resort-week Initialized...');
  * @property {number} YOUTUBE_PARAMS.start - Start time in seconds
  */
 const PEPSI_CONFIG = {
-  TARGET_RESORT_ID: '719003',  
-  YOUTUBE_VIDEO_ID: 'UeagV6Nl4sk',
+  TARGET_RESORT_ID: '303022',  
+  YOUTUBE_VIDEO_ID: 'kf3a0ZCbyL8',
   VIDEO_DIMENSIONS: {
     width: '100%',
     height: '400px'
@@ -107,7 +107,7 @@ function generatePepsiROTWHTML() {
         <div class="pepsi-header flex flex-col gap-1">
           <div class="pepsi-logo-container items-center md:items-base md:px-4 flex flex-col md:flex-row md:gap-x-[100px] justify-center">   
             <img class="logo-gatorade h-[155px] md:h-[128px] " src="assets/images/ads/pepsi/GAT_GBolt Mark RGB _Black.png" alt="Gatorade" >
-            <img class="logo-camelback" src="assets/images/ads/pepsi/ski-cooper/ski-cooper-logo.png" alt="Ski Cooper CO Ski Resort">
+            <img class="logo-telluride" src="assets/images/ads/pepsi/telluride/TSR_bold-100.png" alt="Telluride CO "> 
           </div>
           <div class="pepsi-copy mt-3 text-3xl text-center">Gatorade Resort of the Week</div>
           <!--
