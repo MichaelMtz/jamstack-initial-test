@@ -362,11 +362,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/summer/summer-in-the-mountains/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/summer-in-the-mountains/camping-1024.png",
-        "title": "Summer in the Mountains",
-        "author": "James Crosby",
-        "umami": "mountain-life-summer-in-the-mountains"
+        "url": "https://snocountry.com/mountain-life/travel/wolf-creek-the-most-snow-in-colorado/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/wolf-creek/hero.jpg",
+        "title": "Wolf Creek: Most snow in Colorado?",
+        "author": "Scott Clarkson",
+        "umami": "mountain-life-wolf-creek"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -402,11 +402,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/summer/summer-in-the-mountains/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/summer-in-the-mountains/camping-1024.png",
-        "title": "Summer in the Mountains",
-        "author": "James Crosby",
-        "umami": "mountain-life-summer-in-the-mountains"
+        "url": "https://snocountry.com/mountain-life/travel/wolf-creek-the-most-snow-in-colorado/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/wolf-creek/hero.jpg",
+        "title": "Wolf Creek: Most snow in Colorado?",
+        "author": "Scott Clarkson",
+        "umami": "mountain-life-wolf-creek"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -450,8 +450,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       
       `).join('');
 
-    //elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
-    elStories.insertAdjacentHTML('afterbegin', html);
+    elStories.insertAdjacentHTML('afterbegin',getMtnLifePosts() + html);
+    //elStories.insertAdjacentHTML('afterbegin', html);
   };
   
   const createStoriesSectionMobile = (elMobileStories,posts) => {
@@ -465,8 +465,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       </a>
       `).join('');
       
-    //elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
-    elMobileStories.insertAdjacentHTML('beforeend', html);
+    elMobileStories.insertAdjacentHTML('beforeend',getMtnLifePostsMobile() + html);
+    //elMobileStories.insertAdjacentHTML('beforeend', html);
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
@@ -483,11 +483,13 @@ document.addEventListener('DOMContentLoaded',()=> {
         waitForElement('#offers').then((elStories) => {
           _log('getRecentStories: stories:',data.stories);
           console.log(data.list);
-          const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,9) : data.stories.slice(0,6);
+          //const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,9) : data.stories.slice(0,6);
+          const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,8) : data.stories.slice(0,5);
           createStoriesSection(elStories,storyList);
         }).catch( (e) => { console.error('Error building desktop news:',e);});  
         waitForElement('#mobile-stories .mobile-stories-container').then((elMobileStories) => {
-          createStoriesSectionMobile(elMobileStories,data.stories.slice(0,9));
+          //createStoriesSectionMobile(elMobileStories,data.stories.slice(0,9));
+          createStoriesSectionMobile(elMobileStories,data.stories.slice(0,7));
         }).catch( (e) => { console.error('Error building mobile news:',e);});        
       }
       
