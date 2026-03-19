@@ -15,8 +15,8 @@ class ResponsiveLayoutManager {
 
         // Mobile order sequence as specified in mobile-order.md
         this.mobileOrder = [
-            //'card-video',
             'card-trails-lifts',
+            'card-video',
             'card-snowfall',
             'card-conditions',
             'card-hours',
@@ -34,12 +34,12 @@ class ResponsiveLayoutManager {
         // Desktop layout distribution
         this.desktopLayout = {
             leftColumn: [
+                'card-video',
                 'card-trailmap',
                 'card-blurb',
                 'card-comments',
                 'card-weather',
-                'card-archive',
-                'card-video'
+                'card-archive'
 
             ],
             rightColumn: [

@@ -253,7 +253,7 @@ class ResortDataManager {
     // Handle resort logo
     this.handleResortLogo();
 
-    if (this.resortData.id === '303009') {      
+    if ((this.resortData.id === '303009') || (this.resortData.id === '303025')) {      
       // Handle resort video/image
       this.handleResortVideoImage();   // uncomment when ready to go live also remove hidden class from results.njk:#card-archive line 95ish
     }
@@ -319,9 +319,25 @@ class ResortDataManager {
   } //fn handleSpecialElements
 
   handleResortVideoImage() {
-    
     const resortAssetElement = document.getElementById("resort-asset");
-    if (resortAssetElement && this.resortData.resortPhotos) {
+    if (this.resortData.id === '303025') { //WolfCreek hardcode for proof of concept
+      console.log('handleResortVideoImage:Wolf creek');
+      const elResortAsset = document.getElementById('resort-asset');
+      if (elResortAsset) {
+        let vidHTML = `
+        <div class="pepsi-video w-full">
+          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/${this.resortData.snoResortVideo}?autoplay=1&mute=1&rel=0&start=2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;"></iframe>
+        </div>
+        `;
+        elResortAsset.innerHTML = vidHTML;
+        const resortAssetHeader = document.getElementById('resort-asset-header');
+        if (resortAssetHeader) {
+          resortAssetHeader.textContent = `${this.resortData.resortName} ${this.resortData.resortBackgroundImage}`;
+          resortAssetHeader.classList.remove("hidden");
+        }
+        document.getElementById('card-video').classList.remove('hidden');
+      }
+    } else if (resortAssetElement && this.resortData.resortPhotos) {
       const img =
         resortAssetElement.querySelector("img") || document.createElement("img");
       img.src = this.resortData.resortPhotos;
@@ -337,7 +353,7 @@ class ResortDataManager {
         resortAssetHeader.classList.remove("hidden");
       }
       document.getElementById('card-video').classList.remove('hidden');
-    } else {
+    }  else {
       document.getElementById('card-video').classList.add('hidden');
     }
   }
