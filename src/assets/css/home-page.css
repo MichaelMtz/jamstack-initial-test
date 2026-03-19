@@ -180,6 +180,7 @@ ul.feature-boxes li.pepsi-box .fly-box {
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container {
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 .pepsi .pepsi-content .pepsi-header .pepsi-logo-container img.logo-pepsi {
   height: 48px;
