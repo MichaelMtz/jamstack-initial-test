@@ -46,7 +46,7 @@
  * - Random ad selection from available options
  * - Comprehensive analytics tracking (impressions and clicks)
  * - Google Analytics pixel tracking support
- * - Responsive ad sizing based on page type
+ * - Responsive ad sizing based on page type and viewport (desktop + mobile images)
  * 
  * Dependencies:
  * - snowreport.js (provides _log and waitForElement functions)
@@ -153,7 +153,8 @@ function selectRandomAd(ads) {
  * @param {Object} ad - Advertisement object
  * @param {string} ad._id - Unique identifier for the ad
  * @param {string} ad.name - Display name of the ad (used for alt text and tracking)
- * @param {string} ad.imageUrl - URL of the ad image
+ * @param {string} ad.imageUrl - URL of the desktop ad image
+ * @param {string} [ad.mobileImageUrl] - URL of the mobile ad image (falls back to imageUrl if blank)
  * @param {string} ad.linkUrl - URL the ad links to
  * @returns {string} HTML markup for the advertisement
  * 
@@ -169,13 +170,21 @@ function selectRandomAd(ads) {
  */
 function createAdHTML(ad) {
   const newsPostPage = window.location.pathname.includes('news-post');
-  const width = (newsPostPage) ? 320 : 728;
-  const height = (newsPostPage) ? 50 : 90;
-  
+  const desktopWidth = newsPostPage ? 320 : 728;
+  const desktopHeight = newsPostPage ? 50 : 90;
+  const mobileWidth = 320;
+  const mobileHeight = 50;
+
+  const mobileSrc =
+    ad.mobileImageUrl && String(ad.mobileImageUrl).trim() !== ''
+      ? ad.mobileImageUrl
+      : ad.imageUrl;
+
   return `
 <div class="resort-ad">
-  <a id="resort-page-ad" href="${ad.linkUrl}" target="_blank" data-umami-event="banner-resort-click-${ad.name}">
-    <img class="img-resort-ad w-[728px] h-[90px]  mx-auto  rounded-lg shadow-xl img-resort-ad" src="${ad.imageUrl}" alt="${ad.name}" width="${width}" height="${height}" data-umami-event="banner-resort-click-${ad.name}">
+  <a id="resort-page-ad" class="resort-ad-link" href="${ad.linkUrl}" target="_blank" data-umami-event="banner-resort-click-${ad.name}">
+    <img class="img-resort-ad img-resort-ad-desktop mx-auto rounded-lg shadow-xl" src="${ad.imageUrl}" alt="${ad.name}" width="${desktopWidth}" height="${desktopHeight}" data-umami-event="banner-resort-click-${ad.name}">
+    <img class="img-resort-ad img-resort-ad-mobile mx-auto rounded-lg shadow-xl" src="${mobileSrc}" alt="${ad.name}" width="${mobileWidth}" height="${mobileHeight}" data-umami-event="banner-resort-click-${ad.name}">
   </a>
 </div>
 `;
@@ -329,7 +338,7 @@ async function loadAndDisplayAd() {
 
         waitForElement('#resort-page-ad').then((elResortAd) => {
           _log('SnowAdDashboard: Found ad set click event listerner');
-          elResortAd.addEventListener('click', () => {
+          elResortAd.addEventListener('click', (e) => {
             _log('SnowAdDashboard:ad clicked1');
             trackAdClick(selectedAd);
             _log('SnowAdDashboard:ad clicked2');
@@ -339,7 +348,7 @@ async function loadAndDisplayAd() {
             }, 100);
             
             // Prevent default link behavior if this is an <a> tag
-            event.preventDefault();
+            e.preventDefault();
           });
           
         }).catch( () => { console.error('Error: Found ad, ad placed, could not find anchor element to set click event for Sno dashboard:');});

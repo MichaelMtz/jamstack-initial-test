@@ -95,6 +95,29 @@ ul.resort-list li .last-updated {
 .snow-report-container .resort .resort-ad {
   text-align: center;
 }
+.snow-report-container .resort .resort-ad .resort-ad-link {
+  display: block;
+  line-height: 0;
+  text-align: center;
+}
+.snow-report-container .resort .resort-ad .img-resort-ad-desktop {
+  display: none;
+}
+.snow-report-container .resort .resort-ad .img-resort-ad-mobile {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .snow-report-container .resort .resort-ad .img-resort-ad-desktop {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .snow-report-container .resort .resort-ad .img-resort-ad-mobile {
+    display: none;
+  }
+}
 .snow-report-container .resort .resort-ad .img-resort-ad {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   border-radius: 5px;

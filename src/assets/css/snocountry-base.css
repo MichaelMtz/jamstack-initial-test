@@ -1147,6 +1147,30 @@ html, body {
 	display:grid;
 	place-items: center;
 }
+.resort-ad-link {
+	display: block;
+	line-height: 0;
+	text-align: center;
+}
+/* Mobile-first: show mobile banner, hide desktop until wide viewport */
+.resort-ad .img-resort-ad-desktop {
+	display: none;
+}
+.resort-ad .img-resort-ad-mobile {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+@media (min-width: 768px) {
+	.resort-ad .img-resort-ad-desktop {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+	.resort-ad .img-resort-ad-mobile {
+		display: none;
+	}
+}
 .img-resort-ad {
 	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 	border-radius: 5px;

@@ -1243,4 +1243,31 @@ body {
   place-items: center;
 }
 
+.resort-ad-link {
+  display: block;
+  line-height: 0;
+  text-align: center;
+}
+
+.resort-ad .img-resort-ad-desktop {
+  display: none;
+}
+
+.resort-ad .img-resort-ad-mobile {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .resort-ad .img-resort-ad-desktop {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .resort-ad .img-resort-ad-mobile {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=state-page-card.css.map */
