@@ -44,8 +44,8 @@ _log('pepsi-resort-week Initialized...');
  * @property {number} YOUTUBE_PARAMS.start - Start time in seconds
  */
 const PEPSI_CONFIG = {
-  TARGET_RESORT_ID: '802007',  
-  YOUTUBE_VIDEO_ID: 'Ooa4nOpH3eI',
+  TARGET_RESORT_ID: '802018',  
+  YOUTUBE_VIDEO_ID: 'Sp2Hueyv32s',
   VIDEO_DIMENSIONS: {
     width: '100%',
     height: '400px'
@@ -108,7 +108,7 @@ function generatePepsiROTWHTML() {
           <div class="pepsi-logo-container items-center md:items-base md:px-4 flex flex-col md:flex-row md:gap-x-[100px] justify-center">   
             <img class="logo-gatorade h-[155px] md:h-[128px] " src="assets/images/ads/pepsi/GAT_GBolt Mark RGB _Black.png" alt="Gatorade" >
             
-            <img class="logo-okemo h-[105px]" src="assets/images/ads/pepsi/killington/Killington-logo.jpg" alt="Killington Resort VT">
+            <img class="logo-okemo h-[105px]" src="assets/images/ads/pepsi/stowe/Stowe_Logo_Red.png" alt="Stowe Resort VT">
           </div>
           <div class="pepsi-copy mt-3 text-3xl text-center">Gatorade Resort of the Week</div>
           <!--
