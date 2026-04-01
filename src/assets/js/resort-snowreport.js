@@ -166,6 +166,12 @@ class ResortDataManager {
       }
 
       this.resortData = await response.json();
+      window.snoResortData = this.resortData;
+      window.dispatchEvent(
+        new CustomEvent("snocountry:resort-data-ready", {
+          detail: this.resortData,
+        })
+      );
       console.log(
         "ResortDataManager: Successfully fetched resort data",
         this.resortData
