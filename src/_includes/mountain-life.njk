@@ -4,6 +4,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 {% include 'basehref.html' %}
+      <link rel="icon" type="image/x-icon" href="https://snocountry.com/assets/images/favicon-48x48.png">
+
       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
       <meta name="keywords" content="SnoCountry News" />
       <meta name="rights" id="rights" content="Copyright © 2025. All Rights Reserved." />
@@ -20,7 +22,6 @@
       <meta property="og:site_name" content="SnoCountry" />
       <meta property="og:image" content="{{ schemaHeroImage }}" />
       <meta name="robots" content="max-image-preview:large">
-      <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
       <script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://snocountry.com/","name":"SnoCountry.Com","description":"SnoCountry is your trusted source for up-to-date snow reports, ski conditions, and mountain weather across North America. Find the latest updates for ski resorts, trails, and lifts.","publisher":"SnoCountry"}
       </script>
       <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"SnoCountry","legalName":"SnoCountry, Inc","url":"https://snocountry.com/","logo":"https://snocountry.com/images/snocountry_logo_v2.png","foundingDate":"1968","sameAs":["https://www.facebook.com/SnoCountryMountainReports/","https://x.com/SnoCountryCom", "https://en.wikipedia.org/wiki/Snocountry","https://www.youtube.com/channel/UCyWmeXdZjJYZ-VafL9ijq5g","https://www.instagram.com/Sno_Cntry/"]}
@@ -74,6 +75,7 @@
           ]
         }
       </script>
+      {% if faqPartial %}{% include faqPartial %}{% endif %}
       <link rel="stylesheet" href="/assets/font/mulish-font.css">
       <link rel="stylesheet" href="/assets/css/fonts.css">
       <link rel="stylesheet" href="/assets/css/snocountry-base.css">
