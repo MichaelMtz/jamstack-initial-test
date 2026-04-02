@@ -44,7 +44,7 @@ _log('pepsi-resort-week Initialized...');
  * @property {number} YOUTUBE_PARAMS.start - Start time in seconds
  */
 const PEPSI_CONFIG = {
-  TARGET_RESORT_ID: '802018',  
+  TARGET_RESORT_ID: '0',  
   YOUTUBE_VIDEO_ID: 'Sp2Hueyv32s',
   VIDEO_DIMENSIONS: {
     width: '100%',
