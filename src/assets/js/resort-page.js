@@ -225,7 +225,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const { href, pageURL, stateListingName, resortSlug } = parseSnowReportPageUrl();
         console.log('*** sdl:', data, 'resortSlug:', resortSlug, 'stateListing:', pageURL);
-
+        // data.reportDateTime initial format: "2026-03-31 06:09:00"  final format: "2026-04-02T08:15:00-05:00"
+        const reportDateTime = data.reportDateTime.replace(' ', 'T') + '-04:00';
         const weekdayOH = parseResortHoursRange(data.weekdayHours) || DEFAULT_OPENING_WEEKDAY;
         const weekendOH = parseResortHoursRange(data.weekendHours) || DEFAULT_OPENING_WEEKEND;
         const additionalPropertyJson = JSON.stringify(getAdditionalProperties(data));
@@ -241,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
               "url": "${window.location.href}",
               "name": "${data.resortName} Snow Report and Weather Conditions",
               "description": "Daily snow conditions, weather updates, open trails, and lift status for ${data.resortName} in ${stateListingName}.",
+              "dateModified": "${reportDateTime}",
               "isPartOf": { "@id": "https://snocountry.com/#website" },
               "breadcrumb": { "@id": "${window.location.href}#breadcrumb" },
               "mainEntity": { "@id": "${window.location.href}#resort" }
