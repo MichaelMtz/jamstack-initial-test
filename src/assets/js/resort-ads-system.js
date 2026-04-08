@@ -91,7 +91,7 @@ async function fetchResortAds() {
     switch (document.body.dataset.source) {
       case 'resort':
         params.append('resortId', document.body.dataset.snowreport);
-        params.append('region', document.body.dataset.location);
+        params.append('region', document.body.dataset.location + '-resorts');
       break;
       case 'state':
       case 'region': 
