@@ -1,7 +1,7 @@
     <nav class="bg-white sno-nav relative  border-b border-border">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
         <div id="navigation-container" class="flex justify-between h-24">
-            <div class="sm:hidden">
+            <div class="sm:hidden flex items-center">
                 <button id="mobile-menu-button" class="border-none mt-[15px] inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring" aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <!-- Hamburger icon -->
@@ -44,9 +44,45 @@
       </li></ul>
                 </div>
             </div>
-
+            <!-- Desktop Search Button -->
+            <div class="hidden sm:flex items-center ml-4">
+                <button id="desktop-search-toggle" class="border-none inline-flex items-center justify-center p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-accent transition-colors duration-200 focus:outline-none" aria-label="Search resorts">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Search Button -->
+            <div class="sm:hidden flex items-center">
+                <button id="mobile-search-toggle" class="border-none mt-[15px] inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary hover:bg-accent focus:outline-none" aria-label="Search resorts">
+                    <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
+
+    <!-- Desktop Search Overlay (click outside panel below to close) -->
+    <div id="desktop-search-overlay" class="hidden absolute left-0 right-0 top-full z-50  pb-[50vh]">
+        <div id="desktop-search-panel" class="bg-white border border-border rounded-b-lg shadow-xl mx-auto max-w-2xl">
+            <div class="flex items-center  border-border px-4 py-3">
+                <svg class="h-5 w-5 text-muted-foreground mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                </svg>
+                <input id="desktop-search-input" type="text" placeholder="Search resorts..." class="flex-1 text-lg text-foreground placeholder-muted-foreground bg-transparent border-none outline-none focus:ring-0" autocomplete="off">
+                <button id="desktop-search-close" class="border-none ml-3 p-1 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-150" aria-label="Close search">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <ul id="desktop-search-results" class="max-h-80 overflow-y-auto divide-y divide-border"></ul>
+        </div>
+    </div>
+
+    <!-- Desktop Search Backdrop -->
+    <div id="desktop-search-backdrop" class="hidden fixed inset-0 bg-black/10 z-40"></div>
 </nav>
     <!-- Mobile Drawer -->
 <div id="mobile-drawer" class="fixed inset-0 z-50 lg:hidden hidden">
@@ -66,8 +102,24 @@
                 </button>
             </div>
     
+            <!-- Mobile Search -->
+            <div class="px-4 pt-3 pb-2">
+                <div class="flex items-center bg-accent/50 rounded-full px-4 py-2.5 border border-border">
+                    <svg class="h-5 w-5 text-muted-foreground mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                    </svg>
+                    <input id="mobile-search-input" type="text" placeholder="Search resorts..." class="flex-1 text-base text-foreground placeholder-muted-foreground bg-transparent border-none outline-none focus:ring-0" autocomplete="off">
+                    <button id="mobile-search-clear" class="hidden border-none p-0.5 rounded-full text-muted-foreground hover:text-foreground transition-colors duration-150" aria-label="Clear search">
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="mobile-search-results" class="mt-2 space-y-1.5 max-h-[60vh] overflow-y-auto"></div>
+            </div>
+
             <!-- Drawer Content -->
-            <div class="p-4 overflow-y-auto h-full text-lg">
+            <div id="mobile-drawer-content" class="p-4 overflow-y-auto h-full text-lg">
                 <div id="mobile-navigation-menu" class="space-y-2"><div class="border-b border-border last:border-b-0">
         <button class="border-none flex items-center justify-between w-full px-3 py-4 text-left !text-navtop hover:bg-accent rounded-md transition-colors duration-200" data-mobile-toggle="mobile-section-0" aria-expanded="false">
             <span class="font-medium">Snow Conditions</span>
@@ -292,3 +344,219 @@
             </div>
         </div>
     </div>
+
+<!-- Mobile Search Overlay (for search icon in main nav bar) -->
+<div id="mobile-search-overlay" class="fixed inset-0 z-[60] hidden sm:hidden">
+    <div class="fixed inset-0 bg-black/20 backdrop-blur-sm" id="mobile-search-overlay-backdrop"></div>
+    <div class="fixed inset-x-0 top-0 bg-white border-b border-border shadow-lg p-4 pt-6">
+        <div class="flex items-center bg-accent/50 rounded-full px-4 py-2.5 border border-border">
+            <svg class="h-5 w-5 text-muted-foreground mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+            </svg>
+            <input id="mobile-overlay-search-input" type="text" placeholder="Search resorts..." class="flex-1 text-base text-foreground placeholder-muted-foreground bg-transparent border-none outline-none focus:ring-0" autocomplete="off">
+            <button id="mobile-overlay-search-close" class="border-none p-1 rounded-full text-muted-foreground hover:text-foreground transition-colors duration-150" aria-label="Close search">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-overlay-search-results" class="mt-3 space-y-1.5 max-h-[70vh] overflow-y-auto"></div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var _index = {{ searchIndex | dump | safe }};
+    function slugToName(s) {
+        return s.replace(/-/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+    }
+    var resortData = [];
+    for (var i = 0; i < _index.length; i++) {
+        var entry = _index[i];
+        var parts = entry.p.split('/');
+        if (parts.length < 2) continue;
+        var stateSlug = parts[0];
+        var resortSlug = parts[1];
+        resortData.push({
+            resort: slugToName(resortSlug),
+            state: slugToName(stateSlug),
+            url: '/snow-report/' + stateSlug + '/' + resortSlug + '/',
+            stateUrl: '/snow-report/' + stateSlug + '/',
+            search: (slugToName(resortSlug) + ' ' + slugToName(stateSlug)).toLowerCase(),
+            logoUrl: 'https://snocountry.com/assets/images/resorts/logos/' + entry.id + 'logo.jpg'
+        });
+    }
+
+    function highlightMatch(text, query) {
+        if (!query) return text;
+        var idx = text.toLowerCase().indexOf(query.toLowerCase());
+        if (idx === -1) return text;
+        return text.substring(0, idx) +
+            '<mark class="bg-yellow-200/60 text-foreground rounded-sm px-0.5">' +
+            text.substring(idx, idx + query.length) + '</mark>' +
+            text.substring(idx + query.length);
+    }
+
+    function searchResorts(query) {
+        if (!query || query.length < 2) return [];
+        var q = query.toLowerCase();
+        var results = [];
+        for (var i = 0; i < resortData.length; i++) {
+            if (resortData[i].search.indexOf(q) !== -1) {
+                results.push(resortData[i]);
+                if (results.length >= 8) break;
+            }
+        }
+        return results;
+    }
+
+    function logoImg(logoUrl, maxH, cls) {
+        return '<img src="' + logoUrl + '" alt="" aria-hidden="true"' +
+            ' class="' + cls + ' object-contain flex-shrink-0"' +
+            ' style="max-height:' + maxH + 'px;width:auto;"' +
+            ' onload="var r=this.naturalHeight/this.naturalWidth;' +
+                'this.style.maxWidth=(r<0.5?' + (maxH * 2.5) + ':' + maxH + ')+"px";' +
+                'this.classList.remove(\\"opacity-0\\")"' +
+            ' onerror="this.style.display=\'none\'"' +
+            ' loading="lazy">';
+    }
+
+    function renderDesktopResults(results, query) {
+        var el = document.getElementById('desktop-search-results');
+        if (!results.length) {
+            el.innerHTML = query && query.length >= 2
+                ? '<li class="px-4 py-4 text-muted-foreground text-center text-sm">No resorts found</li>'
+                : '';
+            return;
+        }
+        var html = '';
+        for (var i = 0; i < results.length; i++) {
+            var r = results[i];
+            html += '<li class="group">' +
+                '<a href="' + r.url + '" class="flex items-center justify-between px-4 py-2.5 hover:bg-accent/50 transition-colors duration-150 gap-3">' +
+                    '<div class="flex items-center gap-3 min-w-0">' +
+                        '<div class="flex items-center justify-center w-12 h-10 flex-shrink-0">' +
+                            logoImg(r.logoUrl, 40, ' transition-opacity duration-200 max-w-[48px]') +
+                        '</div>' +
+                        '<span class="font-medium text-foreground text-base truncate">' + highlightMatch(r.resort, query) + '</span>' +
+                    '</div>' +
+                    '<span class="text-sm text-muted-foreground flex-shrink-0">' + highlightMatch(r.state, query) + '</span>' +
+                '</a>' +
+            '</li>';
+        }
+        el.innerHTML = html;
+    }
+
+    function renderMobileResults(containerId, results, query) {
+        var el = document.getElementById(containerId);
+        if (!results.length) {
+            el.innerHTML = query && query.length >= 2
+                ? '<div class="text-muted-foreground text-center text-sm py-3">No resorts found</div>'
+                : '';
+            return;
+        }
+        var html = '';
+        for (var i = 0; i < results.length; i++) {
+            var r = results[i];
+            html += '<a href="' + r.url + '" class="flex items-center justify-between bg-white border border-border rounded-lg px-3 py-2.5 hover:bg-accent/50 transition-colors duration-150 shadow-sm gap-2">' +
+                '<div class="flex items-center gap-2.5 min-w-0">' +
+                    '<div class="flex items-center justify-center w-9 h-8 flex-shrink-0">' +
+                        logoImg(r.logoUrl, 32, 'transition-opacity duration-200 max-w-[36px]') +
+                    '</div>' +
+                    '<span class="font-medium text-foreground text-sm truncate">' + highlightMatch(r.resort, query) + '</span>' +
+                '</div>' +
+                '<span class="text-xs text-muted-foreground flex-shrink-0">' + highlightMatch(r.state, query) + '</span>' +
+            '</a>';
+        }
+        el.innerHTML = html;
+    }
+
+    var desktopToggle = document.getElementById('desktop-search-toggle');
+    var desktopOverlay = document.getElementById('desktop-search-overlay');
+    var desktopSearchPanel = document.getElementById('desktop-search-panel');
+    var desktopBackdrop = document.getElementById('desktop-search-backdrop');
+    var desktopInput = document.getElementById('desktop-search-input');
+    var desktopClose = document.getElementById('desktop-search-close');
+
+    function openDesktopSearch() {
+        desktopOverlay.classList.remove('hidden');
+        desktopBackdrop.classList.remove('hidden');
+        desktopInput.value = '';
+        document.getElementById('desktop-search-results').innerHTML = '';
+        setTimeout(function() { desktopInput.focus(); }, 50);
+    }
+    function closeDesktopSearch() {
+        desktopOverlay.classList.add('hidden');
+        desktopBackdrop.classList.add('hidden');
+    }
+
+    desktopToggle.addEventListener('click', openDesktopSearch);
+    desktopClose.addEventListener('click', closeDesktopSearch);
+    desktopBackdrop.addEventListener('click', closeDesktopSearch);
+    desktopOverlay.addEventListener('click', function(e) {
+        if (desktopSearchPanel && !desktopSearchPanel.contains(e.target)) closeDesktopSearch();
+    });
+    desktopInput.addEventListener('input', function() {
+        var q = this.value.trim();
+        renderDesktopResults(searchResorts(q), q);
+    });
+
+    var mobileSearchToggle = document.getElementById('mobile-search-toggle');
+    var mobileSearchOverlay = document.getElementById('mobile-search-overlay');
+    var mobileOverlayInput = document.getElementById('mobile-overlay-search-input');
+    var mobileOverlayClose = document.getElementById('mobile-overlay-search-close');
+    var mobileOverlayBackdrop = document.getElementById('mobile-search-overlay-backdrop');
+
+    function openMobileSearchOverlay() {
+        mobileSearchOverlay.classList.remove('hidden');
+        mobileOverlayInput.value = '';
+        document.getElementById('mobile-overlay-search-results').innerHTML = '';
+        setTimeout(function() { mobileOverlayInput.focus(); }, 50);
+    }
+    function closeMobileSearchOverlay() {
+        mobileSearchOverlay.classList.add('hidden');
+    }
+
+    mobileSearchToggle.addEventListener('click', openMobileSearchOverlay);
+    mobileOverlayClose.addEventListener('click', closeMobileSearchOverlay);
+    mobileOverlayBackdrop.addEventListener('click', closeMobileSearchOverlay);
+    mobileOverlayInput.addEventListener('input', function() {
+        var q = this.value.trim();
+        renderMobileResults('mobile-overlay-search-results', searchResorts(q), q);
+    });
+
+    var drawerSearchInput = document.getElementById('mobile-search-input');
+    var drawerSearchClear = document.getElementById('mobile-search-clear');
+    var drawerContent = document.getElementById('mobile-drawer-content');
+
+    drawerSearchInput.addEventListener('input', function() {
+        var q = this.value.trim();
+        var results = searchResorts(q);
+        renderMobileResults('mobile-search-results', results, q);
+        drawerSearchClear.classList.toggle('hidden', !q);
+        drawerContent.classList.toggle('hidden', results.length > 0);
+    });
+    drawerSearchClear.addEventListener('click', function() {
+        drawerSearchInput.value = '';
+        document.getElementById('mobile-search-results').innerHTML = '';
+        drawerSearchClear.classList.add('hidden');
+        drawerContent.classList.remove('hidden');
+        drawerSearchInput.focus();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeDesktopSearch();
+            closeMobileSearchOverlay();
+        }
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            if (window.innerWidth >= 640) {
+                openDesktopSearch();
+            } else {
+                openMobileSearchOverlay();
+            }
+        }
+    });
+})();
+</script>
