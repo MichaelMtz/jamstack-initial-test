@@ -231,8 +231,7 @@ const createFloatedThumbLink = (item, index) => {
   const side = index % 2 === 0 ? 'left' : 'right';
   a.className = `post-media-pull post-media-pull--${side}`;
   a.href = item.full;
-  a.target = '_blank';
-  a.rel = 'noopener noreferrer';
+  a.setAttribute('data-full-image', item.full);
   const img = document.createElement('img');
   img.src = item.thumb;
   img.alt = '';
@@ -246,8 +245,103 @@ const buildExtraThumbsAside = (thumbs) => {
   if (!thumbs.length) return '';
   const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
   const linkItem = (it) =>
-    `<a class="post-media-thumb" href="${esc(it.full)}" target="_blank" rel="noopener noreferrer"><img src="${esc(it.thumb)}" alt="" loading="lazy" decoding="async" /></a>`;
+    `<a class="post-media-thumb" href="${esc(it.full)}" data-full-image="${esc(it.full)}"><img src="${esc(it.thumb)}" alt="" loading="lazy" decoding="async" /></a>`;
   return `<aside class="post-media-extra"><div class="post-media-extra-inner"><h3 class="post-media-extra-title">More photos</h3><div class="post-media-extra-grid">${thumbs.map(linkItem).join('')}</div></div></aside>`;
+};
+
+let modalImageList = [];
+let modalImageIndex = -1;
+
+const ensureImageModal = () => {
+  let modal = document.getElementById('news-image-modal');
+  if (modal) return modal;
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    `
+    <div id="news-image-modal" class="news-image-modal" aria-hidden="true">
+      <div class="news-image-modal__backdrop" data-close-modal="true"></div>
+      <div class="news-image-modal__dialog" role="dialog" aria-modal="true" aria-label="Expanded image">
+        <button class="news-image-modal__nav news-image-modal__nav--prev" type="button" aria-label="Previous image" data-nav="-1">&#8249;</button>
+        <button class="news-image-modal__close" type="button" aria-label="Close image" data-close-modal="true">&times;</button>
+        <img class="news-image-modal__img" src="" alt="" />
+        <button class="news-image-modal__nav news-image-modal__nav--next" type="button" aria-label="Next image" data-nav="1">&#8250;</button>
+      </div>
+    </div>
+    `
+  );
+  modal = document.getElementById('news-image-modal');
+  const imgEl = modal.querySelector('.news-image-modal__img');
+  const updateModalImage = () => {
+    if (!modalImageList.length || modalImageIndex < 0 || modalImageIndex >= modalImageList.length) return;
+    imgEl.setAttribute('src', modalImageList[modalImageIndex]);
+  };
+  const stepModalImage = (step) => {
+    if (!modalImageList.length) return;
+    modalImageIndex = (modalImageIndex + step + modalImageList.length) % modalImageList.length;
+    updateModalImage();
+  };
+  const closeModal = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('news-modal-open');
+    imgEl.setAttribute('src', '');
+    modalImageList = [];
+    modalImageIndex = -1;
+  };
+  modal.addEventListener('click', (evt) => {
+    if (evt.target.closest('[data-close-modal="true"]')) {
+      closeModal();
+      return;
+    }
+    const navBtn = evt.target.closest('[data-nav]');
+    if (navBtn) {
+      const step = Number(navBtn.getAttribute('data-nav')) || 0;
+      if (step) stepModalImage(step);
+    }
+  });
+  window.addEventListener('keydown', (evt) => {
+    if (!modal.classList.contains('is-open')) return;
+    if (evt.key === 'Escape') {
+      closeModal();
+      return;
+    }
+    if (evt.key === 'ArrowRight') {
+      evt.preventDefault();
+      stepModalImage(1);
+      return;
+    }
+    if (evt.key === 'ArrowLeft') {
+      evt.preventDefault();
+      stepModalImage(-1);
+      return;
+    }
+    if (evt.key === 'Home') {
+      evt.preventDefault();
+      if (!modalImageList.length) return;
+      modalImageIndex = 0;
+      updateModalImage();
+      return;
+    }
+    if (evt.key === 'End') {
+      evt.preventDefault();
+      if (!modalImageList.length) return;
+      modalImageIndex = modalImageList.length - 1;
+      updateModalImage();
+    }
+  });
+  return modal;
+};
+
+const openImageModal = (urls, startIndex) => {
+  if (!Array.isArray(urls) || !urls.length) return;
+  modalImageList = urls;
+  modalImageIndex = Math.max(0, Math.min(startIndex || 0, urls.length - 1));
+  const modal = ensureImageModal();
+  const imgEl = modal.querySelector('.news-image-modal__img');
+  imgEl.setAttribute('src', modalImageList[modalImageIndex]);
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('news-modal-open');
 };
 
 /** Inserts thumbnails into the article so text can wrap (float left / float right). */
@@ -431,6 +525,21 @@ const createPost = async (elPost, post) => {
   const extraAside = buildExtraThumbsAside(extraThumbs);
 
   elPost.querySelector('.intro').innerHTML = bodyWithThumbs + extraAside;
+  const introEl = elPost.querySelector('.intro');
+  if (!introEl.dataset.modalBound) {
+    introEl.dataset.modalBound = 'true';
+    introEl.addEventListener('click', (evt) => {
+      const thumbLink = evt.target.closest('a[data-full-image]');
+      if (!thumbLink) return;
+      if (evt.metaKey || evt.ctrlKey || evt.shiftKey || evt.altKey || evt.button === 1) return;
+      evt.preventDefault();
+      const modalThumbs = Array.from(introEl.querySelectorAll('a[data-full-image]'));
+      const urls = modalThumbs.map((el) => el.getAttribute('data-full-image')).filter(Boolean);
+      const clickedUrl = thumbLink.getAttribute('data-full-image');
+      const clickedIndex = Math.max(0, urls.indexOf(clickedUrl));
+      openImageModal(urls, clickedIndex);
+    });
+  }
   createNewsSDL(post);
 };
 const getPost = (postID) => {
