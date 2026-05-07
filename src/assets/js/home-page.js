@@ -362,11 +362,11 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePosts = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/travel/wolf-creek-the-most-snow-in-colorado/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/wolf-creek/hero.jpg",
-        "title": "Wolf Creek: Most snow in Colorado?",
-        "author": "Scott Clarkson",
-        "umami": "mountain-life-wolf-creek"
+        "url": "https://snocountry.com/mountain-life/travel/duluth-to-bozeman-ski-road-trip-guide/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/duluth-to-bozeman/1-hero-view-lone-peak.jpg",
+        "title": "Duluth to Bozeman Ski Road Trip",
+        "author": "Krista Holden",
+        "umami": "duluth-to-bozeman"
       }
       // {
       //   "url": "https://snocountry.com/mountain-life/how-to/preparing-your-snowboard-for-winter",
@@ -402,10 +402,10 @@ document.addEventListener('DOMContentLoaded',()=> {
   const getMtnLifePostsMobile = () => {
     const howToPosts = [
       {
-        "url": "https://snocountry.com/mountain-life/travel/wolf-creek-the-most-snow-in-colorado/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/wolf-creek/hero.jpg",
-        "title": "Wolf Creek: Most snow in Colorado?",
-        "author": "Scott Clarkson",
+        "url": "https://snocountry.com/mountain-life/travel/duluth-to-bozeman-ski-road-trip-guide/",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/duluth-to-bozeman/1-hero-view-lone-peak.jpgg",
+        "title": "Duluth to Bozeman Ski Road Trip",
+        "author": "Krista Holden",
         "umami": "mountain-life-wolf-creek"
       }
       // {

@@ -8,6 +8,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Development server**: `npm start` - Starts Eleventy development server with live reload
 - **Lint**: `npx eslint .` - Runs ESLint on JavaScript files
 
+### News local development
+News post data is retrieved from: https://www.snow-country.com/resorts/api-easy-blog-list.php?notPostID=6513.   Utilize post ids of 6512,6513 & 6516 to test news changes.  Below are the test local development urls:
+- http://localhost:8080/article/index.html?postID=6512
+- http://localhost:8080/article/index.html?postID=6513
+- http://localhost:8080/article/index.html?postID=6516
+
 ## Project Architecture
 
 This is a JAMstack site built with Eleventy (11ty) static site generator for SnoCountry, a ski resort information website.
