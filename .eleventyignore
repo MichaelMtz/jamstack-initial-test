@@ -1,0 +1,10 @@
+# Files Eleventy should NOT process as templates.
+# These are still copied verbatim via the addPassthroughCopy("src/assets") rule.
+#
+# Why: src/assets/ai-chat-concept/ contains .md sources, generated .html docs,
+# and a template file with {{...}} placeholders. We want them served as-is,
+# not rendered through Eleventy's template engine. Netlify auto-serves
+# index.html at the directory URL.
+
+src/assets/ai-chat-concept/**/*.md
+src/assets/ai-chat-concept/**/*.html
