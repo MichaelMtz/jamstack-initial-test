@@ -17,8 +17,8 @@ Total wall-clock: ~22 weeks from kickoff to public launch on canary pages, then 
 
 | Phase | Wall-clock | Headcount | Goal | Cost ceiling |
 |---|---|---|---|---|
-| **POC** | Weeks 1–6 | 1 dev + ½ designer + ¼ PM | Validate quality, latency, cost, portability with real SnoCountry data | $500 cloud + 1 fine-tune |
-| **Production build** | Weeks 7–18 | 1 dev + 1 designer/FE + ¼ PM | Full RAG, guardrails, chat UI, entity highlighting, partner integrations | $2k cloud + ~$50 in fine-tunes |
+| **POC** | Weeks 1–6 | 1 dev + 1 designer + ¼ PM | Validate quality, latency, cost, portability with real SnoCountry data | $500 cloud + 1 fine-tune |
+| **Production build** | Weeks 7–18 | 1 dev + 1 designer/FE + ¼ PM | Full RAG, guardrails, chat UI, entity highlighting, partner integrations | $800 cloud + ~$50 in fine-tunes |
 | **Stress + infra decision** | Weeks 16–18 (overlaps prod) | 1 dev | Load test API; if costs justify, validate dedicated-hardware path | $200 (RunPod 1-week test) |
 | **Soft launch** | Weeks 19–20 | full team + on-call rotation | Canary on home page and 1–3 resort pages | observed |
 | **Iterate / scale** | Weeks 21+ | 1 dev sustaining | Continual learning, expand pages, partner widgets | model-driven |

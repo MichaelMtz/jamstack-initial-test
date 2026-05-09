@@ -577,6 +577,13 @@
             <div class="card-sub">POC, stress test, entity highlighting, gotchas</div>
           </div>
         </a>
+        <a class="prompt-card" href="#turn-8" data-target="turn-8">
+          <div class="card-num">8</div>
+          <div class="card-body">
+            <div class="card-title">Estimating users from turns</div>
+            <div class="card-sub">How many MAU per traffic tier in the cost table?</div>
+          </div>
+        </a>
       </nav>
 
       <section class="bookmark-section" aria-label="Bookmarks">
@@ -2255,6 +2262,90 @@ function refuse(requestId, reason) {
     <li><strong>The dedicated-hardware decision is explicitly post-launch</strong> based on actual traffic. Don't over-build.</li>
     <li><strong>Soft launch starts on <code>/snow-report/colorado/copper-mountain/</code></strong> since you used that example. Easy to swap.</li>
   </ul>
+</section>
+
+<!-- ============================================================== -->
+<!-- TURN 8 — USER -->
+<!-- ============================================================== -->
+<section class="turn user" id="turn-8">
+  <div class="role">Prompt</div>
+  <p>In <code>src/assets/ai-chat-concept/ai-chat-executive-plan.md</code> at lines 136–148 "5.1 Year-1 monthly run rate" estimate the number of users / active users for the # of turns specified in table.</p>
+</section>
+
+<!-- ============================================================== -->
+<!-- TURN 8 — ASSISTANT -->
+<!-- ============================================================== -->
+<section class="turn assistant">
+  <div class="role">Answer</div>
+
+  <p>Good question — the table only shows turns, but turns-per-user assumptions translate that to actual headcount.</p>
+
+  <h2>Estimating users from turns</h2>
+
+  <p><strong>Base assumptions</strong> (calibrate to your actual analytics if you have them):</p>
+  <ul>
+    <li><strong>Avg turns per session: ~3</strong> (many "how's Vail today?" one-shots, balanced by 4–8-turn trip-planning sessions)</li>
+    <li><strong>Avg sessions per user per month: ~2</strong> (casual planners do 1; regulars do 4–8)</li>
+    <li><strong>→ ~6 turns per user per month</strong> (3 × 2)</li>
+    <li><strong>Chat opt-in rate: ~10%</strong> of total site visitors actually open the chat (the other 90% just browse). Industry-typical for embedded chatbots on content sites.</li>
+    <li><strong>Peak-season skew: ~2×</strong> the monthly average during Dec–Mar (so daily counts in peak ≈ 2× monthly avg ÷ 30).</li>
+  </ul>
+
+  <h2>What the three traffic tiers actually mean</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Low (5k turns/mo)</th>
+        <th>Mid (50k turns/mo)</th>
+        <th>High (250k turns/mo)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Chat users per month (MAU)</strong></td><td><strong>~830</strong></td><td><strong>~8,300</strong></td><td><strong>~42,000</strong></td></tr>
+      <tr><td>Chat users per day (avg)</td><td>~28</td><td>~280</td><td>~1,400</td></tr>
+      <tr><td>Chat users per day (peak ski season)</td><td>~55</td><td>~550</td><td>~2,800</td></tr>
+      <tr><td><strong>Implied total site MAU</strong> (chat ≈ 10% of visitors)</td><td>~8,300</td><td>~83,000</td><td>~420,000</td></tr>
+      <tr><td>Sessions per month</td><td>~1,700</td><td>~17,000</td><td>~83,000</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Sensitivity (engagement is the biggest unknown)</h2>
+
+  <p>The MAU estimates above use 6 turns/user/mo. If real engagement differs:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Engagement profile</th>
+        <th>Turns/user/mo</th>
+        <th>Low MAU</th>
+        <th>Mid MAU</th>
+        <th>High MAU</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Mostly drive-by checkers</strong> (1-turn sessions)</td><td>3</td><td>1,700</td><td>17,000</td><td>83,000</td></tr>
+      <tr><td><strong>Central estimate</strong> <em>(used above)</em></td><td>6</td><td><strong>830</strong></td><td><strong>8,300</strong></td><td><strong>42,000</strong></td></tr>
+      <tr><td><strong>Engaged trip-planners + power users</strong></td><td>10</td><td>500</td><td>5,000</td><td>25,000</td></tr>
+    </tbody>
+  </table>
+
+  <p>So the real MAU at 50k turns/mo is somewhere between <strong>5,000 and 17,000</strong>, central guess <strong>~8,300</strong>. Tighten this after the first month of soft-launch data lands.</p>
+
+  <h2>Plain-English read</h2>
+
+  <table>
+    <thead>
+      <tr><th>Scenario</th><th>What this looks like in real life</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Low</strong> (~800 chat MAU)</td><td>Beta / launch month. A few hundred curious visitors per week. Easy to read every conversation manually.</td></tr>
+      <tr><td><strong>Mid</strong> (~8k chat MAU)</td><td>Established niche product. Real product feedback signal; daily monitoring becomes a job.</td></tr>
+      <tr><td><strong>High</strong> (~42k chat MAU)</td><td>Mainstream feature. Sampling-based review only; full LLM ops discipline (alerting, on-call, cost controls) is mandatory.</td></tr>
+    </tbody>
+  </table>
 </section>
 
 <div class="footer">

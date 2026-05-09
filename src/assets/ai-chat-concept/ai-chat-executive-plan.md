@@ -7,9 +7,10 @@ This plan covers what we're building, how long it takes, what it costs, and what
 You'll see two AI techniques referenced throughout. Both have plain-English meanings:
 
 - **RAG (Retrieval-Augmented Generation)** — at question time, we inject the latest snow conditions and the most relevant articles into the AI's context, so its answers are current. This is how the bot answers *"how's Vail today?"* with real numbers instead of guessing.
-- **Fine-tuning** — we teach a base AI model SnoCountry's tone of voice using a small, swappable add-on called a **LoRA** (think: a personality plug-in for the AI). Cheap, fast, reversible.
+- **Fine-tuning** — we teach a base AI model SnoCountry's tone of voice using a small, swappable add-on called a **LoRA** (think: a expert snow reporter plug-in for the AI vs non-local giving snow condition advice). Cheap, fast, reversible.
+- **turn** - In chatbot land, a **turn** = one user message + one AI response. That's the atomic unit of a conversation. A typical session is 2–4 turns.
 
-Total wall-clock from kickoff to public launch: **~22 weeks**. Total v1 budget: **~$2,500 cloud + ~12 dev-weeks of labor**.
+Total wall-clock from kickoff to public launch: **~22 weeks**. Total v1 budget: **~$1,650 cloud + ~18 dev-weeks of labor**.
 
 ---
 
@@ -19,16 +20,16 @@ Total wall-clock from kickoff to public launch: **~22 weeks**. Total v1 budget: 
 
 | Phase | Weeks | Headcount | Goal | Cost ceiling |
 |---|---|---|---|---|
-| **POC (proof of concept)** | 1–6 | 1 dev + ½ designer + ¼ PM | Prove the bot can answer well, fast enough, cheap enough — using real SnoCountry data | $500 |
-| **Production build** | 7–18 | 1 dev + 1 designer/FE + ¼ PM | Full bot: chat panel, "smart cards" for resorts/articles/sponsors, safety guardrails, partner integrations | $2,000 + ~$50 |
+| **POC (proof of concept)** | 1–6 | 1 dev + 1 LLM designer + ¼ PM | Prove the bot can answer well, fast, and cheap on real SnoCountry data. Test fine-tuning. Test portability across providers. End with a pivot third party (api) vs dedicated system decision. | ~$700 |
+| **Production build** | 7–18 | 1 dev + 1 LLM designer + ¼ PM | Full bot: chat panel, complete fine tuning, safety guardrails, RAG tuning, partner integrations, "smart cards" for resorts/articles/sponsors  | $750 + ~$50 |
 | **Stress test + infra decision** | 16–18 (overlaps) | 1 dev | Load-test the bot; decide if we stay on pay-per-use AI service (Together AI) or move to dedicated GPU hardware | $200 |
 | **Soft launch** | 19–20 | full team + on-call | Quietly ship to one resort page first, then expand; watch closely | actuals |
 | **Iterate / scale** | 21+ | 1 dev sustaining | Improve the bot from real conversations; expand to more pages | model-driven |
 
-**Four key gates** — points where leadership decides to continue, pivot, or stop:
+**Four key gates**:
 
-1. **End of Week 3** — Stock-model + RAG quality check. If 16/20 test questions are already rated "good" or better, we may skip fine-tuning entirely for v1.
-2. **End of Week 6** — POC verdict: ship to production, pivot model/provider, or shelve.
+1. **End of Week 3** — Stock-model + RAG quality check. Fine tuning of model to SnoCountry data.
+2. **End of Week 6** — POC knowledge: ship to production, pivot model/provider.
 3. **End of Week 17** — Pay-per-use AI service vs. dedicated hardware decision, based on real traffic data.
 4. **End of Week 20** — Public launch decision based on soft-launch metrics.
 
@@ -47,7 +48,6 @@ The POC answers four binary questions in 6 weeks:
 | Q3 | Is the fine-tuned model **portable** between providers? (Avoid lock-in to Together AI.) | Same questions get comparable answers when our model runs on RunPod (a competitor) — within ±5%. |
 | Q4 | Is the cost-per-conversation acceptable? | Under **$0.01 per turn** at our projected v1 traffic. |
 
-If Q1 passes, Q2 may not even be needed. We test it explicitly — fine-tuning is **not** assumed.
 
 ---
 
@@ -57,15 +57,15 @@ If Q1 passes, Q2 may not even be needed. We test it explicitly — fine-tuning i
 
 | Item | Cost |
 |---|---|
-| Together AI tokens (testing, exploration) | ~$60 |
-| One LoRA fine-tune (the personality plug-in) | ~$8 |
-| Together AI dedicated endpoint trial | ~$50 |
+| Together AI tokens (testing, exploration) | ~$120 |
+| One LoRA fine-tune (the personality plug-in) | ~$16 |
+| Together AI dedicated endpoint trial | ~$100 |
 | RunPod H100 GPU rental (5 days, portability test) | ~$300 |
-| HuggingFace private model storage | $0 |
-| Embedding the article + resort corpus (preparing content for AI search) | ~$60 |
-| **Total** | **~$478** |
+| HuggingFace private model storage (free tier covers LoRA adapters) | $0 |
+| Embedding the article + resort corpus (preparing content for AI search) | ~$120 |
+| **Total** | **~$656** |
 
-We round to **$500** as the ceiling. If the POC blows past this, something is wrong.
+We round to **$700** as the ceiling. Keep tabs on budget, to determine if need provider change.
 
 ---
 
@@ -81,8 +81,8 @@ Build the engine end-to-end at production quality. No public exposure yet.
 
 | Week | What ships |
 |---|---|
-| 7 | Database tables for tracking conversations; live snow-data endpoint optimization; first RAG endpoint (per-resort context) |
-| 8 | Region-context, recommendation, and search RAG endpoints |
+| 7 | Database tables for tracking conversations; live RAG endpoint snow-data endpoint optimization;  (per-resort context) |
+| 8 | Region-context, recommendation, and search articles, resort blurbs (vector semantic search) endpoints |
 | 9 | The main chat brain: routes the question, enforces token (word) budgets, streams answers, runs all five **guardrail layers** (safety filters that keep the bot on-topic and prevent abuse) |
 | 10 | Tracking endpoint, automatic indexing of articles + resort overviews, expand corpus to top 50 resorts |
 
@@ -96,7 +96,7 @@ When the bot mentions Copper Mountain, a resort card appears next to the chat wi
 
 | Week | What ships |
 |---|---|
-| 11 | Pick smart-card strategy (the AI emits structured data vs. we post-process its text); chat widget skeleton; first end-to-end "answer streams to the screen" |
+| 11 | Chat widget skeleton; first end-to-end "answer streams to the screen"; Pick smart-card strategy (the AI emits structured data vs. we post-process its text)  |
 | 12 | Resort card + article card; live data hydration |
 | 13 | Sponsor card (reuses existing `/api/ads`); event card (curated content for v1) |
 | 14 | Polish: keyboard accessibility, screen-reader labels, mobile bottom-sheet UX; deploy to one canary page (e.g. `/snow-report/colorado/copper-mountain/`) |
@@ -146,12 +146,52 @@ Soft launch is **not** a feature freeze. It's a controlled traffic ramp.
 
 At 250k turns/month sustained, dedicated hardware breaks even with the API. We re-test then.
 
+### 5.1.1 What these traffic tiers mean in users
+
+The cost table is denominated in *turns* (one user question + one bot answer). Translating that to actual headcount needs a couple of behavior assumptions:
+
+- **Avg turns per session: ~3** (many *"how's Vail today?"* one-shots, balanced by 4–8-turn trip-planning sessions).
+- **Avg sessions per user per month: ~2** (casual planners do 1; regulars do 4–8).
+- **→ ~6 turns per user per month** (3 × 2).
+- **Chat opt-in rate: ~10%** of total site visitors actually open the chat (the other 90% just browse). Industry-typical for embedded chatbots on content sites.
+- **Peak-season skew: ~2×** the monthly average during Dec–Mar.
+
+#### Central estimate
+
+| Metric | Low (5k turns/mo) | Mid (50k turns/mo) | High (250k turns/mo) |
+|---|---|---|---|
+| **Chat users per month (MAU)** | **~830** | **~8,300** | **~42,000** |
+| Chat users per day (avg) | ~28 | ~280 | ~1,400 |
+| Chat users per day (peak ski season) | ~55 | ~550 | ~2,800 |
+| **Implied total site MAU** (chat ≈ 10% of visitors) | ~8,300 | ~83,000 | ~420,000 |
+| Sessions per month | ~1,700 | ~17,000 | ~83,000 |
+
+#### Sensitivity — engagement is the biggest unknown
+
+The numbers above assume 6 turns/user/month. If real engagement differs:
+
+| Engagement profile | Turns/user/mo | Low MAU | Mid MAU | High MAU |
+|---|---|---|---|---|
+| **Mostly drive-by checkers** (1-turn sessions) | 3 | 1,700 | 17,000 | 83,000 |
+| **Central estimate** *(used above)* | 6 | **830** | **8,300** | **42,000** |
+| **Engaged trip-planners + power users** | 10 | 500 | 5,000 | 25,000 |
+
+Real MAU at 50k turns/mo is somewhere between **5,000 and 17,000**, central guess **~8,300**. Tighten after the first month of soft-launch data lands.
+
+#### Plain-English read
+
+| Scenario | What this looks like in real life |
+|---|---|
+| **Low** (~800 chat MAU) | Beta / launch month. A few hundred curious visitors per week. Easy to read every conversation manually. |
+| **Mid** (~8k chat MAU) | Established niche product. Real product feedback signal; daily monitoring becomes a job. |
+| **High** (~42k chat MAU) | Mainstream feature. Sampling-based review only; full LLM ops discipline (alerting, on-call, cost controls) is mandatory. |
+
 ### 5.2 One-time costs
 
-- **POC:** ~$500 (Section 3)
-- **Production build labor:** ~12 dev-weeks at internal rate
+- **POC:** ~$700 (Section 3)
+- **Production build labor:** ~18 dev-weeks at internal rate
 - **Initial corpus build** (50 resort overviews): ~80 hours of content authoring
-- **Legal review** (Terms of Service / privacy update): ~$2,000 outside counsel or in-house equivalent
+- **Legal review** (Terms of Service / privacy update): ~$250 outside counsel or in-house equivalent
 - **Brand / UX design pass:** ~2 designer-weeks
 
 ---
@@ -160,17 +200,17 @@ At 250k turns/month sustained, dedicated hardware breaks even with the API. We r
 
 (From full plan §7. Each item is one easy-to-forget thing that bites later.)
 
-1. **Legal / compliance** — Update Terms of Service and privacy policy; build a "forget my chat data" endpoint for EU/CA users (GDPR/CCPA); verify resort-data and news-article licenses allow AI use.
-2. **Partner / content relationships** — Notify the top 30 resort partners before launch; mark sponsor cards clearly as "Sponsored"; plan a soft-launch press post that frames the bot as an *assistant*, not an *oracle*.
+1. **Embeddable widget for partners** — Resort partners may want this on their own sites — plan a partner widget for v1.x with a `partnerId` parameter for tracking and ad attribution.
+2. **Legal / compliance** — Update Terms of Service and privacy policy; build a "forget my chat data" endpoint for EU/CA users (GDPR/CCPA); verify resort-data and news-article licenses allow AI use.
 3. **Brand & content review** — Have the content lead manually review 100 chat responses before launch; explicitly ban medical, avalanche-safety, and gambling questions; workshop the canned refusal copy (it'll be seen thousands of times).
-4. **SEO (Google ranking)** — Make sure chat conversations don't end up in Google's index; add Schema.org markup if you display an FAQ block; sitemap stays unchanged.
-5. **Accessibility (a11y — screen readers, keyboard users)** — Keyboard navigation through the chat and cards; screen-reader labels on streamed text; verify color contrast; respect reduced-motion preferences.
-6. **Observability** — Wire Sentry (an error-tracking service) for chat-widget JS errors; detect and fall back when streaming connections fail; tag every conversation with which page launched it.
-7. **Personalization (defer, but design for it)** — Browser geolocation enables *"you're in Denver — try A-Basin"*; integrate the existing bookmarks feature into chat suggestions; plan server-side chat history once user accounts ship.
-8. **Multi-language** — English-only for v1, but Spanish/French is plausible for v1.5 with mostly system-prompt work.
-9. **Mobile UX** — Bottom-sheet pattern instead of side panel; voice input via the browser's speech API (a big UX win, low effort); tap-to-fold cards so they don't dominate the screen.
-10. **Embeddable widget for partners** — Resort partners may want this on their own sites — plan a partner widget for v1.5 with a `partnerId` parameter for tracking and ad attribution.
-11. **Internal tooling** — Build a "chat replay" admin tool (given a request ID, show the full prompt, sources, response, metrics) — half a day, indispensable for debugging user reports; also a corpus-health dashboard.
+4. **Accessibility (a11y — screen readers, keyboard users)** — Keyboard navigation through the chat and cards; screen-reader labels on streamed text; verify color contrast; respect reduced-motion preferences.
+5. **SEO (Google ranking)** — Make sure chat conversations don't end up in Google's index; add Schema.org markup if you display an FAQ block; sitemap stays unchanged.
+6. **Internal tooling** — Build a "chat replay" admin tool (given a request ID, show the full prompt, sources, response, metrics) — half a day, indispensable for debugging user reports; also a corpus-health dashboard.
+7. **Partner / content relationships** — Notify the top 30 resort partners before launch; mark sponsor cards clearly as "Sponsored"; plan a soft-launch press post that frames the bot as an *assistant*, not an *oracle*.
+8. **Observability** — Wire Sentry (an error-tracking service) for chat-widget JS errors; detect and fall back when streaming connections fail; tag every conversation with which page launched it.
+9. **Personalization (defer, but design for it)** — Browser geolocation enables *"you're in Denver — try A-Basin"*; integrate the existing bookmarks feature into chat suggestions; plan server-side chat history once user accounts ship.
+10. **Multi-language** — English-only for v1, but Spanish/French is plausible for v1.5 with mostly system-prompt work.
+11. **Mobile UX** — Bottom-sheet pattern instead of side panel; voice input via the browser's speech API (a big UX win, low effort); tap-to-fold cards so they don't dominate the screen.
 12. **Disaster recovery** — Convex snapshots → weekly export to S3/R2 (cloud storage); resort-overview source files live in git; fine-tune adapters mirrored to two providers.
 13. **Internal LLM gateway (post-v1)** — Once 2+ surfaces use AI (e.g., chat + an editor "summarize this resort" tool), centralize through a single AI-provider module with rate limits, retries, and per-surface cost ceilings — about a dev-week of work.
 

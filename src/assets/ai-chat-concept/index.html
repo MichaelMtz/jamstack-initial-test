@@ -239,8 +239,19 @@
     <h2>Readable docs</h2>
     <div class="doc-grid">
 
+      <a class="doc-card wide" href="ai-chat-one-page.html">
+        <span class="label">Elevator pitch · 1 min</span>
+        <h3>AI Chat — One-Page Proposal</h3>
+        <p>The whole thing on one page: timeline with real dates (May 18 kickoff → Oct 5 launch), cost, outcomes, and what it enables next. Print-friendly. Send this to leadership.</p>
+        <div class="footer-row">
+          <span class="pill">dated timeline</span>
+          <span class="pill">printable</span>
+          <span class="pill">decision-ready</span>
+        </div>
+      </a>
+
       <a class="doc-card" href="ai-chat-executive-plan.html">
-        <span class="label">Start here · 10 min</span>
+        <span class="label">Exec digest · 10 min</span>
         <h3>AI Chat — Executive Plan</h3>
         <p>Plain-English digest for non-engineers. Phases, gates, costs, and the one-line list of things easy to forget.</p>
         <div class="footer-row">
@@ -277,6 +288,7 @@
   <section class="group">
     <h2>Markdown sources</h2>
     <ul class="file-list">
+      <li><a href="ai-chat-one-page.md"><span class="ext md">md</span><span class="name">ai-chat-one-page.md</span></a></li>
       <li><a href="ai-chat-executive-plan.md"><span class="ext md">md</span><span class="name">ai-chat-executive-plan.md</span></a></li>
       <li><a href="deployment-plan.md"><span class="ext md">md</span><span class="name">deployment-plan.md</span></a></li>
       <li><a href="rag-plan.md"><span class="ext md">md</span><span class="name">rag-plan.md — RAG architecture &amp; endpoints</span></a></li>
@@ -300,14 +312,19 @@
       The HTML versions of the plans are generated from their markdown sources. Edit the <code>.md</code>, re-run the corresponding script, and the matching <code>.html</code> is regenerated. Both build scripts use the same shared template and library, so they stay visually consistent.
     </p>
     <ul class="file-list">
+      <li><a href="scripts/build-one-page-html.js"><span class="ext js">js</span><span class="name">scripts/build-one-page-html.js</span></a></li>
       <li><a href="scripts/build-deployment-html.js"><span class="ext js">js</span><span class="name">scripts/build-deployment-html.js</span></a></li>
       <li><a href="scripts/build-executive-plan-html.js"><span class="ext js">js</span><span class="name">scripts/build-executive-plan-html.js</span></a></li>
-      <li><a href="scripts/lib/build-doc.js"><span class="ext js">js</span><span class="name">scripts/lib/build-doc.js — shared md→html builder</span></a></li>
-      <li><a href="scripts/templates/doc-template.html"><span class="ext html">html</span><span class="name">scripts/templates/doc-template.html — shared page shell</span></a></li>
+      <li><a href="scripts/lib/build-doc.js"><span class="ext js">js</span><span class="name">scripts/lib/build-doc.js — shared md→html builder (multi-section docs)</span></a></li>
+      <li><a href="scripts/templates/doc-template.html"><span class="ext html">html</span><span class="name">scripts/templates/doc-template.html — shared shell for sidebar+bookmarks docs</span></a></li>
+      <li><a href="scripts/templates/one-page-template.html"><span class="ext html">html</span><span class="name">scripts/templates/one-page-template.html — print-friendly one-pager shell</span></a></li>
     </ul>
     <details>
       <summary>How to rebuild the HTML docs</summary>
       <pre><code>cd src/assets/ai-chat-concept
+
+node scripts/build-one-page-html.js
+# → writes ai-chat-one-page.html
 
 node scripts/build-deployment-html.js
 # → writes deployment-plan.html

@@ -40,6 +40,7 @@
     margin: 0 0 6px 0;
     font-size: 1.6rem;
     letter-spacing: -0.01em;
+    color: white;
   }
   header.page .meta {
     opacity: 0.85;
@@ -578,9 +579,10 @@
 <p>You'll see two AI techniques referenced throughout. Both have plain-English meanings:</p>
 <ul>
 <li><strong>RAG (Retrieval-Augmented Generation)</strong> — at question time, we inject the latest snow conditions and the most relevant articles into the AI's context, so its answers are current. This is how the bot answers <em>&quot;how's Vail today?&quot;</em> with real numbers instead of guessing.</li>
-<li><strong>Fine-tuning</strong> — we teach a base AI model SnoCountry's tone of voice using a small, swappable add-on called a <strong>LoRA</strong> (think: a personality plug-in for the AI). Cheap, fast, reversible.</li>
+<li><strong>Fine-tuning</strong> — we teach a base AI model SnoCountry's tone of voice using a small, swappable add-on called a <strong>LoRA</strong> (think: a expert snow reporter plug-in for the AI vs non-local giving snow condition advice). Cheap, fast, reversible.</li>
+<li><strong>turn</strong> - In chatbot land, a <strong>turn</strong> = one user message + one AI response. That's the atomic unit of a conversation. A typical session is 2–4 turns.</li>
 </ul>
-<p>Total wall-clock from kickoff to public launch: <strong>~22 weeks</strong>. Total v1 budget: <strong>~$2,500 cloud + ~12 dev-weeks of labor</strong>.</p>
+<p>Total wall-clock from kickoff to public launch: <strong>~22 weeks</strong>. Total v1 budget: <strong>~$1,650 cloud + ~18 dev-weeks of labor</strong>.</p>
 <hr>
 
 
@@ -601,16 +603,16 @@
 <tr>
 <td><strong>POC (proof of concept)</strong></td>
 <td>1–6</td>
-<td>1 dev + ½ designer + ¼ PM</td>
-<td>Prove the bot can answer well, fast enough, cheap enough — using real SnoCountry data</td>
-<td>$500</td>
+<td>1 dev + 1 LLM designer + ¼ PM</td>
+<td>Prove the bot can answer well, fast, and cheap on real SnoCountry data. Test fine-tuning. Test portability across providers. End with a pivot third party (api) vs dedicated system decision.</td>
+<td>~$700</td>
 </tr>
 <tr>
 <td><strong>Production build</strong></td>
 <td>7–18</td>
-<td>1 dev + 1 designer/FE + ¼ PM</td>
-<td>Full bot: chat panel, &quot;smart cards&quot; for resorts/articles/sponsors, safety guardrails, partner integrations</td>
-<td>$2,000 + ~$50</td>
+<td>1 dev + 1 LLM designer + ¼ PM</td>
+<td>Full bot: chat panel, complete fine tuning, safety guardrails, RAG tuning, partner integrations, &quot;smart cards&quot; for resorts/articles/sponsors</td>
+<td>$750 + ~$50</td>
 </tr>
 <tr>
 <td><strong>Stress test + infra decision</strong></td>
@@ -635,10 +637,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Four key gates</strong> — points where leadership decides to continue, pivot, or stop:</p>
+<p><strong>Four key gates</strong>:</p>
 <ol>
-<li><strong>End of Week 3</strong> — Stock-model + RAG quality check. If 16/20 test questions are already rated &quot;good&quot; or better, we may skip fine-tuning entirely for v1.</li>
-<li><strong>End of Week 6</strong> — POC verdict: ship to production, pivot model/provider, or shelve.</li>
+<li><strong>End of Week 3</strong> — Stock-model + RAG quality check. Fine tuning of model to SnoCountry data.</li>
+<li><strong>End of Week 6</strong> — POC knowledge: ship to production, pivot model/provider.</li>
 <li><strong>End of Week 17</strong> — Pay-per-use AI service vs. dedicated hardware decision, based on real traffic data.</li>
 <li><strong>End of Week 20</strong> — Public launch decision based on soft-launch metrics.</li>
 </ol>
@@ -681,7 +683,6 @@
 </tr>
 </tbody>
 </table>
-<p>If Q1 passes, Q2 may not even be needed. We test it explicitly — fine-tuning is <strong>not</strong> assumed.</p>
 <hr>
 
 </section>
@@ -699,35 +700,35 @@
 <tbody>
 <tr>
 <td>Together AI tokens (testing, exploration)</td>
-<td>~$60</td>
+<td>~$120</td>
 </tr>
 <tr>
 <td>One LoRA fine-tune (the personality plug-in)</td>
-<td>~$8</td>
+<td>~$16</td>
 </tr>
 <tr>
 <td>Together AI dedicated endpoint trial</td>
-<td>~$50</td>
+<td>~$100</td>
 </tr>
 <tr>
 <td>RunPod H100 GPU rental (5 days, portability test)</td>
 <td>~$300</td>
 </tr>
 <tr>
-<td>HuggingFace private model storage</td>
+<td>HuggingFace private model storage (free tier covers LoRA adapters)</td>
 <td>$0</td>
 </tr>
 <tr>
 <td>Embedding the article + resort corpus (preparing content for AI search)</td>
-<td>~$60</td>
+<td>~$120</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
-<td><strong>~$478</strong></td>
+<td><strong>~$656</strong></td>
 </tr>
 </tbody>
 </table>
-<p>We round to <strong>$500</strong> as the ceiling. If the POC blows past this, something is wrong.</p>
+<p>We round to <strong>$700</strong> as the ceiling. Keep tabs on budget, to determine if need provider change.</p>
 <hr>
 
 </section>
@@ -748,11 +749,11 @@
 <tbody>
 <tr>
 <td>7</td>
-<td>Database tables for tracking conversations; live snow-data endpoint optimization; first RAG endpoint (per-resort context)</td>
+<td>Database tables for tracking conversations; live RAG endpoint snow-data endpoint optimization;  (per-resort context)</td>
 </tr>
 <tr>
 <td>8</td>
-<td>Region-context, recommendation, and search RAG endpoints</td>
+<td>Region-context, recommendation, and search articles, resort blurbs (vector semantic search) endpoints</td>
 </tr>
 <tr>
 <td>9</td>
@@ -778,7 +779,7 @@
 <tbody>
 <tr>
 <td>11</td>
-<td>Pick smart-card strategy (the AI emits structured data vs. we post-process its text); chat widget skeleton; first end-to-end &quot;answer streams to the screen&quot;</td>
+<td>Chat widget skeleton; first end-to-end &quot;answer streams to the screen&quot;; Pick smart-card strategy (the AI emits structured data vs. we post-process its text)</td>
 </tr>
 <tr>
 <td>12</td>
@@ -909,12 +910,124 @@
 </tbody>
 </table>
 <p>At 250k turns/month sustained, dedicated hardware breaks even with the API. We re-test then.</p>
+<h3>5.1.1 What these traffic tiers mean in users</h3>
+<p>The cost table is denominated in <em>turns</em> (one user question + one bot answer). Translating that to actual headcount needs a couple of behavior assumptions:</p>
+<ul>
+<li><strong>Avg turns per session: ~3</strong> (many <em>&quot;how's Vail today?&quot;</em> one-shots, balanced by 4–8-turn trip-planning sessions).</li>
+<li><strong>Avg sessions per user per month: ~2</strong> (casual planners do 1; regulars do 4–8).</li>
+<li><strong>→ ~6 turns per user per month</strong> (3 × 2).</li>
+<li><strong>Chat opt-in rate: ~10%</strong> of total site visitors actually open the chat (the other 90% just browse). Industry-typical for embedded chatbots on content sites.</li>
+<li><strong>Peak-season skew: ~2×</strong> the monthly average during Dec–Mar.</li>
+</ul>
+<h4>Central estimate</h4>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Low (5k turns/mo)</th>
+<th>Mid (50k turns/mo)</th>
+<th>High (250k turns/mo)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chat users per month (MAU)</strong></td>
+<td><strong>~830</strong></td>
+<td><strong>~8,300</strong></td>
+<td><strong>~42,000</strong></td>
+</tr>
+<tr>
+<td>Chat users per day (avg)</td>
+<td>~28</td>
+<td>~280</td>
+<td>~1,400</td>
+</tr>
+<tr>
+<td>Chat users per day (peak ski season)</td>
+<td>~55</td>
+<td>~550</td>
+<td>~2,800</td>
+</tr>
+<tr>
+<td><strong>Implied total site MAU</strong> (chat ≈ 10% of visitors)</td>
+<td>~8,300</td>
+<td>~83,000</td>
+<td>~420,000</td>
+</tr>
+<tr>
+<td>Sessions per month</td>
+<td>~1,700</td>
+<td>~17,000</td>
+<td>~83,000</td>
+</tr>
+</tbody>
+</table>
+<h4>Sensitivity — engagement is the biggest unknown</h4>
+<p>The numbers above assume 6 turns/user/month. If real engagement differs:</p>
+<table>
+<thead>
+<tr>
+<th>Engagement profile</th>
+<th>Turns/user/mo</th>
+<th>Low MAU</th>
+<th>Mid MAU</th>
+<th>High MAU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mostly drive-by checkers</strong> (1-turn sessions)</td>
+<td>3</td>
+<td>1,700</td>
+<td>17,000</td>
+<td>83,000</td>
+</tr>
+<tr>
+<td><strong>Central estimate</strong> <em>(used above)</em></td>
+<td>6</td>
+<td><strong>830</strong></td>
+<td><strong>8,300</strong></td>
+<td><strong>42,000</strong></td>
+</tr>
+<tr>
+<td><strong>Engaged trip-planners + power users</strong></td>
+<td>10</td>
+<td>500</td>
+<td>5,000</td>
+<td>25,000</td>
+</tr>
+</tbody>
+</table>
+<p>Real MAU at 50k turns/mo is somewhere between <strong>5,000 and 17,000</strong>, central guess <strong>~8,300</strong>. Tighten after the first month of soft-launch data lands.</p>
+<h4>Plain-English read</h4>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>What this looks like in real life</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Low</strong> (~800 chat MAU)</td>
+<td>Beta / launch month. A few hundred curious visitors per week. Easy to read every conversation manually.</td>
+</tr>
+<tr>
+<td><strong>Mid</strong> (~8k chat MAU)</td>
+<td>Established niche product. Real product feedback signal; daily monitoring becomes a job.</td>
+</tr>
+<tr>
+<td><strong>High</strong> (~42k chat MAU)</td>
+<td>Mainstream feature. Sampling-based review only; full LLM ops discipline (alerting, on-call, cost controls) is mandatory.</td>
+</tr>
+</tbody>
+</table>
 <h3>5.2 One-time costs</h3>
 <ul>
-<li><strong>POC:</strong> ~$500 (Section 3)</li>
-<li><strong>Production build labor:</strong> ~12 dev-weeks at internal rate</li>
+<li><strong>POC:</strong> ~$700 (Section 3)</li>
+<li><strong>Production build labor:</strong> ~18 dev-weeks at internal rate</li>
 <li><strong>Initial corpus build</strong> (50 resort overviews): ~80 hours of content authoring</li>
-<li><strong>Legal review</strong> (Terms of Service / privacy update): ~$2,000 outside counsel or in-house equivalent</li>
+<li><strong>Legal review</strong> (Terms of Service / privacy update): ~$250 outside counsel or in-house equivalent</li>
 <li><strong>Brand / UX design pass:</strong> ~2 designer-weeks</li>
 </ul>
 <hr>
@@ -925,17 +1038,17 @@
 <h2>6. Things you might be missing — one-liners</h2>
 <p>(From full plan §7. Each item is one easy-to-forget thing that bites later.)</p>
 <ol>
+<li><strong>Embeddable widget for partners</strong> — Resort partners may want this on their own sites — plan a partner widget for v1.x with a <code>partnerId</code> parameter for tracking and ad attribution.</li>
 <li><strong>Legal / compliance</strong> — Update Terms of Service and privacy policy; build a &quot;forget my chat data&quot; endpoint for EU/CA users (GDPR/CCPA); verify resort-data and news-article licenses allow AI use.</li>
-<li><strong>Partner / content relationships</strong> — Notify the top 30 resort partners before launch; mark sponsor cards clearly as &quot;Sponsored&quot;; plan a soft-launch press post that frames the bot as an <em>assistant</em>, not an <em>oracle</em>.</li>
 <li><strong>Brand &amp; content review</strong> — Have the content lead manually review 100 chat responses before launch; explicitly ban medical, avalanche-safety, and gambling questions; workshop the canned refusal copy (it'll be seen thousands of times).</li>
-<li><strong>SEO (Google ranking)</strong> — Make sure chat conversations don't end up in Google's index; add Schema.org markup if you display an FAQ block; sitemap stays unchanged.</li>
 <li><strong>Accessibility (a11y — screen readers, keyboard users)</strong> — Keyboard navigation through the chat and cards; screen-reader labels on streamed text; verify color contrast; respect reduced-motion preferences.</li>
+<li><strong>SEO (Google ranking)</strong> — Make sure chat conversations don't end up in Google's index; add Schema.org markup if you display an FAQ block; sitemap stays unchanged.</li>
+<li><strong>Internal tooling</strong> — Build a &quot;chat replay&quot; admin tool (given a request ID, show the full prompt, sources, response, metrics) — half a day, indispensable for debugging user reports; also a corpus-health dashboard.</li>
+<li><strong>Partner / content relationships</strong> — Notify the top 30 resort partners before launch; mark sponsor cards clearly as &quot;Sponsored&quot;; plan a soft-launch press post that frames the bot as an <em>assistant</em>, not an <em>oracle</em>.</li>
 <li><strong>Observability</strong> — Wire Sentry (an error-tracking service) for chat-widget JS errors; detect and fall back when streaming connections fail; tag every conversation with which page launched it.</li>
 <li><strong>Personalization (defer, but design for it)</strong> — Browser geolocation enables <em>&quot;you're in Denver — try A-Basin&quot;</em>; integrate the existing bookmarks feature into chat suggestions; plan server-side chat history once user accounts ship.</li>
 <li><strong>Multi-language</strong> — English-only for v1, but Spanish/French is plausible for v1.5 with mostly system-prompt work.</li>
 <li><strong>Mobile UX</strong> — Bottom-sheet pattern instead of side panel; voice input via the browser's speech API (a big UX win, low effort); tap-to-fold cards so they don't dominate the screen.</li>
-<li><strong>Embeddable widget for partners</strong> — Resort partners may want this on their own sites — plan a partner widget for v1.5 with a <code>partnerId</code> parameter for tracking and ad attribution.</li>
-<li><strong>Internal tooling</strong> — Build a &quot;chat replay&quot; admin tool (given a request ID, show the full prompt, sources, response, metrics) — half a day, indispensable for debugging user reports; also a corpus-health dashboard.</li>
 <li><strong>Disaster recovery</strong> — Convex snapshots → weekly export to S3/R2 (cloud storage); resort-overview source files live in git; fine-tune adapters mirrored to two providers.</li>
 <li><strong>Internal LLM gateway (post-v1)</strong> — Once 2+ surfaces use AI (e.g., chat + an editor &quot;summarize this resort&quot; tool), centralize through a single AI-provider module with rate limits, retries, and per-surface cost ceilings — about a dev-week of work.</li>
 </ol>
