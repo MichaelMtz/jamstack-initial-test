@@ -223,11 +223,11 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Four leadership gates</strong> (continue / pivot / stop):</p>
+<p><strong>Four milestones</strong>:</p>
 <ol>
 <li><strong>Fri, Jun 5</strong> <em>(end of Week 3)</em> — early quality check on the stock model. Fine-tuning calibration path.</li>
 <li><strong>Fri, Jun 26</strong> <em>(end of Week 6)</em> — POC knowledge: ship to production, pivot model/provider.</li>
-<li><strong>Fri, Sep 11</strong> <em>(end of Week 17)</em> — pay-per-use vs dedicated GPU decision based on real traffic data.</li>
+<li><strong>Fri, Sep 11</strong> <em>(end of Week 17)</em> — pay-per-use vs dedicated GPU decision based on load test traffic data.</li>
 <li><strong>Fri, Oct 5</strong> <em>(end of Week 20)</em> — public launch decision based on soft-launch metrics.</li>
 </ol>
 <hr>
@@ -278,8 +278,8 @@
 <h2>What we get at launch (outcomes)</h2>
 <ul>
 <li><strong>A first-of-its-kind feature for SnoCountry</strong> — the first AI chat on the site, embedded on resort and snow-report pages. Visible product win, story for press and partners.</li>
-<li><strong>Competitive parity</strong> — OnTheSnow, SkiCentral, OpenSnow and Perplexity-style &quot;answer engines&quot; will all add AI features in the next 12 months. We are first or fast-second, not last.</li>
-<li><strong>An elegant, hardened experience</strong> — not a ChatGPT bolt-on. Five-layer safety guardrails, jailbreak test suite, on-brand tone, refusal copy reviewed by content lead, sponsor disclosure built in.</li>
+<li><strong>Competitive parity</strong> — With existing OnTheSnow and Perplexity-style &quot;answer engines&quot; and potential (SkiCentral, OpenSnow) addition of AI features in the next 12 months. We are first or fast-second, not last.</li>
+<li><strong>An elegant, hardened experience</strong> — not a ChatGPT bolt-on. On-brand tone, five-layer safety guardrails, jailbreak test suite, refusal copy reviewed by content lead, sponsor disclosure built in.</li>
 <li><strong>Smart cards alongside answers</strong> — ask about Copper Mountain, get the chat answer <em>plus</em> a live conditions card, lift status, an upcoming event, a relevant article, and a sponsor card — all from existing SnoCountry endpoints.</li>
 <li><strong>Operational maturity from day one</strong> — monitoring dashboards, on-call runbook, cost alerts, instant kill-switch (feature flag), vendor-failover plan. Built <em>before</em> a crisis, not after.</li>
 <li><strong>A reusable backbone</strong> — the RAG corpus + chat orchestrator becomes the foundation for every future AI feature, internal or external. One investment, many surfaces.</li>
@@ -293,7 +293,6 @@
 <li><strong>New sponsor / ad inventory</strong> — sponsor cards in the entity panel are a fresh ad surface. Existing <code>/api/track/ad-impression</code> and <code>/api/track/ad-click</code> endpoints already separate chat-driven from organic, so attribution is built in.</li>
 <li><strong>First-party data signal</strong> — every conversation tells us what users actually want to know. Gaps in current content surface immediately. Informs the editorial roadmap and SEO priorities.</li>
 <li><strong>Trip-planning conversion</strong> — bot can recommend resorts and link to current conditions, articles, and events — driving deeper engagement with paid partners and Epic / Ikon / Indy pass affiliations.</li>
-<li><strong>24/7 self-service</strong> — common questions (snow totals, lift status, when to visit, <em>&quot;where should I go this weekend?&quot;</em>) handled by the bot at all hours without content-team involvement.</li>
 <li><strong>Multi-language path</strong> <em>(v1.5)</em> — English v1; Spanish + French planned. Opens Latin America and Quebec markets with mostly system-prompt work, no model retraining.</li>
 <li><strong>Brand authority</strong> — positions SnoCountry as the trusted, AI-augmented authority on North American skiing. Press-friendly launch story.</li>
 </ul>

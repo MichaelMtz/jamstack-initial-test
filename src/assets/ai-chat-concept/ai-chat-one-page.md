@@ -16,11 +16,11 @@ A snow-and-resort chatbot embedded on snocountry.com. Like Claude/ChatGPT, but i
 | **Soft launch** | Sep 21 – Oct 2 | 19–20 | full team + on-call rotation | Quietly ship to one resort page, internal live testing, ramp 10% → 100% of canary traffic, expand to 3 pages, watch every conversation. |
 | **Public launch** | **Mon, Oct 5, 2026** | 21+ | 1 dev sustaining (½ FTE) | Roll out site-wide. Continual learning + monthly fine-tuning kick in. |
 
-**Four leadership gates** (continue / pivot / stop):
+**Four milestones**:
 
 1. **Fri, Jun 5** *(end of Week 3)* — early quality check on the stock model. Fine-tuning calibration path.
 2. **Fri, Jun 26** *(end of Week 6)* — POC knowledge: ship to production, pivot model/provider.
-3. **Fri, Sep 11** *(end of Week 17)* — pay-per-use vs dedicated GPU decision based on real traffic data.
+3. **Fri, Sep 11** *(end of Week 17)* — pay-per-use vs dedicated GPU decision based on load test traffic data.
 4. **Fri, Oct 5** *(end of Week 20)* — public launch decision based on soft-launch metrics.
 
 ---
@@ -43,8 +43,8 @@ A snow-and-resort chatbot embedded on snocountry.com. Like Claude/ChatGPT, but i
 ## What we get at launch (outcomes)
 
 - **A first-of-its-kind feature for SnoCountry** — the first AI chat on the site, embedded on resort and snow-report pages. Visible product win, story for press and partners.
-- **Competitive parity** — OnTheSnow, SkiCentral, OpenSnow and Perplexity-style "answer engines" will all add AI features in the next 12 months. We are first or fast-second, not last.
-- **An elegant, hardened experience** — not a ChatGPT bolt-on. Five-layer safety guardrails, jailbreak test suite, on-brand tone, refusal copy reviewed by content lead, sponsor disclosure built in.
+- **Competitive parity** — With existing OnTheSnow and Perplexity-style "answer engines" and potential (SkiCentral, OpenSnow) addition of AI features in the next 12 months. We are first or fast-second, not last.
+- **An elegant, hardened experience** — not a ChatGPT bolt-on. On-brand tone, five-layer safety guardrails, jailbreak test suite, refusal copy reviewed by content lead, sponsor disclosure built in.
 - **Smart cards alongside answers** — ask about Copper Mountain, get the chat answer *plus* a live conditions card, lift status, an upcoming event, a relevant article, and a sponsor card — all from existing SnoCountry endpoints.
 - **Operational maturity from day one** — monitoring dashboards, on-call runbook, cost alerts, instant kill-switch (feature flag), vendor-failover plan. Built *before* a crisis, not after.
 - **A reusable backbone** — the RAG corpus + chat orchestrator becomes the foundation for every future AI feature, internal or external. One investment, many surfaces.
@@ -59,9 +59,8 @@ A snow-and-resort chatbot embedded on snocountry.com. Like Claude/ChatGPT, but i
 - **New sponsor / ad inventory** — sponsor cards in the entity panel are a fresh ad surface. Existing `/api/track/ad-impression` and `/api/track/ad-click` endpoints already separate chat-driven from organic, so attribution is built in.
 - **First-party data signal** — every conversation tells us what users actually want to know. Gaps in current content surface immediately. Informs the editorial roadmap and SEO priorities.
 - **Trip-planning conversion** — bot can recommend resorts and link to current conditions, articles, and events — driving deeper engagement with paid partners and Epic / Ikon / Indy pass affiliations.
-- **24/7 self-service** — common questions (snow totals, lift status, when to visit, *"where should I go this weekend?"*) handled by the bot at all hours without content-team involvement.
-- **Multi-language path** *(v1.5)* — English v1; Spanish + French planned. Opens Latin America and Quebec markets with mostly system-prompt work, no model retraining.
 - **Brand authority** — positions SnoCountry as the trusted, AI-augmented authority on North American skiing. Press-friendly launch story.
+- **Multi-language path** *(v1.5)* — English v1; Spanish + French planned. Opens Latin America and Quebec markets with mostly system-prompt work, no model retraining.
 
 ---
 
