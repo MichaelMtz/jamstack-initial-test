@@ -207,6 +207,10 @@ body {
   color: #4b72b0;
   font-weight: 500;
 }
+.tech-chip.vendor-chip {
+  background: #bef6d5;
+  color: #0e9074;
+}
 
 /* Side panel */
 #side-panel {
