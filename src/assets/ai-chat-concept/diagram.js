@@ -603,9 +603,10 @@ const planContent = {
     `
   },
   projects: {
-    title: '2026 Summer Projects',
+    title: 'Project List',
     html: `
-      <div class="space-y-1.5">
+      <div class="ml-1.5 space-y-1.5">
+        <div id="plan-detail-title" class=" text-xs font-semibold text-slate-400 uppercase tracking-wide">Summer Projects</div>
         <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>AI Chat bot</strong> <span class="text-slate-400">— 18 weeks</span></span></div>
         <div class="flex items-start gap-2 mt-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>Summer resort page refactor</strong> <span class="text-slate-400">— 3–5 days</span></span></div>
         <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>Snow scraping</strong> <span class="text-slate-400">— timeline ongoing</span></span></div>
@@ -619,8 +620,9 @@ const planContent = {
           <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Authors, publishers</span></div>
           <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Import existing article database</span></div>
         </div>
-        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>Refactor Resort backdoor / admin area</strong> <span class="text-slate-400">— 2 weeks</span> <span class="text-slate-400 italic">(ready for 27–28 season)</span></span></div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div><span><strong>Search + News / Articles</strong> (after New CMS) <span class="text-slate-400">— 1 day</span></span></div>
 
+        <div id="plan-detail-title" class="mt-2 text-xs font-semibold text-slate-400 uppercase tracking-wide">Fall Projects</div>
         <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>State conditions pull from faster API</strong> <span class="text-slate-400">— 1 week</span></span></div>
         <div class="ml-5 space-y-1 text-slate-500">
           <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Normalize to build on client (JS)</span></div>
@@ -634,9 +636,12 @@ const planContent = {
         <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>SnoCountry.com desktop: AI refactor cleanup</strong> <span class="text-slate-400">— 1 week</span></span></div>
 
         <div class="flex items-start gap-2 mt-2"><div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div><span><strong>Home page conditions pull from faster API</strong> <span class="text-slate-400">— 1 day</span></span></div>
-        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div><span><strong>Search + News / Articles</strong> (after New CMS) <span class="text-slate-400">— 1 day</span></span></div>
+        
+        <div id="plan-detail-title" class="mt-2 text-xs font-semibold text-slate-400 uppercase tracking-wide">Winter Projects</div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>Refactor Resort backdoor / admin area</strong> <span class="text-slate-400">— 2 weeks</span> <span class="text-slate-400 italic">(ready for 27–28 season)</span></span></div>
 
         <div class="flex items-center gap-4 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-400">
+          <div class="flex items-center gap-1.5">Complexity:</div>
           <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-red-400"></div>High</div>
           <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-400"></div>Medium</div>
           <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>Small</div>
