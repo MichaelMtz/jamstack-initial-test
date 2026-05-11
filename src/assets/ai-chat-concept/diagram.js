@@ -121,7 +121,7 @@ apillm: {
     color: '#16a34a',
     bg: '#f0fdf4',
     badge: { text: 'Domain Adaptation', color: '#dcfce7', textColor: '#15803d' },
-    desc: 'Fine-tuned LoRA adapter trained on SnoCountry.com-specific data: snow conditions, resort overviews, news articles and ski resort terminology. Layered on top of the base model for domain accuracy.',
+    desc: 'Goal is for responses to be like a local is giving you inside advice. OTS chatbot is providing generic tips. We want to beat what OTS is offering, not first but better. Fine-tuned LoRA adapter trained on SnoCountry.com-specific data: snow conditions, resort overviews, news articles and ski resort terminology. Layered on top of the base model for domain accuracy.',
     stack: ['LoRA adapter', 'Unsloth / PEFT', 'JSONL training data'],
     details: [
       { label: 'Base model', value: 'llama3.2:3b' },
@@ -320,7 +320,7 @@ function drawConnectors() {
   // Prompt → LLM → Response
   addPath(pt('card-prompt',  'bottom'), pt('card-llm',     'top'),    'flow-line');
   addPath(pt('card-llm',     'bottom'), pt('card-response','top'),    'flow-line');
-  addPath(pt('card-response','left'), pt('card-user','bottom-left'),    'flow-line');
+  addPath(pt('card-response','top-left'), pt('card-user','bottom-left'),    'flow-line');
 
 }
 
@@ -601,26 +601,57 @@ const planContent = {
         </div>
       </div>
     `
+  },
+  projects: {
+    title: '2026 Summer Projects',
+    html: `
+      <div class="space-y-1.5">
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>AI Chat bot</strong> <span class="text-slate-400">— 18 weeks</span></span></div>
+        <div class="flex items-start gap-2 mt-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>Summer resort page refactor</strong> <span class="text-slate-400">— 3–5 days</span></span></div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>Snow scraping</strong> <span class="text-slate-400">— timeline ongoing</span></span></div>
+        <div class="ml-5 space-y-1 text-slate-500">
+          <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Expand: Midwest + additional regions</span></div>
+          <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Tweak display</span></div>
+          <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Incorporate new AI scraping tech</span></div>
+        </div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>New CMS</strong> (News / Article generation) <span class="text-slate-400">— 2 weeks</span></span></div>
+        <div class="ml-5 space-y-1 text-slate-500">
+          <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Authors, publishers</span></div>
+          <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Import existing article database</span></div>
+        </div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div><span><strong>Refactor Resort backdoor / admin area</strong> <span class="text-slate-400">— 2 weeks</span> <span class="text-slate-400 italic">(ready for 27–28 season)</span></span></div>
+
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>State conditions pull from faster API</strong> <span class="text-slate-400">— 1 week</span></span></div>
+        <div class="ml-5 space-y-1 text-slate-500">
+          <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Normalize to build on client (JS)</span></div>
+        </div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>Replace radio / news server</strong> <span class="text-slate-400">— 1 week</span></span></div>
+        <div class="ml-5 space-y-1 text-slate-500">
+          <div class="flex items-start gap-2"><div class="w-1 h-1 rounded-full bg-slate-300 mt-1.5 flex-shrink-0"></div><span>Add FTP radio capability on cheaper server</span></div>
+        </div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>Systems Admin panel</strong> (UI for logging errors, long latency calls) <span class="text-slate-400">— 1 week</span></span></div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>SnoCountry.com mobile: AI refactor</strong> <span class="text-slate-400">— 1 week</span></span></div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div><span><strong>SnoCountry.com desktop: AI refactor cleanup</strong> <span class="text-slate-400">— 1 week</span></span></div>
+
+        <div class="flex items-start gap-2 mt-2"><div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div><span><strong>Home page conditions pull from faster API</strong> <span class="text-slate-400">— 1 day</span></span></div>
+        <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div><span><strong>Search + News / Articles</strong> (after New CMS) <span class="text-slate-400">— 1 day</span></span></div>
+
+        <div class="flex items-center gap-4 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-400">
+          <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-red-400"></div>High</div>
+          <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-400"></div>Medium</div>
+          <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>Small</div>
+        </div>
+      </div>
+    `
   }
 };
 
 let activePlan = null;
 
-function showPlanDetail(key) {
-  if (activePlan === key) {
-    closePlanDetail();
-    return;
-  }
-
+function renderPlanDetail(key) {
   const data = planContent[key];
-  const detail = document.getElementById('plan-detail');
   const titleEl = document.getElementById('plan-detail-title');
   const bodyEl = document.getElementById('plan-detail-body');
-
-  document.querySelectorAll('.plan-chip').forEach(c => {
-    c.classList.toggle('active', c.dataset.plan === key);
-  });
-
   if (data) {
     titleEl.textContent = data.title;
     bodyEl.innerHTML = data.html;
@@ -629,12 +660,46 @@ function showPlanDetail(key) {
     titleEl.textContent = chip ? chip.textContent : key;
     bodyEl.innerHTML = '<p class="text-slate-400 italic">Content coming soon.</p>';
   }
-  detail.classList.remove('hidden');
+}
+
+function showPlanDetail(key) {
+  if (activePlan === key) {
+    closePlanDetail();
+    return;
+  }
+
+  const detail = document.getElementById('plan-detail');
+
+  document.querySelectorAll('.plan-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.plan === key);
+  });
+
+  if (activePlan !== null) {
+    // Panel already open — fade out, swap content, fade in
+    detail.classList.remove('plan-detail-visible');
+    detail.classList.add('plan-detail-hiding');
+    detail.addEventListener('animationend', () => {
+      detail.classList.remove('plan-detail-hiding');
+      renderPlanDetail(key);
+      detail.classList.add('plan-detail-visible');
+    }, { once: true });
+  } else {
+    renderPlanDetail(key);
+    detail.classList.remove('plan-detail-hiding');
+    detail.classList.add('plan-detail-visible');
+    setTimeout(() => detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+
   activePlan = key;
 }
 
 function closePlanDetail() {
-  document.getElementById('plan-detail').classList.add('hidden');
+  const detail = document.getElementById('plan-detail');
+  detail.classList.remove('plan-detail-visible');
+  detail.classList.add('plan-detail-hiding');
+  detail.addEventListener('animationend', () => {
+    detail.classList.remove('plan-detail-hiding');
+  }, { once: true });
   document.querySelectorAll('.plan-chip').forEach(c => c.classList.remove('active'));
   activePlan = null;
 }
