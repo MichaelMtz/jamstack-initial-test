@@ -855,18 +855,18 @@ Stream tokens to user</code></pre>
 
   <hr>
 
-  <h2 id="proof-of-concept-plan">Suggested 2-week proof-of-concept plan</h2>
+  <h2 id="proof-of-concept-plan">Suggested proof-of-concept plan</h2>
   <table>
-    <thead><tr><th>Day</th><th>Task</th></tr></thead>
+    <thead><tr><th>Task</th></tr></thead>
     <tbody>
-      <tr><td>1–2</td><td>Pull last 60 days of snow reports + 100 news posts into a <code>training/</code> folder</td></tr>
-      <tr><td>3–4</td><td>Generate ~1,500 synthetic Q&amp;A pairs with Claude/GPT, sampled across resorts and intents</td></tr>
-      <tr><td>5</td><td>Hand-review 150 of them, fix obvious bad ones</td></tr>
-      <tr><td>6</td><td>Upload + train LoRA on Together (~$5, ~1 hour)</td></tr>
-      <tr><td>7</td><td>Build a thin <code>src/_functions/snow-chat.js</code> that does: classify intent → fetch live data → call tuned model → stream response</td></tr>
-      <tr><td>8–10</td><td>Add a chat widget to one resort page (e.g., <code>/snow-report/colorado/arapahoe-basin/</code>) for internal testing</td></tr>
-      <tr><td>11–12</td><td>Compare A/B against a non-tuned Llama 3.3 8B baseline — measure factual accuracy, tone, latency</td></tr>
-      <tr><td>13–14</td><td>Decide: keep tuning, switch to a bigger base, or just use RAG on a stock model</td></tr>
+      <tr><td>Pull last 60 days of snow reports + 100 news posts into a <code>training/</code> folder</td></tr>
+      <tr><td>Generate ~1,500 synthetic Q&amp;A pairs with Claude/GPT, sampled across resorts and intents</td></tr>
+      <tr><td>Hand-review 150 of them, fix obvious bad ones</td></tr>
+      <tr><td>Upload + train LoRA on Together (~$5, ~1 hour)</td></tr>
+      <tr><td>Build a thin <code>src/_functions/snow-chat.js</code> that does: classify intent → fetch live data → call tuned model → stream response</td></tr>
+      <tr><td>Add a chat widget to one resort page (e.g., <code>/snow-report/colorado/arapahoe-basin/</code>) for internal testing</td></tr>
+      <tr><td>Compare A/B against a non-tuned Llama 3.3 8B baseline — measure factual accuracy, tone, latency</td></tr>
+      <tr><td>Decide: keep tuning, switch to a bigger base, or just use RAG on a stock model</td></tr>
     </tbody>
   </table>
   <p>Total cost for the experiment: <strong>probably under $50.</strong></p>
@@ -876,8 +876,8 @@ Stream tokens to user</code></pre>
   <h2>Honest opinion</h2>
   <p>For your specific use case, I'd actually recommend this sequence:</p>
   <ol>
-    <li><strong>Week 1:</strong> Build the RAG pipeline against a stock Llama 3.3 8B (or even GPT-4.1-mini) — no fine-tuning. Measure how good it already is. You may be surprised; modern small models are very good at "use this JSON to write a paragraph."</li>
-    <li><strong>Week 2:</strong> <em>Only if the stock model gets the voice/format wrong consistently</em>, do a small LoRA fine-tune to fix those specific gaps.</li>
+    <li><strong>Week 1-2:</strong> Build the RAG pipeline against a stock Llama 3.3 8B (or even GPT-4.1-mini) — no fine-tuning. Measure how good it already is. You may be surprised; modern small models are very good at "use this JSON to write a paragraph."</li>
+    <li><strong>Week 2-6:</strong> <em>Only if the stock model gets the voice/format wrong consistently</em>, do a small LoRA fine-tune to fix those specific gaps.</li>
   </ol>
   <p>Most snow-report assistants don't need fine-tuning at all — they need a good system prompt + clean structured data injection + a tight answer template. Fine-tuning is the polish, not the foundation.</p>
 </section>

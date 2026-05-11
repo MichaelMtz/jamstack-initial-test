@@ -169,9 +169,8 @@
 
 <main>
 
-<p>A snow-and-resort chatbot embedded on snocountry.com. Like Claude/ChatGPT, but it only knows skiing — and pulls answers from our live snow reports, articles, and resort data. Think <em>&quot;Ask SnoCountry anything&quot;</em> on every resort and snow-report page.</p>
 <blockquote>
-<p><strong>Recommendation:</strong> 6-week proof of concept starting <strong>Mon, May 18, 2026</strong>. Production development <strong>June 29th</strong>.  Soft launch on canary pages <strong>Sep 21</strong>. Public launch <strong>Mon, Oct 5, 2026</strong>.</p>
+<p><strong>Timeline Overview:</strong> 6-week proof of concept starting <strong>Mon, May 18, 2026</strong> with Production development beginning <strong>June 29th</strong>.  Soft launch on canary pages <strong>Sep 21</strong>. Public launch <strong>Mon, Oct 5, 2026</strong>.</p>
 </blockquote>
 <hr>
 <h2>Timeline (kickoff Mon, May 18, 2026)</h2>
@@ -191,7 +190,7 @@
 <td>May 18 – Jun 26</td>
 <td>1–6</td>
 <td>1 dev + 1 LLM designer + ¼ PM</td>
-<td>Prove the bot can answer well, fast, and cheap on real SnoCountry data. Test fine-tuning. Test portability across providers. End with a pivot third party (api) vs dedicated system decision.</td>
+<td>Prove the bot can answer well, fast, and cheap on real SnoCountry data. Test fine-tuning. Test portability across providers. Explore third party (api) vs dedicated system decision.</td>
 </tr>
 <tr>
 <td><strong>Production build</strong></td>
@@ -211,14 +210,14 @@
 <td><strong>Soft launch</strong></td>
 <td>Sep 21 – Oct 2</td>
 <td>19–20</td>
-<td>full team + on-call rotation</td>
+<td>SnoCountry team rotation reviewing conversations</td>
 <td>Quietly ship to one resort page, internal live testing, ramp 10% → 100% of canary traffic, expand to 3 pages, watch every conversation.</td>
 </tr>
 <tr>
 <td><strong>Public launch</strong></td>
 <td><strong>Mon, Oct 5, 2026</strong></td>
 <td>21+</td>
-<td>1 dev sustaining (½ FTE)</td>
+<td>1 dev sustaining </td>
 <td>Roll out site-wide. Continual learning + monthly fine-tuning kick in.</td>
 </tr>
 </tbody>
@@ -226,7 +225,7 @@
 <p><strong>Four milestones</strong>:</p>
 <ol>
 <li><strong>Fri, Jun 5</strong> <em>(end of Week 3)</em> — early quality check on the stock model. Fine-tuning calibration path.</li>
-<li><strong>Fri, Jun 26</strong> <em>(end of Week 6)</em> — POC knowledge: ship to production, pivot model/provider.</li>
+<li><strong>Fri, Jun 26</strong> <em>(end of Week 6)</em> — POC knowledge: start production build, Identify model/provider.</li>
 <li><strong>Fri, Sep 11</strong> <em>(end of Week 17)</em> — pay-per-use vs dedicated GPU decision based on load test traffic data.</li>
 <li><strong>Fri, Oct 5</strong> <em>(end of Week 20)</em> — public launch decision based on soft-launch metrics.</li>
 </ol>
@@ -269,7 +268,7 @@
 <tr>
 <td><strong>Engineering</strong></td>
 <td>~18 dev-weeks</td>
-<td>1 dev + 1 LLM designer for POC + production; ½ FTE sustaining post-launch</td>
+<td>1 LLM designer for POC + production; (Lead Dev (MIM) salaried)</td>
 </tr>
 </tbody>
 </table>
@@ -278,33 +277,32 @@
 <h2>What we get at launch (outcomes)</h2>
 <ul>
 <li><strong>A first-of-its-kind feature for SnoCountry</strong> — the first AI chat on the site, embedded on resort and snow-report pages. Visible product win, story for press and partners.</li>
-<li><strong>Competitive parity</strong> — With existing OnTheSnow and Perplexity-style &quot;answer engines&quot; and potential (SkiCentral, OpenSnow) addition of AI features in the next 12 months. We are first or fast-second, not last.</li>
-<li><strong>An elegant, hardened experience</strong> — not a ChatGPT bolt-on. On-brand tone, five-layer safety guardrails, jailbreak test suite, refusal copy reviewed by content lead, sponsor disclosure built in.</li>
+<li><strong>Competitive parity</strong> — With existing OnTheSnow and Perplexity-style &quot;answer engines&quot;.  This project places SnoCountry in a competitive position.</li>
+<li><strong>An elegant, hardened experience</strong> — not the ChatGPT bolt-on that OTS offers. On-brand tone (Real Skiers and Riders who know the snow), five-layer safety guardrails, jailbreak test suite, refusal copy reviewed by content lead, sponsor disclosure built in.</li>
 <li><strong>Smart cards alongside answers</strong> — ask about Copper Mountain, get the chat answer <em>plus</em> a live conditions card, lift status, an upcoming event, a relevant article, and a sponsor card — all from existing SnoCountry endpoints.</li>
 <li><strong>Operational maturity from day one</strong> — monitoring dashboards, on-call runbook, cost alerts, instant kill-switch (feature flag), vendor-failover plan. Built <em>before</em> a crisis, not after.</li>
-<li><strong>A reusable backbone</strong> — the RAG corpus + chat orchestrator becomes the foundation for every future AI feature, internal or external. One investment, many surfaces.</li>
+<li><strong>A reusable backbone</strong> — the Retrieval-Augmented Generation (RAG) corpus + chat orchestrator becomes the foundation for every future AI feature, internal or external. One investment, many surfaces.</li>
 </ul>
 <hr>
-<h2>What it enables next (benefits)</h2>
+<h2>What it enables  (benefits)</h2>
 <ul>
-<li><strong>Deeper user engagement</strong> — Q&amp;A invites longer sessions, more page views, more entity-card clicks (each click is a measurable revenue surface).</li>
+<li><strong>Deeper user engagement</strong> — Q&amp;A invites longer sessions, more engagement, more entity-card clicks (each click is a measurable revenue surface).</li>
 <li><strong>Embeddable partner widget</strong> <em>(planned v1.5)</em> — ship the chat as a <code>&lt;script&gt;</code> snippet that radio stations, resort partners, and ski shops drop onto their own sites. Each carries a <code>partnerId</code> for traffic attribution and ad-revenue share. <strong>Partner sites become SnoCountry traffic sources.</strong></li>
-<li><strong>Internal knowledge tooling</strong> — the same RAG infrastructure powers editor productivity tools: <em>&quot;summarize this resort,&quot;</em> <em>&quot;draft a snow report,&quot;</em> <em>&quot;what did we say about A-Basin last March?&quot;</em>. Wins for the content team beyond the public chatbot.</li>
-<li><strong>New sponsor / ad inventory</strong> — sponsor cards in the entity panel are a fresh ad surface. Existing <code>/api/track/ad-impression</code> and <code>/api/track/ad-click</code> endpoints already separate chat-driven from organic, so attribution is built in.</li>
 <li><strong>First-party data signal</strong> — every conversation tells us what users actually want to know. Gaps in current content surface immediately. Informs the editorial roadmap and SEO priorities.</li>
+<li><strong>New sponsor / ad inventory</strong> — sponsor cards in the entity panel are a fresh ad surface. Existing <code>/api/track/ad-impression</code> and <code>/api/track/ad-click</code> endpoints already separate chat-driven from organic, so attribution is built in.</li>
 <li><strong>Trip-planning conversion</strong> — bot can recommend resorts and link to current conditions, articles, and events — driving deeper engagement with paid partners and Epic / Ikon / Indy pass affiliations.</li>
 <li><strong>Multi-language path</strong> <em>(v1.5)</em> — English v1; Spanish + French planned. Opens Latin America and Quebec markets with mostly system-prompt work, no model retraining.</li>
 <li><strong>Brand authority</strong> — positions SnoCountry as the trusted, AI-augmented authority on North American skiing. Press-friendly launch story.</li>
 </ul>
 <hr>
-<h2>Decision needed by Mon, May 11, 2026</h2>
+<h2>Discussion on Mon, May 11, 2026</h2>
 <p>To start kickoff on May 18, we need:</p>
 <ul>
-<li><strong>Approval to staff</strong> — 1 dev (full-time, Weeks 1–18), 1 LLM designer (Weeks 1–18), and ¼ PM oversight throughout.</li>
+<li><strong>Approval to staff</strong> — 1 dev (full-time, Weeks 1–18), 1  LLM designer (Weeks 1–18) (seasonal/contract), and ¼ PM oversight throughout.</li>
 <li><strong>Budget approval</strong> — ~$1,500 cloud spend + ~$250 legal review.</li>
 <li><strong>Nomination of a content lead</strong> — to author the 50 resort overviews (Weeks 1–10) and review chat tone before launch.</li>
 </ul>
-<p>If approval slips past May 11, kickoff slides one week per week of delay; public launch slides accordingly.</p>
+<p>Past May 18, public launch slides accordingly.</p>
 <hr>
 <p><em>Companion documents (deeper detail):</em></p>
 <ul>
