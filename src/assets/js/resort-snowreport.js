@@ -259,10 +259,7 @@ class ResortDataManager {
     // Handle resort logo
     this.handleResortLogo();
 
-    if ((this.resortData.id === '303009') || (this.resortData.id === '303025')) {      
-      // Handle resort video/image
-      this.handleResortVideoImage();   // uncomment when ready to go live also remove hidden class from results.njk:#card-archive line 95ish
-    }
+    this.handleResortVideoImage();   // uncomment when ready to go live also remove hidden class from results.njk:#card-archive line 95ish
     
     // Handle resort blurb format is in base64 encoded html
     const blurbElement = this.elements.get("resort-blurb");
@@ -342,6 +339,7 @@ class ResortDataManager {
   handleResortVideoImage() {
     const resortAssetElement = document.getElementById("resort-asset");
     const videoId = this.extractYouTubeVideoId(this.resortData.snoResortVideo);
+    _log(`handleResortVideoImage: ${videoId}`,this.resortData.snoResortVideo);
     if (videoId) {
       const elResortAsset = document.getElementById('resort-asset');
       if (elResortAsset) {
@@ -351,11 +349,11 @@ class ResortDataManager {
         </div>
         `;
         elResortAsset.innerHTML = vidHTML;
-        const resortAssetHeader = document.getElementById('resort-asset-header');
-        if (resortAssetHeader) {
-          resortAssetHeader.textContent = `${this.resortData.resortName} ${this.resortData.resortBackgroundImage}`;
-          resortAssetHeader.classList.remove("hidden");
-        }
+        // const resortAssetHeader = document.getElementById('resort-asset-header');
+        // if (resortAssetHeader) {
+        //   resortAssetHeader.textContent = `${this.resortData.resortName} ${this.resortData.resortBackgroundImage}`;
+        //   resortAssetHeader.classList.remove("hidden");
+        // }
         document.getElementById('card-video').classList.remove('hidden');
       }
     } else if (resortAssetElement && this.resortData.resortPhotos) {
