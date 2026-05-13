@@ -324,15 +324,30 @@ class ResortDataManager {
     this.populateUphillInfo();    
   } //fn handleSpecialElements
 
+  extractYouTubeVideoId(url) {
+    if (!url || typeof url !== 'string' || !url.trim()) return null;
+    const trimmed = url.trim();
+    const standardMatch = trimmed.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+    if (standardMatch) return standardMatch[1];
+    const shortsMatch = trimmed.match(/\/shorts\/([a-zA-Z0-9_-]{11})/);
+    if (shortsMatch) return shortsMatch[1];
+    const embedMatch = trimmed.match(/\/embed\/([a-zA-Z0-9_-]{11})/);
+    if (embedMatch) return embedMatch[1];
+    const shortLinkMatch = trimmed.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+    if (shortLinkMatch) return shortLinkMatch[1];
+    if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) return trimmed;
+    return null;
+  }
+
   handleResortVideoImage() {
     const resortAssetElement = document.getElementById("resort-asset");
-    if (this.resortData.id === '303025') { //WolfCreek hardcode for proof of concept
-      console.log('handleResortVideoImage:Wolf creek');
+    const videoId = this.extractYouTubeVideoId(this.resortData.snoResortVideo);
+    if (videoId) {
       const elResortAsset = document.getElementById('resort-asset');
       if (elResortAsset) {
         let vidHTML = `
         <div class="pepsi-video w-full">
-          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/${this.resortData.snoResortVideo}?autoplay=1&mute=1&rel=0&start=2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;"></iframe>
+          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&start=2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;"></iframe>
         </div>
         `;
         elResortAsset.innerHTML = vidHTML;
