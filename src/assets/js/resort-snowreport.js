@@ -321,6 +321,14 @@ class ResortDataManager {
     this.populateUphillInfo();    
   } //fn handleSpecialElements
 
+  /**
+   * Extracts an 11-character YouTube video ID from various URL formats:
+   *  - Standard watch URLs: youtube.com/watch?v=VIDEO_ID
+   *  - Shorts URLs: youtube.com/shorts/VIDEO_ID (with or without query params like ?si=...)
+   *  - Embed URLs: youtube.com/embed/VIDEO_ID
+   *  - Short links: youtu.be/VIDEO_ID
+   *  - Raw 11-character video ID string
+   */
   extractYouTubeVideoId(url) {
     if (!url || typeof url !== 'string' || !url.trim()) return null;
     const trimmed = url.trim();
