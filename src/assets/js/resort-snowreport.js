@@ -353,7 +353,7 @@ class ResortDataManager {
       if (elResortAsset) {
         let vidHTML = `
         <div class="pepsi-video w-full">
-          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&start=2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;"></iframe>
+          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&start=2&cc_load_policy=1" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;"></iframe>
         </div>
         `;
         elResortAsset.innerHTML = vidHTML;
