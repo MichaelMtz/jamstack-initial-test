@@ -716,9 +716,7 @@
     }
 
     function isTaosRelated(text) {
-      const keywords = ['taos', 'snow report', 'conditions', 'powder', 'ski valley'];
-      const lower = text.toLowerCase();
-      return keywords.some(k => lower.includes(k));
+      return text.toLowerCase().includes('taos');
     }
 
     function renderFallback() {
@@ -727,7 +725,7 @@
           <div class="message-avatar">SC</div>
           <div class="message-content">
             <div class="assistant-text">
-              This is a Proof of Concept — what you're seeing is a preview of how we want to build the <strong> Next Generation SnoCountry AI Copilot </strong> with rich Generative UI snow reports from LLM responses. Not plain text for SnoCountry.<br/><br/> The full pipeline (RAG + fine-tuned model) isn't live yet, but the architecture is ready. <strong>Say the word and we'll build it.</strong>
+              This is a Proof of Concept — what you're seeing is a preview of how we want to build the <strong> Next Generation SnoCountry AI Copilot </strong> with rich Generative UI snow reports from LLM responses. <em>No plain text for SnoCountry</em>.<br/><br/> The full pipeline (RAG + fine-tuned model) isn't live yet, but the architecture is ready. <strong>Say the word and we'll build it.</strong>
             </div>
 
           </div>
