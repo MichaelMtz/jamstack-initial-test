@@ -234,6 +234,18 @@
       color: var(--slate-300);
     }
 
+    .sponsor-banner {
+      display: block;
+      max-width: 364px;
+      max-height: 45px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* Thinking indicator */
     .thinking {
       display: flex;
@@ -353,13 +365,12 @@
       text-underline-offset: 2px;
     }
 
-    .card-header-title-row .card-resort-link {
-      flex-shrink: 0;
-    }
 
     .card-header-title-row .card-resort-link {
       margin-left: 51px;
+      flex-shrink: 0;
     }
+
     .card-footer .card-resort-link {
       margin-left: auto;
     }
@@ -666,6 +677,10 @@
     @keyframes fall {
       to { transform: translateY(100vh) rotate(360deg); }
     }
+    .mt-med {
+      display: block;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -811,12 +826,13 @@
             <div class="assistant-text" style="font-size: 0.82rem; color: var(--slate-400); margin-top: 0.25rem;">
               8 inches of fresh overnight — Kachina Peak and the West Basin Ridge are skiing deep. Lifts 1, 2, 4, and 7A opened at 9 AM.
               <span class="season-celebration-inline">
-                <span class="season-celebration-copy"><em><span class="event-label">Event:</span> Join us for our Season Celebration as we come together to wrap up...<em></span>
+                <span class="season-celebration-copy"><em><span class="event-label">Event:</span> Join us for our Season Celebration as we come together to wrap up...</em></span>
                 <a href="${taosURL}" class="card-resort-link" target="_blank" rel="noopener noreferrer">
                   More details →
                 </a>
               </span>
             </div>
+            <a class="mt-med" href="#"><img class="sponsor-banner" src="images/cali-pass-sample.png" alt="California Ski Pass — sponsored" width="728" height="90" /></a>
           </div>
         </div>
       `;
