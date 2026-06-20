@@ -1,6 +1,26 @@
 const t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e;};
 const _log = function (text, param, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`, param);};
 
+const NEWSROOM_API = 'https://newsroom.snow-report.org/api/v1/articles';
+const NEWSROOM_BASE = 'https://newsroom.snow-report.org';
+const SIDEBAR_ARTICLE_COUNT = 8;
+const ARTICLE_LINK_STYLE = 'color:#3f7d9e;text-decoration:underline';
+
+const styleArticleLinks = (root) => {
+  if (!root) return;
+  root.querySelectorAll('a[href]').forEach((anchor) => {
+    anchor.setAttribute('style', ARTICLE_LINK_STYLE);
+  });
+};
+
+const getArticleUrl = (slug) => {
+  const encodedSlug = encodeURIComponent(slug);
+  if (window.location.hostname === 'localhost') {
+    return `article/index.html?slug=${encodedSlug}`;
+  }
+  return `news-post/${slug}/?slug=${encodedSlug}`;
+};
+
 const observeSelector = (selector, callback, options = {
   timeout: null,
   once: false,
@@ -95,26 +115,28 @@ const trackNewsAd = (alt) => {
 };
 
 
-const createNewsSDL = (post) => {
-  const publish = new Date(Date.parse(post.publish_up.replace(/-/g, '/')));
+const createNewsSDL = (article) => {
+  const publish = new Date(article.published_at);
   const publishISODate = publish.toISOString();
+  const imageUrl = resolveMediaUrl(article.featured_image_url);
+  const authorName = article.byline_override || article.author_name;
   const sdlHTML = `
-    <meta property="og:image" content="${post.image}" />
+    <meta property="og:image" content="${imageUrl}" />
     <script type="application/ld+json">{
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "NewsArticle",
-                "headline": "${post.title}",
+                "headline": "${article.title}",
                 "image": {
                     "@type": "ImageObject",
-                    "url": "${post.image}"
+                    "url": "${imageUrl}"
                 },
                 "datePublished": "${publishISODate}",
                 "dateModified": "${publishISODate}",
                 "author": {
                     "@type": "Person",
-                    "name": "${post.author}"
+                    "name": "${authorName}"
                 },
                 "publisher": {
                     "@type": "Organization",
@@ -147,35 +169,34 @@ const createNewsSDL = (post) => {
 
   `;
   document.head.insertAdjacentHTML('beforeend',sdlHTML);
-  const newsTitle = `SnoCountry News - ${post.title}`;
+  const newsTitle = `SnoCountry News - ${article.title}`;
   document.querySelector('title').textContent = newsTitle;
   document.querySelector("meta[property='og:title']").setAttribute('content', newsTitle);
 
-  document.querySelector("meta[name='author']").setAttribute('content',post.author);
+  document.querySelector("meta[name='author']").setAttribute('content', authorName);
   document.querySelector("meta[name='rights']").setAttribute('content',`Copyright © ${new Date().getFullYear()}. All Rights Reserved.`);
-  
-  let metaDescription = JSON.parse(post.params);
-  // Remove the following format : (Image via Save Our Canyons Facebook)
-  const imageRemoveRegex = /\(Image.*\)/;  
-  metaDescription = metaDescription.image_cover_caption.replace(imageRemoveRegex,'');
-  document.querySelector("meta[name='description']").setAttribute('content',metaDescription);
-  document.querySelector("meta[property='og:description']").setAttribute('content',metaDescription);
-  document.querySelector("meta[property='og:url']").setAttribute('content',location.href);
-  
 
-  new Date().getFullYear();
+  const metaDescription = article.meta_description || article.excerpt || '';
+  document.querySelector("meta[name='description']").setAttribute('content', metaDescription);
+  document.querySelector("meta[property='og:description']").setAttribute('content', metaDescription);
+  document.querySelector("meta[property='og:url']").setAttribute('content', location.href);
 };
 
 const SNOW_COUNTRY_ORIGIN = 'https://www.snow-country.com';
 
-const resolveSnowCountryUrl = (raw) => {
+const resolveMediaUrl = (raw) => {
   if (!raw || typeof raw !== 'string') return '';
-  const t = raw.trim();
-  if (/^https?:\/\//i.test(t)) return t;
-  if (t.startsWith('//')) return `https:${t}`;
-  const path = t.replace(/^\/+/, '');
+  const value = raw.trim();
+  if (/^https?:\/\//i.test(value)) return value;
+  if (value.startsWith('//')) return `https:${value}`;
+  if (value.startsWith('/uploads/') || value.startsWith('uploads/')) {
+    return `${NEWSROOM_BASE}${value.startsWith('/') ? value : `/${value}`}`;
+  }
+  const path = value.replace(/^\/+/, '');
   return `${SNOW_COUNTRY_ORIGIN}/${path}`;
 };
+
+const resolveSnowCountryUrl = (raw) => resolveMediaUrl(raw);
 
 const normalizeMediaPathKey = (raw) => {
   const full = resolveSnowCountryUrl(raw);
@@ -186,44 +207,47 @@ const normalizeMediaPathKey = (raw) => {
   }
 };
 
-const collectMediaThumbnails = (post) => {
+const collectBodyImages = (html) => {
   const list = [];
   const seen = new Set();
-  const add = (thumbSrc, fullSrc) => {
-    const thumb = resolveSnowCountryUrl(thumbSrc);
-    if (!thumb) return;
-    let full = fullSrc ? resolveSnowCountryUrl(fullSrc) : thumb;
-    if (/b2ap3_thumbnail_/i.test(thumb) && !fullSrc) {
-      full = thumb.replace(/b2ap3_thumbnail_/i, '');
-    }
-    const key = normalizeMediaPathKey(thumb);
+  const wrap = document.createElement('div');
+  wrap.innerHTML = html || '';
+  wrap.querySelectorAll('img').forEach((img) => {
+    const src = img.getAttribute('src');
+    if (!src) return;
+    const full = resolveMediaUrl(src);
+    const key = normalizeMediaPathKey(full);
     if (seen.has(key)) return;
     seen.add(key);
-    list.push({ thumb, full });
-  };
-
-  let media;
-  try {
-    media = typeof post.media === 'string' ? JSON.parse(post.media) : post.media;
-  } catch {
-    return list;
-  }
-  if (!media || typeof media !== 'object') return list;
-
-  (Array.isArray(media.images) ? media.images : []).forEach((entry) => {
-    if (entry && entry.url) add(entry.url, null);
+    list.push({ thumb: full, full });
   });
+  return list;
+};
 
-  (Array.isArray(media.galleries) ? media.galleries : []).forEach((g) => {
-    const html = g.html || '';
-    const imgRe = /<img\b[^>]*?\bsrc="([^"]+)"/gi;
-    let m;
-    while ((m = imgRe.exec(html)) !== null) {
-      add(m[1], null);
+const normalizeArticleBody = (html) => {
+  if (!html) return '';
+  const wrap = document.createElement('div');
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('img').forEach((img) => {
+    const src = img.getAttribute('src');
+    if (src) img.setAttribute('src', resolveMediaUrl(src));
+  });
+  wrap.querySelectorAll('a[href]').forEach((anchor) => {
+    const href = anchor.getAttribute('href');
+    if (href && (href.startsWith('/uploads/') || href.startsWith('uploads/'))) {
+      anchor.setAttribute('href', resolveMediaUrl(href));
     }
   });
+  return wrap.innerHTML.replace(/font-family: Arial, sans-serif;/gi, '');
+};
 
-  return list;
+const formatPublishedDate = (isoDate) => {
+  if (!isoDate) return '';
+  return new Date(isoDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 };
 
 const createFloatedThumbLink = (item, index) => {
@@ -251,6 +275,54 @@ const buildExtraThumbsAside = (thumbs) => {
 
 let modalImageList = [];
 let modalImageIndex = -1;
+const MODAL_VIEWPORT_PADDING = 48;
+
+const getModalMaxSize = () => ({
+  width: Math.max(120, window.innerWidth - MODAL_VIEWPORT_PADDING),
+  height: Math.max(120, window.innerHeight - MODAL_VIEWPORT_PADDING),
+});
+
+const resetModalLayout = (modal) => {
+  const dialog = modal.querySelector('.news-image-modal__dialog');
+  const imgEl = modal.querySelector('.news-image-modal__img');
+  if (dialog) dialog.removeAttribute('style');
+  if (imgEl) imgEl.removeAttribute('style');
+};
+
+const fitModalToImage = (modal, imgEl) => {
+  const dialog = modal.querySelector('.news-image-modal__dialog');
+  if (!dialog || !imgEl) return;
+
+  const applyFit = () => {
+    const { width: maxW, height: maxH } = getModalMaxSize();
+    const naturalW = imgEl.naturalWidth;
+    const naturalH = imgEl.naturalHeight;
+    if (!naturalW || !naturalH) return;
+
+    const scale = Math.min(1, maxW / naturalW, maxH / naturalH);
+    const displayW = Math.round(naturalW * scale);
+    const displayH = Math.round(naturalH * scale);
+
+    dialog.style.width = `${displayW}px`;
+    dialog.style.height = `${displayH}px`;
+    dialog.style.maxWidth = `${maxW}px`;
+    dialog.style.maxHeight = `${maxH}px`;
+    imgEl.style.width = `${displayW}px`;
+    imgEl.style.height = `${displayH}px`;
+    imgEl.style.maxWidth = `${maxW}px`;
+    imgEl.style.maxHeight = `${maxH}px`;
+  };
+
+  if (imgEl.complete && imgEl.naturalWidth) {
+    applyFit();
+    return;
+  }
+
+  imgEl.onload = () => {
+    applyFit();
+    imgEl.onload = null;
+  };
+};
 
 const ensureImageModal = () => {
   let modal = document.getElementById('news-image-modal');
@@ -274,6 +346,7 @@ const ensureImageModal = () => {
   const updateModalImage = () => {
     if (!modalImageList.length || modalImageIndex < 0 || modalImageIndex >= modalImageList.length) return;
     imgEl.setAttribute('src', modalImageList[modalImageIndex]);
+    fitModalToImage(modal, imgEl);
   };
   const stepModalImage = (step) => {
     if (!modalImageList.length) return;
@@ -285,6 +358,7 @@ const ensureImageModal = () => {
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('news-modal-open');
     imgEl.setAttribute('src', '');
+    resetModalLayout(modal);
     modalImageList = [];
     modalImageIndex = -1;
   };
@@ -329,6 +403,10 @@ const ensureImageModal = () => {
       updateModalImage();
     }
   });
+  window.addEventListener('resize', () => {
+    if (!modal.classList.contains('is-open') || !imgEl.getAttribute('src')) return;
+    fitModalToImage(modal, imgEl);
+  });
   return modal;
 };
 
@@ -342,6 +420,7 @@ const openImageModal = (urls, startIndex) => {
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('news-modal-open');
+  fitModalToImage(modal, imgEl);
 };
 
 /** Inserts thumbnails into the article so text can wrap (float left / float right). */
@@ -479,49 +558,37 @@ const cleanupArticleHtml = (html, thumbKeys) => {
   return wrap.innerHTML;
 };
 
-const createPost = async (elPost, post) => {
-  const publish = new Date(Date.parse(post.publish_up));
-  const params = JSON.parse(post.params);
-  const minutesToRead = Math.ceil(params.total_words / 245);
+const createPost = async (elPost, article) => {
+  const publish = new Date(article.published_at);
+  const authorName = article.byline_override || article.author_name;
+  const wordCount = article.word_count || 0;
+  const minutesToRead = article.reading_time || Math.max(1, Math.ceil(wordCount / 245));
   const title = `
-  ${post.title}
-  <span class="infoline"> <span class="published"><a href="">${post.author}</a> <i class="material-icons">calendar_month</i> ${publish.toDateString()} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${params.total_words} words)</span</span>
+  ${article.title}
+  <span class="infoline"> <span class="published"><a href="">${authorName}</a> <i class="material-icons">calendar_month</i> ${publish.toDateString()} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${wordCount} words)</span</span>
   `;
   const titleEl = elPost.querySelector('#title');
   titleEl.innerHTML = title;
 
+  const featuredImage = resolveMediaUrl(article.featured_image_url);
   elPost.querySelectorAll('.post-hero').forEach((n) => n.remove());
-  if (post.image) {
-    const heroAlt = String(post.title || '')
+  if (featuredImage) {
+    const heroAlt = String(article.image_alt || article.title || '')
       .replace(/&/g, '&amp;')
       .replace(/"/g, '&quot;')
       .replace(/</g, '&lt;');
     titleEl.insertAdjacentHTML(
       'afterend',
-      `<div class="post-hero"><div class="image-container"><img id="post-main-image" src="${post.image}" alt="${heroAlt}" /></div></div>`
+      `<div class="post-hero"><div class="image-container"><img id="post-main-image" src="${featuredImage}" alt="${heroAlt}" /></div></div>`
     );
   }
 
-  let re = /src="images/gi;
-  post.intro = post.intro.replace(re, `src="https://www.snow-country.com/images`);
-  re = /href="images/gi;
-  post.intro = post.intro.replace(re, `href="https://www.snow-country.com/images`);
-  re = /font-family: Arial, sans-serif;/gi;
-  post.intro = post.intro.replace(re, '');
-
-  if (post.content) {
-    re = /src="images/gi;
-    post.content = post.content.replace(re, `src="https://www.snow-country.com/images`);
-    re = /href="images/gi;
-    post.content = post.content.replace(re, `href="https://www.snow-country.com/images`);
-    post.intro = post.intro + post.content;
-  }
-
-  const mediaThumbs = collectMediaThumbnails(post);
+  const bodyHtml = normalizeArticleBody(article.body);
+  const mediaThumbs = collectBodyImages(article.body);
   const thumbKeys = new Set(mediaThumbs.map((it) => normalizeMediaPathKey(it.thumb)));
-  const bodyHtml = cleanupArticleHtml(post.intro, thumbKeys);
-  const { inArticle: thumbsForArticle, extra: extraThumbs } = await splitThumbnailsByArticleFit(elPost, params.total_words, mediaThumbs);
-  const { html: bodyWithThumbs } = injectFloatedThumbnails(bodyHtml, thumbsForArticle, thumbsForArticle.length);
+  const cleanedBodyHtml = cleanupArticleHtml(bodyHtml, thumbKeys);
+  const { inArticle: thumbsForArticle, extra: extraThumbs } = await splitThumbnailsByArticleFit(elPost, wordCount, mediaThumbs);
+  const { html: bodyWithThumbs } = injectFloatedThumbnails(cleanedBodyHtml, thumbsForArticle, thumbsForArticle.length);
   const extraAside = buildExtraThumbsAside(extraThumbs);
 
   elPost.querySelector('.intro').innerHTML = bodyWithThumbs + extraAside;
@@ -540,72 +607,70 @@ const createPost = async (elPost, post) => {
       openImageModal(urls, clickedIndex);
     });
   }
-  createNewsSDL(post);
+  createNewsSDL(article);
+  styleArticleLinks(elPost);
 };
-const getPost = (postID) => {
-  
-  const localURL = `https://www.snow-country.com/resorts/api-easy-blog-post.php?postID=${postID}`;
-  let url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-post-api?postID=${postID}`: localURL;
-  url = localURL;
-  fetch(url).then(response => {      
+const getPost = (slug) => {
+  if (!slug) return;
+
+  const url = `${NEWSROOM_API}/${encodeURIComponent(slug)}`;
+  fetch(url).then(response => {
     return response.json();
   }).then(data => {
-    _log('--getPost: data');    
-    console.log('stories:',data);
-    if (data.status) {
+    _log('--getPost: data');
+    console.log('article:', data);
+    const article = data.data;
+    if (article) {
       waitForElement('#news-post .intro').then((elPostMedia) => {
         _log('getPost:');
-        console.log('post:',data.post);
-        createPost(elPostMedia.closest('#news-post'),data.post).catch((e) => {
+        console.log('article:', article);
+        createPost(elPostMedia.closest('#news-post'), article).catch((e) => {
           console.error('Error creating post:', e);
         });
-      }).catch( (e) => { console.error('Error waiting for getPost data:',e);});        
+      }).catch((e) => { console.error('Error waiting for getPost data:', e); });
     }
-    
-  }).catch( (e) => { console.error('Error waiting for getPost fetch:',e);});
+  }).catch((e) => { console.error('Error waiting for getPost fetch:', e); });
 };
 
 const createPostList = (elPostList, posts) => {
   const html = posts.map(iterPost => `      
     <div class="news-list-post">
-      <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}">
-        <img src="${iterPost.image}">
+      <a href="${getArticleUrl(iterPost.slug)}">
+        <img src="${resolveMediaUrl(iterPost.featured_image_url)}" alt="${iterPost.title}">
         <div class="post-title">${iterPost.title}
         </div>
         <div class="post-info">
-          <div class="post-info-author">${iterPost.author}</div>
-          <div class="post-info-published">${iterPost.publish_up}</div> 
+          <div class="post-info-author">${iterPost.author_name}</div>
+          <div class="post-info-published">${formatPublishedDate(iterPost.published_at)}</div> 
         </div>
       </a>
     </div> <!-- news-list-post -->
 
     `).join('');
-  elPostList.insertAdjacentHTML('beforeend',html);
+  elPostList.insertAdjacentHTML('beforeend', html);
+  styleArticleLinks(elPostList);
 };
-const getOtherPostList = (postID) => {
-  
-  const localURL = `https://www.snow-country.com/resorts/api-easy-blog-list.php?notPostID=${postID}`;
-  const url = (window.location.hostname !== 'localhost') ? `.netlify/functions/news-list-api?notPostID=${postID}`: localURL;
-  
-  fetch(url).then(response => {      
+const getOtherPostList = (currentSlug) => {
+  const url = `${NEWSROOM_API}?per_page=${SIDEBAR_ARTICLE_COUNT + 1}`;
+
+  fetch(url).then(response => {
     return response.json();
   }).then(data => {
-    _log('--getOtherPostList: data');    
-    console.log('stories:',data);
-    if (data.status) {
+    _log('--getOtherPostList: data');
+    console.log('articles:', data);
+    const posts = (data.data || []).filter((iterPost) => iterPost.slug !== currentSlug).slice(0, SIDEBAR_ARTICLE_COUNT);
+    if (posts.length) {
       waitForElement('.news-list ').then((elPostList) => {
         _log('getOtherPostList:');
-        console.log('post:',data.stories);
-        createPostList(elPostList,data.stories);
-      }).catch( (e) => { console.error('Error waiting for getOtherPostList data:',e);});        
+        console.log('posts:', posts);
+        createPostList(elPostList, posts);
+      }).catch((e) => { console.error('Error waiting for getOtherPostList data:', e); });
     }
-    
-  }).catch( (e) => { console.error('Error waiting for getOtherPostList fetch:',e);});
-
+  }).catch((e) => { console.error('Error waiting for getOtherPostList fetch:', e); });
 };
-document.addEventListener('DOMContentLoaded',()=> {
+document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(document.location.search);
-  const postID = params.get("postID");
-  getPost(postID);
-  getOtherPostList(postID);
+  const slug = params.get('slug');
+  getPost(slug);
+  getOtherPostList(slug);
 });

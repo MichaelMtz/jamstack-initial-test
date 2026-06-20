@@ -26,18 +26,21 @@ body.news-modal-open {
 .news-image-modal .news-image-modal__dialog {
   position: relative;
   z-index: 1;
-  max-width: min(96vw, 1300px);
-  max-height: 92vh;
+  width: fit-content;
+  height: fit-content;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .news-image-modal .news-image-modal__img {
   display: block;
-  max-width: 100%;
-  max-height: 92vh;
   width: auto;
   height: auto;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
   background: #fff;

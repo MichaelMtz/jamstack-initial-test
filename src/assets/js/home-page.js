@@ -1,6 +1,15 @@
 const t = function (e) {return "font-weight:bold;font-size:1em;font-family:arial,helvitica,sans-serif;color:" + e;};
 const _log = function (text, param, color = 'DeepSkyBlue') {  console.log(`%cs%cn%co%cw %c==> ${text}`, t("#ADD8E6"), t("#87CEEB"), t("#87CEFA"), t("#00BFFF"), `font-size:11px; font-weight:500; color:${color}; padding:3px 50px 3px 3px; width:100%;`, param);};
 
+const NEWSROOM_API = 'https://newsroom.snow-report.org/api/v1/articles';
+const NEWSROOM_BASE = 'https://newsroom.snow-report.org';
+
+const resolveImageUrl = (url) => {
+  if (!url) return '';
+  if (url.startsWith('http')) return url;
+  return `${NEWSROOM_BASE}${url.startsWith('/') ? url : `/${url}`}`;
+};
+
 const observeSelector = (selector, callback, options = {
   timeout: null,
   once: false,
@@ -89,17 +98,17 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const configurePepsiBackgroundImages = () => {
   waitForElement('#banner_carousel li.slider-image').then((elMainSlider) => {
-    const homePageImages =  [
-      'johannes-waibel-WdBQHcIiSIw-unsplash.jpg',
-      'john-price-CrVKoYDDJIU-unsplash.jpg',
-      'tim-vanderhoydonck-QV58wLRuV6I-unsplash.jpg',
-      'mattias-olsson-nQz49efZEFs-unsplash.jpg',
-      'robson-hatsukami-morgan-5C6veSN6hec-unsplash.jpg',
-      'karsten-winegeart-pCS5YlrskC8-unsplash.jpg',
-      'maarten-duineveld-pmfJcN7RGiw-unsplash.jpg',
-      'zach-lucero-jYBtuN6aKg0-unsplash.jpg',
-      'powder-skier-slashing-alaska.jpg',
-    ];
+    // const homePageImages =  [
+    //   'johannes-waibel-WdBQHcIiSIw-unsplash.jpg',
+    //   'john-price-CrVKoYDDJIU-unsplash.jpg',
+    //   'tim-vanderhoydonck-QV58wLRuV6I-unsplash.jpg',
+    //   'mattias-olsson-nQz49efZEFs-unsplash.jpg',
+    //   'robson-hatsukami-morgan-5C6veSN6hec-unsplash.jpg',
+    //   'karsten-winegeart-pCS5YlrskC8-unsplash.jpg',
+    //   'maarten-duineveld-pmfJcN7RGiw-unsplash.jpg',
+    //   'zach-lucero-jYBtuN6aKg0-unsplash.jpg',
+    //   'powder-skier-slashing-alaska.jpg',
+    // ];
       
     // 'Gondola-1600x1067.jpg', 
     // 'alex-lange-Ca9u0f1nDt0-unsplash.jpg',
@@ -109,22 +118,22 @@ const configurePepsiBackgroundImages = () => {
     // 'powder-skier-slashing-alaska.jpg'];
     
     //summer
-    // const homePageImages = [
-    //   'jacob-thorson-fFYBRyC_OAk-unsplash.jpg', 
-    //   'barcs-tamas-BqSiMKeSiq8-unsplash.jpg',
-    //   'courtney-cook-SsIIw_MET0E-unsplash.jpg',
-    //   'dan-congdon-gJeusCuFyYA-unsplash.jpg',
-    //   'tim-foster-e0jQbe0tw3I-unsplash.jpg',
-    //   'jens-de-decker-W2vKVr4C3Xc-unsplash.jpg',
-    //   'barcs-tamas-xNUxUjhow68-unsplash.jpg',
-    //   'matthew-mcbrayer-fZL3EN4aJUI-unsplash.jpg',
-    //   'tim-foster-maeQsJtfAyg-unsplash.jpg',
-    // ];
+    const homePageImages = [
+      'jacob-thorson-fFYBRyC_OAk-unsplash.jpg', 
+      'barcs-tamas-BqSiMKeSiq8-unsplash.jpg',
+      'courtney-cook-SsIIw_MET0E-unsplash.jpg',
+      'dan-congdon-gJeusCuFyYA-unsplash.jpg',
+      'tim-foster-e0jQbe0tw3I-unsplash.jpg',
+      'jens-de-decker-W2vKVr4C3Xc-unsplash.jpg',
+      'barcs-tamas-xNUxUjhow68-unsplash.jpg',
+      'matthew-mcbrayer-fZL3EN4aJUI-unsplash.jpg',
+      'tim-foster-maeQsJtfAyg-unsplash.jpg',
+    ];
     const randomIndex = random(0,homePageImages.length);
     const selectedImage = homePageImages[randomIndex];
     _log(`configurePepsiBackgroundImages: Random image index: ${randomIndex}`);
-    //elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/summer/${selectedImage}")`;
-    elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/${selectedImage}")`;
+    elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/summer/${selectedImage}")`;
+    //elMainSlider.style.backgroundImage = `url("assets/images/homepage/2024-25/${selectedImage}")`;
     //elMainSlider.style.backgroundImage = `url("assets/images/ads/pepsi/telluride/${selectedImage}")`;
   }).catch( (e) => { console.error('Error waiting for configurePepsiBacgroundImages fetch:',e);});
   
@@ -403,7 +412,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     const howToPosts = [
       {
         "url": "https://snocountry.com/mountain-life/travel/duluth-to-bozeman-ski-road-trip-guide/",
-        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/duluth-to-bozeman/1-hero-view-lone-peak.jpgg",
+        "image": "https://www.snocountry.com/assets/images/mountain-life/travel/duluth-to-bozeman/1-hero-view-lone-peak.jpg",
         "title": "Duluth to Bozeman Ski Road Trip",
         "author": "Krista Holden",
         "umami": "mountain-life-wolf-creek"
@@ -437,12 +446,12 @@ document.addEventListener('DOMContentLoaded',()=> {
     //_log('createStoriesSection: Desktop:');
     const html = posts.map(iterPost => `      
 
-      <div class="deals" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+      <div class="deals" style="background:url(${resolveImageUrl(iterPost.featured_image_url)}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
           <div class="deals-content">
-              <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
+              <h6 class="remove-bottom cabin"><span class="small ucase">${iterPost.author_name}</span><br><strong>${iterPost.title}</strong></h6>
           </div><!-- end deals-content -->
           <div class="deals-desc"> 
-              <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.eventTitle}" >
+              <a href="news-post/${iterPost.slug}/?slug=${iterPost.slug}" class="button readbtn dealClick" data-umami-event="news-article-${iterPost.slug}" >
               Read...
               </a>
           </div><!-- end desc -->
@@ -458,9 +467,9 @@ document.addEventListener('DOMContentLoaded',()=> {
     _log('--createStoriesSectionMobile: init');
     const html = posts.map(iterPost => `      
     
-      <a href="news-post/${iterPost.eventTitle}/?postID=${iterPost.id}" class="card" style="background:url(${iterPost.image}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
+      <a href="news-post/${iterPost.slug}/?slug=${iterPost.slug}" class="card" style="background:url(${resolveImageUrl(iterPost.featured_image_url)}) no-repeat 50% 0 #f1f1f1;" id="deal-1">
           <div class="card-content">
-              <h6 class="card-copy"><span class="small ucase">${iterPost.author}</span><br><strong>${iterPost.title}</strong></h6>
+              <h6 class="card-copy"><span class="small ucase">${iterPost.author_name}</span><br><strong>${iterPost.title}</strong></h6>
           </div>
       </a>
       `).join('');
@@ -470,30 +479,24 @@ document.addEventListener('DOMContentLoaded',()=> {
   };
   const getRecentStories = () => {
     _log('--getRecentStories: init');
-    //const localURL = 'http://localhost/sno/snoCountryHeadless/snow-reports/home-page-stories.php';
-    const localURL = 'https://www.snow-country.com/resorts/api-easy-blog-list.php';
-    let url = (window.location.hostname !== 'localhost') ? ".netlify/functions/home-recent-stories-api": localURL;
-    url = localURL;
-    fetch(url).then(response => {      
+    const url = `${NEWSROOM_API}?per_page=8`;
+    fetch(url).then(response => {
       return response.json();
     }).then(data => {
-      _log('--getRecentStories: data');    
-      console.log('stories:',data);
-      if (data.status) {
+      _log('--getRecentStories: data');
+      console.log('articles:', data);
+      const stories = data.data || [];
+      if (stories.length) {
         waitForElement('#offers').then((elStories) => {
-          _log('getRecentStories: stories:',data.stories);
-          console.log(data.list);
-          //const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,9) : data.stories.slice(0,6);
-          const storyList = (window.innerWidth >= 1530) ? data.stories.slice(0,8) : data.stories.slice(0,5);
-          createStoriesSection(elStories,storyList);
-        }).catch( (e) => { console.error('Error building desktop news:',e);});  
+          _log('getRecentStories: stories:', stories);
+          const storyList = (window.innerWidth >= 1530) ? stories.slice(0, 8) : stories.slice(0, 5);
+          createStoriesSection(elStories, storyList);
+        }).catch((e) => { console.error('Error building desktop news:', e); });
         waitForElement('#mobile-stories .mobile-stories-container').then((elMobileStories) => {
-          //createStoriesSectionMobile(elMobileStories,data.stories.slice(0,9));
-          createStoriesSectionMobile(elMobileStories,data.stories.slice(0,7));
-        }).catch( (e) => { console.error('Error building mobile news:',e);});        
+          createStoriesSectionMobile(elMobileStories, stories.slice(0, 7));
+        }).catch((e) => { console.error('Error building mobile news:', e); });
       }
-      
-    }).catch( (e) => { console.error('Error waiting for getRecentStories fetch:',e);});
+    }).catch((e) => { console.error('Error waiting for getRecentStories fetch:', e); });
   };
   
 
