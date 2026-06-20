@@ -244,6 +244,11 @@ body.news-modal-open {
     align-self: flex-end;
   }
 }
+#news-post .post-panel h2 {
+  font-size: 22px;
+  margin-top: 0.85em;
+  margin-bottom: 0.25em;
+}
 #news-post .post-panel .post-hero {
   margin: 0 0 22px 2px;
   width: 100%;
