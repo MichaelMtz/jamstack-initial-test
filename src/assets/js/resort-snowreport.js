@@ -4,6 +4,23 @@
  * Similar structure to responsive-layout.js for consistency
  */
 
+const NEWSROOM_API = 'https://newsroom.snow-report.org/api/v1/articles';
+const NEWSROOM_BASE = 'https://newsroom.snow-report.org';
+
+const resolveNewsroomImageUrl = (url) => {
+  if (!url) return '';
+  if (url.startsWith('http')) return url;
+  return `${NEWSROOM_BASE}${url.startsWith('/') ? url : `/${url}`}`;
+};
+
+const getArticleUrl = (slug) => {
+  const encodedSlug = encodeURIComponent(slug);
+  if (window.location.hostname === 'localhost') {
+    return `article/index.html?slug=${encodedSlug}`;
+  }
+  return `news-post/${slug}/?slug=${encodedSlug}`;
+};
+
 class ResortDataManager {
   constructor() {
     // API configuration
@@ -678,25 +695,25 @@ class ResortDataManager {
    * Populate news feed from API data
    */ 
   populateNewsFeed() {
-    const apiNewsFeedUrl = "https://www.snow-country.com/resorts/api-easy-blog-list.php?action=news-home";
     const newsFeedContainer = document.getElementById("sno-news-container");
-    if (newsFeedContainer) {
-      fetch(apiNewsFeedUrl)
-        .then(response => response.json())
-        .then(data => {
-          // Limit to 8 news stories
-          newsFeedContainer.innerHTML = data.stories.slice(0, 8).map(story => `
+    if (!newsFeedContainer) return;
+
+    fetch(`${NEWSROOM_API}?per_page=8`)
+      .then(response => response.json())
+      .then(data => {
+        const stories = data.data || [];
+        newsFeedContainer.innerHTML = stories.slice(0, 8).map(story => `
               <div class="h-[240px] border border-gray-200 duration-500 group hover:-translate-y-1 hover:scale-[1.01] p-3 rounded">
-                <a href="news-post/${story.eventTitle}/?postID=${story.id}" target="_blank">
-                  <img class="news-image  rounded mb-2" src="${story.image}" alt="Recent SnoNews">
+                <a href="${getArticleUrl(story.slug)}" target="_blank">
+                  <img class="news-image  rounded mb-2" src="${resolveNewsroomImageUrl(story.featured_image_url)}" alt="${story.title}">
                   <div class="space-y-1">
                     <p class="duration-300 group-hover:text-sky-700 text-sm transition-colors">${story.title}</p>
                   </div>
                 </a>
               </div>
           `).join('');
-        });
-    }
+      })
+      .catch((e) => console.error('Error loading resort news feed:', e));
   }
   
   checkForValidChartData(chartData) {
