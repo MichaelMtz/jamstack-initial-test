@@ -373,6 +373,10 @@ body.news-modal-open {
     .post-hero img#post-main-image {
       margin-bottom: 0;
     }
+    .intro>*+* {
+        margin-top: .85em;
+    }
+    
     .intro {
       margin: 3px 0 0 2px;
       font-size: 15px;
@@ -430,9 +434,7 @@ body.news-modal-open {
           margin: 1em 0;
         }
       }
-      .intro>*+* {
-          margin-top: .85em;
-      }
+
 
       .image-container {
         float: left;

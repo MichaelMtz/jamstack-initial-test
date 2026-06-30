@@ -348,6 +348,9 @@ body.news-modal-open {
 #news-post .post-panel .post-hero img#post-main-image {
   margin-bottom: 0;
 }
+#news-post .post-panel .intro > * + * {
+  margin-top: 0.85em;
+}
 #news-post .post-panel .intro {
   margin: 3px 0 0 2px;
   font-size: 15px;
@@ -400,9 +403,6 @@ body.news-modal-open {
     max-width: 100%;
     margin: 1em 0;
   }
-}
-#news-post .post-panel .intro .intro > * + * {
-  margin-top: 0.85em;
 }
 #news-post .post-panel .intro .image-container {
   float: left;
