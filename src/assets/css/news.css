@@ -401,6 +401,9 @@ body.news-modal-open {
     margin: 1em 0;
   }
 }
+#news-post .post-panel .intro .intro > * + * {
+  margin-top: 0.85em;
+}
 #news-post .post-panel .intro .image-container {
   float: left;
   margin-right: 10px;

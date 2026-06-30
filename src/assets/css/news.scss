@@ -430,6 +430,9 @@ body.news-modal-open {
           margin: 1em 0;
         }
       }
+      .intro>*+* {
+          margin-top: .85em;
+      }
 
       .image-container {
         float: left;
