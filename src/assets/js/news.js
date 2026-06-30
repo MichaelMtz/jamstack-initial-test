@@ -3,6 +3,7 @@ const _log = function (text, param, color = 'DeepSkyBlue') {  console.log(`%cs%c
 
 const NEWSROOM_API = 'https://newsroom.snow-report.org/api/v1/articles';
 const NEWSROOM_BASE = 'https://newsroom.snow-report.org';
+const NEWSROOM_PREVIEW_API = `${NEWSROOM_BASE}/api/v1/preview/articles`;
 const SIDEBAR_ARTICLE_COUNT = 8;
 const ARTICLE_LINK_STYLE = 'color:#3f7d9e;text-decoration:underline';
 
@@ -116,8 +117,10 @@ const trackNewsAd = (alt) => {
 
 
 const createNewsSDL = (article) => {
-  const publish = new Date(article.published_at);
-  const publishISODate = publish.toISOString();
+  const publish = article.published_at ? new Date(article.published_at) : null;
+  const publishISODate = publish && !Number.isNaN(publish.getTime())
+    ? publish.toISOString()
+    : (article.updated_at ? new Date(article.updated_at).toISOString() : new Date().toISOString());
   const imageUrl = resolveMediaUrl(article.featured_image_url);
   const authorName = article.byline_override || article.author_name;
   const sdlHTML = `
@@ -559,13 +562,16 @@ const cleanupArticleHtml = (html, thumbKeys) => {
 };
 
 const createPost = async (elPost, article) => {
-  const publish = new Date(article.published_at);
+  const publish = article.published_at ? new Date(article.published_at) : null;
+  const publishLabel = publish && !Number.isNaN(publish.getTime())
+    ? publish.toDateString()
+    : 'Not yet published';
   const authorName = article.byline_override || article.author_name;
   const wordCount = article.word_count || 0;
   const minutesToRead = article.reading_time || Math.max(1, Math.ceil(wordCount / 245));
   const title = `
   ${article.title}
-  <span class="infoline"> <span class="published"><a href="">${authorName}</a> <i class="material-icons">calendar_month</i> ${publish.toDateString()} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${wordCount} words)</span</span>
+  <span class="infoline"> <span class="published"><a href="">${authorName}</a> <i class="material-icons">calendar_month</i> ${publishLabel} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${wordCount} words)</span</span>
   `;
   const titleEl = elPost.querySelector('#title');
   titleEl.innerHTML = title;
@@ -632,6 +638,40 @@ const getPost = (slug) => {
   }).catch((e) => { console.error('Error waiting for getPost fetch:', e); });
 };
 
+const showPreviewError = (message) => {
+  waitForElement('#news-post .intro').then((elIntro) => {
+    elIntro.innerHTML = `<p class="news-preview-error">${message}</p>`;
+  }).catch((e) => { console.error('Error showing preview message:', e); });
+};
+
+const getPreviewPost = (slug, previewToken) => {
+  if (!slug || !previewToken) {
+    showPreviewError('This preview link is invalid. A slug and preview token are required.');
+    return;
+  }
+
+  const url = `${NEWSROOM_PREVIEW_API}/${encodeURIComponent(slug)}?token=${encodeURIComponent(previewToken)}`;
+  fetch(url).then(response => {
+    return response.json().then((data) => ({ ok: response.ok, data }));
+  }).then(({ ok, data }) => {
+    _log('--getPreviewPost: data');
+    console.log('preview article:', data);
+    const article = data.data;
+    if (!ok || !article) {
+      showPreviewError(data.message || data.error || 'This preview link is invalid or has expired.');
+      return;
+    }
+    waitForElement('#news-post .intro').then((elPostMedia) => {
+      createPost(elPostMedia.closest('#news-post'), article).catch((e) => {
+        console.error('Error creating preview post:', e);
+      });
+    }).catch((e) => { console.error('Error waiting for getPreviewPost data:', e); });
+  }).catch((e) => {
+    console.error('Error waiting for getPreviewPost fetch:', e);
+    showPreviewError('Unable to load this preview. Please try again later.');
+  });
+};
+
 const createPostList = (elPostList, posts) => {
   const html = posts.map(iterPost => `      
     <div class="news-list-post">
@@ -671,6 +711,13 @@ const getOtherPostList = (currentSlug) => {
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(document.location.search);
   const slug = params.get('slug');
+
+  if (document.body.dataset.source === 'news-preview') {
+    getPreviewPost(slug, params.get('preview_token'));
+    if (slug) getOtherPostList(slug);
+    return;
+  }
+
   getPost(slug);
   getOtherPostList(slug);
 });
