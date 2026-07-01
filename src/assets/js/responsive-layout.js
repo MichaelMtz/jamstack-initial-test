@@ -1,7 +1,6 @@
 /**
  * Responsive Layout Manager for Snow Report Cards
- * Dynamically reconfigures card elements based on Tailwind's "lg" breakpoint (1024px)
- * Target file: shaded-bg.html
+ * Mobile-first layout in resorts.njk; reconfigures to two columns at Tailwind "lg" (1024px)
  */
 
 class ResponsiveLayoutManager {
@@ -13,13 +12,13 @@ class ResponsiveLayoutManager {
         // Current layout state to prevent unnecessary DOM manipulations
         this.currentLayout = null;
 
-        // Mobile order sequence as specified in mobile-order.md
+        // Default document order (mobile-first in resorts.njk)
         this.mobileOrder = [
-            'card-trails-lifts',
-            'card-video',
-            'card-snowfall',
-            'card-conditions',
             'card-hours',
+            'card-video',
+            'card-trails-lifts',
+            'card-conditions',
+            'card-snowfall',
             'card-weather',
             'card-blurb',
             'card-comments',
@@ -31,7 +30,7 @@ class ResponsiveLayoutManager {
             'card-snonews'
         ];
 
-        // Desktop layout distribution
+        // Desktop two-column distribution (applied at lg breakpoint)
         this.desktopLayout = {
             leftColumn: [
                 'card-video',
@@ -43,10 +42,10 @@ class ResponsiveLayoutManager {
 
             ],
             rightColumn: [
+                'card-hours',
                 'card-trails-lifts',
                 'card-snowfall',
                 'card-conditions',
-                'card-hours',
                 'card-stats',
                 'card-info',
                 //'card-affiliate',
@@ -146,11 +145,22 @@ class ResponsiveLayoutManager {
     }
 
     /**
-     * Configure initial layout based on current screen size
+     * Configure initial layout. HTML defaults to mobile; only rearrange for desktop.
      */
     configureInitialLayout() {
-        const isDesktop = this.mediaQuery.matches;
-        this.handleLayoutChange(isDesktop);
+        if (this.mediaQuery.matches) {
+            this.handleLayoutChange(true);
+        } else {
+            this.prependGatoradeCard();
+            this.currentLayout = 'mobile';
+        }
+    }
+
+    prependGatoradeCard() {
+        const elGatoradeROTW = document.getElementById('card-gatorade');
+        if (elGatoradeROTW) {
+            this.elements.leftColumn.prepend(elGatoradeROTW);
+        }
     }
 
     /**
@@ -177,14 +187,12 @@ class ResponsiveLayoutManager {
     }
 
     /**
-     * Apply mobile layout: move all .sno-class elements to left column in specified order
+     * Restore mobile layout: single column in mobileOrder sequence
      */
     applyMobileLayout() {
         const leftColumn = this.elements.leftColumn;
         const rightColumn = this.elements.rightColumn;
 
-        // First, move all left column .sno-class elements to right column as temporary holding area
-        // This ensures we start with a clean left column
         const leftColumnCards = Array.from(leftColumn.querySelectorAll('.sno-class'));
         leftColumnCards.forEach(card => {
             if (card.id && this.elements.cards.has(card.id)) {
@@ -192,23 +200,19 @@ class ResponsiveLayoutManager {
             }
         });
 
-        // Now move all cards to left column in the specified mobile order
         this.mobileOrder.forEach(cardId => {
             const card = this.elements.cards.get(cardId);
             if (card) {
                 leftColumn.appendChild(card);
             }
         });
-        const elGatoradeROTW = document.getElementById('card-gatorade');
-        if (elGatoradeROTW) {
-          this.elements.leftColumn.prepend(elGatoradeROTW);
 
-        }
+        this.prependGatoradeCard();
         console.log('ResponsiveLayoutManager: Applied mobile layout');
     }
 
     /**
-     * Apply desktop layout: restore original two-column distribution
+     * Apply desktop layout: distribute cards across left and right columns
      */
     applyDesktopLayout() {
         const leftColumn = this.elements.leftColumn;
