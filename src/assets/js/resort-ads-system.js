@@ -368,8 +368,28 @@ async function loadAndDisplayAd() {
  * This ensures the ad system works correctly regardless of when this script
  * is loaded in relation to the DOM parsing process.
  */
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadAndDisplayAd);
-} else {
+/**
+ * Consent gate: without 'ads' consent no ad is fetched, so no ad markup,
+ * DoubleClick tracking pixel, or Convex impression/click tracking ever fires.
+ * The 'sno-consent-change' listener re-runs the system if the future CMP
+ * grants consent after page load.
+ */
+function initAdsIfConsented() {
+  if (!(window.snoConsent && window.snoConsent.isGranted('ads'))) {
+    console.info('Resort ads: skipped - ads consent not granted');
+    return;
+  }
   loadAndDisplayAd();
 }
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAdsIfConsented);
+} else {
+  initAdsIfConsented();
+}
+
+document.addEventListener('sno-consent-change', function () {
+  if (window.snoConsent.isGranted('ads') && !document.querySelector('.resort-ad')) {
+    loadAndDisplayAd();
+  }
+});

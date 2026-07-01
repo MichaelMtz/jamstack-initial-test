@@ -364,8 +364,14 @@ class ResortDataManager {
   handleResortVideoImage() {
     const resortAssetElement = document.getElementById("resort-asset");
     const cardVideo = document.getElementById("card-video");
-    const videoId = this.extractYouTubeVideoId(this.resortData.snoResortVideo);
-    _log(`handleResortVideoImage: ${videoId}`, this.resortData.snoResortVideo);
+    // Consent gate: lite-youtube loads thumbnails from i.ytimg.com on render,
+    // so without 'embedded_media' consent skip the video entirely and fall
+    // through to the resort photo branch below.
+    const embedAllowed = window.snoConsent && window.snoConsent.isGranted("embedded_media");
+    const videoId = embedAllowed
+      ? this.extractYouTubeVideoId(this.resortData.snoResortVideo)
+      : null;
+    _log(`handleResortVideoImage: ${videoId} (embed consent: ${embedAllowed})`, this.resortData.snoResortVideo);
     if (videoId && resortAssetElement) {
       const playLabel = `Play: ${this.resortData.resortName || "Resort"} Video`;
       resortAssetElement.className = "rounded-lg mb-4 overflow-hidden";

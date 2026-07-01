@@ -159,6 +159,14 @@ function displayPepsiROTW(resortId) {
  * initPepsiROTW();
  */
 function initPepsiROTW() {
+  // Consent gate: this is a sponsored placement containing a YouTube embed,
+  // so it requires both 'ads' and 'embedded_media' consent.
+  if (!(window.snoConsent &&
+        window.snoConsent.isGranted('ads') &&
+        window.snoConsent.isGranted('embedded_media'))) {
+    _log('Pepsi ROTW: Skipping - ads/embedded_media consent not granted');
+    return;
+  }
   const resortId = document.body.dataset.snowreport;
   displayPepsiROTW(resortId);
 }

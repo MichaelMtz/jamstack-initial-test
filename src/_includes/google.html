@@ -89,14 +89,36 @@
           color: #ea580c !important;
         }
       </style>
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ8PTPGTSS"></script>
+      <!-- Consent gate — must load synchronously before any gated third-party script -->
+      <script src="/assets/js/sno-consent.js"></script>
+      <!-- Google tag (gtag.js) — only injected when 'analytics' consent is granted.
+           Consent Mode v2 defaults everything to denied as a second line of defense. -->
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          analytics_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
         gtag('js', new Date());
-      
         gtag('config', 'G-YJ8PTPGTSS');
+
+        (function () {
+          function loadGA() {
+            if (document.getElementById('ga-gtag-script')) return;
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            var s = document.createElement('script');
+            s.id = 'ga-gtag-script';
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJ8PTPGTSS';
+            document.head.appendChild(s);
+          }
+          if (window.snoConsent && window.snoConsent.isGranted('analytics')) loadGA();
+          document.addEventListener('sno-consent-change', function () {
+            if (window.snoConsent.isGranted('analytics')) loadGA();
+          });
+        })();
       </script>
       <meta name="google-site-verification" content="OyaU69QyIrD0R7KDmicZl-EPhLpm6JiI547XyxNSiPY" />
-      <script defer src="https://cloud.umami.is/script.js" data-website-id="591a94ad-0c2c-4046-ad63-146e87ef1b71"></script>
