@@ -8,14 +8,14 @@
  * 
  * Key Features:
  * - Special handling for resort ID '1' (Arapahoe Basin)
- * - YouTube video integration with autoplay and muted start
+ * - YouTube video integration via lite-youtube-embed (click-to-play)
  * - Dual branding (Pepsi + Resort logos)
  * - Responsive design with fallback content
  * - Audio integration capability (currently commented out)
  * 
  * Dependencies:
  * - resort-ads-system.js (provides _log and waitForElement functions)
- * - YouTube iframe API (loaded via iframe)
+ * - lite-youtube-embed (loaded via base-snow-report.njk / home-page.njk)
  * 
  * @fileoverview Special Pepsi Resort of the Week video advertisement system
  * @author SnoCountry Development Team
@@ -34,11 +34,7 @@ _log('pepsi-resort-week Initialized...');
  * @type {Object}
  * @property {string} TARGET_RESORT_ID - The resort ID that triggers this feature
  * @property {string} YOUTUBE_VIDEO_ID - YouTube video ID for the ROTW video
- * @property {Object} VIDEO_DIMENSIONS - Video iframe dimensions
- * @property {string} VIDEO_DIMENSIONS.width - Video width in pixels
- * @property {string} VIDEO_DIMENSIONS.height - Video height in pixels
- * @property {Object} YOUTUBE_PARAMS - YouTube iframe parameters
- * @property {boolean} YOUTUBE_PARAMS.autoplay - Enable autoplay
+ * @property {Object} YOUTUBE_PARAMS - YouTube player parameters (applied on play)
  * @property {boolean} YOUTUBE_PARAMS.mute - Start muted
  * @property {boolean} YOUTUBE_PARAMS.rel - Show related videos
  * @property {number} YOUTUBE_PARAMS.start - Start time in seconds
@@ -46,12 +42,7 @@ _log('pepsi-resort-week Initialized...');
 const PEPSI_CONFIG = {
   TARGET_RESORT_ID: '0',  
   YOUTUBE_VIDEO_ID: 'Sp2Hueyv32s',
-  VIDEO_DIMENSIONS: {
-    width: '100%',
-    height: '400px'
-  },
   YOUTUBE_PARAMS: {
-    autoplay: true,
     mute: true,
     rel: false,
     start: 2
@@ -59,25 +50,17 @@ const PEPSI_CONFIG = {
 };
 
 /**
- * Generates the YouTube iframe URL with configured parameters
- * 
- * Constructs a YouTube embed URL with the specified video ID and
- * query parameters for autoplay, muting, and other settings.
- * 
- * @function generateYouTubeUrl
- * @returns {string} Complete YouTube embed URL
- * 
- * @example
- * const url = generateYouTubeUrl();
- * // Returns: "https://www.youtube.com/embed/aCaoGm4TQC8?autoplay=1&mute=1&rel=0&start=2"
+ * Builds the YouTube player params string for lite-youtube
+ *
+ * @function generateYouTubeParams
+ * @returns {string} URL-encoded player parameters
  */
-function generateYouTubeUrl() {
+function generateYouTubeParams() {
   const params = new URLSearchParams();
   Object.entries(PEPSI_CONFIG.YOUTUBE_PARAMS).forEach(([key, value]) => {
-    params.append(key, value ? '1' : '0');
+    params.append(key, typeof value === 'boolean' ? (value ? '1' : '0') : String(value));
   });
-  
-  return `https://www.youtube.com/embed/${PEPSI_CONFIG.YOUTUBE_VIDEO_ID}?${params.toString()}`;
+  return params.toString();
 }
 
 /**
@@ -98,8 +81,9 @@ function generateYouTubeUrl() {
  * // Returns: Complete HTML string with video, logos, and styling
  */
 function generatePepsiROTWHTML() {
-  const youtubeUrl = generateYouTubeUrl();
-  
+  const playLabel = 'Play: Gatorade Resort of the Week';
+  const params = generateYouTubeParams();
+
   return `
     <div id="card-gatorade" class="sno-class bg-white rounded-lg mb-3 p-6 bg-background border shadow-md hover:scale-[1.01] transition-transform duration-300 relative group hover:shadow-sky-200 hover:shadow-xl">
 
@@ -118,7 +102,7 @@ function generatePepsiROTWHTML() {
           -->
         </div>
         <div class="pepsi-video">
-          <iframe class="default" width="${PEPSI_CONFIG.VIDEO_DIMENSIONS.width}" height="${PEPSI_CONFIG.VIDEO_DIMENSIONS.height}" src="${youtubeUrl}" title="Pepsi ROTW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:3px;"></iframe>
+          <lite-youtube class="pepsi-lite-youtube w-full" videoid="${PEPSI_CONFIG.YOUTUBE_VIDEO_ID}" params="${params}" title="${playLabel}" playlabel="${playLabel}"></lite-youtube>
           <!--
           <div class="pepsi-image">
             <img class="img-small" src="assets/images/ads/pepsi/whitetail/Whitetail-MtnDew.jpg" />
@@ -186,7 +170,7 @@ if (typeof module !== 'undefined' && module.exports) {
     initPepsiROTW,
     displayPepsiROTW,
     generatePepsiROTWHTML,
-    generateYouTubeUrl,
+    generateYouTubeParams,
     PEPSI_CONFIG
   };
 }

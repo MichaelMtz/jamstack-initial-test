@@ -363,24 +363,21 @@ class ResortDataManager {
 
   handleResortVideoImage() {
     const resortAssetElement = document.getElementById("resort-asset");
+    const cardVideo = document.getElementById("card-video");
     const videoId = this.extractYouTubeVideoId(this.resortData.snoResortVideo);
-    _log(`handleResortVideoImage: ${videoId}`,this.resortData.snoResortVideo);
-    if (videoId) {
-      const elResortAsset = document.getElementById('resort-asset');
-      if (elResortAsset) {
-        let vidHTML = `
-        <div class="pepsi-video w-full">
-          <iframe width="100%" height="400px" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&start=2&cc_load_policy=1" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius:3px;"></iframe>
-        </div>
-        `;
-        elResortAsset.innerHTML = vidHTML;
-        // const resortAssetHeader = document.getElementById('resort-asset-header');
-        // if (resortAssetHeader) {
-        //   resortAssetHeader.textContent = `${this.resortData.resortName} ${this.resortData.resortBackgroundImage}`;
-        //   resortAssetHeader.classList.remove("hidden");
-        // }
-        document.getElementById('card-video').classList.remove('hidden');
-      }
+    _log(`handleResortVideoImage: ${videoId}`, this.resortData.snoResortVideo);
+    if (videoId && resortAssetElement) {
+      const playLabel = `Play: ${this.resortData.resortName || "Resort"} Video`;
+      resortAssetElement.className = "rounded-lg mb-4 overflow-hidden";
+      resortAssetElement.replaceChildren();
+      const liteYoutube = document.createElement("lite-youtube");
+      liteYoutube.className = "resort-lite-youtube w-full";
+      liteYoutube.setAttribute("videoid", videoId);
+      liteYoutube.setAttribute("params", "mute=1&rel=0&start=2&cc_load_policy=1");
+      liteYoutube.setAttribute("title", playLabel);
+      liteYoutube.setAttribute("playlabel", playLabel);
+      resortAssetElement.appendChild(liteYoutube);
+      if (cardVideo) cardVideo.classList.remove("hidden");
     } else if (resortAssetElement && this.resortData.resortPhotos) {
       const img =
         resortAssetElement.querySelector("img") || document.createElement("img");
