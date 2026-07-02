@@ -91,6 +91,9 @@
       </style>
       <!-- Consent gate — must load synchronously before any gated third-party script -->
       <script src="/assets/js/sno-consent.js"></script>
+      <!-- Consent banner UI — deferred; renders only when no decision is stored -->
+      <link rel="stylesheet" href="/assets/css/sno-consent-banner.css">
+      <script defer src="/assets/js/sno-consent-banner.js"></script>
       <!-- Google tag (gtag.js) — only injected when 'analytics' consent is granted.
            Consent Mode v2 defaults everything to denied as a second line of defense. -->
       <script>

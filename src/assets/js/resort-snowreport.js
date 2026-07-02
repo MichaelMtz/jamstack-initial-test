@@ -92,6 +92,12 @@ class ResortDataManager {
     } else {
       this.setup();
     }
+    // Re-render the video card when consent changes after hydration, so
+    // accepting embedded_media in the banner swaps the photo for the video
+    // (and revoking swaps it back) without a page reload.
+    document.addEventListener("sno-consent-change", () => {
+      if (this.resortData) this.handleResortVideoImage();
+    });
   }
 
   /**
