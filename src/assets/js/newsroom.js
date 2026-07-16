@@ -115,6 +115,63 @@ const formatPublishedDate = (isoDate) => {
   });
 };
 
+const hasText = (value) => typeof value === 'string' && value.trim().length > 0;
+
+const escapeHtml = (value) => String(value || '')
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;');
+
+const buildFigcaptionHtml = (caption, credit) => {
+  const parts = [];
+  if (hasText(caption)) {
+    parts.push(`<span class="post-image-caption">${escapeHtml(caption.trim())}</span>`);
+  }
+  if (hasText(credit)) {
+    parts.push(`<cite class="post-image-credit">${escapeHtml(credit.trim())}</cite>`);
+  }
+  if (!parts.length) return '';
+  return `<figcaption>${parts.join(' ')}</figcaption>`;
+};
+
+const wrapImgInFigure = (img, caption, credit) => {
+  const figcaptionHtml = buildFigcaptionHtml(caption, credit);
+  if (!figcaptionHtml) return;
+
+  if (img.closest('figure')) {
+    if (!img.parentElement.querySelector('figcaption')) {
+      img.insertAdjacentHTML('afterend', figcaptionHtml);
+    }
+    return;
+  }
+
+  const figure = document.createElement('figure');
+  figure.className = 'post-figure';
+  const floatSide = (img.getAttribute('data-float') || '').toLowerCase();
+  if (floatSide === 'left' || floatSide === 'right') {
+    figure.classList.add(`post-figure--${floatSide}`);
+  }
+  const widthAttr = img.getAttribute('width');
+  if (widthAttr && /^\d+$/.test(widthAttr)) {
+    figure.style.width = `${widthAttr}px`;
+    figure.style.maxWidth = '100%';
+  }
+
+  img.parentNode.insertBefore(figure, img);
+  figure.appendChild(img);
+  figure.insertAdjacentHTML('beforeend', figcaptionHtml);
+};
+
+const enhanceBodyImages = (html) => {
+  const wrap = document.createElement('div');
+  wrap.innerHTML = html || '';
+  wrap.querySelectorAll('img').forEach((img) => {
+    wrapImgInFigure(img, img.getAttribute('data-caption'), img.getAttribute('data-credit'));
+  });
+  return wrap.innerHTML;
+};
+
 const createNewsSDL = (article) => {
   const publish = article.published_at ? new Date(article.published_at) : null;
   const publishISODate = publish && !Number.isNaN(publish.getTime())
@@ -202,17 +259,15 @@ const createPost = (elPost, article) => {
   const featuredImage = resolveMediaUrl(article.featured_image_url);
   elPost.querySelectorAll('.post-hero').forEach((n) => n.remove());
   if (featuredImage) {
-    const heroAlt = String(article.image_alt || article.title || '')
-      .replace(/&/g, '&amp;')
-      .replace(/"/g, '&quot;')
-      .replace(/</g, '&lt;');
-    titleEl.insertAdjacentHTML(
-      'afterend',
-      `<div class="post-hero"><div class="image-container"><img id="post-main-image" src="${featuredImage}" alt="${heroAlt}" /></div></div>`
-    );
+    const heroAlt = escapeHtml(article.image_alt || article.title || '');
+    const featuredFigcaption = buildFigcaptionHtml(article.image_caption, article.image_credit);
+    const heroInner = featuredFigcaption
+      ? `<figure class="post-figure post-figure--hero"><div class="image-container"><img id="post-main-image" src="${featuredImage}" alt="${heroAlt}" /></div>${featuredFigcaption}</figure>`
+      : `<div class="image-container"><img id="post-main-image" src="${featuredImage}" alt="${heroAlt}" /></div>`;
+    titleEl.insertAdjacentHTML('afterend', `<div class="post-hero">${heroInner}</div>`);
   }
 
-  elPost.querySelector('.intro').innerHTML = article.body || '';
+  elPost.querySelector('.intro').innerHTML = enhanceBodyImages(article.body || '');
   createNewsSDL(article);
   styleArticleLinks(elPost);
 };

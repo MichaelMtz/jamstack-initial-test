@@ -306,6 +306,69 @@ body.news-modal-open {
           border-radius: 4px;
         }
       }
+
+      .post-figure--hero {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    .post-figure {
+      margin: 0.85em 0;
+      max-width: 100%;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      figcaption {
+        margin-top: 6px;
+        font-size: 13px;
+        line-height: 1.4;
+        letter-spacing: 0.4px;
+        color: #7a7d80;
+        font-family: "Proxima Nova", sans-serif;
+      }
+
+      .post-image-caption {
+        display: block;
+      }
+
+      .post-image-credit {
+        display: block;
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .post-image-caption + .post-image-credit {
+        margin-top: 2px;
+      }
+
+      &--left {
+        float: left;
+        margin: 0.35em 14px 0.75em 0;
+        clear: both;
+      }
+
+      &--right {
+        float: right;
+        margin: 0.35em 0 0.75em 14px;
+        clear: both;
+      }
+
+      @include bpmaxw($mobile) {
+        &--left,
+        &--right {
+          float: none;
+          clear: both;
+          width: 100% !important;
+          max-width: 100%;
+          margin: 1em 0;
+        }
+      }
     }
 
     .post-media-extra {
