@@ -10,7 +10,7 @@ const ARTICLE_LINK_STYLE = 'color:#3f7d9e;text-decoration:underline';
 const styleArticleLinks = (root) => {
   if (!root) return;
   root.querySelectorAll('a[href]').forEach((anchor) => {
-    if (anchor.matches('a[data-full-image], .post-media-thumb, .post-image-link')) return;
+    if (anchor.matches('a[data-full-image], .post-media-thumb, .post-image-link, .post-tag')) return;
     if (anchor.querySelector('img')) return;
     anchor.setAttribute('style', ARTICLE_LINK_STYLE);
   });
@@ -125,7 +125,46 @@ const escapeHtml = (value) => String(value || '')
   .replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;');
 
+const getTagListUrl = (tag) => {
+  if (!tag?.slug) return '';
+  const params = new URLSearchParams({ tag: tag.slug });
+  if (hasText(tag.name)) params.set('name', tag.name);
+  if (window.location.hostname === 'localhost') {
+    return `news-home/index.html?${params.toString()}`;
+  }
+  return `news-home/?${params.toString()}`;
+};
+
+const getAuthorListUrl = (authorId, authorName) => {
+  if (!authorId) return '';
+  const params = new URLSearchParams({ author: authorId });
+  if (hasText(authorName)) params.set('name', authorName);
+  if (window.location.hostname === 'localhost') {
+    return `news-home/index.html?${params.toString()}`;
+  }
+  return `news-home/?${params.toString()}`;
+};
+
+const buildPostTagsHtml = (tags) => {
+  if (!Array.isArray(tags) || !tags.length) return '';
+  const pills = tags
+    .filter((tag) => tag?.slug && hasText(tag.name || tag.slug))
+    .map((tag) => {
+      const label = escapeHtml((tag.name || tag.slug).trim());
+      const href = escapeHtml(getTagListUrl(tag));
+      return `<a class="post-tag" href="${href}">${label}</a>`;
+    });
+  if (!pills.length) return '';
+  return `<span class="post-tags" aria-label="Article tags">${pills.join('')}</span>`;
+};
+
 const buildFigcaptionHtml = (caption, credit) => {
+  const inner = buildFigcaptionInnerHtml(caption, credit);
+  if (!inner) return '';
+  return `<figcaption>${inner}</figcaption>`;
+};
+
+const buildFigcaptionInnerHtml = (caption, credit) => {
   const parts = [];
   if (hasText(caption)) {
     parts.push(`<span class="post-image-caption">${escapeHtml(caption.trim())}</span>`);
@@ -133,8 +172,23 @@ const buildFigcaptionHtml = (caption, credit) => {
   if (hasText(credit)) {
     parts.push(`<cite class="post-image-credit">${escapeHtml(credit.trim())}</cite>`);
   }
-  if (!parts.length) return '';
-  return `<figcaption>${parts.join(' ')}</figcaption>`;
+  return parts.join(' ');
+};
+
+const getImageMeta = (img) => {
+  let caption = img?.getAttribute('data-caption') || '';
+  let credit = img?.getAttribute('data-credit') || '';
+  const figure = img?.closest('figure');
+  if (figure) {
+    const capEl = figure.querySelector('.post-image-caption');
+    const credEl = figure.querySelector('.post-image-credit');
+    if (!hasText(caption) && capEl) caption = capEl.textContent || '';
+    if (!hasText(credit) && credEl) credit = credEl.textContent || '';
+  }
+  return {
+    caption: hasText(caption) ? caption.trim() : '',
+    credit: hasText(credit) ? credit.trim() : '',
+  };
 };
 
 const wrapImgInFigure = (img, caption, credit) => {
@@ -191,8 +245,11 @@ const getImageFromBlock = (node) => {
 
 const buildGalleryAside = (items) => {
   if (items.length < 2) return '';
-  const linkItem = (it) =>
-    `<a class="post-media-thumb" href="${escapeHtml(it.src)}" data-full-image="${escapeHtml(it.src)}"><img src="${escapeHtml(it.src)}" alt="${escapeHtml(it.alt)}" loading="lazy" decoding="async" /></a>`;
+  const linkItem = (it) => {
+    const captionAttr = hasText(it.caption) ? ` data-caption="${escapeHtml(it.caption)}"` : '';
+    const creditAttr = hasText(it.credit) ? ` data-credit="${escapeHtml(it.credit)}"` : '';
+    return `<a class="post-media-thumb" href="${escapeHtml(it.src)}" data-full-image="${escapeHtml(it.src)}"${captionAttr}${creditAttr}><img src="${escapeHtml(it.src)}" alt="${escapeHtml(it.alt)}" loading="lazy" decoding="async" /></a>`;
+  };
   return `<aside class="post-media-extra"><div class="post-media-extra-inner"><h3 class="post-media-extra-title">More photos</h3><div class="post-media-extra-grid">${items.map(linkItem).join('')}</div></div></aside>`;
 };
 
@@ -222,9 +279,12 @@ const extractTrailingImageGallery = (container) => {
   const items = trailing.map((node) => {
     const img = getImageFromBlock(node);
     const src = resolveMediaUrl(img?.getAttribute('src') || '');
+    const meta = getImageMeta(img);
     return {
       src,
       alt: img?.getAttribute('alt') || '',
+      caption: meta.caption,
+      credit: meta.credit,
     };
   }).filter((it) => it.src);
 
@@ -240,6 +300,10 @@ const makeImageClickable = (img) => {
   anchor.href = src;
   anchor.setAttribute('data-full-image', src);
   anchor.className = 'post-image-link';
+
+  const meta = getImageMeta(img);
+  if (hasText(meta.caption)) anchor.setAttribute('data-caption', meta.caption);
+  if (hasText(meta.credit)) anchor.setAttribute('data-credit', meta.credit);
 
   const floatSide = (img.getAttribute('data-float') || '').toLowerCase();
   const figure = img.closest('figure.post-figure');
@@ -280,28 +344,44 @@ const resetModalLayout = (modal) => {
   if (imgEl) imgEl.removeAttribute('style');
 };
 
+const updateModalFigcaption = (modal, item = {}) => {
+  const figcaption = modal.querySelector('.news-image-modal__caption');
+  if (!figcaption) return;
+  const inner = buildFigcaptionInnerHtml(item.caption, item.credit);
+  if (!inner) {
+    figcaption.innerHTML = '';
+    figcaption.hidden = true;
+    return;
+  }
+  figcaption.innerHTML = inner;
+  figcaption.hidden = false;
+};
+
 const fitModalToImage = (modal, imgEl) => {
   const dialog = modal.querySelector('.news-image-modal__dialog');
   if (!dialog || !imgEl) return;
 
   const applyFit = () => {
+    const captionEl = modal.querySelector('.news-image-modal__caption');
+    const captionH = captionEl && !captionEl.hidden ? captionEl.offsetHeight + 12 : 0;
     const { width: maxW, height: maxH } = getModalMaxSize();
+    const maxImgH = Math.max(80, maxH - captionH);
     const naturalW = imgEl.naturalWidth;
     const naturalH = imgEl.naturalHeight;
     if (!naturalW || !naturalH) return;
 
-    const scale = Math.min(1, maxW / naturalW, maxH / naturalH);
+    const scale = Math.min(1, maxW / naturalW, maxImgH / naturalH);
     const displayW = Math.round(naturalW * scale);
     const displayH = Math.round(naturalH * scale);
 
     dialog.style.width = `${displayW}px`;
-    dialog.style.height = `${displayH}px`;
+    dialog.style.height = `${displayH + captionH}px`;
     dialog.style.maxWidth = `${maxW}px`;
     dialog.style.maxHeight = `${maxH}px`;
     imgEl.style.width = `${displayW}px`;
     imgEl.style.height = `${displayH}px`;
     imgEl.style.maxWidth = `${maxW}px`;
-    imgEl.style.maxHeight = `${maxH}px`;
+    imgEl.style.maxHeight = `${maxImgH}px`;
   };
 
   if (imgEl.complete && imgEl.naturalWidth) {
@@ -326,7 +406,10 @@ const ensureImageModal = () => {
       <div class="news-image-modal__dialog" role="dialog" aria-modal="true" aria-label="Expanded image">
         <button class="news-image-modal__nav news-image-modal__nav--prev" type="button" aria-label="Previous image" data-nav="-1">&#8249;</button>
         <button class="news-image-modal__close" type="button" aria-label="Close image" data-close-modal="true">&times;</button>
-        <img class="news-image-modal__img" src="" alt="" />
+        <figure class="news-image-modal__figure">
+          <img class="news-image-modal__img" src="" alt="" />
+          <figcaption class="news-image-modal__caption" hidden></figcaption>
+        </figure>
         <button class="news-image-modal__nav news-image-modal__nav--next" type="button" aria-label="Next image" data-nav="1">&#8250;</button>
       </div>
     </div>
@@ -336,7 +419,10 @@ const ensureImageModal = () => {
   const imgEl = modal.querySelector('.news-image-modal__img');
   const updateModalImage = () => {
     if (!modalImageList.length || modalImageIndex < 0 || modalImageIndex >= modalImageList.length) return;
-    imgEl.setAttribute('src', modalImageList[modalImageIndex]);
+    const item = modalImageList[modalImageIndex];
+    imgEl.setAttribute('src', item.src);
+    imgEl.setAttribute('alt', item.alt || '');
+    updateModalFigcaption(modal, item);
     fitModalToImage(modal, imgEl);
   };
   const stepModalImage = (step) => {
@@ -349,6 +435,8 @@ const ensureImageModal = () => {
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('news-modal-open');
     imgEl.setAttribute('src', '');
+    imgEl.setAttribute('alt', '');
+    updateModalFigcaption(modal, {});
     resetModalLayout(modal);
     modalImageList = [];
     modalImageIndex = -1;
@@ -401,13 +489,16 @@ const ensureImageModal = () => {
   return modal;
 };
 
-const openImageModal = (urls, startIndex) => {
-  if (!Array.isArray(urls) || !urls.length) return;
-  modalImageList = urls;
-  modalImageIndex = Math.max(0, Math.min(startIndex || 0, urls.length - 1));
+const openImageModal = (items, startIndex) => {
+  if (!Array.isArray(items) || !items.length) return;
+  modalImageList = items;
+  modalImageIndex = Math.max(0, Math.min(startIndex || 0, items.length - 1));
   const modal = ensureImageModal();
   const imgEl = modal.querySelector('.news-image-modal__img');
-  imgEl.setAttribute('src', modalImageList[modalImageIndex]);
+  const item = modalImageList[modalImageIndex];
+  imgEl.setAttribute('src', item.src);
+  imgEl.setAttribute('alt', item.alt || '');
+  updateModalFigcaption(modal, item);
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('news-modal-open');
@@ -423,10 +514,15 @@ const bindImageModal = (elPost) => {
     if (evt.metaKey || evt.ctrlKey || evt.shiftKey || evt.altKey || evt.button === 1) return;
     evt.preventDefault();
     const modalThumbs = Array.from(elPost.querySelectorAll('a[data-full-image]'));
-    const urls = modalThumbs.map((el) => el.getAttribute('data-full-image')).filter(Boolean);
+    const items = modalThumbs.map((el) => ({
+      src: el.getAttribute('data-full-image'),
+      alt: el.querySelector('img')?.getAttribute('alt') || '',
+      caption: el.getAttribute('data-caption') || '',
+      credit: el.getAttribute('data-credit') || '',
+    })).filter((it) => it.src);
     const clickedUrl = thumbLink.getAttribute('data-full-image');
-    const clickedIndex = Math.max(0, urls.indexOf(clickedUrl));
-    openImageModal(urls, clickedIndex);
+    const clickedIndex = Math.max(0, items.findIndex((it) => it.src === clickedUrl));
+    openImageModal(items, clickedIndex);
   });
 };
 
@@ -434,7 +530,15 @@ const enhanceBodyImages = (html) => {
   const wrap = document.createElement('div');
   wrap.innerHTML = html || '';
   wrap.querySelectorAll('img').forEach((img) => {
+    const src = img.getAttribute('src');
+    if (src) img.setAttribute('src', resolveMediaUrl(src));
     wrapImgInFigure(img, img.getAttribute('data-caption'), img.getAttribute('data-credit'));
+  });
+  wrap.querySelectorAll('a[href]').forEach((anchor) => {
+    const href = anchor.getAttribute('href');
+    if (href && (href.startsWith('/uploads/') || href.startsWith('uploads/'))) {
+      anchor.setAttribute('href', resolveMediaUrl(href));
+    }
   });
   return wrap.innerHTML;
 };
@@ -516,9 +620,14 @@ const createPost = (elPost, article) => {
   const authorName = article.byline_override || article.author_name;
   const wordCount = article.word_count || 0;
   const minutesToRead = article.reading_time || Math.max(1, Math.ceil(wordCount / 245));
+  const authorHref = getAuthorListUrl(article.author_id, authorName);
+  const authorHtml = authorHref
+    ? `<a class="post-author-link" href="${escapeHtml(authorHref)}">${escapeHtml(authorName || '')}</a>`
+    : escapeHtml(authorName || '');
   const title = `
   ${article.title}
-  <span class="infoline"> <span class="published"><a href="">${authorName}</a> <i class="material-icons">calendar_month</i> ${publishLabel} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${wordCount} words)</span</span>
+  <span class="infoline"> <span class="published">${authorHtml} <i class="material-icons">calendar_month</i> ${publishLabel} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${wordCount} words)</span></span>
+  ${buildPostTagsHtml(article.tags)}
   `;
   const titleEl = elPost.querySelector('#title');
   titleEl.innerHTML = title;
@@ -527,10 +636,13 @@ const createPost = (elPost, article) => {
   elPost.querySelectorAll('.post-hero').forEach((n) => n.remove());
   if (featuredImage) {
     const heroAlt = escapeHtml(article.image_alt || article.title || '');
+    const captionAttr = hasText(article.image_caption) ? ` data-caption="${escapeHtml(article.image_caption.trim())}"` : '';
+    const creditAttr = hasText(article.image_credit) ? ` data-credit="${escapeHtml(article.image_credit.trim())}"` : '';
     const featuredFigcaption = buildFigcaptionHtml(article.image_caption, article.image_credit);
+    const heroImg = `<img id="post-main-image" src="${featuredImage}" alt="${heroAlt}"${captionAttr}${creditAttr} />`;
     const heroInner = featuredFigcaption
-      ? `<figure class="post-figure post-figure--hero"><div class="image-container"><img id="post-main-image" src="${featuredImage}" alt="${heroAlt}" /></div>${featuredFigcaption}</figure>`
-      : `<div class="image-container"><img id="post-main-image" src="${featuredImage}" alt="${heroAlt}" /></div>`;
+      ? `<figure class="post-figure post-figure--hero"><div class="image-container">${heroImg}</div>${featuredFigcaption}</figure>`
+      : `<div class="image-container">${heroImg}</div>`;
     titleEl.insertAdjacentHTML('afterend', `<div class="post-hero">${heroInner}</div>`);
   }
 
