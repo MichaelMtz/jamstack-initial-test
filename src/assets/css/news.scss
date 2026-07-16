@@ -311,6 +311,12 @@ body.news-modal-open {
         margin: 0;
         width: 100%;
       }
+
+      a.post-image-link {
+        display: block;
+        cursor: zoom-in;
+        text-decoration: none;
+      }
     }
 
     .post-figure {
@@ -441,7 +447,9 @@ body.news-modal-open {
     .intro img[data-float="left"] + *,
     .intro img[data-float="right"] + *,
     .intro .post-figure--left + *,
-    .intro .post-figure--right + * {
+    .intro .post-figure--right + *,
+    .intro a.post-image-link--left + *,
+    .intro a.post-image-link--right + * {
       margin-top: 0;
     }
     
@@ -479,14 +487,48 @@ body.news-modal-open {
       }
 
       .post-figure img[data-float="left"],
-      .post-figure img[data-float="right"] {
+      .post-figure img[data-float="right"],
+      .post-image-link img[data-float="left"],
+      .post-image-link img[data-float="right"] {
+        float: none;
+        margin: 0;
+      }
+
+      a.post-image-link {
+        display: block;
+        max-width: 100%;
+        cursor: zoom-in;
+        text-decoration: none;
+        color: inherit;
+
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          border-radius: 4px;
+        }
+
+        &--left {
+          float: left;
+          margin: 0.35em 1em 0.75em 0;
+        }
+
+        &--right {
+          float: right;
+          margin: 0.35em 0 0.75em 1em;
+        }
+      }
+
+      .post-figure a.post-image-link {
         float: none;
         margin: 0;
       }
 
       @include bpmaxw($mobile) {
         img[data-float="left"],
-        img[data-float="right"] {
+        img[data-float="right"],
+        a.post-image-link--left,
+        a.post-image-link--right {
           float: none;
           width: 100% !important;
           max-width: 100%;

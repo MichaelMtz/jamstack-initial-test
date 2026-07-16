@@ -348,15 +348,49 @@ body.news-modal-open {
   margin: 0.35em 0 0.75em 1em;
 }
 #news-post .post-panel .intro .post-figure img[data-float="left"],
-#news-post .post-panel .intro .post-figure img[data-float="right"] {
+#news-post .post-panel .intro .post-figure img[data-float="right"],
+#news-post .post-panel .intro .post-image-link img[data-float="left"],
+#news-post .post-panel .intro .post-image-link img[data-float="right"] {
   float: none;
   margin: 0;
+}
+#news-post .post-panel .intro a.post-image-link {
+  display: block;
+  max-width: 100%;
+  cursor: zoom-in;
+  text-decoration: none;
+  color: inherit;
+}
+#news-post .post-panel .intro a.post-image-link img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+#news-post .post-panel .intro a.post-image-link--left {
+  float: left;
+  margin: 0.35em 1em 0.75em 0;
+}
+#news-post .post-panel .intro a.post-image-link--right {
+  float: right;
+  margin: 0.35em 0 0.75em 1em;
+}
+#news-post .post-panel .intro .post-figure a.post-image-link {
+  float: none;
+  margin: 0;
+}
+#news-post .post-panel .post-hero a.post-image-link {
+  display: block;
+  cursor: zoom-in;
+  text-decoration: none;
 }
 @media screen and (max-width: 767px) {
   #news-post .post-panel .post-figure--left,
   #news-post .post-panel .post-figure--right,
   #news-post .post-panel .intro img[data-float="left"],
-  #news-post .post-panel .intro img[data-float="right"] {
+  #news-post .post-panel .intro img[data-float="right"],
+  #news-post .post-panel .intro a.post-image-link--left,
+  #news-post .post-panel .intro a.post-image-link--right {
     float: none;
     width: 100% !important;
     max-width: 100%;
@@ -428,7 +462,9 @@ body.news-modal-open {
 #news-post .post-panel .intro img[data-float="left"] + *,
 #news-post .post-panel .intro img[data-float="right"] + *,
 #news-post .post-panel .intro .post-figure--left + *,
-#news-post .post-panel .intro .post-figure--right + * {
+#news-post .post-panel .intro .post-figure--right + *,
+#news-post .post-panel .intro a.post-image-link--left + *,
+#news-post .post-panel .intro a.post-image-link--right + * {
   margin-top: 0;
 }
 #news-post .post-panel .intro {
