@@ -108,6 +108,28 @@ const resolveMediaUrl = (raw) => {
   return value.startsWith('/') ? `${NEWSROOM_BASE}${value}` : `${NEWSROOM_BASE}/${value}`;
 };
 
+/** Normalize image URLs for comparison (pathname only; ignores host/query differences). */
+const getImagePathKey = (raw) => {
+  const resolved = resolveMediaUrl(raw);
+  if (!resolved) return '';
+  try {
+    return new URL(resolved).pathname.toLowerCase();
+  } catch {
+    return resolved.split('?')[0].split('#')[0].toLowerCase();
+  }
+};
+
+/** True when the featured image already appears as an <img> in the article body. */
+const isFeaturedImageInBody = (bodyHtml, featuredImageUrl) => {
+  const featuredKey = getImagePathKey(featuredImageUrl);
+  if (!featuredKey || !bodyHtml) return false;
+  const wrap = document.createElement('div');
+  wrap.innerHTML = bodyHtml;
+  return Array.from(wrap.querySelectorAll('img[src]')).some(
+    (img) => getImagePathKey(img.getAttribute('src')) === featuredKey
+  );
+};
+
 const formatPublishedDate = (isoDate) => {
   if (!isoDate) return '';
   return new Date(isoDate).toLocaleDateString('en-US', {
@@ -633,8 +655,9 @@ const createPost = (elPost, article) => {
   titleEl.innerHTML = title;
 
   const featuredImage = resolveMediaUrl(article.featured_image_url);
+  const showFeaturedHero = featuredImage && !isFeaturedImageInBody(article.body, article.featured_image_url);
   elPost.querySelectorAll('.post-hero').forEach((n) => n.remove());
-  if (featuredImage) {
+  if (showFeaturedHero) {
     const heroAlt = escapeHtml(article.image_alt || article.title || '');
     const captionAttr = hasText(article.image_caption) ? ` data-caption="${escapeHtml(article.image_caption.trim())}"` : '';
     const creditAttr = hasText(article.image_credit) ? ` data-credit="${escapeHtml(article.image_credit.trim())}"` : '';
