@@ -649,7 +649,6 @@ const createPost = (elPost, article) => {
   const title = `
   ${article.title}
   <span class="infoline"> <span class="published">${authorHtml} <i class="material-icons">calendar_month</i> ${publishLabel} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${wordCount} words)</span></span>
-  ${buildPostTagsHtml(article.tags)}
   `;
   const titleEl = elPost.querySelector('#title');
   titleEl.innerHTML = title;
@@ -673,6 +672,9 @@ const createPost = (elPost, article) => {
   introEl.innerHTML = enhanceBodyImages(article.body || '');
   const galleryHtml = extractTrailingImageGallery(introEl);
   if (galleryHtml) introEl.insertAdjacentHTML('beforeend', galleryHtml);
+  elPost.querySelectorAll('.post-tags').forEach((n) => n.remove());
+  const tagsHtml = buildPostTagsHtml(article.tags);
+  if (tagsHtml) introEl.insertAdjacentHTML('afterend', tagsHtml);
   makeArticleImagesClickable(elPost);
   bindImageModal(elPost);
   createNewsSDL(article);

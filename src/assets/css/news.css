@@ -390,16 +390,16 @@ body.news-modal-open {
     align-self: flex-end;
   }
 }
-#news-post .post-panel h1 .post-tags {
+#news-post .post-panel .post-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 12px 0 4px;
+  margin: 22px 0 4px;
   font-style: normal;
   text-transform: none;
   letter-spacing: 0.4px;
 }
-#news-post .post-panel h1 .post-tag {
+#news-post .post-panel .post-tag {
   display: inline-flex;
   align-items: center;
   padding: 4px 12px;
@@ -416,7 +416,7 @@ body.news-modal-open {
   line-height: 1.3;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
-#news-post .post-panel h1 .post-tag:hover {
+#news-post .post-panel .post-tag:hover {
   background: #d7ecf5;
   border-color: #9fc7d8;
   color: #0f4a63;

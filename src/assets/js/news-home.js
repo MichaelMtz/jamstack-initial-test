@@ -216,6 +216,15 @@ const setLoadingState = (isLoading) => {
   loadingIndicator.classList.toggle('show', isLoading);
 };
 
+const filterNewPosts = (posts) => {
+  if (!window.snoNewsSeenIds) window.snoNewsSeenIds = new Set();
+  return (posts || []).filter((post) => {
+    if (!post?.id || window.snoNewsSeenIds.has(post.id)) return false;
+    window.snoNewsSeenIds.add(post.id);
+    return true;
+  });
+};
+
 const createPostList = (elPostList, posts) => {
   const html = posts.map(iterPost => `      
     <div id="post-${iterPost.id}" class="news-list-post">
@@ -269,13 +278,22 @@ const getNewsHomeList = () => {
     _log('--getNewsHomeList: data');
     console.log('articles:', data);
 
-    const posts = data.data || [];
+    const posts = filterNewPosts(data.data || []);
     if (!posts.length) {
+      // API cursor pages can overlap prior results; keep paging if a cursor remains.
+      if (data.next_cursor) {
+        window.snoNewsNextCursor = data.next_cursor;
+        window.snoNewsHasMore = true;
+        window.snoNewsFetching = false;
+        updateNextPageLink(data.next_cursor);
+        getNewsHomeList();
+        return;
+      }
       window.snoNewsHasMore = false;
       setLoadingState(false);
       updateNextPageLink(null);
       window.snoNewsFetching = false;
-      if (!window.snoNewsNextCursor) {
+      if (!window.snoNewsSeenIds?.size) {
         waitForElement('.news-list ').then((elPostList) => {
           elPostList.insertAdjacentHTML(
             'beforeend',
@@ -357,6 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.snoNewsFetching = false;
   window.snoNewsReadyForMore = false;
   window.snoNewsInfiniteScrollStarted = false;
+  window.snoNewsSeenIds = new Set();
   window.snoTestNextPage = searchParams.get('test-next-page');
   updateListHeader();
   setNextPageClickHandler();
