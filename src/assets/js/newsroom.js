@@ -10,7 +10,7 @@ const ARTICLE_LINK_STYLE = 'color:#3f7d9e;text-decoration:underline';
 const styleArticleLinks = (root) => {
   if (!root) return;
   root.querySelectorAll('a[href]').forEach((anchor) => {
-    if (anchor.matches('a[data-full-image], .post-media-thumb, .post-image-link, .post-tag, .post-author-link')) return;
+    if (anchor.matches('a[data-full-image], .post-media-thumb, .post-image-link, .post-tag, .post-author-link, #breadcrumb-navigation-home, #breadcrumb-navigation-news')) return;
     if (anchor.querySelector('img')) return;
     anchor.setAttribute('style', ARTICLE_LINK_STYLE);
   });
@@ -182,6 +182,27 @@ const getAuthorListUrl = (authorId, authorName) => {
     return `news-home/index.html?${params.toString()}`;
   }
   return `news-home/?${params.toString()}`;
+};
+
+const getNewsHomeUrl = () => {
+  if (window.location.hostname === 'localhost') {
+    return 'news-home/index.html';
+  }
+  return 'news-home/';
+};
+
+const getSiteHomeUrl = () => {
+  if (window.location.hostname === 'localhost') {
+    return `${window.location.protocol}//${window.location.host}/`;
+  }
+  return 'https://snocountry.com/';
+};
+
+const initArticleBreadcrumbs = () => {
+  const homeLink = document.getElementById('breadcrumb-navigation-home');
+  const newsLink = document.getElementById('breadcrumb-navigation-news');
+  if (homeLink) homeLink.href = getSiteHomeUrl();
+  if (newsLink) newsLink.href = getNewsHomeUrl();
 };
 
 const buildPostTagsHtml = (tags) => {
@@ -791,6 +812,10 @@ const getOtherPostList = (currentSlug) => {
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(document.location.search);
   const slug = params.get('slug');
+
+  if (document.body.dataset.source === 'news-page') {
+    initArticleBreadcrumbs();
+  }
 
   if (document.body.dataset.source === 'news-preview') {
     getPreviewPost(slug, params.get('preview_token'));
