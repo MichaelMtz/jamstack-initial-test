@@ -108,16 +108,28 @@ const updateDocumentMeta = (titleSuffix, description) => {
   if (ogTitle) ogTitle.setAttribute('content', `SnoCountry News - ${titleSuffix}`);
 };
 
+const formatAuthorNameLines = (name) => {
+  const parts = String(name || '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (!parts.length) return ['Author'];
+  if (parts.length === 1) return [parts[0]];
+  return [parts[0], parts.slice(1).join(' ')];
+};
+
 const updateListHeader = () => {
-  const header = document.querySelector('.news-list-header');
+  const header = document.querySelector('h1.news-list-header');
   if (!header) return;
 
   if (window.snoNewsAuthor) {
+    header.hidden = true;
     const label = getAuthorDisplayName({ name: window.snoNewsAuthorName });
-    header.innerHTML = `Articles by <span class="news-author-label">${escapeHtml(label)}</span>`;
     updateDocumentMeta(label, `Ski and snowboarding articles by ${label} from SnoCountry.`);
     return;
   }
+
+  header.hidden = false;
 
   if (window.snoNewsTag) {
     const label = formatTagLabel(window.snoNewsTag, window.snoNewsTagName);
@@ -142,20 +154,26 @@ const renderAuthorByline = (author) => {
   const displayName = getAuthorDisplayName(author);
   window.snoNewsAuthorName = displayName;
   const byline = author.byline || '';
-  const bio = author.bio_short || author.bio_long || '';
+  const bio = author.bio_long || author.bio_short || '';
   const avatarUrl = resolveImageUrl(author.avatar_url);
+  const nameHtml = formatAuthorNameLines(displayName)
+    .map((line) => `<span class="author-byline__name-line">${escapeHtml(line)}</span>`)
+    .join('');
   const mediaHtml = avatarUrl
     ? `<img class="author-byline__avatar" src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(displayName)}" />`
     : `<div class="author-byline__avatar author-byline__avatar--initials" aria-hidden="true">${escapeHtml(getAuthorInitials(displayName))}</div>`;
 
   bylineEl.innerHTML = `
-    <div class="author-byline__media">${mediaHtml}</div>
-    <div class="author-byline__content">
-      <p class="author-byline__eyebrow">Author</p>
-      <h2 class="author-byline__name">${escapeHtml(displayName)}</h2>
-      ${byline ? `<p class="author-byline__role">${escapeHtml(byline)}</p>` : ''}
-      ${bio ? `<p class="author-byline__bio">${escapeHtml(bio)}</p>` : ''}
+    <div class="author-byline__layout">
+      <div class="author-byline__content">
+        <p class="author-byline__eyebrow">Hello, I'm</p>
+        <h2 class="author-byline__name">${nameHtml}</h2>
+        ${byline ? `<p class="author-byline__role">${escapeHtml(byline)}</p>` : ''}
+        ${bio ? `<p class="author-byline__bio">${escapeHtml(bio)}</p>` : ''}
+      </div>
+      <div class="author-byline__media">${mediaHtml}</div>
     </div>
+    <div class="author-byline__rule" aria-hidden="true"></div>
   `;
   bylineEl.hidden = false;
   updateListHeader();

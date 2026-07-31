@@ -302,7 +302,7 @@ async function trackAdClick(selectedAd) {
  * Page Type Placement:
  * - 'resort': Places ad before #resort-name element
  * - 'state'/'region': Places ad before #container-snow-reports element
- * - 'home'/'news-home'/'news-page': Places ad before #news-ad element
+ * - 'home'/'news-home'/'news-page': Places ad inside #news-ad and shows the slot
  * 
  * @async
  * @function loadAndDisplayAd
@@ -312,50 +312,72 @@ async function trackAdClick(selectedAd) {
  * // Called automatically on DOM load or immediately if DOM is already loaded
  * await loadAndDisplayAd();
  */
+function hideNewsAdSlot() {
+  const newsAd = document.getElementById('news-ad');
+  if (!newsAd) return;
+  newsAd.classList.remove('show');
+  newsAd.hidden = true;
+  newsAd.innerHTML = '';
+}
+
+function showNewsAdSlot(newsAd, adHtml) {
+  newsAd.innerHTML = adHtml;
+  newsAd.hidden = false;
+  newsAd.classList.add('show');
+}
+
 async function loadAndDisplayAd() {
 
   const ads = await fetchResortAds();
   const selectedAd = selectRandomAd(ads);
   _log('SnoAdDashboard:result:',ads);
-  if (selectedAd) {
-    _log('loadAndDisplayAd::selectedAd:',selectedAd);
-    let sel = '';
-    switch (document.body.dataset.source) {
-      case 'resort':
-        sel = '#breadcrumb-navigation';
-      break;
-      case 'state':
-      case 'region': 
-        sel = '#container-snow-reports';
-      break;
-      
-      default: // home, news-home, news-page
-        sel = '#news-ad';
-      break;
-    }
-    waitForElement(sel).then((elResortName) => {
-        elResortName.insertAdjacentHTML('beforebegin', createAdHTML(selectedAd));
-        trackAdImpression(selectedAd);
-
-        waitForElement('#resort-page-ad').then((elResortAd) => {
-          _log('SnowAdDashboard: Found ad set click event listerner');
-          elResortAd.addEventListener('click', (e) => {
-            _log('SnowAdDashboard:ad clicked1');
-            trackAdClick(selectedAd);
-            _log('SnowAdDashboard:ad clicked2');
-            // Small delay to ensure tracking request is sent
-            setTimeout(() => {
-              window.open(selectedAd.linkUrl, '_blank');
-            }, 100);
-            
-            // Prevent default link behavior if this is an <a> tag
-            e.preventDefault();
-          });
-          
-        }).catch( () => { console.error('Error: Found ad, ad placed, could not find anchor element to set click event for Sno dashboard:');});
-
-      }).catch( () => { console.error('Error: Found ad, but did not find #resort-name to place ad on page.');});
+  if (!selectedAd) {
+    hideNewsAdSlot();
+    return;
   }
+
+  _log('loadAndDisplayAd::selectedAd:',selectedAd);
+  let sel = '';
+  switch (document.body.dataset.source) {
+    case 'resort':
+      sel = '#breadcrumb-navigation';
+    break;
+    case 'state':
+    case 'region': 
+      sel = '#container-snow-reports';
+    break;
+    
+    default: // home, news-home, news-page
+      sel = '#news-ad';
+    break;
+  }
+  waitForElement(sel).then((elTarget) => {
+      const adHtml = createAdHTML(selectedAd);
+      if (sel === '#news-ad') {
+        showNewsAdSlot(elTarget, adHtml);
+      } else {
+        elTarget.insertAdjacentHTML('beforebegin', adHtml);
+      }
+      trackAdImpression(selectedAd);
+
+      waitForElement('#resort-page-ad').then((elResortAd) => {
+        _log('SnowAdDashboard: Found ad set click event listerner');
+        elResortAd.addEventListener('click', (e) => {
+          _log('SnowAdDashboard:ad clicked1');
+          trackAdClick(selectedAd);
+          _log('SnowAdDashboard:ad clicked2');
+          // Small delay to ensure tracking request is sent
+          setTimeout(() => {
+            window.open(selectedAd.linkUrl, '_blank');
+          }, 100);
+          
+          // Prevent default link behavior if this is an <a> tag
+          e.preventDefault();
+        });
+        
+      }).catch( () => { console.error('Error: Found ad, ad placed, could not find anchor element to set click event for Sno dashboard:');});
+
+    }).catch( () => { console.error('Error: Found ad, but did not find placement target on page.');});
 }
 
 /**
@@ -377,6 +399,7 @@ async function loadAndDisplayAd() {
 function initAdsIfConsented() {
   if (!(window.snoConsent && window.snoConsent.isGranted('ads'))) {
     console.info('Resort ads: skipped - ads consent not granted');
+    hideNewsAdSlot();
     return;
   }
   loadAndDisplayAd();

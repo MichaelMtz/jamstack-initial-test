@@ -10,7 +10,7 @@ const ARTICLE_LINK_STYLE = 'color:#3f7d9e;text-decoration:underline';
 const styleArticleLinks = (root) => {
   if (!root) return;
   root.querySelectorAll('a[href]').forEach((anchor) => {
-    if (anchor.matches('a[data-full-image], .post-media-thumb, .post-image-link, .post-tag')) return;
+    if (anchor.matches('a[data-full-image], .post-media-thumb, .post-image-link, .post-tag, .post-author-link')) return;
     if (anchor.querySelector('img')) return;
     anchor.setAttribute('style', ARTICLE_LINK_STYLE);
   });
@@ -137,6 +137,23 @@ const formatPublishedDate = (isoDate) => {
     month: 'long',
     day: 'numeric',
   });
+};
+
+const formatPublisherDateTime = (isoDate) => {
+  if (!isoDate) return 'Not yet published';
+  const publish = new Date(isoDate);
+  if (Number.isNaN(publish.getTime())) return 'Not yet published';
+  const datePart = publish.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const timePart = publish.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  }).toLowerCase();
+  return `Published ${datePart} at ${timePart}`;
 };
 
 const hasText = (value) => typeof value === 'string' && value.trim().length > 0;
@@ -621,7 +638,7 @@ const createNewsSDL = (article) => {
 
   `;
   document.head.insertAdjacentHTML('beforeend', sdlHTML);
-  const newsTitle = `SnoCountry News - ${article.title}`;
+  const newsTitle = `${article.title} - SnoCountry News`;
   document.querySelector('title').textContent = newsTitle;
   document.querySelector("meta[property='og:title']").setAttribute('content', newsTitle);
 
@@ -635,23 +652,14 @@ const createNewsSDL = (article) => {
 };
 
 const createPost = (elPost, article) => {
-  const publish = article.published_at ? new Date(article.published_at) : null;
-  const publishLabel = publish && !Number.isNaN(publish.getTime())
-    ? publish.toDateString()
-    : 'Not yet published';
   const authorName = article.byline_override || article.author_name;
-  const wordCount = article.word_count || 0;
-  const minutesToRead = article.reading_time || Math.max(1, Math.ceil(wordCount / 245));
   const authorHref = getAuthorListUrl(article.author_id, authorName);
   const authorHtml = authorHref
     ? `<a class="post-author-link" href="${escapeHtml(authorHref)}">${escapeHtml(authorName || '')}</a>`
     : escapeHtml(authorName || '');
-  const title = `
-  ${article.title}
-  <span class="infoline"> <span class="published">${authorHtml} <i class="material-icons">calendar_month</i> ${publishLabel} </span><span class="read-time"><i class="material-icons">menu_book</i> ${minutesToRead} minutes reading time (${wordCount} words)</span></span>
-  `;
+  const publishLabel = formatPublisherDateTime(article.published_at);
   const titleEl = elPost.querySelector('#title');
-  titleEl.innerHTML = title;
+  titleEl.innerHTML = article.title;
 
   const featuredImage = resolveMediaUrl(article.featured_image_url);
   const showFeaturedHero = featuredImage && !isFeaturedImageInBody(article.body, article.featured_image_url);
@@ -665,10 +673,19 @@ const createPost = (elPost, article) => {
     const heroInner = featuredFigcaption
       ? `<figure class="post-figure post-figure--hero"><div class="image-container">${heroImg}</div>${featuredFigcaption}</figure>`
       : `<div class="image-container">${heroImg}</div>`;
+
     titleEl.insertAdjacentHTML('afterend', `<div class="post-hero">${heroInner}</div>`);
   }
 
   const introEl = elPost.querySelector('.intro');
+  elPost.querySelectorAll('.infoline').forEach((n) => n.remove());
+
+  titleEl.insertAdjacentHTML('afterend', `
+    <div class="infoline">
+      <div class="author">SnoCountry.com | By ${authorHtml}</div>
+      <div class="publish-date">${escapeHtml(publishLabel)}</div>
+    </div>
+  `);
   introEl.innerHTML = enhanceBodyImages(article.body || '');
   const galleryHtml = extractTrailingImageGallery(introEl);
   if (galleryHtml) introEl.insertAdjacentHTML('beforeend', galleryHtml);
