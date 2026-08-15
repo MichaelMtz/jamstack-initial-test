@@ -61,7 +61,7 @@
  * Base URL for the Convex API backend
  * @constant {string}
  */
-const API_BASE_URL = 'https://pleasant-parrot-528.convex.convex.site';
+const API_BASE_URL = 'https://pleasant-parrot-528.convex.site';
 
 /**
  * Fetches advertisements from the Convex API based on current page context
